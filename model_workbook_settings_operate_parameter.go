@@ -23,6 +23,6 @@
 package asposecellscloud
 
 type WorkbookSettingsOperateParameter struct {
-	OperateType string `json:"OperateType,omitempty" xml:"OperateType"`
-	WorkbookSettings *WorkbookSettings `json:"WorkbookSettings,omitempty" xml:"WorkbookSettings"`
+	OperateType  string `json:"OperateType,omitempty" xml:"OperateType"`
+	WorkbookSettings interface{}  `json:"WorkbookSettings,omitempty" xml:"WorkbookSettings"`
 }

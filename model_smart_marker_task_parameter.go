@@ -23,7 +23,7 @@
 package asposecellscloud
 
 type SmartMarkerTaskParameter struct {
-	SourceWorkbook *FileSource `json:"SourceWorkbook,omitempty" xml:"SourceWorkbook"`
-	XmlFile *FileSource `json:"xmlFile,omitempty" xml:"xmlFile"`
-	DestinationWorkbook *FileSource `json:"DestinationWorkbook,omitempty" xml:"DestinationWorkbook"`
+	SourceWorkbook interface{}  `json:"SourceWorkbook,omitempty" xml:"SourceWorkbook"`
+	XmlFile interface{}  `json:"xmlFile,omitempty" xml:"xmlFile"`
+	DestinationWorkbook interface{}  `json:"DestinationWorkbook,omitempty" xml:"DestinationWorkbook"`
 }

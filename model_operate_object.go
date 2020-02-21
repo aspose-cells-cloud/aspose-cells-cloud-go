@@ -23,6 +23,6 @@
 package asposecellscloud
 
 type OperateObject struct {
-	OperateObjectType string `json:"OperateObjectType,omitempty" xml:"OperateObjectType"`
-	Position *OperateObjectPosition `json:"Position,omitempty" xml:"Position"`
+	OperateObjectType  string `json:"OperateObjectType,omitempty" xml:"OperateObjectType"`
+	Position interface{}  `json:"Position,omitempty" xml:"Position"`
 }

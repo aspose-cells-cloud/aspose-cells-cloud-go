@@ -23,11 +23,11 @@
 package asposecellscloud
 
 type PageBreakOperateParameter struct {
-	OperateType string `json:"OperateType,omitempty" xml:"OperateType"`
-	Index int32 `json:"Index,omitempty" xml:"Index"`
-	EndIndex int32 `json:"EndIndex,omitempty" xml:"EndIndex"`
-	Column int32 `json:"Column,omitempty" xml:"Column"`
-	StartIndex int32 `json:"StartIndex,omitempty" xml:"StartIndex"`
-	PageBreakType string `json:"PageBreakType,omitempty" xml:"PageBreakType"`
-	Row int32 `json:"Row,omitempty" xml:"Row"`
+	OperateType  string `json:"OperateType,omitempty" xml:"OperateType"`
+	Index  int32 `json:"Index,omitempty" xml:"Index"`
+	EndIndex  int32 `json:"EndIndex,omitempty" xml:"EndIndex"`
+	Column  int32 `json:"Column,omitempty" xml:"Column"`
+	StartIndex  int32 `json:"StartIndex,omitempty" xml:"StartIndex"`
+	PageBreakType  string `json:"PageBreakType,omitempty" xml:"PageBreakType"`
+	Row  int32 `json:"Row,omitempty" xml:"Row"`
 }

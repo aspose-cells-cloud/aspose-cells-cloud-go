@@ -23,6 +23,6 @@
 package asposecellscloud
 
 type SaveResultTaskParameter struct {
-	ResultSource string `json:"ResultSource,omitempty" xml:"ResultSource"`
-	ResultDestination *ResultDestination `json:"ResultDestination,omitempty" xml:"ResultDestination"`
+	ResultSource  string `json:"ResultSource,omitempty" xml:"ResultSource"`
+	ResultDestination interface{}  `json:"ResultDestination,omitempty" xml:"ResultDestination"`
 }

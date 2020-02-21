@@ -23,12 +23,12 @@
 package asposecellscloud
 
 type ImportDoubleArrayOption struct {
-	Source *FileSource `json:"Source,omitempty" xml:"Source"`
-	ImportDataType string `json:"ImportDataType,omitempty" xml:"ImportDataType"`
-	DestinationWorksheet string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
-	IsInsert bool `json:"IsInsert,omitempty" xml:"IsInsert"`
-	Data []float64 `json:"Data,omitempty" xml:"Data"`
-	IsVertical bool `json:"IsVertical,omitempty" xml:"IsVertical"`
-	FirstRow int32 `json:"FirstRow,omitempty" xml:"FirstRow"`
-	FirstColumn int32 `json:"FirstColumn,omitempty" xml:"FirstColumn"`
+	Source interface{}  `json:"Source,omitempty" xml:"Source"`
+	ImportDataType  string `json:"ImportDataType,omitempty" xml:"ImportDataType"`
+	DestinationWorksheet  string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
+	IsInsert  bool `json:"IsInsert,omitempty" xml:"IsInsert"`
+	Data  []float64 `json:"Data,omitempty" xml:"Data"`
+	IsVertical  bool `json:"IsVertical,omitempty" xml:"IsVertical"`
+	FirstRow  int32 `json:"FirstRow,omitempty" xml:"FirstRow"`
+	FirstColumn  int32 `json:"FirstColumn,omitempty" xml:"FirstColumn"`
 }

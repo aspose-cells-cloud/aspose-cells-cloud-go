@@ -23,6 +23,6 @@
 package asposecellscloud
 
 type ShapeOperateParameter struct {
-	OperateType string `json:"OperateType,omitempty" xml:"OperateType"`
-	Shape *Shape `json:"Shape,omitempty" xml:"Shape"`
+	OperateType  string `json:"OperateType,omitempty" xml:"OperateType"`
+	Shape interface{}  `json:"Shape,omitempty" xml:"Shape"`
 }

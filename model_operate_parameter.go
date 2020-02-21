@@ -23,5 +23,5 @@
 package asposecellscloud
 
 type OperateParameter struct {
-	OperateType string `json:"OperateType,omitempty" xml:"OperateType"`
+	OperateType  string `json:"OperateType,omitempty" xml:"OperateType"`
 }

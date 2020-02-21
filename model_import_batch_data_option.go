@@ -23,9 +23,9 @@
 package asposecellscloud
 
 type ImportBatchDataOption struct {
-	Source *FileSource `json:"Source,omitempty" xml:"Source"`
-	ImportDataType string `json:"ImportDataType,omitempty" xml:"ImportDataType"`
-	DestinationWorksheet string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
-	IsInsert bool `json:"IsInsert,omitempty" xml:"IsInsert"`
-	BatchData []CellValue `json:"BatchData,omitempty" xml:"BatchData"`
+	Source interface{}  `json:"Source,omitempty" xml:"Source"`
+	ImportDataType  string `json:"ImportDataType,omitempty" xml:"ImportDataType"`
+	DestinationWorksheet  string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
+	IsInsert  bool `json:"IsInsert,omitempty" xml:"IsInsert"`
+	BatchData  []CellValue `json:"BatchData,omitempty" xml:"BatchData"`
 }

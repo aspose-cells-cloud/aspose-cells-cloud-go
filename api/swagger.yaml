@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "20.1"
+  version: "20.2"
   title: "Aspose.Cells Cloud SDK APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
@@ -1240,6 +1240,8 @@ paths:
       - "Cells"
       summary: "Convert workbook from request content to some format."
       operationId: "CellsWorkbook_PutConvertWorkbook"
+      consumes:
+      - "multipart/form-data"
       parameters:
       - name: "format"
         in: "query"
@@ -1265,12 +1267,10 @@ paths:
         x-nullable: true
         x-exportParamName: "OutPath"
         x-optionalDataType: "String"
-      - in: "body"
-        name: "workbook"
+      - name: "workbook"
+        in: "formData"
         required: true
-        schema:
-          type: "string"
-          format: "binary"
+        type: "file"
         x-exportParamName: "Workbook"
       responses:
         200:

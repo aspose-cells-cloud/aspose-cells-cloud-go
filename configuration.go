@@ -24,6 +24,7 @@ package asposecellscloud
 
 import (
 	"net/http"
+	"time"
 )
 
 // contextKeys are used to identify the type of value in the context.
@@ -72,6 +73,7 @@ type Configuration struct {
 	AppKey        string
 	AppSid        string
 	AccessToken   string
+	GetAccessTokenTime 	time.Time
 }
 
 func NewConfiguration(appSid string, appKey string, basePath string) *Configuration {

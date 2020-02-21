@@ -47,7 +47,7 @@ var (
 	xmlCheck  = regexp.MustCompile("(?i:[application|text]/xml)")
 )
 
-// APIClient manages communication with the Aspose.Cells Cloud SDK APIs. API v20.1
+// APIClient manages communication with the Aspose.Cells Cloud SDK APIs. API v20.2
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -412,6 +412,13 @@ func (a *APIClient) addAuth(request *http.Request) (err error) {
                        return err
                }
        }
+       now := time.Now()
+       time_diff := now.Sub( a.cfg.GetAccessTokenTime)
+       if(time_diff.Minutes() > 1438){
+            if err := a.RequestOauthToken(); err != nil {
+                return err
+            }
+       }
        request.Header.Add("Authorization", "Bearer " + a.cfg.AccessToken)
        return nil
 }
@@ -434,6 +441,7 @@ func (a *APIClient) RequestOauthToken() (error) {
                return err
        }
        a.cfg.AccessToken = tr.AccessToken
+       a.cfg.GetAccessTokenTime = time.Now()
        return nil
 }
 

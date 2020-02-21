@@ -23,7 +23,7 @@
 package asposecellscloud
 
 type ConvertTaskParameter struct {
-	Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
-	SaveOptions *SaveOptions `json:"SaveOptions,omitempty" xml:"SaveOptions"`
-	DestinationFile string `json:"DestinationFile,omitempty" xml:"DestinationFile"`
+	Workbook interface{}  `json:"Workbook,omitempty" xml:"Workbook"`
+	SaveOptions interface{}  `json:"SaveOptions,omitempty" xml:"SaveOptions"`
+	DestinationFile  string `json:"DestinationFile,omitempty" xml:"DestinationFile"`
 }

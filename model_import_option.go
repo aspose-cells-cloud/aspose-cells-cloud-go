@@ -23,8 +23,8 @@
 package asposecellscloud
 
 type ImportOption struct {
-	Source *FileSource `json:"Source,omitempty" xml:"Source"`
-	ImportDataType string `json:"ImportDataType,omitempty" xml:"ImportDataType"`
-	DestinationWorksheet string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
-	IsInsert bool `json:"IsInsert,omitempty" xml:"IsInsert"`
+	Source interface{}  `json:"Source,omitempty" xml:"Source"`
+	ImportDataType  string `json:"ImportDataType,omitempty" xml:"ImportDataType"`
+	DestinationWorksheet  string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
+	IsInsert  bool `json:"IsInsert,omitempty" xml:"IsInsert"`
 }

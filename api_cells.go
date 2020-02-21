@@ -15445,7 +15445,7 @@ CellsApiService Run tasks
 
 
 type CellsTaskPostRunTaskOpts struct { 
-	TaskData string
+	TaskData interface{}
 }
 
 
@@ -15466,7 +15466,7 @@ func (a *CellsApiService) CellsTaskPostRunTask(    localVarOptionals *CellsTaskP
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/xml"}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -15475,7 +15475,7 @@ func (a *CellsApiService) CellsTaskPostRunTask(    localVarOptionals *CellsTaskP
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/xml"}
+	localVarHttpHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -15483,7 +15483,7 @@ func (a *CellsApiService) CellsTaskPostRunTask(    localVarOptionals *CellsTaskP
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = localVarOptionals.TaskData
+	localVarPostBody = &localVarOptionals.TaskData
 	r, err := a.client.prepareRequest( localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -16725,7 +16725,7 @@ CellsApiService
 
 type CellsWorkbookPostImportDataOpts struct { 
 	Name string
-	ImportData string
+	ImportData interface{}
 	Folder string
 	Storage string
 }
@@ -16757,7 +16757,7 @@ func (a *CellsApiService) CellsWorkbookPostImportData(    localVarOptionals *Cel
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/xml"}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -16766,7 +16766,7 @@ func (a *CellsApiService) CellsWorkbookPostImportData(    localVarOptionals *Cel
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/xml"}
+	localVarHttpHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -17535,21 +17535,20 @@ CellsApiService Convert workbook from request content to some format.
 
 
 type CellsWorkbookPutConvertWorkbookOpts struct { 
-	Filename string
-	Workbook []byte
+
 	Format string
 	Password string
 	OutPath string
 }
 
 
-func (a *CellsApiService) CellsWorkbookPutConvertWorkbook(    localVarOptionals *CellsWorkbookPutConvertWorkbookOpts) ([]byte, *http.Response, error) {
+func (a *CellsApiService) CellsWorkbookPutConvertWorkbook(   workbook *os.File ,    localVarOptionals *CellsWorkbookPutConvertWorkbookOpts) ( []byte, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue []byte
+		localVarReturnValue  []byte
 	)
 
 	// create path and map variables
@@ -17572,9 +17571,8 @@ func (a *CellsApiService) CellsWorkbookPutConvertWorkbook(    localVarOptionals 
 		localVarQueryParams.Add("outPath", parameterToString(localVarOptionals.OutPath, ""))
 	}
 	// to determine the Content-Type header
-	// localVarHttpContentTypes := []string{"application/json"}
-// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "multipart/form-data",  }
+	localVarHttpContentTypes := []string{"multipart/form-data"}
+
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
 	if localVarHttpContentType != "" {
@@ -17589,10 +17587,13 @@ func (a *CellsApiService) CellsWorkbookPutConvertWorkbook(    localVarOptionals 
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	// body params
-	// localVarPostBody = &localVarOptionals.Workbook
-	localVarFileBytes = localVarOptionals.Workbook
-	localVarFileName =localVarOptionals.Filename
+	var localVarFile (*os.File) =  workbook
+	if localVarFile != nil {
+		fbs, _ := ioutil.ReadAll(localVarFile)
+		localVarFileBytes = fbs
+		localVarFileName = localVarFile.Name()
+		localVarFile.Close()
+	}
 	r, err := a.client.prepareRequest( localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -17614,7 +17615,6 @@ func (a *CellsApiService) CellsWorkbookPutConvertWorkbook(    localVarOptionals 
     }
 	
 	return localVarReturnValue, localVarHttpResponse, err
-	// return localVarReturnValue, localVarHttpResponse, err
 }
 
 /* 
@@ -21797,8 +21797,6 @@ func (a *CellsApiService) DownloadFile(    localVarOptionals *DownloadFileOpts) 
     }
 
 	return localVarReturnValue, localVarHttpResponse, err
-
-	// return localVarReturnValue, localVarHttpResponse, err
 }
 
 /* 

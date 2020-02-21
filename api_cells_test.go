@@ -5431,7 +5431,63 @@ func TestCellsWorksheetsPutWorksheetFreezePanes(t *testing.T) {
 	}
 }
 
-func  TestCopyFile( t *testing.T) {
+func TestCellsPutConvertWorkbook(t *testing.T) {
+
+	args := new(CellsWorkbookPutConvertWorkbookOpts)
+	args.Format = "PDF"
+	// args.OutPath = "book1.xlsx.pdf"
+	file, err := os.Open("../TestData/" + GetBook1())
+	if err != nil {
+		return
+	}
+	localVarReturnValue, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPutConvertWorkbook(file, args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t TestCellsPutConvertWorkbook - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
+		file1, err2 := os.Create("../Book1.pdf")
+		if err2 != nil {
+			return
+		}
+		if _, err3 := file1.Write(localVarReturnValue); err3 != nil {
+			fmt.Println(err3)
+		}
+		file1.Close()
+	}
+}
+
+func TestCellsImportData(t *testing.T) {
+	name := GetImportData()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsWorkbookPostImportDataOpts)
+	args.Name = GetImportData()
+	importIntArrayOption := new(ImportIntArrayOption)
+	importIntArrayOption.Data = []int32{1, 2, 3}
+	importIntArrayOption.DestinationWorksheet = GetSheet1()
+	importIntArrayOption.FirstColumn = 2
+	importIntArrayOption.FirstRow = 1
+	importIntArrayOption.IsVertical = true
+	importIntArrayOption.ImportDataType = "IntArray"
+	args.ImportData = &importIntArrayOption
+
+	args.Folder = GetBaseTest().remoteFolder
+
+	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPostImportData(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsImportData - %d\n", GetBaseTest().GetTestNumber(), response.Code)
+	}
+}
+
+func TestCopyFile(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
 		t.Error(err)
@@ -5475,33 +5531,34 @@ func TestCellsWorksheetsPostWorksheetComment(t *testing.T) {
 	}
 }
 
+func TestCellsTaskPostRunTasks(t *testing.T) {
+	args := new(CellsTaskPostRunTaskOpts)
+	cellsTaskData := new(TaskData)
+	cellsTaskDescription := new(TaskDescription)
+	cellsSplitWorkbookTaskParameter := new(SplitWorkbookTaskParameter)
+	cellsSplitWorkbookTaskParameter.DestinationFileFormat = "xlsx"
+	cellsSplitWorkbookTaskParameter.SplitNameRule = "sheetname"
+	cellsFileSource1 := new(FileSource)
+	cellsFileSource1.FilePath = "GoTest"
+	cellsFileSource1.FileSourceType = "CloudFileSystem"
+	cellsFileSource2 := new(FileSource)
+	cellsFileSource2.FilePath = "GoTest/Book1.xlsx"
+	cellsFileSource2.FileSourceType = "CloudFileSystem"
+	cellsSplitWorkbookTaskParameter.DestinationFilePosition = &cellsFileSource1
+	cellsSplitWorkbookTaskParameter.Workbook = &cellsFileSource2
 
-func TestCellsWorkbookPutConvertWorkbook(t *testing.T) {
-	name := GetBook1()
-	if err := GetBaseTest().UploadFile(name); err != nil {
-		t.Error(err)
-	}
+	cellsTaskDescription.TaskParameter = &cellsSplitWorkbookTaskParameter
+	cellsTaskDescription.TaskType = "SplitWorkbook"
 
-	args := new(CellsWorkbookPutConvertWorkbookOpts)
-	args.Format = "PDF"
-	args.Filename = GetBook1()
-	args.Workbook = GetWorkbook()
-
-	bts, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPutConvertWorkbook(args)
+	cellsTaskData.Tasks = []TaskDescription{*cellsTaskDescription}
+	args.TaskData = &cellsTaskData
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsTaskPostRunTask(args)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestCellsWorkbookPutConvertWorkbook - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
-	}
-
-	file, err := os.Create("../Book1.pdf")
-	if err != nil {
-		return
-	}
-	if _, err = file.Write(bts); err != nil {
-		fmt.Println(err)
+		fmt.Printf("%d\t TestCellsTaskPostRunTasks - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
 	}
 }
 

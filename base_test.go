@@ -73,7 +73,9 @@ func GetBaseTest() *BaseTest {
 func GetMyDoc() string {
 	return "myDocument.xlsx"
 }
-
+func GetImportData() string {
+	return "TestImportData.xlsx"
+}
 func GetBook1() string {
 	return "Book1.xlsx"
 }

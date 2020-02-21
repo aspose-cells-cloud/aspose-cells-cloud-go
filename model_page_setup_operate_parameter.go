@@ -23,6 +23,6 @@
 package asposecellscloud
 
 type PageSetupOperateParameter struct {
-	OperateType string `json:"OperateType,omitempty" xml:"OperateType"`
-	PageSetup *PageSetup `json:"PageSetup,omitempty" xml:"PageSetup"`
+	OperateType  string `json:"OperateType,omitempty" xml:"OperateType"`
+	PageSetup interface{}  `json:"PageSetup,omitempty" xml:"PageSetup"`
 }

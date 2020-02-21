@@ -23,14 +23,14 @@
 package asposecellscloud
 
 type ImportCsvDataOption struct {
-	Source *FileSource `json:"Source,omitempty" xml:"Source"`
-	ImportDataType string `json:"ImportDataType,omitempty" xml:"ImportDataType"`
-	DestinationWorksheet string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
-	IsInsert bool `json:"IsInsert,omitempty" xml:"IsInsert"`
-	ConvertNumericData bool `json:"ConvertNumericData,omitempty" xml:"ConvertNumericData"`
-	FirstColumn int32 `json:"FirstColumn,omitempty" xml:"FirstColumn"`
-	SourceFile string `json:"SourceFile,omitempty" xml:"SourceFile"`
-	FirstRow int32 `json:"FirstRow,omitempty" xml:"FirstRow"`
-	SeparatorString string `json:"SeparatorString,omitempty" xml:"SeparatorString"`
-	CustomParsers []CustomParserConfig `json:"CustomParsers,omitempty" xml:"CustomParsers"`
+	Source interface{}  `json:"Source,omitempty" xml:"Source"`
+	ImportDataType  string `json:"ImportDataType,omitempty" xml:"ImportDataType"`
+	DestinationWorksheet  string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
+	IsInsert  bool `json:"IsInsert,omitempty" xml:"IsInsert"`
+	ConvertNumericData  bool `json:"ConvertNumericData,omitempty" xml:"ConvertNumericData"`
+	FirstColumn  int32 `json:"FirstColumn,omitempty" xml:"FirstColumn"`
+	SourceFile  string `json:"SourceFile,omitempty" xml:"SourceFile"`
+	FirstRow  int32 `json:"FirstRow,omitempty" xml:"FirstRow"`
+	SeparatorString  string `json:"SeparatorString,omitempty" xml:"SeparatorString"`
+	CustomParsers  []CustomParserConfig `json:"CustomParsers,omitempty" xml:"CustomParsers"`
 }

@@ -23,6 +23,6 @@
 package asposecellscloud
 
 type TaskDescription struct {
-	TaskParameter *TaskParameter `json:"TaskParameter,omitempty" xml:"TaskParameter"`
-	TaskType string `json:"TaskType,omitempty" xml:"TaskType"`
+	TaskParameter interface{}  `json:"TaskParameter,omitempty" xml:"TaskParameter"`
+	TaskType  string `json:"TaskType,omitempty" xml:"TaskType"`
 }
