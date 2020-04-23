@@ -56,7 +56,7 @@ func (bt *BaseTest) GetTestNumber() int {
 func NewBaseTest() *BaseTest {
 	bt := &BaseTest{
 		remoteFolder:        "GoTest",
-		localTestDataFolder: "TestData/",
+		localTestDataFolder: "../TestData/",
 		TestNumber:          0,
 		// Get App key and App SID from https://aspose.cloud
 		CellsAPI: NewCellsApiService("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "https://api.aspose.cloud/v3.0"),
@@ -81,7 +81,7 @@ func GetBook1() string {
 }
 
 func GetWorkbook() []byte {
-	file, err := os.Open("TestData/Book1.xlsx")
+	file, err := os.Open("../TestData/Book1.xlsx")
 	if err != nil {
 		return nil
 	}
@@ -95,7 +95,7 @@ func GetWorkbook() []byte {
 }
 
 func GetPng() string {
-	f, err := ioutil.ReadFile("TestData/WaterMark.png")
+	f, err := ioutil.ReadFile("../TestData/WaterMark.png")
 	if err != nil {
 		fmt.Println("read fail", err)
 	}

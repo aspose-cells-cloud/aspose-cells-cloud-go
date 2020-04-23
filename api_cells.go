@@ -15767,6 +15767,84 @@ func (a *CellsApiService) CellsWorkbookDeleteUnprotectDocument(    localVarOptio
 }
 
 /* 
+CellsApiService Set worksheet background image.
+ * @param name
+ * @param optional nil or *CellsWorkbookDeleteWorkbookBackgroundOpts - Optional Parameters:
+     * @param "Folder" (optional.String) - 
+     * @param "Storage" (optional.String) -  storage name.
+
+@return CellsCloudResponse
+*/
+
+
+type CellsWorkbookDeleteWorkbookBackgroundOpts struct { 
+	Name string
+	Folder string
+	Storage string
+}
+
+
+func (a *CellsApiService) CellsWorkbookDeleteWorkbookBackground(    localVarOptionals *CellsWorkbookDeleteWorkbookBackgroundOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Delete")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/cells/{name}/background"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
+		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest( localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/* 
 CellsApiService Clean workbook&#39;s names.
  * @param name The workbook name.
  * @param nameName The name.
@@ -17178,6 +17256,7 @@ CellsApiService Split workbook.
      * @param "HorizontalResolution" (optional.Int32) -  Image horizontal resolution.
      * @param "VerticalResolution" (optional.Int32) -  Image vertical resolution.
      * @param "Folder" (optional.String) -  The workbook folder.
+     * @param "OutFolder" (optional.String) -  out Folder.
      * @param "Storage" (optional.String) -  storage name.
 
 @return SplitResultResponse
@@ -17192,6 +17271,7 @@ type CellsWorkbookPostWorkbookSplitOpts struct {
 	HorizontalResolution int32
 	VerticalResolution int32
 	Folder string
+	OutFolder string
 	Storage string
 }
 
@@ -17236,6 +17316,10 @@ func (a *CellsApiService) CellsWorkbookPostWorkbookSplit(    localVarOptionals *
 	if localVarOptionals != nil {
 //		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+//		localVarQueryParams.Add("outFolder", parameterToString(localVarOptionals.OutFolder.Value(), ""))
+		localVarQueryParams.Add("outFolder", parameterToString(localVarOptionals.OutFolder, ""))
 	}
 	if localVarOptionals != nil {
 //		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
@@ -17711,11 +17795,94 @@ func (a *CellsApiService) CellsWorkbookPutDocumentProtectFromChanges(    localVa
 }
 
 /* 
+CellsApiService Set workbook background image.
+ * @param name
+ * @param png
+ * @param optional nil or *CellsWorkbookPutWorkbookBackgroundOpts - Optional Parameters:
+     * @param "Folder" (optional.String) - 
+     * @param "Storage" (optional.String) -  storage name.
+
+@return CellsCloudResponse
+*/
+
+
+type CellsWorkbookPutWorkbookBackgroundOpts struct { 
+	Name string
+	Png string
+	Folder string
+	Storage string
+}
+
+
+func (a *CellsApiService) CellsWorkbookPutWorkbookBackground(    localVarOptionals *CellsWorkbookPutWorkbookBackgroundOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Put")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/cells/{name}/background"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
+		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &localVarOptionals.Png
+	r, err := a.client.prepareRequest( localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/* 
 CellsApiService Create new workbook using deferent methods.
  * @param name The new document name.
  * @param optional nil or *CellsWorkbookPutWorkbookCreateOpts - Optional Parameters:
      * @param "TemplateFile" (optional.String) -  The template file, if the data not provided default workbook is created.
      * @param "DataFile" (optional.String) -  Smart marker data file, if the data not provided the request content is checked for the data.
+     * @param "IsWriteOver" (optional.Bool) -  write over file.
      * @param "Folder" (optional.String) -  The new document folder.
      * @param "Storage" (optional.String) -  storage name.
 
@@ -17727,6 +17894,7 @@ type CellsWorkbookPutWorkbookCreateOpts struct {
 	Name string
 	TemplateFile string
 	DataFile string
+	IsWriteOver bool
 	Folder string
 	Storage string
 }
@@ -17756,6 +17924,10 @@ func (a *CellsApiService) CellsWorkbookPutWorkbookCreate(    localVarOptionals *
 	if localVarOptionals != nil {
 //		localVarQueryParams.Add("dataFile", parameterToString(localVarOptionals.DataFile.Value(), ""))
 		localVarQueryParams.Add("dataFile", parameterToString(localVarOptionals.DataFile, ""))
+	}
+	if localVarOptionals != nil {
+//		localVarQueryParams.Add("isWriteOver", parameterToString(localVarOptionals.IsWriteOver.Value(), ""))
+		localVarQueryParams.Add("isWriteOver", parameterToString(localVarOptionals.IsWriteOver, ""))
 	}
 	if localVarOptionals != nil {
 //		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
@@ -18933,6 +19105,8 @@ CellsApiService Read worksheet info or export.
      * @param "Format" (optional.String) -  The exported file format.
      * @param "VerticalResolution" (optional.Int32) -  Image vertical resolution.
      * @param "HorizontalResolution" (optional.Int32) -  Image horizontal resolution.
+     * @param "Area" (optional.String) -  Exported area.
+     * @param "PageIndex" (optional.Int32) -  Exported page index.
      * @param "Folder" (optional.String) -  The document folder.
      * @param "Storage" (optional.String) -  storage name.
 
@@ -18946,6 +19120,8 @@ type CellsWorksheetsGetWorksheetOpts struct {
 	Format string
 	VerticalResolution int32
 	HorizontalResolution int32
+	Area string
+	PageIndex int32
 	Folder string
 	Storage string
 }
@@ -18980,6 +19156,14 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheet(    localVarOptionals *Cel
 	if localVarOptionals != nil {
 //		localVarQueryParams.Add("horizontalResolution", parameterToString(localVarOptionals.HorizontalResolution.Value(), ""))
 		localVarQueryParams.Add("horizontalResolution", parameterToString(localVarOptionals.HorizontalResolution, ""))
+	}
+	if localVarOptionals != nil {
+//		localVarQueryParams.Add("area", parameterToString(localVarOptionals.Area.Value(), ""))
+		localVarQueryParams.Add("area", parameterToString(localVarOptionals.Area, ""))
+	}
+	if localVarOptionals != nil {
+//		localVarQueryParams.Add("pageIndex", parameterToString(localVarOptionals.PageIndex.Value(), ""))
+		localVarQueryParams.Add("pageIndex", parameterToString(localVarOptionals.PageIndex, ""))
 	}
 	if localVarOptionals != nil {
 //		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
@@ -21734,13 +21918,13 @@ type DownloadFileOpts struct {
 }
 
 
-func (a *CellsApiService) DownloadFile(    localVarOptionals *DownloadFileOpts) ([]byte, *http.Response, error) {
+func (a *CellsApiService) DownloadFile(    localVarOptionals *DownloadFileOpts) ( []byte, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue []byte
+		localVarReturnValue  []byte
 	)
 
 	// create path and map variables

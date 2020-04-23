@@ -6,10 +6,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -22,13 +22,11 @@
 
 package asposecellscloud
 
-
 import (
 	"fmt"
-	"testing"
 	"os"
+	"testing"
 )
-
 
 func TestCellsAutoFilterDeleteWorksheetDateFilter(t *testing.T) {
 	name := GetBook1()
@@ -81,8 +79,6 @@ func TestCellsAutoFilterDeleteWorksheetFilter(t *testing.T) {
 	}
 }
 
-
-
 func TestCellsAutoFilterGetWorksheetAutoFilter(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -104,8 +100,7 @@ func TestCellsAutoFilterGetWorksheetAutoFilter(t *testing.T) {
 	}
 }
 
-
-func  TestCellsAutoFilterPostWorksheetAutoFilterRefresh( t *testing.T) {
+func TestCellsAutoFilterPostWorksheetAutoFilterRefresh(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
 		t.Error(err)
@@ -125,7 +120,6 @@ func  TestCellsAutoFilterPostWorksheetAutoFilterRefresh( t *testing.T) {
 		fmt.Printf("%d\tTestCellsAutoFilterPostWorksheetAutoFilterRefresh - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
-
 
 func TestCellsAutoFilterPostWorksheetMatchBlanks(t *testing.T) {
 	name := GetBook1()
@@ -149,7 +143,6 @@ func TestCellsAutoFilterPostWorksheetMatchBlanks(t *testing.T) {
 	}
 }
 
-
 func TestCellsAutoFilterPostWorksheetMatchNonBlanks(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -171,7 +164,6 @@ func TestCellsAutoFilterPostWorksheetMatchNonBlanks(t *testing.T) {
 		fmt.Printf("%d\tTestCellsAutoFilterPostWorksheetMatchNonBlanks - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
-
 
 func TestCellsAutoFilterPutWorksheetColorFilter(t *testing.T) {
 	name := GetBook1()
@@ -229,7 +221,6 @@ func TestCellsAutoFilterPutWorksheetColorFilter(t *testing.T) {
 	}
 }
 
-
 func TestCellsAutoFilterPutWorksheetCustomFilter(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -259,7 +250,6 @@ func TestCellsAutoFilterPutWorksheetCustomFilter(t *testing.T) {
 		fmt.Printf("%d\tTestCellsAutoFilterPutWorksheetCustomFilter - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
-
 
 func TestCellsAutoFilterPutWorksheetDateFilter(t *testing.T) {
 	name := GetBook1()
@@ -343,8 +333,6 @@ func TestCellsAutoFilterPutWorksheetFilter(t *testing.T) {
 	}
 }
 
-
-
 func TestCellsAutoFilterPutWorksheetFilterTop10(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -372,7 +360,6 @@ func TestCellsAutoFilterPutWorksheetFilterTop10(t *testing.T) {
 	}
 }
 
-
 func TestCellsAutoFilterPutWorksheetIconFilter(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -397,8 +384,6 @@ func TestCellsAutoFilterPutWorksheetIconFilter(t *testing.T) {
 	}
 }
 
-
-
 func TestCellsAutoshapesGetWorksheetAutoshape(t *testing.T) {
 	name := GetMyDoc()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -422,7 +407,6 @@ func TestCellsAutoshapesGetWorksheetAutoshape(t *testing.T) {
 	}
 }
 
-
 func TestCellsAutoshapesGetWorksheetAutoshapes(t *testing.T) {
 	name := GetMyDoc()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -443,7 +427,6 @@ func TestCellsAutoshapesGetWorksheetAutoshapes(t *testing.T) {
 		fmt.Printf("%d\tTestCellsAutoshapesGetWorksheetAutoshapes - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
-
 
 func TestCellsChartAreaGetChartArea(t *testing.T) {
 	name := GetMyDoc()
@@ -466,7 +449,6 @@ func TestCellsChartAreaGetChartArea(t *testing.T) {
 		fmt.Printf("%d\tTestCellsChartAreaGetChartArea - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
-
 
 func TestCellsChartAreaGetChartAreaBorder(t *testing.T) {
 	name := GetMyDoc()
@@ -533,7 +515,6 @@ func TestCellsChartsDeleteWorksheetChartLegend(t *testing.T) {
 		fmt.Printf("%d\tTestCellsChartsDeleteWorksheetChartLegend - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
-
 
 func TestCellsChartsDeleteWorksheetChartTitle(t *testing.T) {
 	name := GetMyDoc()
@@ -830,8 +811,6 @@ func TestCellsChartsPutWorksheetChartTitle(t *testing.T) {
 		fmt.Printf("%d\tTestCellsChartsPutWorksheetChartTitle - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
-
-
 
 func TestCellsConditionalFormattingsDeleteWorksheetConditionalFormatting(t *testing.T) {
 	name := GetBook1()
@@ -1290,7 +1269,6 @@ func TestCellsGetWorksheetRows(t *testing.T) {
 		fmt.Printf("%d\tTestCellsGetWorksheetRows - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
-
 
 func TestCellsHypelinksDeleteWorksheetHyperlink(t *testing.T) {
 	name := GetBook1()
@@ -1782,7 +1760,6 @@ func TestCellsOleObjectsPutWorksheetOleObject(t *testing.T) {
 		fmt.Printf("%d\tTestCellsOleObjectsPutWorksheetOleObject - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
-
 
 func TestCellsPageBreaksDeleteHorizontalPageBreak(t *testing.T) {
 	name := GetBook1()
@@ -2300,8 +2277,6 @@ func TestCellsPicturesPutWorksheetAddPicture(t *testing.T) {
 		fmt.Printf("%d\tTestCellsPicturesPutWorksheetAddPicture - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
-
-
 
 func TestCellsPivotTablesDeletePivotTableField(t *testing.T) {
 	name := GetPivTestFile()
@@ -3590,9 +3565,6 @@ func TestCellsRangesGetWorksheetCellsRangeValue(t *testing.T) {
 	}
 }
 
-
-
-
 func TestCellsShapesDeleteWorksheetShape(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -3725,7 +3697,6 @@ func TestCellsShapesPutWorksheetShape(t *testing.T) {
 		fmt.Printf("%d\tTestCellsShapesPutWorksheetShape - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
-
 
 func TestCellsRangesPostWorksheetCellsRangeColumnWidth(t *testing.T) {
 	name := GetBook1()
@@ -4339,8 +4310,6 @@ func TestCellsWorkbookPostEncryptDocument(t *testing.T) {
 	}
 }
 
-
-
 func TestCellsWorkbookPostProtectDocument(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -4445,6 +4414,8 @@ func TestCellsWorkbookPostWorkbookSplit(t *testing.T) {
 	args.Format = "png"
 	args.From = ToInt32(1)
 	args.To = ToInt32(5)
+	args.HorizontalResolution = ToInt32(120)
+	args.VerticalResolution = ToInt32(120)
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPostWorkbookSplit(args)
@@ -4571,7 +4542,6 @@ func TestCellsWorkbookPutWorkbookCreate(t *testing.T) {
 	}
 }
 
-
 func TestCellsWorksheetValidationsDeleteWorksheetValidation(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -4615,7 +4585,6 @@ func TestCellsWorksheetValidationsDeleteWorksheetValidations(t *testing.T) {
 	}
 }
 
-
 func TestCellsWorksheetValidationsGetWorksheetValidations(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -4647,7 +4616,7 @@ func TestCellsWorksheetValidationsPostWorksheetValidation(t *testing.T) {
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
 	args.ValidationIndex = ToInt32(0)
-	args.Validation =new(Validation)
+	args.Validation = new(Validation)
 	args.Validation.Formula1 = "=(OR(A1=\"Yes\",A1=\"No\"))"
 	args.Validation.Type_ = "Custom"
 	args.Validation.IgnoreBlank = true
@@ -4694,9 +4663,9 @@ func TestCellsWorksheetsDeleteUnprotectWorksheet(t *testing.T) {
 	args := new(CellsWorksheetsDeleteUnprotectWorksheetOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.ProtectParameter =new(ProtectSheetParameter)
+	args.ProtectParameter = new(ProtectSheetParameter)
 	args.ProtectParameter.Password = "123456"
-	args.ProtectParameter.ProtectionType ="All"
+	args.ProtectParameter.ProtectionType = "All"
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetsDeleteUnprotectWorksheet(args)
@@ -4804,9 +4773,9 @@ func TestCellsWorksheetsDeleteWorksheetFreezePanes(t *testing.T) {
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
 	args.Row = ToInt32(1)
-	args.Column  = ToInt32(1)
-	args.FreezedRows  = ToInt32(10)
-	args.FreezedColumns  = ToInt32(10)
+	args.Column = ToInt32(1)
+	args.FreezedRows = ToInt32(10)
+	args.FreezedColumns = ToInt32(10)
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetsDeleteWorksheetFreezePanes(args)
@@ -4827,7 +4796,7 @@ func TestCellsWorksheetsGetNamedRanges(t *testing.T) {
 
 	args := new(CellsWorksheetsGetNamedRangesOpts)
 	args.Name = GetBook1()
-	
+
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetsGetNamedRanges(args)
@@ -4858,10 +4827,54 @@ func TestCellsWorksheetsGetWorksheet(t *testing.T) {
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestCellsWorksheetsGetWorksheet - %d\n", GetBaseTest().GetTestNumber(),httpResponse.StatusCode)
+		fmt.Printf("%d\tTestCellsWorksheetsGetWorksheet - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
 	}
 }
 
+func TestCellsWorksheetsGetWorksheetForArea(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsWorksheetsGetWorksheetOpts)
+	args.Name = GetBook1()
+	args.SheetName = GetSheet1()
+	args.Area = "B3:K8"
+	args.Format = "pdf"
+	args.Folder = GetBaseTest().remoteFolder
+
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetsGetWorksheet(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsWorksheetsGetWorksheet - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
+	}
+}
+func TestCellsWorksheetsGetWorksheetForPageIndex(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsWorksheetsGetWorksheetOpts)
+	args.Name = GetBook1()
+	args.SheetName = GetSheet1()
+	args.PageIndex = ToInt32(1)
+	args.Format = "pdf"
+	args.Folder = GetBaseTest().remoteFolder
+
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetsGetWorksheet(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsWorksheetsGetWorksheet - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
+	}
+}
 func TestCellsWorksheetsGetWorksheetCalculateFormula(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -4883,7 +4896,6 @@ func TestCellsWorksheetsGetWorksheetCalculateFormula(t *testing.T) {
 		fmt.Printf("%d\tTestCellsWorksheetsGetWorksheetCalculateFormula - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
-
 
 func TestCellsWorksheetsGetWorksheetComments(t *testing.T) {
 	name := GetBook1()
@@ -4978,7 +4990,7 @@ func TestCellsWorksheetsGetWorksheets(t *testing.T) {
 
 	args := new(CellsWorksheetsGetWorksheetsOpts)
 	args.Name = GetBook1()
-	
+
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetsGetWorksheets(args)
@@ -5064,7 +5076,6 @@ func TestCellsWorksheetsPostAutofitWorksheetRows(t *testing.T) {
 	}
 }
 
-
 func TestCellsWorksheetValidationsGetWorksheetValidation(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -5086,7 +5097,6 @@ func TestCellsWorksheetValidationsGetWorksheetValidation(t *testing.T) {
 		fmt.Printf("%d\tTestCellsWorksheetValidationsGetWorksheetValidation - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
-
 
 func TestCellsWorksheetsGetWorksheetComment(t *testing.T) {
 	name := GetBook1()
@@ -5118,7 +5128,7 @@ func TestCellsWorksheetsPostCopyWorksheet(t *testing.T) {
 	args := new(CellsWorksheetsPostCopyWorksheetOpts)
 	args.Name = GetBook1()
 	args.SheetName = "GetSheet1"
-	args.SourceSheet =GetSheet3()	
+	args.SourceSheet = GetSheet3()
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetsPostCopyWorksheet(args)
@@ -5140,8 +5150,8 @@ func TestCellsWorksheetsPostMoveWorksheet(t *testing.T) {
 	args := new(CellsWorksheetsPostMoveWorksheetOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Moving =new(WorksheetMovingRequest)
-	args.Moving.Position ="after"
+	args.Moving = new(WorksheetMovingRequest)
+	args.Moving.Position = "after"
 	args.Moving.DestinationWorksheet = GetSheet3()
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -5186,7 +5196,7 @@ func TestCellsWorksheetsPostUpdateWorksheetProperty(t *testing.T) {
 	args := new(CellsWorksheetsPostUpdateWorksheetPropertyOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Sheet =new(Worksheet)
+	args.Sheet = new(Worksheet)
 	args.Sheet.IsSelected = true
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -5255,7 +5265,7 @@ func TestCellsWorksheetsPostWorksheetTextSearch(t *testing.T) {
 	args := new(CellsWorksheetsPostWorksheetTextSearchOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Text ="abc"
+	args.Text = "abc"
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetsPostWorksheetTextSearch(args)
@@ -5301,7 +5311,7 @@ func TestCellsWorksheetsPutAddNewWorksheet(t *testing.T) {
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
 	args.Position = ToInt32(1)
-	args.Sheettype ="VB"
+	args.Sheettype = "VB"
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetsPutAddNewWorksheet(args)
@@ -5345,7 +5355,7 @@ func TestCellsWorksheetsPutProtectWorksheet(t *testing.T) {
 	args := new(CellsWorksheetsPutProtectWorksheetOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.ProtectParameter =new(ProtectSheetParameter)
+	args.ProtectParameter = new(ProtectSheetParameter)
 	args.ProtectParameter.Password = "123456"
 	args.ProtectParameter.ProtectionType = "All"
 	args.Folder = GetBaseTest().remoteFolder
@@ -5393,7 +5403,7 @@ func TestCellsWorksheetsPutWorksheetComment(t *testing.T) {
 	args.SheetName = GetSheet1()
 	args.CellName = "A1"
 	args.Comment = new(Comment)
-	args.Comment.Note ="test"
+	args.Comment.Note = "test"
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetsPutWorksheetComment(args)
@@ -5494,10 +5504,10 @@ func TestCopyFile(t *testing.T) {
 	}
 
 	args := new(CopyFileOpts)
-	args.SrcPath ="GoTest/" + GetBook1()
-	args.DestPath = "GoTest/1" +GetBook1()
-	
-	 httpResponse, err := GetBaseTest().CellsAPI.CopyFile(args)
+	args.SrcPath = "GoTest/" + GetBook1()
+	args.DestPath = "GoTest/1" + GetBook1()
+
+	httpResponse, err := GetBaseTest().CellsAPI.CopyFile(args)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5562,13 +5572,12 @@ func TestCellsTaskPostRunTasks(t *testing.T) {
 	}
 }
 
-
 func TestCopyFolder(t *testing.T) {
 	args := new(CopyFolderOpts)
 	args.SrcPath = "Temp"
 	args.DestPath = "GoTest"
 
-	 httpResponse, err := GetBaseTest().CellsAPI.CopyFolder(args)
+	httpResponse, err := GetBaseTest().CellsAPI.CopyFolder(args)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5582,14 +5591,13 @@ func TestCreateFolder(t *testing.T) {
 	args := new(CreateFolderOpts)
 	args.Path = "GetBookFolder"
 
-
 	httpResponse, err := GetBaseTest().CellsAPI.CreateFolder(args)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestCreateFolder - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode )
+		fmt.Printf("%d\tTestCreateFolder - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
 	}
 }
 
@@ -5600,7 +5608,7 @@ func TestDeleteFile(t *testing.T) {
 	}
 
 	args := new(DeleteFileOpts)
-	args.Path ="GoTest/"+ GetBook1()
+	args.Path = "GoTest/" + GetBook1()
 
 	httpResponse, err := GetBaseTest().CellsAPI.DeleteFile(args)
 	if err != nil {
@@ -5632,7 +5640,7 @@ func TestDownloadFile(t *testing.T) {
 	}
 
 	args := new(DownloadFileOpts)
-	args.Path = "GoTest/"+ GetBook1()
+	args.Path = "GoTest/" + GetBook1()
 
 	_, httpResponse, err := GetBaseTest().CellsAPI.DownloadFile(args)
 	if err != nil {
@@ -5643,7 +5651,6 @@ func TestDownloadFile(t *testing.T) {
 		fmt.Printf("%d\tTestDownloadFile - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
 	}
 }
-
 
 func TestGetDiscUsage(t *testing.T) {
 	args := new(GetDiscUsageOpts)
@@ -5657,8 +5664,6 @@ func TestGetDiscUsage(t *testing.T) {
 		fmt.Printf("%d\tTestGetDiscUsage - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
 	}
 }
-
-
 
 func TestGetFileVersions(t *testing.T) {
 	args := new(GetFileVersionsOpts)
@@ -5696,8 +5701,8 @@ func TestMoveFile(t *testing.T) {
 	}
 
 	args := new(MoveFileOpts)
-	args.SrcPath = "GoTest/"+ GetBook1()
-	args.DestPath ="GoTest/MvTest.xlsx"
+	args.SrcPath = "GoTest/" + GetBook1()
+	args.DestPath = "GoTest/MvTest.xlsx"
 
 	httpResponse, err := GetBaseTest().CellsAPI.MoveFile(args)
 	if err != nil {
@@ -5705,12 +5710,11 @@ func TestMoveFile(t *testing.T) {
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestMoveFile - %d\n", GetBaseTest().GetTestNumber(),  httpResponse.StatusCode )
+		fmt.Printf("%d\tTestMoveFile - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
 	}
 }
 
 func TestMoveFolder(t *testing.T) {
-
 
 	args := new(MoveFolderOpts)
 	args.SrcPath = "Temp"
@@ -5722,7 +5726,7 @@ func TestMoveFolder(t *testing.T) {
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestMoveFolder - %d\n", GetBaseTest().GetTestNumber(),  httpResponse.StatusCode)
+		fmt.Printf("%d\tTestMoveFolder - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
 	}
 
 	args.SrcPath = "Temp1"
@@ -5734,7 +5738,7 @@ func TestMoveFolder(t *testing.T) {
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestMoveFolder - %d\n", GetBaseTest().GetTestNumber(),  httpResponse.StatusCode)
+		fmt.Printf("%d\tTestMoveFolder - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
 	}
 }
 
@@ -5745,7 +5749,7 @@ func TestObjectExists(t *testing.T) {
 	}
 
 	args := new(ObjectExistsOpts)
-	args.Path = "GoTest/"+GetBook1()
+	args.Path = "GoTest/" + GetBook1()
 
 	_, httpResponse, err := GetBaseTest().CellsAPI.ObjectExists(args)
 	if err != nil {
@@ -5759,7 +5763,7 @@ func TestObjectExists(t *testing.T) {
 
 func TestStorageExists(t *testing.T) {
 	args := new(StorageExistsOpts)
-	args.StorageName ="Default"
+	args.StorageName = "Default"
 	_, httpResponse, err := GetBaseTest().CellsAPI.StorageExists(args)
 	if err != nil {
 		t.Error(err)
@@ -5770,79 +5774,43 @@ func TestStorageExists(t *testing.T) {
 	}
 }
 
+func TestCellsWorkbookDeleteWorkbookBackground(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
 
-// func TestCellsTaskPostRunTask(t *testing.T) {
-// 	name := GetBook1()
-// 	if err := GetBaseTest().UploadFile(name); err != nil {
-// 		t.Error(err)
-// 	}
+	args := new(CellsWorkbookDeleteWorkbookBackgroundOpts)
+	args.Name = GetBook1()
+	args.Folder = GetBaseTest().remoteFolder
 
-// 	args := new(CellsTaskPostRunTaskOpts)
-// 	args.TaskData = `<TaskData>
-// 	<Tasks>
-// 	  <TaskDescription>
-// 		<TaskType>Convert</TaskType>
-// 		<ConvertTaskParameter>
-// 		  <Workbook>
-// 			<FileSourceType>CloudFileSystem</FileSourceType>
-// 			<FilePath>Book1.xlsx</FilePath>
-// 		  </Workbook>
-// 		  <DestinationFile>Book1.tiff</DestinationFile>
-// 		  <ImageSaveOptions>
-// 			<HorizontalResolution>200</HorizontalResolution>
-// 			<OnePagePerSheet>true</OnePagePerSheet>
-// 			<VerticalResolution>100</VerticalResolution>
-// 		  </ImageSaveOptions>
-// 		</ConvertTaskParameter>
-// 	  </TaskDescription>
-// 	  <TaskDescription>
-// 		<TaskType>SaveResult</TaskType>
-// 		<SaveResultTaskParameter>
-// 		  <ResultSource>InMemoryFiles</ResultSource>
-// 		  <ResultDestination>
-// 			<DestinationType>OutputStream</DestinationType>
-// 			<InputFile>Book1.tiff</InputFile>
-// 			<OutputFile>ReportS003.tiff</OutputFile>
-// 		  </ResultDestination>
-// 		</SaveResultTaskParameter>
-// 	  </TaskDescription>
-// 	</Tasks>
-//   </TaskData> `
+	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookDeleteWorkbookBackground(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t CellsWorkbookDeleteWorkbookBackground - %d\n", GetBaseTest().GetTestNumber(), response.Code)
+	}
+}
 
-// 	print(args.TaskData)
-// 	// taskDescription1 = new(TaskDescription)
-// 	// args.TaskData.Tasks = []TaskDescription{taskDescription1}
+func TestCellsWorkbookPutWorkbookBackground(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
 
-// 	_, httpResponse, err := GetBaseTest().CellsAPI.CellsTaskPostRunTask(args)
-// 	if err != nil {
-// 		t.Error(err)
-// 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-// 		t.Fail()
-// 	} else {
-// 		fmt.Printf("%d\tTestCellsTaskPostRunTask - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
-// 	}
-// }
+	args := new(CellsWorkbookPutWorkbookBackgroundOpts)
+	args.Name = GetBook1()
+	args.Png = GetPng()
+	args.Folder = GetBaseTest().remoteFolder
 
-// func TestCellsWorkbookPostImportData(t *testing.T) {
-// 	name := GetTestImportDataCSV()
-// 	if err := GetBaseTest().UploadFile(name); err != nil {
-// 		t.Error(err)
-// 	}
-// 	name = GetBook1()
-// 	if err := GetBaseTest().UploadFile(name); err != nil {
-// 		t.Error(err)
-// 	}
-// 	args := new(CellsWorkbookPostImportDataOpts)
-// 	args.Name = GetBook1()
-// 	args.ImportData = `<ImportCSVDataOption><SourceFile>GoTest/TestImportDataCSV.csv</SourceFile><DestinationWorksheet>Sheet2</DestinationWorksheet><FirstRow>1</FirstRow><FirstColumn>1</FirstColumn><ConvertNumericData>false</ConvertNumericData><SeparatorString>;</SeparatorString></ImportCSVDataOption>`
-// 	args.Folder = GetBaseTest().remoteFolder
-
-// 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPostImportData(args)
-// 	if err != nil {
-// 		t.Error(err)
-// 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-// 		t.Fail()
-// 	} else {
-// 		fmt.Printf("%d\tTestCellsWorkbookPostImportData - %d\n", GetBaseTest().GetTestNumber(), response.Code)
-// 	}
-// }
+	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPutWorkbookBackground(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t CellsWorkbookPutWorkbookBackground - %d\n", GetBaseTest().GetTestNumber(), response.Code)
+	}
+}
