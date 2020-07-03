@@ -34,7 +34,7 @@ type FormatCondition struct {
 	// True, no rules with lower priority may be applied over this rule, when this     rule evaluates to true.  Only applies for Excel 2007;
 	StopIfTrue bool `json:"StopIfTrue,omitempty" xml:"StopIfTrue"`
 	// The priority of this conditional formatting rule. This value is used to determine     which format should be evaluated and rendered. Lower numeric values are higher     priority than higher numeric values, where '1' is the highest priority.
-	Priority int32 `json:"Priority,omitempty" xml:"Priority"`
+	Priority int64 `json:"Priority,omitempty" xml:"Priority"`
 	Top10 *Top10 `json:"Top10,omitempty" xml:"Top10"`
 	Operator string `json:"Operator,omitempty" xml:"Operator"`
 	IconSet *IconSet `json:"IconSet,omitempty" xml:"IconSet"`

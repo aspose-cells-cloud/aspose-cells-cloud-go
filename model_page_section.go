@@ -25,7 +25,7 @@ package asposecellscloud
 type PageSection struct {
 	Picture string `json:"Picture,omitempty" xml:"Picture"`
 	// 0,1,2  left , middle ,right
-	Section int32 `json:"Section" xml:"Section"`
+	Section int64 `json:"Section" xml:"Section"`
 	// fisrt page context script
 	FisrtPageContext string `json:"FisrtPageContext,omitempty" xml:"FisrtPageContext"`
 	// page context script             

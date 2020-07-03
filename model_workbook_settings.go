@@ -40,7 +40,7 @@ type WorkbookSettings struct {
 	// The distance from the left edge of the client area to the left edge of the window, in unit of point.             
 	WindowLeft float64 `json:"WindowLeft,omitempty" xml:"WindowLeft"`
 	// Specifies the stack size for calculating cells recursively.  The large value for this size will give better performance when there are lots of cells need to be calculated recursively.  On the other hand, larger value will raise the stakes of StackOverflowException.  If use gets StackOverflowException when calculating formulas, this value should be decreased.             
-	CalcStackSize int32 `json:"CalcStackSize,omitempty" xml:"CalcStackSize"`
+	CalcStackSize int64 `json:"CalcStackSize,omitempty" xml:"CalcStackSize"`
 	// Gets or sets a value that indicates whether the Workbook is shared.                           Remarks: The default value is false.              
 	Shared bool `json:"Shared,omitempty" xml:"Shared"`
 	RemovePersonalInformation bool `json:"RemovePersonalInformation,omitempty" xml:"RemovePersonalInformation"`
@@ -79,7 +79,7 @@ type WorkbookSettings struct {
 	MaxChange float64 `json:"MaxChange,omitempty" xml:"MaxChange"`
 	DataExtractLoad bool `json:"DataExtractLoad,omitempty" xml:"DataExtractLoad"`
 	// Gets or sets the first visible worksheet tab.             
-	FirstVisibleTab int32 `json:"FirstVisibleTab,omitempty" xml:"FirstVisibleTab"`
+	FirstVisibleTab int64 `json:"FirstVisibleTab,omitempty" xml:"FirstVisibleTab"`
 	// Indicates whether this workbook is hidden.             
 	IsHidden bool `json:"IsHidden,omitempty" xml:"IsHidden"`
 	// Indicates if the Read Only Recommended option is selected.             
@@ -95,9 +95,9 @@ type WorkbookSettings struct {
 	// Indicates whether create calculated formulas chain.             
 	CreateCalcChain bool `json:"CreateCalcChain,omitempty" xml:"CreateCalcChain"`
 	// Returns or sets the maximum number of iterations that Aspose.Cells can use to resolve a circular reference.             
-	MaxIteration int32 `json:"MaxIteration,omitempty" xml:"MaxIteration"`
+	MaxIteration int64 `json:"MaxIteration,omitempty" xml:"MaxIteration"`
 	RepairLoad bool `json:"RepairLoad,omitempty" xml:"RepairLoad"`
 	UpdateLinksType string `json:"UpdateLinksType,omitempty" xml:"UpdateLinksType"`
 	// Width of worksheet tab bar (in 1/1000 of window width).             
-	SheetTabBarWidth int32 `json:"SheetTabBarWidth,omitempty" xml:"SheetTabBarWidth"`
+	SheetTabBarWidth int64 `json:"SheetTabBarWidth,omitempty" xml:"SheetTabBarWidth"`
 }

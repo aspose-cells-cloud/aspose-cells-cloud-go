@@ -4,9 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Link** | [***Link**](Link.md) |  | [optional] [default to null]
-**Index** | **int32** |  | [optional] [default to null]
+**Index** | **int64** |  | [optional] [default to null]
 **Style** | [***LinkElement**](LinkElement.md) |  | [optional] [default to null]
-**GroupLevel** | **int32** |  | [optional] [default to null]
+**GroupLevel** | **int64** |  | [optional] [default to null]
 **Height** | **float64** |  | [optional] [default to null]
 **IsHeightMatched** | **bool** |  | [optional] [default to null]
 **IsHidden** | **bool** |  | [optional] [default to null]

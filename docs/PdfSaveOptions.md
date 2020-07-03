@@ -18,8 +18,8 @@ Name | Type | Description | Notes
 **DefaultFont** | **string** |  | [optional] [default to null]
 **PrintingPageType** | **string** |  | [optional] [default to null]
 **ImageType** | **string** |  | [optional] [default to null]
-**DesiredPPI** | **int32** |  | [optional] [default to null]
-**JpegQuality** | **int32** |  | [optional] [default to null]
+**DesiredPPI** | **int64** |  | [optional] [default to null]
+**JpegQuality** | **int64** |  | [optional] [default to null]
 **SecurityOptions** | [***PdfSecurityOptions**](PdfSecurityOptions.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

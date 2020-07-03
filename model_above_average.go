@@ -29,5 +29,5 @@ type AboveAverage struct {
 	// Get or set the flag indicating whether the 'aboveAverage' and 'belowAverage'    criteria is inclusive of the average itself, or exclusive of that value.    'true' indicates to include the average value in the criteria.  Default value    is false.             
 	IsEqualAverage bool `json:"IsEqualAverage" xml:"IsEqualAverage"`
 	// Get or set the number of standard deviations to include above or below the   average in the conditional formatting rule. The input value must between   0 and 3 (include 0 and 3). Setting this value to 0 means stdDev is not set.    The default value is 0.             
-	StdDev int32 `json:"StdDev" xml:"StdDev"`
+	StdDev int64 `json:"StdDev" xml:"StdDev"`
 }

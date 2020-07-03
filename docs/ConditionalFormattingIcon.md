@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Index** | **int32** | Gets and sets the icon&#39;s index in the icon set.              | [optional] [default to null]
+**Index** | **int64** | Gets and sets the icon&#39;s index in the icon set.              | [optional] [default to null]
 **Type_** | **string** | Gets and sets the icon set type.              | [optional] [default to null]
 **ImageData** | **string** | Gets the icon set data.              | [optional] [default to null]
 

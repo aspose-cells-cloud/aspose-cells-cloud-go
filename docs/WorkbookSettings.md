@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **IsHScrollBarVisible** | **bool** | Gets or sets a value indicating whether the generated spreadsheet will contain a horizontal scroll bar.                           Remarks: The default value is true.               | [optional] [default to null]
 **WindowHeight** | **float64** | The height of the window, in unit of point.              | [optional] [default to null]
 **WindowLeft** | **float64** | The distance from the left edge of the client area to the left edge of the window, in unit of point.              | [optional] [default to null]
-**CalcStackSize** | **int32** | Specifies the stack size for calculating cells recursively.  The large value for this size will give better performance when there are lots of cells need to be calculated recursively.  On the other hand, larger value will raise the stakes of StackOverflowException.  If use gets StackOverflowException when calculating formulas, this value should be decreased.              | [optional] [default to null]
+**CalcStackSize** | **int64** | Specifies the stack size for calculating cells recursively.  The large value for this size will give better performance when there are lots of cells need to be calculated recursively.  On the other hand, larger value will raise the stakes of StackOverflowException.  If use gets StackOverflowException when calculating formulas, this value should be decreased.              | [optional] [default to null]
 **Shared** | **bool** | Gets or sets a value that indicates whether the Workbook is shared.                           Remarks: The default value is false.               | [optional] [default to null]
 **RemovePersonalInformation** | **bool** |  | [optional] [default to null]
 **LanguageCode** | **string** | Gets or sets the user interface language of the Workbook version based on CountryCode that has saved the file.              | [optional] [default to null]
@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 **AutoRecover** | **bool** |  | [optional] [default to null]
 **MaxChange** | **float64** | Returns or sets the maximum number of change that Microsoft Excel can use to resolve a circular reference.              | [optional] [default to null]
 **DataExtractLoad** | **bool** |  | [optional] [default to null]
-**FirstVisibleTab** | **int32** | Gets or sets the first visible worksheet tab.              | [optional] [default to null]
+**FirstVisibleTab** | **int64** | Gets or sets the first visible worksheet tab.              | [optional] [default to null]
 **IsHidden** | **bool** | Indicates whether this workbook is hidden.              | [optional] [default to null]
 **RecommendReadOnly** | **bool** | Indicates if the Read Only Recommended option is selected.              | [optional] [default to null]
 **DisplayDrawingObjects** | **string** | Indicates whether and how to show objects in the workbook.              | [optional] [default to null]
@@ -44,10 +44,10 @@ Name | Type | Description | Notes
 **IsVScrollBarVisible** | **bool** | Gets or sets a value indicating whether the generated spreadsheet will contain a vertical scroll bar.                           Remarks: The default value is true.               | [optional] [default to null]
 **WindowWidth** | **float64** | The width of the window, in unit of point.              | [optional] [default to null]
 **CreateCalcChain** | **bool** | Indicates whether create calculated formulas chain.              | [optional] [default to null]
-**MaxIteration** | **int32** | Returns or sets the maximum number of iterations that Aspose.Cells can use to resolve a circular reference.              | [optional] [default to null]
+**MaxIteration** | **int64** | Returns or sets the maximum number of iterations that Aspose.Cells can use to resolve a circular reference.              | [optional] [default to null]
 **RepairLoad** | **bool** |  | [optional] [default to null]
 **UpdateLinksType** | **string** |  | [optional] [default to null]
-**SheetTabBarWidth** | **int32** | Width of worksheet tab bar (in 1/1000 of window width).              | [optional] [default to null]
+**SheetTabBarWidth** | **int64** | Width of worksheet tab bar (in 1/1000 of window width).              | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

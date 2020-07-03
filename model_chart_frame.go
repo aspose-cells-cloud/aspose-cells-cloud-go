@@ -28,12 +28,12 @@ type ChartFrame struct {
 	ShapeProperties []LinkElement `json:"ShapeProperties,omitempty" xml:"ShapeProperties"`
 	AutoScaleFont bool `json:"AutoScaleFont,omitempty" xml:"AutoScaleFont"`
 	Area *Area `json:"Area,omitempty" xml:"Area"`
-	Height int32 `json:"Height,omitempty" xml:"Height"`
-	Width int32 `json:"Width,omitempty" xml:"Width"`
+	Height int64 `json:"Height,omitempty" xml:"Height"`
+	Width int64 `json:"Width,omitempty" xml:"Width"`
 	BackgroundMode string `json:"BackgroundMode,omitempty" xml:"BackgroundMode"`
 	IsAutomaticSize bool `json:"IsAutomaticSize,omitempty" xml:"IsAutomaticSize"`
-	Y int32 `json:"Y,omitempty" xml:"Y"`
-	X int32 `json:"X,omitempty" xml:"X"`
+	Y int64 `json:"Y,omitempty" xml:"Y"`
+	X int64 `json:"X,omitempty" xml:"X"`
 	Shadow bool `json:"Shadow,omitempty" xml:"Shadow"`
 	Font *Font `json:"Font,omitempty" xml:"Font"`
 	Border *Line `json:"Border,omitempty" xml:"Border"`

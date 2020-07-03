@@ -25,7 +25,7 @@ package asposecellscloud
 type Chart struct {
 	Link *Link `json:"link,omitempty" xml:"link"`
 	// Gets or sets the angle of the first pie-chart or doughnut-chart slice, in degrees (clockwise from vertical). Applies only to pie, 3-D pie, and doughnut charts, 0 to 360.
-	FirstSliceAngle int32 `json:"FirstSliceAngle,omitempty" xml:"FirstSliceAngle"`
+	FirstSliceAngle int64 `json:"FirstSliceAngle,omitempty" xml:"FirstSliceAngle"`
 	// Returns a Floor object that represents the walls of a 3-D chart.             
 	Floor *LinkElement `json:"Floor,omitempty" xml:"Floor"`
 	// Gets and sets how to plot the empty cells.
@@ -33,7 +33,7 @@ type Chart struct {
 	// True if Microsoft Excel scales a 3-D chart so that it's closer in size to the equivalent 2-D chart. The RightAngleAxes property must be True.
 	AutoScaling bool `json:"AutoScaling,omitempty" xml:"AutoScaling"`
 	// Gets and sets the builtin style.
-	Style int32 `json:"Style,omitempty" xml:"Style"`
+	Style int64 `json:"Style,omitempty" xml:"Style"`
 	// Gets the chart's series axis.
 	SeriesAxis *LinkElement `json:"SeriesAxis,omitempty" xml:"SeriesAxis"`
 	// Gets the chart's Y axis.
@@ -45,7 +45,7 @@ type Chart struct {
 	// Gets the chart area in the worksheet
 	ChartArea *LinkElement `json:"ChartArea,omitempty" xml:"ChartArea"`
 	// Represents the elevation of the 3-D chart view, in degrees.
-	Elevation int32 `json:"Elevation,omitempty" xml:"Elevation"`
+	Elevation int64 `json:"Elevation,omitempty" xml:"Elevation"`
 	SideWall *LinkElement `json:"SideWall,omitempty" xml:"SideWall"`
 	// Gets or sets a chart's type.
 	Type_ string `json:"Type,omitempty" xml:"Type"`
@@ -57,9 +57,9 @@ type Chart struct {
 	// Represents the chart data table.
 	ChartDataTable *LinkElement `json:"ChartDataTable,omitempty" xml:"ChartDataTable"`
 	// Returns or sets the height of a 3-D chart as a percentage of the chart width (between 5 and 500 percent).
-	HeightPercent int32 `json:"HeightPercent,omitempty" xml:"HeightPercent"`
+	HeightPercent int64 `json:"HeightPercent,omitempty" xml:"HeightPercent"`
 	// Returns or sets the space between bar or column clusters, as a percentage of the bar or column width. The value of this property must be between 0 and 500.             
-	GapWidth int32 `json:"GapWidth,omitempty" xml:"GapWidth"`
+	GapWidth int64 `json:"GapWidth,omitempty" xml:"GapWidth"`
 	// Gets the chart legend.
 	Legend *LinkElement `json:"Legend,omitempty" xml:"Legend"`
 	// Represents the chartShape;
@@ -85,11 +85,11 @@ type Chart struct {
 	// The source is the data of the pivotTable.If PivotSource is not empty ,the chart is PivotChart.
 	PivotSource string `json:"PivotSource,omitempty" xml:"PivotSource"`
 	// Represents the depth of a 3-D chart as a percentage of the chart width (between 20 and 2000 percent).
-	DepthPercent int32 `json:"DepthPercent,omitempty" xml:"DepthPercent"`
+	DepthPercent int64 `json:"DepthPercent,omitempty" xml:"DepthPercent"`
 	// Gets and sets the printed chart size.
 	PrintSize string `json:"PrintSize,omitempty" xml:"PrintSize"`
 	// Gets or sets the distance between the data series in a 3-D chart, as a percentage of the marker width.The value of this property must be between 0 and 500.
-	GapDepth int32 `json:"GapDepth,omitempty" xml:"GapDepth"`
+	GapDepth int64 `json:"GapDepth,omitempty" xml:"GapDepth"`
 	// Returns all drawing shapes in this chart.
 	Shapes *LinkElement `json:"Shapes,omitempty" xml:"Shapes"`
 	// True if gridlines are drawn two-dimensionally on a 3-D chart.
@@ -97,7 +97,7 @@ type Chart struct {
 	// Gets a SeriesCollection collection representing the data series in the chart.
 	NSeries *LinkElement `json:"NSeries,omitempty" xml:"NSeries"`
 	// Represents the rotation of the 3-D chart view (the rotation of the plot area around the z-axis, in degrees).
-	RotationAngle int32 `json:"RotationAngle,omitempty" xml:"RotationAngle"`
+	RotationAngle int64 `json:"RotationAngle,omitempty" xml:"RotationAngle"`
 	// Gets the chart's plot area which includes axis tick lables.
 	PlotArea *LinkElement `json:"PlotArea,omitempty" xml:"PlotArea"`
 	// Gets the chart's X axis. The property is read only

@@ -33,7 +33,7 @@ type ListObject struct {
 	// Gets and sets whether this ListObject show header row.             
 	ShowHeaderRow bool `json:"ShowHeaderRow,omitempty" xml:"ShowHeaderRow"`
 	// Gets the start column of the range.
-	StartColumn int32 `json:"StartColumn,omitempty" xml:"StartColumn"`
+	StartColumn int64 `json:"StartColumn,omitempty" xml:"StartColumn"`
 	// Indicates whether the last column in the table should have the style applied.
 	ShowTableStyleLastColumn bool `json:"ShowTableStyleLastColumn,omitempty" xml:"ShowTableStyleLastColumn"`
 	// Indicates whether column stripe formatting is applied.
@@ -41,17 +41,17 @@ type ListObject struct {
 	// Inidicates whether the first column in the table should have the style applied.
 	ShowTableStyleFirstColumn bool `json:"ShowTableStyleFirstColumn,omitempty" xml:"ShowTableStyleFirstColumn"`
 	// Gets the start row of the range.
-	StartRow int32 `json:"StartRow,omitempty" xml:"StartRow"`
+	StartRow int64 `json:"StartRow,omitempty" xml:"StartRow"`
 	// Gets auto filter.             
 	AutoFilter *AutoFilter `json:"AutoFilter,omitempty" xml:"AutoFilter"`
 	// Indicates whether row stripe formatting is applied.
 	ShowTableStyleRowStripes bool `json:"ShowTableStyleRowStripes,omitempty" xml:"ShowTableStyleRowStripes"`
 	// Gets the end column of the range.
-	EndColumn int32 `json:"EndColumn,omitempty" xml:"EndColumn"`
+	EndColumn int64 `json:"EndColumn,omitempty" xml:"EndColumn"`
 	// Gets and sets the table style name.
 	TableStyleName string `json:"TableStyleName,omitempty" xml:"TableStyleName"`
 	// Gets ListColumns of the ListObject.
 	ListColumns []ListColumn `json:"ListColumns,omitempty" xml:"ListColumns"`
 	// Gets the end row of the range.
-	EndRow int32 `json:"EndRow,omitempty" xml:"EndRow"`
+	EndRow int64 `json:"EndRow,omitempty" xml:"EndRow"`
 }

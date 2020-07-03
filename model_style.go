@@ -30,8 +30,8 @@ type Style struct {
 	ShrinkToFit bool `json:"ShrinkToFit,omitempty" xml:"ShrinkToFit"`
 	IsDateTime bool `json:"IsDateTime,omitempty" xml:"IsDateTime"`
 	CultureCustom string `json:"CultureCustom,omitempty" xml:"CultureCustom"`
-	RotationAngle int32 `json:"RotationAngle,omitempty" xml:"RotationAngle"`
-	IndentLevel int32 `json:"IndentLevel,omitempty" xml:"IndentLevel"`
+	RotationAngle int64 `json:"RotationAngle,omitempty" xml:"RotationAngle"`
+	IndentLevel int64 `json:"IndentLevel,omitempty" xml:"IndentLevel"`
 	IsPercent bool `json:"IsPercent,omitempty" xml:"IsPercent"`
 	ForegroundColor *Color `json:"ForegroundColor,omitempty" xml:"ForegroundColor"`
 	Name string `json:"Name,omitempty" xml:"Name"`
@@ -43,7 +43,7 @@ type Style struct {
 	BackgroundThemeColor *ThemeColor `json:"BackgroundThemeColor,omitempty" xml:"BackgroundThemeColor"`
 	IsFormulaHidden bool `json:"IsFormulaHidden,omitempty" xml:"IsFormulaHidden"`
 	IsGradient bool `json:"IsGradient,omitempty" xml:"IsGradient"`
-	Number int32 `json:"Number,omitempty" xml:"Number"`
+	Number int64 `json:"Number,omitempty" xml:"Number"`
 	HorizontalAlignment string `json:"HorizontalAlignment,omitempty" xml:"HorizontalAlignment"`
 	IsTextWrapped bool `json:"IsTextWrapped,omitempty" xml:"IsTextWrapped"`
 	Font *Font `json:"Font,omitempty" xml:"Font"`

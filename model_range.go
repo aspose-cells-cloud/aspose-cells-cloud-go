@@ -24,21 +24,21 @@ package asposecellscloud
 
 type ModelRange struct {
 	// Gets the count of columns in the range.
-	ColumnCount int32 `json:"ColumnCount" xml:"ColumnCount"`
+	ColumnCount int64 `json:"ColumnCount" xml:"ColumnCount"`
 	// Sets or gets the height of rows in this range
 	RowHeight float64 `json:"RowHeight" xml:"RowHeight"`
 	// Gets or sets the name of the range.
 	Name string `json:"Name,omitempty" xml:"Name"`
 	// Gets the index of the first column of the range.
-	FirstColumn int32 `json:"FirstColumn" xml:"FirstColumn"`
+	FirstColumn int64 `json:"FirstColumn" xml:"FirstColumn"`
 	// Sets or gets the column width of this range
 	ColumnWidth float64 `json:"ColumnWidth" xml:"ColumnWidth"`
 	// Gets the range's refers to.
 	RefersTo string `json:"RefersTo,omitempty" xml:"RefersTo"`
 	// Gets the count of rows in the range.
-	RowCount int32 `json:"RowCount" xml:"RowCount"`
+	RowCount int64 `json:"RowCount" xml:"RowCount"`
 	// Gets the index of the first row of the range.
-	FirstRow int32 `json:"FirstRow" xml:"FirstRow"`
+	FirstRow int64 `json:"FirstRow" xml:"FirstRow"`
 	// Gets the Aspose.Cells.Range.Worksheetobject which contains this range.
 	Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
 }

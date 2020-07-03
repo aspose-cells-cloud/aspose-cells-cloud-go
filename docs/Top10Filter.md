@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Items** | **int32** |  | [default to null]
+**Items** | **int64** |  | [default to null]
 **IsPercent** | **bool** |  | [default to null]
 **IsTop** | **bool** |  | [default to null]
 **Criteria** | **string** |  | [optional] [default to null]

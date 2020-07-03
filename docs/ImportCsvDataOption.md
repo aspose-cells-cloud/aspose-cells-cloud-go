@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **DestinationWorksheet** | **string** |  | [optional] [default to null]
 **IsInsert** | **bool** |  | [optional] [default to null]
 **ConvertNumericData** | **bool** |  | [optional] [default to null]
-**FirstColumn** | **int32** |  | [optional] [default to null]
+**FirstColumn** | **int64** |  | [optional] [default to null]
 **SourceFile** | **string** |  | [optional] [default to null]
-**FirstRow** | **int32** |  | [optional] [default to null]
+**FirstRow** | **int64** |  | [optional] [default to null]
 **SeparatorString** | **string** |  | [optional] [default to null]
 **CustomParsers** | [**[]CustomParserConfig**](CustomParserConfig.md) |  | [optional] [default to null]
 

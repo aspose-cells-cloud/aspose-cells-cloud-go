@@ -23,6 +23,6 @@
 package asposecellscloud
 
 type IconFilter struct {
-	IconId int32 `json:"IconId" xml:"IconId"`
+	IconId int64 `json:"IconId" xml:"IconId"`
 	IconSetType string `json:"IconSetType,omitempty" xml:"IconSetType"`
 }

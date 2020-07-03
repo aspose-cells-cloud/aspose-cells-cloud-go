@@ -25,7 +25,7 @@ package asposecellscloud
 // Represents a PivotFilter in PivotFilter Collection.
 type PivotFilter struct {
 	// Gets the Evaluation Order of the pivot filter.
-	EvaluationOrder int32 `json:"EvaluationOrder,omitempty" xml:"EvaluationOrder"`
+	EvaluationOrder int64 `json:"EvaluationOrder,omitempty" xml:"EvaluationOrder"`
 	// Gets the name of the pivot filter.
 	Name string `json:"Name,omitempty" xml:"Name"`
 	// Gets the autofilter type of the pivot filter.
@@ -33,13 +33,13 @@ type PivotFilter struct {
 	// Gets the autofilter of the pivot filter.
 	AutoFilter *AutoFilter `json:"AutoFilter,omitempty" xml:"AutoFilter"`
 	// Gets the field index of the pivot filter.
-	FieldIndex int32 `json:"FieldIndex,omitempty" xml:"FieldIndex"`
+	FieldIndex int64 `json:"FieldIndex,omitempty" xml:"FieldIndex"`
 	// Gets the measure field index of the pivot filter.             
-	MeasureFldIndex int32 `json:"MeasureFldIndex,omitempty" xml:"MeasureFldIndex"`
+	MeasureFldIndex int64 `json:"MeasureFldIndex,omitempty" xml:"MeasureFldIndex"`
 	// Gets the string value1 of the label pivot filter.             
 	Value1 string `json:"Value1,omitempty" xml:"Value1"`
 	// Gets the member property field index of the pivot filter.             
-	MemberPropertyFieldIndex int32 `json:"MemberPropertyFieldIndex,omitempty" xml:"MemberPropertyFieldIndex"`
+	MemberPropertyFieldIndex int64 `json:"MemberPropertyFieldIndex,omitempty" xml:"MemberPropertyFieldIndex"`
 	// Gets the string value2 of the label pivot filter.             
 	Value2 string `json:"Value2,omitempty" xml:"Value2"`
 }

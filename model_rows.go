@@ -24,7 +24,7 @@ package asposecellscloud
 
 type Rows struct {
 	Link *Link `json:"link,omitempty" xml:"link"`
-	MaxRow int32 `json:"MaxRow" xml:"MaxRow"`
+	MaxRow int64 `json:"MaxRow" xml:"MaxRow"`
 	RowsList []LinkElement `json:"RowsList,omitempty" xml:"RowsList"`
-	RowsCount int32 `json:"RowsCount" xml:"RowsCount"`
+	RowsCount int64 `json:"RowsCount" xml:"RowsCount"`
 }

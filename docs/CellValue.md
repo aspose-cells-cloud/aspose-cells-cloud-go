@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RowIndex** | **int32** |  | [optional] [default to null]
-**ColumnIndex** | **int32** |  | [optional] [default to null]
+**RowIndex** | **int64** |  | [optional] [default to null]
+**ColumnIndex** | **int64** |  | [optional] [default to null]
 **Style** | [***Style**](Style.md) |  | [optional] [default to null]
 **Type_** | **string** |  | [optional] [default to null]
 **Value** | **string** |  | [optional] [default to null]

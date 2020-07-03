@@ -28,7 +28,7 @@ type FilterColumn struct {
 	CustomFilters []CustomFilter `json:"CustomFilters,omitempty" xml:"CustomFilters"`
 	DynamicFilter *DynamicFilter `json:"DynamicFilter,omitempty" xml:"DynamicFilter"`
 	ColorFilter *ColorFilter `json:"ColorFilter,omitempty" xml:"ColorFilter"`
-	FieldIndex int32 `json:"FieldIndex" xml:"FieldIndex"`
+	FieldIndex int64 `json:"FieldIndex" xml:"FieldIndex"`
 	Top10Filter *Top10Filter `json:"Top10Filter,omitempty" xml:"Top10Filter"`
 	IconFilter *IconFilter `json:"IconFilter,omitempty" xml:"IconFilter"`
 	Visibledropdown string `json:"Visibledropdown,omitempty" xml:"Visibledropdown"`

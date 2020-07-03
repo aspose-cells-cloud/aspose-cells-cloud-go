@@ -24,6 +24,6 @@ package asposecellscloud
 
 type Names struct {
 	Link *Link `json:"link,omitempty" xml:"link"`
-	Count int32 `json:"Count" xml:"Count"`
+	Count int64 `json:"Count" xml:"Count"`
 	NameList []LinkElement `json:"NameList,omitempty" xml:"NameList"`
 }

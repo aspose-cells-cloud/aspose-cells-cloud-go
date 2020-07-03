@@ -26,5 +26,5 @@ type CalculationOptions struct {
 	PrecisionStrategy string `json:"PrecisionStrategy,omitempty" xml:"PrecisionStrategy"`
 	IgnoreError bool `json:"IgnoreError,omitempty" xml:"IgnoreError"`
 	Recursive bool `json:"Recursive,omitempty" xml:"Recursive"`
-	CalcStackSize int32 `json:"CalcStackSize,omitempty" xml:"CalcStackSize"`
+	CalcStackSize int64 `json:"CalcStackSize,omitempty" xml:"CalcStackSize"`
 }

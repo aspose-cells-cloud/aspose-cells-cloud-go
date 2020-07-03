@@ -23,8 +23,8 @@
 package asposecellscloud
 
 type CellArea struct {
-	StartRow int32 `json:"StartRow" xml:"StartRow"`
-	StartColumn int32 `json:"StartColumn" xml:"StartColumn"`
-	EndColumn int32 `json:"EndColumn" xml:"EndColumn"`
-	EndRow int32 `json:"EndRow" xml:"EndRow"`
+	StartRow int64 `json:"StartRow" xml:"StartRow"`
+	StartColumn int64 `json:"StartColumn" xml:"StartColumn"`
+	EndColumn int64 `json:"EndColumn" xml:"EndColumn"`
+	EndRow int64 `json:"EndRow" xml:"EndRow"`
 }

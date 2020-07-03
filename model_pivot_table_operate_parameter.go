@@ -24,12 +24,12 @@ package asposecellscloud
 
 type PivotTableOperateParameter struct {
 	OperateType  string `json:"OperateType,omitempty" xml:"OperateType"`
-	PivotFieldColumns  []int32 `json:"PivotFieldColumns,omitempty" xml:"PivotFieldColumns"`
-	PivotTableIndex  int32 `json:"PivotTableIndex,omitempty" xml:"PivotTableIndex"`
+	PivotFieldColumns  []int64 `json:"PivotFieldColumns,omitempty" xml:"PivotFieldColumns"`
+	PivotTableIndex  int64 `json:"PivotTableIndex,omitempty" xml:"PivotTableIndex"`
 	TableName  string `json:"TableName,omitempty" xml:"TableName"`
 	UseSameSource  bool `json:"UseSameSource,omitempty" xml:"UseSameSource"`
-	PivotFieldData  []int32 `json:"PivotFieldData,omitempty" xml:"PivotFieldData"`
-	PivotFieldRows  []int32 `json:"PivotFieldRows,omitempty" xml:"PivotFieldRows"`
+	PivotFieldData  []int64 `json:"PivotFieldData,omitempty" xml:"PivotFieldData"`
+	PivotFieldRows  []int64 `json:"PivotFieldRows,omitempty" xml:"PivotFieldRows"`
 	DestCellName  string `json:"DestCellName,omitempty" xml:"DestCellName"`
 	SourceData  string `json:"SourceData,omitempty" xml:"SourceData"`
 }

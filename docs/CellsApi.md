@@ -174,6 +174,7 @@ Method | HTTP request | Description
 [**CellsWorkbookDeleteDecryptDocument**](CellsApi.md#CellsWorkbookDeleteDecryptDocument) | **Delete** /cells/{name}/encryption | Decrypt document.
 [**CellsWorkbookDeleteDocumentUnprotectFromChanges**](CellsApi.md#CellsWorkbookDeleteDocumentUnprotectFromChanges) | **Delete** /cells/{name}/writeProtection | Unprotect document from changes.
 [**CellsWorkbookDeleteUnprotectDocument**](CellsApi.md#CellsWorkbookDeleteUnprotectDocument) | **Delete** /cells/{name}/protection | Unprotect document.
+[**CellsWorkbookDeleteWorkbookBackground**](CellsApi.md#CellsWorkbookDeleteWorkbookBackground) | **Delete** /cells/{name}/background | Set worksheet background image.
 [**CellsWorkbookDeleteWorkbookName**](CellsApi.md#CellsWorkbookDeleteWorkbookName) | **Delete** /cells/{name}/names/{nameName} | Clean workbook&#39;s names.
 [**CellsWorkbookDeleteWorkbookNames**](CellsApi.md#CellsWorkbookDeleteWorkbookNames) | **Delete** /cells/{name}/names | Clean workbook&#39;s names.
 [**CellsWorkbookGetWorkbook**](CellsApi.md#CellsWorkbookGetWorkbook) | **Get** /cells/{name} | Read workbook info or export.
@@ -196,7 +197,9 @@ Method | HTTP request | Description
 [**CellsWorkbookPostWorkbooksTextSearch**](CellsApi.md#CellsWorkbookPostWorkbooksTextSearch) | **Post** /cells/{name}/findText | Search text.
 [**CellsWorkbookPutConvertWorkbook**](CellsApi.md#CellsWorkbookPutConvertWorkbook) | **Put** /cells/convert | Convert workbook from request content to some format.
 [**CellsWorkbookPutDocumentProtectFromChanges**](CellsApi.md#CellsWorkbookPutDocumentProtectFromChanges) | **Put** /cells/{name}/writeProtection | Protect document from changes.
+[**CellsWorkbookPutWorkbookBackground**](CellsApi.md#CellsWorkbookPutWorkbookBackground) | **Put** /cells/{name}/background | Set workbook background image.
 [**CellsWorkbookPutWorkbookCreate**](CellsApi.md#CellsWorkbookPutWorkbookCreate) | **Put** /cells/{name} | Create new workbook using deferent methods.
+[**CellsWorkbookPutWorkbookWaterMarker**](CellsApi.md#CellsWorkbookPutWorkbookWaterMarker) | **Put** /cells/{name}/watermarker | Set workbook background image.
 [**CellsWorksheetValidationsDeleteWorksheetValidation**](CellsApi.md#CellsWorksheetValidationsDeleteWorksheetValidation) | **Delete** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Delete worksheet validation by index.
 [**CellsWorksheetValidationsDeleteWorksheetValidations**](CellsApi.md#CellsWorksheetValidationsDeleteWorksheetValidations) | **Delete** /cells/{name}/worksheets/{sheetName}/validations | Clear all validation in worksheet.
 [**CellsWorksheetValidationsGetWorksheetValidation**](CellsApi.md#CellsWorksheetValidationsGetWorksheetValidation) | **Get** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Get worksheet validation by index.
@@ -264,7 +267,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **fieldIndex** | **int32**|  | 
+  **fieldIndex** | **int64**|  | 
   **dateTimeGroupingType** | **string**|  | 
  **optional** | ***CellsAutoFilterDeleteWorksheetDateFilterOpts** | optional parameters | nil if no parameters
 
@@ -277,12 +280,12 @@ Name | Type | Description  | Notes
 
 
 
- **year** | **optional.Int32**|  | [default to 0]
- **month** | **optional.Int32**|  | [default to 0]
- **day** | **optional.Int32**|  | [default to 0]
- **hour** | **optional.Int32**|  | [default to 0]
- **minute** | **optional.Int32**|  | [default to 0]
- **second** | **optional.Int32**|  | [default to 0]
+ **year** | **optional.Int64**|  | [default to 0]
+ **month** | **optional.Int64**|  | [default to 0]
+ **day** | **optional.Int64**|  | [default to 0]
+ **hour** | **optional.Int64**|  | [default to 0]
+ **minute** | **optional.Int64**|  | [default to 0]
+ **second** | **optional.Int64**|  | [default to 0]
  **folder** | **optional.String**|  | 
  **storage** | **optional.String**| storage name. | 
 
@@ -312,7 +315,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **fieldIndex** | **int32**|  | 
+  **fieldIndex** | **int64**|  | 
  **optional** | ***CellsAutoFilterDeleteWorksheetFilterOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -429,7 +432,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **fieldIndex** | **int32**|  | 
+  **fieldIndex** | **int64**|  | 
  **optional** | ***CellsAutoFilterPostWorksheetMatchBlanksOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -469,7 +472,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **fieldIndex** | **int32**|  | 
+  **fieldIndex** | **int64**|  | 
  **optional** | ***CellsAutoFilterPostWorksheetMatchNonBlanksOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -510,7 +513,7 @@ Name | Type | Description  | Notes
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
   **range_** | **string**|  | 
-  **fieldIndex** | **int32**|  | 
+  **fieldIndex** | **int64**|  | 
  **optional** | ***CellsAutoFilterPutWorksheetColorFilterOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -555,7 +558,7 @@ Name | Type | Description  | Notes
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
   **range_** | **string**|  | 
-  **fieldIndex** | **int32**|  | 
+  **fieldIndex** | **int64**|  | 
   **operatorType1** | **string**|  | 
   **criteria1** | **string**|  | 
  **optional** | ***CellsAutoFilterPutWorksheetCustomFilterOpts** | optional parameters | nil if no parameters
@@ -606,7 +609,7 @@ Name | Type | Description  | Notes
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
   **range_** | **string**|  | 
-  **fieldIndex** | **int32**|  | 
+  **fieldIndex** | **int64**|  | 
   **dateTimeGroupingType** | **string**|  | 
  **optional** | ***CellsAutoFilterPutWorksheetDateFilterOpts** | optional parameters | nil if no parameters
 
@@ -620,12 +623,12 @@ Name | Type | Description  | Notes
 
 
 
- **year** | **optional.Int32**|  | [default to 0]
- **month** | **optional.Int32**|  | [default to 0]
- **day** | **optional.Int32**|  | [default to 0]
- **hour** | **optional.Int32**|  | [default to 0]
- **minute** | **optional.Int32**|  | [default to 0]
- **second** | **optional.Int32**|  | [default to 0]
+ **year** | **optional.Int64**|  | [default to 0]
+ **month** | **optional.Int64**|  | [default to 0]
+ **day** | **optional.Int64**|  | [default to 0]
+ **hour** | **optional.Int64**|  | [default to 0]
+ **minute** | **optional.Int64**|  | [default to 0]
+ **second** | **optional.Int64**|  | [default to 0]
  **matchBlanks** | **optional.Bool**|  | 
  **refresh** | **optional.Bool**|  | 
  **folder** | **optional.String**|  | 
@@ -658,7 +661,7 @@ Name | Type | Description  | Notes
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
   **range_** | **string**|  | 
-  **fieldIndex** | **int32**|  | 
+  **fieldIndex** | **int64**|  | 
   **dynamicFilterType** | **string**|  | 
  **optional** | ***CellsAutoFilterPutWorksheetDynamicFilterOpts** | optional parameters | nil if no parameters
 
@@ -704,7 +707,7 @@ Name | Type | Description  | Notes
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
   **range_** | **string**|  | 
-  **fieldIndex** | **int32**|  | 
+  **fieldIndex** | **int64**|  | 
   **criteria** | **string**|  | 
  **optional** | ***CellsAutoFilterPutWorksheetFilterOpts** | optional parameters | nil if no parameters
 
@@ -750,10 +753,10 @@ Name | Type | Description  | Notes
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
   **range_** | **string**|  | 
-  **fieldIndex** | **int32**|  | 
+  **fieldIndex** | **int64**|  | 
   **isTop** | **bool**|  | 
   **isPercent** | **bool**|  | 
-  **itemCount** | **int32**|  | 
+  **itemCount** | **int64**|  | 
  **optional** | ***CellsAutoFilterPutWorksheetFilterTop10Opts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -800,9 +803,9 @@ Name | Type | Description  | Notes
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
   **range_** | **string**|  | 
-  **fieldIndex** | **int32**|  | 
+  **fieldIndex** | **int64**|  | 
   **iconSetType** | **string**|  | 
-  **iconId** | **int32**|  | 
+  **iconId** | **int64**|  | 
  **optional** | ***CellsAutoFilterPutWorksheetIconFilterOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -847,7 +850,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **autoshapeNumber** | **int32**| The autoshape number. | 
+  **autoshapeNumber** | **int64**| The autoshape number. | 
  **optional** | ***CellsAutoshapesGetWorksheetAutoshapeOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -926,7 +929,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Workbook name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **chartIndex** | **int32**| The chart index. | 
+  **chartIndex** | **int64**| The chart index. | 
  **optional** | ***CellsChartAreaGetChartAreaOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -966,7 +969,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Workbook name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **chartIndex** | **int32**| The chart index. | 
+  **chartIndex** | **int64**| The chart index. | 
  **optional** | ***CellsChartAreaGetChartAreaBorderOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1006,7 +1009,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Workbook name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **chartIndex** | **int32**| The chart index. | 
+  **chartIndex** | **int64**| The chart index. | 
  **optional** | ***CellsChartAreaGetChartAreaFillFormatOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1046,7 +1049,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Workbook name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **chartIndex** | **int32**| The chart index. | 
+  **chartIndex** | **int64**| The chart index. | 
  **optional** | ***CellsChartsDeleteWorksheetChartLegendOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1086,7 +1089,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Workbook name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **chartIndex** | **int32**| The chart index. | 
+  **chartIndex** | **int64**| The chart index. | 
  **optional** | ***CellsChartsDeleteWorksheetChartTitleOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1164,7 +1167,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Workbook name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **chartIndex** | **int32**| The chart index. | 
+  **chartIndex** | **int64**| The chart index. | 
  **optional** | ***CellsChartsDeleteWorksheetDeleteChartOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1204,7 +1207,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **chartNumber** | **int32**| The chart number. | 
+  **chartNumber** | **int64**| The chart number. | 
  **optional** | ***CellsChartsGetWorksheetChartOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1245,7 +1248,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Workbook name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **chartIndex** | **int32**| The chart index. | 
+  **chartIndex** | **int64**| The chart index. | 
  **optional** | ***CellsChartsGetWorksheetChartLegendOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1285,7 +1288,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Workbook name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **chartIndex** | **int32**| The chart index. | 
+  **chartIndex** | **int64**| The chart index. | 
  **optional** | ***CellsChartsGetWorksheetChartTitleOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1363,7 +1366,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **chartIndex** | **int32**|  | 
+  **chartIndex** | **int64**|  | 
  **optional** | ***CellsChartsPostWorksheetChartOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1404,7 +1407,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Workbook name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **chartIndex** | **int32**| The chart index. | 
+  **chartIndex** | **int64**| The chart index. | 
  **optional** | ***CellsChartsPostWorksheetChartLegendOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1445,7 +1448,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Workbook name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **chartIndex** | **int32**| The chart index. | 
+  **chartIndex** | **int64**| The chart index. | 
  **optional** | ***CellsChartsPostWorksheetChartTitleOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1497,10 +1500,10 @@ Name | Type | Description  | Notes
 
 
 
- **upperLeftRow** | **optional.Int32**| New chart upper left row. | [default to 0]
- **upperLeftColumn** | **optional.Int32**| New chart upperleft column. | [default to 0]
- **lowerRightRow** | **optional.Int32**| New chart lower right row. | [default to 0]
- **lowerRightColumn** | **optional.Int32**| New chart lower right column. | [default to 0]
+ **upperLeftRow** | **optional.Int64**| New chart upper left row. | [default to 0]
+ **upperLeftColumn** | **optional.Int64**| New chart upperleft column. | [default to 0]
+ **lowerRightRow** | **optional.Int64**| New chart lower right row. | [default to 0]
+ **lowerRightColumn** | **optional.Int64**| New chart lower right column. | [default to 0]
  **area** | **optional.String**| Specifies values from which to plot the data series.  | 
  **isVertical** | **optional.Bool**| Specifies whether to plot the series from a range of cell values by row or by column.  | [default to true]
  **categoryData** | **optional.String**| Gets or sets the range of category Axis values. It can be a range of cells (such as, \&quot;d1:e10\&quot;).  | 
@@ -1535,7 +1538,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Workbook name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **chartIndex** | **int32**| The chart index. | 
+  **chartIndex** | **int64**| The chart index. | 
  **optional** | ***CellsChartsPutWorksheetChartLegendOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1575,7 +1578,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Workbook name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **chartIndex** | **int32**| The chart index. | 
+  **chartIndex** | **int64**| The chart index. | 
  **optional** | ***CellsChartsPutWorksheetChartTitleOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1616,7 +1619,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **index** | **int32**|  | 
+  **index** | **int64**|  | 
  **optional** | ***CellsConditionalFormattingsDeleteWorksheetConditionalFormattingOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1656,10 +1659,10 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **startRow** | **int32**|  | 
-  **startColumn** | **int32**|  | 
-  **totalRows** | **int32**|  | 
-  **totalColumns** | **int32**|  | 
+  **startRow** | **int64**|  | 
+  **startColumn** | **int64**|  | 
+  **totalRows** | **int64**|  | 
+  **totalColumns** | **int64**|  | 
  **optional** | ***CellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1740,7 +1743,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **index** | **int32**|  | 
+  **index** | **int64**|  | 
  **optional** | ***CellsConditionalFormattingsGetWorksheetConditionalFormattingOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1859,7 +1862,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **index** | **int32**|  | 
+  **index** | **int64**|  | 
   **cellArea** | **string**|  | 
   **type_** | **string**|  | 
   **operatorType** | **string**|  | 
@@ -1909,7 +1912,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **index** | **int32**|  | 
+  **index** | **int64**|  | 
   **cellArea** | **string**|  | 
  **optional** | ***CellsConditionalFormattingsPutWorksheetFormatConditionAreaOpts** | optional parameters | nil if no parameters
 
@@ -1951,7 +1954,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **index** | **int32**|  | 
+  **index** | **int64**|  | 
   **type_** | **string**|  | 
   **operatorType** | **string**|  | 
   **formula1** | **string**|  | 
@@ -1999,8 +2002,8 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **columnIndex** | **int32**| The column index. | 
-  **columns** | **int32**| The columns. | 
+  **columnIndex** | **int64**| The column index. | 
+  **columns** | **int64**| The columns. | 
   **updateReference** | **bool**| The update reference. | 
  **optional** | ***CellsDeleteWorksheetColumnsOpts** | optional parameters | nil if no parameters
 
@@ -2043,7 +2046,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet bame. | 
-  **rowIndex** | **int32**| The row index. | 
+  **rowIndex** | **int64**| The row index. | 
  **optional** | ***CellsDeleteWorksheetRowOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -2083,7 +2086,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet bame. | 
-  **startrow** | **int32**| The begin row index to be operated. | 
+  **startrow** | **int64**| The begin row index to be operated. | 
  **optional** | ***CellsDeleteWorksheetRowsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -2094,7 +2097,7 @@ Name | Type | Description  | Notes
 
 
 
- **totalRows** | **optional.Int32**| Number of rows to be operated. | [default to 1]
+ **totalRows** | **optional.Int64**| Number of rows to be operated. | [default to 1]
  **updateReference** | **optional.Bool**| Indicates if update references in other worksheets. | [default to true]
  **folder** | **optional.String**| The document folder. | 
  **storage** | **optional.String**| storage name. | 
@@ -2254,8 +2257,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **offest** | **optional.Int32**| Begginig offset. | [default to 0]
- **count** | **optional.Int32**| Maximum amount of cells in the response. | [default to 0]
+ **offest** | **optional.Int64**| Begginig offset. | [default to 0]
+ **count** | **optional.Int64**| Maximum amount of cells in the response. | [default to 0]
  **folder** | **optional.String**| Document&#39;s folder name. | 
  **storage** | **optional.String**| storage name. | 
 
@@ -2285,7 +2288,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **columnIndex** | **int32**| The column index. | 
+  **columnIndex** | **int64**| The column index. | 
  **optional** | ***CellsGetWorksheetColumnOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -2363,7 +2366,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **rowIndex** | **int32**| The row index. | 
+  **rowIndex** | **int64**| The row index. | 
  **optional** | ***CellsGetWorksheetRowOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -2441,7 +2444,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **hyperlinkIndex** | **int32**| The hyperlink&#39;s index. | 
+  **hyperlinkIndex** | **int64**| The hyperlink&#39;s index. | 
  **optional** | ***CellsHypelinksDeleteWorksheetHyperlinkOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -2519,7 +2522,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **hyperlinkIndex** | **int32**| The hyperlink&#39;s index. | 
+  **hyperlinkIndex** | **int64**| The hyperlink&#39;s index. | 
  **optional** | ***CellsHypelinksGetWorksheetHyperlinkOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -2597,7 +2600,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **hyperlinkIndex** | **int32**| The hyperlink&#39;s index. | 
+  **hyperlinkIndex** | **int64**| The hyperlink&#39;s index. | 
  **optional** | ***CellsHypelinksPostWorksheetHyperlinkOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -2638,10 +2641,10 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **firstRow** | **int32**|  | 
-  **firstColumn** | **int32**|  | 
-  **totalRows** | **int32**|  | 
-  **totalColumns** | **int32**|  | 
+  **firstRow** | **int64**|  | 
+  **firstColumn** | **int64**|  | 
+  **totalRows** | **int64**|  | 
+  **totalColumns** | **int64**|  | 
   **address** | **string**|  | 
  **optional** | ***CellsHypelinksPutWorksheetHyperlinkOpts** | optional parameters | nil if no parameters
 
@@ -2686,7 +2689,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **listObjectIndex** | **int32**| List object index | 
+  **listObjectIndex** | **int64**| List object index | 
  **optional** | ***CellsListObjectsDeleteWorksheetListObjectOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -2764,7 +2767,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **listobjectindex** | **int32**| list object index. | 
+  **listobjectindex** | **int64**| list object index. | 
  **optional** | ***CellsListObjectsGetWorksheetListObjectOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -2842,7 +2845,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **listObjectIndex** | **int32**| list Object index | 
+  **listObjectIndex** | **int64**| list Object index | 
  **optional** | ***CellsListObjectsPostWorksheetListObjectOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -2883,7 +2886,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **listObjectIndex** | **int32**|  | 
+  **listObjectIndex** | **int64**|  | 
  **optional** | ***CellsListObjectsPostWorksheetListObjectConvertToRangeOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -2923,7 +2926,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **listObjectIndex** | **int32**|  | 
+  **listObjectIndex** | **int64**|  | 
  **optional** | ***CellsListObjectsPostWorksheetListObjectSortTableOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -2964,7 +2967,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **listObjectIndex** | **int32**|  | 
+  **listObjectIndex** | **int64**|  | 
   **destsheetName** | **string**|  | 
  **optional** | ***CellsListObjectsPostWorksheetListObjectSummarizeWithPivotTableOpts** | optional parameters | nil if no parameters
 
@@ -3007,10 +3010,10 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **startRow** | **int32**| The start row of the list range. | 
-  **startColumn** | **int32**| The start row of the list range. | 
-  **endRow** | **int32**| The start row of the list range. | 
-  **endColumn** | **int32**| The start row of the list range. | 
+  **startRow** | **int64**| The start row of the list range. | 
+  **startColumn** | **int64**| The start row of the list range. | 
+  **endRow** | **int64**| The start row of the list range. | 
+  **endColumn** | **int64**| The start row of the list range. | 
  **optional** | ***CellsListObjectsPutWorksheetListObjectOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -3055,7 +3058,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worsheet name. | 
-  **oleObjectIndex** | **int32**| Ole object index | 
+  **oleObjectIndex** | **int64**| Ole object index | 
  **optional** | ***CellsOleObjectsDeleteWorksheetOleObjectOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -3133,7 +3136,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **objectNumber** | **int32**| The object number. | 
+  **objectNumber** | **int64**| The object number. | 
  **optional** | ***CellsOleObjectsGetWorksheetOleObjectOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -3212,7 +3215,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worsheet name. | 
-  **oleObjectIndex** | **int32**| Ole object index | 
+  **oleObjectIndex** | **int64**| Ole object index | 
  **optional** | ***CellsOleObjectsPostUpdateWorksheetOleObjectOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -3263,10 +3266,10 @@ Name | Type | Description  | Notes
 
 
  **oleObject** | [**optional.Interface of OleObject**](OleObject.md)| Ole Object | 
- **upperLeftRow** | **optional.Int32**| Upper left row index | [default to 0]
- **upperLeftColumn** | **optional.Int32**| Upper left column index | [default to 0]
- **height** | **optional.Int32**| Height of oleObject, in unit of pixel | [default to 0]
- **width** | **optional.Int32**| Width of oleObject, in unit of pixel | [default to 0]
+ **upperLeftRow** | **optional.Int64**| Upper left row index | [default to 0]
+ **upperLeftColumn** | **optional.Int64**| Upper left column index | [default to 0]
+ **height** | **optional.Int64**| Height of oleObject, in unit of pixel | [default to 0]
+ **width** | **optional.Int64**| Width of oleObject, in unit of pixel | [default to 0]
  **oleFile** | **optional.String**| OLE filename | 
  **imageFile** | **optional.String**| Image filename | 
  **folder** | **optional.String**| The workbook folder. | 
@@ -3298,7 +3301,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **index** | **int32**|  | 
+  **index** | **int64**|  | 
  **optional** | ***CellsPageBreaksDeleteHorizontalPageBreakOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -3347,7 +3350,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **row** | **optional.Int32**|  | 
+ **row** | **optional.Int64**|  | 
  **folder** | **optional.String**|  | 
  **storage** | **optional.String**| storage name. | 
 
@@ -3377,7 +3380,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **index** | **int32**|  | 
+  **index** | **int64**|  | 
  **optional** | ***CellsPageBreaksDeleteVerticalPageBreakOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -3426,7 +3429,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **column** | **optional.Int32**|  | 
+ **column** | **optional.Int64**|  | 
  **folder** | **optional.String**|  | 
  **storage** | **optional.String**| storage name. | 
 
@@ -3456,7 +3459,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **index** | **int32**|  | 
+  **index** | **int64**|  | 
  **optional** | ***CellsPageBreaksGetHorizontalPageBreakOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -3534,7 +3537,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **index** | **int32**|  | 
+  **index** | **int64**|  | 
  **optional** | ***CellsPageBreaksGetVerticalPageBreakOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -3622,10 +3625,10 @@ Name | Type | Description  | Notes
 
 
  **cellname** | **optional.String**|  | 
- **row** | **optional.Int32**|  | 
- **column** | **optional.Int32**|  | 
- **startColumn** | **optional.Int32**|  | 
- **endColumn** | **optional.Int32**|  | 
+ **row** | **optional.Int64**|  | 
+ **column** | **optional.Int64**|  | 
+ **startColumn** | **optional.Int64**|  | 
+ **endColumn** | **optional.Int64**|  | 
  **folder** | **optional.String**|  | 
  **storage** | **optional.String**| storage name. | 
 
@@ -3665,10 +3668,10 @@ Name | Type | Description  | Notes
 
 
  **cellname** | **optional.String**|  | 
- **column** | **optional.Int32**|  | 
- **row** | **optional.Int32**|  | 
- **startRow** | **optional.Int32**|  | 
- **endRow** | **optional.Int32**|  | 
+ **column** | **optional.Int64**|  | 
+ **row** | **optional.Int64**|  | 
+ **startRow** | **optional.Int64**|  | 
+ **endRow** | **optional.Int64**|  | 
  **folder** | **optional.String**|  | 
  **storage** | **optional.String**| storage name. | 
 
@@ -3850,7 +3853,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **section** | **int32**|  | 
+  **section** | **int64**|  | 
   **script** | **string**|  | 
   **isFirstPage** | **bool**|  | 
  **optional** | ***CellsPageSetupPostFooterOpts** | optional parameters | nil if no parameters
@@ -3894,7 +3897,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **section** | **int32**|  | 
+  **section** | **int64**|  | 
   **script** | **string**|  | 
   **isFirstPage** | **bool**|  | 
  **optional** | ***CellsPageSetupPostHeaderOpts** | optional parameters | nil if no parameters
@@ -3977,7 +3980,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worsheet name. | 
-  **pictureIndex** | **int32**| Picture index | 
+  **pictureIndex** | **int64**| Picture index | 
  **optional** | ***CellsPicturesDeleteWorksheetPictureOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -4055,7 +4058,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **pictureIndex** | **int32**| The picture index. | 
+  **pictureIndex** | **int64**| The picture index. | 
  **optional** | ***CellsPicturesGetWorksheetPictureOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -4134,7 +4137,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **pictureIndex** | **int32**| The picture&#39;s index. | 
+  **pictureIndex** | **int64**| The picture&#39;s index. | 
  **optional** | ***CellsPicturesPostWorksheetPictureOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -4185,10 +4188,10 @@ Name | Type | Description  | Notes
 
 
  **picture** | [**optional.Interface of Picture**](Picture.md)| Pictute object | 
- **upperLeftRow** | **optional.Int32**| The image upper left row. | [default to 0]
- **upperLeftColumn** | **optional.Int32**| The image upper left column. | [default to 0]
- **lowerRightRow** | **optional.Int32**| The image low right row. | [default to 0]
- **lowerRightColumn** | **optional.Int32**| The image low right column. | [default to 0]
+ **upperLeftRow** | **optional.Int64**| The image upper left row. | [default to 0]
+ **upperLeftColumn** | **optional.Int64**| The image upper left column. | [default to 0]
+ **lowerRightRow** | **optional.Int64**| The image low right row. | [default to 0]
+ **lowerRightColumn** | **optional.Int64**| The image low right column. | [default to 0]
  **picturePath** | **optional.String**| The picture path, if not provided the picture data is inspected in the request body. | 
  **folder** | **optional.String**| The workbook folder. | 
  **storage** | **optional.String**| storage name. | 
@@ -4219,7 +4222,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **pivotTableIndex** | **int32**| Pivot table index | 
+  **pivotTableIndex** | **int64**| Pivot table index | 
   **pivotFieldType** | **string**| The fields area type. | 
  **optional** | ***CellsPivotTablesDeletePivotTableFieldOpts** | optional parameters | nil if no parameters
 
@@ -4262,7 +4265,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **pivotTableIndex** | **int32**| Pivot table index | 
+  **pivotTableIndex** | **int64**| Pivot table index | 
  **optional** | ***CellsPivotTablesDeleteWorksheetPivotTableOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -4302,8 +4305,8 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **pivotTableIndex** | **int32**|  | 
-  **fieldIndex** | **int32**|  | 
+  **pivotTableIndex** | **int64**|  | 
+  **fieldIndex** | **int64**|  | 
  **optional** | ***CellsPivotTablesDeleteWorksheetPivotTableFilterOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -4345,7 +4348,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **pivotTableIndex** | **int32**|  | 
+  **pivotTableIndex** | **int64**|  | 
  **optional** | ***CellsPivotTablesDeleteWorksheetPivotTableFiltersOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -4424,8 +4427,8 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **pivotTableIndex** | **int32**| Pivot table index | 
-  **pivotFieldIndex** | **int32**| The field index in the base fields. | 
+  **pivotTableIndex** | **int64**| Pivot table index | 
+  **pivotFieldIndex** | **int64**| The field index in the base fields. | 
   **pivotFieldType** | **string**| The fields area type. | 
  **optional** | ***CellsPivotTablesGetPivotTableFieldOpts** | optional parameters | nil if no parameters
 
@@ -4468,7 +4471,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **pivottableIndex** | **int32**|  | 
+  **pivottableIndex** | **int64**|  | 
  **optional** | ***CellsPivotTablesGetWorksheetPivotTableOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -4508,8 +4511,8 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **pivotTableIndex** | **int32**|  | 
-  **filterIndex** | **int32**|  | 
+  **pivotTableIndex** | **int64**|  | 
+  **filterIndex** | **int64**|  | 
  **optional** | ***CellsPivotTablesGetWorksheetPivotTableFilterOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -4550,7 +4553,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **pivotTableIndex** | **int32**|  | 
+  **pivotTableIndex** | **int64**|  | 
  **optional** | ***CellsPivotTablesGetWorksheetPivotTableFiltersOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -4628,9 +4631,9 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **pivotTableIndex** | **int32**| Pivot table index | 
-  **column** | **int32**|  | 
-  **row** | **int32**|  | 
+  **pivotTableIndex** | **int64**| Pivot table index | 
+  **column** | **int64**|  | 
+  **row** | **int64**|  | 
  **optional** | ***CellsPivotTablesPostPivotTableCellStyleOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -4674,10 +4677,10 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **pivotTableIndex** | **int32**|  | 
+  **pivotTableIndex** | **int64**|  | 
   **pivotFieldType** | **string**|  | 
-  **fieldIndex** | **int32**|  | 
-  **itemIndex** | **int32**|  | 
+  **fieldIndex** | **int64**|  | 
+  **itemIndex** | **int64**|  | 
   **isHide** | **bool**|  | 
  **optional** | ***CellsPivotTablesPostPivotTableFieldHideItemOpts** | optional parameters | nil if no parameters
 
@@ -4723,8 +4726,8 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **pivotTableIndex** | **int32**|  | 
-  **fieldIndex** | **int32**|  | 
+  **pivotTableIndex** | **int64**|  | 
+  **fieldIndex** | **int64**|  | 
   **from** | **string**|  | 
   **to** | **string**|  | 
  **optional** | ***CellsPivotTablesPostPivotTableFieldMoveToOpts** | optional parameters | nil if no parameters
@@ -4769,7 +4772,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **pivotTableIndex** | **int32**| Pivot table index | 
+  **pivotTableIndex** | **int64**| Pivot table index | 
  **optional** | ***CellsPivotTablesPostPivotTableStyleOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -4811,7 +4814,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **pivotTableIndex** | **int32**| Pivot table index | 
+  **pivotTableIndex** | **int64**| Pivot table index | 
  **optional** | ***CellsPivotTablesPostWorksheetPivotTableCalculateOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -4851,7 +4854,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **pivotTableIndex** | **int32**|  | 
+  **pivotTableIndex** | **int64**|  | 
  **optional** | ***CellsPivotTablesPostWorksheetPivotTableMoveOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -4862,8 +4865,8 @@ Name | Type | Description  | Notes
 
 
 
- **row** | **optional.Int32**|  | 
- **column** | **optional.Int32**|  | 
+ **row** | **optional.Int64**|  | 
+ **column** | **optional.Int64**|  | 
  **destCellName** | **optional.String**|  | 
  **folder** | **optional.String**|  | 
  **storage** | **optional.String**| storage name. | 
@@ -4894,7 +4897,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **pivotTableIndex** | **int32**| Pivot table index | 
+  **pivotTableIndex** | **int64**| Pivot table index | 
   **pivotFieldType** | **string**| The fields area type. | 
  **optional** | ***CellsPivotTablesPutPivotTableFieldOpts** | optional parameters | nil if no parameters
 
@@ -4981,7 +4984,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **pivotTableIndex** | **int32**|  | 
+  **pivotTableIndex** | **int64**|  | 
  **optional** | ***CellsPivotTablesPutWorksheetPivotTableFilterOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -5115,10 +5118,10 @@ Name | Type | Description  | Notes
 
 
  **range_** | **optional.String**| The range. | 
- **startRow** | **optional.Int32**| The start row. | 
- **startColumn** | **optional.Int32**| The start column. | 
- **endRow** | **optional.Int32**| The end row. | 
- **endColumn** | **optional.Int32**| The end column. | 
+ **startRow** | **optional.Int64**| The start row. | 
+ **startColumn** | **optional.Int64**| The start column. | 
+ **endRow** | **optional.Int64**| The end row. | 
+ **endColumn** | **optional.Int64**| The end column. | 
  **folder** | **optional.String**| The workbook folder. | 
  **storage** | **optional.String**| storage name. | 
 
@@ -5158,10 +5161,10 @@ Name | Type | Description  | Notes
 
 
  **range_** | **optional.String**| The range. | 
- **startRow** | **optional.Int32**| The start row. | 
- **startColumn** | **optional.Int32**| The start column. | 
- **endRow** | **optional.Int32**| The end row. | 
- **endColumn** | **optional.Int32**| The end column. | 
+ **startRow** | **optional.Int64**| The start row. | 
+ **startColumn** | **optional.Int64**| The start column. | 
+ **endRow** | **optional.Int64**| The end row. | 
+ **endColumn** | **optional.Int64**| The end column. | 
  **folder** | **optional.String**| The workbook folder. | 
  **storage** | **optional.String**| storage name. | 
 
@@ -5191,7 +5194,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **columnIndex** | **int32**| The column index. | 
+  **columnIndex** | **int64**| The column index. | 
  **optional** | ***CellsPostColumnStyleOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -5246,8 +5249,8 @@ Name | Type | Description  | Notes
 
 
  **cellname** | **optional.String**| Source cell name | 
- **row** | **optional.Int32**| Source row | 
- **column** | **optional.Int32**| Source column | 
+ **row** | **optional.Int64**| Source row | 
+ **column** | **optional.Int64**| Source column | 
  **folder** | **optional.String**| Folder name | 
  **storage** | **optional.String**| storage name. | 
 
@@ -5277,9 +5280,9 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **sourceColumnIndex** | **int32**| Source column index | 
-  **destinationColumnIndex** | **int32**| Destination column index | 
-  **columnNumber** | **int32**| The copied column number | 
+  **sourceColumnIndex** | **int64**| Source column index | 
+  **destinationColumnIndex** | **int64**| Destination column index | 
+  **columnNumber** | **int64**| The copied column number | 
  **optional** | ***CellsPostCopyWorksheetColumnsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -5322,9 +5325,9 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **sourceRowIndex** | **int32**| Source row index | 
-  **destinationRowIndex** | **int32**| Destination row index | 
-  **rowNumber** | **int32**| The copied row number | 
+  **sourceRowIndex** | **int64**| Source row index | 
+  **destinationRowIndex** | **int64**| Destination row index | 
+  **rowNumber** | **int64**| The copied row number | 
  **optional** | ***CellsPostCopyWorksheetRowsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -5367,8 +5370,8 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **firstIndex** | **int32**| The first column index to be operated. | 
-  **lastIndex** | **int32**| The last column index to be operated. | 
+  **firstIndex** | **int64**| The first column index to be operated. | 
+  **lastIndex** | **int64**| The last column index to be operated. | 
  **optional** | ***CellsPostGroupWorksheetColumnsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -5410,8 +5413,8 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **firstIndex** | **int32**| The first row index to be operated. | 
-  **lastIndex** | **int32**| The last row index to be operated. | 
+  **firstIndex** | **int64**| The first row index to be operated. | 
+  **lastIndex** | **int64**| The last row index to be operated. | 
  **optional** | ***CellsPostGroupWorksheetRowsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -5453,8 +5456,8 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **startColumn** | **int32**| The begin column index to be operated. | 
-  **totalColumns** | **int32**| Number of columns to be operated. | 
+  **startColumn** | **int64**| The begin column index to be operated. | 
+  **totalColumns** | **int64**| Number of columns to be operated. | 
  **optional** | ***CellsPostHideWorksheetColumnsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -5495,8 +5498,8 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **startrow** | **int32**| The begin row index to be operated. | 
-  **totalRows** | **int32**| Number of rows to be operated. | 
+  **startrow** | **int64**| The begin row index to be operated. | 
+  **totalRows** | **int64**| Number of rows to be operated. | 
  **optional** | ***CellsPostHideWorksheetRowsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -5537,7 +5540,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **rowIndex** | **int32**| The row index. | 
+  **rowIndex** | **int64**| The row index. | 
  **optional** | ***CellsPostRowStyleOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -5664,7 +5667,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **columnIndex** | **int32**| The column index. | 
+  **columnIndex** | **int64**| The column index. | 
   **width** | **float64**| The width. | 
  **optional** | ***CellsPostSetWorksheetColumnWidthOpts** | optional parameters | nil if no parameters
 
@@ -5706,8 +5709,8 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **firstIndex** | **int32**| The first column index to be operated. | 
-  **lastIndex** | **int32**| The last column index to be operated. | 
+  **firstIndex** | **int64**| The first column index to be operated. | 
+  **lastIndex** | **int64**| The last column index to be operated. | 
  **optional** | ***CellsPostUngroupWorksheetColumnsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -5748,8 +5751,8 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **firstIndex** | **int32**| The first row index to be operated. | 
-  **lastIndex** | **int32**| The last row index to be operated. | 
+  **firstIndex** | **int64**| The first row index to be operated. | 
+  **lastIndex** | **int64**| The last row index to be operated. | 
  **optional** | ***CellsPostUngroupWorksheetRowsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -5791,8 +5794,8 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **startcolumn** | **int32**| The begin column index to be operated. | 
-  **totalColumns** | **int32**| Number of columns to be operated. | 
+  **startcolumn** | **int64**| The begin column index to be operated. | 
+  **totalColumns** | **int64**| Number of columns to be operated. | 
  **optional** | ***CellsPostUnhideWorksheetColumnsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -5834,8 +5837,8 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **startrow** | **int32**| The begin row index to be operated. | 
-  **totalRows** | **int32**| Number of rows to be operated. | 
+  **startrow** | **int64**| The begin row index to be operated. | 
+  **totalRows** | **int64**| Number of rows to be operated. | 
  **optional** | ***CellsPostUnhideWorksheetRowsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -5959,7 +5962,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **rowIndex** | **int32**| The row index. | 
+  **rowIndex** | **int64**| The row index. | 
  **optional** | ***CellsPostUpdateWorksheetRowOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -6043,10 +6046,10 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **startRow** | **int32**| The start row. | 
-  **startColumn** | **int32**| The start column. | 
-  **totalRows** | **int32**| The total rows | 
-  **totalColumns** | **int32**| The total columns. | 
+  **startRow** | **int64**| The start row. | 
+  **startColumn** | **int64**| The start column. | 
+  **totalRows** | **int64**| The total rows | 
+  **totalColumns** | **int64**| The total columns. | 
  **optional** | ***CellsPostWorksheetMergeOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -6089,10 +6092,10 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **startRow** | **int32**| The start row. | 
-  **startColumn** | **int32**| The start column. | 
-  **totalRows** | **int32**| The total rows | 
-  **totalColumns** | **int32**| The total columns. | 
+  **startRow** | **int64**| The start row. | 
+  **startColumn** | **int64**| The start column. | 
+  **totalRows** | **int64**| The total rows | 
+  **totalColumns** | **int64**| The total columns. | 
  **optional** | ***CellsPostWorksheetUnmergeOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -6322,8 +6325,8 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **columnIndex** | **int32**| The column index. | 
-  **columns** | **int32**| The columns. | 
+  **columnIndex** | **int64**| The column index. | 
+  **columns** | **int64**| The columns. | 
  **optional** | ***CellsPutInsertWorksheetColumnsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -6365,7 +6368,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **rowIndex** | **int32**| The new row index. | 
+  **rowIndex** | **int64**| The new row index. | 
  **optional** | ***CellsPutInsertWorksheetRowOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -6405,7 +6408,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| The workbook name. | 
   **sheetName** | **string**| The worksheet name. | 
-  **startrow** | **int32**| The begin row index to be operated. | 
+  **startrow** | **int64**| The begin row index to be operated. | 
  **optional** | ***CellsPutInsertWorksheetRowsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -6416,7 +6419,7 @@ Name | Type | Description  | Notes
 
 
 
- **totalRows** | **optional.Int32**| Number of rows to be operated. | [default to 1]
+ **totalRows** | **optional.Int64**| Number of rows to be operated. | [default to 1]
  **updateReference** | **optional.Bool**| Indicates if update references in other worksheets. | [default to true]
  **folder** | **optional.String**| The document folder. | 
  **storage** | **optional.String**| storage name. | 
@@ -6570,8 +6573,8 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| workbook name | 
   **sheetName** | **string**| worksheet name | 
-  **destRow** | **int32**| The start row of the dest range. | 
-  **destColumn** | **int32**| The start column of the dest range. | 
+  **destRow** | **int64**| The start row of the dest range. | 
+  **destColumn** | **int64**| The start column of the dest range. | 
  **optional** | ***CellsRangesPostWorksheetCellsRangeMoveToOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -6893,7 +6896,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| document name. | 
   **sheetName** | **string**| worksheet name. | 
-  **shapeindex** | **int32**| shape index in worksheet shapes. | 
+  **shapeindex** | **int64**| shape index in worksheet shapes. | 
  **optional** | ***CellsShapesDeleteWorksheetShapeOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -6971,7 +6974,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| document name. | 
   **sheetName** | **string**| worksheet name. | 
-  **shapeindex** | **int32**| shape index in worksheet shapes. | 
+  **shapeindex** | **int64**| shape index in worksheet shapes. | 
  **optional** | ***CellsShapesGetWorksheetShapeOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -7049,7 +7052,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| document name. | 
   **sheetName** | **string**| worksheet name. | 
-  **shapeindex** | **int32**| shape index in worksheet shapes. | 
+  **shapeindex** | **int64**| shape index in worksheet shapes. | 
  **optional** | ***CellsShapesPostWorksheetShapeOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -7091,12 +7094,12 @@ Name | Type | Description  | Notes
   **name** | **string**| document name. | 
   **sheetName** | **string**| worksheet name. | 
   **drawingType** | **string**| shape object type | 
-  **upperLeftRow** | **int32**| Upper left row index. | 
-  **upperLeftColumn** | **int32**| Upper left column index. | 
-  **top** | **int32**| Represents the vertical offset of Spinner from its left row, in unit of pixel. | 
-  **left** | **int32**| Represents the horizontal offset of Spinner from its left column, in unit of pixel. | 
-  **width** | **int32**| Represents the height of Spinner, in unit of pixel. | 
-  **height** | **int32**| Represents the width of Spinner, in unit of pixel. | 
+  **upperLeftRow** | **int64**| Upper left row index. | 
+  **upperLeftColumn** | **int64**| Upper left column index. | 
+  **top** | **int64**| Represents the vertical offset of Spinner from its left row, in unit of pixel. | 
+  **left** | **int64**| Represents the horizontal offset of Spinner from its left column, in unit of pixel. | 
+  **width** | **int64**| Represents the height of Spinner, in unit of pixel. | 
+  **height** | **int64**| Represents the width of Spinner, in unit of pixel. | 
  **optional** | ***CellsShapesPutWorksheetShapeOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -7250,6 +7253,42 @@ Name | Type | Description  | Notes
 
  **protection** | [**optional.Interface of WorkbookProtectionRequest**](WorkbookProtectionRequest.md)| Protection settings, only password can be specified. | 
  **folder** | **optional.String**| The document folder. | 
+ **storage** | **optional.String**| storage name. | 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CellsWorkbookDeleteWorkbookBackground**
+> CellsCloudResponse CellsWorkbookDeleteWorkbookBackground(ctx, name, optional)
+Set worksheet background image.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **name** | **string**|  | 
+ **optional** | ***CellsWorkbookDeleteWorkbookBackgroundOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a CellsWorkbookDeleteWorkbookBackgroundOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **folder** | **optional.String**|  | 
  **storage** | **optional.String**| storage name. | 
 
 ### Return type
@@ -7621,8 +7660,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **autoFitterOptions** | [**optional.Interface of AutoFitterOptions**](AutoFitterOptions.md)| Auto Fitter Options. | 
- **startRow** | **optional.Int32**| Start row. | 
- **endRow** | **optional.Int32**| End row. | 
+ **startRow** | **optional.Int64**| Start row. | 
+ **endRow** | **optional.Int64**| End row. | 
  **onlyAuto** | **optional.Bool**| Only auto. | [default to false]
  **folder** | **optional.String**| Document&#39;s folder. | 
  **storage** | **optional.String**| storage name. | 
@@ -7886,11 +7925,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **format** | **optional.String**| Split format. | 
- **from** | **optional.Int32**| Start worksheet index. | [default to 0]
- **to** | **optional.Int32**| End worksheet index. | [default to 0]
- **horizontalResolution** | **optional.Int32**| Image horizontal resolution. | [default to 0]
- **verticalResolution** | **optional.Int32**| Image vertical resolution. | [default to 0]
+ **from** | **optional.Int64**| Start worksheet index. | [default to 0]
+ **to** | **optional.Int64**| End worksheet index. | [default to 0]
+ **horizontalResolution** | **optional.Int64**| Image horizontal resolution. | [default to 0]
+ **verticalResolution** | **optional.Int64**| Image vertical resolution. | [default to 0]
  **folder** | **optional.String**| The workbook folder. | 
+ **outFolder** | **optional.String**| out Folder. | 
  **storage** | **optional.String**| storage name. | 
 
 ### Return type
@@ -8033,7 +8073,7 @@ Convert workbook from request content to some format.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **workbook** | **string**|  | 
+  **workbook** | ***os.File**|  | 
  **optional** | ***CellsWorkbookPutConvertWorkbookOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -8056,7 +8096,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -8098,6 +8138,44 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **CellsWorkbookPutWorkbookBackground**
+> CellsCloudResponse CellsWorkbookPutWorkbookBackground(ctx, name, png, optional)
+Set workbook background image.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **name** | **string**|  | 
+  **png** | **string**|  | 
+ **optional** | ***CellsWorkbookPutWorkbookBackgroundOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a CellsWorkbookPutWorkbookBackgroundOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **folder** | **optional.String**|  | 
+ **storage** | **optional.String**| storage name. | 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **CellsWorkbookPutWorkbookCreate**
 > WorkbookResponse CellsWorkbookPutWorkbookCreate(ctx, name, optional)
 Create new workbook using deferent methods.
@@ -8118,12 +8196,50 @@ Name | Type | Description  | Notes
 
  **templateFile** | **optional.String**| The template file, if the data not provided default workbook is created. | 
  **dataFile** | **optional.String**| Smart marker data file, if the data not provided the request content is checked for the data. | 
+ **isWriteOver** | **optional.Bool**| write over file. | 
  **folder** | **optional.String**| The new document folder. | 
  **storage** | **optional.String**| storage name. | 
 
 ### Return type
 
 [**WorkbookResponse**](WorkbookResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CellsWorkbookPutWorkbookWaterMarker**
+> CellsCloudResponse CellsWorkbookPutWorkbookWaterMarker(ctx, name, optional)
+Set workbook background image.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **name** | **string**|  | 
+ **optional** | ***CellsWorkbookPutWorkbookWaterMarkerOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a CellsWorkbookPutWorkbookWaterMarkerOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **folder** | **optional.String**|  | 
+ **storage** | **optional.String**| storage name. | 
+ **textWaterMarkerRequest** | [**optional.Interface of TextWaterMarkerRequest**](TextWaterMarkerRequest.md)| The text water marker request. | 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
 
 ### Authorization
 
@@ -8147,7 +8263,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **validationIndex** | **int32**| The validation index. | 
+  **validationIndex** | **int64**| The validation index. | 
  **optional** | ***CellsWorksheetValidationsDeleteWorksheetValidationOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -8225,7 +8341,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **validationIndex** | **int32**| The validation index. | 
+  **validationIndex** | **int64**| The validation index. | 
  **optional** | ***CellsWorksheetValidationsGetWorksheetValidationOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -8303,7 +8419,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **validationIndex** | **int32**| The validation index. | 
+  **validationIndex** | **int64**| The validation index. | 
  **optional** | ***CellsWorksheetValidationsPostWorksheetValidationOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -8577,10 +8693,10 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **row** | **int32**|  | 
-  **column** | **int32**|  | 
-  **freezedRows** | **int32**|  | 
-  **freezedColumns** | **int32**|  | 
+  **row** | **int64**|  | 
+  **column** | **int64**|  | 
+  **freezedRows** | **int64**|  | 
+  **freezedColumns** | **int64**|  | 
  **optional** | ***CellsWorksheetsDeleteWorksheetFreezePanesOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -8669,8 +8785,10 @@ Name | Type | Description  | Notes
 
 
  **format** | **optional.String**| The exported file format. | 
- **verticalResolution** | **optional.Int32**| Image vertical resolution. | [default to 0]
- **horizontalResolution** | **optional.Int32**| Image horizontal resolution. | [default to 0]
+ **verticalResolution** | **optional.Int64**| Image vertical resolution. | [default to 0]
+ **horizontalResolution** | **optional.Int64**| Image horizontal resolution. | [default to 0]
+ **area** | **optional.String**| Exported area. | 
+ **pageIndex** | **optional.Int32**| Exported page index. | 
  **folder** | **optional.String**| The document folder. | 
  **storage** | **optional.String**| storage name. | 
 
@@ -8818,7 +8936,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| Document name. | 
   **sheetName** | **string**| Worksheet name. | 
-  **mergedCellIndex** | **int32**| Merged cell index. | 
+  **mergedCellIndex** | **int64**| Merged cell index. | 
  **optional** | ***CellsWorksheetsGetWorksheetMergedCellOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -8970,8 +9088,8 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **firstColumn** | **int32**|  | 
-  **lastColumn** | **int32**|  | 
+  **firstColumn** | **int64**|  | 
+  **lastColumn** | **int64**|  | 
  **optional** | ***CellsWorksheetsPostAutofitWorksheetColumnsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -8984,8 +9102,8 @@ Name | Type | Description  | Notes
 
 
  **autoFitterOptions** | [**optional.Interface of AutoFitterOptions**](AutoFitterOptions.md)|  | 
- **firstRow** | **optional.Int32**|  | 
- **lastRow** | **optional.Int32**|  | 
+ **firstRow** | **optional.Int64**|  | 
+ **lastRow** | **optional.Int64**|  | 
  **folder** | **optional.String**|  | 
  **storage** | **optional.String**| storage name. | 
 
@@ -9015,9 +9133,9 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **rowIndex** | **int32**|  | 
-  **firstColumn** | **int32**|  | 
-  **lastColumn** | **int32**|  | 
+  **rowIndex** | **int64**|  | 
+  **firstColumn** | **int64**|  | 
+  **lastColumn** | **int64**|  | 
  **optional** | ***CellsWorksheetsPostAutofitWorksheetRowOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -9070,8 +9188,8 @@ Name | Type | Description  | Notes
 
 
  **autoFitterOptions** | [**optional.Interface of AutoFitterOptions**](AutoFitterOptions.md)| Auto Fitter Options. | 
- **startRow** | **optional.Int32**| Start row. | 
- **endRow** | **optional.Int32**| End row. | 
+ **startRow** | **optional.Int64**| Start row. | 
+ **endRow** | **optional.Int64**| End row. | 
  **onlyAuto** | **optional.Bool**| Only auto. | [default to false]
  **folder** | **optional.String**| Document&#39;s folder. | 
  **storage** | **optional.String**| storage name. | 
@@ -9263,7 +9381,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **value** | **int32**|  | 
+  **value** | **int64**|  | 
  **optional** | ***CellsWorksheetsPostUpdateWorksheetZoomOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -9476,7 +9594,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **position** | **optional.Int32**| The new sheet position. | 
+ **position** | **optional.Int64**| The new sheet position. | 
  **sheettype** | **optional.String**| The new sheet type. | 
  **folder** | **optional.String**| Document folder. | 
  **storage** | **optional.String**| storage name. | 
@@ -9667,10 +9785,10 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**|  | 
   **sheetName** | **string**|  | 
-  **row** | **int32**|  | 
-  **column** | **int32**|  | 
-  **freezedRows** | **int32**|  | 
-  **freezedColumns** | **int32**|  | 
+  **row** | **int64**|  | 
+  **column** | **int64**|  | 
+  **freezedRows** | **int64**|  | 
+  **freezedColumns** | **int64**|  | 
  **optional** | ***CellsWorksheetsPutWorksheetFreezePanesOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters

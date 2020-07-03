@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChartIndex** | **int32** |  | [optional] [default to null]
-**ListObjectIndex** | **int32** |  | [optional] [default to null]
+**ChartIndex** | **int64** |  | [optional] [default to null]
+**ListObjectIndex** | **int64** |  | [optional] [default to null]
 **SheetName** | **string** |  | [optional] [default to null]
-**ShapeIndex** | **int32** |  | [optional] [default to null]
+**ShapeIndex** | **int64** |  | [optional] [default to null]
 **CellName** | **string** |  | [optional] [default to null]
 **Workbook** | [***FileSource**](FileSource.md) |  | [optional] [default to null]
 

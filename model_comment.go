@@ -28,9 +28,9 @@ type Comment struct {
 	Author string `json:"Author,omitempty" xml:"Author"`
 	IsVisible bool `json:"IsVisible,omitempty" xml:"IsVisible"`
 	TextOrientationType string `json:"TextOrientationType,omitempty" xml:"TextOrientationType"`
-	Height int32 `json:"Height,omitempty" xml:"Height"`
+	Height int64 `json:"Height,omitempty" xml:"Height"`
 	Note string `json:"Note,omitempty" xml:"Note"`
-	Width int32 `json:"Width,omitempty" xml:"Width"`
+	Width int64 `json:"Width,omitempty" xml:"Width"`
 	TextVerticalAlignment string `json:"TextVerticalAlignment,omitempty" xml:"TextVerticalAlignment"`
 	CellName string `json:"CellName,omitempty" xml:"CellName"`
 	HtmlNote string `json:"HtmlNote,omitempty" xml:"HtmlNote"`

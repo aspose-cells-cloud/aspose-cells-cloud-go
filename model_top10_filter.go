@@ -23,7 +23,7 @@
 package asposecellscloud
 
 type Top10Filter struct {
-	Items int32 `json:"Items" xml:"Items"`
+	Items int64 `json:"Items" xml:"Items"`
 	IsPercent bool `json:"IsPercent" xml:"IsPercent"`
 	IsTop bool `json:"IsTop" xml:"IsTop"`
 	Criteria string `json:"Criteria,omitempty" xml:"Criteria"`

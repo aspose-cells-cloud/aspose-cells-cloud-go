@@ -25,10 +25,10 @@ package asposecellscloud
 type Cells struct {
 	Link *Link `json:"link,omitempty" xml:"link"`
 	Rows *LinkElement `json:"Rows,omitempty" xml:"Rows"`
-	CellCount int32 `json:"CellCount" xml:"CellCount"`
-	MaxRow int32 `json:"MaxRow" xml:"MaxRow"`
+	CellCount int64 `json:"CellCount" xml:"CellCount"`
+	MaxRow int64 `json:"MaxRow" xml:"MaxRow"`
 	CellList []LinkElement `json:"CellList,omitempty" xml:"CellList"`
 	// Maximum column index of cell which contains data.             
-	MaxColumn int32 `json:"MaxColumn" xml:"MaxColumn"`
+	MaxColumn int64 `json:"MaxColumn" xml:"MaxColumn"`
 	Columns *LinkElement `json:"Columns,omitempty" xml:"Columns"`
 }

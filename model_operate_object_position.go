@@ -23,10 +23,10 @@
 package asposecellscloud
 
 type OperateObjectPosition struct {
-	ChartIndex  int32 `json:"ChartIndex,omitempty" xml:"ChartIndex"`
-	ListObjectIndex  int32 `json:"ListObjectIndex,omitempty" xml:"ListObjectIndex"`
+	ChartIndex  int64 `json:"ChartIndex,omitempty" xml:"ChartIndex"`
+	ListObjectIndex  int64 `json:"ListObjectIndex,omitempty" xml:"ListObjectIndex"`
 	SheetName  string `json:"SheetName,omitempty" xml:"SheetName"`
-	ShapeIndex  int32 `json:"ShapeIndex,omitempty" xml:"ShapeIndex"`
+	ShapeIndex  int64 `json:"ShapeIndex,omitempty" xml:"ShapeIndex"`
 	CellName  string `json:"CellName,omitempty" xml:"CellName"`
 	Workbook interface{}  `json:"Workbook,omitempty" xml:"Workbook"`
 }

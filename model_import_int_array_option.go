@@ -27,8 +27,8 @@ type ImportIntArrayOption struct {
 	ImportDataType  string `json:"ImportDataType,omitempty" xml:"ImportDataType"`
 	DestinationWorksheet  string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
 	IsInsert  bool `json:"IsInsert,omitempty" xml:"IsInsert"`
-	Data  []int32 `json:"Data,omitempty" xml:"Data"`
+	Data  []int64 `json:"Data,omitempty" xml:"Data"`
 	IsVertical  bool `json:"IsVertical,omitempty" xml:"IsVertical"`
-	FirstRow  int32 `json:"FirstRow,omitempty" xml:"FirstRow"`
-	FirstColumn  int32 `json:"FirstColumn,omitempty" xml:"FirstColumn"`
+	FirstRow  int64 `json:"FirstRow,omitempty" xml:"FirstRow"`
+	FirstColumn  int64 `json:"FirstColumn,omitempty" xml:"FirstColumn"`
 }

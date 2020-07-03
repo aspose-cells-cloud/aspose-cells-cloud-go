@@ -27,9 +27,9 @@ type ChartOperateParameter struct {
 	String_ string `json:"string,omitempty" xml:"string"`
 	Area string `json:"Area,omitempty" xml:"Area"`
 	CategoryData string `json:"CategoryData,omitempty" xml:"CategoryData"`
-	UpperLeftRow int32 `json:"UpperLeftRow,omitempty" xml:"UpperLeftRow"`
-	LowerRightColumn int32 `json:"LowerRightColumn,omitempty" xml:"LowerRightColumn"`
-	LowerRightRow int32 `json:"LowerRightRow,omitempty" xml:"LowerRightRow"`
+	UpperLeftRow int64 `json:"UpperLeftRow,omitempty" xml:"UpperLeftRow"`
+	LowerRightColumn int64 `json:"LowerRightColumn,omitempty" xml:"LowerRightColumn"`
+	LowerRightRow int64 `json:"LowerRightRow,omitempty" xml:"LowerRightRow"`
 	IsAutoGetSerialName bool `json:"IsAutoGetSerialName,omitempty" xml:"IsAutoGetSerialName"`
 	ChartType string `json:"ChartType,omitempty" xml:"ChartType"`
 	IsVertical bool `json:"IsVertical,omitempty" xml:"IsVertical"`

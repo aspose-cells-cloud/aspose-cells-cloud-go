@@ -25,6 +25,6 @@ package asposecellscloud
 type WorkbookReplaceResponse struct {
 	Status string `json:"Status,omitempty" xml:"Status"`
 	Code int32 `json:"Code" xml:"Code"`
-	Matches int32 `json:"Matches" xml:"Matches"`
+	Matches int64 `json:"Matches" xml:"Matches"`
 	Workbook *LinkElement `json:"Workbook,omitempty" xml:"Workbook"`
 }

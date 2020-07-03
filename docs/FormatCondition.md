@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **DataBar** | [***DataBar**](DataBar.md) |  | [optional] [default to null]
 **Text** | **string** |  | [optional] [default to null]
 **StopIfTrue** | **bool** | True, no rules with lower priority may be applied over this rule, when this     rule evaluates to true.  Only applies for Excel 2007; | [optional] [default to null]
-**Priority** | **int32** | The priority of this conditional formatting rule. This value is used to determine     which format should be evaluated and rendered. Lower numeric values are higher     priority than higher numeric values, where &#39;1&#39; is the highest priority. | [optional] [default to null]
+**Priority** | **int64** | The priority of this conditional formatting rule. This value is used to determine     which format should be evaluated and rendered. Lower numeric values are higher     priority than higher numeric values, where &#39;1&#39; is the highest priority. | [optional] [default to null]
 **Top10** | [***Top10**](Top10.md) |  | [optional] [default to null]
 **Operator** | **string** |  | [optional] [default to null]
 **IconSet** | [***IconSet**](IconSet.md) |  | [optional] [default to null]

@@ -13,16 +13,16 @@ Name | Type | Description | Notes
 **SortNames** | **bool** |  | [optional] [default to null]
 **ChartImageType** | **string** |  | [optional] [default to null]
 **EmbededImageNameInSvg** | **string** |  | [optional] [default to null]
-**HorizontalResolution** | **int32** |  | [optional] [default to null]
+**HorizontalResolution** | **int64** |  | [optional] [default to null]
 **ImageFormat** | **string** |  | [optional] [default to null]
 **IsCellAutoFit** | **bool** |  | [optional] [default to null]
 **OnePagePerSheet** | **bool** |  | [optional] [default to null]
 **OnlyArea** | **bool** |  | [optional] [default to null]
 **PrintingPage** | **string** |  | [optional] [default to null]
-**PrintWithStatusDialog** | **int32** |  | [optional] [default to null]
-**Quality** | **int32** |  | [optional] [default to null]
+**PrintWithStatusDialog** | **int64** |  | [optional] [default to null]
+**Quality** | **int64** |  | [optional] [default to null]
 **TiffCompression** | **string** |  | [optional] [default to null]
-**VerticalResolution** | **int32** |  | [optional] [default to null]
+**VerticalResolution** | **int64** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

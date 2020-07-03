@@ -32,7 +32,7 @@ type TextOptions struct {
 	IsSuperscript bool `json:"IsSuperscript,omitempty" xml:"IsSuperscript"`
 	IsStrikeout bool `json:"IsStrikeout,omitempty" xml:"IsStrikeout"`
 	Underline string `json:"Underline,omitempty" xml:"Underline"`
-	Size int32 `json:"Size,omitempty" xml:"Size"`
+	Size int64 `json:"Size,omitempty" xml:"Size"`
 	Outline *LineFormat `json:"Outline,omitempty" xml:"Outline"`
 	Spacing float64 `json:"Spacing,omitempty" xml:"Spacing"`
 	Kerning float64 `json:"Kerning,omitempty" xml:"Kerning"`

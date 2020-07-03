@@ -31,7 +31,7 @@ type Cell struct {
 	// Gets the name of the cell.             
 	Name string `json:"Name,omitempty" xml:"Name"`
 	// Gets column number (zero based) of the cell.             
-	Column int32 `json:"Column" xml:"Column"`
+	Column int64 `json:"Column" xml:"Column"`
 	// Gets the parent worksheet.
 	Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
 	// Indicates whethe this cell is part of table formula.             
@@ -54,5 +54,5 @@ type Cell struct {
 	// Specifies a cell value type.
 	Type_ string `json:"Type,omitempty" xml:"Type"`
 	// Gets row number (zero based) of the cell.             
-	Row int32 `json:"Row" xml:"Row"`
+	Row int64 `json:"Row" xml:"Row"`
 }

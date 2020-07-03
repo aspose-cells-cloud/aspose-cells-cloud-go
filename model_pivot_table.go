@@ -61,7 +61,7 @@ type PivotTable struct {
 	DataSource []string `json:"DataSource,omitempty" xml:"DataSource"`
 	Tag string `json:"Tag,omitempty" xml:"Tag"`
 	EnableDrilldown bool `json:"EnableDrilldown,omitempty" xml:"EnableDrilldown"`
-	Indent int32 `json:"Indent,omitempty" xml:"Indent"`
+	Indent int64 `json:"Indent,omitempty" xml:"Indent"`
 	Name string `json:"Name,omitempty" xml:"Name"`
 	RowGrand bool `json:"RowGrand,omitempty" xml:"RowGrand"`
 	GrandTotalName string `json:"GrandTotalName,omitempty" xml:"GrandTotalName"`
@@ -80,7 +80,7 @@ type PivotTable struct {
 	ErrorString string `json:"ErrorString,omitempty" xml:"ErrorString"`
 	CustomListSort bool `json:"CustomListSort,omitempty" xml:"CustomListSort"`
 	MergeLabels bool `json:"MergeLabels,omitempty" xml:"MergeLabels"`
-	PageFieldWrapCount int32 `json:"PageFieldWrapCount,omitempty" xml:"PageFieldWrapCount"`
+	PageFieldWrapCount int64 `json:"PageFieldWrapCount,omitempty" xml:"PageFieldWrapCount"`
 	ShowPivotStyleColumnStripes bool `json:"ShowPivotStyleColumnStripes,omitempty" xml:"ShowPivotStyleColumnStripes"`
 	FieldListSortAscending bool `json:"FieldListSortAscending,omitempty" xml:"FieldListSortAscending"`
 	AltTextTitle string `json:"AltTextTitle,omitempty" xml:"AltTextTitle"`

@@ -28,13 +28,13 @@ type PageSetup struct {
 	// True means that the header/footer of the first page is different with other pages.
 	IsHFDiffFirst bool `json:"IsHFDiffFirst,omitempty" xml:"IsHFDiffFirst"`
 	// Represents the number of pages wide the worksheet will be scaled to when it's printed.
-	FitToPagesWide int32 `json:"FitToPagesWide,omitempty" xml:"FitToPagesWide"`
+	FitToPagesWide int64 `json:"FitToPagesWide,omitempty" xml:"FitToPagesWide"`
 	// Represents the print quality.
-	PrintQuality int32 `json:"PrintQuality,omitempty" xml:"PrintQuality"`
+	PrintQuality int64 `json:"PrintQuality,omitempty" xml:"PrintQuality"`
 	// Represents if the sheet will be printed without graphics.
 	PrintDraft bool `json:"PrintDraft,omitempty" xml:"PrintDraft"`
 	// Represents the first page number that will be used when this sheet is printed.
-	FirstPageNumber int32 `json:"FirstPageNumber,omitempty" xml:"FirstPageNumber"`
+	FirstPageNumber int64 `json:"FirstPageNumber,omitempty" xml:"FirstPageNumber"`
 	// Represents the size of the paper.
 	PaperSize string `json:"PaperSize,omitempty" xml:"PaperSize"`
 	// Represents the way comments are printed with the sheet.
@@ -66,19 +66,19 @@ type PageSetup struct {
 	// Represents the page footor.
 	Footer []PageSection `json:"Footer,omitempty" xml:"Footer"`
 	// Represents the number of pages tall the worksheet will be scaled to when it's printed.
-	FitToPagesTall int32 `json:"FitToPagesTall,omitempty" xml:"FitToPagesTall"`
+	FitToPagesTall int64 `json:"FitToPagesTall,omitempty" xml:"FitToPagesTall"`
 	// Indicates whether header and footer are scaled with document scaling.Only applies for Excel 2007. 
 	IsHFScaleWithDoc bool `json:"IsHFScaleWithDoc,omitempty" xml:"IsHFScaleWithDoc"`
 	// Represents if row and column headings are printed with this page.
 	PrintHeadings bool `json:"PrintHeadings,omitempty" xml:"PrintHeadings"`
 	// Represents the scaling factor in percent. It should be between 10 and 400.
-	Zoom int32 `json:"Zoom,omitempty" xml:"Zoom"`
+	Zoom int64 `json:"Zoom,omitempty" xml:"Zoom"`
 	// Represents the rows that contain the cells to be repeated at the top of each page.
 	PrintTitleRows string `json:"PrintTitleRows,omitempty" xml:"PrintTitleRows"`
 	// Represents the order that Microsoft Excel uses to number pages when printing a large worksheet.
 	Order string `json:"Order,omitempty" xml:"Order"`
 	// Get and sets number of copies to print.
-	PrintCopies int32 `json:"PrintCopies,omitempty" xml:"PrintCopies"`
+	PrintCopies int64 `json:"PrintCopies,omitempty" xml:"PrintCopies"`
 	// Represents page print orientation.
 	Orientation string `json:"Orientation,omitempty" xml:"Orientation"`
 	// Represents the size of the right margin, in unit of centimeters.

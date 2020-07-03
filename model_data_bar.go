@@ -31,7 +31,7 @@ type DataBar struct {
 	// Get or set this DataBar's Color.             
 	Color *Color `json:"Color,omitempty" xml:"Color"`
 	// Represents the min length of data bar .             
-	MinLength int32 `json:"MinLength,omitempty" xml:"MinLength"`
+	MinLength int64 `json:"MinLength,omitempty" xml:"MinLength"`
 	// Gets or sets how a data bar is filled with color.
 	BarFillType string `json:"BarFillType,omitempty" xml:"BarFillType"`
 	// Get or set this DataBar's min value object.  Cannot set null or CFValueObject   with type FormatConditionValueType.Max to it.             
@@ -45,7 +45,7 @@ type DataBar struct {
 	// Gets the color of the axis for cells with conditional formatting as data bars.
 	AxisColor *Color `json:"AxisColor,omitempty" xml:"AxisColor"`
 	// Represents the max length of data bar .
-	MaxLength int32 `json:"MaxLength,omitempty" xml:"MaxLength"`
+	MaxLength int64 `json:"MaxLength,omitempty" xml:"MaxLength"`
 	// Get or set the flag indicating whether to show the values of the cells on   which this data bar is applied.  Default value is true.             
 	ShowValue bool `json:"ShowValue,omitempty" xml:"ShowValue"`
 }

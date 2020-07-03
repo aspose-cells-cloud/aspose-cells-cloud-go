@@ -26,7 +26,7 @@ type Name struct {
 	Link *Link `json:"link,omitempty" xml:"link"`
 	Comment string `json:"Comment,omitempty" xml:"Comment"`
 	Text string `json:"Text,omitempty" xml:"Text"`
-	WorksheetIndex int32 `json:"WorksheetIndex" xml:"WorksheetIndex"`
+	WorksheetIndex int64 `json:"WorksheetIndex" xml:"WorksheetIndex"`
 	R1C1RefersTo string `json:"R1C1RefersTo,omitempty" xml:"R1C1RefersTo"`
 	RefersTo string `json:"RefersTo,omitempty" xml:"RefersTo"`
 	IsReferred bool `json:"IsReferred" xml:"IsReferred"`

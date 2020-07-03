@@ -23,7 +23,7 @@
 package asposecellscloud
 
 type VerticalPageBreak struct {
-	Column int32 `json:"Column" xml:"Column"`
-	StartRow int32 `json:"StartRow" xml:"StartRow"`
-	EndRow int32 `json:"EndRow" xml:"EndRow"`
+	Column int64 `json:"Column" xml:"Column"`
+	StartRow int64 `json:"StartRow" xml:"StartRow"`
+	EndRow int64 `json:"EndRow" xml:"EndRow"`
 }

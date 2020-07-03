@@ -24,9 +24,9 @@ package asposecellscloud
 
 type Row struct {
 	Link *Link `json:"link,omitempty" xml:"link"`
-	Index int32 `json:"Index,omitempty" xml:"Index"`
+	Index int64 `json:"Index,omitempty" xml:"Index"`
 	Style *LinkElement `json:"Style,omitempty" xml:"Style"`
-	GroupLevel int32 `json:"GroupLevel,omitempty" xml:"GroupLevel"`
+	GroupLevel int64 `json:"GroupLevel,omitempty" xml:"GroupLevel"`
 	Height float64 `json:"Height,omitempty" xml:"Height"`
 	IsHeightMatched bool `json:"IsHeightMatched,omitempty" xml:"IsHeightMatched"`
 	IsHidden bool `json:"IsHidden,omitempty" xml:"IsHidden"`

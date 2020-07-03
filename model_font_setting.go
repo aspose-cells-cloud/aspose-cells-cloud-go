@@ -24,8 +24,8 @@ package asposecellscloud
 
 type FontSetting struct {
 	TextOptions *TextOptions `json:"TextOptions,omitempty" xml:"TextOptions"`
-	Length int32 `json:"Length" xml:"Length"`
+	Length int64 `json:"Length" xml:"Length"`
 	Font *Font `json:"Font,omitempty" xml:"Font"`
 	Type_ string `json:"Type,omitempty" xml:"Type"`
-	StartIndex int32 `json:"StartIndex" xml:"StartIndex"`
+	StartIndex int64 `json:"StartIndex" xml:"StartIndex"`
 }

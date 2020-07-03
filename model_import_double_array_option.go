@@ -29,6 +29,6 @@ type ImportDoubleArrayOption struct {
 	IsInsert  bool `json:"IsInsert,omitempty" xml:"IsInsert"`
 	Data  []float64 `json:"Data,omitempty" xml:"Data"`
 	IsVertical  bool `json:"IsVertical,omitempty" xml:"IsVertical"`
-	FirstRow  int32 `json:"FirstRow,omitempty" xml:"FirstRow"`
-	FirstColumn  int32 `json:"FirstColumn,omitempty" xml:"FirstColumn"`
+	FirstRow  int64 `json:"FirstRow,omitempty" xml:"FirstRow"`
+	FirstColumn  int64 `json:"FirstColumn,omitempty" xml:"FirstColumn"`
 }

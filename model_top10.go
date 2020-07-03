@@ -29,5 +29,5 @@ type Top10 struct {
 	// Get or set the flag indicating whether a \"top/bottom n\" rule is a \"top/bottom     n percent\" rule.  Default value is false.
 	IsPercent bool `json:"IsPercent,omitempty" xml:"IsPercent"`
 	// Get or set the value of \"n\" in a \"top/bottom n\" conditional formatting rule.      If IsPercent is true, the value must between 0 and 100.  Otherwise it must     between 0 and 1000.  Default value is 10.
-	Rank int32 `json:"Rank,omitempty" xml:"Rank"`
+	Rank int64 `json:"Rank,omitempty" xml:"Rank"`
 }

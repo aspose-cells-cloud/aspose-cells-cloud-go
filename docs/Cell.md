@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Style** | [***LinkElement**](LinkElement.md) |  | [optional] [default to null]
 **HtmlString** | **string** | Gets and sets the html string which contains data and some formattings in this cell.              | [optional] [default to null]
 **Name** | **string** | Gets the name of the cell.              | [optional] [default to null]
-**Column** | **int32** | Gets column number (zero based) of the cell.              | [default to null]
+**Column** | **int64** | Gets column number (zero based) of the cell.              | [default to null]
 **Worksheet** | **string** | Gets the parent worksheet. | [optional] [default to null]
 **IsInTable** | **bool** | Indicates whethe this cell is part of table formula.              | [default to null]
 **IsArrayHeader** | **bool** | Inidicates the cell&#39;s formula is and array formula and it is the first cell of the array. | [default to null]
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **IsMerged** | **bool** | Checks if a cell is part of a merged range or not.              | [default to null]
 **Formula** | **string** | Gets or sets a formula of the Aspose.Cells.Cell. | [optional] [default to null]
 **Type_** | **string** | Specifies a cell value type. | [optional] [default to null]
-**Row** | **int32** | Gets row number (zero based) of the cell.              | [default to null]
+**Row** | **int64** | Gets row number (zero based) of the cell.              | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

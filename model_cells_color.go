@@ -27,5 +27,5 @@ type CellsColor struct {
 	Type_ string `json:"Type,omitempty" xml:"Type"`
 	ThemeColor *ThemeColor `json:"ThemeColor,omitempty" xml:"ThemeColor"`
 	IsShapeColor bool `json:"IsShapeColor,omitempty" xml:"IsShapeColor"`
-	ColorIndex int32 `json:"ColorIndex,omitempty" xml:"ColorIndex"`
+	ColorIndex int64 `json:"ColorIndex,omitempty" xml:"ColorIndex"`
 }

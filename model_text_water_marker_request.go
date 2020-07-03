@@ -22,8 +22,16 @@
 
 package asposecellscloud
 
-type Validations struct {
-	Link *Link `json:"link,omitempty" xml:"link"`
-	Count int64 `json:"Count" xml:"Count"`
-	ValidationList []LinkElement `json:"ValidationList,omitempty" xml:"ValidationList"`
+// Used by text water marker requests.
+type TextWaterMarkerRequest struct {
+	// water marker.
+	Text string `json:"Text,omitempty" xml:"Text"`
+	// font name.
+	FontName string `json:"FontName,omitempty" xml:"FontName"`
+	// font size.
+	FontSize int64 `json:"FontSize,omitempty" xml:"FontSize"`
+	// height.
+	Height int64 `json:"Height,omitempty" xml:"Height"`
+	// width.
+	Width int64 `json:"Width,omitempty" xml:"Width"`
 }

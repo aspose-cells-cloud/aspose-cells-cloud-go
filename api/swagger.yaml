@@ -1,7 +1,7 @@
 ---
-swagger: "2.4"
+swagger: "2.0"
 info:
-  version: "20.4"
+  version: "20.6"
   title: "Aspose.Cells Cloud SDK APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
@@ -36,7 +36,7 @@ paths:
         description: "The chart index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ChartIndex"
       - name: "folder"
@@ -89,20 +89,20 @@ paths:
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Offest"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "count"
         in: "query"
         description: "Maximum amount of cells in the response."
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Count"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "folder"
         in: "query"
         description: "Document's folder name."
@@ -216,7 +216,7 @@ paths:
         description: "The first column index to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FirstIndex"
       - name: "lastIndex"
@@ -224,7 +224,7 @@ paths:
         description: "The last column index to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "LastIndex"
       - name: "folder"
@@ -365,7 +365,7 @@ paths:
         description: "The picture index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PictureIndex"
       - name: "format"
@@ -425,7 +425,7 @@ paths:
         description: "The picture's index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PictureIndex"
       - in: "body"
@@ -484,7 +484,7 @@ paths:
         description: "Picture index"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PictureIndex"
       - name: "folder"
@@ -597,19 +597,35 @@ paths:
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "VerticalResolution"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "horizontalResolution"
         in: "query"
         description: "Image horizontal resolution."
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "HorizontalResolution"
+        x-optionalDataType: "Int64"
+      - name: "area"
+        in: "query"
+        description: "Exported area."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Area"
+        x-optionalDataType: "String"
+      - name: "pageIndex"
+        in: "query"
+        description: "Exported page index."
+        required: false
+        type: "integer"
+        x-nullable: true
+        x-exportParamName: "PageIndex"
         x-optionalDataType: "Int32"
       - name: "folder"
         in: "query"
@@ -707,10 +723,10 @@ paths:
         description: "The new sheet position."
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "Position"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "sheettype"
         in: "query"
         description: "The new sheet type."
@@ -892,7 +908,7 @@ paths:
         description: "Merged cell index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "MergedCellIndex"
       - name: "folder"
@@ -988,7 +1004,7 @@ paths:
         description: "list object index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Listobjectindex"
       - name: "folder"
@@ -1080,7 +1096,7 @@ paths:
         description: "Source row index"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "SourceRowIndex"
       - name: "destinationRowIndex"
@@ -1088,7 +1104,7 @@ paths:
         description: "Destination row index"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "DestinationRowIndex"
       - name: "rowNumber"
@@ -1096,7 +1112,7 @@ paths:
         description: "The copied row number"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "RowNumber"
       - name: "worksheet"
@@ -1200,7 +1216,7 @@ paths:
         description: "The begin column index to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "StartColumn"
       - name: "totalColumns"
@@ -1208,7 +1224,7 @@ paths:
         description: "Number of columns to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "TotalColumns"
       - name: "folder"
@@ -1306,7 +1322,7 @@ paths:
         description: "The hyperlink's index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "HyperlinkIndex"
       - name: "folder"
@@ -1357,7 +1373,7 @@ paths:
         description: "The hyperlink's index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "HyperlinkIndex"
       - in: "body"
@@ -1416,7 +1432,7 @@ paths:
         description: "The hyperlink's index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "HyperlinkIndex"
       - name: "folder"
@@ -1468,7 +1484,7 @@ paths:
         description: "Source column index"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "SourceColumnIndex"
       - name: "destinationColumnIndex"
@@ -1476,7 +1492,7 @@ paths:
         description: "Destination column index"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "DestinationColumnIndex"
       - name: "columnNumber"
@@ -1484,7 +1500,7 @@ paths:
         description: "The copied column number"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ColumnNumber"
       - name: "worksheet"
@@ -1541,7 +1557,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Index"
       - name: "folder"
@@ -1588,7 +1604,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Index"
       - name: "cellArea"
@@ -1665,7 +1681,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Index"
       - name: "folder"
@@ -1712,7 +1728,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Index"
       - name: "folder"
@@ -1758,7 +1774,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Index"
       - name: "folder"
@@ -1851,34 +1867,34 @@ paths:
         in: "query"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "Row"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "column"
         in: "query"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "Column"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "startColumn"
         in: "query"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "StartColumn"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "endColumn"
         in: "query"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "EndColumn"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "folder"
         in: "query"
         required: false
@@ -1922,10 +1938,10 @@ paths:
         in: "query"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "Row"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "folder"
         in: "query"
         required: false
@@ -1970,7 +1986,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ListObjectIndex"
       - name: "destsheetName"
@@ -2112,7 +2128,7 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FieldIndex"
       - name: "criteria"
@@ -2179,7 +2195,7 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FieldIndex"
       - name: "criteria"
@@ -2291,7 +2307,7 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FieldIndex"
       - name: "dynamicFilterType"
@@ -2362,7 +2378,7 @@ paths:
         description: "Ole object index"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "OleObjectIndex"
       - in: "body"
@@ -2421,7 +2437,7 @@ paths:
         description: "Ole object index"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "OleObjectIndex"
       - name: "folder"
@@ -2473,21 +2489,21 @@ paths:
         description: "Pivot table index"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivotTableIndex"
       - name: "column"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Column"
       - name: "row"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Row"
       - in: "body"
@@ -2552,7 +2568,7 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FieldIndex"
       - name: "folder"
@@ -2599,7 +2615,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ListObjectIndex"
       - in: "body"
@@ -2654,7 +2670,7 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FieldIndex"
       - name: "folder"
@@ -2705,7 +2721,7 @@ paths:
         description: "The first row index to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FirstIndex"
       - name: "lastIndex"
@@ -2713,7 +2729,7 @@ paths:
         description: "The last row index to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "LastIndex"
       - name: "hide"
@@ -2773,7 +2789,7 @@ paths:
         description: "The chart index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ChartIndex"
       - name: "folder"
@@ -2821,25 +2837,25 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivotTableIndex"
       - name: "row"
         in: "query"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "Row"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "column"
         in: "query"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "Column"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "destCellName"
         in: "query"
         required: false
@@ -3004,7 +3020,7 @@ paths:
         description: "The row index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "RowIndex"
       - in: "body"
@@ -3153,14 +3169,14 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivotTableIndex"
       - name: "fieldIndex"
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FieldIndex"
       - name: "needReCalculate"
@@ -3227,37 +3243,37 @@ paths:
         description: "The start row."
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "StartRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "startColumn"
         in: "query"
         description: "The start column."
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "StartColumn"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "endRow"
         in: "query"
         description: "The end row."
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "EndRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "endColumn"
         in: "query"
         description: "The end column."
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "EndColumn"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "folder"
         in: "query"
         description: "The workbook folder."
@@ -3440,7 +3456,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivottableIndex"
       - name: "folder"
@@ -3896,7 +3912,7 @@ paths:
         description: "The first row index to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FirstIndex"
       - name: "lastIndex"
@@ -3904,7 +3920,7 @@ paths:
         description: "The last row index to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "LastIndex"
       - name: "isAll"
@@ -4304,7 +4320,7 @@ paths:
         description: "The start row."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "StartRow"
       - name: "startColumn"
@@ -4312,7 +4328,7 @@ paths:
         description: "The start column."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "StartColumn"
       - name: "totalRows"
@@ -4320,7 +4336,7 @@ paths:
         description: "The total rows"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "TotalRows"
       - name: "totalColumns"
@@ -4328,7 +4344,7 @@ paths:
         description: "The total columns."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "TotalColumns"
       - name: "folder"
@@ -4576,7 +4592,7 @@ paths:
         description: "The chart index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ChartIndex"
       - name: "folder"
@@ -4627,7 +4643,7 @@ paths:
         description: "The chart index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ChartIndex"
       - in: "body"
@@ -4685,7 +4701,7 @@ paths:
         description: "The chart index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ChartIndex"
       - name: "folder"
@@ -4736,7 +4752,7 @@ paths:
         description: "The chart index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ChartIndex"
       - name: "folder"
@@ -4812,7 +4828,7 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FieldIndex"
       - name: "isTop"
@@ -4831,7 +4847,7 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ItemCount"
       - name: "matchBlanks"
@@ -4896,7 +4912,7 @@ paths:
         description: "Pivot table index"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivotTableIndex"
       - in: "body"
@@ -5007,7 +5023,7 @@ paths:
         description: "The start row of the list range."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "StartRow"
       - name: "startColumn"
@@ -5015,7 +5031,7 @@ paths:
         description: "The start row of the list range."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "StartColumn"
       - name: "endRow"
@@ -5023,7 +5039,7 @@ paths:
         description: "The start row of the list range."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "EndRow"
       - name: "endColumn"
@@ -5031,7 +5047,7 @@ paths:
         description: "The start row of the list range."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "EndColumn"
       - name: "hasHeaders"
@@ -5185,34 +5201,34 @@ paths:
         in: "query"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "Column"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "row"
         in: "query"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "Row"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "startRow"
         in: "query"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "StartRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "endRow"
         in: "query"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "EndRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "folder"
         in: "query"
         required: false
@@ -5256,10 +5272,10 @@ paths:
         in: "query"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "Column"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "folder"
         in: "query"
         required: false
@@ -5308,7 +5324,7 @@ paths:
         description: "The chart number."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ChartNumber"
       - name: "format"
@@ -5424,7 +5440,7 @@ paths:
         description: "The begin column index to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Startcolumn"
       - name: "totalColumns"
@@ -5432,7 +5448,7 @@ paths:
         description: "Number of columns to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "TotalColumns"
       - name: "width"
@@ -5490,7 +5506,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivotTableIndex"
       - name: "pivotFieldType"
@@ -5503,14 +5519,14 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FieldIndex"
       - name: "itemIndex"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ItemIndex"
       - name: "isHide"
@@ -5575,7 +5591,7 @@ paths:
         description: "The first column index to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FirstIndex"
       - name: "lastIndex"
@@ -5583,7 +5599,7 @@ paths:
         description: "The last column index to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "LastIndex"
       - name: "hide"
@@ -5698,19 +5714,19 @@ paths:
         description: "Start row."
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "StartRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "endRow"
         in: "query"
         description: "End row."
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "EndRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "onlyAuto"
         in: "query"
         description: "Only auto."
@@ -5769,7 +5785,7 @@ paths:
         description: "Pivot table index"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivotTableIndex"
       - name: "folder"
@@ -5872,7 +5888,7 @@ paths:
         description: "list Object index"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ListObjectIndex"
       - in: "body"
@@ -5931,7 +5947,7 @@ paths:
         description: "List object index"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ListObjectIndex"
       - name: "folder"
@@ -5983,7 +5999,7 @@ paths:
         description: "The begin row index to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Startrow"
       - name: "totalRows"
@@ -5991,7 +6007,7 @@ paths:
         description: "Number of rows to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "TotalRows"
       - name: "height"
@@ -6246,7 +6262,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ListObjectIndex"
       - name: "folder"
@@ -6340,7 +6356,7 @@ paths:
         description: "The begin row index to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Startrow"
       - name: "totalRows"
@@ -6349,10 +6365,10 @@ paths:
         required: false
         type: "integer"
         default: 1
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "TotalRows"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "updateReference"
         in: "query"
         description: "Indicates if update references in other worksheets."
@@ -6410,7 +6426,7 @@ paths:
         description: "The begin row index to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Startrow"
       - name: "totalRows"
@@ -6419,10 +6435,10 @@ paths:
         required: false
         type: "integer"
         default: 1
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "TotalRows"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "updateReference"
         in: "query"
         description: "Indicates if update references in other worksheets."
@@ -6877,28 +6893,28 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Row"
       - name: "column"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Column"
       - name: "freezedRows"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FreezedRows"
       - name: "freezedColumns"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FreezedColumns"
       - name: "folder"
@@ -6945,28 +6961,28 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Row"
       - name: "column"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Column"
       - name: "freezedRows"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FreezedRows"
       - name: "freezedColumns"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FreezedColumns"
       - name: "folder"
@@ -7141,7 +7157,7 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Section"
       - name: "script"
@@ -7297,28 +7313,28 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FirstRow"
       - name: "firstColumn"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FirstColumn"
       - name: "totalRows"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "TotalRows"
       - name: "totalColumns"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "TotalColumns"
       - name: "address"
@@ -7415,14 +7431,14 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivotTableIndex"
       - name: "fieldIndex"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FieldIndex"
       - name: "from"
@@ -7522,7 +7538,7 @@ paths:
         description: "Pivot table index"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivotTableIndex"
       - name: "folder"
@@ -7575,19 +7591,19 @@ paths:
         description: "Start row."
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "StartRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "endRow"
         in: "query"
         description: "End row."
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "EndRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "onlyAuto"
         in: "query"
         description: "Only auto."
@@ -7646,7 +7662,7 @@ paths:
         description: "The autoshape number."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "AutoshapeNumber"
       - name: "format"
@@ -7707,7 +7723,7 @@ paths:
         description: "The chart index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ChartIndex"
       - name: "folder"
@@ -7758,7 +7774,7 @@ paths:
         description: "The chart index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ChartIndex"
       - in: "body"
@@ -7817,7 +7833,7 @@ paths:
         description: "The chart index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ChartIndex"
       - in: "body"
@@ -7876,7 +7892,7 @@ paths:
         description: "The chart index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ChartIndex"
       - name: "folder"
@@ -8027,14 +8043,14 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "FirstColumn"
       - name: "lastColumn"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "LastColumn"
       - in: "body"
@@ -8048,18 +8064,18 @@ paths:
         in: "query"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "FirstRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "lastRow"
         in: "query"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "LastRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "folder"
         in: "query"
         required: false
@@ -8105,7 +8121,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ChartIndex"
       - in: "body"
@@ -8162,7 +8178,7 @@ paths:
         description: "The chart index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ChartIndex"
       - name: "folder"
@@ -8318,40 +8334,40 @@ paths:
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "UpperLeftRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "upperLeftColumn"
         in: "query"
         description: "New chart upperleft column."
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "UpperLeftColumn"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "lowerRightRow"
         in: "query"
         description: "New chart lower right row."
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "LowerRightRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "lowerRightColumn"
         in: "query"
         description: "New chart lower right column."
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "LowerRightColumn"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "area"
         in: "query"
         description: "Specifies values from which to plot the data series. "
@@ -8532,7 +8548,7 @@ paths:
         description: "Pivot table index"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivotTableIndex"
       - name: "pivotFieldIndex"
@@ -8540,7 +8556,7 @@ paths:
         description: "The field index in the base fields."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivotFieldIndex"
       - name: "pivotFieldType"
@@ -8598,7 +8614,7 @@ paths:
         description: "Pivot table index"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivotTableIndex"
       - name: "pivotFieldType"
@@ -8672,7 +8688,7 @@ paths:
         description: "Pivot table index"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivotTableIndex"
       - name: "pivotFieldType"
@@ -8747,37 +8763,37 @@ paths:
         description: "The start row."
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "StartRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "startColumn"
         in: "query"
         description: "The start column."
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "StartColumn"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "endRow"
         in: "query"
         description: "The end row."
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "EndRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "endColumn"
         in: "query"
         description: "The end column."
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "EndColumn"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "folder"
         in: "query"
         description: "The workbook folder."
@@ -8867,7 +8883,7 @@ paths:
         description: "The start row."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "StartRow"
       - name: "startColumn"
@@ -8875,7 +8891,7 @@ paths:
         description: "The start column."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "StartColumn"
       - name: "totalRows"
@@ -8883,7 +8899,7 @@ paths:
         description: "The total rows"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "TotalRows"
       - name: "totalColumns"
@@ -8891,7 +8907,7 @@ paths:
         description: "The total columns."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "TotalColumns"
       - name: "folder"
@@ -8995,40 +9011,40 @@ paths:
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "UpperLeftRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "upperLeftColumn"
         in: "query"
         description: "Upper left column index"
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "UpperLeftColumn"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "height"
         in: "query"
         description: "Height of oleObject, in unit of pixel"
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Height"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "width"
         in: "query"
         description: "Width of oleObject, in unit of pixel"
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Width"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "oleFile"
         in: "query"
         description: "OLE filename"
@@ -9159,19 +9175,19 @@ paths:
         description: "Source row"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "Row"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "column"
         in: "query"
         description: "Source column"
         required: false
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "Column"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "folder"
         in: "query"
         description: "Folder name"
@@ -9255,7 +9271,7 @@ paths:
         description: "The chart index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ChartIndex"
       - name: "folder"
@@ -9351,7 +9367,7 @@ paths:
         description: "The column index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ColumnIndex"
       - in: "body"
@@ -9419,7 +9435,7 @@ paths:
         description: "The start row of the dest range."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "DestRow"
       - name: "destColumn"
@@ -9427,7 +9443,7 @@ paths:
         description: "The start column of the dest range."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "DestColumn"
       - name: "folder"
@@ -9589,40 +9605,40 @@ paths:
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "UpperLeftRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "upperLeftColumn"
         in: "query"
         description: "The image upper left column."
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "UpperLeftColumn"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "lowerRightRow"
         in: "query"
         description: "The image low right row."
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "LowerRightRow"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "lowerRightColumn"
         in: "query"
         description: "The image low right column."
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "LowerRightColumn"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "picturePath"
         in: "query"
         description: "The picture path, if not provided the picture data is inspected\
@@ -9727,7 +9743,7 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FieldIndex"
       - name: "operatorType1"
@@ -9956,7 +9972,7 @@ paths:
         description: "Upper left row index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "UpperLeftRow"
       - name: "upperLeftColumn"
@@ -9964,7 +9980,7 @@ paths:
         description: "Upper left column index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "UpperLeftColumn"
       - name: "top"
@@ -9973,7 +9989,7 @@ paths:
           \ in unit of pixel."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Top"
       - name: "left"
@@ -9982,7 +9998,7 @@ paths:
           \ in unit of pixel."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Left"
       - name: "width"
@@ -9990,7 +10006,7 @@ paths:
         description: "Represents the height of Spinner, in unit of pixel."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Width"
       - name: "height"
@@ -9998,7 +10014,7 @@ paths:
         description: "Represents the width of Spinner, in unit of pixel."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Height"
       - name: "folder"
@@ -10089,7 +10105,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivotTableIndex"
       - name: "folder"
@@ -10136,7 +10152,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivotTableIndex"
       - in: "body"
@@ -10198,7 +10214,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivotTableIndex"
       - name: "needReCalculate"
@@ -10253,14 +10269,14 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "PivotTableIndex"
       - name: "filterIndex"
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FilterIndex"
       - name: "folder"
@@ -10392,28 +10408,28 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "StartRow"
       - name: "startColumn"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "StartColumn"
       - name: "totalRows"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "TotalRows"
       - name: "totalColumns"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "TotalColumns"
       - name: "folder"
@@ -10460,7 +10476,7 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Value"
       - name: "folder"
@@ -10587,21 +10603,21 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "RowIndex"
       - name: "firstColumn"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "FirstColumn"
       - name: "lastColumn"
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: true
         x-exportParamName: "LastColumn"
       - name: "folder"
@@ -10654,7 +10670,7 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FieldIndex"
       - in: "body"
@@ -10726,7 +10742,7 @@ paths:
         description: "The begin row index to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Startrow"
       - name: "totalRows"
@@ -10734,7 +10750,7 @@ paths:
         description: "Number of rows to be operated."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "TotalRows"
       - name: "folder"
@@ -10823,7 +10839,7 @@ paths:
         description: "The column index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ColumnIndex"
       - name: "folder"
@@ -10874,7 +10890,7 @@ paths:
         description: "The column index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ColumnIndex"
       - name: "width"
@@ -10933,7 +10949,7 @@ paths:
         description: "The column index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ColumnIndex"
       - name: "columns"
@@ -10941,7 +10957,7 @@ paths:
         description: "The columns."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Columns"
       - name: "updateReference"
@@ -11001,7 +11017,7 @@ paths:
         description: "The column index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ColumnIndex"
       - name: "columns"
@@ -11009,7 +11025,7 @@ paths:
         description: "The columns."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Columns"
       - name: "updateReference"
@@ -11241,7 +11257,7 @@ paths:
         description: "The object number."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ObjectNumber"
       - name: "format"
@@ -11339,7 +11355,7 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Section"
       - name: "script"
@@ -11399,7 +11415,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Index"
       - name: "type"
@@ -11560,6 +11576,14 @@ paths:
         x-nullable: true
         x-exportParamName: "DataFile"
         x-optionalDataType: "String"
+      - name: "isWriteOver"
+        in: "query"
+        description: "write over file."
+        required: false
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "IsWriteOver"
+        x-optionalDataType: "Bool"
       - name: "folder"
         in: "query"
         description: "The new document folder."
@@ -11609,7 +11633,7 @@ paths:
         description: "The row index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "RowIndex"
       - name: "folder"
@@ -11660,7 +11684,7 @@ paths:
         description: "The row index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "RowIndex"
       - name: "height"
@@ -11721,7 +11745,7 @@ paths:
         description: "The new row index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "RowIndex"
       - name: "folder"
@@ -11772,7 +11796,7 @@ paths:
         description: "The row index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "RowIndex"
       - name: "folder"
@@ -12056,7 +12080,7 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FieldIndex"
       - name: "iconSetType"
@@ -12069,7 +12093,7 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "IconId"
       - name: "matchBlanks"
@@ -12190,7 +12214,7 @@ paths:
         description: "The validation index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ValidationIndex"
       - name: "folder"
@@ -12241,7 +12265,7 @@ paths:
         description: "The validation index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ValidationIndex"
       - in: "body"
@@ -12298,7 +12322,7 @@ paths:
         description: "The validation index."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "ValidationIndex"
       - name: "folder"
@@ -12536,7 +12560,7 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FieldIndex"
       - name: "dateTimeGroupingType"
@@ -12550,55 +12574,55 @@ paths:
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Year"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "month"
         in: "query"
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Month"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "day"
         in: "query"
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Day"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "hour"
         in: "query"
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Hour"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "minute"
         in: "query"
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Minute"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "second"
         in: "query"
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Second"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "matchBlanks"
         in: "query"
         required: false
@@ -12657,7 +12681,7 @@ paths:
         in: "query"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "FieldIndex"
       - name: "dateTimeGroupingType"
@@ -12671,55 +12695,55 @@ paths:
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Year"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "month"
         in: "query"
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Month"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "day"
         in: "query"
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Day"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "hour"
         in: "query"
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Hour"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "minute"
         in: "query"
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Minute"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "second"
         in: "query"
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Second"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "folder"
         in: "query"
         required: false
@@ -12768,7 +12792,7 @@ paths:
         description: "shape index in worksheet shapes."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Shapeindex"
       - name: "folder"
@@ -12819,7 +12843,7 @@ paths:
         description: "shape index in worksheet shapes."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Shapeindex"
       - in: "body"
@@ -12877,7 +12901,7 @@ paths:
         description: "shape index in worksheet shapes."
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Shapeindex"
       - name: "folder"
@@ -12931,40 +12955,40 @@ paths:
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "From"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "to"
         in: "query"
         description: "End worksheet index."
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "To"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "horizontalResolution"
         in: "query"
         description: "Image horizontal resolution."
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "HorizontalResolution"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "verticalResolution"
         in: "query"
         description: "Image vertical resolution."
         required: false
         type: "integer"
         default: 0
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "VerticalResolution"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "Int64"
       - name: "folder"
         in: "query"
         description: "The workbook folder."
@@ -12972,6 +12996,14 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "Folder"
+        x-optionalDataType: "String"
+      - name: "outFolder"
+        in: "query"
+        description: "out Folder."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "OutFolder"
         x-optionalDataType: "String"
       - name: "storage"
         in: "query"
@@ -12988,6 +13020,125 @@ paths:
             $ref: "#/definitions/SplitResultResponse"
           x-nullable: true
       x-operationId: "CellsWorkbook_PostWorkbookSplit"
+  /cells/{name}/background:
+    put:
+      tags:
+      - "Cells"
+      summary: "Set workbook background image."
+      operationId: "CellsWorkbook_PutWorkbookBackground"
+      parameters:
+      - name: "name"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Name"
+      - name: "folder"
+        in: "query"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Folder"
+        x-optionalDataType: "String"
+      - name: "storage"
+        in: "query"
+        description: "storage name."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Storage"
+        x-optionalDataType: "String"
+      - in: "body"
+        name: "png"
+        required: true
+        schema:
+          type: "string"
+          format: "binary"
+        x-exportParamName: "Png"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/CellsCloudResponse"
+          x-nullable: true
+      x-operationId: "CellsWorkbook_PutWorkbookBackground"
+    delete:
+      tags:
+      - "Cells"
+      summary: "Set worksheet background image."
+      operationId: "CellsWorkbook_DeleteWorkbookBackground"
+      parameters:
+      - name: "name"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Name"
+      - name: "folder"
+        in: "query"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Folder"
+        x-optionalDataType: "String"
+      - name: "storage"
+        in: "query"
+        description: "storage name."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Storage"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/CellsCloudResponse"
+          x-nullable: true
+      x-operationId: "CellsWorkbook_DeleteWorkbookBackground"
+  /cells/{name}/watermarker:
+    put:
+      tags:
+      - "Cells"
+      summary: "Set workbook background image."
+      operationId: "CellsWorkbook_PutWorkbookWaterMarker"
+      parameters:
+      - name: "name"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Name"
+      - name: "folder"
+        in: "query"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Folder"
+        x-optionalDataType: "String"
+      - name: "storage"
+        in: "query"
+        description: "storage name."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Storage"
+        x-optionalDataType: "String"
+      - in: "body"
+        name: "textWaterMarkerRequest"
+        description: "The text water marker request."
+        required: false
+        schema:
+          $ref: "#/definitions/TextWaterMarkerRequest"
+        x-nullable: true
+        x-exportParamName: "TextWaterMarkerRequest"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/CellsCloudResponse"
+          x-nullable: true
+      x-operationId: "CellsWorkbook_PutWorkbookWaterMarker"
   /cells/{name}/worksheets/{sheetName}/background:
     put:
       tags:
@@ -13152,7 +13303,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Index"
       - name: "cellArea"
@@ -13205,7 +13356,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Index"
       - name: "folder"
@@ -13251,7 +13402,7 @@ paths:
         in: "path"
         required: true
         type: "integer"
-        format: "int32"
+        format: "int64"
         x-nullable: false
         x-exportParamName: "Index"
       - name: "folder"
@@ -13866,10 +14017,10 @@ definitions:
           type: "array"
           items:
             type: "integer"
-            format: "int32"
+            format: "int64"
         PivotTableIndex:
           type: "integer"
-          format: "int32"
+          format: "int64"
         TableName:
           type: "string"
         UseSameSource:
@@ -13878,12 +14029,12 @@ definitions:
           type: "array"
           items:
             type: "integer"
-            format: "int32"
+            format: "int64"
         PivotFieldRows:
           type: "array"
           items:
             type: "integer"
-            format: "int32"
+            format: "int64"
         DestCellName:
           type: "string"
         SourceData:
@@ -13903,7 +14054,7 @@ definitions:
           type: "string"
         RotationAngle:
           type: "integer"
-          format: "int32"
+          format: "int64"
         TextVerticalAlignment:
           type: "string"
         TextHorizontalAlignment:
@@ -13921,7 +14072,7 @@ definitions:
     properties:
       Index:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Gets and sets the icon's index in the icon set.\n          \
           \  "
       Type:
@@ -13950,10 +14101,10 @@ definitions:
           type: "string"
         RotationAngle:
           type: "integer"
-          format: "int32"
+          format: "int64"
         IndentLevel:
           type: "integer"
-          format: "int32"
+          format: "int64"
         IsPercent:
           type: "boolean"
         ForegroundColor:
@@ -13980,7 +14131,7 @@ definitions:
           type: "boolean"
         Number:
           type: "integer"
-          format: "int32"
+          format: "int64"
         HorizontalAlignment:
           type: "string"
         IsTextWrapped:
@@ -13999,7 +14150,7 @@ definitions:
         type: "string"
       Key:
         type: "integer"
-        format: "int32"
+        format: "int64"
     example:
       CustomList: "CustomList"
       SortOrder: "SortOrder"
@@ -14018,7 +14169,7 @@ definitions:
     properties:
       IconId:
         type: "integer"
-        format: "int32"
+        format: "int64"
       IconSetType:
         type: "string"
   CellValue:
@@ -14026,10 +14177,10 @@ definitions:
     properties:
       rowIndex:
         type: "integer"
-        format: "int32"
+        format: "int64"
       columnIndex:
         type: "integer"
-        format: "int32"
+        format: "int64"
       style:
         $ref: "#/definitions/Style"
       type:
@@ -14056,7 +14207,7 @@ definitions:
             \           "
         StartColumn:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Gets the start column of the range."
         ShowTableStyleLastColumn:
           type: "boolean"
@@ -14071,7 +14222,7 @@ definitions:
             \ the style applied."
         StartRow:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Gets the start row of the range."
         AutoFilter:
           description: "Gets auto filter.\n            "
@@ -14081,7 +14232,7 @@ definitions:
           description: "Indicates whether row stripe formatting is applied."
         EndColumn:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Gets the end column of the range."
         TableStyleName:
           type: "string"
@@ -14093,7 +14244,7 @@ definitions:
             $ref: "#/definitions/ListColumn"
         EndRow:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Gets the end row of the range."
     - $ref: "#/definitions/LinkElement"
   HorizontalPageBreakResponse:
@@ -14121,7 +14272,7 @@ definitions:
     properties:
       EvaluationOrder:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Gets the Evaluation Order of the pivot filter."
       Name:
         type: "string"
@@ -14134,11 +14285,11 @@ definitions:
         $ref: "#/definitions/AutoFilter"
       FieldIndex:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Gets the field index of the pivot filter."
       MeasureFldIndex:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Gets the measure field index of the pivot filter.\n        \
           \    "
       Value1:
@@ -14147,7 +14298,7 @@ definitions:
           \    "
       MemberPropertyFieldIndex:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Gets the member property field index of the pivot filter.\n\
           \            "
       Value2:
@@ -14284,6 +14435,34 @@ definitions:
     example:
       ProtectionType: "ProtectionType"
       Password: "Password"
+  TextWaterMarkerRequest:
+    type: "object"
+    properties:
+      Text:
+        type: "string"
+        description: "water marker."
+      FontName:
+        type: "string"
+        description: "font name."
+      FontSize:
+        type: "integer"
+        format: "int64"
+        description: "font size."
+      Height:
+        type: "integer"
+        format: "int64"
+        description: "height."
+      Width:
+        type: "integer"
+        format: "int64"
+        description: "width."
+    description: "Used by text water marker requests."
+    example:
+      FontSize: 0
+      FontName: "FontName"
+      Text: "Text"
+      Height: 6
+      Width: 1
   PivotTablesResponse:
     allOf:
     - type: "object"
@@ -14303,17 +14482,17 @@ definitions:
           $ref: "#/definitions/LinkElement"
         CellCount:
           type: "integer"
-          format: "int32"
+          format: "int64"
         MaxRow:
           type: "integer"
-          format: "int32"
+          format: "int64"
         CellList:
           type: "array"
           items:
             $ref: "#/definitions/LinkElement"
         MaxColumn:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Maximum column index of cell which contains data.\n      \
             \      "
         Columns:
@@ -14366,7 +14545,7 @@ definitions:
           \ edge of the\nwindow, in unit of point.\n            "
       CalcStackSize:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Specifies the stack size for calculating cells recursively.\
           \  The large value\nfor this size will give better performance when there\
           \ are lots of cells need\nto be calculated recursively.  On the other hand,\
@@ -14460,7 +14639,7 @@ definitions:
         type: "boolean"
       FirstVisibleTab:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Gets or sets the first visible worksheet tab.\n            "
       IsHidden:
         type: "boolean"
@@ -14492,7 +14671,7 @@ definitions:
           \      "
       MaxIteration:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Returns or sets the maximum number of iterations that Aspose.Cells\
           \ can use\nto resolve a circular reference.\n            "
       RepairLoad:
@@ -14501,7 +14680,7 @@ definitions:
         type: "string"
       SheetTabBarWidth:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Width of worksheet tab bar (in 1/1000 of window width).\n  \
           \          "
     example:
@@ -14583,7 +14762,7 @@ definitions:
     properties:
       Items:
         type: "integer"
-        format: "int32"
+        format: "int64"
       IsPercent:
         type: "boolean"
       IsTop:
@@ -14627,16 +14806,16 @@ definitions:
     properties:
       StartRow:
         type: "integer"
-        format: "int32"
+        format: "int64"
       StartColumn:
         type: "integer"
-        format: "int32"
+        format: "int64"
       EndColumn:
         type: "integer"
-        format: "int32"
+        format: "int64"
       EndRow:
         type: "integer"
-        format: "int32"
+        format: "int64"
   Validation:
     allOf:
     - type: "object"
@@ -14732,7 +14911,7 @@ definitions:
         type: "array"
         items:
           type: "integer"
-          format: "int32"
+          format: "int64"
       Name:
         type: "string"
       UseSameSource:
@@ -14741,12 +14920,12 @@ definitions:
         type: "array"
         items:
           type: "integer"
-          format: "int32"
+          format: "int64"
       PivotFieldRows:
         type: "array"
         items:
           type: "integer"
-          format: "int32"
+          format: "int64"
       DestCellName:
         type: "string"
       SourceData:
@@ -14923,13 +15102,13 @@ definitions:
     properties:
       StartColumn:
         type: "integer"
-        format: "int32"
+        format: "int64"
       EndColumn:
         type: "integer"
-        format: "int32"
+        format: "int64"
       Row:
         type: "integer"
-        format: "int32"
+        format: "int64"
   OleObject:
     allOf:
     - type: "object"
@@ -14973,7 +15152,7 @@ definitions:
         type: "string"
       Size:
         type: "integer"
-        format: "int32"
+        format: "int64"
   ChartFrame:
     allOf:
     - type: "object"
@@ -14990,20 +15169,20 @@ definitions:
           $ref: "#/definitions/Area"
         Height:
           type: "integer"
-          format: "int32"
+          format: "int64"
         Width:
           type: "integer"
-          format: "int32"
+          format: "int64"
         BackgroundMode:
           type: "string"
         IsAutomaticSize:
           type: "boolean"
         Y:
           type: "integer"
-          format: "int32"
+          format: "int64"
         X:
           type: "integer"
-          format: "int32"
+          format: "int64"
         Shadow:
           type: "boolean"
         Font:
@@ -15045,10 +15224,10 @@ definitions:
           type: "string"
         desiredPPI:
           type: "integer"
-          format: "int32"
+          format: "int64"
         jpegQuality:
           type: "integer"
-          format: "int32"
+          format: "int64"
         SecurityOptions:
           $ref: "#/definitions/PdfSecurityOptions"
     - $ref: "#/definitions/SaveOptions"
@@ -15062,7 +15241,7 @@ definitions:
           type: "string"
         HorizontalResolution:
           type: "integer"
-          format: "int32"
+          format: "int64"
         ImageFormat:
           type: "string"
         IsCellAutoFit:
@@ -15075,15 +15254,15 @@ definitions:
           type: "string"
         PrintWithStatusDialog:
           type: "integer"
-          format: "int32"
+          format: "int64"
         Quality:
           type: "integer"
-          format: "int32"
+          format: "int64"
         TiffCompression:
           type: "string"
         VerticalResolution:
           type: "integer"
-          format: "int32"
+          format: "int64"
     - $ref: "#/definitions/SaveOptions"
   DifSaveOptions:
     allOf:
@@ -15106,7 +15285,7 @@ definitions:
       properties:
         SheetIndex:
           type: "integer"
-          format: "int32"
+          format: "int64"
     - $ref: "#/definitions/SaveOptions"
   MarkdownSaveOptions:
     allOf:
@@ -15314,7 +15493,7 @@ definitions:
           \ is a \"top/bottom\n    n percent\" rule.  Default value is false."
       Rank:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Get or set the value of \"n\" in a \"top/bottom n\" conditional\
           \ formatting rule.\n     If IsPercent is true, the value must between 0\
           \ and 100.  Otherwise it must\n    between 0 and 1000.  Default value is\
@@ -15366,7 +15545,7 @@ definitions:
       properties:
         Count:
           type: "integer"
-          format: "int32"
+          format: "int64"
         HyperlinkList:
           type: "array"
           items:
@@ -15380,7 +15559,7 @@ definitions:
       properties:
         Count:
           type: "integer"
-          format: "int32"
+          format: "int64"
         MergedCellList:
           type: "array"
           items:
@@ -15396,12 +15575,12 @@ definitions:
           $ref: "#/definitions/Color"
         OriginalHeight:
           type: "integer"
-          format: "int32"
+          format: "int64"
         ImageFormat:
           type: "string"
         OriginalWidth:
           type: "integer"
-          format: "int32"
+          format: "int64"
         BorderWeight:
           type: "number"
           format: "double"
@@ -15463,7 +15642,7 @@ definitions:
         $ref: "#/definitions/Color"
       MinLength:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Represents the min length of data bar .\n            "
       BarFillType:
         type: "string"
@@ -15490,7 +15669,7 @@ definitions:
         $ref: "#/definitions/Color"
       MaxLength:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Represents the max length of data bar ."
       ShowValue:
         type: "boolean"
@@ -15546,13 +15725,13 @@ definitions:
           type: "string"
         UpperLeftRow:
           type: "integer"
-          format: "int32"
+          format: "int64"
         LowerRightColumn:
           type: "integer"
-          format: "int32"
+          format: "int64"
         LowerRightRow:
           type: "integer"
-          format: "int32"
+          format: "int64"
         IsAutoGetSerialName:
           type: "boolean"
         ChartType:
@@ -15575,7 +15754,7 @@ definitions:
     properties:
       Index:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Gets the index of sheet in the worksheets collection.\n    \
           \        "
       Pictures:
@@ -15621,7 +15800,7 @@ definitions:
           \      "
       FirstVisibleColumn:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Represents first visible column index."
       OleObjects:
         $ref: "#/definitions/LinkElement"
@@ -15639,7 +15818,7 @@ definitions:
         $ref: "#/definitions/LinkElement"
       Zoom:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Represents the scaling factor in percent. It should be btween\
           \ 10 and 400.\n            "
       ConditionalFormattings:
@@ -15653,7 +15832,7 @@ definitions:
         $ref: "#/definitions/Color"
       FirstVisibleRow:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Represents first visible row index.\n            "
       TransitionEntry:
         type: "boolean"
@@ -15778,7 +15957,7 @@ definitions:
       properties:
         Id:
           type: "integer"
-          format: "int32"
+          format: "int64"
     - $ref: "#/definitions/LinkElement"
   OleObjectsResponse:
     allOf:
@@ -15906,10 +16085,10 @@ definitions:
         type: "boolean"
       BaseItem:
         type: "integer"
-        format: "int32"
+        format: "int64"
       ItemCount:
         type: "integer"
-        format: "int32"
+        format: "int64"
       Name:
         type: "string"
       ShowInOutlineForm:
@@ -15920,7 +16099,7 @@ definitions:
           type: "string"
       AutoShowField:
         type: "integer"
-        format: "int32"
+        format: "int64"
       IsAutoSubtotals:
         type: "boolean"
       IsIncludeNewItemsInFilter:
@@ -15929,30 +16108,30 @@ definitions:
         type: "integer"
       Position:
         type: "integer"
-        format: "int32"
+        format: "int64"
       IsAscendSort:
         type: "boolean"
       IsAscendShow:
         type: "boolean"
       BaseField:
         type: "integer"
-        format: "int32"
+        format: "int64"
       AutoSortField:
         type: "integer"
-        format: "int32"
+        format: "int64"
       AutoShowCount:
         type: "integer"
-        format: "int32"
+        format: "int64"
       Number:
         type: "integer"
-        format: "int32"
+        format: "int64"
       DragToPage:
         type: "boolean"
       DragToData:
         type: "boolean"
       BaseIndex:
         type: "integer"
-        format: "int32"
+        format: "int64"
       OriginalItems:
         type: "array"
         items:
@@ -15974,10 +16153,10 @@ definitions:
           type: "boolean"
         FirstRow:
           type: "integer"
-          format: "int32"
+          format: "int64"
         FirstColumn:
           type: "integer"
-          format: "int32"
+          format: "int64"
     - $ref: "#/definitions/ImportOption"
   CellsColor:
     type: "object"
@@ -15992,7 +16171,7 @@ definitions:
         type: "boolean"
       ColorIndex:
         type: "integer"
-        format: "int32"
+        format: "int64"
     example:
       Type: "Type"
       IsShapeColor: true
@@ -16013,7 +16192,7 @@ definitions:
       properties:
         Count:
           type: "integer"
-          format: "int32"
+          format: "int64"
         ConditionalFormattingList:
           type: "array"
           items:
@@ -16060,7 +16239,7 @@ definitions:
     properties:
       ColumnCount:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Gets the count of columns in the range."
       RowHeight:
         type: "number"
@@ -16071,7 +16250,7 @@ definitions:
         description: "Gets or sets the name of the range."
       FirstColumn:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Gets the index of the first column of the range."
       ColumnWidth:
         type: "number"
@@ -16082,11 +16261,11 @@ definitions:
         description: "Gets the range's refers to."
       RowCount:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Gets the count of rows in the range."
       FirstRow:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Gets the index of the first row of the range."
       Worksheet:
         type: "string"
@@ -16130,14 +16309,14 @@ definitions:
         $ref: "#/definitions/TextOptions"
       Length:
         type: "integer"
-        format: "int32"
+        format: "int64"
       Font:
         $ref: "#/definitions/Font"
       Type:
         type: "string"
       StartIndex:
         type: "integer"
-        format: "int32"
+        format: "int64"
   Comment:
     allOf:
     - type: "object"
@@ -16152,12 +16331,12 @@ definitions:
           type: "string"
         Height:
           type: "integer"
-          format: "int32"
+          format: "int64"
         Note:
           type: "string"
         Width:
           type: "integer"
-          format: "int32"
+          format: "int64"
         TextVerticalAlignment:
           type: "string"
         CellName:
@@ -16173,21 +16352,21 @@ definitions:
       properties:
         Index:
           type: "integer"
-          format: "int32"
+          format: "int64"
         EndIndex:
           type: "integer"
-          format: "int32"
+          format: "int64"
         Column:
           type: "integer"
-          format: "int32"
+          format: "int64"
         StartIndex:
           type: "integer"
-          format: "int32"
+          format: "int64"
         PageBreakType:
           type: "string"
         Row:
           type: "integer"
-          format: "int32"
+          format: "int64"
     - $ref: "#/definitions/OperateParameter"
   WorksheetReplaceResponse:
     allOf:
@@ -16197,7 +16376,7 @@ definitions:
       properties:
         Matches:
           type: "integer"
-          format: "int32"
+          format: "int64"
         Worksheet:
           $ref: "#/definitions/LinkElement"
     - $ref: "#/definitions/CellsCloudResponse"
@@ -16231,13 +16410,13 @@ definitions:
     properties:
       Column:
         type: "integer"
-        format: "int32"
+        format: "int64"
       StartRow:
         type: "integer"
-        format: "int32"
+        format: "int64"
       EndRow:
         type: "integer"
-        format: "int32"
+        format: "int64"
   PivotFilterResponse:
     allOf:
     - type: "object"
@@ -16253,13 +16432,13 @@ definitions:
           type: "string"
         Bottom:
           type: "integer"
-          format: "int32"
+          format: "int64"
         Top:
           type: "integer"
-          format: "int32"
+          format: "int64"
         Width:
           type: "integer"
-          format: "int32"
+          format: "int64"
         HtmlText:
           type: "string"
         TextVerticalAlignment:
@@ -16270,7 +16449,7 @@ definitions:
           type: "boolean"
         UpperLeftColumn:
           type: "integer"
-          format: "int32"
+          format: "int64"
         IsLockAspectRatio:
           type: "boolean"
         IsGroup:
@@ -16280,7 +16459,7 @@ definitions:
           format: "double"
         ZOrderPosition:
           type: "integer"
-          format: "int32"
+          format: "int64"
         TextHorizontalOverflow:
           type: "string"
         MsoDrawingType:
@@ -16297,36 +16476,36 @@ definitions:
           type: "string"
         UpperLeftRow:
           type: "integer"
-          format: "int32"
+          format: "int64"
         IsLocked:
           type: "boolean"
         LowerRightRow:
           type: "integer"
-          format: "int32"
+          format: "int64"
         IsTextWrapped:
           type: "boolean"
         Y:
           type: "integer"
-          format: "int32"
+          format: "int64"
         X:
           type: "integer"
-          format: "int32"
+          format: "int64"
         IsHidden:
           type: "boolean"
         Left:
           type: "integer"
-          format: "int32"
+          format: "int64"
         Right:
           type: "integer"
-          format: "int32"
+          format: "int64"
         Text:
           type: "string"
         LowerRightColumn:
           type: "integer"
-          format: "int32"
+          format: "int64"
         Height:
           type: "integer"
-          format: "int32"
+          format: "int64"
         TextHorizontalAlignment:
           type: "string"
         TextVerticalOverflow:
@@ -16398,12 +16577,12 @@ definitions:
       properties:
         Index:
           type: "integer"
-          format: "int32"
+          format: "int64"
         Style:
           $ref: "#/definitions/LinkElement"
         GroupLevel:
           type: "integer"
-          format: "int32"
+          format: "int64"
         Height:
           type: "number"
           format: "double"
@@ -16425,7 +16604,7 @@ definitions:
         pattern: "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$"
       Section:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "0,1,2  left , middle ,right"
       FisrtPageContext:
         type: "string"
@@ -16457,7 +16636,7 @@ definitions:
         description: "Encription password."
       KeyLength:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Encription key length."
       EncryptionType:
         type: "string"
@@ -16526,7 +16705,7 @@ definitions:
           description: "Gets the name of the cell.\n            "
         Column:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Gets column number (zero based) of the cell.\n            "
         Worksheet:
           type: "string"
@@ -16568,7 +16747,7 @@ definitions:
           description: "Specifies a cell value type."
         Row:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Gets row number (zero based) of the cell.\n            "
     - $ref: "#/definitions/LinkElement"
     description: "Encapsulates the object that represents a single Workbook cell."
@@ -16612,14 +16791,14 @@ definitions:
       properties:
         MaxRow:
           type: "integer"
-          format: "int32"
+          format: "int64"
         RowsList:
           type: "array"
           items:
             $ref: "#/definitions/LinkElement"
         RowsCount:
           type: "integer"
-          format: "int32"
+          format: "int64"
     - $ref: "#/definitions/LinkElement"
   PivotTableResponse:
     allOf:
@@ -16663,10 +16842,10 @@ definitions:
       properties:
         ColumnsCount:
           type: "integer"
-          format: "int32"
+          format: "int64"
         MaxColumn:
           type: "integer"
-          format: "int32"
+          format: "int64"
         ColumnsList:
           type: "array"
           items:
@@ -16702,7 +16881,7 @@ definitions:
         type: "array"
         items:
           type: "integer"
-          format: "int32"
+          format: "int64"
     example:
       Data:
       - 0
@@ -16843,7 +17022,7 @@ definitions:
             \ 2007;"
         Priority:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "The priority of this conditional formatting rule. This value\
             \ is used to determine\n    which format should be evaluated and rendered.\
             \ Lower numeric values are higher\n    priority than higher numeric values,\
@@ -16872,16 +17051,16 @@ definitions:
       properties:
         StartRow:
           type: "integer"
-          format: "int32"
+          format: "int64"
         StartColumn:
           type: "integer"
-          format: "int32"
+          format: "int64"
         EndColumn:
           type: "integer"
-          format: "int32"
+          format: "int64"
         EndRow:
           type: "integer"
-          format: "int32"
+          format: "int64"
     - $ref: "#/definitions/LinkElement"
   Column:
     allOf:
@@ -16889,12 +17068,12 @@ definitions:
       properties:
         Index:
           type: "integer"
-          format: "int32"
+          format: "int64"
         Style:
           $ref: "#/definitions/LinkElement"
         GroupLevel:
           type: "integer"
-          format: "int32"
+          format: "int64"
         IsHidden:
           type: "boolean"
         Width:
@@ -16928,7 +17107,7 @@ definitions:
       properties:
         Count:
           type: "integer"
-          format: "int32"
+          format: "int64"
         ValidationList:
           type: "array"
           items:
@@ -17025,10 +17204,10 @@ definitions:
           $ref: "#/definitions/FileSource"
         VerticalResolution:
           type: "integer"
-          format: "int32"
+          format: "int64"
         HorizontalResolution:
           type: "integer"
-          format: "int32"
+          format: "int64"
         SplitNameRule:
           type: "string"
         Workbook:
@@ -17056,7 +17235,7 @@ definitions:
     properties:
       Index:
         type: "integer"
-        format: "int32"
+        format: "int64"
       IsHidden:
         type: "boolean"
         description: "Represents whether the specified item visible."
@@ -17169,15 +17348,15 @@ definitions:
           type: "array"
           items:
             type: "integer"
-            format: "int32"
+            format: "int64"
         IsVertical:
           type: "boolean"
         FirstRow:
           type: "integer"
-          format: "int32"
+          format: "int64"
         FirstColumn:
           type: "integer"
-          format: "int32"
+          format: "int64"
     - $ref: "#/definitions/ImportOption"
   FilterColumn:
     type: "object"
@@ -17198,7 +17377,7 @@ definitions:
         $ref: "#/definitions/ColorFilter"
       FieldIndex:
         type: "integer"
-        format: "int32"
+        format: "int64"
       Top10Filter:
         $ref: "#/definitions/Top10Filter"
       IconFilter:
@@ -17213,12 +17392,12 @@ definitions:
           type: "boolean"
         FirstColumn:
           type: "integer"
-          format: "int32"
+          format: "int64"
         SourceFile:
           type: "string"
         FirstRow:
           type: "integer"
-          format: "int32"
+          format: "int64"
         SeparatorString:
           type: "string"
         CustomParsers:
@@ -17268,7 +17447,7 @@ definitions:
           \ criteria.  Default value\n   is false.\n            "
       StdDev:
         type: "integer"
-        format: "int32"
+        format: "int64"
         description: "Get or set the number of standard deviations to include above\
           \ or below the\n  average in the conditional formatting rule. The input\
           \ value must between\n  0 and 3 (include 0 and 3). Setting this value to\
@@ -17288,7 +17467,7 @@ definitions:
     properties:
       ColumnIndex:
         type: "integer"
-        format: "int32"
+        format: "int64"
       CustomStyle:
         type: "string"
       ParseMethod:
@@ -17368,7 +17547,7 @@ definitions:
       properties:
         FirstSliceAngle:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Gets or sets the angle of the first pie-chart or doughnut-chart\
             \ slice, in degrees (clockwise from vertical). Applies only to pie, 3-D\
             \ pie, and doughnut charts, 0 to 360."
@@ -17386,7 +17565,7 @@ definitions:
             \ be True."
         Style:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Gets and sets the builtin style."
         SeriesAxis:
           description: "Gets the chart's series axis."
@@ -17406,7 +17585,7 @@ definitions:
           $ref: "#/definitions/LinkElement"
         Elevation:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Represents the elevation of the 3-D chart view, in degrees."
         SideWall:
           $ref: "#/definitions/LinkElement"
@@ -17427,12 +17606,12 @@ definitions:
           $ref: "#/definitions/LinkElement"
         HeightPercent:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Returns or sets the height of a 3-D chart as a percentage\
             \ of the chart width (between 5 and 500 percent)."
         GapWidth:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Returns or sets the space between bar or column clusters,\
             \ as a percentage of the bar or column width. The value of this property\
             \ must be between 0 and 500.\n            "
@@ -17480,7 +17659,7 @@ definitions:
             \ not empty ,the chart is PivotChart."
         DepthPercent:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Represents the depth of a 3-D chart as a percentage of the\
             \ chart width (between 20 and 2000 percent)."
         PrintSize:
@@ -17488,7 +17667,7 @@ definitions:
           description: "Gets and sets the printed chart size."
         GapDepth:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Gets or sets the distance between the data series in a 3-D\
             \ chart, as a percentage of the marker width.The value of this property\
             \ must be between 0 and 500."
@@ -17504,7 +17683,7 @@ definitions:
           $ref: "#/definitions/LinkElement"
         RotationAngle:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Represents the rotation of the 3-D chart view (the rotation\
             \ of the plot area around the z-axis, in degrees)."
         PlotArea:
@@ -17605,10 +17784,10 @@ definitions:
           type: "boolean"
         FirstRow:
           type: "integer"
-          format: "int32"
+          format: "int64"
         FirstColumn:
           type: "integer"
-          format: "int32"
+          format: "int64"
     - $ref: "#/definitions/ImportOption"
   DataSorter:
     type: "object"
@@ -17655,7 +17834,7 @@ definitions:
       properties:
         Count:
           type: "integer"
-          format: "int32"
+          format: "int64"
         NameList:
           type: "array"
           items:
@@ -17751,7 +17930,7 @@ definitions:
           type: "boolean"
         Indent:
           type: "integer"
-          format: "int32"
+          format: "int64"
         Name:
           type: "string"
         RowGrand:
@@ -17792,7 +17971,7 @@ definitions:
           type: "boolean"
         PageFieldWrapCount:
           type: "integer"
-          format: "int32"
+          format: "int64"
         ShowPivotStyleColumnStripes:
           type: "boolean"
         FieldListSortAscending:
@@ -17832,7 +18011,7 @@ definitions:
           type: "string"
         WorksheetIndex:
           type: "integer"
-          format: "int32"
+          format: "int64"
         R1C1RefersTo:
           type: "string"
         RefersTo:
@@ -17972,7 +18151,7 @@ definitions:
       properties:
         Matches:
           type: "integer"
-          format: "int32"
+          format: "int64"
         Workbook:
           $ref: "#/definitions/LinkElement"
     - $ref: "#/definitions/CellsCloudResponse"
@@ -17988,15 +18167,15 @@ definitions:
     properties:
       ChartIndex:
         type: "integer"
-        format: "int32"
+        format: "int64"
       ListObjectIndex:
         type: "integer"
-        format: "int32"
+        format: "int64"
       SheetName:
         type: "string"
       ShapeIndex:
         type: "integer"
-        format: "int32"
+        format: "int64"
       CellName:
         type: "string"
       Workbook:
@@ -18067,7 +18246,7 @@ definitions:
         type: "boolean"
       CalcStackSize:
         type: "integer"
-        format: "int32"
+        format: "int64"
     example:
       PrecisionStrategy: "PrecisionStrategy"
       CalcStackSize: 0
@@ -18143,19 +18322,19 @@ definitions:
             \ with other pages."
         FitToPagesWide:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Represents the number of pages wide the worksheet will be\
             \ scaled to when it's printed."
         PrintQuality:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Represents the print quality."
         PrintDraft:
           type: "boolean"
           description: "Represents if the sheet will be printed without graphics."
         FirstPageNumber:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Represents the first page number that will be used when this\
             \ sheet is printed."
         PaperSize:
@@ -18217,7 +18396,7 @@ definitions:
             $ref: "#/definitions/PageSection"
         FitToPagesTall:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Represents the number of pages tall the worksheet will be\
             \ scaled to when it's printed."
         IsHFScaleWithDoc:
@@ -18230,7 +18409,7 @@ definitions:
             \ page."
         Zoom:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Represents the scaling factor in percent. It should be between\
             \ 10 and 400."
         PrintTitleRows:
@@ -18243,7 +18422,7 @@ definitions:
             \ when printing a large worksheet."
         PrintCopies:
           type: "integer"
-          format: "int32"
+          format: "int64"
           description: "Get and sets number of copies to print."
         Orientation:
           type: "string"

@@ -35,5 +35,5 @@ type SvgSaveOptions struct {
 	// If true and the directory does not exist, the directory will be automatically created before saving the file.             
 	CreateDirectory bool `json:"CreateDirectory,omitempty" xml:"CreateDirectory"`
 	SortNames bool `json:"SortNames,omitempty" xml:"SortNames"`
-	SheetIndex int32 `json:"SheetIndex,omitempty" xml:"SheetIndex"`
+	SheetIndex int64 `json:"SheetIndex,omitempty" xml:"SheetIndex"`
 }

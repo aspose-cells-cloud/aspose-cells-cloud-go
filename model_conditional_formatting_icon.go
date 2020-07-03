@@ -24,7 +24,7 @@ package asposecellscloud
 
 type ConditionalFormattingIcon struct {
 	// Gets and sets the icon's index in the icon set.             
-	Index int32 `json:"Index,omitempty" xml:"Index"`
+	Index int64 `json:"Index,omitempty" xml:"Index"`
 	// Gets and sets the icon set type.             
 	Type_ string `json:"Type,omitempty" xml:"Type"`
 	// Gets the icon set data.             

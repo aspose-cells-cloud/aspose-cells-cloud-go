@@ -23,7 +23,7 @@
 package asposecellscloud
 
 type CustomParserConfig struct {
-	ColumnIndex int32 `json:"ColumnIndex,omitempty" xml:"ColumnIndex"`
+	ColumnIndex int64 `json:"ColumnIndex,omitempty" xml:"ColumnIndex"`
 	CustomStyle string `json:"CustomStyle,omitempty" xml:"CustomStyle"`
 	ParseMethod string `json:"ParseMethod,omitempty" xml:"ParseMethod"`
 }

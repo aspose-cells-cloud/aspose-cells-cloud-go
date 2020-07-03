@@ -25,5 +25,5 @@ package asposecellscloud
 type SortKey struct {
 	CustomList string `json:"CustomList,omitempty" xml:"CustomList"`
 	SortOrder string `json:"SortOrder,omitempty" xml:"SortOrder"`
-	Key int32 `json:"Key" xml:"Key"`
+	Key int64 `json:"Key" xml:"Key"`
 }

@@ -24,7 +24,7 @@ package asposecellscloud
 
 type Worksheet struct {
 	// Gets the index of sheet in the worksheets collection.             
-	Index int32 `json:"Index" xml:"Index"`
+	Index int64 `json:"Index" xml:"Index"`
 	Pictures *LinkElement `json:"Pictures,omitempty" xml:"Pictures"`
 	Charts *LinkElement `json:"Charts,omitempty" xml:"Charts"`
 	Comments *LinkElement `json:"Comments,omitempty" xml:"Comments"`
@@ -48,7 +48,7 @@ type Worksheet struct {
 	// Indicates if the specified worksheet is displayed from right to left instead    of from left to right.  Default is false.             
 	DisplayRightToLeft bool `json:"DisplayRightToLeft,omitempty" xml:"DisplayRightToLeft"`
 	// Represents first visible column index.
-	FirstVisibleColumn int32 `json:"FirstVisibleColumn,omitempty" xml:"FirstVisibleColumn"`
+	FirstVisibleColumn int64 `json:"FirstVisibleColumn,omitempty" xml:"FirstVisibleColumn"`
 	OleObjects *LinkElement `json:"OleObjects,omitempty" xml:"OleObjects"`
 	// Indicates whether show outline.             
 	IsOutlineShown bool `json:"IsOutlineShown,omitempty" xml:"IsOutlineShown"`
@@ -58,14 +58,14 @@ type Worksheet struct {
 	Cells *LinkElement `json:"Cells,omitempty" xml:"Cells"`
 	Validations *LinkElement `json:"Validations,omitempty" xml:"Validations"`
 	// Represents the scaling factor in percent. It should be btween 10 and 400.             
-	Zoom int32 `json:"Zoom,omitempty" xml:"Zoom"`
+	Zoom int64 `json:"Zoom,omitempty" xml:"Zoom"`
 	ConditionalFormattings *LinkElement `json:"ConditionalFormattings,omitempty" xml:"ConditionalFormattings"`
 	// Indicates whether this worksheet is selected when the workbook is opened.
 	IsSelected bool `json:"IsSelected,omitempty" xml:"IsSelected"`
 	// Represents worksheet tab color.
 	TabColor *Color `json:"TabColor,omitempty" xml:"TabColor"`
 	// Represents first visible row index.             
-	FirstVisibleRow int32 `json:"FirstVisibleRow,omitempty" xml:"FirstVisibleRow"`
+	FirstVisibleRow int64 `json:"FirstVisibleRow,omitempty" xml:"FirstVisibleRow"`
 	// Flag indicating whether the Transition Formula Entry (Lotus compatibility) option is enabled.
 	TransitionEntry bool `json:"TransitionEntry,omitempty" xml:"TransitionEntry"`
 	// Indicates the state for this sheet visibility             

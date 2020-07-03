@@ -25,18 +25,18 @@ package asposecellscloud
 type Shape struct {
 	Link *Link `json:"link,omitempty" xml:"link"`
 	AlternativeText string `json:"AlternativeText,omitempty" xml:"AlternativeText"`
-	Bottom int32 `json:"Bottom,omitempty" xml:"Bottom"`
-	Top int32 `json:"Top,omitempty" xml:"Top"`
-	Width int32 `json:"Width,omitempty" xml:"Width"`
+	Bottom int64 `json:"Bottom,omitempty" xml:"Bottom"`
+	Top int64 `json:"Top,omitempty" xml:"Top"`
+	Width int64 `json:"Width,omitempty" xml:"Width"`
 	HtmlText string `json:"HtmlText,omitempty" xml:"HtmlText"`
 	TextVerticalAlignment string `json:"TextVerticalAlignment,omitempty" xml:"TextVerticalAlignment"`
 	AutoShapeType string `json:"AutoShapeType,omitempty" xml:"AutoShapeType"`
 	IsPrintable bool `json:"IsPrintable,omitempty" xml:"IsPrintable"`
-	UpperLeftColumn int32 `json:"UpperLeftColumn,omitempty" xml:"UpperLeftColumn"`
+	UpperLeftColumn int64 `json:"UpperLeftColumn,omitempty" xml:"UpperLeftColumn"`
 	IsLockAspectRatio bool `json:"IsLockAspectRatio,omitempty" xml:"IsLockAspectRatio"`
 	IsGroup bool `json:"IsGroup,omitempty" xml:"IsGroup"`
 	RotationAngle float64 `json:"RotationAngle,omitempty" xml:"RotationAngle"`
-	ZOrderPosition int32 `json:"ZOrderPosition,omitempty" xml:"ZOrderPosition"`
+	ZOrderPosition int64 `json:"ZOrderPosition,omitempty" xml:"ZOrderPosition"`
 	TextHorizontalOverflow string `json:"TextHorizontalOverflow,omitempty" xml:"TextHorizontalOverflow"`
 	MsoDrawingType string `json:"MsoDrawingType,omitempty" xml:"MsoDrawingType"`
 	TextOrientationType string `json:"TextOrientationType,omitempty" xml:"TextOrientationType"`
@@ -44,18 +44,18 @@ type Shape struct {
 	Name string `json:"Name,omitempty" xml:"Name"`
 	IsWordArt bool `json:"IsWordArt,omitempty" xml:"IsWordArt"`
 	LinkedCell string `json:"LinkedCell,omitempty" xml:"LinkedCell"`
-	UpperLeftRow int32 `json:"UpperLeftRow,omitempty" xml:"UpperLeftRow"`
+	UpperLeftRow int64 `json:"UpperLeftRow,omitempty" xml:"UpperLeftRow"`
 	IsLocked bool `json:"IsLocked,omitempty" xml:"IsLocked"`
-	LowerRightRow int32 `json:"LowerRightRow,omitempty" xml:"LowerRightRow"`
+	LowerRightRow int64 `json:"LowerRightRow,omitempty" xml:"LowerRightRow"`
 	IsTextWrapped bool `json:"IsTextWrapped,omitempty" xml:"IsTextWrapped"`
-	Y int32 `json:"Y,omitempty" xml:"Y"`
-	X int32 `json:"X,omitempty" xml:"X"`
+	Y int64 `json:"Y,omitempty" xml:"Y"`
+	X int64 `json:"X,omitempty" xml:"X"`
 	IsHidden bool `json:"IsHidden,omitempty" xml:"IsHidden"`
-	Left int32 `json:"Left,omitempty" xml:"Left"`
-	Right int32 `json:"Right,omitempty" xml:"Right"`
+	Left int64 `json:"Left,omitempty" xml:"Left"`
+	Right int64 `json:"Right,omitempty" xml:"Right"`
 	Text string `json:"Text,omitempty" xml:"Text"`
-	LowerRightColumn int32 `json:"LowerRightColumn,omitempty" xml:"LowerRightColumn"`
-	Height int32 `json:"Height,omitempty" xml:"Height"`
+	LowerRightColumn int64 `json:"LowerRightColumn,omitempty" xml:"LowerRightColumn"`
+	Height int64 `json:"Height,omitempty" xml:"Height"`
 	TextHorizontalAlignment string `json:"TextHorizontalAlignment,omitempty" xml:"TextHorizontalAlignment"`
 	TextVerticalOverflow string `json:"TextVerticalOverflow,omitempty" xml:"TextVerticalOverflow"`
 }

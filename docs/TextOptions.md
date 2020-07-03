@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **IsSuperscript** | **bool** |  | [optional] [default to null]
 **IsStrikeout** | **bool** |  | [optional] [default to null]
 **Underline** | **string** |  | [optional] [default to null]
-**Size** | **int32** |  | [optional] [default to null]
+**Size** | **int64** |  | [optional] [default to null]
 **Outline** | [***LineFormat**](LineFormat.md) |  | [optional] [default to null]
 **Spacing** | **float64** |  | [optional] [default to null]
 **Kerning** | **float64** |  | [optional] [default to null]

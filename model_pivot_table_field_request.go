@@ -23,5 +23,5 @@
 package asposecellscloud
 
 type PivotTableFieldRequest struct {
-	Data []int32 `json:"Data,omitempty" xml:"Data"`
+	Data []int64 `json:"Data,omitempty" xml:"Data"`
 }

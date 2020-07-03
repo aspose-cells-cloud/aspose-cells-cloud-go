@@ -23,8 +23,8 @@
 package asposecellscloud
 
 type CellValue struct {
-	RowIndex int32 `json:"rowIndex,omitempty" xml:"rowIndex"`
-	ColumnIndex int32 `json:"columnIndex,omitempty" xml:"columnIndex"`
+	RowIndex int64 `json:"rowIndex,omitempty" xml:"rowIndex"`
+	ColumnIndex int64 `json:"columnIndex,omitempty" xml:"columnIndex"`
 	Style *Style `json:"style,omitempty" xml:"style"`
 	Type_ string `json:"type,omitempty" xml:"type"`
 	Value string `json:"value,omitempty" xml:"value"`

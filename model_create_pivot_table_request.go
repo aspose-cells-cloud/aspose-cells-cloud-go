@@ -23,11 +23,11 @@
 package asposecellscloud
 
 type CreatePivotTableRequest struct {
-	PivotFieldColumns []int32 `json:"PivotFieldColumns,omitempty" xml:"PivotFieldColumns"`
+	PivotFieldColumns []int64 `json:"PivotFieldColumns,omitempty" xml:"PivotFieldColumns"`
 	Name string `json:"Name,omitempty" xml:"Name"`
 	UseSameSource bool `json:"UseSameSource" xml:"UseSameSource"`
-	PivotFieldData []int32 `json:"PivotFieldData,omitempty" xml:"PivotFieldData"`
-	PivotFieldRows []int32 `json:"PivotFieldRows,omitempty" xml:"PivotFieldRows"`
+	PivotFieldData []int64 `json:"PivotFieldData,omitempty" xml:"PivotFieldData"`
+	PivotFieldRows []int64 `json:"PivotFieldRows,omitempty" xml:"PivotFieldRows"`
 	DestCellName string `json:"DestCellName,omitempty" xml:"DestCellName"`
 	SourceData string `json:"SourceData,omitempty" xml:"SourceData"`
 }

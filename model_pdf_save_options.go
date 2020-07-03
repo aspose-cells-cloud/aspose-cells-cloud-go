@@ -42,7 +42,7 @@ type PdfSaveOptions struct {
 	DefaultFont string `json:"DefaultFont,omitempty" xml:"DefaultFont"`
 	PrintingPageType string `json:"PrintingPageType,omitempty" xml:"PrintingPageType"`
 	ImageType string `json:"ImageType,omitempty" xml:"ImageType"`
-	DesiredPPI int32 `json:"desiredPPI,omitempty" xml:"desiredPPI"`
-	JpegQuality int32 `json:"jpegQuality,omitempty" xml:"jpegQuality"`
+	DesiredPPI int64 `json:"desiredPPI,omitempty" xml:"desiredPPI"`
+	JpegQuality int64 `json:"jpegQuality,omitempty" xml:"jpegQuality"`
 	SecurityOptions *PdfSecurityOptions `json:"SecurityOptions,omitempty" xml:"SecurityOptions"`
 }

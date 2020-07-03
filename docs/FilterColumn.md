@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **CustomFilters** | [**[]CustomFilter**](CustomFilter.md) |  | [optional] [default to null]
 **DynamicFilter** | [***DynamicFilter**](DynamicFilter.md) |  | [optional] [default to null]
 **ColorFilter** | [***ColorFilter**](ColorFilter.md) |  | [optional] [default to null]
-**FieldIndex** | **int32** |  | [default to null]
+**FieldIndex** | **int64** |  | [default to null]
 **Top10Filter** | [***Top10Filter**](Top10Filter.md) |  | [optional] [default to null]
 **IconFilter** | [***IconFilter**](IconFilter.md) |  | [optional] [default to null]
 **Visibledropdown** | **string** |  | [optional] [default to null]

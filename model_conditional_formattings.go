@@ -24,6 +24,6 @@ package asposecellscloud
 
 type ConditionalFormattings struct {
 	Link *Link `json:"link,omitempty" xml:"link"`
-	Count int32 `json:"Count" xml:"Count"`
+	Count int64 `json:"Count" xml:"Count"`
 	ConditionalFormattingList []ConditionalFormatting `json:"ConditionalFormattingList,omitempty" xml:"ConditionalFormattingList"`
 }

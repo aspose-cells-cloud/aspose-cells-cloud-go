@@ -40,25 +40,25 @@ type PivotField struct {
 	BaseItemPosition string `json:"BaseItemPosition,omitempty" xml:"BaseItemPosition"`
 	IsInsertPageBreaksBetweenItems bool `json:"IsInsertPageBreaksBetweenItems,omitempty" xml:"IsInsertPageBreaksBetweenItems"`
 	ShowAllItems bool `json:"ShowAllItems,omitempty" xml:"ShowAllItems"`
-	BaseItem int32 `json:"BaseItem,omitempty" xml:"BaseItem"`
-	ItemCount int32 `json:"ItemCount,omitempty" xml:"ItemCount"`
+	BaseItem int64 `json:"BaseItem,omitempty" xml:"BaseItem"`
+	ItemCount int64 `json:"ItemCount,omitempty" xml:"ItemCount"`
 	Name string `json:"Name,omitempty" xml:"Name"`
 	ShowInOutlineForm bool `json:"ShowInOutlineForm,omitempty" xml:"ShowInOutlineForm"`
 	Items []string `json:"Items,omitempty" xml:"Items"`
-	AutoShowField int32 `json:"AutoShowField,omitempty" xml:"AutoShowField"`
+	AutoShowField int64 `json:"AutoShowField,omitempty" xml:"AutoShowField"`
 	IsAutoSubtotals bool `json:"IsAutoSubtotals,omitempty" xml:"IsAutoSubtotals"`
 	IsIncludeNewItemsInFilter bool `json:"IsIncludeNewItemsInFilter,omitempty" xml:"IsIncludeNewItemsInFilter"`
 	CurrentPageItem int32 `json:"CurrentPageItem,omitempty" xml:"CurrentPageItem"`
-	Position int32 `json:"Position,omitempty" xml:"Position"`
+	Position int64 `json:"Position,omitempty" xml:"Position"`
 	IsAscendSort bool `json:"IsAscendSort,omitempty" xml:"IsAscendSort"`
 	IsAscendShow bool `json:"IsAscendShow,omitempty" xml:"IsAscendShow"`
-	BaseField int32 `json:"BaseField,omitempty" xml:"BaseField"`
-	AutoSortField int32 `json:"AutoSortField,omitempty" xml:"AutoSortField"`
-	AutoShowCount int32 `json:"AutoShowCount,omitempty" xml:"AutoShowCount"`
-	Number int32 `json:"Number,omitempty" xml:"Number"`
+	BaseField int64 `json:"BaseField,omitempty" xml:"BaseField"`
+	AutoSortField int64 `json:"AutoSortField,omitempty" xml:"AutoSortField"`
+	AutoShowCount int64 `json:"AutoShowCount,omitempty" xml:"AutoShowCount"`
+	Number int64 `json:"Number,omitempty" xml:"Number"`
 	DragToPage bool `json:"DragToPage,omitempty" xml:"DragToPage"`
 	DragToData bool `json:"DragToData,omitempty" xml:"DragToData"`
-	BaseIndex int32 `json:"BaseIndex,omitempty" xml:"BaseIndex"`
+	BaseIndex int64 `json:"BaseIndex,omitempty" xml:"BaseIndex"`
 	OriginalItems []string `json:"OriginalItems,omitempty" xml:"OriginalItems"`
 	DragToHide bool `json:"DragToHide,omitempty" xml:"DragToHide"`
 	IsCalculatedField bool `json:"IsCalculatedField,omitempty" xml:"IsCalculatedField"`

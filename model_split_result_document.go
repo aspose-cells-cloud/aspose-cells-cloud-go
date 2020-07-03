@@ -24,5 +24,5 @@ package asposecellscloud
 
 type SplitResultDocument struct {
 	Link *Link `json:"link,omitempty" xml:"link"`
-	Id int32 `json:"Id" xml:"Id"`
+	Id int64 `json:"Id" xml:"Id"`
 }

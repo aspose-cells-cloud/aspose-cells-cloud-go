@@ -27,7 +27,7 @@ type WorkbookEncryptionRequest struct {
 	// Encription password.
 	Password string `json:"Password,omitempty" xml:"Password"`
 	// Encription key length.
-	KeyLength int32 `json:"KeyLength" xml:"KeyLength"`
+	KeyLength int64 `json:"KeyLength" xml:"KeyLength"`
 	// Workbook encription type.
 	EncryptionType string `json:"EncryptionType,omitempty" xml:"EncryptionType"`
 }

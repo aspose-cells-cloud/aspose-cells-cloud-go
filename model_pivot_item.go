@@ -23,7 +23,7 @@
 package asposecellscloud
 
 type PivotItem struct {
-	Index int32 `json:"Index,omitempty" xml:"Index"`
+	Index int64 `json:"Index,omitempty" xml:"Index"`
 	// Represents whether the specified item visible.
 	IsHidden bool `json:"IsHidden,omitempty" xml:"IsHidden"`
 	// Gets the name

@@ -25,8 +25,8 @@ package asposecellscloud
 type SplitWorkbookTaskParameter struct {
 	DestinationFileFormat  string `json:"DestinationFileFormat,omitempty" xml:"DestinationFileFormat"`
 	DestinationFilePosition interface{}  `json:"DestinationFilePosition,omitempty" xml:"DestinationFilePosition"`
-	VerticalResolution  int32 `json:"VerticalResolution,omitempty" xml:"VerticalResolution"`
-	HorizontalResolution  int32 `json:"HorizontalResolution,omitempty" xml:"HorizontalResolution"`
+	VerticalResolution  int64 `json:"VerticalResolution,omitempty" xml:"VerticalResolution"`
+	HorizontalResolution  int64 `json:"HorizontalResolution,omitempty" xml:"HorizontalResolution"`
 	SplitNameRule  string `json:"SplitNameRule,omitempty" xml:"SplitNameRule"`
 	Workbook interface{}  `json:"Workbook,omitempty" xml:"Workbook"`
 }
