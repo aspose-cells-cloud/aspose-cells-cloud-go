@@ -31,6 +31,10 @@ import (
 	"strings"
 )
 
+func Version() {
+	fmt.Println("---Version: 20.6.0---")
+}
+
 /* Create Instance of CellsApiService
 @param appSid string Application SID
 @param appKey string Application Key
