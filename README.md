@@ -1,6 +1,6 @@
-# Go REST API for Spreadsheet Processing in Cloud
+# Go  API client for asposecellscloud
 
-This Cloud SDK enhances your Go cloud-based apps to [process & manipulate Microsoft Excel spreadsheets](https://products.aspose.cloud/cells/go) in the cloud, without MS Office.
+[Aspose.Cells Cloud SDK for Go](https://products.aspose.cloud/cells/go) empowers your Go applications to connect with excel document formats. The APIs let engineers read, convert, build, alter and control the substance of the [excel document formats](https://docs.aspose.cloud/display/cellscloud/Supported+File+Formats) without any office software installed on the machine..
 
 ## Spreadsheet Processing Features
 
@@ -46,9 +46,11 @@ SXC, FODS
 You do not need to install anything to get started with Aspose.Cells Cloud SDK for Go. Just create an account at [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) and get your application information.
 
 ### Installation
-Put the package under your project folder and add the following in import:
-```golang
-import "./asposecellscloud"
+## How to use the SDK
+
+- 1:Download the code and Add/Modify your application refer to cells_cloud_test.go
+- 2:If you want to download by [Go Module](https://pkg.go.dev),please use
+  import "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v20" in your code
 ```
 ### Getting Started
 
@@ -125,6 +127,10 @@ name := GetBook1()
 		fmt.Printf("%d\tTestCellsSaveAsPostDocumentSaveAs - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 ```
+
+## Licensing
+
+All Aspose.Cells Cloud SDKs are licensed under [MIT License](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE).
 
 [Product Page](https://products.aspose.cloud/cells/go) | [Documentation](https://docs.aspose.cloud/display/cellscloud/Home) | [Live Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Code Samples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
 
