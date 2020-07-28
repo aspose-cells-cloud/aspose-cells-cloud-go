@@ -18,11 +18,9 @@
 - Cloud SDK to Read & Process Excel Worksheets.
 - Leverage the Power of Pivot Tables & Ranges.
 
-## Enhancements in Version 20.6
+## Enhancements in Version 20.7
 
-- Support to add text water marker.
-- Enhancement for Cells object operating in Task API.
-- Enhancement for workbook convert images in get workbook AP
+- Enhancement for CellsApi constructor.
 
 ## Read & Write Spreadsheet Formats
 
@@ -58,7 +56,7 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```golang
 func GetDocumentCircleAnnotations() (CircleAnnotationsResponse, *http.Response, error) {
-    cellsAPI := NewCellsApiService("AppSid", "AppKey", "")
+    cellsAPI := NewCellsApiService("AppSid", "AppKey", "https://api.aspose.cloud","v3.0")
 	name := "Book1.xlsx"	
 
 	args := new(UploadFileOpts)
@@ -88,7 +86,7 @@ The following code snippet demonstrates how to add a new worksheet to a Microsof
 	args := new(CellsWorksheetsPutAddNewWorksheetOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Position = ToInt32(1)
+	args.Position = 1
 	args.Sheettype = "VB"
 	args.Folder = GetBaseTest().remoteFolder
 

@@ -23,16 +23,16 @@
 package asposecellscloud
 
 import (
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"os"
 	"strings"
+	"fmt"
+	"os"
 )
 
 func Version() {
-	fmt.Println("---Version: 20.6.0---")
+	fmt.Println("---Version: 20.7.0---")
 }
 
 /* Create Instance of CellsApiService
@@ -40,8 +40,18 @@ func Version() {
 @param appKey string Application Key
 @param basePath string Base service path. Set "" for default
 @return *PdfApiService */
-func NewCellsApiService(appSid string, appKey string, basePath string) *CellsApiService {
-	config := NewConfiguration(appSid, appKey, basePath)
+func NewCellsApiService(appSid string, appKey string, opts ...string) *CellsApiService {
+	var basePath = ""
+	var version = ""
+	for i, v := range opts {
+		switch i {
+		case 0:
+			basePath = v
+		case 1:
+			version = v
+		}
+	}
+	config := NewConfiguration(appSid, appKey, basePath, version)
 	client := NewAPIClient(config)
 	return client.CellsApi
 }
@@ -92,7 +102,7 @@ func (a *CellsApiService) CellsAutoFilterDeleteWorksheetDateFilter(localVarOptio
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -103,35 +113,27 @@ func (a *CellsApiService) CellsAutoFilterDeleteWorksheetDateFilter(localVarOptio
 	localVarQueryParams.Add("fieldIndex", parameterToString(localVarOptionals.FieldIndex, ""))
 	localVarQueryParams.Add("dateTimeGroupingType", parameterToString(localVarOptionals.DateTimeGroupingType, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("year", parameterToString(localVarOptionals.Year.Value(), ""))
 		localVarQueryParams.Add("year", parameterToString(localVarOptionals.Year, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("month", parameterToString(localVarOptionals.Month.Value(), ""))
 		localVarQueryParams.Add("month", parameterToString(localVarOptionals.Month, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("day", parameterToString(localVarOptionals.Day.Value(), ""))
 		localVarQueryParams.Add("day", parameterToString(localVarOptionals.Day, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("hour", parameterToString(localVarOptionals.Hour.Value(), ""))
 		localVarQueryParams.Add("hour", parameterToString(localVarOptionals.Hour, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("minute", parameterToString(localVarOptionals.Minute.Value(), ""))
 		localVarQueryParams.Add("minute", parameterToString(localVarOptionals.Minute, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("second", parameterToString(localVarOptionals.Second.Value(), ""))
 		localVarQueryParams.Add("second", parameterToString(localVarOptionals.Second, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -201,7 +203,7 @@ func (a *CellsApiService) CellsAutoFilterDeleteWorksheetFilter(localVarOptionals
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autoFilter/filter"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter/filter"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -211,15 +213,12 @@ func (a *CellsApiService) CellsAutoFilterDeleteWorksheetFilter(localVarOptionals
 
 	localVarQueryParams.Add("fieldIndex", parameterToString(localVarOptionals.FieldIndex, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("criteria", parameterToString(localVarOptionals.Criteria.Value(), ""))
 		localVarQueryParams.Add("criteria", parameterToString(localVarOptionals.Criteria, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -285,7 +284,7 @@ func (a *CellsApiService) CellsAutoFilterGetWorksheetAutoFilter(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autoFilter"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -294,11 +293,9 @@ func (a *CellsApiService) CellsAutoFilterGetWorksheetAutoFilter(localVarOptional
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -364,7 +361,7 @@ func (a *CellsApiService) CellsAutoFilterPostWorksheetAutoFilterRefresh(localVar
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autoFilter/refresh"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter/refresh"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -373,11 +370,9 @@ func (a *CellsApiService) CellsAutoFilterPostWorksheetAutoFilterRefresh(localVar
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -445,7 +440,7 @@ func (a *CellsApiService) CellsAutoFilterPostWorksheetMatchBlanks(localVarOption
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autoFilter/matchBlanks"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter/matchBlanks"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -455,11 +450,9 @@ func (a *CellsApiService) CellsAutoFilterPostWorksheetMatchBlanks(localVarOption
 
 	localVarQueryParams.Add("fieldIndex", parameterToString(localVarOptionals.FieldIndex, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -527,7 +520,7 @@ func (a *CellsApiService) CellsAutoFilterPostWorksheetMatchNonBlanks(localVarOpt
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autoFilter/matchNonBlanks"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter/matchNonBlanks"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -537,11 +530,9 @@ func (a *CellsApiService) CellsAutoFilterPostWorksheetMatchNonBlanks(localVarOpt
 
 	localVarQueryParams.Add("fieldIndex", parameterToString(localVarOptionals.FieldIndex, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -617,7 +608,7 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetColorFilter(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autoFilter/colorFilter"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter/colorFilter"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -628,19 +619,15 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetColorFilter(localVarOptiona
 	localVarQueryParams.Add("range", parameterToString(localVarOptionals.Range_, ""))
 	localVarQueryParams.Add("fieldIndex", parameterToString(localVarOptionals.FieldIndex, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("matchBlanks", parameterToString(localVarOptionals.MatchBlanks.Value(), ""))
 		localVarQueryParams.Add("matchBlanks", parameterToString(localVarOptionals.MatchBlanks, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("refresh", parameterToString(localVarOptionals.Refresh.Value(), ""))
 		localVarQueryParams.Add("refresh", parameterToString(localVarOptionals.Refresh, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -661,14 +648,6 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetColorFilter(localVarOptiona
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.ColorFilter.IsSet() {
-	//
-	//		localVarOptionalColorFilter, localVarOptionalColorFilterok := localVarOptionals.ColorFilter.Value().(ColorFilterRequest)
-	//		if !localVarOptionalColorFilterok {
-	//				return localVarReturnValue, nil, reportError("colorFilter should be ColorFilterRequest")
-	//		}
-	//		localVarPostBody = &localVarOptionalColorFilter
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.ColorFilter != nil {
 
 		localVarPostBody = &localVarOptionals.ColorFilter
@@ -737,7 +716,7 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetCustomFilter(localVarOption
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autoFilter/custom"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter/custom"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -750,31 +729,24 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetCustomFilter(localVarOption
 	localVarQueryParams.Add("operatorType1", parameterToString(localVarOptionals.OperatorType1, ""))
 	localVarQueryParams.Add("criteria1", parameterToString(localVarOptionals.Criteria1, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("isAnd", parameterToString(localVarOptionals.IsAnd.Value(), ""))
 		localVarQueryParams.Add("isAnd", parameterToString(localVarOptionals.IsAnd, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("operatorType2", parameterToString(localVarOptionals.OperatorType2.Value(), ""))
 		localVarQueryParams.Add("operatorType2", parameterToString(localVarOptionals.OperatorType2, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("criteria2", parameterToString(localVarOptionals.Criteria2.Value(), ""))
 		localVarQueryParams.Add("criteria2", parameterToString(localVarOptionals.Criteria2, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("matchBlanks", parameterToString(localVarOptionals.MatchBlanks.Value(), ""))
 		localVarQueryParams.Add("matchBlanks", parameterToString(localVarOptionals.MatchBlanks, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("refresh", parameterToString(localVarOptionals.Refresh.Value(), ""))
 		localVarQueryParams.Add("refresh", parameterToString(localVarOptionals.Refresh, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -862,7 +834,7 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetDateFilter(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -874,43 +846,33 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetDateFilter(localVarOptional
 	localVarQueryParams.Add("fieldIndex", parameterToString(localVarOptionals.FieldIndex, ""))
 	localVarQueryParams.Add("dateTimeGroupingType", parameterToString(localVarOptionals.DateTimeGroupingType, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("year", parameterToString(localVarOptionals.Year.Value(), ""))
 		localVarQueryParams.Add("year", parameterToString(localVarOptionals.Year, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("month", parameterToString(localVarOptionals.Month.Value(), ""))
 		localVarQueryParams.Add("month", parameterToString(localVarOptionals.Month, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("day", parameterToString(localVarOptionals.Day.Value(), ""))
 		localVarQueryParams.Add("day", parameterToString(localVarOptionals.Day, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("hour", parameterToString(localVarOptionals.Hour.Value(), ""))
 		localVarQueryParams.Add("hour", parameterToString(localVarOptionals.Hour, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("minute", parameterToString(localVarOptionals.Minute.Value(), ""))
 		localVarQueryParams.Add("minute", parameterToString(localVarOptionals.Minute, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("second", parameterToString(localVarOptionals.Second.Value(), ""))
 		localVarQueryParams.Add("second", parameterToString(localVarOptionals.Second, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("matchBlanks", parameterToString(localVarOptionals.MatchBlanks.Value(), ""))
 		localVarQueryParams.Add("matchBlanks", parameterToString(localVarOptionals.MatchBlanks, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("refresh", parameterToString(localVarOptionals.Refresh.Value(), ""))
 		localVarQueryParams.Add("refresh", parameterToString(localVarOptionals.Refresh, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -986,7 +948,7 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetDynamicFilter(localVarOptio
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autoFilter/dynamicFilter"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter/dynamicFilter"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -998,19 +960,15 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetDynamicFilter(localVarOptio
 	localVarQueryParams.Add("fieldIndex", parameterToString(localVarOptionals.FieldIndex, ""))
 	localVarQueryParams.Add("dynamicFilterType", parameterToString(localVarOptionals.DynamicFilterType, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("matchBlanks", parameterToString(localVarOptionals.MatchBlanks.Value(), ""))
 		localVarQueryParams.Add("matchBlanks", parameterToString(localVarOptionals.MatchBlanks, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("refresh", parameterToString(localVarOptionals.Refresh.Value(), ""))
 		localVarQueryParams.Add("refresh", parameterToString(localVarOptionals.Refresh, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -1086,7 +1044,7 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetFilter(localVarOptionals *C
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autoFilter/filter"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter/filter"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -1098,19 +1056,15 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetFilter(localVarOptionals *C
 	localVarQueryParams.Add("fieldIndex", parameterToString(localVarOptionals.FieldIndex, ""))
 	localVarQueryParams.Add("criteria", parameterToString(localVarOptionals.Criteria, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("matchBlanks", parameterToString(localVarOptionals.MatchBlanks.Value(), ""))
 		localVarQueryParams.Add("matchBlanks", parameterToString(localVarOptionals.MatchBlanks, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("refresh", parameterToString(localVarOptionals.Refresh.Value(), ""))
 		localVarQueryParams.Add("refresh", parameterToString(localVarOptionals.Refresh, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -1190,7 +1144,7 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetFilterTop10(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autoFilter/filterTop10"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter/filterTop10"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -1204,19 +1158,15 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetFilterTop10(localVarOptiona
 	localVarQueryParams.Add("isPercent", parameterToString(localVarOptionals.IsPercent, ""))
 	localVarQueryParams.Add("itemCount", parameterToString(localVarOptionals.ItemCount, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("matchBlanks", parameterToString(localVarOptionals.MatchBlanks.Value(), ""))
 		localVarQueryParams.Add("matchBlanks", parameterToString(localVarOptionals.MatchBlanks, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("refresh", parameterToString(localVarOptionals.Refresh.Value(), ""))
 		localVarQueryParams.Add("refresh", parameterToString(localVarOptionals.Refresh, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -1294,7 +1244,7 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetIconFilter(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autoFilter/iconFilter"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter/iconFilter"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -1307,19 +1257,15 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetIconFilter(localVarOptional
 	localVarQueryParams.Add("iconSetType", parameterToString(localVarOptionals.IconSetType, ""))
 	localVarQueryParams.Add("iconId", parameterToString(localVarOptionals.IconId, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("matchBlanks", parameterToString(localVarOptionals.MatchBlanks.Value(), ""))
 		localVarQueryParams.Add("matchBlanks", parameterToString(localVarOptionals.MatchBlanks, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("refresh", parameterToString(localVarOptionals.Refresh.Value(), ""))
 		localVarQueryParams.Add("refresh", parameterToString(localVarOptionals.Refresh, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -1389,7 +1335,7 @@ func (a *CellsApiService) CellsAutoshapesGetWorksheetAutoshape(localVarOptionals
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autoshapes/{autoshapeNumber}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoshapes/{autoshapeNumber}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"autoshapeNumber"+"}", fmt.Sprintf("%v", localVarOptionals.AutoshapeNumber), -1)
@@ -1399,15 +1345,12 @@ func (a *CellsApiService) CellsAutoshapesGetWorksheetAutoshape(localVarOptionals
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format.Value(), ""))
 		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -1473,7 +1416,7 @@ func (a *CellsApiService) CellsAutoshapesGetWorksheetAutoshapes(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autoshapes"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoshapes"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -1482,11 +1425,9 @@ func (a *CellsApiService) CellsAutoshapesGetWorksheetAutoshapes(localVarOptional
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -1554,7 +1495,7 @@ func (a *CellsApiService) CellsChartAreaGetChartArea(localVarOptionals *CellsCha
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
@@ -1564,11 +1505,9 @@ func (a *CellsApiService) CellsChartAreaGetChartArea(localVarOptionals *CellsCha
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -1636,7 +1575,7 @@ func (a *CellsApiService) CellsChartAreaGetChartAreaBorder(localVarOptionals *Ce
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea/border"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea/border"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
@@ -1646,11 +1585,9 @@ func (a *CellsApiService) CellsChartAreaGetChartAreaBorder(localVarOptionals *Ce
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -1718,7 +1655,7 @@ func (a *CellsApiService) CellsChartAreaGetChartAreaFillFormat(localVarOptionals
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea/fillFormat"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea/fillFormat"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
@@ -1728,11 +1665,9 @@ func (a *CellsApiService) CellsChartAreaGetChartAreaFillFormat(localVarOptionals
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -1800,7 +1735,7 @@ func (a *CellsApiService) CellsChartsDeleteWorksheetChartLegend(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
@@ -1810,11 +1745,9 @@ func (a *CellsApiService) CellsChartsDeleteWorksheetChartLegend(localVarOptional
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -1882,7 +1815,7 @@ func (a *CellsApiService) CellsChartsDeleteWorksheetChartTitle(localVarOptionals
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
@@ -1892,11 +1825,9 @@ func (a *CellsApiService) CellsChartsDeleteWorksheetChartTitle(localVarOptionals
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -1962,7 +1893,7 @@ func (a *CellsApiService) CellsChartsDeleteWorksheetClearCharts(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -1971,11 +1902,9 @@ func (a *CellsApiService) CellsChartsDeleteWorksheetClearCharts(localVarOptional
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -2043,7 +1972,7 @@ func (a *CellsApiService) CellsChartsDeleteWorksheetDeleteChart(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
@@ -2053,11 +1982,9 @@ func (a *CellsApiService) CellsChartsDeleteWorksheetDeleteChart(localVarOptional
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -2127,7 +2054,7 @@ func (a *CellsApiService) CellsChartsGetWorksheetChart(localVarOptionals *CellsC
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts/{chartNumber}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartNumber}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"chartNumber"+"}", fmt.Sprintf("%v", localVarOptionals.ChartNumber), -1)
@@ -2137,15 +2064,12 @@ func (a *CellsApiService) CellsChartsGetWorksheetChart(localVarOptionals *CellsC
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format.Value(), ""))
 		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -2213,7 +2137,7 @@ func (a *CellsApiService) CellsChartsGetWorksheetChartLegend(localVarOptionals *
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
@@ -2223,11 +2147,9 @@ func (a *CellsApiService) CellsChartsGetWorksheetChartLegend(localVarOptionals *
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -2295,7 +2217,7 @@ func (a *CellsApiService) CellsChartsGetWorksheetChartTitle(localVarOptionals *C
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
@@ -2305,11 +2227,9 @@ func (a *CellsApiService) CellsChartsGetWorksheetChartTitle(localVarOptionals *C
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -2375,7 +2295,7 @@ func (a *CellsApiService) CellsChartsGetWorksheetCharts(localVarOptionals *Cells
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -2384,11 +2304,9 @@ func (a *CellsApiService) CellsChartsGetWorksheetCharts(localVarOptionals *Cells
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -2458,7 +2376,7 @@ func (a *CellsApiService) CellsChartsPostWorksheetChart(localVarOptionals *Cells
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
@@ -2468,11 +2386,9 @@ func (a *CellsApiService) CellsChartsPostWorksheetChart(localVarOptionals *Cells
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -2493,14 +2409,6 @@ func (a *CellsApiService) CellsChartsPostWorksheetChart(localVarOptionals *Cells
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Chart.IsSet() {
-	//
-	//		localVarOptionalChart, localVarOptionalChartok := localVarOptionals.Chart.Value().(Chart)
-	//		if !localVarOptionalChartok {
-	//				return localVarReturnValue, nil, reportError("chart should be Chart")
-	//		}
-	//		localVarPostBody = &localVarOptionalChart
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Chart != nil {
 
 		localVarPostBody = &localVarOptionals.Chart
@@ -2555,7 +2463,7 @@ func (a *CellsApiService) CellsChartsPostWorksheetChartLegend(localVarOptionals 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
@@ -2565,11 +2473,9 @@ func (a *CellsApiService) CellsChartsPostWorksheetChartLegend(localVarOptionals 
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -2590,14 +2496,6 @@ func (a *CellsApiService) CellsChartsPostWorksheetChartLegend(localVarOptionals 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Legend.IsSet() {
-	//
-	//		localVarOptionalLegend, localVarOptionalLegendok := localVarOptionals.Legend.Value().(Legend)
-	//		if !localVarOptionalLegendok {
-	//				return localVarReturnValue, nil, reportError("legend should be Legend")
-	//		}
-	//		localVarPostBody = &localVarOptionalLegend
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Legend != nil {
 
 		localVarPostBody = &localVarOptionals.Legend
@@ -2652,7 +2550,7 @@ func (a *CellsApiService) CellsChartsPostWorksheetChartTitle(localVarOptionals *
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
@@ -2662,11 +2560,9 @@ func (a *CellsApiService) CellsChartsPostWorksheetChartTitle(localVarOptionals *
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -2687,14 +2583,6 @@ func (a *CellsApiService) CellsChartsPostWorksheetChartTitle(localVarOptionals *
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Title.IsSet() {
-	//
-	//		localVarOptionalTitle, localVarOptionalTitleok := localVarOptionals.Title.Value().(Title)
-	//		if !localVarOptionalTitleok {
-	//				return localVarReturnValue, nil, reportError("title should be Title")
-	//		}
-	//		localVarPostBody = &localVarOptionalTitle
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Title != nil {
 
 		localVarPostBody = &localVarOptionals.Title
@@ -2765,7 +2653,7 @@ func (a *CellsApiService) CellsChartsPutWorksheetAddChart(localVarOptionals *Cel
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -2775,47 +2663,36 @@ func (a *CellsApiService) CellsChartsPutWorksheetAddChart(localVarOptionals *Cel
 
 	localVarQueryParams.Add("chartType", parameterToString(localVarOptionals.ChartType, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("upperLeftRow", parameterToString(localVarOptionals.UpperLeftRow.Value(), ""))
 		localVarQueryParams.Add("upperLeftRow", parameterToString(localVarOptionals.UpperLeftRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("upperLeftColumn", parameterToString(localVarOptionals.UpperLeftColumn.Value(), ""))
 		localVarQueryParams.Add("upperLeftColumn", parameterToString(localVarOptionals.UpperLeftColumn, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("lowerRightRow", parameterToString(localVarOptionals.LowerRightRow.Value(), ""))
 		localVarQueryParams.Add("lowerRightRow", parameterToString(localVarOptionals.LowerRightRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("lowerRightColumn", parameterToString(localVarOptionals.LowerRightColumn.Value(), ""))
 		localVarQueryParams.Add("lowerRightColumn", parameterToString(localVarOptionals.LowerRightColumn, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("area", parameterToString(localVarOptionals.Area.Value(), ""))
 		localVarQueryParams.Add("area", parameterToString(localVarOptionals.Area, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("isVertical", parameterToString(localVarOptionals.IsVertical.Value(), ""))
 		localVarQueryParams.Add("isVertical", parameterToString(localVarOptionals.IsVertical, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("categoryData", parameterToString(localVarOptionals.CategoryData.Value(), ""))
 		localVarQueryParams.Add("categoryData", parameterToString(localVarOptionals.CategoryData, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("isAutoGetSerialName", parameterToString(localVarOptionals.IsAutoGetSerialName.Value(), ""))
 		localVarQueryParams.Add("isAutoGetSerialName", parameterToString(localVarOptionals.IsAutoGetSerialName, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("title", parameterToString(localVarOptionals.Title.Value(), ""))
 		localVarQueryParams.Add("title", parameterToString(localVarOptionals.Title, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -2883,7 +2760,7 @@ func (a *CellsApiService) CellsChartsPutWorksheetChartLegend(localVarOptionals *
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
@@ -2893,11 +2770,9 @@ func (a *CellsApiService) CellsChartsPutWorksheetChartLegend(localVarOptionals *
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -2967,7 +2842,7 @@ func (a *CellsApiService) CellsChartsPutWorksheetChartTitle(localVarOptionals *C
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
@@ -2977,11 +2852,9 @@ func (a *CellsApiService) CellsChartsPutWorksheetChartTitle(localVarOptionals *C
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -3002,14 +2875,6 @@ func (a *CellsApiService) CellsChartsPutWorksheetChartTitle(localVarOptionals *C
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Title.IsSet() {
-	//
-	//		localVarOptionalTitle, localVarOptionalTitleok := localVarOptionals.Title.Value().(Title)
-	//		if !localVarOptionalTitleok {
-	//				return localVarReturnValue, nil, reportError("title should be Title")
-	//		}
-	//		localVarPostBody = &localVarOptionalTitle
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Title != nil {
 
 		localVarPostBody = &localVarOptionals.Title
@@ -3062,7 +2927,7 @@ func (a *CellsApiService) CellsConditionalFormattingsDeleteWorksheetConditionalF
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"index"+"}", fmt.Sprintf("%v", localVarOptionals.Index), -1)
@@ -3072,11 +2937,9 @@ func (a *CellsApiService) CellsConditionalFormattingsDeleteWorksheetConditionalF
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -3150,7 +3013,7 @@ func (a *CellsApiService) CellsConditionalFormattingsDeleteWorksheetConditionalF
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/area"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/area"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -3163,11 +3026,9 @@ func (a *CellsApiService) CellsConditionalFormattingsDeleteWorksheetConditionalF
 	localVarQueryParams.Add("totalRows", parameterToString(localVarOptionals.TotalRows, ""))
 	localVarQueryParams.Add("totalColumns", parameterToString(localVarOptionals.TotalColumns, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -3233,7 +3094,7 @@ func (a *CellsApiService) CellsConditionalFormattingsDeleteWorksheetConditionalF
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -3242,11 +3103,9 @@ func (a *CellsApiService) CellsConditionalFormattingsDeleteWorksheetConditionalF
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -3314,7 +3173,7 @@ func (a *CellsApiService) CellsConditionalFormattingsGetWorksheetConditionalForm
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"index"+"}", fmt.Sprintf("%v", localVarOptionals.Index), -1)
@@ -3324,11 +3183,9 @@ func (a *CellsApiService) CellsConditionalFormattingsGetWorksheetConditionalForm
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -3394,7 +3251,7 @@ func (a *CellsApiService) CellsConditionalFormattingsGetWorksheetConditionalForm
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -3403,11 +3260,9 @@ func (a *CellsApiService) CellsConditionalFormattingsGetWorksheetConditionalForm
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -3477,7 +3332,7 @@ func (a *CellsApiService) CellsConditionalFormattingsPutWorksheetConditionalForm
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -3487,11 +3342,9 @@ func (a *CellsApiService) CellsConditionalFormattingsPutWorksheetConditionalForm
 
 	localVarQueryParams.Add("cellArea", parameterToString(localVarOptionals.CellArea, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -3512,14 +3365,6 @@ func (a *CellsApiService) CellsConditionalFormattingsPutWorksheetConditionalForm
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.FormatCondition.IsSet() {
-	//
-	//		localVarOptionalFormatCondition, localVarOptionalFormatConditionok := localVarOptionals.FormatCondition.Value().(FormatCondition)
-	//		if !localVarOptionalFormatConditionok {
-	//				return localVarReturnValue, nil, reportError("formatCondition should be FormatCondition")
-	//		}
-	//		localVarPostBody = &localVarOptionalFormatCondition
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.FormatCondition != nil {
 
 		localVarPostBody = &localVarOptionals.FormatCondition
@@ -3582,7 +3427,7 @@ func (a *CellsApiService) CellsConditionalFormattingsPutWorksheetFormatCondition
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"index"+"}", fmt.Sprintf("%v", localVarOptionals.Index), -1)
@@ -3597,11 +3442,9 @@ func (a *CellsApiService) CellsConditionalFormattingsPutWorksheetFormatCondition
 	localVarQueryParams.Add("formula1", parameterToString(localVarOptionals.Formula1, ""))
 	localVarQueryParams.Add("formula2", parameterToString(localVarOptionals.Formula2, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -3671,7 +3514,7 @@ func (a *CellsApiService) CellsConditionalFormattingsPutWorksheetFormatCondition
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}/area"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}/area"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"index"+"}", fmt.Sprintf("%v", localVarOptionals.Index), -1)
@@ -3682,11 +3525,9 @@ func (a *CellsApiService) CellsConditionalFormattingsPutWorksheetFormatCondition
 
 	localVarQueryParams.Add("cellArea", parameterToString(localVarOptionals.CellArea, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -3762,7 +3603,7 @@ func (a *CellsApiService) CellsConditionalFormattingsPutWorksheetFormatCondition
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}/condition"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}/condition"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"index"+"}", fmt.Sprintf("%v", localVarOptionals.Index), -1)
@@ -3776,11 +3617,9 @@ func (a *CellsApiService) CellsConditionalFormattingsPutWorksheetFormatCondition
 	localVarQueryParams.Add("formula1", parameterToString(localVarOptionals.Formula1, ""))
 	localVarQueryParams.Add("formula2", parameterToString(localVarOptionals.Formula2, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -3852,7 +3691,7 @@ func (a *CellsApiService) CellsDeleteWorksheetColumns(localVarOptionals *CellsDe
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"columnIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ColumnIndex), -1)
@@ -3864,11 +3703,9 @@ func (a *CellsApiService) CellsDeleteWorksheetColumns(localVarOptionals *CellsDe
 	localVarQueryParams.Add("columns", parameterToString(localVarOptionals.Columns, ""))
 	localVarQueryParams.Add("updateReference", parameterToString(localVarOptionals.UpdateReference, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -3936,7 +3773,7 @@ func (a *CellsApiService) CellsDeleteWorksheetRow(localVarOptionals *CellsDelete
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"rowIndex"+"}", fmt.Sprintf("%v", localVarOptionals.RowIndex), -1)
@@ -3946,11 +3783,9 @@ func (a *CellsApiService) CellsDeleteWorksheetRow(localVarOptionals *CellsDelete
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -4022,7 +3857,7 @@ func (a *CellsApiService) CellsDeleteWorksheetRows(localVarOptionals *CellsDelet
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/rows"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/rows"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -4032,19 +3867,15 @@ func (a *CellsApiService) CellsDeleteWorksheetRows(localVarOptionals *CellsDelet
 
 	localVarQueryParams.Add("startrow", parameterToString(localVarOptionals.Startrow, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("totalRows", parameterToString(localVarOptionals.TotalRows.Value(), ""))
 		localVarQueryParams.Add("totalRows", parameterToString(localVarOptionals.TotalRows, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("updateReference", parameterToString(localVarOptionals.UpdateReference.Value(), ""))
 		localVarQueryParams.Add("updateReference", parameterToString(localVarOptionals.UpdateReference, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -4112,7 +3943,7 @@ func (a *CellsApiService) CellsGetCellHtmlString(localVarOptionals *CellsGetCell
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/htmlstring"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/htmlstring"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"cellName"+"}", fmt.Sprintf("%v", localVarOptionals.CellName), -1)
@@ -4122,11 +3953,9 @@ func (a *CellsApiService) CellsGetCellHtmlString(localVarOptionals *CellsGetCell
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -4194,7 +4023,7 @@ func (a *CellsApiService) CellsGetWorksheetCell(localVarOptionals *CellsGetWorks
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/{cellOrMethodName}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/{cellOrMethodName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"cellOrMethodName"+"}", fmt.Sprintf("%v", localVarOptionals.CellOrMethodName), -1)
@@ -4204,11 +4033,9 @@ func (a *CellsApiService) CellsGetWorksheetCell(localVarOptionals *CellsGetWorks
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -4276,7 +4103,7 @@ func (a *CellsApiService) CellsGetWorksheetCellStyle(localVarOptionals *CellsGet
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/style"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/style"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"cellName"+"}", fmt.Sprintf("%v", localVarOptionals.CellName), -1)
@@ -4286,11 +4113,9 @@ func (a *CellsApiService) CellsGetWorksheetCellStyle(localVarOptionals *CellsGet
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -4360,7 +4185,7 @@ func (a *CellsApiService) CellsGetWorksheetCells(localVarOptionals *CellsGetWork
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -4369,19 +4194,15 @@ func (a *CellsApiService) CellsGetWorksheetCells(localVarOptionals *CellsGetWork
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("offest", parameterToString(localVarOptionals.Offest.Value(), ""))
 		localVarQueryParams.Add("offest", parameterToString(localVarOptionals.Offest, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("count", parameterToString(localVarOptionals.Count.Value(), ""))
 		localVarQueryParams.Add("count", parameterToString(localVarOptionals.Count, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -4449,7 +4270,7 @@ func (a *CellsApiService) CellsGetWorksheetColumn(localVarOptionals *CellsGetWor
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"columnIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ColumnIndex), -1)
@@ -4459,11 +4280,9 @@ func (a *CellsApiService) CellsGetWorksheetColumn(localVarOptionals *CellsGetWor
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -4529,7 +4348,7 @@ func (a *CellsApiService) CellsGetWorksheetColumns(localVarOptionals *CellsGetWo
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/columns"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/columns"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -4538,11 +4357,9 @@ func (a *CellsApiService) CellsGetWorksheetColumns(localVarOptionals *CellsGetWo
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -4610,7 +4427,7 @@ func (a *CellsApiService) CellsGetWorksheetRow(localVarOptionals *CellsGetWorksh
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"rowIndex"+"}", fmt.Sprintf("%v", localVarOptionals.RowIndex), -1)
@@ -4620,11 +4437,9 @@ func (a *CellsApiService) CellsGetWorksheetRow(localVarOptionals *CellsGetWorksh
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -4690,7 +4505,7 @@ func (a *CellsApiService) CellsGetWorksheetRows(localVarOptionals *CellsGetWorks
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/rows"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/rows"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -4699,11 +4514,9 @@ func (a *CellsApiService) CellsGetWorksheetRows(localVarOptionals *CellsGetWorks
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -4771,7 +4584,7 @@ func (a *CellsApiService) CellsHypelinksDeleteWorksheetHyperlink(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"hyperlinkIndex"+"}", fmt.Sprintf("%v", localVarOptionals.HyperlinkIndex), -1)
@@ -4781,11 +4594,9 @@ func (a *CellsApiService) CellsHypelinksDeleteWorksheetHyperlink(localVarOptiona
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -4851,7 +4662,7 @@ func (a *CellsApiService) CellsHypelinksDeleteWorksheetHyperlinks(localVarOption
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/hyperlinks"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/hyperlinks"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -4860,11 +4671,9 @@ func (a *CellsApiService) CellsHypelinksDeleteWorksheetHyperlinks(localVarOption
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -4932,7 +4741,7 @@ func (a *CellsApiService) CellsHypelinksGetWorksheetHyperlink(localVarOptionals 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"hyperlinkIndex"+"}", fmt.Sprintf("%v", localVarOptionals.HyperlinkIndex), -1)
@@ -4942,11 +4751,9 @@ func (a *CellsApiService) CellsHypelinksGetWorksheetHyperlink(localVarOptionals 
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -5012,7 +4819,7 @@ func (a *CellsApiService) CellsHypelinksGetWorksheetHyperlinks(localVarOptionals
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/hyperlinks"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/hyperlinks"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -5021,11 +4828,9 @@ func (a *CellsApiService) CellsHypelinksGetWorksheetHyperlinks(localVarOptionals
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -5095,7 +4900,7 @@ func (a *CellsApiService) CellsHypelinksPostWorksheetHyperlink(localVarOptionals
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"hyperlinkIndex"+"}", fmt.Sprintf("%v", localVarOptionals.HyperlinkIndex), -1)
@@ -5105,11 +4910,9 @@ func (a *CellsApiService) CellsHypelinksPostWorksheetHyperlink(localVarOptionals
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -5130,14 +4933,6 @@ func (a *CellsApiService) CellsHypelinksPostWorksheetHyperlink(localVarOptionals
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Hyperlink.IsSet() {
-	//
-	//		localVarOptionalHyperlink, localVarOptionalHyperlinkok := localVarOptionals.Hyperlink.Value().(Hyperlink)
-	//		if !localVarOptionalHyperlinkok {
-	//				return localVarReturnValue, nil, reportError("hyperlink should be Hyperlink")
-	//		}
-	//		localVarPostBody = &localVarOptionalHyperlink
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Hyperlink != nil {
 
 		localVarPostBody = &localVarOptionals.Hyperlink
@@ -5198,7 +4993,7 @@ func (a *CellsApiService) CellsHypelinksPutWorksheetHyperlink(localVarOptionals 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/hyperlinks"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/hyperlinks"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -5212,11 +5007,9 @@ func (a *CellsApiService) CellsHypelinksPutWorksheetHyperlink(localVarOptionals 
 	localVarQueryParams.Add("totalColumns", parameterToString(localVarOptionals.TotalColumns, ""))
 	localVarQueryParams.Add("address", parameterToString(localVarOptionals.Address, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -5284,7 +5077,7 @@ func (a *CellsApiService) CellsListObjectsDeleteWorksheetListObject(localVarOpti
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"listObjectIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ListObjectIndex), -1)
@@ -5294,11 +5087,9 @@ func (a *CellsApiService) CellsListObjectsDeleteWorksheetListObject(localVarOpti
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -5364,7 +5155,7 @@ func (a *CellsApiService) CellsListObjectsDeleteWorksheetListObjects(localVarOpt
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/listobjects"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/listobjects"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -5373,11 +5164,9 @@ func (a *CellsApiService) CellsListObjectsDeleteWorksheetListObjects(localVarOpt
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -5445,7 +5234,7 @@ func (a *CellsApiService) CellsListObjectsGetWorksheetListObject(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/listobjects/{listobjectindex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/listobjects/{listobjectindex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"listobjectindex"+"}", fmt.Sprintf("%v", localVarOptionals.Listobjectindex), -1)
@@ -5455,11 +5244,9 @@ func (a *CellsApiService) CellsListObjectsGetWorksheetListObject(localVarOptiona
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -5525,7 +5312,7 @@ func (a *CellsApiService) CellsListObjectsGetWorksheetListObjects(localVarOption
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/listobjects"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/listobjects"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -5534,11 +5321,9 @@ func (a *CellsApiService) CellsListObjectsGetWorksheetListObjects(localVarOption
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -5608,7 +5393,7 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListObject(localVarOption
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"listObjectIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ListObjectIndex), -1)
@@ -5618,11 +5403,9 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListObject(localVarOption
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -5643,14 +5426,6 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListObject(localVarOption
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.ListObject.IsSet() {
-	//
-	//		localVarOptionalListObject, localVarOptionalListObjectok := localVarOptionals.ListObject.Value().(ListObject)
-	//		if !localVarOptionalListObjectok {
-	//				return localVarReturnValue, nil, reportError("listObject should be ListObject")
-	//		}
-	//		localVarPostBody = &localVarOptionalListObject
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.ListObject != nil {
 
 		localVarPostBody = &localVarOptionals.ListObject
@@ -5703,7 +5478,7 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListObjectConvertToRange(
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/ConvertToRange"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/ConvertToRange"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"listObjectIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ListObjectIndex), -1)
@@ -5713,11 +5488,9 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListObjectConvertToRange(
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -5787,7 +5560,7 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListObjectSortTable(local
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/sort"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/sort"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"listObjectIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ListObjectIndex), -1)
@@ -5797,11 +5570,9 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListObjectSortTable(local
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -5822,14 +5593,6 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListObjectSortTable(local
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.DataSorter.IsSet() {
-	//
-	//		localVarOptionalDataSorter, localVarOptionalDataSorterok := localVarOptionals.DataSorter.Value().(DataSorter)
-	//		if !localVarOptionalDataSorterok {
-	//				return localVarReturnValue, nil, reportError("dataSorter should be DataSorter")
-	//		}
-	//		localVarPostBody = &localVarOptionalDataSorter
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.DataSorter != nil {
 
 		localVarPostBody = &localVarOptionals.DataSorter
@@ -5886,7 +5649,7 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListObjectSummarizeWithPi
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/SummarizeWithPivotTable"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/SummarizeWithPivotTable"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"listObjectIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ListObjectIndex), -1)
@@ -5897,11 +5660,9 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListObjectSummarizeWithPi
 
 	localVarQueryParams.Add("destsheetName", parameterToString(localVarOptionals.DestsheetName, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -5922,14 +5683,6 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListObjectSummarizeWithPi
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Request.IsSet() {
-	//
-	//		localVarOptionalRequest, localVarOptionalRequestok := localVarOptionals.Request.Value().(CreatePivotTableRequest)
-	//		if !localVarOptionalRequestok {
-	//				return localVarReturnValue, nil, reportError("request should be CreatePivotTableRequest")
-	//		}
-	//		localVarPostBody = &localVarOptionalRequest
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Request != nil {
 
 		localVarPostBody = &localVarOptionals.Request
@@ -5992,7 +5745,7 @@ func (a *CellsApiService) CellsListObjectsPutWorksheetListObject(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/listobjects"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/listobjects"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -6005,15 +5758,12 @@ func (a *CellsApiService) CellsListObjectsPutWorksheetListObject(localVarOptiona
 	localVarQueryParams.Add("endRow", parameterToString(localVarOptionals.EndRow, ""))
 	localVarQueryParams.Add("endColumn", parameterToString(localVarOptionals.EndColumn, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("hasHeaders", parameterToString(localVarOptionals.HasHeaders.Value(), ""))
 		localVarQueryParams.Add("hasHeaders", parameterToString(localVarOptionals.HasHeaders, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -6034,14 +5784,6 @@ func (a *CellsApiService) CellsListObjectsPutWorksheetListObject(localVarOptiona
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.ListObject.IsSet() {
-	//
-	//		localVarOptionalListObject, localVarOptionalListObjectok := localVarOptionals.ListObject.Value().(ListObject)
-	//		if !localVarOptionalListObjectok {
-	//				return localVarReturnValue, nil, reportError("listObject should be ListObject")
-	//		}
-	//		localVarPostBody = &localVarOptionalListObject
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.ListObject != nil {
 
 		localVarPostBody = &localVarOptionals.ListObject
@@ -6094,7 +5836,7 @@ func (a *CellsApiService) CellsOleObjectsDeleteWorksheetOleObject(localVarOption
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"oleObjectIndex"+"}", fmt.Sprintf("%v", localVarOptionals.OleObjectIndex), -1)
@@ -6104,11 +5846,9 @@ func (a *CellsApiService) CellsOleObjectsDeleteWorksheetOleObject(localVarOption
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -6174,7 +5914,7 @@ func (a *CellsApiService) CellsOleObjectsDeleteWorksheetOleObjects(localVarOptio
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/oleobjects"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/oleobjects"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -6183,11 +5923,9 @@ func (a *CellsApiService) CellsOleObjectsDeleteWorksheetOleObjects(localVarOptio
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -6257,7 +5995,7 @@ func (a *CellsApiService) CellsOleObjectsGetWorksheetOleObject(localVarOptionals
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/oleobjects/{objectNumber}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/oleobjects/{objectNumber}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"objectNumber"+"}", fmt.Sprintf("%v", localVarOptionals.ObjectNumber), -1)
@@ -6267,15 +6005,12 @@ func (a *CellsApiService) CellsOleObjectsGetWorksheetOleObject(localVarOptionals
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format.Value(), ""))
 		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -6341,7 +6076,7 @@ func (a *CellsApiService) CellsOleObjectsGetWorksheetOleObjects(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/oleobjects"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/oleobjects"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -6350,11 +6085,9 @@ func (a *CellsApiService) CellsOleObjectsGetWorksheetOleObjects(localVarOptional
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -6424,7 +6157,7 @@ func (a *CellsApiService) CellsOleObjectsPostUpdateWorksheetOleObject(localVarOp
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"oleObjectIndex"+"}", fmt.Sprintf("%v", localVarOptionals.OleObjectIndex), -1)
@@ -6434,11 +6167,9 @@ func (a *CellsApiService) CellsOleObjectsPostUpdateWorksheetOleObject(localVarOp
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -6459,14 +6190,6 @@ func (a *CellsApiService) CellsOleObjectsPostUpdateWorksheetOleObject(localVarOp
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Ole.IsSet() {
-	//
-	//		localVarOptionalOle, localVarOptionalOleok := localVarOptionals.Ole.Value().(OleObject)
-	//		if !localVarOptionalOleok {
-	//				return localVarReturnValue, nil, reportError("ole should be OleObject")
-	//		}
-	//		localVarPostBody = &localVarOptionalOle
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Ole != nil {
 
 		localVarPostBody = &localVarOptionals.Ole
@@ -6531,7 +6254,7 @@ func (a *CellsApiService) CellsOleObjectsPutWorksheetOleObject(localVarOptionals
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/oleobjects"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/oleobjects"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -6540,35 +6263,27 @@ func (a *CellsApiService) CellsOleObjectsPutWorksheetOleObject(localVarOptionals
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("upperLeftRow", parameterToString(localVarOptionals.UpperLeftRow.Value(), ""))
 		localVarQueryParams.Add("upperLeftRow", parameterToString(localVarOptionals.UpperLeftRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("upperLeftColumn", parameterToString(localVarOptionals.UpperLeftColumn.Value(), ""))
 		localVarQueryParams.Add("upperLeftColumn", parameterToString(localVarOptionals.UpperLeftColumn, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("height", parameterToString(localVarOptionals.Height.Value(), ""))
 		localVarQueryParams.Add("height", parameterToString(localVarOptionals.Height, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("width", parameterToString(localVarOptionals.Width.Value(), ""))
 		localVarQueryParams.Add("width", parameterToString(localVarOptionals.Width, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("oleFile", parameterToString(localVarOptionals.OleFile.Value(), ""))
 		localVarQueryParams.Add("oleFile", parameterToString(localVarOptionals.OleFile, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("imageFile", parameterToString(localVarOptionals.ImageFile.Value(), ""))
 		localVarQueryParams.Add("imageFile", parameterToString(localVarOptionals.ImageFile, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -6589,14 +6304,6 @@ func (a *CellsApiService) CellsOleObjectsPutWorksheetOleObject(localVarOptionals
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.OleObject.IsSet() {
-	//
-	//		localVarOptionalOleObject, localVarOptionalOleObjectok := localVarOptionals.OleObject.Value().(OleObject)
-	//		if !localVarOptionalOleObjectok {
-	//				return localVarReturnValue, nil, reportError("oleObject should be OleObject")
-	//		}
-	//		localVarPostBody = &localVarOptionalOleObject
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.OleObject != nil {
 
 		localVarPostBody = &localVarOptionals.OleObject
@@ -6649,7 +6356,7 @@ func (a *CellsApiService) CellsPageBreaksDeleteHorizontalPageBreak(localVarOptio
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks/{index}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks/{index}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"index"+"}", fmt.Sprintf("%v", localVarOptionals.Index), -1)
@@ -6659,11 +6366,9 @@ func (a *CellsApiService) CellsPageBreaksDeleteHorizontalPageBreak(localVarOptio
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -6731,7 +6436,7 @@ func (a *CellsApiService) CellsPageBreaksDeleteHorizontalPageBreaks(localVarOpti
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -6740,15 +6445,12 @@ func (a *CellsApiService) CellsPageBreaksDeleteHorizontalPageBreaks(localVarOpti
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("row", parameterToString(localVarOptionals.Row.Value(), ""))
 		localVarQueryParams.Add("row", parameterToString(localVarOptionals.Row, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -6816,7 +6518,7 @@ func (a *CellsApiService) CellsPageBreaksDeleteVerticalPageBreak(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks/{index}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks/{index}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"index"+"}", fmt.Sprintf("%v", localVarOptionals.Index), -1)
@@ -6826,11 +6528,9 @@ func (a *CellsApiService) CellsPageBreaksDeleteVerticalPageBreak(localVarOptiona
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -6898,7 +6598,7 @@ func (a *CellsApiService) CellsPageBreaksDeleteVerticalPageBreaks(localVarOption
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -6907,15 +6607,12 @@ func (a *CellsApiService) CellsPageBreaksDeleteVerticalPageBreaks(localVarOption
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("column", parameterToString(localVarOptionals.Column.Value(), ""))
 		localVarQueryParams.Add("column", parameterToString(localVarOptionals.Column, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -6983,7 +6680,7 @@ func (a *CellsApiService) CellsPageBreaksGetHorizontalPageBreak(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks/{index}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks/{index}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"index"+"}", fmt.Sprintf("%v", localVarOptionals.Index), -1)
@@ -6993,11 +6690,9 @@ func (a *CellsApiService) CellsPageBreaksGetHorizontalPageBreak(localVarOptional
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -7063,7 +6758,7 @@ func (a *CellsApiService) CellsPageBreaksGetHorizontalPageBreaks(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -7072,11 +6767,9 @@ func (a *CellsApiService) CellsPageBreaksGetHorizontalPageBreaks(localVarOptiona
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -7144,7 +6837,7 @@ func (a *CellsApiService) CellsPageBreaksGetVerticalPageBreak(localVarOptionals 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks/{index}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks/{index}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"index"+"}", fmt.Sprintf("%v", localVarOptionals.Index), -1)
@@ -7154,11 +6847,9 @@ func (a *CellsApiService) CellsPageBreaksGetVerticalPageBreak(localVarOptionals 
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -7224,7 +6915,7 @@ func (a *CellsApiService) CellsPageBreaksGetVerticalPageBreaks(localVarOptionals
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -7233,11 +6924,9 @@ func (a *CellsApiService) CellsPageBreaksGetVerticalPageBreaks(localVarOptionals
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -7313,7 +7002,7 @@ func (a *CellsApiService) CellsPageBreaksPutHorizontalPageBreak(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -7322,31 +7011,24 @@ func (a *CellsApiService) CellsPageBreaksPutHorizontalPageBreak(localVarOptional
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("cellname", parameterToString(localVarOptionals.Cellname.Value(), ""))
 		localVarQueryParams.Add("cellname", parameterToString(localVarOptionals.Cellname, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("row", parameterToString(localVarOptionals.Row.Value(), ""))
 		localVarQueryParams.Add("row", parameterToString(localVarOptionals.Row, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("column", parameterToString(localVarOptionals.Column.Value(), ""))
 		localVarQueryParams.Add("column", parameterToString(localVarOptionals.Column, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("startColumn", parameterToString(localVarOptionals.StartColumn.Value(), ""))
 		localVarQueryParams.Add("startColumn", parameterToString(localVarOptionals.StartColumn, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("endColumn", parameterToString(localVarOptionals.EndColumn.Value(), ""))
 		localVarQueryParams.Add("endColumn", parameterToString(localVarOptionals.EndColumn, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -7422,7 +7104,7 @@ func (a *CellsApiService) CellsPageBreaksPutVerticalPageBreak(localVarOptionals 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -7431,31 +7113,24 @@ func (a *CellsApiService) CellsPageBreaksPutVerticalPageBreak(localVarOptionals 
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("cellname", parameterToString(localVarOptionals.Cellname.Value(), ""))
 		localVarQueryParams.Add("cellname", parameterToString(localVarOptionals.Cellname, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("column", parameterToString(localVarOptionals.Column.Value(), ""))
 		localVarQueryParams.Add("column", parameterToString(localVarOptionals.Column, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("row", parameterToString(localVarOptionals.Row.Value(), ""))
 		localVarQueryParams.Add("row", parameterToString(localVarOptionals.Row, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("startRow", parameterToString(localVarOptionals.StartRow.Value(), ""))
 		localVarQueryParams.Add("startRow", parameterToString(localVarOptionals.StartRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("endRow", parameterToString(localVarOptionals.EndRow.Value(), ""))
 		localVarQueryParams.Add("endRow", parameterToString(localVarOptionals.EndRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -7521,7 +7196,7 @@ func (a *CellsApiService) CellsPageSetupDeleteHeaderFooter(localVarOptionals *Ce
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pagesetup/clearheaderfooter"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pagesetup/clearheaderfooter"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -7530,11 +7205,9 @@ func (a *CellsApiService) CellsPageSetupDeleteHeaderFooter(localVarOptionals *Ce
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -7600,7 +7273,7 @@ func (a *CellsApiService) CellsPageSetupGetFooter(localVarOptionals *CellsPageSe
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pagesetup/footer"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pagesetup/footer"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -7609,11 +7282,9 @@ func (a *CellsApiService) CellsPageSetupGetFooter(localVarOptionals *CellsPageSe
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -7679,7 +7350,7 @@ func (a *CellsApiService) CellsPageSetupGetHeader(localVarOptionals *CellsPageSe
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pagesetup/header"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pagesetup/header"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -7688,11 +7359,9 @@ func (a *CellsApiService) CellsPageSetupGetHeader(localVarOptionals *CellsPageSe
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -7758,7 +7427,7 @@ func (a *CellsApiService) CellsPageSetupGetPageSetup(localVarOptionals *CellsPag
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pagesetup"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pagesetup"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -7767,11 +7436,9 @@ func (a *CellsApiService) CellsPageSetupGetPageSetup(localVarOptionals *CellsPag
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -7843,7 +7510,7 @@ func (a *CellsApiService) CellsPageSetupPostFooter(localVarOptionals *CellsPageS
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pagesetup/footer"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pagesetup/footer"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -7855,11 +7522,9 @@ func (a *CellsApiService) CellsPageSetupPostFooter(localVarOptionals *CellsPageS
 	localVarQueryParams.Add("script", parameterToString(localVarOptionals.Script, ""))
 	localVarQueryParams.Add("isFirstPage", parameterToString(localVarOptionals.IsFirstPage, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -7931,7 +7596,7 @@ func (a *CellsApiService) CellsPageSetupPostHeader(localVarOptionals *CellsPageS
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pagesetup/header"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pagesetup/header"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -7943,11 +7608,9 @@ func (a *CellsApiService) CellsPageSetupPostHeader(localVarOptionals *CellsPageS
 	localVarQueryParams.Add("script", parameterToString(localVarOptionals.Script, ""))
 	localVarQueryParams.Add("isFirstPage", parameterToString(localVarOptionals.IsFirstPage, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -8015,7 +7678,7 @@ func (a *CellsApiService) CellsPageSetupPostPageSetup(localVarOptionals *CellsPa
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pagesetup"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pagesetup"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -8024,11 +7687,9 @@ func (a *CellsApiService) CellsPageSetupPostPageSetup(localVarOptionals *CellsPa
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -8049,14 +7710,6 @@ func (a *CellsApiService) CellsPageSetupPostPageSetup(localVarOptionals *CellsPa
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.PageSetup.IsSet() {
-	//
-	//		localVarOptionalPageSetup, localVarOptionalPageSetupok := localVarOptionals.PageSetup.Value().(PageSetup)
-	//		if !localVarOptionalPageSetupok {
-	//				return localVarReturnValue, nil, reportError("pageSetup should be PageSetup")
-	//		}
-	//		localVarPostBody = &localVarOptionalPageSetup
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.PageSetup != nil {
 
 		localVarPostBody = &localVarOptionals.PageSetup
@@ -8109,7 +7762,7 @@ func (a *CellsApiService) CellsPicturesDeleteWorksheetPicture(localVarOptionals 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pictureIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PictureIndex), -1)
@@ -8119,11 +7772,9 @@ func (a *CellsApiService) CellsPicturesDeleteWorksheetPicture(localVarOptionals 
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -8189,7 +7840,7 @@ func (a *CellsApiService) CellsPicturesDeleteWorksheetPictures(localVarOptionals
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pictures"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pictures"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -8198,11 +7849,9 @@ func (a *CellsApiService) CellsPicturesDeleteWorksheetPictures(localVarOptionals
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -8272,7 +7921,7 @@ func (a *CellsApiService) CellsPicturesGetWorksheetPicture(localVarOptionals *Ce
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pictureIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PictureIndex), -1)
@@ -8282,15 +7931,12 @@ func (a *CellsApiService) CellsPicturesGetWorksheetPicture(localVarOptionals *Ce
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format.Value(), ""))
 		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -8356,7 +8002,7 @@ func (a *CellsApiService) CellsPicturesGetWorksheetPictures(localVarOptionals *C
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pictures"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pictures"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -8365,11 +8011,9 @@ func (a *CellsApiService) CellsPicturesGetWorksheetPictures(localVarOptionals *C
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -8439,7 +8083,7 @@ func (a *CellsApiService) CellsPicturesPostWorksheetPicture(localVarOptionals *C
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pictureIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PictureIndex), -1)
@@ -8449,11 +8093,9 @@ func (a *CellsApiService) CellsPicturesPostWorksheetPicture(localVarOptionals *C
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -8474,14 +8116,6 @@ func (a *CellsApiService) CellsPicturesPostWorksheetPicture(localVarOptionals *C
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Picture.IsSet() {
-	//
-	//		localVarOptionalPicture, localVarOptionalPictureok := localVarOptionals.Picture.Value().(Picture)
-	//		if !localVarOptionalPictureok {
-	//				return localVarReturnValue, nil, reportError("picture should be Picture")
-	//		}
-	//		localVarPostBody = &localVarOptionalPicture
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Picture != nil {
 
 		localVarPostBody = &localVarOptionals.Picture
@@ -8544,7 +8178,7 @@ func (a *CellsApiService) CellsPicturesPutWorksheetAddPicture(localVarOptionals 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pictures"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pictures"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -8553,31 +8187,24 @@ func (a *CellsApiService) CellsPicturesPutWorksheetAddPicture(localVarOptionals 
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("upperLeftRow", parameterToString(localVarOptionals.UpperLeftRow.Value(), ""))
 		localVarQueryParams.Add("upperLeftRow", parameterToString(localVarOptionals.UpperLeftRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("upperLeftColumn", parameterToString(localVarOptionals.UpperLeftColumn.Value(), ""))
 		localVarQueryParams.Add("upperLeftColumn", parameterToString(localVarOptionals.UpperLeftColumn, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("lowerRightRow", parameterToString(localVarOptionals.LowerRightRow.Value(), ""))
 		localVarQueryParams.Add("lowerRightRow", parameterToString(localVarOptionals.LowerRightRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("lowerRightColumn", parameterToString(localVarOptionals.LowerRightColumn.Value(), ""))
 		localVarQueryParams.Add("lowerRightColumn", parameterToString(localVarOptionals.LowerRightColumn, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("picturePath", parameterToString(localVarOptionals.PicturePath.Value(), ""))
 		localVarQueryParams.Add("picturePath", parameterToString(localVarOptionals.PicturePath, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -8598,14 +8225,6 @@ func (a *CellsApiService) CellsPicturesPutWorksheetAddPicture(localVarOptionals 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Picture.IsSet() {
-	//
-	//		localVarOptionalPicture, localVarOptionalPictureok := localVarOptionals.Picture.Value().(Picture)
-	//		if !localVarOptionalPictureok {
-	//				return localVarReturnValue, nil, reportError("picture should be Picture")
-	//		}
-	//		localVarPostBody = &localVarOptionalPicture
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Picture != nil {
 
 		localVarPostBody = &localVarOptionals.Picture
@@ -8662,7 +8281,7 @@ func (a *CellsApiService) CellsPivotTablesDeletePivotTableField(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
@@ -8673,11 +8292,9 @@ func (a *CellsApiService) CellsPivotTablesDeletePivotTableField(localVarOptional
 
 	localVarQueryParams.Add("pivotFieldType", parameterToString(localVarOptionals.PivotFieldType, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -8698,14 +8315,6 @@ func (a *CellsApiService) CellsPivotTablesDeletePivotTableField(localVarOptional
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Request.IsSet() {
-	//
-	//		localVarOptionalRequest, localVarOptionalRequestok := localVarOptionals.Request.Value().(PivotTableFieldRequest)
-	//		if !localVarOptionalRequestok {
-	//				return localVarReturnValue, nil, reportError("request should be PivotTableFieldRequest")
-	//		}
-	//		localVarPostBody = &localVarOptionalRequest
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Request != nil {
 
 		localVarPostBody = &localVarOptionals.Request
@@ -8758,7 +8367,7 @@ func (a *CellsApiService) CellsPivotTablesDeleteWorksheetPivotTable(localVarOpti
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
@@ -8768,11 +8377,9 @@ func (a *CellsApiService) CellsPivotTablesDeleteWorksheetPivotTable(localVarOpti
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -8844,7 +8451,7 @@ func (a *CellsApiService) CellsPivotTablesDeleteWorksheetPivotTableFilter(localV
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{fieldIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{fieldIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
@@ -8855,15 +8462,12 @@ func (a *CellsApiService) CellsPivotTablesDeleteWorksheetPivotTableFilter(localV
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("needReCalculate", parameterToString(localVarOptionals.NeedReCalculate.Value(), ""))
 		localVarQueryParams.Add("needReCalculate", parameterToString(localVarOptionals.NeedReCalculate, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -8933,7 +8537,7 @@ func (a *CellsApiService) CellsPivotTablesDeleteWorksheetPivotTableFilters(local
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
@@ -8943,15 +8547,12 @@ func (a *CellsApiService) CellsPivotTablesDeleteWorksheetPivotTableFilters(local
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("needReCalculate", parameterToString(localVarOptionals.NeedReCalculate.Value(), ""))
 		localVarQueryParams.Add("needReCalculate", parameterToString(localVarOptionals.NeedReCalculate, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -9017,7 +8618,7 @@ func (a *CellsApiService) CellsPivotTablesDeleteWorksheetPivotTables(localVarOpt
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -9026,11 +8627,9 @@ func (a *CellsApiService) CellsPivotTablesDeleteWorksheetPivotTables(localVarOpt
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -9102,7 +8701,7 @@ func (a *CellsApiService) CellsPivotTablesGetPivotTableField(localVarOptionals *
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
@@ -9114,11 +8713,9 @@ func (a *CellsApiService) CellsPivotTablesGetPivotTableField(localVarOptionals *
 	localVarQueryParams.Add("pivotFieldIndex", parameterToString(localVarOptionals.PivotFieldIndex, ""))
 	localVarQueryParams.Add("pivotFieldType", parameterToString(localVarOptionals.PivotFieldType, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -9186,7 +8783,7 @@ func (a *CellsApiService) CellsPivotTablesGetWorksheetPivotTable(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivottableIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivottableIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivottableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivottableIndex), -1)
@@ -9196,11 +8793,9 @@ func (a *CellsApiService) CellsPivotTablesGetWorksheetPivotTable(localVarOptiona
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -9270,7 +8865,7 @@ func (a *CellsApiService) CellsPivotTablesGetWorksheetPivotTableFilter(localVarO
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{filterIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{filterIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
@@ -9281,11 +8876,9 @@ func (a *CellsApiService) CellsPivotTablesGetWorksheetPivotTableFilter(localVarO
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -9353,7 +8946,7 @@ func (a *CellsApiService) CellsPivotTablesGetWorksheetPivotTableFilters(localVar
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
@@ -9363,11 +8956,9 @@ func (a *CellsApiService) CellsPivotTablesGetWorksheetPivotTableFilters(localVar
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -9433,7 +9024,7 @@ func (a *CellsApiService) CellsPivotTablesGetWorksheetPivotTables(localVarOption
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -9442,11 +9033,9 @@ func (a *CellsApiService) CellsPivotTablesGetWorksheetPivotTables(localVarOption
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -9522,7 +9111,7 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableCellStyle(localVarOption
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Format"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Format"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
@@ -9534,15 +9123,12 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableCellStyle(localVarOption
 	localVarQueryParams.Add("column", parameterToString(localVarOptionals.Column, ""))
 	localVarQueryParams.Add("row", parameterToString(localVarOptionals.Row, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("needReCalculate", parameterToString(localVarOptionals.NeedReCalculate.Value(), ""))
 		localVarQueryParams.Add("needReCalculate", parameterToString(localVarOptionals.NeedReCalculate, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -9563,14 +9149,6 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableCellStyle(localVarOption
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Style.IsSet() {
-	//
-	//		localVarOptionalStyle, localVarOptionalStyleok := localVarOptionals.Style.Value().(Style)
-	//		if !localVarOptionalStyleok {
-	//				return localVarReturnValue, nil, reportError("style should be Style")
-	//		}
-	//		localVarPostBody = &localVarOptionalStyle
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Style != nil {
 
 		localVarPostBody = &localVarOptionals.Style
@@ -9633,7 +9211,7 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableFieldHideItem(localVarOp
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Hide"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Hide"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
@@ -9647,15 +9225,12 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableFieldHideItem(localVarOp
 	localVarQueryParams.Add("itemIndex", parameterToString(localVarOptionals.ItemIndex, ""))
 	localVarQueryParams.Add("isHide", parameterToString(localVarOptionals.IsHide, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("needReCalculate", parameterToString(localVarOptionals.NeedReCalculate.Value(), ""))
 		localVarQueryParams.Add("needReCalculate", parameterToString(localVarOptionals.NeedReCalculate, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -9729,7 +9304,7 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableFieldMoveTo(localVarOpti
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Move"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Move"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
@@ -9742,11 +9317,9 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableFieldMoveTo(localVarOpti
 	localVarQueryParams.Add("from", parameterToString(localVarOptionals.From, ""))
 	localVarQueryParams.Add("to", parameterToString(localVarOptionals.To, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -9818,7 +9391,7 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableStyle(localVarOptionals 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/FormatAll"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/FormatAll"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
@@ -9828,15 +9401,12 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableStyle(localVarOptionals 
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("needReCalculate", parameterToString(localVarOptionals.NeedReCalculate.Value(), ""))
 		localVarQueryParams.Add("needReCalculate", parameterToString(localVarOptionals.NeedReCalculate, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -9857,14 +9427,6 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableStyle(localVarOptionals 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Style.IsSet() {
-	//
-	//		localVarOptionalStyle, localVarOptionalStyleok := localVarOptionals.Style.Value().(Style)
-	//		if !localVarOptionalStyleok {
-	//				return localVarReturnValue, nil, reportError("style should be Style")
-	//		}
-	//		localVarPostBody = &localVarOptionalStyle
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Style != nil {
 
 		localVarPostBody = &localVarOptionals.Style
@@ -9917,7 +9479,7 @@ func (a *CellsApiService) CellsPivotTablesPostWorksheetPivotTableCalculate(local
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Calculate"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Calculate"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
@@ -9927,11 +9489,9 @@ func (a *CellsApiService) CellsPivotTablesPostWorksheetPivotTableCalculate(local
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -10005,7 +9565,7 @@ func (a *CellsApiService) CellsPivotTablesPostWorksheetPivotTableMove(localVarOp
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Move"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Move"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
@@ -10015,23 +9575,18 @@ func (a *CellsApiService) CellsPivotTablesPostWorksheetPivotTableMove(localVarOp
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("row", parameterToString(localVarOptionals.Row.Value(), ""))
 		localVarQueryParams.Add("row", parameterToString(localVarOptionals.Row, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("column", parameterToString(localVarOptionals.Column.Value(), ""))
 		localVarQueryParams.Add("column", parameterToString(localVarOptionals.Column, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("destCellName", parameterToString(localVarOptionals.DestCellName.Value(), ""))
 		localVarQueryParams.Add("destCellName", parameterToString(localVarOptionals.DestCellName, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -10105,7 +9660,7 @@ func (a *CellsApiService) CellsPivotTablesPutPivotTableField(localVarOptionals *
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
@@ -10116,15 +9671,12 @@ func (a *CellsApiService) CellsPivotTablesPutPivotTableField(localVarOptionals *
 
 	localVarQueryParams.Add("pivotFieldType", parameterToString(localVarOptionals.PivotFieldType, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("needReCalculate", parameterToString(localVarOptionals.NeedReCalculate.Value(), ""))
 		localVarQueryParams.Add("needReCalculate", parameterToString(localVarOptionals.NeedReCalculate, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -10145,14 +9697,6 @@ func (a *CellsApiService) CellsPivotTablesPutPivotTableField(localVarOptionals *
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Request.IsSet() {
-	//
-	//		localVarOptionalRequest, localVarOptionalRequestok := localVarOptionals.Request.Value().(PivotTableFieldRequest)
-	//		if !localVarOptionalRequestok {
-	//				return localVarReturnValue, nil, reportError("request should be PivotTableFieldRequest")
-	//		}
-	//		localVarPostBody = &localVarOptionalRequest
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Request != nil {
 
 		localVarPostBody = &localVarOptionals.Request
@@ -10213,7 +9757,7 @@ func (a *CellsApiService) CellsPivotTablesPutWorksheetPivotTable(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -10222,27 +9766,21 @@ func (a *CellsApiService) CellsPivotTablesPutWorksheetPivotTable(localVarOptiona
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("sourceData", parameterToString(localVarOptionals.SourceData.Value(), ""))
 		localVarQueryParams.Add("sourceData", parameterToString(localVarOptionals.SourceData, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("destCellName", parameterToString(localVarOptionals.DestCellName.Value(), ""))
 		localVarQueryParams.Add("destCellName", parameterToString(localVarOptionals.DestCellName, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("tableName", parameterToString(localVarOptionals.TableName.Value(), ""))
 		localVarQueryParams.Add("tableName", parameterToString(localVarOptionals.TableName, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("useSameSource", parameterToString(localVarOptionals.UseSameSource.Value(), ""))
 		localVarQueryParams.Add("useSameSource", parameterToString(localVarOptionals.UseSameSource, ""))
 	}
 	// to determine the Content-Type header
@@ -10263,14 +9801,6 @@ func (a *CellsApiService) CellsPivotTablesPutWorksheetPivotTable(localVarOptiona
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Request.IsSet() {
-	//
-	//		localVarOptionalRequest, localVarOptionalRequestok := localVarOptionals.Request.Value().(CreatePivotTableRequest)
-	//		if !localVarOptionalRequestok {
-	//				return localVarReturnValue, nil, reportError("request should be CreatePivotTableRequest")
-	//		}
-	//		localVarPostBody = &localVarOptionalRequest
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Request != nil {
 
 		localVarPostBody = &localVarOptionals.Request
@@ -10327,7 +9857,7 @@ func (a *CellsApiService) CellsPivotTablesPutWorksheetPivotTableFilter(localVarO
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
@@ -10337,15 +9867,12 @@ func (a *CellsApiService) CellsPivotTablesPutWorksheetPivotTableFilter(localVarO
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("needReCalculate", parameterToString(localVarOptionals.NeedReCalculate.Value(), ""))
 		localVarQueryParams.Add("needReCalculate", parameterToString(localVarOptionals.NeedReCalculate, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -10366,14 +9893,6 @@ func (a *CellsApiService) CellsPivotTablesPutWorksheetPivotTableFilter(localVarO
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Filter.IsSet() {
-	//
-	//		localVarOptionalFilter, localVarOptionalFilterok := localVarOptionals.Filter.Value().(PivotFilter)
-	//		if !localVarOptionalFilterok {
-	//				return localVarReturnValue, nil, reportError("filter should be PivotFilter")
-	//		}
-	//		localVarPostBody = &localVarOptionalFilter
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Filter != nil {
 
 		localVarPostBody = &localVarOptionals.Filter
@@ -10428,7 +9947,7 @@ func (a *CellsApiService) CellsPostCellCalculate(localVarOptionals *CellsPostCel
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/calculate"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/calculate"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"cellName"+"}", fmt.Sprintf("%v", localVarOptionals.CellName), -1)
@@ -10438,11 +9957,9 @@ func (a *CellsApiService) CellsPostCellCalculate(localVarOptionals *CellsPostCel
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -10463,14 +9980,6 @@ func (a *CellsApiService) CellsPostCellCalculate(localVarOptionals *CellsPostCel
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Options.IsSet() {
-	//
-	//		localVarOptionalOptions, localVarOptionalOptionsok := localVarOptionals.Options.Value().(CalculationOptions)
-	//		if !localVarOptionalOptionsok {
-	//				return localVarReturnValue, nil, reportError("options should be CalculationOptions")
-	//		}
-	//		localVarPostBody = &localVarOptionalOptions
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Options != nil {
 
 		localVarPostBody = &localVarOptionals.Options
@@ -10525,7 +10034,7 @@ func (a *CellsApiService) CellsPostCellCharacters(localVarOptionals *CellsPostCe
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/characters"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/characters"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"cellName"+"}", fmt.Sprintf("%v", localVarOptionals.CellName), -1)
@@ -10535,11 +10044,9 @@ func (a *CellsApiService) CellsPostCellCharacters(localVarOptionals *CellsPostCe
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -10560,15 +10067,8 @@ func (a *CellsApiService) CellsPostCellCharacters(localVarOptionals *CellsPostCe
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Options.IsSet() {
-	//
-	//		localVarOptionalOptions, localVarOptionalOptionsok := localVarOptionals.Options.Value().([]FontSetting)
-	//		if !localVarOptionalOptionsok {
-	//				return localVarReturnValue, nil, reportError("options should be []FontSetting")
-	//		}
-	//		localVarPostBody = &localVarOptionalOptions
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Options != nil {
+
 		localVarPostBody = &localVarOptionals.Options
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
@@ -10627,7 +10127,7 @@ func (a *CellsApiService) CellsPostClearContents(localVarOptionals *CellsPostCle
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/clearcontents"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/clearcontents"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -10636,31 +10136,24 @@ func (a *CellsApiService) CellsPostClearContents(localVarOptionals *CellsPostCle
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("range", parameterToString(localVarOptionals.Range_.Value(), ""))
 		localVarQueryParams.Add("range", parameterToString(localVarOptionals.Range_, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("startRow", parameterToString(localVarOptionals.StartRow.Value(), ""))
 		localVarQueryParams.Add("startRow", parameterToString(localVarOptionals.StartRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("startColumn", parameterToString(localVarOptionals.StartColumn.Value(), ""))
 		localVarQueryParams.Add("startColumn", parameterToString(localVarOptionals.StartColumn, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("endRow", parameterToString(localVarOptionals.EndRow.Value(), ""))
 		localVarQueryParams.Add("endRow", parameterToString(localVarOptionals.EndRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("endColumn", parameterToString(localVarOptionals.EndColumn.Value(), ""))
 		localVarQueryParams.Add("endColumn", parameterToString(localVarOptionals.EndColumn, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -10736,7 +10229,7 @@ func (a *CellsApiService) CellsPostClearFormats(localVarOptionals *CellsPostClea
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/clearformats"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/clearformats"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -10745,31 +10238,24 @@ func (a *CellsApiService) CellsPostClearFormats(localVarOptionals *CellsPostClea
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("range", parameterToString(localVarOptionals.Range_.Value(), ""))
 		localVarQueryParams.Add("range", parameterToString(localVarOptionals.Range_, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("startRow", parameterToString(localVarOptionals.StartRow.Value(), ""))
 		localVarQueryParams.Add("startRow", parameterToString(localVarOptionals.StartRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("startColumn", parameterToString(localVarOptionals.StartColumn.Value(), ""))
 		localVarQueryParams.Add("startColumn", parameterToString(localVarOptionals.StartColumn, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("endRow", parameterToString(localVarOptionals.EndRow.Value(), ""))
 		localVarQueryParams.Add("endRow", parameterToString(localVarOptionals.EndRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("endColumn", parameterToString(localVarOptionals.EndColumn.Value(), ""))
 		localVarQueryParams.Add("endColumn", parameterToString(localVarOptionals.EndColumn, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -10839,7 +10325,7 @@ func (a *CellsApiService) CellsPostColumnStyle(localVarOptionals *CellsPostColum
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}/style"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}/style"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"columnIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ColumnIndex), -1)
@@ -10849,11 +10335,9 @@ func (a *CellsApiService) CellsPostColumnStyle(localVarOptionals *CellsPostColum
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -10874,14 +10358,6 @@ func (a *CellsApiService) CellsPostColumnStyle(localVarOptionals *CellsPostColum
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Style.IsSet() {
-	//
-	//		localVarOptionalStyle, localVarOptionalStyleok := localVarOptionals.Style.Value().(Style)
-	//		if !localVarOptionalStyleok {
-	//				return localVarReturnValue, nil, reportError("style should be Style")
-	//		}
-	//		localVarPostBody = &localVarOptionalStyle
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Style != nil {
 
 		localVarPostBody = &localVarOptionals.Style
@@ -10942,7 +10418,7 @@ func (a *CellsApiService) CellsPostCopyCellIntoCell(localVarOptionals *CellsPost
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/{destCellName}/copy"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/{destCellName}/copy"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"destCellName"+"}", fmt.Sprintf("%v", localVarOptionals.DestCellName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
@@ -10953,23 +10429,18 @@ func (a *CellsApiService) CellsPostCopyCellIntoCell(localVarOptionals *CellsPost
 
 	localVarQueryParams.Add("worksheet", parameterToString(localVarOptionals.Worksheet, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("cellname", parameterToString(localVarOptionals.Cellname.Value(), ""))
 		localVarQueryParams.Add("cellname", parameterToString(localVarOptionals.Cellname, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("row", parameterToString(localVarOptionals.Row.Value(), ""))
 		localVarQueryParams.Add("row", parameterToString(localVarOptionals.Row, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("column", parameterToString(localVarOptionals.Column.Value(), ""))
 		localVarQueryParams.Add("column", parameterToString(localVarOptionals.Column, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -11043,7 +10514,7 @@ func (a *CellsApiService) CellsPostCopyWorksheetColumns(localVarOptionals *Cells
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/columns/copy"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/columns/copy"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -11055,15 +10526,12 @@ func (a *CellsApiService) CellsPostCopyWorksheetColumns(localVarOptionals *Cells
 	localVarQueryParams.Add("destinationColumnIndex", parameterToString(localVarOptionals.DestinationColumnIndex, ""))
 	localVarQueryParams.Add("columnNumber", parameterToString(localVarOptionals.ColumnNumber, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("worksheet", parameterToString(localVarOptionals.Worksheet.Value(), ""))
 		localVarQueryParams.Add("worksheet", parameterToString(localVarOptionals.Worksheet, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -11137,7 +10605,7 @@ func (a *CellsApiService) CellsPostCopyWorksheetRows(localVarOptionals *CellsPos
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/rows/copy"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/rows/copy"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -11149,15 +10617,12 @@ func (a *CellsApiService) CellsPostCopyWorksheetRows(localVarOptionals *CellsPos
 	localVarQueryParams.Add("destinationRowIndex", parameterToString(localVarOptionals.DestinationRowIndex, ""))
 	localVarQueryParams.Add("rowNumber", parameterToString(localVarOptionals.RowNumber, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("worksheet", parameterToString(localVarOptionals.Worksheet.Value(), ""))
 		localVarQueryParams.Add("worksheet", parameterToString(localVarOptionals.Worksheet, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -11229,7 +10694,7 @@ func (a *CellsApiService) CellsPostGroupWorksheetColumns(localVarOptionals *Cell
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/columns/group"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/columns/group"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -11240,15 +10705,12 @@ func (a *CellsApiService) CellsPostGroupWorksheetColumns(localVarOptionals *Cell
 	localVarQueryParams.Add("firstIndex", parameterToString(localVarOptionals.FirstIndex, ""))
 	localVarQueryParams.Add("lastIndex", parameterToString(localVarOptionals.LastIndex, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("hide", parameterToString(localVarOptionals.Hide.Value(), ""))
 		localVarQueryParams.Add("hide", parameterToString(localVarOptionals.Hide, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -11320,7 +10782,7 @@ func (a *CellsApiService) CellsPostGroupWorksheetRows(localVarOptionals *CellsPo
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/rows/group"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/rows/group"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -11331,15 +10793,12 @@ func (a *CellsApiService) CellsPostGroupWorksheetRows(localVarOptionals *CellsPo
 	localVarQueryParams.Add("firstIndex", parameterToString(localVarOptionals.FirstIndex, ""))
 	localVarQueryParams.Add("lastIndex", parameterToString(localVarOptionals.LastIndex, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("hide", parameterToString(localVarOptionals.Hide.Value(), ""))
 		localVarQueryParams.Add("hide", parameterToString(localVarOptionals.Hide, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -11409,7 +10868,7 @@ func (a *CellsApiService) CellsPostHideWorksheetColumns(localVarOptionals *Cells
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/columns/hide"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/columns/hide"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -11420,11 +10879,9 @@ func (a *CellsApiService) CellsPostHideWorksheetColumns(localVarOptionals *Cells
 	localVarQueryParams.Add("startColumn", parameterToString(localVarOptionals.StartColumn, ""))
 	localVarQueryParams.Add("totalColumns", parameterToString(localVarOptionals.TotalColumns, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -11494,7 +10951,7 @@ func (a *CellsApiService) CellsPostHideWorksheetRows(localVarOptionals *CellsPos
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/rows/hide"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/rows/hide"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -11505,11 +10962,9 @@ func (a *CellsApiService) CellsPostHideWorksheetRows(localVarOptionals *CellsPos
 	localVarQueryParams.Add("startrow", parameterToString(localVarOptionals.Startrow, ""))
 	localVarQueryParams.Add("totalRows", parameterToString(localVarOptionals.TotalRows, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -11579,7 +11034,7 @@ func (a *CellsApiService) CellsPostRowStyle(localVarOptionals *CellsPostRowStyle
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}/style"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}/style"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"rowIndex"+"}", fmt.Sprintf("%v", localVarOptionals.RowIndex), -1)
@@ -11589,11 +11044,9 @@ func (a *CellsApiService) CellsPostRowStyle(localVarOptionals *CellsPostRowStyle
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -11614,14 +11067,6 @@ func (a *CellsApiService) CellsPostRowStyle(localVarOptionals *CellsPostRowStyle
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Style.IsSet() {
-	//
-	//		localVarOptionalStyle, localVarOptionalStyleok := localVarOptionals.Style.Value().(Style)
-	//		if !localVarOptionalStyleok {
-	//				return localVarReturnValue, nil, reportError("style should be Style")
-	//		}
-	//		localVarPostBody = &localVarOptionalStyle
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Style != nil {
 
 		localVarPostBody = &localVarOptionals.Style
@@ -11676,7 +11121,7 @@ func (a *CellsApiService) CellsPostSetCellHtmlString(localVarOptionals *CellsPos
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/htmlstring"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/htmlstring"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"cellName"+"}", fmt.Sprintf("%v", localVarOptionals.CellName), -1)
@@ -11686,11 +11131,9 @@ func (a *CellsApiService) CellsPostSetCellHtmlString(localVarOptionals *CellsPos
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -11764,7 +11207,7 @@ func (a *CellsApiService) CellsPostSetCellRangeValue(localVarOptionals *CellsPos
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -11776,11 +11219,9 @@ func (a *CellsApiService) CellsPostSetCellRangeValue(localVarOptionals *CellsPos
 	localVarQueryParams.Add("value", parameterToString(localVarOptionals.Value, ""))
 	localVarQueryParams.Add("type", parameterToString(localVarOptionals.Type_, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -11850,7 +11291,7 @@ func (a *CellsApiService) CellsPostSetWorksheetColumnWidth(localVarOptionals *Ce
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"columnIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ColumnIndex), -1)
@@ -11861,11 +11302,9 @@ func (a *CellsApiService) CellsPostSetWorksheetColumnWidth(localVarOptionals *Ce
 
 	localVarQueryParams.Add("width", parameterToString(localVarOptionals.Width, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -11935,7 +11374,7 @@ func (a *CellsApiService) CellsPostUngroupWorksheetColumns(localVarOptionals *Ce
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/columns/ungroup"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/columns/ungroup"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -11946,11 +11385,9 @@ func (a *CellsApiService) CellsPostUngroupWorksheetColumns(localVarOptionals *Ce
 	localVarQueryParams.Add("firstIndex", parameterToString(localVarOptionals.FirstIndex, ""))
 	localVarQueryParams.Add("lastIndex", parameterToString(localVarOptionals.LastIndex, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -12022,7 +11459,7 @@ func (a *CellsApiService) CellsPostUngroupWorksheetRows(localVarOptionals *Cells
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/rows/ungroup"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/rows/ungroup"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -12033,15 +11470,12 @@ func (a *CellsApiService) CellsPostUngroupWorksheetRows(localVarOptionals *Cells
 	localVarQueryParams.Add("firstIndex", parameterToString(localVarOptionals.FirstIndex, ""))
 	localVarQueryParams.Add("lastIndex", parameterToString(localVarOptionals.LastIndex, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("isAll", parameterToString(localVarOptionals.IsAll.Value(), ""))
 		localVarQueryParams.Add("isAll", parameterToString(localVarOptionals.IsAll, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -12113,7 +11547,7 @@ func (a *CellsApiService) CellsPostUnhideWorksheetColumns(localVarOptionals *Cel
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/columns/unhide"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/columns/unhide"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -12124,15 +11558,12 @@ func (a *CellsApiService) CellsPostUnhideWorksheetColumns(localVarOptionals *Cel
 	localVarQueryParams.Add("startcolumn", parameterToString(localVarOptionals.Startcolumn, ""))
 	localVarQueryParams.Add("totalColumns", parameterToString(localVarOptionals.TotalColumns, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("width", parameterToString(localVarOptionals.Width.Value(), ""))
 		localVarQueryParams.Add("width", parameterToString(localVarOptionals.Width, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -12204,7 +11635,7 @@ func (a *CellsApiService) CellsPostUnhideWorksheetRows(localVarOptionals *CellsP
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/rows/unhide"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/rows/unhide"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -12215,15 +11646,12 @@ func (a *CellsApiService) CellsPostUnhideWorksheetRows(localVarOptionals *CellsP
 	localVarQueryParams.Add("startrow", parameterToString(localVarOptionals.Startrow, ""))
 	localVarQueryParams.Add("totalRows", parameterToString(localVarOptionals.TotalRows, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("height", parameterToString(localVarOptionals.Height.Value(), ""))
 		localVarQueryParams.Add("height", parameterToString(localVarOptionals.Height, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -12293,7 +11721,7 @@ func (a *CellsApiService) CellsPostUpdateWorksheetCellStyle(localVarOptionals *C
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/style"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/style"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"cellName"+"}", fmt.Sprintf("%v", localVarOptionals.CellName), -1)
@@ -12303,11 +11731,9 @@ func (a *CellsApiService) CellsPostUpdateWorksheetCellStyle(localVarOptionals *C
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -12328,14 +11754,6 @@ func (a *CellsApiService) CellsPostUpdateWorksheetCellStyle(localVarOptionals *C
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Style.IsSet() {
-	//
-	//		localVarOptionalStyle, localVarOptionalStyleok := localVarOptionals.Style.Value().(Style)
-	//		if !localVarOptionalStyleok {
-	//				return localVarReturnValue, nil, reportError("style should be Style")
-	//		}
-	//		localVarPostBody = &localVarOptionalStyle
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Style != nil {
 
 		localVarPostBody = &localVarOptionals.Style
@@ -12390,7 +11808,7 @@ func (a *CellsApiService) CellsPostUpdateWorksheetRangeStyle(localVarOptionals *
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/style"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/style"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -12400,11 +11818,9 @@ func (a *CellsApiService) CellsPostUpdateWorksheetRangeStyle(localVarOptionals *
 
 	localVarQueryParams.Add("range", parameterToString(localVarOptionals.Range_, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -12425,14 +11841,6 @@ func (a *CellsApiService) CellsPostUpdateWorksheetRangeStyle(localVarOptionals *
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Style.IsSet() {
-	//
-	//		localVarOptionalStyle, localVarOptionalStyleok := localVarOptionals.Style.Value().(Style)
-	//		if !localVarOptionalStyleok {
-	//				return localVarReturnValue, nil, reportError("style should be Style")
-	//		}
-	//		localVarPostBody = &localVarOptionalStyle
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Style != nil {
 
 		localVarPostBody = &localVarOptionals.Style
@@ -12487,7 +11895,7 @@ func (a *CellsApiService) CellsPostUpdateWorksheetRow(localVarOptionals *CellsPo
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"rowIndex"+"}", fmt.Sprintf("%v", localVarOptionals.RowIndex), -1)
@@ -12497,15 +11905,12 @@ func (a *CellsApiService) CellsPostUpdateWorksheetRow(localVarOptionals *CellsPo
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("height", parameterToString(localVarOptionals.Height.Value(), ""))
 		localVarQueryParams.Add("height", parameterToString(localVarOptionals.Height, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -12579,7 +11984,7 @@ func (a *CellsApiService) CellsPostWorksheetCellSetValue(localVarOptionals *Cell
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/{cellName}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/{cellName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"cellName"+"}", fmt.Sprintf("%v", localVarOptionals.CellName), -1)
@@ -12589,23 +11994,18 @@ func (a *CellsApiService) CellsPostWorksheetCellSetValue(localVarOptionals *Cell
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("value", parameterToString(localVarOptionals.Value.Value(), ""))
 		localVarQueryParams.Add("value", parameterToString(localVarOptionals.Value, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("type", parameterToString(localVarOptionals.Type_.Value(), ""))
 		localVarQueryParams.Add("type", parameterToString(localVarOptionals.Type_, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("formula", parameterToString(localVarOptionals.Formula.Value(), ""))
 		localVarQueryParams.Add("formula", parameterToString(localVarOptionals.Formula, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -12679,7 +12079,7 @@ func (a *CellsApiService) CellsPostWorksheetMerge(localVarOptionals *CellsPostWo
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/merge"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/merge"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -12692,11 +12092,9 @@ func (a *CellsApiService) CellsPostWorksheetMerge(localVarOptionals *CellsPostWo
 	localVarQueryParams.Add("totalRows", parameterToString(localVarOptionals.TotalRows, ""))
 	localVarQueryParams.Add("totalColumns", parameterToString(localVarOptionals.TotalColumns, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -12770,7 +12168,7 @@ func (a *CellsApiService) CellsPostWorksheetUnmerge(localVarOptionals *CellsPost
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/unmerge"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/unmerge"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -12783,11 +12181,9 @@ func (a *CellsApiService) CellsPostWorksheetUnmerge(localVarOptionals *CellsPost
 	localVarQueryParams.Add("totalRows", parameterToString(localVarOptionals.TotalRows, ""))
 	localVarQueryParams.Add("totalColumns", parameterToString(localVarOptionals.TotalColumns, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -12851,7 +12247,7 @@ func (a *CellsApiService) CellsPropertiesDeleteDocumentProperties(localVarOption
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/documentproperties"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/documentproperties"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12859,11 +12255,9 @@ func (a *CellsApiService) CellsPropertiesDeleteDocumentProperties(localVarOption
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -12929,7 +12323,7 @@ func (a *CellsApiService) CellsPropertiesDeleteDocumentProperty(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/documentproperties/{propertyName}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/documentproperties/{propertyName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"propertyName"+"}", fmt.Sprintf("%v", localVarOptionals.PropertyName), -1)
 
@@ -12938,11 +12332,9 @@ func (a *CellsApiService) CellsPropertiesDeleteDocumentProperty(localVarOptional
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -13006,7 +12398,7 @@ func (a *CellsApiService) CellsPropertiesGetDocumentProperties(localVarOptionals
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/documentproperties"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/documentproperties"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13014,11 +12406,9 @@ func (a *CellsApiService) CellsPropertiesGetDocumentProperties(localVarOptionals
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -13084,7 +12474,7 @@ func (a *CellsApiService) CellsPropertiesGetDocumentProperty(localVarOptionals *
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/documentproperties/{propertyName}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/documentproperties/{propertyName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"propertyName"+"}", fmt.Sprintf("%v", localVarOptionals.PropertyName), -1)
 
@@ -13093,11 +12483,9 @@ func (a *CellsApiService) CellsPropertiesGetDocumentProperty(localVarOptionals *
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -13165,7 +12553,7 @@ func (a *CellsApiService) CellsPropertiesPutDocumentProperty(localVarOptionals *
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/documentproperties/{propertyName}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/documentproperties/{propertyName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"propertyName"+"}", fmt.Sprintf("%v", localVarOptionals.PropertyName), -1)
 
@@ -13174,11 +12562,9 @@ func (a *CellsApiService) CellsPropertiesPutDocumentProperty(localVarOptionals *
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -13199,14 +12585,6 @@ func (a *CellsApiService) CellsPropertiesPutDocumentProperty(localVarOptionals *
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Property.IsSet() {
-	//
-	//		localVarOptionalProperty, localVarOptionalPropertyok := localVarOptionals.Property.Value().(CellsDocumentProperty)
-	//		if !localVarOptionalPropertyok {
-	//				return localVarReturnValue, nil, reportError("property should be CellsDocumentProperty")
-	//		}
-	//		localVarPostBody = &localVarOptionalProperty
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Property != nil {
 
 		localVarPostBody = &localVarOptionals.Property
@@ -13263,7 +12641,7 @@ func (a *CellsApiService) CellsPutInsertWorksheetColumns(localVarOptionals *Cell
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"columnIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ColumnIndex), -1)
@@ -13274,15 +12652,12 @@ func (a *CellsApiService) CellsPutInsertWorksheetColumns(localVarOptionals *Cell
 
 	localVarQueryParams.Add("columns", parameterToString(localVarOptionals.Columns, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("updateReference", parameterToString(localVarOptionals.UpdateReference.Value(), ""))
 		localVarQueryParams.Add("updateReference", parameterToString(localVarOptionals.UpdateReference, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -13350,7 +12725,7 @@ func (a *CellsApiService) CellsPutInsertWorksheetRow(localVarOptionals *CellsPut
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"rowIndex"+"}", fmt.Sprintf("%v", localVarOptionals.RowIndex), -1)
@@ -13360,11 +12735,9 @@ func (a *CellsApiService) CellsPutInsertWorksheetRow(localVarOptionals *CellsPut
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -13436,7 +12809,7 @@ func (a *CellsApiService) CellsPutInsertWorksheetRows(localVarOptionals *CellsPu
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/cells/rows"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/rows"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -13446,19 +12819,15 @@ func (a *CellsApiService) CellsPutInsertWorksheetRows(localVarOptionals *CellsPu
 
 	localVarQueryParams.Add("startrow", parameterToString(localVarOptionals.Startrow, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("totalRows", parameterToString(localVarOptionals.TotalRows.Value(), ""))
 		localVarQueryParams.Add("totalRows", parameterToString(localVarOptionals.TotalRows, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("updateReference", parameterToString(localVarOptionals.UpdateReference.Value(), ""))
 		localVarQueryParams.Add("updateReference", parameterToString(localVarOptionals.UpdateReference, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -13502,10 +12871,10 @@ CellsApiService Get cells list in a range by range name or row column indexes
  * @param sheetName worksheet name
  * @param optional nil or *CellsRangesGetWorksheetCellsRangeValueOpts - Optional Parameters:
      * @param "Namerange" (optional.String) -  range name, for example: &#39;A1:B2&#39; or &#39;range_name1&#39;
-     * @param "FirstRow" (optional.int64) -  the first row of the range
-     * @param "FirstColumn" (optional.int64) -  the first column of the range
-     * @param "RowCount" (optional.int64) -  the count of rows in the range
-     * @param "ColumnCount" (optional.int64) -  the count of columns in the range
+     * @param "FirstRow" (optional.Int64) -  the first row of the range
+     * @param "FirstColumn" (optional.Int64) -  the first column of the range
+     * @param "RowCount" (optional.Int64) -  the count of rows in the range
+     * @param "ColumnCount" (optional.Int64) -  the count of columns in the range
      * @param "Folder" (optional.String) -  Workbook folder.
      * @param "Storage" (optional.String) -  storage name.
 
@@ -13534,7 +12903,7 @@ func (a *CellsApiService) CellsRangesGetWorksheetCellsRangeValue(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/ranges/value"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/ranges/value"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -13543,31 +12912,24 @@ func (a *CellsApiService) CellsRangesGetWorksheetCellsRangeValue(localVarOptiona
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("namerange", parameterToString(localVarOptionals.Namerange.Value(), ""))
 		localVarQueryParams.Add("namerange", parameterToString(localVarOptionals.Namerange, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("firstRow", parameterToString(localVarOptionals.FirstRow.Value(), ""))
 		localVarQueryParams.Add("firstRow", parameterToString(localVarOptionals.FirstRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("firstColumn", parameterToString(localVarOptionals.FirstColumn.Value(), ""))
 		localVarQueryParams.Add("firstColumn", parameterToString(localVarOptionals.FirstColumn, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("rowCount", parameterToString(localVarOptionals.RowCount.Value(), ""))
 		localVarQueryParams.Add("rowCount", parameterToString(localVarOptionals.RowCount, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("columnCount", parameterToString(localVarOptionals.ColumnCount.Value(), ""))
 		localVarQueryParams.Add("columnCount", parameterToString(localVarOptionals.ColumnCount, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -13637,7 +12999,7 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeColumnWidth(localVar
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/ranges/columnWidth"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/ranges/columnWidth"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -13647,11 +13009,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeColumnWidth(localVar
 
 	localVarQueryParams.Add("value", parameterToString(localVarOptionals.Value, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -13672,14 +13032,6 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeColumnWidth(localVar
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Range_.IsSet() {
-	//
-	//		localVarOptionalRange_, localVarOptionalRange_ok := localVarOptionals.Range_.Value().(ModelRange)
-	//		if !localVarOptionalRange_ok {
-	//				return localVarReturnValue, nil, reportError("range_ should be ModelRange")
-	//		}
-	//		localVarPostBody = &localVarOptionalRange_
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Range_ != nil {
 
 		localVarPostBody = &localVarOptionals.Range_
@@ -13732,7 +13084,7 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeMerge(localVarOption
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/ranges/merge"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/ranges/merge"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -13741,11 +13093,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeMerge(localVarOption
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -13766,14 +13116,6 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeMerge(localVarOption
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Range_.IsSet() {
-	//
-	//		localVarOptionalRange_, localVarOptionalRange_ok := localVarOptionals.Range_.Value().(ModelRange)
-	//		if !localVarOptionalRange_ok {
-	//				return localVarReturnValue, nil, reportError("range_ should be ModelRange")
-	//		}
-	//		localVarPostBody = &localVarOptionalRange_
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Range_ != nil {
 
 		localVarPostBody = &localVarOptionals.Range_
@@ -13830,7 +13172,7 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeMoveTo(localVarOptio
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/ranges/moveto"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/ranges/moveto"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -13841,11 +13183,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeMoveTo(localVarOptio
 	localVarQueryParams.Add("destRow", parameterToString(localVarOptionals.DestRow, ""))
 	localVarQueryParams.Add("destColumn", parameterToString(localVarOptionals.DestColumn, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -13866,14 +13206,6 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeMoveTo(localVarOptio
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Range_.IsSet() {
-	//
-	//		localVarOptionalRange_, localVarOptionalRange_ok := localVarOptionals.Range_.Value().(ModelRange)
-	//		if !localVarOptionalRange_ok {
-	//				return localVarReturnValue, nil, reportError("range_ should be ModelRange")
-	//		}
-	//		localVarPostBody = &localVarOptionalRange_
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Range_ != nil {
 
 		localVarPostBody = &localVarOptionals.Range_
@@ -13926,7 +13258,7 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeOutlineBorder(localV
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/ranges/outlineBorder"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/ranges/outlineBorder"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -13935,11 +13267,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeOutlineBorder(localV
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -13960,14 +13290,6 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeOutlineBorder(localV
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.RangeOperate.IsSet() {
-	//
-	//		localVarOptionalRangeOperate, localVarOptionalRangeOperateok := localVarOptionals.RangeOperate.Value().(RangeSetOutlineBorderRequest)
-	//		if !localVarOptionalRangeOperateok {
-	//				return localVarReturnValue, nil, reportError("rangeOperate should be RangeSetOutlineBorderRequest")
-	//		}
-	//		localVarPostBody = &localVarOptionalRangeOperate
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.RangeOperate != nil {
 
 		localVarPostBody = &localVarOptionals.RangeOperate
@@ -14022,7 +13344,7 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeRowHeight(localVarOp
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/ranges/rowHeight"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/ranges/rowHeight"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -14032,11 +13354,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeRowHeight(localVarOp
 
 	localVarQueryParams.Add("value", parameterToString(localVarOptionals.Value, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -14057,14 +13377,6 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeRowHeight(localVarOp
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Range_.IsSet() {
-	//
-	//		localVarOptionalRange_, localVarOptionalRange_ok := localVarOptionals.Range_.Value().(ModelRange)
-	//		if !localVarOptionalRange_ok {
-	//				return localVarReturnValue, nil, reportError("range_ should be ModelRange")
-	//		}
-	//		localVarPostBody = &localVarOptionalRange_
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Range_ != nil {
 
 		localVarPostBody = &localVarOptionals.Range_
@@ -14117,7 +13429,7 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeStyle(localVarOption
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/ranges/style"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/ranges/style"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -14126,11 +13438,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeStyle(localVarOption
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -14151,14 +13461,6 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeStyle(localVarOption
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.RangeOperate.IsSet() {
-	//
-	//		localVarOptionalRangeOperate, localVarOptionalRangeOperateok := localVarOptionals.RangeOperate.Value().(RangeSetStyleRequest)
-	//		if !localVarOptionalRangeOperateok {
-	//				return localVarReturnValue, nil, reportError("rangeOperate should be RangeSetStyleRequest")
-	//		}
-	//		localVarPostBody = &localVarOptionalRangeOperate
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.RangeOperate != nil {
 
 		localVarPostBody = &localVarOptionals.RangeOperate
@@ -14211,7 +13513,7 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeUnmerge(localVarOpti
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/ranges/unmerge"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/ranges/unmerge"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -14220,11 +13522,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeUnmerge(localVarOpti
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -14245,14 +13545,6 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeUnmerge(localVarOpti
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Range_.IsSet() {
-	//
-	//		localVarOptionalRange_, localVarOptionalRange_ok := localVarOptionals.Range_.Value().(ModelRange)
-	//		if !localVarOptionalRange_ok {
-	//				return localVarReturnValue, nil, reportError("range_ should be ModelRange")
-	//		}
-	//		localVarPostBody = &localVarOptionalRange_
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Range_ != nil {
 
 		localVarPostBody = &localVarOptionals.Range_
@@ -14311,7 +13603,7 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeValue(localVarOption
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/ranges/value"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/ranges/value"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -14321,19 +13613,15 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeValue(localVarOption
 
 	localVarQueryParams.Add("Value", parameterToString(localVarOptionals.Value, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("isConverted", parameterToString(localVarOptionals.IsConverted.Value(), ""))
 		localVarQueryParams.Add("isConverted", parameterToString(localVarOptionals.IsConverted, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("setStyle", parameterToString(localVarOptionals.SetStyle.Value(), ""))
 		localVarQueryParams.Add("setStyle", parameterToString(localVarOptionals.SetStyle, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -14354,14 +13642,6 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeValue(localVarOption
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Range_.IsSet() {
-	//
-	//		localVarOptionalRange_, localVarOptionalRange_ok := localVarOptionals.Range_.Value().(ModelRange)
-	//		if !localVarOptionalRange_ok {
-	//				return localVarReturnValue, nil, reportError("range_ should be ModelRange")
-	//		}
-	//		localVarPostBody = &localVarOptionalRange_
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Range_ != nil {
 
 		localVarPostBody = &localVarOptionals.Range_
@@ -14414,7 +13694,7 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRanges(localVarOptionals 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/ranges"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/ranges"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -14423,11 +13703,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRanges(localVarOptionals 
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -14448,14 +13726,6 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRanges(localVarOptionals 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.RangeOperate.IsSet() {
-	//
-	//		localVarOptionalRangeOperate, localVarOptionalRangeOperateok := localVarOptionals.RangeOperate.Value().(RangeCopyRequest)
-	//		if !localVarOptionalRangeOperateok {
-	//				return localVarReturnValue, nil, reportError("rangeOperate should be RangeCopyRequest")
-	//		}
-	//		localVarPostBody = &localVarOptionalRangeOperate
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.RangeOperate != nil {
 
 		localVarPostBody = &localVarOptionals.RangeOperate
@@ -14512,7 +13782,7 @@ func (a *CellsApiService) CellsSaveAsPostDocumentSaveAs(localVarOptionals *Cells
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/SaveAs"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/SaveAs"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -14552,16 +13822,8 @@ func (a *CellsApiService) CellsSaveAsPostDocumentSaveAs(localVarOptionals *Cells
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.SaveOptions.IsSet() {
-	//
-	//		localVarOptionalSaveOptions, localVarOptionalSaveOptionsok := localVarOptionals.SaveOptions.Value().(SaveOptions)
-	//		if !localVarOptionalSaveOptionsok {
-	//				return localVarReturnValue, nil, reportError("saveOptions should be SaveOptions")
-	//		}
-	//		localVarPostBody = &localVarOptionalSaveOptions
-	//	}
 	if localVarOptionals != nil && localVarOptionals.SaveOptions != nil {
-		fmt.Print("sssss")
+
 		localVarPostBody = &localVarOptionals.SaveOptions
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
@@ -14612,7 +13874,7 @@ func (a *CellsApiService) CellsShapesDeleteWorksheetShape(localVarOptionals *Cel
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"shapeindex"+"}", fmt.Sprintf("%v", localVarOptionals.Shapeindex), -1)
@@ -14622,11 +13884,9 @@ func (a *CellsApiService) CellsShapesDeleteWorksheetShape(localVarOptionals *Cel
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -14692,7 +13952,7 @@ func (a *CellsApiService) CellsShapesDeleteWorksheetShapes(localVarOptionals *Ce
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/shapes"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/shapes"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -14701,11 +13961,9 @@ func (a *CellsApiService) CellsShapesDeleteWorksheetShapes(localVarOptionals *Ce
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -14773,7 +14031,7 @@ func (a *CellsApiService) CellsShapesGetWorksheetShape(localVarOptionals *CellsS
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"shapeindex"+"}", fmt.Sprintf("%v", localVarOptionals.Shapeindex), -1)
@@ -14783,11 +14041,9 @@ func (a *CellsApiService) CellsShapesGetWorksheetShape(localVarOptionals *CellsS
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -14853,7 +14109,7 @@ func (a *CellsApiService) CellsShapesGetWorksheetShapes(localVarOptionals *Cells
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/shapes"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/shapes"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -14862,11 +14118,9 @@ func (a *CellsApiService) CellsShapesGetWorksheetShapes(localVarOptionals *Cells
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -14936,7 +14190,7 @@ func (a *CellsApiService) CellsShapesPostWorksheetShape(localVarOptionals *Cells
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"shapeindex"+"}", fmt.Sprintf("%v", localVarOptionals.Shapeindex), -1)
@@ -14946,11 +14200,9 @@ func (a *CellsApiService) CellsShapesPostWorksheetShape(localVarOptionals *Cells
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -14971,14 +14223,6 @@ func (a *CellsApiService) CellsShapesPostWorksheetShape(localVarOptionals *Cells
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Dto.IsSet() {
-	//
-	//		localVarOptionalDto, localVarOptionalDtook := localVarOptionals.Dto.Value().(Shape)
-	//		if !localVarOptionalDtook {
-	//				return localVarReturnValue, nil, reportError("dto should be Shape")
-	//		}
-	//		localVarPostBody = &localVarOptionalDto
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Dto != nil {
 
 		localVarPostBody = &localVarOptionals.Dto
@@ -15043,7 +14287,7 @@ func (a *CellsApiService) CellsShapesPutWorksheetShape(localVarOptionals *CellsS
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/shapes"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/shapes"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -15059,11 +14303,9 @@ func (a *CellsApiService) CellsShapesPutWorksheetShape(localVarOptionals *CellsS
 	localVarQueryParams.Add("width", parameterToString(localVarOptionals.Width, ""))
 	localVarQueryParams.Add("height", parameterToString(localVarOptionals.Height, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -15122,7 +14364,7 @@ func (a *CellsApiService) CellsTaskPostRunTask(localVarOptionals *CellsTaskPostR
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/task/runtask"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/task/runtask"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15193,7 +14435,7 @@ func (a *CellsApiService) CellsWorkbookDeleteDecryptDocument(localVarOptionals *
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/encryption"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/encryption"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15201,11 +14443,9 @@ func (a *CellsApiService) CellsWorkbookDeleteDecryptDocument(localVarOptionals *
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -15226,14 +14466,6 @@ func (a *CellsApiService) CellsWorkbookDeleteDecryptDocument(localVarOptionals *
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Encryption.IsSet() {
-	//
-	//		localVarOptionalEncryption, localVarOptionalEncryptionok := localVarOptionals.Encryption.Value().(WorkbookEncryptionRequest)
-	//		if !localVarOptionalEncryptionok {
-	//				return localVarReturnValue, nil, reportError("encryption should be WorkbookEncryptionRequest")
-	//		}
-	//		localVarPostBody = &localVarOptionalEncryption
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Encryption != nil {
 
 		localVarPostBody = &localVarOptionals.Encryption
@@ -15282,7 +14514,7 @@ func (a *CellsApiService) CellsWorkbookDeleteDocumentUnprotectFromChanges(localV
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/writeProtection"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/writeProtection"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15290,11 +14522,9 @@ func (a *CellsApiService) CellsWorkbookDeleteDocumentUnprotectFromChanges(localV
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -15360,7 +14590,7 @@ func (a *CellsApiService) CellsWorkbookDeleteUnprotectDocument(localVarOptionals
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/protection"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/protection"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15368,11 +14598,9 @@ func (a *CellsApiService) CellsWorkbookDeleteUnprotectDocument(localVarOptionals
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -15393,14 +14621,6 @@ func (a *CellsApiService) CellsWorkbookDeleteUnprotectDocument(localVarOptionals
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Protection.IsSet() {
-	//
-	//		localVarOptionalProtection, localVarOptionalProtectionok := localVarOptionals.Protection.Value().(WorkbookProtectionRequest)
-	//		if !localVarOptionalProtectionok {
-	//				return localVarReturnValue, nil, reportError("protection should be WorkbookProtectionRequest")
-	//		}
-	//		localVarPostBody = &localVarOptionalProtection
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Protection != nil {
 
 		localVarPostBody = &localVarOptionals.Protection
@@ -15449,7 +14669,7 @@ func (a *CellsApiService) CellsWorkbookDeleteWorkbookBackground(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/background"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/background"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15457,11 +14677,9 @@ func (a *CellsApiService) CellsWorkbookDeleteWorkbookBackground(localVarOptional
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -15527,7 +14745,7 @@ func (a *CellsApiService) CellsWorkbookDeleteWorkbookName(localVarOptionals *Cel
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/names/{nameName}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/names/{nameName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"nameName"+"}", fmt.Sprintf("%v", localVarOptionals.NameName), -1)
 
@@ -15536,11 +14754,9 @@ func (a *CellsApiService) CellsWorkbookDeleteWorkbookName(localVarOptionals *Cel
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -15604,7 +14820,7 @@ func (a *CellsApiService) CellsWorkbookDeleteWorkbookNames(localVarOptionals *Ce
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/names"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/names"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15612,11 +14828,9 @@ func (a *CellsApiService) CellsWorkbookDeleteWorkbookNames(localVarOptionals *Ce
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -15690,7 +14904,7 @@ func (a *CellsApiService) CellsWorkbookGetWorkbook(localVarOptionals *CellsWorkb
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15698,31 +14912,24 @@ func (a *CellsApiService) CellsWorkbookGetWorkbook(localVarOptionals *CellsWorkb
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("password", parameterToString(localVarOptionals.Password.Value(), ""))
 		localVarQueryParams.Add("password", parameterToString(localVarOptionals.Password, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format.Value(), ""))
 		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("isAutoFit", parameterToString(localVarOptionals.IsAutoFit.Value(), ""))
 		localVarQueryParams.Add("isAutoFit", parameterToString(localVarOptionals.IsAutoFit, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("onlySaveTable", parameterToString(localVarOptionals.OnlySaveTable.Value(), ""))
 		localVarQueryParams.Add("onlySaveTable", parameterToString(localVarOptionals.OnlySaveTable, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("outPath", parameterToString(localVarOptionals.OutPath.Value(), ""))
 		localVarQueryParams.Add("outPath", parameterToString(localVarOptionals.OutPath, ""))
 	}
 	// to determine the Content-Type header
@@ -15786,7 +14993,7 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookDefaultStyle(localVarOptionals
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/defaultstyle"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/defaultstyle"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15794,11 +15001,9 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookDefaultStyle(localVarOptionals
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -15864,7 +15069,7 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookName(localVarOptionals *CellsW
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/names/{nameName}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/names/{nameName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"nameName"+"}", fmt.Sprintf("%v", localVarOptionals.NameName), -1)
 
@@ -15873,11 +15078,9 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookName(localVarOptionals *CellsW
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -15943,7 +15146,7 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookNameValue(localVarOptionals *C
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/names/{nameName}/value"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/names/{nameName}/value"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"nameName"+"}", fmt.Sprintf("%v", localVarOptionals.NameName), -1)
 
@@ -15952,11 +15155,9 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookNameValue(localVarOptionals *C
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -16020,7 +15221,7 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookNames(localVarOptionals *Cells
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/names"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/names"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16028,11 +15229,9 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookNames(localVarOptionals *Cells
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -16096,7 +15295,7 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookSettings(localVarOptionals *Ce
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/settings"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/settings"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16104,11 +15303,9 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookSettings(localVarOptionals *Ce
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -16172,7 +15369,7 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookTextItems(localVarOptionals *C
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/textItems"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/textItems"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16180,11 +15377,9 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookTextItems(localVarOptionals *C
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -16256,7 +15451,7 @@ func (a *CellsApiService) CellsWorkbookPostAutofitWorkbookRows(localVarOptionals
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/autofitrows"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/autofitrows"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16264,23 +15459,18 @@ func (a *CellsApiService) CellsWorkbookPostAutofitWorkbookRows(localVarOptionals
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("startRow", parameterToString(localVarOptionals.StartRow.Value(), ""))
 		localVarQueryParams.Add("startRow", parameterToString(localVarOptionals.StartRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("endRow", parameterToString(localVarOptionals.EndRow.Value(), ""))
 		localVarQueryParams.Add("endRow", parameterToString(localVarOptionals.EndRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("onlyAuto", parameterToString(localVarOptionals.OnlyAuto.Value(), ""))
 		localVarQueryParams.Add("onlyAuto", parameterToString(localVarOptionals.OnlyAuto, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -16301,14 +15491,6 @@ func (a *CellsApiService) CellsWorkbookPostAutofitWorkbookRows(localVarOptionals
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.AutoFitterOptions.IsSet() {
-	//
-	//		localVarOptionalAutoFitterOptions, localVarOptionalAutoFitterOptionsok := localVarOptionals.AutoFitterOptions.Value().(AutoFitterOptions)
-	//		if !localVarOptionalAutoFitterOptionsok {
-	//				return localVarReturnValue, nil, reportError("autoFitterOptions should be AutoFitterOptions")
-	//		}
-	//		localVarPostBody = &localVarOptionalAutoFitterOptions
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.AutoFitterOptions != nil {
 
 		localVarPostBody = &localVarOptionals.AutoFitterOptions
@@ -16359,7 +15541,7 @@ func (a *CellsApiService) CellsWorkbookPostEncryptDocument(localVarOptionals *Ce
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/encryption"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/encryption"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16367,11 +15549,9 @@ func (a *CellsApiService) CellsWorkbookPostEncryptDocument(localVarOptionals *Ce
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -16392,14 +15572,6 @@ func (a *CellsApiService) CellsWorkbookPostEncryptDocument(localVarOptionals *Ce
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Encryption.IsSet() {
-	//
-	//		localVarOptionalEncryption, localVarOptionalEncryptionok := localVarOptionals.Encryption.Value().(WorkbookEncryptionRequest)
-	//		if !localVarOptionalEncryptionok {
-	//				return localVarReturnValue, nil, reportError("encryption should be WorkbookEncryptionRequest")
-	//		}
-	//		localVarPostBody = &localVarOptionalEncryption
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Encryption != nil {
 
 		localVarPostBody = &localVarOptionals.Encryption
@@ -16450,7 +15622,7 @@ func (a *CellsApiService) CellsWorkbookPostImportData(localVarOptionals *CellsWo
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/importdata"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/importdata"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16458,11 +15630,9 @@ func (a *CellsApiService) CellsWorkbookPostImportData(localVarOptionals *CellsWo
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -16530,7 +15700,7 @@ func (a *CellsApiService) CellsWorkbookPostProtectDocument(localVarOptionals *Ce
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/protection"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/protection"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16538,11 +15708,9 @@ func (a *CellsApiService) CellsWorkbookPostProtectDocument(localVarOptionals *Ce
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -16563,14 +15731,6 @@ func (a *CellsApiService) CellsWorkbookPostProtectDocument(localVarOptionals *Ce
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Protection.IsSet() {
-	//
-	//		localVarOptionalProtection, localVarOptionalProtectionok := localVarOptionals.Protection.Value().(WorkbookProtectionRequest)
-	//		if !localVarOptionalProtectionok {
-	//				return localVarReturnValue, nil, reportError("protection should be WorkbookProtectionRequest")
-	//		}
-	//		localVarPostBody = &localVarOptionalProtection
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Protection != nil {
 
 		localVarPostBody = &localVarOptionals.Protection
@@ -16623,7 +15783,7 @@ func (a *CellsApiService) CellsWorkbookPostWorkbookCalculateFormula(localVarOpti
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/calculateformula"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/calculateformula"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16631,15 +15791,12 @@ func (a *CellsApiService) CellsWorkbookPostWorkbookCalculateFormula(localVarOpti
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("ignoreError", parameterToString(localVarOptionals.IgnoreError.Value(), ""))
 		localVarQueryParams.Add("ignoreError", parameterToString(localVarOptionals.IgnoreError, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -16660,14 +15817,6 @@ func (a *CellsApiService) CellsWorkbookPostWorkbookCalculateFormula(localVarOpti
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Options.IsSet() {
-	//
-	//		localVarOptionalOptions, localVarOptionalOptionsok := localVarOptionals.Options.Value().(CalculationOptions)
-	//		if !localVarOptionalOptionsok {
-	//				return localVarReturnValue, nil, reportError("options should be CalculationOptions")
-	//		}
-	//		localVarPostBody = &localVarOptionalOptions
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Options != nil {
 
 		localVarPostBody = &localVarOptionals.Options
@@ -16720,7 +15869,7 @@ func (a *CellsApiService) CellsWorkbookPostWorkbookGetSmartMarkerResult(localVar
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/smartmarker"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/smartmarker"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16728,19 +15877,15 @@ func (a *CellsApiService) CellsWorkbookPostWorkbookGetSmartMarkerResult(localVar
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("xmlFile", parameterToString(localVarOptionals.XmlFile.Value(), ""))
 		localVarQueryParams.Add("xmlFile", parameterToString(localVarOptionals.XmlFile, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("outPath", parameterToString(localVarOptionals.OutPath.Value(), ""))
 		localVarQueryParams.Add("outPath", parameterToString(localVarOptionals.OutPath, ""))
 	}
 	// to determine the Content-Type header
@@ -16806,7 +15951,7 @@ func (a *CellsApiService) CellsWorkbookPostWorkbookSettings(localVarOptionals *C
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/settings"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/settings"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16814,11 +15959,9 @@ func (a *CellsApiService) CellsWorkbookPostWorkbookSettings(localVarOptionals *C
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -16839,14 +15982,6 @@ func (a *CellsApiService) CellsWorkbookPostWorkbookSettings(localVarOptionals *C
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Settings.IsSet() {
-	//
-	//		localVarOptionalSettings, localVarOptionalSettingsok := localVarOptionals.Settings.Value().(WorkbookSettings)
-	//		if !localVarOptionalSettingsok {
-	//				return localVarReturnValue, nil, reportError("settings should be WorkbookSettings")
-	//		}
-	//		localVarPostBody = &localVarOptionalSettings
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Settings != nil {
 
 		localVarPostBody = &localVarOptionals.Settings
@@ -16907,7 +16042,7 @@ func (a *CellsApiService) CellsWorkbookPostWorkbookSplit(localVarOptionals *Cell
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/split"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/split"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16915,35 +16050,27 @@ func (a *CellsApiService) CellsWorkbookPostWorkbookSplit(localVarOptionals *Cell
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format.Value(), ""))
 		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("from", parameterToString(localVarOptionals.From.Value(), ""))
 		localVarQueryParams.Add("from", parameterToString(localVarOptionals.From, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("to", parameterToString(localVarOptionals.To.Value(), ""))
 		localVarQueryParams.Add("to", parameterToString(localVarOptionals.To, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("horizontalResolution", parameterToString(localVarOptionals.HorizontalResolution.Value(), ""))
 		localVarQueryParams.Add("horizontalResolution", parameterToString(localVarOptionals.HorizontalResolution, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("verticalResolution", parameterToString(localVarOptionals.VerticalResolution.Value(), ""))
 		localVarQueryParams.Add("verticalResolution", parameterToString(localVarOptionals.VerticalResolution, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("outFolder", parameterToString(localVarOptionals.OutFolder.Value(), ""))
 		localVarQueryParams.Add("outFolder", parameterToString(localVarOptionals.OutFolder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -17009,7 +16136,7 @@ func (a *CellsApiService) CellsWorkbookPostWorkbooksMerge(localVarOptionals *Cel
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/merge"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/merge"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17018,11 +16145,9 @@ func (a *CellsApiService) CellsWorkbookPostWorkbooksMerge(localVarOptionals *Cel
 
 	localVarQueryParams.Add("mergeWith", parameterToString(localVarOptionals.MergeWith, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -17090,7 +16215,7 @@ func (a *CellsApiService) CellsWorkbookPostWorkbooksTextReplace(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/replaceText"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/replaceText"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17100,11 +16225,9 @@ func (a *CellsApiService) CellsWorkbookPostWorkbooksTextReplace(localVarOptional
 	localVarQueryParams.Add("oldValue", parameterToString(localVarOptionals.OldValue, ""))
 	localVarQueryParams.Add("newValue", parameterToString(localVarOptionals.NewValue, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -17170,7 +16293,7 @@ func (a *CellsApiService) CellsWorkbookPostWorkbooksTextSearch(localVarOptionals
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/findText"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/findText"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17179,11 +16302,9 @@ func (a *CellsApiService) CellsWorkbookPostWorkbooksTextSearch(localVarOptionals
 
 	localVarQueryParams.Add("text", parameterToString(localVarOptionals.Text, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -17248,22 +16369,19 @@ func (a *CellsApiService) CellsWorkbookPutConvertWorkbook(workbook *os.File, loc
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/convert"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/convert"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format.Value(), ""))
 		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("password", parameterToString(localVarOptionals.Password.Value(), ""))
 		localVarQueryParams.Add("password", parameterToString(localVarOptionals.Password, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("outPath", parameterToString(localVarOptionals.OutPath.Value(), ""))
 		localVarQueryParams.Add("outPath", parameterToString(localVarOptionals.OutPath, ""))
 	}
 	// to determine the Content-Type header
@@ -17340,7 +16458,7 @@ func (a *CellsApiService) CellsWorkbookPutDocumentProtectFromChanges(localVarOpt
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/writeProtection"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/writeProtection"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17348,11 +16466,9 @@ func (a *CellsApiService) CellsWorkbookPutDocumentProtectFromChanges(localVarOpt
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -17373,14 +16489,6 @@ func (a *CellsApiService) CellsWorkbookPutDocumentProtectFromChanges(localVarOpt
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Password.IsSet() {
-	//
-	//		localVarOptionalPassword, localVarOptionalPasswordok := localVarOptionals.Password.Value().(PasswordRequest)
-	//		if !localVarOptionalPasswordok {
-	//				return localVarReturnValue, nil, reportError("password should be PasswordRequest")
-	//		}
-	//		localVarPostBody = &localVarOptionalPassword
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Password != nil {
 
 		localVarPostBody = &localVarOptionals.Password
@@ -17431,7 +16539,7 @@ func (a *CellsApiService) CellsWorkbookPutWorkbookBackground(localVarOptionals *
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/background"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/background"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17439,11 +16547,9 @@ func (a *CellsApiService) CellsWorkbookPutWorkbookBackground(localVarOptionals *
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -17515,7 +16621,7 @@ func (a *CellsApiService) CellsWorkbookPutWorkbookCreate(localVarOptionals *Cell
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17523,23 +16629,18 @@ func (a *CellsApiService) CellsWorkbookPutWorkbookCreate(localVarOptionals *Cell
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("templateFile", parameterToString(localVarOptionals.TemplateFile.Value(), ""))
 		localVarQueryParams.Add("templateFile", parameterToString(localVarOptionals.TemplateFile, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("dataFile", parameterToString(localVarOptionals.DataFile.Value(), ""))
 		localVarQueryParams.Add("dataFile", parameterToString(localVarOptionals.DataFile, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("isWriteOver", parameterToString(localVarOptionals.IsWriteOver.Value(), ""))
 		localVarQueryParams.Add("isWriteOver", parameterToString(localVarOptionals.IsWriteOver, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -17605,7 +16706,7 @@ func (a *CellsApiService) CellsWorkbookPutWorkbookWaterMarker(localVarOptionals 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/watermarker"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/watermarker"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17613,11 +16714,9 @@ func (a *CellsApiService) CellsWorkbookPutWorkbookWaterMarker(localVarOptionals 
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -17638,14 +16737,6 @@ func (a *CellsApiService) CellsWorkbookPutWorkbookWaterMarker(localVarOptionals 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.TextWaterMarkerRequest.IsSet() {
-	//
-	//		localVarOptionalTextWaterMarkerRequest, localVarOptionalTextWaterMarkerRequestok := localVarOptionals.TextWaterMarkerRequest.Value().(TextWaterMarkerRequest)
-	//		if !localVarOptionalTextWaterMarkerRequestok {
-	//				return localVarReturnValue, nil, reportError("textWaterMarkerRequest should be TextWaterMarkerRequest")
-	//		}
-	//		localVarPostBody = &localVarOptionalTextWaterMarkerRequest
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.TextWaterMarkerRequest != nil {
 
 		localVarPostBody = &localVarOptionals.TextWaterMarkerRequest
@@ -17698,7 +16789,7 @@ func (a *CellsApiService) CellsWorksheetValidationsDeleteWorksheetValidation(loc
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"validationIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ValidationIndex), -1)
@@ -17708,11 +16799,9 @@ func (a *CellsApiService) CellsWorksheetValidationsDeleteWorksheetValidation(loc
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -17778,7 +16867,7 @@ func (a *CellsApiService) CellsWorksheetValidationsDeleteWorksheetValidations(lo
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/validations"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/validations"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -17787,11 +16876,9 @@ func (a *CellsApiService) CellsWorksheetValidationsDeleteWorksheetValidations(lo
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -17859,7 +16946,7 @@ func (a *CellsApiService) CellsWorksheetValidationsGetWorksheetValidation(localV
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"validationIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ValidationIndex), -1)
@@ -17869,11 +16956,9 @@ func (a *CellsApiService) CellsWorksheetValidationsGetWorksheetValidation(localV
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -17939,7 +17024,7 @@ func (a *CellsApiService) CellsWorksheetValidationsGetWorksheetValidations(local
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/validations"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/validations"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -17948,11 +17033,9 @@ func (a *CellsApiService) CellsWorksheetValidationsGetWorksheetValidations(local
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -18022,7 +17105,7 @@ func (a *CellsApiService) CellsWorksheetValidationsPostWorksheetValidation(local
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"validationIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ValidationIndex), -1)
@@ -18032,11 +17115,9 @@ func (a *CellsApiService) CellsWorksheetValidationsPostWorksheetValidation(local
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -18057,14 +17138,6 @@ func (a *CellsApiService) CellsWorksheetValidationsPostWorksheetValidation(local
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Validation.IsSet() {
-	//
-	//		localVarOptionalValidation, localVarOptionalValidationok := localVarOptionals.Validation.Value().(Validation)
-	//		if !localVarOptionalValidationok {
-	//				return localVarReturnValue, nil, reportError("validation should be Validation")
-	//		}
-	//		localVarPostBody = &localVarOptionalValidation
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Validation != nil {
 
 		localVarPostBody = &localVarOptionals.Validation
@@ -18119,7 +17192,7 @@ func (a *CellsApiService) CellsWorksheetValidationsPutWorksheetValidation(localV
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/validations"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/validations"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -18128,15 +17201,12 @@ func (a *CellsApiService) CellsWorksheetValidationsPutWorksheetValidation(localV
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("range", parameterToString(localVarOptionals.Range_.Value(), ""))
 		localVarQueryParams.Add("range", parameterToString(localVarOptionals.Range_, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -18157,14 +17227,6 @@ func (a *CellsApiService) CellsWorksheetValidationsPutWorksheetValidation(localV
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Validation.IsSet() {
-	//
-	//		localVarOptionalValidation, localVarOptionalValidationok := localVarOptionals.Validation.Value().(Validation)
-	//		if !localVarOptionalValidationok {
-	//				return localVarReturnValue, nil, reportError("validation should be Validation")
-	//		}
-	//		localVarPostBody = &localVarOptionalValidation
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Validation != nil {
 
 		localVarPostBody = &localVarOptionals.Validation
@@ -18217,7 +17279,7 @@ func (a *CellsApiService) CellsWorksheetsDeleteUnprotectWorksheet(localVarOption
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/protection"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/protection"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -18226,11 +17288,9 @@ func (a *CellsApiService) CellsWorksheetsDeleteUnprotectWorksheet(localVarOption
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -18251,14 +17311,6 @@ func (a *CellsApiService) CellsWorksheetsDeleteUnprotectWorksheet(localVarOption
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.ProtectParameter.IsSet() {
-	//
-	//		localVarOptionalProtectParameter, localVarOptionalProtectParameterok := localVarOptionals.ProtectParameter.Value().(ProtectSheetParameter)
-	//		if !localVarOptionalProtectParameterok {
-	//				return localVarReturnValue, nil, reportError("protectParameter should be ProtectSheetParameter")
-	//		}
-	//		localVarPostBody = &localVarOptionalProtectParameter
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.ProtectParameter != nil {
 
 		localVarPostBody = &localVarOptionals.ProtectParameter
@@ -18309,7 +17361,7 @@ func (a *CellsApiService) CellsWorksheetsDeleteWorksheet(localVarOptionals *Cell
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -18318,11 +17370,9 @@ func (a *CellsApiService) CellsWorksheetsDeleteWorksheet(localVarOptionals *Cell
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -18388,7 +17438,7 @@ func (a *CellsApiService) CellsWorksheetsDeleteWorksheetBackground(localVarOptio
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/background"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/background"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -18397,11 +17447,9 @@ func (a *CellsApiService) CellsWorksheetsDeleteWorksheetBackground(localVarOptio
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -18469,7 +17517,7 @@ func (a *CellsApiService) CellsWorksheetsDeleteWorksheetComment(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"cellName"+"}", fmt.Sprintf("%v", localVarOptionals.CellName), -1)
@@ -18479,11 +17527,9 @@ func (a *CellsApiService) CellsWorksheetsDeleteWorksheetComment(localVarOptional
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -18549,7 +17595,7 @@ func (a *CellsApiService) CellsWorksheetsDeleteWorksheetComments(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/comments"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/comments"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -18558,11 +17604,9 @@ func (a *CellsApiService) CellsWorksheetsDeleteWorksheetComments(localVarOptiona
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -18636,7 +17680,7 @@ func (a *CellsApiService) CellsWorksheetsDeleteWorksheetFreezePanes(localVarOpti
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/freezepanes"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/freezepanes"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -18649,11 +17693,9 @@ func (a *CellsApiService) CellsWorksheetsDeleteWorksheetFreezePanes(localVarOpti
 	localVarQueryParams.Add("freezedRows", parameterToString(localVarOptionals.FreezedRows, ""))
 	localVarQueryParams.Add("freezedColumns", parameterToString(localVarOptionals.FreezedColumns, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -18717,7 +17759,7 @@ func (a *CellsApiService) CellsWorksheetsGetNamedRanges(localVarOptionals *Cells
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/ranges"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/ranges"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -18725,11 +17767,9 @@ func (a *CellsApiService) CellsWorksheetsGetNamedRanges(localVarOptionals *Cells
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -18805,7 +17845,7 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheet(localVarOptionals *CellsWo
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -18814,31 +17854,24 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheet(localVarOptionals *CellsWo
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format.Value(), ""))
 		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("verticalResolution", parameterToString(localVarOptionals.VerticalResolution.Value(), ""))
 		localVarQueryParams.Add("verticalResolution", parameterToString(localVarOptionals.VerticalResolution, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("horizontalResolution", parameterToString(localVarOptionals.HorizontalResolution.Value(), ""))
 		localVarQueryParams.Add("horizontalResolution", parameterToString(localVarOptionals.HorizontalResolution, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("area", parameterToString(localVarOptionals.Area.Value(), ""))
 		localVarQueryParams.Add("area", parameterToString(localVarOptionals.Area, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("pageIndex", parameterToString(localVarOptionals.PageIndex.Value(), ""))
 		localVarQueryParams.Add("pageIndex", parameterToString(localVarOptionals.PageIndex, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -18906,7 +17939,7 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetCalculateFormula(localVarOp
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/formulaResult"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/formulaResult"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -18916,11 +17949,9 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetCalculateFormula(localVarOp
 
 	localVarQueryParams.Add("formula", parameterToString(localVarOptionals.Formula, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -18988,7 +18019,7 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetComment(localVarOptionals *
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"cellName"+"}", fmt.Sprintf("%v", localVarOptionals.CellName), -1)
@@ -18998,11 +18029,9 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetComment(localVarOptionals *
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -19068,7 +18097,7 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetComments(localVarOptionals 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/comments"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/comments"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -19077,11 +18106,9 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetComments(localVarOptionals 
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -19149,7 +18176,7 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetMergedCell(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/mergedCells/{mergedCellIndex}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/mergedCells/{mergedCellIndex}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"mergedCellIndex"+"}", fmt.Sprintf("%v", localVarOptionals.MergedCellIndex), -1)
@@ -19159,11 +18186,9 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetMergedCell(localVarOptional
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -19229,7 +18254,7 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetMergedCells(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/mergedCells"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/mergedCells"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -19238,11 +18263,9 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetMergedCells(localVarOptiona
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -19308,7 +18331,7 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetTextItems(localVarOptionals
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/textItems"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/textItems"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -19317,11 +18340,9 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetTextItems(localVarOptionals
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -19385,7 +18406,7 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheets(localVarOptionals *CellsW
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -19393,11 +18414,9 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheets(localVarOptionals *CellsW
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -19473,7 +18492,7 @@ func (a *CellsApiService) CellsWorksheetsPostAutofitWorksheetColumns(localVarOpt
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autofitcolumns"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autofitcolumns"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -19484,19 +18503,15 @@ func (a *CellsApiService) CellsWorksheetsPostAutofitWorksheetColumns(localVarOpt
 	localVarQueryParams.Add("firstColumn", parameterToString(localVarOptionals.FirstColumn, ""))
 	localVarQueryParams.Add("lastColumn", parameterToString(localVarOptionals.LastColumn, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("firstRow", parameterToString(localVarOptionals.FirstRow.Value(), ""))
 		localVarQueryParams.Add("firstRow", parameterToString(localVarOptionals.FirstRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("lastRow", parameterToString(localVarOptionals.LastRow.Value(), ""))
 		localVarQueryParams.Add("lastRow", parameterToString(localVarOptionals.LastRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -19517,14 +18532,6 @@ func (a *CellsApiService) CellsWorksheetsPostAutofitWorksheetColumns(localVarOpt
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.AutoFitterOptions.IsSet() {
-	//
-	//		localVarOptionalAutoFitterOptions, localVarOptionalAutoFitterOptionsok := localVarOptionals.AutoFitterOptions.Value().(AutoFitterOptions)
-	//		if !localVarOptionalAutoFitterOptionsok {
-	//				return localVarReturnValue, nil, reportError("autoFitterOptions should be AutoFitterOptions")
-	//		}
-	//		localVarPostBody = &localVarOptionalAutoFitterOptions
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.AutoFitterOptions != nil {
 
 		localVarPostBody = &localVarOptionals.AutoFitterOptions
@@ -19583,7 +18590,7 @@ func (a *CellsApiService) CellsWorksheetsPostAutofitWorksheetRow(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autofitrow"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autofitrow"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -19595,11 +18602,9 @@ func (a *CellsApiService) CellsWorksheetsPostAutofitWorksheetRow(localVarOptiona
 	localVarQueryParams.Add("firstColumn", parameterToString(localVarOptionals.FirstColumn, ""))
 	localVarQueryParams.Add("lastColumn", parameterToString(localVarOptionals.LastColumn, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -19620,14 +18625,6 @@ func (a *CellsApiService) CellsWorksheetsPostAutofitWorksheetRow(localVarOptiona
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.AutoFitterOptions.IsSet() {
-	//
-	//		localVarOptionalAutoFitterOptions, localVarOptionalAutoFitterOptionsok := localVarOptionals.AutoFitterOptions.Value().(AutoFitterOptions)
-	//		if !localVarOptionalAutoFitterOptionsok {
-	//				return localVarReturnValue, nil, reportError("autoFitterOptions should be AutoFitterOptions")
-	//		}
-	//		localVarPostBody = &localVarOptionalAutoFitterOptions
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.AutoFitterOptions != nil {
 
 		localVarPostBody = &localVarOptionals.AutoFitterOptions
@@ -19686,7 +18683,7 @@ func (a *CellsApiService) CellsWorksheetsPostAutofitWorksheetRows(localVarOption
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/autofitrows"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autofitrows"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -19695,23 +18692,18 @@ func (a *CellsApiService) CellsWorksheetsPostAutofitWorksheetRows(localVarOption
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("startRow", parameterToString(localVarOptionals.StartRow.Value(), ""))
 		localVarQueryParams.Add("startRow", parameterToString(localVarOptionals.StartRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("endRow", parameterToString(localVarOptionals.EndRow.Value(), ""))
 		localVarQueryParams.Add("endRow", parameterToString(localVarOptionals.EndRow, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("onlyAuto", parameterToString(localVarOptionals.OnlyAuto.Value(), ""))
 		localVarQueryParams.Add("onlyAuto", parameterToString(localVarOptionals.OnlyAuto, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -19732,14 +18724,6 @@ func (a *CellsApiService) CellsWorksheetsPostAutofitWorksheetRows(localVarOption
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.AutoFitterOptions.IsSet() {
-	//
-	//		localVarOptionalAutoFitterOptions, localVarOptionalAutoFitterOptionsok := localVarOptionals.AutoFitterOptions.Value().(AutoFitterOptions)
-	//		if !localVarOptionalAutoFitterOptionsok {
-	//				return localVarReturnValue, nil, reportError("autoFitterOptions should be AutoFitterOptions")
-	//		}
-	//		localVarPostBody = &localVarOptionalAutoFitterOptions
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.AutoFitterOptions != nil {
 
 		localVarPostBody = &localVarOptionals.AutoFitterOptions
@@ -19798,7 +18782,7 @@ func (a *CellsApiService) CellsWorksheetsPostCopyWorksheet(localVarOptionals *Ce
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/copy"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/copy"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -19808,19 +18792,15 @@ func (a *CellsApiService) CellsWorksheetsPostCopyWorksheet(localVarOptionals *Ce
 
 	localVarQueryParams.Add("sourceSheet", parameterToString(localVarOptionals.SourceSheet, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("sourceWorkbook", parameterToString(localVarOptionals.SourceWorkbook.Value(), ""))
 		localVarQueryParams.Add("sourceWorkbook", parameterToString(localVarOptionals.SourceWorkbook, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("sourceFolder", parameterToString(localVarOptionals.SourceFolder.Value(), ""))
 		localVarQueryParams.Add("sourceFolder", parameterToString(localVarOptionals.SourceFolder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -19841,14 +18821,6 @@ func (a *CellsApiService) CellsWorksheetsPostCopyWorksheet(localVarOptionals *Ce
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Options.IsSet() {
-	//
-	//		localVarOptionalOptions, localVarOptionalOptionsok := localVarOptionals.Options.Value().(CopyOptions)
-	//		if !localVarOptionalOptionsok {
-	//				return localVarReturnValue, nil, reportError("options should be CopyOptions")
-	//		}
-	//		localVarPostBody = &localVarOptionalOptions
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Options != nil {
 
 		localVarPostBody = &localVarOptionals.Options
@@ -19901,7 +18873,7 @@ func (a *CellsApiService) CellsWorksheetsPostMoveWorksheet(localVarOptionals *Ce
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/position"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/position"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -19910,11 +18882,9 @@ func (a *CellsApiService) CellsWorksheetsPostMoveWorksheet(localVarOptionals *Ce
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -19935,14 +18905,6 @@ func (a *CellsApiService) CellsWorksheetsPostMoveWorksheet(localVarOptionals *Ce
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Moving.IsSet() {
-	//
-	//		localVarOptionalMoving, localVarOptionalMovingok := localVarOptionals.Moving.Value().(WorksheetMovingRequest)
-	//		if !localVarOptionalMovingok {
-	//				return localVarReturnValue, nil, reportError("moving should be WorksheetMovingRequest")
-	//		}
-	//		localVarPostBody = &localVarOptionalMoving
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Moving != nil {
 
 		localVarPostBody = &localVarOptionals.Moving
@@ -19995,7 +18957,7 @@ func (a *CellsApiService) CellsWorksheetsPostRenameWorksheet(localVarOptionals *
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/rename"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/rename"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -20005,11 +18967,9 @@ func (a *CellsApiService) CellsWorksheetsPostRenameWorksheet(localVarOptionals *
 
 	localVarQueryParams.Add("newname", parameterToString(localVarOptionals.Newname, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -20077,7 +19037,7 @@ func (a *CellsApiService) CellsWorksheetsPostUpdateWorksheetProperty(localVarOpt
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -20086,11 +19046,9 @@ func (a *CellsApiService) CellsWorksheetsPostUpdateWorksheetProperty(localVarOpt
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -20111,14 +19069,6 @@ func (a *CellsApiService) CellsWorksheetsPostUpdateWorksheetProperty(localVarOpt
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Sheet.IsSet() {
-	//
-	//		localVarOptionalSheet, localVarOptionalSheetok := localVarOptionals.Sheet.Value().(Worksheet)
-	//		if !localVarOptionalSheetok {
-	//				return localVarReturnValue, nil, reportError("sheet should be Worksheet")
-	//		}
-	//		localVarPostBody = &localVarOptionalSheet
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Sheet != nil {
 
 		localVarPostBody = &localVarOptionals.Sheet
@@ -20171,7 +19121,7 @@ func (a *CellsApiService) CellsWorksheetsPostUpdateWorksheetZoom(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/zoom"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/zoom"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -20181,11 +19131,9 @@ func (a *CellsApiService) CellsWorksheetsPostUpdateWorksheetZoom(localVarOptiona
 
 	localVarQueryParams.Add("value", parameterToString(localVarOptionals.Value, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -20255,7 +19203,7 @@ func (a *CellsApiService) CellsWorksheetsPostWorksheetComment(localVarOptionals 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"cellName"+"}", fmt.Sprintf("%v", localVarOptionals.CellName), -1)
@@ -20265,11 +19213,9 @@ func (a *CellsApiService) CellsWorksheetsPostWorksheetComment(localVarOptionals 
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -20290,14 +19236,6 @@ func (a *CellsApiService) CellsWorksheetsPostWorksheetComment(localVarOptionals 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Comment.IsSet() {
-	//
-	//		localVarOptionalComment, localVarOptionalCommentok := localVarOptionals.Comment.Value().(Comment)
-	//		if !localVarOptionalCommentok {
-	//				return localVarReturnValue, nil, reportError("comment should be Comment")
-	//		}
-	//		localVarPostBody = &localVarOptionalComment
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Comment != nil {
 
 		localVarPostBody = &localVarOptionals.Comment
@@ -20352,7 +19290,7 @@ func (a *CellsApiService) CellsWorksheetsPostWorksheetRangeSort(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/sort"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/sort"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -20362,11 +19300,9 @@ func (a *CellsApiService) CellsWorksheetsPostWorksheetRangeSort(localVarOptional
 
 	localVarQueryParams.Add("cellArea", parameterToString(localVarOptionals.CellArea, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -20387,14 +19323,6 @@ func (a *CellsApiService) CellsWorksheetsPostWorksheetRangeSort(localVarOptional
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.DataSorter.IsSet() {
-	//
-	//		localVarOptionalDataSorter, localVarOptionalDataSorterok := localVarOptionals.DataSorter.Value().(DataSorter)
-	//		if !localVarOptionalDataSorterok {
-	//				return localVarReturnValue, nil, reportError("dataSorter should be DataSorter")
-	//		}
-	//		localVarPostBody = &localVarOptionalDataSorter
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.DataSorter != nil {
 
 		localVarPostBody = &localVarOptionals.DataSorter
@@ -20447,7 +19375,7 @@ func (a *CellsApiService) CellsWorksheetsPostWorksheetTextSearch(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/findText"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/findText"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -20457,11 +19385,9 @@ func (a *CellsApiService) CellsWorksheetsPostWorksheetTextSearch(localVarOptiona
 
 	localVarQueryParams.Add("text", parameterToString(localVarOptionals.Text, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -20531,7 +19457,7 @@ func (a *CellsApiService) CellsWorksheetsPostWorsheetTextReplace(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/replaceText"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/replaceText"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -20542,11 +19468,9 @@ func (a *CellsApiService) CellsWorksheetsPostWorsheetTextReplace(localVarOptiona
 	localVarQueryParams.Add("oldValue", parameterToString(localVarOptionals.OldValue, ""))
 	localVarQueryParams.Add("newValue", parameterToString(localVarOptionals.NewValue, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -20616,7 +19540,7 @@ func (a *CellsApiService) CellsWorksheetsPutAddNewWorksheet(localVarOptionals *C
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -20625,19 +19549,15 @@ func (a *CellsApiService) CellsWorksheetsPutAddNewWorksheet(localVarOptionals *C
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("position", parameterToString(localVarOptionals.Position.Value(), ""))
 		localVarQueryParams.Add("position", parameterToString(localVarOptionals.Position, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("sheettype", parameterToString(localVarOptionals.Sheettype.Value(), ""))
 		localVarQueryParams.Add("sheettype", parameterToString(localVarOptionals.Sheettype, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -20705,7 +19625,7 @@ func (a *CellsApiService) CellsWorksheetsPutChangeVisibilityWorksheet(localVarOp
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/visible"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/visible"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -20715,11 +19635,9 @@ func (a *CellsApiService) CellsWorksheetsPutChangeVisibilityWorksheet(localVarOp
 
 	localVarQueryParams.Add("isVisible", parameterToString(localVarOptionals.IsVisible, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -20787,7 +19705,7 @@ func (a *CellsApiService) CellsWorksheetsPutProtectWorksheet(localVarOptionals *
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/protection"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/protection"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -20796,11 +19714,9 @@ func (a *CellsApiService) CellsWorksheetsPutProtectWorksheet(localVarOptionals *
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -20821,14 +19737,6 @@ func (a *CellsApiService) CellsWorksheetsPutProtectWorksheet(localVarOptionals *
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.ProtectParameter.IsSet() {
-	//
-	//		localVarOptionalProtectParameter, localVarOptionalProtectParameterok := localVarOptionals.ProtectParameter.Value().(ProtectSheetParameter)
-	//		if !localVarOptionalProtectParameterok {
-	//				return localVarReturnValue, nil, reportError("protectParameter should be ProtectSheetParameter")
-	//		}
-	//		localVarPostBody = &localVarOptionalProtectParameter
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.ProtectParameter != nil {
 
 		localVarPostBody = &localVarOptionals.ProtectParameter
@@ -20881,7 +19789,7 @@ func (a *CellsApiService) CellsWorksheetsPutWorksheetBackground(localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/background"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/background"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -20890,11 +19798,9 @@ func (a *CellsApiService) CellsWorksheetsPutWorksheetBackground(localVarOptional
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -20966,7 +19872,7 @@ func (a *CellsApiService) CellsWorksheetsPutWorksheetComment(localVarOptionals *
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"cellName"+"}", fmt.Sprintf("%v", localVarOptionals.CellName), -1)
@@ -20976,11 +19882,9 @@ func (a *CellsApiService) CellsWorksheetsPutWorksheetComment(localVarOptionals *
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -21001,14 +19905,6 @@ func (a *CellsApiService) CellsWorksheetsPutWorksheetComment(localVarOptionals *
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	//	if localVarOptionals != nil && localVarOptionals.Comment.IsSet() {
-	//
-	//		localVarOptionalComment, localVarOptionalCommentok := localVarOptionals.Comment.Value().(Comment)
-	//		if !localVarOptionalCommentok {
-	//				return localVarReturnValue, nil, reportError("comment should be Comment")
-	//		}
-	//		localVarPostBody = &localVarOptionalComment
-	//	}
 	if localVarOptionals != nil && &localVarOptionals.Comment != nil {
 
 		localVarPostBody = &localVarOptionals.Comment
@@ -21067,7 +19963,7 @@ func (a *CellsApiService) CellsWorksheetsPutWorksheetFreezePanes(localVarOptiona
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/{name}/worksheets/{sheetName}/freezepanes"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/freezepanes"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
@@ -21080,11 +19976,9 @@ func (a *CellsApiService) CellsWorksheetsPutWorksheetFreezePanes(localVarOptiona
 	localVarQueryParams.Add("freezedRows", parameterToString(localVarOptionals.FreezedRows, ""))
 	localVarQueryParams.Add("freezedColumns", parameterToString(localVarOptionals.FreezedColumns, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder.Value(), ""))
 		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage.Value(), ""))
 		localVarQueryParams.Add("storage", parameterToString(localVarOptionals.Storage, ""))
 	}
 	// to determine the Content-Type header
@@ -21151,7 +20045,7 @@ func (a *CellsApiService) CopyFile(localVarOptionals *CopyFileOpts) (*http.Respo
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/storage/file/copy/{srcPath}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/storage/file/copy/{srcPath}"
 	localVarPath = strings.Replace(localVarPath, "{"+"srcPath"+"}", fmt.Sprintf("%v", localVarOptionals.SrcPath), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -21160,15 +20054,12 @@ func (a *CellsApiService) CopyFile(localVarOptionals *CopyFileOpts) (*http.Respo
 
 	localVarQueryParams.Add("destPath", parameterToString(localVarOptionals.DestPath, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("srcStorageName", parameterToString(localVarOptionals.SrcStorageName.Value(), ""))
 		localVarQueryParams.Add("srcStorageName", parameterToString(localVarOptionals.SrcStorageName, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("destStorageName", parameterToString(localVarOptionals.DestStorageName.Value(), ""))
 		localVarQueryParams.Add("destStorageName", parameterToString(localVarOptionals.DestStorageName, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("versionId", parameterToString(localVarOptionals.VersionId.Value(), ""))
 		localVarQueryParams.Add("versionId", parameterToString(localVarOptionals.VersionId, ""))
 	}
 	// to determine the Content-Type header
@@ -21233,7 +20124,7 @@ func (a *CellsApiService) CopyFolder(localVarOptionals *CopyFolderOpts) (*http.R
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/storage/folder/copy/{srcPath}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/storage/folder/copy/{srcPath}"
 	localVarPath = strings.Replace(localVarPath, "{"+"srcPath"+"}", fmt.Sprintf("%v", localVarOptionals.SrcPath), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -21242,11 +20133,9 @@ func (a *CellsApiService) CopyFolder(localVarOptionals *CopyFolderOpts) (*http.R
 
 	localVarQueryParams.Add("destPath", parameterToString(localVarOptionals.DestPath, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("srcStorageName", parameterToString(localVarOptionals.SrcStorageName.Value(), ""))
 		localVarQueryParams.Add("srcStorageName", parameterToString(localVarOptionals.SrcStorageName, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("destStorageName", parameterToString(localVarOptionals.DestStorageName.Value(), ""))
 		localVarQueryParams.Add("destStorageName", parameterToString(localVarOptionals.DestStorageName, ""))
 	}
 	// to determine the Content-Type header
@@ -21307,7 +20196,7 @@ func (a *CellsApiService) CreateFolder(localVarOptionals *CreateFolderOpts) (*ht
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/storage/folder/{path}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/storage/folder/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", fmt.Sprintf("%v", localVarOptionals.Path), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -21315,7 +20204,6 @@ func (a *CellsApiService) CreateFolder(localVarOptionals *CreateFolderOpts) (*ht
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName.Value(), ""))
 		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
 	}
 	// to determine the Content-Type header
@@ -21378,7 +20266,7 @@ func (a *CellsApiService) DeleteFile(localVarOptionals *DeleteFileOpts) (*http.R
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/storage/file/{path}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/storage/file/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", fmt.Sprintf("%v", localVarOptionals.Path), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -21386,11 +20274,9 @@ func (a *CellsApiService) DeleteFile(localVarOptionals *DeleteFileOpts) (*http.R
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName.Value(), ""))
 		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("versionId", parameterToString(localVarOptionals.VersionId.Value(), ""))
 		localVarQueryParams.Add("versionId", parameterToString(localVarOptionals.VersionId, ""))
 	}
 	// to determine the Content-Type header
@@ -21453,7 +20339,7 @@ func (a *CellsApiService) DeleteFolder(localVarOptionals *DeleteFolderOpts) (*ht
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/storage/folder/{path}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/storage/folder/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", fmt.Sprintf("%v", localVarOptionals.Path), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -21461,11 +20347,9 @@ func (a *CellsApiService) DeleteFolder(localVarOptionals *DeleteFolderOpts) (*ht
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName.Value(), ""))
 		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("recursive", parameterToString(localVarOptionals.Recursive.Value(), ""))
 		localVarQueryParams.Add("recursive", parameterToString(localVarOptionals.Recursive, ""))
 	}
 	// to determine the Content-Type header
@@ -21529,7 +20413,7 @@ func (a *CellsApiService) DownloadFile(localVarOptionals *DownloadFileOpts) ([]b
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/storage/file/{path}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/storage/file/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", fmt.Sprintf("%v", localVarOptionals.Path), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -21537,11 +20421,9 @@ func (a *CellsApiService) DownloadFile(localVarOptionals *DownloadFileOpts) ([]b
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName.Value(), ""))
 		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("versionId", parameterToString(localVarOptionals.VersionId.Value(), ""))
 		localVarQueryParams.Add("versionId", parameterToString(localVarOptionals.VersionId, ""))
 	}
 	// to determine the Content-Type header
@@ -21606,14 +20488,13 @@ func (a *CellsApiService) GetDiscUsage(localVarOptionals *GetDiscUsageOpts) (Dis
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/storage/disc"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/storage/disc"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName.Value(), ""))
 		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
 	}
 	// to determine the Content-Type header
@@ -21675,7 +20556,7 @@ func (a *CellsApiService) GetFileVersions(localVarOptionals *GetFileVersionsOpts
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/storage/version/{path}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/storage/version/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", fmt.Sprintf("%v", localVarOptionals.Path), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -21683,7 +20564,6 @@ func (a *CellsApiService) GetFileVersions(localVarOptionals *GetFileVersionsOpts
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName.Value(), ""))
 		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
 	}
 	// to determine the Content-Type header
@@ -21745,7 +20625,7 @@ func (a *CellsApiService) GetFilesList(localVarOptionals *GetFilesListOpts) (Fil
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/storage/folder/{path}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/storage/folder/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", fmt.Sprintf("%v", localVarOptionals.Path), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -21753,7 +20633,6 @@ func (a *CellsApiService) GetFilesList(localVarOptionals *GetFilesListOpts) (Fil
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName.Value(), ""))
 		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
 	}
 	// to determine the Content-Type header
@@ -21820,7 +20699,7 @@ func (a *CellsApiService) MoveFile(localVarOptionals *MoveFileOpts) (*http.Respo
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/storage/file/move/{srcPath}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/storage/file/move/{srcPath}"
 	localVarPath = strings.Replace(localVarPath, "{"+"srcPath"+"}", fmt.Sprintf("%v", localVarOptionals.SrcPath), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -21829,15 +20708,12 @@ func (a *CellsApiService) MoveFile(localVarOptionals *MoveFileOpts) (*http.Respo
 
 	localVarQueryParams.Add("destPath", parameterToString(localVarOptionals.DestPath, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("srcStorageName", parameterToString(localVarOptionals.SrcStorageName.Value(), ""))
 		localVarQueryParams.Add("srcStorageName", parameterToString(localVarOptionals.SrcStorageName, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("destStorageName", parameterToString(localVarOptionals.DestStorageName.Value(), ""))
 		localVarQueryParams.Add("destStorageName", parameterToString(localVarOptionals.DestStorageName, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("versionId", parameterToString(localVarOptionals.VersionId.Value(), ""))
 		localVarQueryParams.Add("versionId", parameterToString(localVarOptionals.VersionId, ""))
 	}
 	// to determine the Content-Type header
@@ -21902,7 +20778,7 @@ func (a *CellsApiService) MoveFolder(localVarOptionals *MoveFolderOpts) (*http.R
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/storage/folder/move/{srcPath}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/storage/folder/move/{srcPath}"
 	localVarPath = strings.Replace(localVarPath, "{"+"srcPath"+"}", fmt.Sprintf("%v", localVarOptionals.SrcPath), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -21911,11 +20787,9 @@ func (a *CellsApiService) MoveFolder(localVarOptionals *MoveFolderOpts) (*http.R
 
 	localVarQueryParams.Add("destPath", parameterToString(localVarOptionals.DestPath, ""))
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("srcStorageName", parameterToString(localVarOptionals.SrcStorageName.Value(), ""))
 		localVarQueryParams.Add("srcStorageName", parameterToString(localVarOptionals.SrcStorageName, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("destStorageName", parameterToString(localVarOptionals.DestStorageName.Value(), ""))
 		localVarQueryParams.Add("destStorageName", parameterToString(localVarOptionals.DestStorageName, ""))
 	}
 	// to determine the Content-Type header
@@ -21978,7 +20852,7 @@ func (a *CellsApiService) OAuthPost(localVarOptionals *OAuthPostOpts) (AccessTok
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/connect/token"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/connect/token"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -22048,7 +20922,7 @@ func (a *CellsApiService) ObjectExists(localVarOptionals *ObjectExistsOpts) (Obj
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/storage/exist/{path}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/storage/exist/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", fmt.Sprintf("%v", localVarOptionals.Path), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -22056,11 +20930,9 @@ func (a *CellsApiService) ObjectExists(localVarOptionals *ObjectExistsOpts) (Obj
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName.Value(), ""))
 		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
 	}
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("versionId", parameterToString(localVarOptionals.VersionId.Value(), ""))
 		localVarQueryParams.Add("versionId", parameterToString(localVarOptionals.VersionId, ""))
 	}
 	// to determine the Content-Type header
@@ -22119,7 +20991,7 @@ func (a *CellsApiService) StorageExists(localVarOptionals *StorageExistsOpts) (S
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/storage/{storageName}/exist"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/storage/{storageName}/exist"
 	localVarPath = strings.Replace(localVarPath, "{"+"storageName"+"}", fmt.Sprintf("%v", localVarOptionals.StorageName), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -22187,7 +21059,7 @@ func (a *CellsApiService) UploadFile(file *os.File, localVarOptionals *UploadFil
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/cells/storage/file/{path}"
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/storage/file/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", fmt.Sprintf("%v", localVarOptionals.Path), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -22195,7 +21067,6 @@ func (a *CellsApiService) UploadFile(file *os.File, localVarOptionals *UploadFil
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil {
-		//		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName.Value(), ""))
 		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
 	}
 	// to determine the Content-Type header

@@ -6,10 +6,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -24,6 +24,7 @@ package asposecellscloud
 
 import (
 	"net/http"
+	"strings"
 	"time"
 )
 
@@ -64,29 +65,50 @@ type APIKey struct {
 }
 
 type Configuration struct {
-	BasePath      		string            `json:"basePath,omitempty"`
-	Host          		string            `json:"host,omitempty"`
-	Scheme        		string            `json:"scheme,omitempty"`
-	DefaultHeader 		map[string]string `json:"defaultHeader,omitempty"`
-	UserAgent     		string            `json:"userAgent,omitempty"`
-	HTTPClient    		*http.Client
-	AppKey        		string
-    AppSid        		string
-    AccessToken   		string
-	GetAccessTokenTime 	time.Time
+	BasePath           string            `json:"basePath,omitempty"`
+	Version            string            `json:"version,omitempty"`
+	Host               string            `json:"host,omitempty"`
+	Scheme             string            `json:"scheme,omitempty"`
+	DefaultHeader      map[string]string `json:"defaultHeader,omitempty"`
+	UserAgent          string            `json:"userAgent,omitempty"`
+	HTTPClient         *http.Client
+	AppKey             string
+	AppSid             string
+	AccessToken        string
+	GetAccessTokenTime time.Time
 }
 
-func NewConfiguration(appSid string, appKey string, basePath string) *Configuration {
+func NewConfiguration(appSid string, appKey string, basePath string, version string) *Configuration {
 	cfg := &Configuration{
-		BasePath:      "https://api.aspose.cloud/v3.0",
+		BasePath:      "https://api.aspose.cloud",
+		Version:       "v3.0",
 		DefaultHeader: make(map[string]string),
 		UserAgent:     "Aspose Cells Cloud SDK for Go",
-		AppKey: appKey,
-        AppSid: appSid,
+		AppKey:        appKey,
+		AppSid:        appSid,
 	}
+
 	if basePath != "" {
-        cfg.BasePath = basePath
-    }
+		cfg.BasePath = basePath
+	}
+
+	if strings.HasSuffix(cfg.BasePath, "/") {
+		cfg.BasePath = cfg.BasePath[0 : len(cfg.BasePath)-1]
+	}
+
+	if strings.HasSuffix(cfg.BasePath, "v3.0") {
+		cfg.BasePath = cfg.BasePath[0 : len(cfg.BasePath)-5]
+		cfg.Version = "v3.0"
+	}
+
+	if strings.HasSuffix(cfg.BasePath, "v1.1") {
+		cfg.BasePath = cfg.BasePath[0 : len(cfg.BasePath)-5]
+		cfg.Version = "v1.1"
+	}
+
+	if version != "" {
+		cfg.Version = version
+	}
 	return cfg
 }
 

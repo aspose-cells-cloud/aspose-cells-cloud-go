@@ -4019,7 +4019,7 @@ func TestCellsSaveAsPostDocumentSaveAs(t *testing.T) {
 	args := new(CellsSaveAsPostDocumentSaveAsOpts)
 	args.Name = GetBook1()
 	args.SaveOptions = nil
-	args.Newfilename = "newfilego.pdf"
+	args.Newfilename = GetBaseTest().remoteFolder + "/newfilego.pdf"
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsSaveAsPostDocumentSaveAs(args)
@@ -4437,7 +4437,7 @@ func TestCellsWorkbookPostWorkbookSplit(t *testing.T) {
 	args.HorizontalResolution = 96
 	args.VerticalResolution = 96
 	args.Folder = GetBaseTest().remoteFolder
-
+	args.OutFolder = GetBaseTest().remoteFolder
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPostWorkbookSplit(args)
 	if err != nil {
 		t.Error(err)
@@ -4459,7 +4459,7 @@ func TestCellsWorkbookPostWorkbooksMerge(t *testing.T) {
 	}
 	args := new(CellsWorkbookPostWorkbooksMergeOpts)
 	args.Name = GetBook1()
-	args.MergeWith = GetMyDoc()
+	args.MergeWith = GetBaseTest().remoteFolder + "/" + GetMyDoc()
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPostWorkbooksMerge(args)
@@ -5569,7 +5569,7 @@ func TestCellsTaskPostRunTasks(t *testing.T) {
 	cellsSplitWorkbookTaskParameter.DestinationFileFormat = "xlsx"
 	cellsSplitWorkbookTaskParameter.SplitNameRule = "sheetname"
 	cellsFileSource1 := new(FileSource)
-	// cellsFileSource1.FilePath = "GoTest"
+	cellsFileSource1.FilePath = "GoTest"
 	cellsFileSource1.FileSourceType = "CloudFileSystem"
 	cellsFileSource2 := new(FileSource)
 	cellsFileSource2.FilePath = "GoTest/Book1.xlsx"
