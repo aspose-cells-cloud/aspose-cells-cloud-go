@@ -23,5 +23,5 @@
 package asposecellscloud
 
 type SplitResult struct {
-	Documents []SplitResultDocument `json:"Documents,omitempty" xml:"Documents"`
+	Documents []CellsCloudFileInfo `json:"Documents,omitempty" xml:"Documents"`
 }

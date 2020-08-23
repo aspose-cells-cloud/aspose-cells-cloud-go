@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
  **minute** | **optional.Int64**|  | [default to 0]
  **second** | **optional.Int64**|  | [default to 0]
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
  **criteria** | **optional.String**|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -404,7 +404,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **optional.Bool**|  | 
  **refresh** | **optional.Bool**|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **optional.Bool**|  | 
  **refresh** | **optional.Bool**|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -632,7 +632,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **optional.Bool**|  | 
  **refresh** | **optional.Bool**|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -678,7 +678,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **optional.Bool**|  | 
  **refresh** | **optional.Bool**|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -724,7 +724,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **optional.Bool**|  | 
  **refresh** | **optional.Bool**|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -774,7 +774,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **optional.Bool**|  | 
  **refresh** | **optional.Bool**|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -822,7 +822,7 @@ Name | Type | Description  | Notes
  **matchBlanks** | **optional.Bool**|  | 
  **refresh** | **optional.Bool**|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -863,7 +863,7 @@ Name | Type | Description  | Notes
 
  **format** | **optional.String**| Exported format. | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -901,7 +901,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -941,7 +941,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -981,7 +981,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1021,7 +1021,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1061,7 +1061,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1101,7 +1101,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1139,7 +1139,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1179,7 +1179,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1220,7 +1220,7 @@ Name | Type | Description  | Notes
 
  **format** | **optional.String**| The exported file format. | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1260,7 +1260,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1300,7 +1300,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1338,7 +1338,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1379,7 +1379,7 @@ Name | Type | Description  | Notes
 
  **chart** | [**optional.Interface of Chart**](Chart.md)|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1420,7 +1420,7 @@ Name | Type | Description  | Notes
 
  **legend** | [**optional.Interface of Legend**](Legend.md)|  | 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1461,7 +1461,7 @@ Name | Type | Description  | Notes
 
  **title** | [**optional.Interface of Title**](Title.md)| Chart title | 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1510,7 +1510,7 @@ Name | Type | Description  | Notes
  **isAutoGetSerialName** | **optional.Bool**| Specifies whether auto update serial name.  | [default to true]
  **title** | **optional.String**| Specifies chart title name. | 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1550,7 +1550,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1591,7 +1591,7 @@ Name | Type | Description  | Notes
 
  **title** | [**optional.Interface of Title**](Title.md)| Chart title. | 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1631,7 +1631,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1677,7 +1677,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1715,7 +1715,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1755,7 +1755,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1793,7 +1793,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1834,7 +1834,7 @@ Name | Type | Description  | Notes
 
  **formatCondition** | [**optional.Interface of FormatCondition**](FormatCondition.md)|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1884,7 +1884,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1926,7 +1926,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -1974,7 +1974,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2018,7 +2018,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2058,7 +2058,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2100,7 +2100,7 @@ Name | Type | Description  | Notes
  **totalRows** | **optional.Int64**| Number of rows to be operated. | [default to 1]
  **updateReference** | **optional.Bool**| Indicates if update references in other worksheets. | [default to true]
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2140,7 +2140,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2180,7 +2180,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2220,7 +2220,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2260,7 +2260,7 @@ Name | Type | Description  | Notes
  **offest** | **optional.Int64**| Begginig offset. | [default to 0]
  **count** | **optional.Int64**| Maximum amount of cells in the response. | [default to 0]
  **folder** | **optional.String**| Document&#39;s folder name. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2300,7 +2300,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2338,7 +2338,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workdook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2378,7 +2378,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2416,7 +2416,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workdook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2456,7 +2456,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2494,7 +2494,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2534,7 +2534,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2572,7 +2572,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2613,7 +2613,7 @@ Name | Type | Description  | Notes
 
  **hyperlink** | [**optional.Interface of Hyperlink**](Hyperlink.md)| Hyperlink object | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2661,7 +2661,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2701,7 +2701,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2739,7 +2739,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2779,7 +2779,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2817,7 +2817,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2858,7 +2858,7 @@ Name | Type | Description  | Notes
 
  **listObject** | [**optional.Interface of ListObject**](ListObject.md)| listObject dto in request body. | 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2898,7 +2898,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2939,7 +2939,7 @@ Name | Type | Description  | Notes
 
  **dataSorter** | [**optional.Interface of DataSorter**](DataSorter.md)|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -2982,7 +2982,7 @@ Name | Type | Description  | Notes
 
  **request** | [**optional.Interface of CreatePivotTableRequest**](CreatePivotTableRequest.md)|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3030,7 +3030,7 @@ Name | Type | Description  | Notes
  **hasHeaders** | **optional.Bool**| Whether the range has headers. | [default to true]
  **listObject** | [**optional.Interface of ListObject**](ListObject.md)| List Object | 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3070,7 +3070,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3108,7 +3108,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3149,7 +3149,7 @@ Name | Type | Description  | Notes
 
  **format** | **optional.String**| The exported object format. | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3187,7 +3187,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3228,7 +3228,7 @@ Name | Type | Description  | Notes
 
  **ole** | [**optional.Interface of OleObject**](OleObject.md)| Ole Object | 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3273,7 +3273,7 @@ Name | Type | Description  | Notes
  **oleFile** | **optional.String**| OLE filename | 
  **imageFile** | **optional.String**| Image filename | 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3313,7 +3313,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3352,7 +3352,7 @@ Name | Type | Description  | Notes
 
  **row** | **optional.Int64**|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3392,7 +3392,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3431,7 +3431,7 @@ Name | Type | Description  | Notes
 
  **column** | **optional.Int64**|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3471,7 +3471,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3509,7 +3509,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3549,7 +3549,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3587,7 +3587,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3630,7 +3630,7 @@ Name | Type | Description  | Notes
  **startColumn** | **optional.Int64**|  | 
  **endColumn** | **optional.Int64**|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3673,7 +3673,7 @@ Name | Type | Description  | Notes
  **startRow** | **optional.Int64**|  | 
  **endRow** | **optional.Int64**|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3711,7 +3711,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3749,7 +3749,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3787,7 +3787,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3825,7 +3825,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3869,7 +3869,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3913,7 +3913,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3952,7 +3952,7 @@ Name | Type | Description  | Notes
 
  **pageSetup** | [**optional.Interface of PageSetup**](PageSetup.md)|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -3992,7 +3992,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4030,7 +4030,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4071,7 +4071,7 @@ Name | Type | Description  | Notes
 
  **format** | **optional.String**| The exported object format. | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4109,7 +4109,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4150,7 +4150,7 @@ Name | Type | Description  | Notes
 
  **picture** | [**optional.Interface of Picture**](Picture.md)| Picture object | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4194,7 +4194,7 @@ Name | Type | Description  | Notes
  **lowerRightColumn** | **optional.Int64**| The image low right column. | [default to 0]
  **picturePath** | **optional.String**| The picture path, if not provided the picture data is inspected in the request body. | 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4237,7 +4237,7 @@ Name | Type | Description  | Notes
 
  **request** | [**optional.Interface of PivotTableFieldRequest**](PivotTableFieldRequest.md)| Dto that conrains field indexes | 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4277,7 +4277,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4320,7 +4320,7 @@ Name | Type | Description  | Notes
 
  **needReCalculate** | **optional.Bool**|  | [default to false]
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4361,7 +4361,7 @@ Name | Type | Description  | Notes
 
  **needReCalculate** | **optional.Bool**|  | [default to false]
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4399,7 +4399,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4443,7 +4443,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4483,7 +4483,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4525,7 +4525,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4565,7 +4565,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4603,7 +4603,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4649,7 +4649,7 @@ Name | Type | Description  | Notes
  **style** | [**optional.Interface of Style**](Style.md)| Style dto in request body. | 
  **needReCalculate** | **optional.Bool**|  | [default to false]
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4698,7 +4698,7 @@ Name | Type | Description  | Notes
 
  **needReCalculate** | **optional.Bool**|  | [default to false]
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4744,7 +4744,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4786,7 +4786,7 @@ Name | Type | Description  | Notes
  **style** | [**optional.Interface of Style**](Style.md)| Style dto in request body. | 
  **needReCalculate** | **optional.Bool**|  | [default to false]
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4826,7 +4826,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4869,7 +4869,7 @@ Name | Type | Description  | Notes
  **column** | **optional.Int64**|  | 
  **destCellName** | **optional.String**|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4913,7 +4913,7 @@ Name | Type | Description  | Notes
  **request** | [**optional.Interface of PivotTableFieldRequest**](PivotTableFieldRequest.md)| Dto that conrains field indexes | 
  **needReCalculate** | **optional.Bool**|  | [default to false]
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -4952,7 +4952,7 @@ Name | Type | Description  | Notes
 
  **request** | [**optional.Interface of CreatePivotTableRequest**](CreatePivotTableRequest.md)| CreatePivotTableRequest dto in request body. | 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
  **sourceData** | **optional.String**| The data for the new PivotTable cache. | 
  **destCellName** | **optional.String**| The cell in the upper-left corner of the PivotTable report&#39;s destination range. | 
  **tableName** | **optional.String**| The name of the new PivotTable report. | 
@@ -4998,7 +4998,7 @@ Name | Type | Description  | Notes
  **filter** | [**optional.Interface of PivotFilter**](PivotFilter.md)|  | 
  **needReCalculate** | **optional.Bool**|  | [default to false]
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5039,7 +5039,7 @@ Name | Type | Description  | Notes
 
  **options** | [**optional.Interface of CalculationOptions**](CalculationOptions.md)|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5080,7 +5080,7 @@ Name | Type | Description  | Notes
 
  **options** | [**optional.Interface of []FontSetting**](FontSetting.md)|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5123,7 +5123,7 @@ Name | Type | Description  | Notes
  **endRow** | **optional.Int64**| The end row. | 
  **endColumn** | **optional.Int64**| The end column. | 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5166,7 +5166,7 @@ Name | Type | Description  | Notes
  **endRow** | **optional.Int64**| The end row. | 
  **endColumn** | **optional.Int64**| The end column. | 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5207,7 +5207,7 @@ Name | Type | Description  | Notes
 
  **style** | [**optional.Interface of Style**](Style.md)| Style dto | 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5252,7 +5252,7 @@ Name | Type | Description  | Notes
  **row** | **optional.Int64**| Source row | 
  **column** | **optional.Int64**| Source column | 
  **folder** | **optional.String**| Folder name | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5297,7 +5297,7 @@ Name | Type | Description  | Notes
 
  **worksheet** | **optional.String**| The Worksheet | [default to ]
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5342,7 +5342,7 @@ Name | Type | Description  | Notes
 
  **worksheet** | **optional.String**| worksheet | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5385,7 +5385,7 @@ Name | Type | Description  | Notes
 
  **hide** | **optional.Bool**| columns visible state | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5428,7 +5428,7 @@ Name | Type | Description  | Notes
 
  **hide** | **optional.Bool**| rows visible state | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5470,7 +5470,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5512,7 +5512,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5553,7 +5553,7 @@ Name | Type | Description  | Notes
 
  **style** | [**optional.Interface of Style**](Style.md)| Style dto | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5595,7 +5595,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5639,7 +5639,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Folder name | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5681,7 +5681,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5723,7 +5723,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5766,7 +5766,7 @@ Name | Type | Description  | Notes
 
  **isAll** | **optional.Bool**| Is all row to be operated | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5809,7 +5809,7 @@ Name | Type | Description  | Notes
 
  **width** | **optional.Float64**| The new column width. | [default to 50.0]
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5852,7 +5852,7 @@ Name | Type | Description  | Notes
 
  **height** | **optional.Float64**| The new row height. | [default to 15.0]
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5893,7 +5893,7 @@ Name | Type | Description  | Notes
 
  **style** | [**optional.Interface of Style**](Style.md)| with update style settings. | 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5934,7 +5934,7 @@ Name | Type | Description  | Notes
 
  **style** | [**optional.Interface of Style**](Style.md)| with update style settings. | 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -5975,7 +5975,7 @@ Name | Type | Description  | Notes
 
  **height** | **optional.Float64**| The new row height. | [default to 0.0]
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6018,7 +6018,7 @@ Name | Type | Description  | Notes
  **type_** | **optional.String**| The value type. | 
  **formula** | **optional.String**| Formula for cell | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6064,7 +6064,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6110,7 +6110,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6146,7 +6146,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6184,7 +6184,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6220,7 +6220,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6258,7 +6258,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6297,7 +6297,7 @@ Name | Type | Description  | Notes
 
  **property** | [**optional.Interface of CellsDocumentProperty**](CellsDocumentProperty.md)| with new property value. | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6340,7 +6340,7 @@ Name | Type | Description  | Notes
 
  **updateReference** | **optional.Bool**| The update reference. | [default to true]
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6380,7 +6380,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6422,7 +6422,7 @@ Name | Type | Description  | Notes
  **totalRows** | **optional.Int64**| Number of rows to be operated. | [default to 1]
  **updateReference** | **optional.Bool**| Indicates if update references in other worksheets. | [default to true]
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6460,12 +6460,12 @@ Name | Type | Description  | Notes
 
 
  **namerange** | **optional.String**| range name, for example: &#39;A1:B2&#39; or &#39;range_name1&#39; | 
- **firstRow** | **optional.Int32**| the first row of the range | 
- **firstColumn** | **optional.Int32**| the first column of the range | 
- **rowCount** | **optional.Int32**| the count of rows in the range | 
- **columnCount** | **optional.Int32**| the count of columns in the range | 
+ **firstRow** | **optional.Int64**| the first row of the range | 
+ **firstColumn** | **optional.Int64**| the first column of the range | 
+ **rowCount** | **optional.Int64**| the count of rows in the range | 
+ **columnCount** | **optional.Int64**| the count of columns in the range | 
  **folder** | **optional.String**| Workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6506,7 +6506,7 @@ Name | Type | Description  | Notes
 
  **range_** | [**optional.Interface of ModelRange**](ModelRange.md)|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6545,7 +6545,7 @@ Name | Type | Description  | Notes
 
  **range_** | [**optional.Interface of ModelRange**](ModelRange.md)| range in worksheet  | 
  **folder** | **optional.String**| Workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6588,7 +6588,7 @@ Name | Type | Description  | Notes
 
  **range_** | [**optional.Interface of ModelRange**](ModelRange.md)| range in worksheet  | 
  **folder** | **optional.String**| Workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6627,7 +6627,7 @@ Name | Type | Description  | Notes
 
  **rangeOperate** | [**optional.Interface of RangeSetOutlineBorderRequest**](RangeSetOutlineBorderRequest.md)| Range Set OutlineBorder Request  | 
  **folder** | **optional.String**| Workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6668,7 +6668,7 @@ Name | Type | Description  | Notes
 
  **range_** | [**optional.Interface of ModelRange**](ModelRange.md)|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6707,7 +6707,7 @@ Name | Type | Description  | Notes
 
  **rangeOperate** | [**optional.Interface of RangeSetStyleRequest**](RangeSetStyleRequest.md)| Range Set Style Request  | 
  **folder** | **optional.String**| Workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6746,7 +6746,7 @@ Name | Type | Description  | Notes
 
  **range_** | [**optional.Interface of ModelRange**](ModelRange.md)| range in worksheet  | 
  **folder** | **optional.String**| Workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6789,7 +6789,7 @@ Name | Type | Description  | Notes
  **isConverted** | **optional.Bool**| True: converted to other data type if appropriate. | [default to false]
  **setStyle** | **optional.Bool**| True: set the number format to cell&#39;s style when converting to other data type | [default to false]
  **folder** | **optional.String**| Workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6828,7 +6828,7 @@ Name | Type | Description  | Notes
 
  **rangeOperate** | [**optional.Interface of RangeCopyRequest**](RangeCopyRequest.md)| copydata,copystyle,copyto,copyvalue | 
  **folder** | **optional.String**| Workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6868,7 +6868,7 @@ Name | Type | Description  | Notes
  **isAutoFitRows** | **optional.Bool**| Autofit rows. | [default to false]
  **isAutoFitColumns** | **optional.Bool**| Autofit columns. | [default to false]
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6908,7 +6908,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6946,7 +6946,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -6986,7 +6986,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7024,7 +7024,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7065,7 +7065,7 @@ Name | Type | Description  | Notes
 
  **dto** | [**optional.Interface of Shape**](Shape.md)|  | 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7083,7 +7083,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CellsShapesPutWorksheetShape**
-> ShapeResponse CellsShapesPutWorksheetShape(ctx, name, sheetName, drawingType, upperLeftRow, upperLeftColumn, top, left, width, height, optional)
+> ShapeResponse CellsShapesPutWorksheetShape(ctx, name, sheetName, optional)
 Add shape in worksheet
 
 ### Required Parameters
@@ -7093,13 +7093,6 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **name** | **string**| document name. | 
   **sheetName** | **string**| worksheet name. | 
-  **drawingType** | **string**| shape object type | 
-  **upperLeftRow** | **int64**| Upper left row index. | 
-  **upperLeftColumn** | **int64**| Upper left column index. | 
-  **top** | **int64**| Represents the vertical offset of Spinner from its left row, in unit of pixel. | 
-  **left** | **int64**| Represents the horizontal offset of Spinner from its left column, in unit of pixel. | 
-  **width** | **int64**| Represents the height of Spinner, in unit of pixel. | 
-  **height** | **int64**| Represents the width of Spinner, in unit of pixel. | 
  **optional** | ***CellsShapesPutWorksheetShapeOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -7109,15 +7102,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-
-
-
-
-
-
-
+ **shapeDTO** | [**optional.Interface of Shape**](Shape.md)|  | 
+ **drawingType** | **optional.String**| shape object type | 
+ **upperLeftRow** | **optional.Int64**| Upper left row index. | 
+ **upperLeftColumn** | **optional.Int64**| Upper left column index. | 
+ **top** | **optional.Int64**| Represents the vertical offset of Spinner from its left row, in unit of pixel. | 
+ **left** | **optional.Int64**| Represents the horizontal offset of Spinner from its left column, in unit of pixel. | 
+ **width** | **optional.Int64**| Represents the height of Spinner, in unit of pixel. | 
+ **height** | **optional.Int64**| Represents the width of Spinner, in unit of pixel. | 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7180,7 +7174,7 @@ Name | Type | Description  | Notes
 
  **encryption** | [**optional.Interface of WorkbookEncryptionRequest**](WorkbookEncryptionRequest.md)| Encryption settings, only password can be specified. | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7216,7 +7210,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7253,7 +7247,7 @@ Name | Type | Description  | Notes
 
  **protection** | [**optional.Interface of WorkbookProtectionRequest**](WorkbookProtectionRequest.md)| Protection settings, only password can be specified. | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7289,7 +7283,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7327,7 +7321,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7363,7 +7357,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7403,7 +7397,7 @@ Name | Type | Description  | Notes
  **isAutoFit** | **optional.Bool**| Set document rows to be autofit. | [default to false]
  **onlySaveTable** | **optional.Bool**| Only save table data. | [default to false]
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
  **outPath** | **optional.String**| The document output folder. | 
 
 ### Return type
@@ -7440,7 +7434,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **folder** | **optional.String**| The document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7478,7 +7472,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7516,7 +7510,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7552,7 +7546,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7588,7 +7582,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7624,7 +7618,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7664,7 +7658,7 @@ Name | Type | Description  | Notes
  **endRow** | **optional.Int64**| End row. | 
  **onlyAuto** | **optional.Bool**| Only auto. | [default to false]
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7701,7 +7695,7 @@ Name | Type | Description  | Notes
 
  **encryption** | [**optional.Interface of WorkbookEncryptionRequest**](WorkbookEncryptionRequest.md)| Encryption parameters. | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7739,7 +7733,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7776,7 +7770,7 @@ Name | Type | Description  | Notes
 
  **protection** | [**optional.Interface of WorkbookProtectionRequest**](WorkbookProtectionRequest.md)| The protection settings. | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7814,7 +7808,7 @@ Name | Type | Description  | Notes
  **options** | [**optional.Interface of CalculationOptions**](CalculationOptions.md)| Calculation Options. | 
  **ignoreError** | **optional.Bool**| ignore Error. | 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7851,7 +7845,7 @@ Name | Type | Description  | Notes
 
  **xmlFile** | **optional.String**| The xml file full path, if empty the data is read from request body. | 
  **folder** | **optional.String**| The workbook folder full path. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
  **outPath** | **optional.String**| Path to save result | 
 
 ### Return type
@@ -7889,7 +7883,7 @@ Name | Type | Description  | Notes
 
  **settings** | [**optional.Interface of WorkbookSettings**](WorkbookSettings.md)| Workbook Setting DTO | 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7931,7 +7925,7 @@ Name | Type | Description  | Notes
  **verticalResolution** | **optional.Int64**| Image vertical resolution. | [default to 0]
  **folder** | **optional.String**| The workbook folder. | 
  **outFolder** | **optional.String**| out Folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -7969,7 +7963,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Source workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8009,7 +8003,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8047,7 +8041,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8121,7 +8115,7 @@ Name | Type | Description  | Notes
 
  **password** | [**optional.Interface of PasswordRequest**](PasswordRequest.md)| Modification password. | 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8159,7 +8153,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8198,7 +8192,7 @@ Name | Type | Description  | Notes
  **dataFile** | **optional.String**| Smart marker data file, if the data not provided the request content is checked for the data. | 
  **isWriteOver** | **optional.Bool**| write over file. | 
  **folder** | **optional.String**| The new document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8234,7 +8228,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
  **textWaterMarkerRequest** | [**optional.Interface of TextWaterMarkerRequest**](TextWaterMarkerRequest.md)| The text water marker request. | 
 
 ### Return type
@@ -8275,7 +8269,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8313,7 +8307,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8353,7 +8347,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8391,7 +8385,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8432,7 +8426,7 @@ Name | Type | Description  | Notes
 
  **validation** | [**optional.Interface of Validation**](Validation.md)|  | 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8472,7 +8466,7 @@ Name | Type | Description  | Notes
  **range_** | **optional.String**| Specified cells area | 
  **validation** | [**optional.Interface of Validation**](Validation.md)| validation | 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8511,7 +8505,7 @@ Name | Type | Description  | Notes
 
  **protectParameter** | [**optional.Interface of ProtectSheetParameter**](ProtectSheetParameter.md)| with protection settings. Only password is used here. | 
  **folder** | **optional.String**| Document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8549,7 +8543,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8587,7 +8581,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8627,7 +8621,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8665,7 +8659,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8711,7 +8705,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8747,7 +8741,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **folder** | **optional.String**| Document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8790,7 +8784,7 @@ Name | Type | Description  | Notes
  **area** | **optional.String**| Exported area. | 
  **pageIndex** | **optional.Int32**| Exported page index. | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8830,7 +8824,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8870,7 +8864,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8908,7 +8902,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8948,7 +8942,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -8986,7 +8980,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9024,7 +9018,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The workbook&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9060,7 +9054,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **folder** | **optional.String**| Document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9105,7 +9099,7 @@ Name | Type | Description  | Notes
  **firstRow** | **optional.Int64**|  | 
  **lastRow** | **optional.Int64**|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9150,7 +9144,7 @@ Name | Type | Description  | Notes
 
  **autoFitterOptions** | [**optional.Interface of AutoFitterOptions**](AutoFitterOptions.md)|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9192,7 +9186,7 @@ Name | Type | Description  | Notes
  **endRow** | **optional.Int64**| End row. | 
  **onlyAuto** | **optional.Bool**| Only auto. | [default to false]
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9235,7 +9229,7 @@ Name | Type | Description  | Notes
  **sourceWorkbook** | **optional.String**|  | 
  **sourceFolder** | **optional.String**|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9274,7 +9268,7 @@ Name | Type | Description  | Notes
 
  **moving** | [**optional.Interface of WorksheetMovingRequest**](WorksheetMovingRequest.md)| with moving parameters. | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9314,7 +9308,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9353,7 +9347,7 @@ Name | Type | Description  | Notes
 
  **sheet** | [**optional.Interface of Worksheet**](Worksheet.md)|  | 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9393,7 +9387,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9434,7 +9428,7 @@ Name | Type | Description  | Notes
 
  **comment** | [**optional.Interface of Comment**](Comment.md)| Comment object | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9475,7 +9469,7 @@ Name | Type | Description  | Notes
 
  **dataSorter** | [**optional.Interface of DataSorter**](DataSorter.md)| with sorting settings. | 
  **folder** | **optional.String**| The workbook folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9515,7 +9509,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9557,7 +9551,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| Document&#39;s folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9597,7 +9591,7 @@ Name | Type | Description  | Notes
  **position** | **optional.Int64**| The new sheet position. | 
  **sheettype** | **optional.String**| The new sheet type. | 
  **folder** | **optional.String**| Document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9637,7 +9631,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9676,7 +9670,7 @@ Name | Type | Description  | Notes
 
  **protectParameter** | [**optional.Interface of ProtectSheetParameter**](ProtectSheetParameter.md)| with protection settings. | 
  **folder** | **optional.String**| Document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9716,7 +9710,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9757,7 +9751,7 @@ Name | Type | Description  | Notes
 
  **comment** | [**optional.Interface of Comment**](Comment.md)| Comment object | 
  **folder** | **optional.String**| The document folder. | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 
@@ -9803,7 +9797,7 @@ Name | Type | Description  | Notes
 
 
  **folder** | **optional.String**|  | 
- **storage** | **optional.String**| storage name. | 
+ **storageName** | **optional.String**| storage name. | 
 
 ### Return type
 

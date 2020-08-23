@@ -22,6 +22,9 @@
 
 package asposecellscloud
 
-type SaveResult struct {
-	Documents []CellsCloudFileInfo `json:"Documents,omitempty" xml:"Documents"`
+type CellsCloudFileInfo struct {
+	Name string `json:"Name,omitempty" xml:"Name"`
+	Size int64 `json:"Size" xml:"Size"`
+	Folder string `json:"Folder,omitempty" xml:"Folder"`
+	Storage string `json:"Storage,omitempty" xml:"Storage"`
 }

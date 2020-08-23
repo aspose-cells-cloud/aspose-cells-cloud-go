@@ -59,7 +59,7 @@ func NewBaseTest() *BaseTest {
 		localTestDataFolder: "../TestData/",
 		TestNumber:          0,
 		// Get App key and App SID from https://aspose.cloud
-		CellsAPI: NewCellsApiService("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "https://api.aspose.cloud/v3.0"),
+		CellsAPI: NewCellsApiService("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "https://api.aspose.cloud", "v3.0"),
 	}
 	return bt
 }

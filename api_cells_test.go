@@ -3676,7 +3676,10 @@ func TestCellsShapesPostWorksheetShape(t *testing.T) {
 
 	args := new(CellsShapesPostWorksheetShapeOpts)
 	args.Name = GetBook1()
-	args.SheetName = GetSheet1()
+	args.SheetName = GetSheet4()
+	args.Shapeindex = 0
+	args.Dto = new(Shape)
+	args.Dto.Bottom = 10
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsShapesPostWorksheetShape(args)
@@ -3698,6 +3701,7 @@ func TestCellsShapesPutWorksheetShape(t *testing.T) {
 	args := new(CellsShapesPutWorksheetShapeOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
+	args.ShapeDTO =  nil
 	args.DrawingType = "arc"
 	args.UpperLeftColumn = (1)
 	args.UpperLeftRow = (1)
