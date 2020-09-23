@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "20.8"
+  version: "20.9"
   title: "Aspose.Cells Cloud SDK APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
@@ -4782,6 +4782,310 @@ paths:
             $ref: "#/definitions/CellsCloudResponse"
           x-nullable: true
       x-operationId: "CellsCharts_DeleteWorksheetChartLegend"
+  /cells/{name}/worksheets/{sheetName}/sparklinegroups:
+    get:
+      tags:
+      - "Cells"
+      summary: "Get worksheet charts description."
+      operationId: "CellsSparklineGroups_GetWorksheetSparklineGroups"
+      parameters:
+      - name: "name"
+        in: "path"
+        description: "Document name."
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Name"
+      - name: "sheetName"
+        in: "path"
+        description: "The worksheet name."
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "SheetName"
+      - name: "folder"
+        in: "query"
+        description: "Document's folder."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Folder"
+        x-optionalDataType: "String"
+      - name: "storageName"
+        in: "query"
+        description: "storage name."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "StorageName"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "ChartsResponse with common charts info."
+          schema:
+            $ref: "#/definitions/SparklineGroupsResponse"
+          x-nullable: true
+      security:
+      - JWT: []
+      x-operationId: "CellsSparklineGroups_GetWorksheetSparklineGroups"
+    put:
+      tags:
+      - "Cells"
+      operationId: "CellsSparklineGroups_PutWorksheetSparklineGroup"
+      parameters:
+      - name: "name"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Name"
+      - name: "sheetName"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "SheetName"
+      - name: "type"
+        in: "query"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Type_"
+      - name: "dataRange"
+        in: "query"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "DataRange"
+      - name: "isVertical"
+        in: "query"
+        required: true
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "IsVertical"
+      - name: "locationRange"
+        in: "query"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "LocationRange"
+      - name: "folder"
+        in: "query"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Folder"
+        x-optionalDataType: "String"
+      - name: "storageName"
+        in: "query"
+        description: "storage name."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "StorageName"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/CellsCloudResponse"
+          x-nullable: true
+      security:
+      - JWT: []
+      x-operationId: "CellsSparklineGroups_PutWorksheetSparklineGroup"
+    delete:
+      tags:
+      - "Cells"
+      operationId: "CellsSparklineGroups_DeleteWorksheetSparklineGroups"
+      parameters:
+      - name: "name"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Name"
+      - name: "sheetName"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "SheetName"
+      - name: "folder"
+        in: "query"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Folder"
+        x-optionalDataType: "String"
+      - name: "storageName"
+        in: "query"
+        description: "storage name."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "StorageName"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/CellsCloudResponse"
+          x-nullable: true
+      security:
+      - JWT: []
+      x-operationId: "CellsSparklineGroups_DeleteWorksheetSparklineGroups"
+  /cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}:
+    get:
+      tags:
+      - "Cells"
+      operationId: "CellsSparklineGroups_GetWorksheetSparklineGroup"
+      parameters:
+      - name: "name"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Name"
+      - name: "sheetName"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "SheetName"
+      - name: "sparklineGroupIndex"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+        x-exportParamName: "SparklineGroupIndex"
+      - name: "folder"
+        in: "query"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Folder"
+        x-optionalDataType: "String"
+      - name: "storageName"
+        in: "query"
+        description: "storage name."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "StorageName"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/SparklineGroupResponse"
+          x-nullable: true
+      security:
+      - JWT: []
+      x-operationId: "CellsSparklineGroups_GetWorksheetSparklineGroup"
+    post:
+      tags:
+      - "Cells"
+      operationId: "CellsSparklineGroups_PostWorksheetSparklineGroup"
+      parameters:
+      - name: "name"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Name"
+      - name: "sheetName"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "SheetName"
+      - name: "sparklineGroupIndex"
+        in: "query"
+        required: true
+        type: "integer"
+        format: "int32"
+        x-nullable: false
+        x-exportParamName: "SparklineGroupIndex"
+      - in: "body"
+        name: "sparklineGroup"
+        required: true
+        schema:
+          $ref: "#/definitions/SparklineGroup"
+        x-nullable: true
+        x-exportParamName: "SparklineGroup"
+      - name: "folder"
+        in: "query"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Folder"
+        x-optionalDataType: "String"
+      - name: "storageName"
+        in: "query"
+        description: "storage name."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "StorageName"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/CellsCloudResponse"
+          x-nullable: true
+      security:
+      - JWT: []
+      x-operationId: "CellsSparklineGroups_PostWorksheetSparklineGroup"
+    delete:
+      tags:
+      - "Cells"
+      operationId: "CellsSparklineGroups_DeleteWorksheetSparklineGroup"
+      parameters:
+      - name: "name"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Name"
+      - name: "sheetName"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "SheetName"
+      - name: "sparklineGroupIndex"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+        x-exportParamName: "SparklineGroupIndex"
+      - name: "folder"
+        in: "query"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Folder"
+        x-optionalDataType: "String"
+      - name: "storageName"
+        in: "query"
+        description: "storage name."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "StorageName"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/CellsCloudResponse"
+          x-nullable: true
+      security:
+      - JWT: []
+      x-operationId: "CellsSparklineGroups_DeleteWorksheetSparklineGroup"
   /cells/task/runtask:
     post:
       tags:
@@ -4958,6 +5262,137 @@ paths:
             $ref: "#/definitions/CellsCloudResponse"
           x-nullable: true
       x-operationId: "CellsPivotTables_PostPivotTableStyle"
+  /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields:
+    post:
+      tags:
+      - "Cells"
+      operationId: "CellsPivotTables_PostPivotTableUpdatePivotFields"
+      parameters:
+      - name: "name"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Name"
+      - name: "sheetName"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "SheetName"
+      - name: "pivotTableIndex"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+        x-exportParamName: "PivotTableIndex"
+      - name: "pivotFieldType"
+        in: "query"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "PivotFieldType"
+      - in: "body"
+        name: "pivotField"
+        required: true
+        schema:
+          $ref: "#/definitions/PivotField"
+        x-nullable: true
+        x-exportParamName: "PivotField"
+      - name: "needReCalculate"
+        in: "query"
+        required: false
+        type: "boolean"
+        default: false
+        x-nullable: false
+        x-exportParamName: "NeedReCalculate"
+        x-optionalDataType: "Bool"
+      - name: "folder"
+        in: "query"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Folder"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/CellsCloudResponse"
+          x-nullable: true
+      security:
+      - JWT: []
+      x-operationId: "CellsPivotTables_PostPivotTableUpdatePivotFields"
+  /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields/{pivotFieldIndex}:
+    post:
+      tags:
+      - "Cells"
+      operationId: "CellsPivotTables_PostPivotTableUpdatePivotField"
+      parameters:
+      - name: "name"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Name"
+      - name: "sheetName"
+        in: "path"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "SheetName"
+      - name: "pivotTableIndex"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+        x-exportParamName: "PivotTableIndex"
+      - name: "pivotFieldIndex"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+        x-exportParamName: "PivotFieldIndex"
+      - name: "pivotFieldType"
+        in: "query"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "PivotFieldType"
+      - in: "body"
+        name: "pivotField"
+        required: true
+        schema:
+          $ref: "#/definitions/PivotField"
+        x-nullable: true
+        x-exportParamName: "PivotField"
+      - name: "needReCalculate"
+        in: "query"
+        required: false
+        type: "boolean"
+        default: false
+        x-nullable: false
+        x-exportParamName: "NeedReCalculate"
+        x-optionalDataType: "Bool"
+      - name: "folder"
+        in: "query"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Folder"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/CellsCloudResponse"
+          x-nullable: true
+      security:
+      - JWT: []
+      x-operationId: "CellsPivotTables_PostPivotTableUpdatePivotField"
   /cells/{name}/worksheets/{sheetName}/listobjects:
     get:
       tags:
@@ -8431,6 +8866,36 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "StorageName"
+        x-optionalDataType: "String"
+      - name: "dataLabels"
+        in: "query"
+        required: false
+        type: "boolean"
+        default: true
+        x-nullable: true
+        x-exportParamName: "DataLabels"
+        x-optionalDataType: "Bool"
+      - name: "dataLabelsPosition"
+        in: "query"
+        required: false
+        type: "string"
+        default: "Above"
+        x-nullable: true
+        x-exportParamName: "DataLabelsPosition"
+        x-optionalDataType: "String"
+      - name: "pivotTableSheet"
+        in: "query"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "PivotTableSheet"
+        x-optionalDataType: "String"
+      - name: "pivotTableName"
+        in: "query"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "PivotTableName"
         x-optionalDataType: "String"
       responses:
         200:
@@ -16158,6 +16623,58 @@ definitions:
         type: "boolean"
       IsCalculatedField:
         type: "boolean"
+    example:
+      BaseField: 7
+      IsInsertPageBreaksBetweenItems: true
+      DataDisplayFormat: "DataDisplayFormat"
+      BaseItemPosition: "BaseItemPosition"
+      Name: "Name"
+      Function: "Function"
+      IsMultipleItemSelectionAllowed: true
+      Number: 2
+      BaseIndex: 4
+      DragToHide: true
+      DragToPage: true
+      IsCalculatedField: true
+      DisplayName: "DisplayName"
+      ShowInOutlineForm: true
+      ItemCount: 1
+      Items:
+      - "Items"
+      - "Items"
+      DragToColumn: true
+      IsAutoSort: true
+      BaseItem: 6
+      IsIncludeNewItemsInFilter: true
+      IsAscendShow: true
+      ShowAllItems: true
+      InsertBlankRow: true
+      CurrentPageItem: 5
+      AutoShowCount: 3
+      Position: 2
+      AutoShowField: 5
+      AutoSortField: 9
+      DragToRow: true
+      PivotItems:
+      - IsHidden: true
+        Value: ""
+        Index: 0
+        Name: "Name"
+      - IsHidden: true
+        Value: ""
+        Index: 0
+        Name: "Name"
+      IsRepeatItemLabels: true
+      ShowCompact: true
+      OriginalItems:
+      - "OriginalItems"
+      - "OriginalItems"
+      ShowSubtotalAtTop: true
+      IsAutoSubtotals: true
+      DragToData: true
+      IsAutoShow: true
+      IsAscendSort: true
+      NumberFormat: "NumberFormat"
   ImportDoubleArrayOption:
     allOf:
     - type: "object"
@@ -16644,6 +17161,229 @@ definitions:
     example:
       ColorType: "ColorType"
       Tint: 0.8008281904610115
+  SparklineGroupsResponse:
+    allOf:
+    - $ref: "#/definitions/CellsCloudResponse"
+    - type: "object"
+      properties:
+        SparklineGroups:
+          $ref: "#/definitions/SparklineGroups"
+  SparklineGroups:
+    type: "object"
+    properties:
+      SparklineGroupList:
+        type: "array"
+        items:
+          $ref: "#/definitions/SparklineGroup"
+  SparklineGroup:
+    type: "object"
+    properties:
+      DisplayHidden:
+        type: "boolean"
+      FirstPointColor:
+        $ref: "#/definitions/CellsColor"
+      HighPointColor:
+        $ref: "#/definitions/CellsColor"
+      HorizontalAxisColor:
+        $ref: "#/definitions/CellsColor"
+      HorizontalAxisDateRange:
+        type: "string"
+      LastPointColor:
+        $ref: "#/definitions/CellsColor"
+      LineWeight:
+        type: "number"
+        format: "double"
+      LowPointColor:
+        $ref: "#/definitions/CellsColor"
+      MarkersColor:
+        $ref: "#/definitions/CellsColor"
+      NegativePointsColor:
+        $ref: "#/definitions/CellsColor"
+      PlotEmptyCellsType:
+        type: "string"
+      PlotRightToLeft:
+        type: "boolean"
+      PresetStyle:
+        type: "string"
+      SeriesColor:
+        $ref: "#/definitions/CellsColor"
+      ShowFirstPoint:
+        type: "boolean"
+      ShowHighPoint:
+        type: "boolean"
+      ShowHorizontalAxis:
+        type: "boolean"
+      ShowLastPoint:
+        type: "boolean"
+      ShowLowPoint:
+        type: "boolean"
+      ShowMarkers:
+        type: "boolean"
+      ShowNegativePoints:
+        type: "boolean"
+      SparklineCollection:
+        type: "array"
+        items:
+          $ref: "#/definitions/Sparkline"
+      Type:
+        type: "string"
+      VerticalAxisMaxValue:
+        type: "number"
+        format: "double"
+      VerticalAxisMaxValueType:
+        type: "string"
+      VerticalAxisMinValue:
+        type: "number"
+        format: "double"
+      VerticalAxisMinValueType:
+        type: "string"
+    example:
+      VerticalAxisMinValue: 7.061401241503109
+      LineWeight: 1.4658129805029452
+      ShowNegativePoints: true
+      PlotEmptyCellsType: "PlotEmptyCellsType"
+      ShowMarkers: true
+      VerticalAxisMaxValueType: "VerticalAxisMaxValueType"
+      PresetStyle: "PresetStyle"
+      HorizontalAxisColor:
+        Type: "Type"
+        IsShapeColor: true
+        Color:
+          A: 5
+          B: 5
+          R: 2
+          G: 7
+        ColorIndex: 6
+        ThemeColor:
+          ColorType: "ColorType"
+          Tint: 0.8008281904610115
+      SparklineCollection:
+      - Column: 5
+        DataRange: "DataRange"
+        Row: 5
+      - Column: 5
+        DataRange: "DataRange"
+        Row: 5
+      ShowLowPoint: true
+      FirstPointColor:
+        Type: "Type"
+        IsShapeColor: true
+        Color:
+          A: 5
+          B: 5
+          R: 2
+          G: 7
+        ColorIndex: 6
+        ThemeColor:
+          ColorType: "ColorType"
+          Tint: 0.8008281904610115
+      ShowHorizontalAxis: true
+      NegativePointsColor:
+        Type: "Type"
+        IsShapeColor: true
+        Color:
+          A: 5
+          B: 5
+          R: 2
+          G: 7
+        ColorIndex: 6
+        ThemeColor:
+          ColorType: "ColorType"
+          Tint: 0.8008281904610115
+      ShowFirstPoint: true
+      LastPointColor:
+        Type: "Type"
+        IsShapeColor: true
+        Color:
+          A: 5
+          B: 5
+          R: 2
+          G: 7
+        ColorIndex: 6
+        ThemeColor:
+          ColorType: "ColorType"
+          Tint: 0.8008281904610115
+      PlotRightToLeft: true
+      SeriesColor:
+        Type: "Type"
+        IsShapeColor: true
+        Color:
+          A: 5
+          B: 5
+          R: 2
+          G: 7
+        ColorIndex: 6
+        ThemeColor:
+          ColorType: "ColorType"
+          Tint: 0.8008281904610115
+      VerticalAxisMinValueType: "VerticalAxisMinValueType"
+      MarkersColor:
+        Type: "Type"
+        IsShapeColor: true
+        Color:
+          A: 5
+          B: 5
+          R: 2
+          G: 7
+        ColorIndex: 6
+        ThemeColor:
+          ColorType: "ColorType"
+          Tint: 0.8008281904610115
+      HighPointColor:
+        Type: "Type"
+        IsShapeColor: true
+        Color:
+          A: 5
+          B: 5
+          R: 2
+          G: 7
+        ColorIndex: 6
+        ThemeColor:
+          ColorType: "ColorType"
+          Tint: 0.8008281904610115
+      ShowLastPoint: true
+      DisplayHidden: true
+      ShowHighPoint: true
+      Type: "Type"
+      VerticalAxisMaxValue: 2.3021358869347655
+      HorizontalAxisDateRange: "HorizontalAxisDateRange"
+      LowPointColor:
+        Type: "Type"
+        IsShapeColor: true
+        Color:
+          A: 5
+          B: 5
+          R: 2
+          G: 7
+        ColorIndex: 6
+        ThemeColor:
+          ColorType: "ColorType"
+          Tint: 0.8008281904610115
+  Sparkline:
+    type: "object"
+    required:
+    - "Column"
+    - "Row"
+    properties:
+      Column:
+        type: "integer"
+        format: "int64"
+      DataRange:
+        type: "string"
+      Row:
+        type: "integer"
+        format: "int64"
+    example:
+      Column: 5
+      DataRange: "DataRange"
+      Row: 5
+  SparklineGroupResponse:
+    allOf:
+    - $ref: "#/definitions/CellsCloudResponse"
+    - type: "object"
+      properties:
+        SparklineGroup:
+          $ref: "#/definitions/SparklineGroup"
   WorkbookEncryptionRequest:
     type: "object"
     required:
@@ -17272,6 +18012,11 @@ definitions:
         description: "Gets the name"
       Value:
         description: "Gets the value of the specified item."
+    example:
+      IsHidden: true
+      Value: ""
+      Index: 0
+      Name: "Name"
   RangesResponse:
     allOf:
     - type: "object"

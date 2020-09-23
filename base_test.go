@@ -59,7 +59,7 @@ func NewBaseTest() *BaseTest {
 		localTestDataFolder: "../TestData/",
 		TestNumber:          0,
 		// Get App key and App SID from https://aspose.cloud
-		CellsAPI: NewCellsApiService("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "https://api.aspose.cloud", "v3.0"),
+		CellsAPI: NewCellsApiService("91A2FD07-BBA1-4B32-9112-ABFB1FE8AEBD", "0fbf678c5ecabdb5caca48452a736dd0", "https://api-qa.aspose.cloud", "v3.0"),
 	}
 	return bt
 }
@@ -87,11 +87,6 @@ func GetWorkbook() []byte {
 	}
 	fbs, _ := ioutil.ReadAll(file)
 	return fbs
-	// f, err := ioutil.ReadFile("../TestData/Book1.xlsx")
-	// if err != nil {
-	// 	fmt.Println("read fail", err)
-	// }
-	// return f
 }
 
 func GetPng() string {

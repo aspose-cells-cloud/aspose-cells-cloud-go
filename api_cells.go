@@ -2622,6 +2622,10 @@ CellsApiService Add new chart to worksheet.
      * @param "Title" (optional.String) -  Specifies chart title name.
      * @param "Folder" (optional.String) -  The workbook folder.
      * @param "StorageName" (optional.String) -  storage name.
+     * @param "DataLabels" (optional.Bool) -
+     * @param "DataLabelsPosition" (optional.String) -
+     * @param "PivotTableSheet" (optional.String) -
+     * @param "PivotTableName" (optional.String) -
 
 @return ChartsResponse
 */
@@ -2641,6 +2645,10 @@ type CellsChartsPutWorksheetAddChartOpts struct {
 	Title               string
 	Folder              string
 	StorageName         string
+	DataLabels          bool
+	DataLabelsPosition  string
+	PivotTableSheet     string
+	PivotTableName      string
 }
 
 func (a *CellsApiService) CellsChartsPutWorksheetAddChart(localVarOptionals *CellsChartsPutWorksheetAddChartOpts) (ChartsResponse, *http.Response, error) {
@@ -2695,6 +2703,28 @@ func (a *CellsApiService) CellsChartsPutWorksheetAddChart(localVarOptionals *Cel
 	if localVarOptionals != nil {
 		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
 	}
+	if localVarOptionals != nil {
+		if localVarQueryParams.Get("dataLabels") != "" {
+			localVarQueryParams.Add("dataLabels", parameterToString(localVarOptionals.DataLabels, ""))
+		}
+	}
+	if localVarOptionals != nil {
+		if localVarQueryParams.Get("dataLabelsPosition") != "" {
+			localVarQueryParams.Add("dataLabelsPosition", parameterToString(localVarOptionals.DataLabelsPosition, ""))
+		}
+	}
+	if localVarOptionals != nil {
+		if localVarQueryParams.Get("pivotTableSheet") != "" {
+			localVarQueryParams.Add("pivotTableSheet", parameterToString(localVarOptionals.PivotTableSheet, ""))
+		}
+	}
+	if localVarOptionals != nil {
+		if localVarQueryParams.Get("pivotTableName") != "" {
+			localVarQueryParams.Add("pivotTableName", parameterToString(localVarOptionals.PivotTableName, ""))
+		}
+	}
+
+	fmt.Println(localVarPath)
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -2712,6 +2742,7 @@ func (a *CellsApiService) CellsChartsPutWorksheetAddChart(localVarOptionals *Cel
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
+	fmt.Println(localVarPath)
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -9450,6 +9481,183 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableStyle(localVarOptionals 
 }
 
 /*
+CellsApiService
+ * @param name
+ * @param sheetName
+ * @param pivotTableIndex
+ * @param pivotFieldIndex
+ * @param pivotFieldType
+ * @param pivotField
+ * @param optional nil or *CellsPivotTablesPostPivotTableUpdatePivotFieldOpts - Optional Parameters:
+     * @param "NeedReCalculate" (optional.Bool) -
+     * @param "Folder" (optional.String) -
+
+@return CellsCloudResponse
+*/
+
+type CellsPivotTablesPostPivotTableUpdatePivotFieldOpts struct {
+	Name            string
+	SheetName       string
+	PivotTableIndex int64
+	PivotFieldIndex int64
+	PivotFieldType  string
+	PivotField      *PivotField
+	NeedReCalculate bool
+	Folder          string
+}
+
+func (a *CellsApiService) CellsPivotTablesPostPivotTableUpdatePivotField(localVarOptionals *CellsPivotTablesPostPivotTableUpdatePivotFieldOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields/{pivotFieldIndex}"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pivotFieldIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotFieldIndex), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	localVarQueryParams.Add("pivotFieldType", parameterToString(localVarOptionals.PivotFieldType, ""))
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("needReCalculate", parameterToString(localVarOptionals.NeedReCalculate, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &localVarOptionals.PivotField
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService
+ * @param name
+ * @param sheetName
+ * @param pivotTableIndex
+ * @param pivotFieldType
+ * @param pivotField
+ * @param optional nil or *CellsPivotTablesPostPivotTableUpdatePivotFieldsOpts - Optional Parameters:
+     * @param "NeedReCalculate" (optional.Bool) -
+     * @param "Folder" (optional.String) -
+
+@return CellsCloudResponse
+*/
+
+type CellsPivotTablesPostPivotTableUpdatePivotFieldsOpts struct {
+	Name            string
+	SheetName       string
+	PivotTableIndex int64
+	PivotFieldType  string
+	PivotField      *PivotField
+	NeedReCalculate bool
+	Folder          string
+}
+
+func (a *CellsApiService) CellsPivotTablesPostPivotTableUpdatePivotFields(localVarOptionals *CellsPivotTablesPostPivotTableUpdatePivotFieldsOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", localVarOptionals.PivotTableIndex), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	localVarQueryParams.Add("pivotFieldType", parameterToString(localVarOptionals.PivotFieldType, ""))
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("needReCalculate", parameterToString(localVarOptionals.NeedReCalculate, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &localVarOptionals.PivotField
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
 CellsApiService Calculates pivottable&#39;s data to cells.
  * @param name Document name.
  * @param sheetName The worksheet name.
@@ -14344,6 +14552,493 @@ func (a *CellsApiService) CellsShapesPutWorksheetShape(localVarOptionals *CellsS
 	// body params
 	if localVarOptionals != nil && localVarOptionals.ShapeDTO != nil {
 		localVarPostBody = &localVarOptionals.ShapeDTO
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService
+ * @param name
+ * @param sheetName
+ * @param sparklineGroupIndex
+ * @param optional nil or *CellsSparklineGroupsDeleteWorksheetSparklineGroupOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -
+     * @param "StorageName" (optional.String) -  storage name.
+
+@return CellsCloudResponse
+*/
+
+type CellsSparklineGroupsDeleteWorksheetSparklineGroupOpts struct {
+	Name                string
+	SheetName           string
+	SparklineGroupIndex int64
+	Folder              string
+	StorageName         string
+}
+
+func (a *CellsApiService) CellsSparklineGroupsDeleteWorksheetSparklineGroup(localVarOptionals *CellsSparklineGroupsDeleteWorksheetSparklineGroupOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Delete")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sparklineGroupIndex"+"}", fmt.Sprintf("%v", localVarOptionals.SparklineGroupIndex), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService
+ * @param name
+ * @param sheetName
+ * @param optional nil or *CellsSparklineGroupsDeleteWorksheetSparklineGroupsOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -
+     * @param "StorageName" (optional.String) -  storage name.
+
+@return CellsCloudResponse
+*/
+
+type CellsSparklineGroupsDeleteWorksheetSparklineGroupsOpts struct {
+	Name        string
+	SheetName   string
+	Folder      string
+	StorageName string
+}
+
+func (a *CellsApiService) CellsSparklineGroupsDeleteWorksheetSparklineGroups(localVarOptionals *CellsSparklineGroupsDeleteWorksheetSparklineGroupsOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Delete")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/sparklinegroups"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService
+ * @param name
+ * @param sheetName
+ * @param sparklineGroupIndex
+ * @param optional nil or *CellsSparklineGroupsGetWorksheetSparklineGroupOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -
+     * @param "StorageName" (optional.String) -  storage name.
+
+@return SparklineGroupResponse
+*/
+
+type CellsSparklineGroupsGetWorksheetSparklineGroupOpts struct {
+	Name                string
+	SheetName           string
+	SparklineGroupIndex int64
+	Folder              string
+	StorageName         string
+}
+
+func (a *CellsApiService) CellsSparklineGroupsGetWorksheetSparklineGroup(localVarOptionals *CellsSparklineGroupsGetWorksheetSparklineGroupOpts) (SparklineGroupResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue SparklineGroupResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sparklineGroupIndex"+"}", fmt.Sprintf("%v", localVarOptionals.SparklineGroupIndex), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService Get worksheet charts description.
+ * @param name Document name.
+ * @param sheetName The worksheet name.
+ * @param optional nil or *CellsSparklineGroupsGetWorksheetSparklineGroupsOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -  Document&#39;s folder.
+     * @param "StorageName" (optional.String) -  storage name.
+
+@return SparklineGroupsResponse
+*/
+
+type CellsSparklineGroupsGetWorksheetSparklineGroupsOpts struct {
+	Name        string
+	SheetName   string
+	Folder      string
+	StorageName string
+}
+
+func (a *CellsApiService) CellsSparklineGroupsGetWorksheetSparklineGroups(localVarOptionals *CellsSparklineGroupsGetWorksheetSparklineGroupsOpts) (SparklineGroupsResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue SparklineGroupsResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/sparklinegroups"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService
+ * @param name
+ * @param sheetName
+ * @param sparklineGroupIndex
+ * @param sparklineGroup
+ * @param optional nil or *CellsSparklineGroupsPostWorksheetSparklineGroupOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -
+     * @param "StorageName" (optional.String) -  storage name.
+
+@return CellsCloudResponse
+*/
+
+type CellsSparklineGroupsPostWorksheetSparklineGroupOpts struct {
+	Name                string
+	SheetName           string
+	SparklineGroupIndex int32
+	SparklineGroup      *SparklineGroup
+	Folder              string
+	StorageName         string
+}
+
+func (a *CellsApiService) CellsSparklineGroupsPostWorksheetSparklineGroup(localVarOptionals *CellsSparklineGroupsPostWorksheetSparklineGroupOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	localVarQueryParams.Add("sparklineGroupIndex", parameterToString(localVarOptionals.SparklineGroupIndex, ""))
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &localVarOptionals.SparklineGroup
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService
+ * @param name
+ * @param sheetName
+ * @param type_
+ * @param dataRange
+ * @param isVertical
+ * @param locationRange
+ * @param optional nil or *CellsSparklineGroupsPutWorksheetSparklineGroupOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -
+     * @param "StorageName" (optional.String) -  storage name.
+
+@return CellsCloudResponse
+*/
+
+type CellsSparklineGroupsPutWorksheetSparklineGroupOpts struct {
+	Name          string
+	SheetName     string
+	Type_         string
+	DataRange     string
+	IsVertical    bool
+	LocationRange string
+	Folder        string
+	StorageName   string
+}
+
+func (a *CellsApiService) CellsSparklineGroupsPutWorksheetSparklineGroup(localVarOptionals *CellsSparklineGroupsPutWorksheetSparklineGroupOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Put")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/sparklinegroups"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	localVarQueryParams.Add("type", parameterToString(localVarOptionals.Type_, ""))
+	localVarQueryParams.Add("dataRange", parameterToString(localVarOptionals.DataRange, ""))
+	localVarQueryParams.Add("isVertical", parameterToString(localVarOptionals.IsVertical, ""))
+	localVarQueryParams.Add("locationRange", parameterToString(localVarOptionals.LocationRange, ""))
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {

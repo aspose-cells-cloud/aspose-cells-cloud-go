@@ -114,6 +114,8 @@ Method | HTTP request | Description
 [**CellsPivotTablesPostPivotTableFieldHideItem**](CellsApi.md#CellsPivotTablesPostPivotTableFieldHideItem) | **Post** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Hide | 
 [**CellsPivotTablesPostPivotTableFieldMoveTo**](CellsApi.md#CellsPivotTablesPostPivotTableFieldMoveTo) | **Post** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Move | 
 [**CellsPivotTablesPostPivotTableStyle**](CellsApi.md#CellsPivotTablesPostPivotTableStyle) | **Post** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/FormatAll | Update style for pivot table
+[**CellsPivotTablesPostPivotTableUpdatePivotField**](CellsApi.md#CellsPivotTablesPostPivotTableUpdatePivotField) | **Post** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields/{pivotFieldIndex} | 
+[**CellsPivotTablesPostPivotTableUpdatePivotFields**](CellsApi.md#CellsPivotTablesPostPivotTableUpdatePivotFields) | **Post** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields | 
 [**CellsPivotTablesPostWorksheetPivotTableCalculate**](CellsApi.md#CellsPivotTablesPostWorksheetPivotTableCalculate) | **Post** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Calculate | Calculates pivottable&#39;s data to cells.
 [**CellsPivotTablesPostWorksheetPivotTableMove**](CellsApi.md#CellsPivotTablesPostWorksheetPivotTableMove) | **Post** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Move | 
 [**CellsPivotTablesPutPivotTableField**](CellsApi.md#CellsPivotTablesPutPivotTableField) | **Put** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField | Add pivot field into into pivot table
@@ -170,6 +172,12 @@ Method | HTTP request | Description
 [**CellsShapesGetWorksheetShapes**](CellsApi.md#CellsShapesGetWorksheetShapes) | **Get** /cells/{name}/worksheets/{sheetName}/shapes | Get worksheet shapes 
 [**CellsShapesPostWorksheetShape**](CellsApi.md#CellsShapesPostWorksheetShape) | **Post** /cells/{name}/worksheets/{sheetName}/shapes/{shapeindex} | Update a shape in worksheet
 [**CellsShapesPutWorksheetShape**](CellsApi.md#CellsShapesPutWorksheetShape) | **Put** /cells/{name}/worksheets/{sheetName}/shapes | Add shape in worksheet
+[**CellsSparklineGroupsDeleteWorksheetSparklineGroup**](CellsApi.md#CellsSparklineGroupsDeleteWorksheetSparklineGroup) | **Delete** /cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex} | 
+[**CellsSparklineGroupsDeleteWorksheetSparklineGroups**](CellsApi.md#CellsSparklineGroupsDeleteWorksheetSparklineGroups) | **Delete** /cells/{name}/worksheets/{sheetName}/sparklinegroups | 
+[**CellsSparklineGroupsGetWorksheetSparklineGroup**](CellsApi.md#CellsSparklineGroupsGetWorksheetSparklineGroup) | **Get** /cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex} | 
+[**CellsSparklineGroupsGetWorksheetSparklineGroups**](CellsApi.md#CellsSparklineGroupsGetWorksheetSparklineGroups) | **Get** /cells/{name}/worksheets/{sheetName}/sparklinegroups | Get worksheet charts description.
+[**CellsSparklineGroupsPostWorksheetSparklineGroup**](CellsApi.md#CellsSparklineGroupsPostWorksheetSparklineGroup) | **Post** /cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex} | 
+[**CellsSparklineGroupsPutWorksheetSparklineGroup**](CellsApi.md#CellsSparklineGroupsPutWorksheetSparklineGroup) | **Put** /cells/{name}/worksheets/{sheetName}/sparklinegroups | 
 [**CellsTaskPostRunTask**](CellsApi.md#CellsTaskPostRunTask) | **Post** /cells/task/runtask | Run tasks  
 [**CellsWorkbookDeleteDecryptDocument**](CellsApi.md#CellsWorkbookDeleteDecryptDocument) | **Delete** /cells/{name}/encryption | Decrypt document.
 [**CellsWorkbookDeleteDocumentUnprotectFromChanges**](CellsApi.md#CellsWorkbookDeleteDocumentUnprotectFromChanges) | **Delete** /cells/{name}/writeProtection | Unprotect document from changes.
@@ -1511,6 +1519,10 @@ Name | Type | Description  | Notes
  **title** | **optional.String**| Specifies chart title name. | 
  **folder** | **optional.String**| The workbook folder. | 
  **storageName** | **optional.String**| storage name. | 
+ **dataLabels** | **optional.Bool**|  | [default to true]
+ **dataLabelsPosition** | **optional.String**|  | [default to Above]
+ **pivotTableSheet** | **optional.String**|  | 
+ **pivotTableName** | **optional.String**|  | 
 
 ### Return type
 
@@ -4803,6 +4815,96 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **CellsPivotTablesPostPivotTableUpdatePivotField**
+> CellsCloudResponse CellsPivotTablesPostPivotTableUpdatePivotField(ctx, name, sheetName, pivotTableIndex, pivotFieldIndex, pivotFieldType, pivotField, optional)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **name** | **string**|  | 
+  **sheetName** | **string**|  | 
+  **pivotTableIndex** | **int64**|  | 
+  **pivotFieldIndex** | **int64**|  | 
+  **pivotFieldType** | **string**|  | 
+  **pivotField** | [**PivotField**](PivotField.md)|  | 
+ **optional** | ***CellsPivotTablesPostPivotTableUpdatePivotFieldOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a CellsPivotTablesPostPivotTableUpdatePivotFieldOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+
+ **needReCalculate** | **optional.Bool**|  | [default to false]
+ **folder** | **optional.String**|  | 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CellsPivotTablesPostPivotTableUpdatePivotFields**
+> CellsCloudResponse CellsPivotTablesPostPivotTableUpdatePivotFields(ctx, name, sheetName, pivotTableIndex, pivotFieldType, pivotField, optional)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **name** | **string**|  | 
+  **sheetName** | **string**|  | 
+  **pivotTableIndex** | **int64**|  | 
+  **pivotFieldType** | **string**|  | 
+  **pivotField** | [**PivotField**](PivotField.md)|  | 
+ **optional** | ***CellsPivotTablesPostPivotTableUpdatePivotFieldsOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a CellsPivotTablesPostPivotTableUpdatePivotFieldsOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+ **needReCalculate** | **optional.Bool**|  | [default to false]
+ **folder** | **optional.String**|  | 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **CellsPivotTablesPostWorksheetPivotTableCalculate**
 > CellsCloudResponse CellsPivotTablesPostWorksheetPivotTableCalculate(ctx, name, sheetName, pivotTableIndex, optional)
 Calculates pivottable's data to cells.
@@ -7116,6 +7218,250 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ShapeResponse**](ShapeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CellsSparklineGroupsDeleteWorksheetSparklineGroup**
+> CellsCloudResponse CellsSparklineGroupsDeleteWorksheetSparklineGroup(ctx, name, sheetName, sparklineGroupIndex, optional)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **name** | **string**|  | 
+  **sheetName** | **string**|  | 
+  **sparklineGroupIndex** | **int64**|  | 
+ **optional** | ***CellsSparklineGroupsDeleteWorksheetSparklineGroupOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a CellsSparklineGroupsDeleteWorksheetSparklineGroupOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **folder** | **optional.String**|  | 
+ **storageName** | **optional.String**| storage name. | 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CellsSparklineGroupsDeleteWorksheetSparklineGroups**
+> CellsCloudResponse CellsSparklineGroupsDeleteWorksheetSparklineGroups(ctx, name, sheetName, optional)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **name** | **string**|  | 
+  **sheetName** | **string**|  | 
+ **optional** | ***CellsSparklineGroupsDeleteWorksheetSparklineGroupsOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a CellsSparklineGroupsDeleteWorksheetSparklineGroupsOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **folder** | **optional.String**|  | 
+ **storageName** | **optional.String**| storage name. | 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CellsSparklineGroupsGetWorksheetSparklineGroup**
+> SparklineGroupResponse CellsSparklineGroupsGetWorksheetSparklineGroup(ctx, name, sheetName, sparklineGroupIndex, optional)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **name** | **string**|  | 
+  **sheetName** | **string**|  | 
+  **sparklineGroupIndex** | **int64**|  | 
+ **optional** | ***CellsSparklineGroupsGetWorksheetSparklineGroupOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a CellsSparklineGroupsGetWorksheetSparklineGroupOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **folder** | **optional.String**|  | 
+ **storageName** | **optional.String**| storage name. | 
+
+### Return type
+
+[**SparklineGroupResponse**](SparklineGroupResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CellsSparklineGroupsGetWorksheetSparklineGroups**
+> SparklineGroupsResponse CellsSparklineGroupsGetWorksheetSparklineGroups(ctx, name, sheetName, optional)
+Get worksheet charts description.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **name** | **string**| Document name. | 
+  **sheetName** | **string**| The worksheet name. | 
+ **optional** | ***CellsSparklineGroupsGetWorksheetSparklineGroupsOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a CellsSparklineGroupsGetWorksheetSparklineGroupsOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **folder** | **optional.String**| Document&#39;s folder. | 
+ **storageName** | **optional.String**| storage name. | 
+
+### Return type
+
+[**SparklineGroupsResponse**](SparklineGroupsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CellsSparklineGroupsPostWorksheetSparklineGroup**
+> CellsCloudResponse CellsSparklineGroupsPostWorksheetSparklineGroup(ctx, name, sheetName, sparklineGroupIndex, sparklineGroup, optional)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **name** | **string**|  | 
+  **sheetName** | **string**|  | 
+  **sparklineGroupIndex** | **int32**|  | 
+  **sparklineGroup** | [**SparklineGroup**](SparklineGroup.md)|  | 
+ **optional** | ***CellsSparklineGroupsPostWorksheetSparklineGroupOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a CellsSparklineGroupsPostWorksheetSparklineGroupOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **folder** | **optional.String**|  | 
+ **storageName** | **optional.String**| storage name. | 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CellsSparklineGroupsPutWorksheetSparklineGroup**
+> CellsCloudResponse CellsSparklineGroupsPutWorksheetSparklineGroup(ctx, name, sheetName, type_, dataRange, isVertical, locationRange, optional)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **name** | **string**|  | 
+  **sheetName** | **string**|  | 
+  **type_** | **string**|  | 
+  **dataRange** | **string**|  | 
+  **isVertical** | **bool**|  | 
+  **locationRange** | **string**|  | 
+ **optional** | ***CellsSparklineGroupsPutWorksheetSparklineGroupOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a CellsSparklineGroupsPutWorksheetSparklineGroupOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+
+ **folder** | **optional.String**|  | 
+ **storageName** | **optional.String**| storage name. | 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
 
 ### Authorization
 

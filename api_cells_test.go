@@ -130,7 +130,7 @@ func TestCellsAutoFilterPostWorksheetMatchBlanks(t *testing.T) {
 	args := new(CellsAutoFilterPostWorksheetMatchBlanksOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.FieldIndex = (0)
+	args.FieldIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsAutoFilterPostWorksheetMatchBlanks(args)
@@ -152,7 +152,7 @@ func TestCellsAutoFilterPostWorksheetMatchNonBlanks(t *testing.T) {
 	args := new(CellsAutoFilterPostWorksheetMatchNonBlanksOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.FieldIndex = (0)
+	args.FieldIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsAutoFilterPostWorksheetMatchNonBlanks(args)
@@ -174,7 +174,7 @@ func TestCellsAutoFilterPutWorksheetColorFilter(t *testing.T) {
 	args := new(CellsAutoFilterPutWorksheetColorFilterOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.FieldIndex = (0)
+	args.FieldIndex = 0
 	args.Range_ = GetRange()
 	args.Refresh = true
 	args.MatchBlanks = false
@@ -231,7 +231,7 @@ func TestCellsAutoFilterPutWorksheetCustomFilter(t *testing.T) {
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
 	args.Range_ = GetRange()
-	args.FieldIndex = (0)
+	args.FieldIndex = 0
 	args.OperatorType1 = "LessOrEqual"
 	args.Criteria1 = "test"
 	args.OperatorType2 = "LessOrEqual"
@@ -292,7 +292,7 @@ func TestCellsAutoFilterPutWorksheetDynamicFilter(t *testing.T) {
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
 	args.Range_ = GetRange()
-	args.FieldIndex = (0)
+	args.FieldIndex = 0
 	args.DynamicFilterType = "May"
 	args.MatchBlanks = true
 	args.Refresh = true
@@ -318,7 +318,7 @@ func TestCellsAutoFilterPutWorksheetFilter(t *testing.T) {
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
 	args.Criteria = "test"
-	args.FieldIndex = (0)
+	args.FieldIndex = 0
 	args.MatchBlanks = true
 	args.Refresh = true
 	args.Folder = GetBaseTest().remoteFolder
@@ -342,7 +342,7 @@ func TestCellsAutoFilterPutWorksheetFilterTop10(t *testing.T) {
 	args := new(CellsAutoFilterPutWorksheetFilterTop10Opts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.FieldIndex = (0)
+	args.FieldIndex = 0
 	args.IsPercent = true
 	args.IsTop = true
 	args.Range_ = GetRange()
@@ -369,8 +369,8 @@ func TestCellsAutoFilterPutWorksheetIconFilter(t *testing.T) {
 	args := new(CellsAutoFilterPutWorksheetIconFilterOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.FieldIndex = (0)
-	args.IconId = (0)
+	args.FieldIndex = 0
+	args.IconId = 0
 	args.IconSetType = "None"
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -437,7 +437,7 @@ func TestCellsChartAreaGetChartArea(t *testing.T) {
 	args := new(CellsChartAreaGetChartAreaOpts)
 	args.Name = GetMyDoc()
 	args.SheetName = GetSheet3()
-	args.ChartIndex = (0)
+	args.ChartIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsChartAreaGetChartArea(args)
@@ -459,7 +459,7 @@ func TestCellsChartAreaGetChartAreaBorder(t *testing.T) {
 	args := new(CellsChartAreaGetChartAreaBorderOpts)
 	args.Name = GetMyDoc()
 	args.SheetName = GetSheet3()
-	args.ChartIndex = (0)
+	args.ChartIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsChartAreaGetChartAreaBorder(args)
@@ -481,7 +481,7 @@ func TestCellsChartAreaGetChartAreaFillFormat(t *testing.T) {
 	args := new(CellsChartAreaGetChartAreaFillFormatOpts)
 	args.Name = GetMyDoc()
 	args.SheetName = GetSheet3()
-	args.ChartIndex = (0)
+	args.ChartIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsChartAreaGetChartAreaFillFormat(args)
@@ -503,7 +503,7 @@ func TestCellsChartsDeleteWorksheetChartLegend(t *testing.T) {
 	args := new(CellsChartsDeleteWorksheetChartLegendOpts)
 	args.Name = GetMyDoc()
 	args.SheetName = GetSheet3()
-	args.ChartIndex = (0)
+	args.ChartIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsDeleteWorksheetChartLegend(args)
@@ -525,7 +525,7 @@ func TestCellsChartsDeleteWorksheetChartTitle(t *testing.T) {
 	args := new(CellsChartsDeleteWorksheetChartTitleOpts)
 	args.Name = GetMyDoc()
 	args.SheetName = GetSheet3()
-	args.ChartIndex = (0)
+	args.ChartIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsDeleteWorksheetChartTitle(args)
@@ -568,7 +568,7 @@ func TestCellsChartsDeleteWorksheetDeleteChart(t *testing.T) {
 	args := new(CellsChartsDeleteWorksheetDeleteChartOpts)
 	args.Name = GetMyDoc()
 	args.SheetName = GetSheet3()
-	args.ChartIndex = (0)
+	args.ChartIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsDeleteWorksheetDeleteChart(args)
@@ -590,7 +590,7 @@ func TestCellsChartsGetWorksheetChart(t *testing.T) {
 	args := new(CellsChartsGetWorksheetChartOpts)
 	args.Name = GetMyDoc()
 	args.SheetName = GetSheet3()
-	args.ChartNumber = (0)
+	args.ChartNumber = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	_, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsGetWorksheetChart(args)
@@ -612,7 +612,7 @@ func TestCellsChartsGetWorksheetChartLegend(t *testing.T) {
 	args := new(CellsChartsGetWorksheetChartLegendOpts)
 	args.Name = GetMyDoc()
 	args.SheetName = GetSheet3()
-	args.ChartIndex = (0)
+	args.ChartIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsGetWorksheetChartLegend(args)
@@ -634,7 +634,7 @@ func TestCellsChartsGetWorksheetChartTitle(t *testing.T) {
 	args := new(CellsChartsGetWorksheetChartTitleOpts)
 	args.Name = GetMyDoc()
 	args.SheetName = GetSheet3()
-	args.ChartIndex = (0)
+	args.ChartIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsGetWorksheetChartTitle(args)
@@ -677,7 +677,7 @@ func TestCellsChartsPostWorksheetChart(t *testing.T) {
 	args := new(CellsChartsPostWorksheetChartOpts)
 	args.Name = GetMyDoc()
 	args.SheetName = GetSheet3()
-	args.ChartIndex = (0)
+	args.ChartIndex = 0
 	args.Chart = new(Chart)
 	args.Chart.Name = "Test1"
 	args.Folder = GetBaseTest().remoteFolder
@@ -701,7 +701,7 @@ func TestCellsChartsPostWorksheetChartLegend(t *testing.T) {
 	args := new(CellsChartsPostWorksheetChartLegendOpts)
 	args.Name = GetMyDoc()
 	args.SheetName = GetSheet3()
-	args.ChartIndex = (0)
+	args.ChartIndex = 0
 	args.Legend = new(Legend)
 	args.Legend.Width = 10
 	args.Folder = GetBaseTest().remoteFolder
@@ -725,7 +725,7 @@ func TestCellsChartsPostWorksheetChartTitle(t *testing.T) {
 	args := new(CellsChartsPostWorksheetChartTitleOpts)
 	args.Name = GetMyDoc()
 	args.SheetName = GetSheet3()
-	args.ChartIndex = (0)
+	args.ChartIndex = 0
 	args.Title = new(Title)
 	args.Title.IsVisible = true
 	args.Folder = GetBaseTest().remoteFolder
@@ -750,13 +750,16 @@ func TestCellsChartsPutWorksheetAddChart(t *testing.T) {
 	args.Name = GetMyDoc()
 	args.SheetName = GetSheet4()
 	args.ChartType = "Pie"
-	args.UpperLeftColumn = (5)
-	args.UpperLeftRow = (5)
-	args.LowerRightColumn = (10)
-	args.LowerRightRow = (10)
+	args.UpperLeftColumn = 5
+	args.UpperLeftRow = 5
+	args.LowerRightColumn = 10
+	args.LowerRightRow = 10
 	args.Area = "C7:D11"
 	args.IsVertical = true
-	args.IsAutoGetSerialName = true
+	// args.PivotTableName = nil
+	// args.PivotTableSheet = nil
+	// args.DataLabels = true
+	// args.DataLabelsPosition = nil
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsPutWorksheetAddChart(args)
@@ -778,7 +781,7 @@ func TestCellsChartsPutWorksheetChartLegend(t *testing.T) {
 	args := new(CellsChartsPutWorksheetChartLegendOpts)
 	args.Name = GetMyDoc()
 	args.SheetName = GetSheet3()
-	args.ChartIndex = (0)
+	args.ChartIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsPutWorksheetChartLegend(args)
 	if err != nil {
@@ -799,7 +802,7 @@ func TestCellsChartsPutWorksheetChartTitle(t *testing.T) {
 	args := new(CellsChartsPutWorksheetChartTitleOpts)
 	args.Name = GetMyDoc()
 	args.SheetName = GetSheet3()
-	args.ChartIndex = (0)
+	args.ChartIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsPutWorksheetChartTitle(args)
@@ -821,7 +824,7 @@ func TestCellsConditionalFormattingsDeleteWorksheetConditionalFormatting(t *test
 	args := new(CellsConditionalFormattingsDeleteWorksheetConditionalFormattingOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Index = (0)
+	args.Index = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsConditionalFormattingsDeleteWorksheetConditionalFormatting(args)
@@ -843,8 +846,8 @@ func TestCellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea(t *
 	args := new(CellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.StartColumn = (1)
-	args.StartColumn = (1)
+	args.StartColumn = 1
+	args.StartColumn = 1
 	args.TotalColumns = (6)
 	args.TotalRows = (4)
 	args.Folder = GetBaseTest().remoteFolder
@@ -889,7 +892,7 @@ func TestCellsConditionalFormattingsGetWorksheetConditionalFormatting(t *testing
 	args := new(CellsConditionalFormattingsGetWorksheetConditionalFormattingOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Index = (0)
+	args.Index = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsConditionalFormattingsGetWorksheetConditionalFormatting(args)
@@ -958,7 +961,7 @@ func TestCellsConditionalFormattingsPutWorksheetFormatCondition(t *testing.T) {
 
 	args := new(CellsConditionalFormattingsPutWorksheetFormatConditionOpts)
 	args.Name = GetBook1()
-	args.Index = (0)
+	args.Index = 0
 	args.SheetName = GetSheet1()
 	args.CellArea = GetRange()
 	args.Formula1 = "v1"
@@ -987,7 +990,7 @@ func TestCellsConditionalFormattingsPutWorksheetFormatConditionArea(t *testing.T
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
 	args.CellArea = GetRange()
-	args.Index = (0)
+	args.Index = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsConditionalFormattingsPutWorksheetFormatConditionArea(args)
@@ -1012,7 +1015,7 @@ func TestCellsConditionalFormattingsPutWorksheetFormatConditionCondition(t *test
 	args.Formula1 = "v1"
 	args.Formula2 = "v2"
 	args.Type_ = "CellValue"
-	args.Index = (0)
+	args.Index = 0
 	args.OperatorType = "Between"
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -1035,7 +1038,7 @@ func TestCellsDeleteWorksheetColumns(t *testing.T) {
 	args := new(CellsDeleteWorksheetColumnsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.ColumnIndex = (0)
+	args.ColumnIndex = 0
 	args.Columns = (3)
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -1080,7 +1083,7 @@ func TestCellsDeleteWorksheetRows(t *testing.T) {
 	args := new(CellsDeleteWorksheetRowsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Startrow = (1)
+	args.Startrow = 1
 	args.TotalRows = (10)
 	args.UpdateReference = false
 	args.Folder = GetBaseTest().remoteFolder
@@ -1194,7 +1197,7 @@ func TestCellsGetWorksheetColumn(t *testing.T) {
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
 	args.Folder = GetBaseTest().remoteFolder
-	args.ColumnIndex = (1)
+	args.ColumnIndex = 1
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsGetWorksheetColumn(args)
 	if err != nil {
@@ -1236,7 +1239,7 @@ func TestCellsGetWorksheetRow(t *testing.T) {
 	args := new(CellsGetWorksheetRowOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.RowIndex = (0)
+	args.RowIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsGetWorksheetRow(args)
@@ -1279,7 +1282,7 @@ func TestCellsHypelinksDeleteWorksheetHyperlink(t *testing.T) {
 	args := new(CellsHypelinksDeleteWorksheetHyperlinkOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.HyperlinkIndex = (0)
+	args.HyperlinkIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsHypelinksDeleteWorksheetHyperlink(args)
@@ -1322,7 +1325,7 @@ func TestCellsHypelinksGetWorksheetHyperlink(t *testing.T) {
 	args := new(CellsHypelinksGetWorksheetHyperlinkOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.HyperlinkIndex = (0)
+	args.HyperlinkIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsHypelinksGetWorksheetHyperlink(args)
@@ -1365,7 +1368,7 @@ func TestCellsHypelinksPostWorksheetHyperlink(t *testing.T) {
 	args := new(CellsHypelinksPostWorksheetHyperlinkOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.HyperlinkIndex = (0)
+	args.HyperlinkIndex = 0
 	args.Hyperlink = new(Hyperlink)
 	args.Hyperlink.Address = "https://api.aspose.cloud"
 	args.Folder = GetBaseTest().remoteFolder
@@ -1414,7 +1417,7 @@ func TestCellsListObjectsDeleteWorksheetListObject(t *testing.T) {
 	args := new(CellsListObjectsDeleteWorksheetListObjectOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet7()
-	args.ListObjectIndex = (0)
+	args.ListObjectIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsListObjectsDeleteWorksheetListObject(args)
@@ -1457,7 +1460,7 @@ func TestCellsListObjectsGetWorksheetListObject(t *testing.T) {
 	args := new(CellsListObjectsGetWorksheetListObjectOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet7()
-	args.Listobjectindex = (0)
+	args.Listobjectindex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsListObjectsGetWorksheetListObject(args)
@@ -1500,7 +1503,7 @@ func TestCellsListObjectsPostWorksheetListObject(t *testing.T) {
 	args := new(CellsListObjectsPostWorksheetListObjectOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet7()
-	args.ListObjectIndex = (0)
+	args.ListObjectIndex = 0
 	args.ListObject = new(ListObject)
 	args.ListObject.StartColumn = 10
 	args.Folder = GetBaseTest().remoteFolder
@@ -1524,7 +1527,7 @@ func TestCellsListObjectsPostWorksheetListObjectConvertToRange(t *testing.T) {
 	args := new(CellsListObjectsPostWorksheetListObjectConvertToRangeOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet7()
-	args.ListObjectIndex = (0)
+	args.ListObjectIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsListObjectsPostWorksheetListObjectConvertToRange(args)
@@ -1546,7 +1549,7 @@ func TestCellsListObjectsPostWorksheetListObjectSortTable(t *testing.T) {
 	args := new(CellsListObjectsPostWorksheetListObjectSortTableOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet7()
-	args.ListObjectIndex = (0)
+	args.ListObjectIndex = 0
 	args.DataSorter = new(DataSorter)
 	args.DataSorter.CaseSensitive = true
 	args.Folder = GetBaseTest().remoteFolder
@@ -1570,7 +1573,7 @@ func TestCellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(t *testi
 	args := new(CellsListObjectsPostWorksheetListObjectSummarizeWithPivotTableOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet7()
-	args.ListObjectIndex = (0)
+	args.ListObjectIndex = 0
 	args.DestsheetName = "Sheet2"
 	args.Request = new(CreatePivotTableRequest)
 	args.Request.DestCellName = "C1"
@@ -1604,8 +1607,8 @@ func TestCellsListObjectsPutWorksheetListObject(t *testing.T) {
 	args.EndColumn = (12)
 	args.EndRow = (10)
 	args.HasHeaders = true
-	args.StartColumn = (1)
-	args.StartRow = (1)
+	args.StartColumn = 1
+	args.StartRow = 1
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsListObjectsPutWorksheetListObject(args)
@@ -1627,7 +1630,7 @@ func TestCellsOleObjectsDeleteWorksheetOleObject(t *testing.T) {
 	args := new(CellsOleObjectsDeleteWorksheetOleObjectOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet6()
-	args.OleObjectIndex = (0)
+	args.OleObjectIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsOleObjectsDeleteWorksheetOleObject(args)
@@ -1670,7 +1673,7 @@ func TestCellsOleObjectsGetWorksheetOleObject(t *testing.T) {
 	args := new(CellsOleObjectsGetWorksheetOleObjectOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet6()
-	args.ObjectNumber = (0)
+	args.ObjectNumber = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	_, httpResponse, err := GetBaseTest().CellsAPI.CellsOleObjectsGetWorksheetOleObject(args)
@@ -1713,7 +1716,7 @@ func TestCellsOleObjectsPostUpdateWorksheetOleObject(t *testing.T) {
 	args := new(CellsOleObjectsPostUpdateWorksheetOleObjectOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet6()
-	args.OleObjectIndex = (0)
+	args.OleObjectIndex = 0
 	args.Ole = new(OleObject)
 	args.Ole.Height = (10)
 	args.Folder = GetBaseTest().remoteFolder
@@ -1770,7 +1773,7 @@ func TestCellsPageBreaksDeleteHorizontalPageBreak(t *testing.T) {
 	args := new(CellsPageBreaksDeleteHorizontalPageBreakOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Index = (0)
+	args.Index = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPageBreaksDeleteHorizontalPageBreak(args)
@@ -1813,7 +1816,7 @@ func TestCellsPageBreaksDeleteVerticalPageBreak(t *testing.T) {
 	args := new(CellsPageBreaksDeleteVerticalPageBreakOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Index = (0)
+	args.Index = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPageBreaksDeleteVerticalPageBreak(args)
@@ -1856,7 +1859,7 @@ func TestCellsPageBreaksGetHorizontalPageBreak(t *testing.T) {
 	args := new(CellsPageBreaksGetHorizontalPageBreakOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Index = (0)
+	args.Index = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPageBreaksGetHorizontalPageBreak(args)
@@ -1899,7 +1902,7 @@ func TestCellsPageBreaksGetVerticalPageBreak(t *testing.T) {
 	args := new(CellsPageBreaksGetVerticalPageBreakOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Index = (0)
+	args.Index = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPageBreaksGetVerticalPageBreak(args)
@@ -1943,8 +1946,8 @@ func TestCellsPageBreaksPutHorizontalPageBreak(t *testing.T) {
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
 	args.Cellname = "A1"
-	args.Column = (1)
-	args.Row = (1)
+	args.Column = 1
+	args.Row = 1
 	args.EndColumn = (2)
 	args.StartColumn = (2)
 	args.Folder = GetBaseTest().remoteFolder
@@ -1969,8 +1972,8 @@ func TestCellsPageBreaksPutVerticalPageBreak(t *testing.T) {
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
 	args.Cellname = "A1"
-	args.Column = (1)
-	args.Row = (1)
+	args.Column = 1
+	args.Row = 1
 	args.StartRow = (2)
 	args.EndRow = (2)
 	args.Folder = GetBaseTest().remoteFolder
@@ -2079,7 +2082,7 @@ func TestCellsPageSetupPostFooter(t *testing.T) {
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
 	args.IsFirstPage = true
-	args.Section = (0)
+	args.Section = 0
 	args.Script = "test"
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -2103,7 +2106,7 @@ func TestCellsPageSetupPostHeader(t *testing.T) {
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
 	args.IsFirstPage = true
-	args.Section = (0)
+	args.Section = 0
 	args.Script = "test"
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -2149,7 +2152,7 @@ func TestCellsPicturesDeleteWorksheetPicture(t *testing.T) {
 	args := new(CellsPicturesDeleteWorksheetPictureOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet6()
-	args.PictureIndex = (0)
+	args.PictureIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPicturesDeleteWorksheetPicture(args)
@@ -2234,7 +2237,7 @@ func TestCellsPicturesPostWorksheetPicture(t *testing.T) {
 	args := new(CellsPicturesPostWorksheetPictureOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet6()
-	args.PictureIndex = (0)
+	args.PictureIndex = 0
 	args.Picture = new(Picture)
 	args.Picture.Height = 100
 	args.Folder = GetBaseTest().remoteFolder
@@ -2287,7 +2290,7 @@ func TestCellsPivotTablesDeletePivotTableField(t *testing.T) {
 	args := new(CellsPivotTablesDeletePivotTableFieldOpts)
 	args.Name = GetPivTestFile()
 	args.SheetName = GetSheet4()
-	args.PivotTableIndex = (0)
+	args.PivotTableIndex = 0
 	args.PivotFieldType = "row"
 	args.Request = new(PivotTableFieldRequest)
 	args.Request.Data = []int64{1}
@@ -2312,7 +2315,7 @@ func TestCellsPivotTablesDeleteWorksheetPivotTable(t *testing.T) {
 	args := new(CellsPivotTablesDeleteWorksheetPivotTableOpts)
 	args.Name = GetPivTestFile()
 	args.SheetName = GetSheet4()
-	args.PivotTableIndex = (0)
+	args.PivotTableIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPivotTablesDeleteWorksheetPivotTable(args)
@@ -2334,9 +2337,9 @@ func TestCellsPivotTablesDeleteWorksheetPivotTable(t *testing.T) {
 // 	args := new(CellsPivotTablesDeleteWorksheetPivotTableFilterOpts)
 // 	args.Name = GetPivTestFile()
 // 	args.SheetName = GetSheet4()
-// 	args.PivotTableIndex = (0)
+// 	args.PivotTableIndex = 0
 // 	args.NeedReCalculate = true
-// 	args.FieldIndex = (0)
+// 	args.FieldIndex = 0
 // 	args.Folder = GetBaseTest().remoteFolder
 
 // 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPivotTablesDeleteWorksheetPivotTableFilter(args)
@@ -2359,7 +2362,7 @@ func TestCellsPivotTablesDeleteWorksheetPivotTableFilters(t *testing.T) {
 	args.Name = GetPivTestFile()
 	args.SheetName = GetSheet4()
 	args.NeedReCalculate = true
-	args.PivotTableIndex = (0)
+	args.PivotTableIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPivotTablesDeleteWorksheetPivotTableFilters(args)
@@ -2402,8 +2405,8 @@ func TestCellsPivotTablesGetPivotTableField(t *testing.T) {
 	args := new(CellsPivotTablesGetPivotTableFieldOpts)
 	args.Name = GetPivTestFile()
 	args.SheetName = GetSheet4()
-	args.PivotTableIndex = (0)
-	args.PivotFieldIndex = (0)
+	args.PivotTableIndex = 0
+	args.PivotFieldIndex = 0
 	args.PivotFieldType = "row"
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -2426,7 +2429,7 @@ func TestCellsPivotTablesGetWorksheetPivotTable(t *testing.T) {
 	args := new(CellsPivotTablesGetWorksheetPivotTableOpts)
 	args.Name = GetPivTestFile()
 	args.SheetName = GetSheet4()
-	args.PivottableIndex = (0)
+	args.PivottableIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPivotTablesGetWorksheetPivotTable(args)
@@ -2448,7 +2451,7 @@ func TestCellsPivotTablesGetWorksheetPivotTableFilters(t *testing.T) {
 	args := new(CellsPivotTablesGetWorksheetPivotTableFiltersOpts)
 	args.Name = GetPivTestFile()
 	args.SheetName = GetSheet4()
-	args.PivotTableIndex = (0)
+	args.PivotTableIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPivotTablesGetWorksheetPivotTableFilters(args)
@@ -2491,10 +2494,10 @@ func TestCellsPivotTablesPostPivotTableCellStyle(t *testing.T) {
 	args := new(CellsPivotTablesPostPivotTableCellStyleOpts)
 	args.Name = GetPivTestFile()
 	args.SheetName = GetSheet4()
-	args.PivotTableIndex = (0)
+	args.PivotTableIndex = 0
 	args.NeedReCalculate = true
-	args.Row = (1)
-	args.Column = (1)
+	args.Row = 1
+	args.Column = 1
 	args.Style = new(Style)
 	args.Style.Custom = "##.#"
 	args.Folder = GetBaseTest().remoteFolder
@@ -2518,12 +2521,12 @@ func TestCellsPivotTablesPostPivotTableFieldHideItem(t *testing.T) {
 	args := new(CellsPivotTablesPostPivotTableFieldHideItemOpts)
 	args.Name = GetPivTestFile()
 	args.SheetName = GetSheet4()
-	args.PivotTableIndex = (0)
+	args.PivotTableIndex = 0
 	args.PivotFieldType = "Row"
-	args.FieldIndex = (0)
+	args.FieldIndex = 0
 	args.IsHide = true
 	args.NeedReCalculate = true
-	args.ItemIndex = (1)
+	args.ItemIndex = 1
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPivotTablesPostPivotTableFieldHideItem(args)
@@ -2545,8 +2548,8 @@ func TestCellsPivotTablesPostPivotTableFieldMoveTo(t *testing.T) {
 	args := new(CellsPivotTablesPostPivotTableFieldMoveToOpts)
 	args.Name = GetPivTestFile()
 	args.SheetName = GetSheet4()
-	args.PivotTableIndex = (0)
-	args.FieldIndex = (0)
+	args.PivotTableIndex = 0
+	args.FieldIndex = 0
 	args.From = "Row"
 	args.To = "Column"
 	args.Folder = GetBaseTest().remoteFolder
@@ -2560,7 +2563,57 @@ func TestCellsPivotTablesPostPivotTableFieldMoveTo(t *testing.T) {
 		fmt.Printf("%d\tTestCellsPivotTablesPostPivotTableFieldMoveTo - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
+func TestCellsPivotTablesPostPivotTableUpdatePivotField(t *testing.T) {
+	name := GetPivTestFile()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
 
+	args := new(CellsPivotTablesPostPivotTableUpdatePivotFieldOpts)
+	args.Name = GetPivTestFile()
+	args.SheetName = GetSheet4()
+	args.PivotTableIndex = 0
+	args.PivotFieldType = "Data"
+	args.PivotField = new(PivotField)
+	args.PivotField.Number = 5
+	args.NeedReCalculate = true
+	args.Folder = GetBaseTest().remoteFolder
+
+	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPivotTablesPostPivotTableUpdatePivotField(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t TestCellsPivotTablesPostPivotTableUpdatePivotField - %d\n", GetBaseTest().GetTestNumber(), response.Code)
+	}
+}
+
+func TestCellsPivotTablesPostPivotTableUpdatePivotFields(t *testing.T) {
+	name := GetPivTestFile()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsPivotTablesPostPivotTableUpdatePivotFieldsOpts)
+	args.Name = GetPivTestFile()
+	args.SheetName = GetSheet4()
+	args.PivotTableIndex = 0
+	args.PivotFieldType = "Data"
+	args.PivotField = new(PivotField)
+	args.PivotField.Number = 5
+	args.NeedReCalculate = true
+	args.Folder = GetBaseTest().remoteFolder
+
+	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPivotTablesPostPivotTableUpdatePivotFields(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t TestCellsPivotTablesPostPivotTableUpdatePivotField - %d\n", GetBaseTest().GetTestNumber(), response.Code)
+	}
+}
 func TestCellsPivotTablesPostPivotTableStyle(t *testing.T) {
 	name := GetPivTestFile()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -2570,7 +2623,7 @@ func TestCellsPivotTablesPostPivotTableStyle(t *testing.T) {
 	args := new(CellsPivotTablesPostPivotTableStyleOpts)
 	args.Name = GetPivTestFile()
 	args.SheetName = GetSheet4()
-	args.PivotTableIndex = (0)
+	args.PivotTableIndex = 0
 	args.Style = new(Style)
 	args.Style.Custom = "##.#"
 	args.Folder = GetBaseTest().remoteFolder
@@ -2594,7 +2647,7 @@ func TestCellsPivotTablesPostWorksheetPivotTableCalculate(t *testing.T) {
 	args := new(CellsPivotTablesPostWorksheetPivotTableCalculateOpts)
 	args.Name = GetPivTestFile()
 	args.SheetName = GetSheet4()
-	args.PivotTableIndex = (0)
+	args.PivotTableIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPivotTablesPostWorksheetPivotTableCalculate(args)
@@ -2616,9 +2669,9 @@ func TestCellsPivotTablesPostWorksheetPivotTableMove(t *testing.T) {
 	args := new(CellsPivotTablesPostWorksheetPivotTableMoveOpts)
 	args.Name = GetPivTestFile()
 	args.SheetName = GetSheet4()
-	args.PivotTableIndex = (0)
-	args.Column = (1)
-	args.Row = (1)
+	args.PivotTableIndex = 0
+	args.Column = 1
+	args.Row = 1
 	args.DestCellName = "C10"
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -2641,7 +2694,7 @@ func TestCellsPivotTablesPutPivotTableField(t *testing.T) {
 	args := new(CellsPivotTablesPutPivotTableFieldOpts)
 	args.Name = GetPivTestFile()
 	args.SheetName = GetSheet4()
-	args.PivotTableIndex = (0)
+	args.PivotTableIndex = 0
 	args.PivotFieldType = "Row"
 	args.Request = new(PivotTableFieldRequest)
 	args.Request.Data = []int64{1}
@@ -2694,17 +2747,17 @@ func TestCellsPivotTablesPutWorksheetPivotTableFilter(t *testing.T) {
 	args.Name = GetPivTestFile()
 	args.SheetName = GetSheet4()
 	args.NeedReCalculate = true
-	args.PivotTableIndex = (0)
+	args.PivotTableIndex = 0
 	args.Filter = new(PivotFilter)
-	args.Filter.FieldIndex = (1)
+	args.Filter.FieldIndex = 1
 	args.Filter.FilterType = "Count"
 	args.Filter.AutoFilter = new(AutoFilter)
 
 	filterColumn := new(FilterColumn)
 	filterColumn.FilterType = "Top10"
-	filterColumn.FieldIndex = (0)
+	filterColumn.FieldIndex = 0
 	filterColumn.Top10Filter = new(Top10Filter)
-	filterColumn.Top10Filter.Items = (1)
+	filterColumn.Top10Filter.Items = 1
 	filterColumn.Top10Filter.IsPercent = true
 	filterColumn.Top10Filter.IsTop = true
 	args.Filter.AutoFilter.FilterColumns = []FilterColumn{}
@@ -2722,8 +2775,8 @@ func TestCellsPivotTablesPutWorksheetPivotTableFilter(t *testing.T) {
 	args1 := new(CellsPivotTablesGetWorksheetPivotTableFilterOpts)
 	args1.Name = GetPivTestFile()
 	args1.SheetName = GetSheet4()
-	args1.PivotTableIndex = (0)
-	args1.FilterIndex = (0)
+	args1.PivotTableIndex = 0
+	args1.FilterIndex = 0
 	args1.Folder = GetBaseTest().remoteFolder
 
 	response1, httpResponse1, err1 := GetBaseTest().CellsAPI.CellsPivotTablesGetWorksheetPivotTableFilter(args1)
@@ -2738,9 +2791,9 @@ func TestCellsPivotTablesPutWorksheetPivotTableFilter(t *testing.T) {
 	args2 := new(CellsPivotTablesDeleteWorksheetPivotTableFilterOpts)
 	args2.Name = GetPivTestFile()
 	args2.SheetName = GetSheet4()
-	args2.PivotTableIndex = (0)
+	args2.PivotTableIndex = 0
 	args2.NeedReCalculate = true
-	args2.FieldIndex = (0)
+	args2.FieldIndex = 0
 	args2.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err2 := GetBaseTest().CellsAPI.CellsPivotTablesDeleteWorksheetPivotTableFilter(args2)
@@ -2751,6 +2804,107 @@ func TestCellsPivotTablesPutWorksheetPivotTableFilter(t *testing.T) {
 	} else {
 		fmt.Printf("%d\tTestCellsPivotTablesDeleteWorksheetPivotTableFilter - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
+}
+
+func TestCellsSparklineGroupGPPD(t *testing.T) {
+	name := GetPivTestFile()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	argsGets := new(CellsSparklineGroupsGetWorksheetSparklineGroupsOpts)
+	argsGets.Name = GetPivTestFile()
+	argsGets.SheetName = GetSheet1()
+	argsGets.Folder = GetBaseTest().remoteFolder
+
+	responseGets, httpResponseGets, errGets := GetBaseTest().CellsAPI.CellsSparklineGroupsGetWorksheetSparklineGroups(argsGets)
+	if errGets != nil {
+		t.Error(errGets)
+	} else if httpResponseGets.StatusCode < 200 || httpResponseGets.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t CellsSparklineGroupsGetWorksheetSparklineGroups - %d\n", GetBaseTest().GetTestNumber(), responseGets.Code)
+	}
+
+	argsPut := new(CellsSparklineGroupsPutWorksheetSparklineGroupOpts)
+	argsPut.Name = GetPivTestFile()
+	argsPut.SheetName = GetSheet1()
+	argsPut.DataRange = "C6:E13"
+	argsPut.IsVertical = false
+	argsPut.LocationRange = "G6:G13"
+	argsPut.Type_ = "Line"
+	argsPut.Folder = GetBaseTest().remoteFolder
+
+	responsePut, httpResponsePut, errPut := GetBaseTest().CellsAPI.CellsSparklineGroupsPutWorksheetSparklineGroup(argsPut)
+	if errPut != nil {
+		t.Error(errPut)
+	} else if httpResponsePut.StatusCode < 200 || httpResponsePut.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t CellsSparklineGroupsPutWorksheetSparklineGroup - %d\n", GetBaseTest().GetTestNumber(), responsePut.Code)
+	}
+
+	argsPost := new(CellsSparklineGroupsPostWorksheetSparklineGroupOpts)
+	argsPost.Name = GetPivTestFile()
+	argsPost.SheetName = GetSheet1()
+	argsPost.SparklineGroupIndex = 0
+	argsPost.SparklineGroup = new(SparklineGroup)
+	argsPost.SparklineGroup.DisplayHidden = true
+	argsPost.Folder = GetBaseTest().remoteFolder
+
+	responsePost, httpResponsePost, errPost := GetBaseTest().CellsAPI.CellsSparklineGroupsPostWorksheetSparklineGroup(argsPost)
+	if errPost != nil {
+		t.Error(errPost)
+	} else if httpResponsePost.StatusCode < 200 || httpResponsePost.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t CellsSparklineGroupsPostWorksheetSparklineGroup - %d\n", GetBaseTest().GetTestNumber(), responsePost.Code)
+	}
+
+	argsGet := new(CellsSparklineGroupsGetWorksheetSparklineGroupOpts)
+	argsGet.Name = GetPivTestFile()
+	argsGet.SheetName = GetSheet1()
+	argsGet.SparklineGroupIndex = 0
+	argsGet.Folder = GetBaseTest().remoteFolder
+
+	responseGet, httpResponseGet, errGet := GetBaseTest().CellsAPI.CellsSparklineGroupsGetWorksheetSparklineGroup(argsGet)
+	if errGet != nil {
+		t.Error(errGet)
+	} else if httpResponseGet.StatusCode < 200 || httpResponseGet.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t CellsSparklineGroupsDeleteWorksheetSparklineGroup - %d\n", GetBaseTest().GetTestNumber(), responseGet.Code)
+	}
+
+	argsDelete := new(CellsSparklineGroupsDeleteWorksheetSparklineGroupOpts)
+	argsDelete.Name = GetPivTestFile()
+	argsDelete.SheetName = GetSheet1()
+	argsDelete.SparklineGroupIndex = 0
+	argsDelete.Folder = GetBaseTest().remoteFolder
+
+	responseDelete, httpResponseDelete, errDelete := GetBaseTest().CellsAPI.CellsSparklineGroupsDeleteWorksheetSparklineGroup(argsDelete)
+	if errDelete != nil {
+		t.Error(errDelete)
+	} else if httpResponseDelete.StatusCode < 200 || httpResponseDelete.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t CellsSparklineGroupsDeleteWorksheetSparklineGroup - %d\n", GetBaseTest().GetTestNumber(), responseDelete.Code)
+	}
+
+	argsDeletes := new(CellsSparklineGroupsDeleteWorksheetSparklineGroupsOpts)
+	argsDeletes.Name = GetPivTestFile()
+	argsDeletes.SheetName = GetSheet1()
+	argsDeletes.Folder = GetBaseTest().remoteFolder
+
+	responseDeletes, httpResponseDeletes, errDeletes := GetBaseTest().CellsAPI.CellsSparklineGroupsDeleteWorksheetSparklineGroups(argsDeletes)
+	if errDeletes != nil {
+		t.Error(errDeletes)
+	} else if httpResponseDeletes.StatusCode < 200 || httpResponseDeletes.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t CellsSparklineGroupsDeleteWorksheetSparklineGroup - %d\n", GetBaseTest().GetTestNumber(), responseDeletes.Code)
+	}
+
 }
 
 func TestCellsPostCellCalculate(t *testing.T) {
@@ -2818,8 +2972,8 @@ func TestCellsPostClearContents(t *testing.T) {
 	args := new(CellsPostClearContentsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.StartColumn = (1)
-	args.StartRow = (1)
+	args.StartColumn = 1
+	args.StartRow = 1
 	args.EndColumn = (10)
 	args.EndRow = (10)
 	args.Folder = GetBaseTest().remoteFolder
@@ -2865,7 +3019,7 @@ func TestCellsPostColumnStyle(t *testing.T) {
 	args := new(CellsPostColumnStyleOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.ColumnIndex = (1)
+	args.ColumnIndex = 1
 	args.Style = new(Style)
 	args.Style.Custom = "##.#"
 	args.Folder = GetBaseTest().remoteFolder
@@ -2892,8 +3046,8 @@ func TestCellsPostCopyCellIntoCell(t *testing.T) {
 	args.DestCellName = "C1"
 	args.Worksheet = GetSheet2()
 	args.Cellname = "A1"
-	args.Row = (1)
-	args.Column = (1)
+	args.Row = 1
+	args.Column = 1
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPostCopyCellIntoCell(args)
@@ -2915,9 +3069,9 @@ func TestCellsPostCopyWorksheetColumns(t *testing.T) {
 	args := new(CellsPostCopyWorksheetColumnsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.ColumnNumber = (1)
+	args.ColumnNumber = 1
 	args.DestinationColumnIndex = (21)
-	args.SourceColumnIndex = (1)
+	args.SourceColumnIndex = 1
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPostCopyWorksheetColumns(args)
@@ -2939,7 +3093,7 @@ func TestCellsPostCopyWorksheetRows(t *testing.T) {
 	args := new(CellsPostCopyWorksheetRowsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.DestinationRowIndex = (1)
+	args.DestinationRowIndex = 1
 	args.SourceRowIndex = (10)
 	args.RowNumber = (3)
 	args.Folder = GetBaseTest().remoteFolder
@@ -2963,7 +3117,7 @@ func TestCellsPostGroupWorksheetColumns(t *testing.T) {
 	args := new(CellsPostGroupWorksheetColumnsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.FirstIndex = (1)
+	args.FirstIndex = 1
 	args.LastIndex = (10)
 	args.Hide = true
 	args.Folder = GetBaseTest().remoteFolder
@@ -2987,7 +3141,7 @@ func TestCellsPostGroupWorksheetRows(t *testing.T) {
 	args := new(CellsPostGroupWorksheetRowsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.FirstIndex = (1)
+	args.FirstIndex = 1
 	args.LastIndex = (10)
 	args.Hide = true
 	args.Folder = GetBaseTest().remoteFolder
@@ -3011,7 +3165,7 @@ func TestCellsPostHideWorksheetColumns(t *testing.T) {
 	args := new(CellsPostHideWorksheetColumnsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.StartColumn = (1)
+	args.StartColumn = 1
 	args.TotalColumns = (10)
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -3034,7 +3188,7 @@ func TestCellsPostHideWorksheetRows(t *testing.T) {
 	args := new(CellsPostHideWorksheetRowsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Startrow = (1)
+	args.Startrow = 1
 	args.TotalRows = (10)
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -3128,7 +3282,7 @@ func TestCellsPostSetWorksheetColumnWidth(t *testing.T) {
 	args := new(CellsPostSetWorksheetColumnWidthOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.ColumnIndex = (0)
+	args.ColumnIndex = 0
 	args.Width = 64.0
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -3151,7 +3305,7 @@ func TestCellsPostUngroupWorksheetColumns(t *testing.T) {
 	args := new(CellsPostUngroupWorksheetColumnsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.FirstIndex = (1)
+	args.FirstIndex = 1
 	args.LastIndex = (10)
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -3174,7 +3328,7 @@ func TestCellsPostUngroupWorksheetRows(t *testing.T) {
 	args := new(CellsPostUngroupWorksheetRowsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.FirstIndex = (1)
+	args.FirstIndex = 1
 	args.IsAll = true
 	args.LastIndex = (10)
 	args.Folder = GetBaseTest().remoteFolder
@@ -3198,7 +3352,7 @@ func TestCellsPostUnhideWorksheetColumns(t *testing.T) {
 	args := new(CellsPostUnhideWorksheetColumnsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Startcolumn = (1)
+	args.Startcolumn = 1
 	args.TotalColumns = (9)
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -3221,7 +3375,7 @@ func TestCellsPostUnhideWorksheetRows(t *testing.T) {
 	args := new(CellsPostUnhideWorksheetRowsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Startrow = (0)
+	args.Startrow = 0
 	args.TotalRows = (10)
 	args.Height = 19.0
 	args.Folder = GetBaseTest().remoteFolder
@@ -3293,7 +3447,7 @@ func TestCellsPostUpdateWorksheetRow(t *testing.T) {
 	args := new(CellsPostUpdateWorksheetRowOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.RowIndex = (1)
+	args.RowIndex = 1
 	args.Height = 64.0
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -3341,8 +3495,8 @@ func TestCellsPostWorksheetMerge(t *testing.T) {
 	args := new(CellsPostWorksheetMergeOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.StartColumn = (0)
-	args.StartRow = (0)
+	args.StartColumn = 0
+	args.StartRow = 0
 	args.TotalColumns = (10)
 	args.TotalRows = (10)
 	args.Folder = GetBaseTest().remoteFolder
@@ -3366,8 +3520,8 @@ func TestCellsPostWorksheetUnmerge(t *testing.T) {
 	args := new(CellsPostWorksheetUnmergeOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.StartColumn = (1)
-	args.StartRow = (1)
+	args.StartColumn = 1
+	args.StartRow = 1
 	args.TotalColumns = (10)
 	args.TotalRows = (10)
 	args.Folder = GetBaseTest().remoteFolder
@@ -3497,7 +3651,7 @@ func TestCellsPutInsertWorksheetColumns(t *testing.T) {
 	args := new(CellsPutInsertWorksheetColumnsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.ColumnIndex = (1)
+	args.ColumnIndex = 1
 	args.Columns = (10)
 	args.UpdateReference = true
 	args.Folder = GetBaseTest().remoteFolder
@@ -3521,7 +3675,7 @@ func TestCellsPutInsertWorksheetRow(t *testing.T) {
 	args := new(CellsPutInsertWorksheetRowOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.RowIndex = (0)
+	args.RowIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsPutInsertWorksheetRow(args)
@@ -3543,7 +3697,7 @@ func TestCellsPutInsertWorksheetRows(t *testing.T) {
 	args := new(CellsPutInsertWorksheetRowsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Startrow = (1)
+	args.Startrow = 1
 	args.TotalRows = (10)
 	args.UpdateReference = true
 	args.Folder = GetBaseTest().remoteFolder
@@ -3568,8 +3722,8 @@ func TestCellsRangesGetWorksheetCellsRangeValue(t *testing.T) {
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
 	args.ColumnCount = (3)
-	args.FirstColumn = (1)
-	args.FirstRow = (1)
+	args.FirstColumn = 1
+	args.FirstRow = 1
 	args.RowCount = (3)
 	args.Namerange = GetRange()
 	args.Folder = GetBaseTest().remoteFolder
@@ -3701,12 +3855,12 @@ func TestCellsShapesPutWorksheetShape(t *testing.T) {
 	args := new(CellsShapesPutWorksheetShapeOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.ShapeDTO =  nil
+	args.ShapeDTO = nil
 	args.DrawingType = "arc"
-	args.UpperLeftColumn = (1)
-	args.UpperLeftRow = (1)
-	args.Left = (1)
-	args.Top = (1)
+	args.UpperLeftColumn = 1
+	args.UpperLeftRow = 1
+	args.Left = 1
+	args.Top = 1
 	args.Height = (100)
 	args.Width = (100)
 	args.Folder = GetBaseTest().remoteFolder
@@ -3732,8 +3886,8 @@ func TestCellsRangesPostWorksheetCellsRangeColumnWidth(t *testing.T) {
 	args.SheetName = GetSheet1()
 	args.Range_ = new(ModelRange)
 	args.Range_.Worksheet = GetSheet1()
-	args.Range_.FirstColumn = (1)
-	args.Range_.FirstRow = (1)
+	args.Range_.FirstColumn = 1
+	args.Range_.FirstRow = 1
 	args.Range_.ColumnWidth = 100.0
 	args.Range_.RowHeight = 100.0
 	args.Range_.RowCount = (100)
@@ -3762,8 +3916,8 @@ func TestCellsRangesPostWorksheetCellsRangeMerge(t *testing.T) {
 	args.SheetName = GetSheet1()
 	args.Range_ = new(ModelRange)
 	args.Range_.Worksheet = GetSheet1()
-	args.Range_.FirstColumn = (1)
-	args.Range_.FirstRow = (1)
+	args.Range_.FirstColumn = 1
+	args.Range_.FirstRow = 1
 	args.Range_.ColumnWidth = 100.0
 	args.Range_.RowHeight = 100.0
 	args.Range_.RowCount = (100)
@@ -3793,8 +3947,8 @@ func TestCellsRangesPostWorksheetCellsRangeMoveTo(t *testing.T) {
 	args.DestRow = (10)
 	args.Range_ = new(ModelRange)
 	args.Range_.Worksheet = GetSheet1()
-	args.Range_.FirstColumn = (1)
-	args.Range_.FirstRow = (1)
+	args.Range_.FirstColumn = 1
+	args.Range_.FirstRow = 1
 	args.Range_.ColumnWidth = 100.0
 	args.Range_.RowHeight = 100.0
 	args.Range_.RowCount = (100)
@@ -3824,8 +3978,8 @@ func TestCellsRangesPostWorksheetCellsRangeOutlineBorder(t *testing.T) {
 	args.RangeOperate = new(RangeSetOutlineBorderRequest)
 	args.RangeOperate.Range_ = new(ModelRange)
 	args.RangeOperate.Range_.Worksheet = GetSheet1()
-	args.RangeOperate.Range_.FirstColumn = (1)
-	args.RangeOperate.Range_.FirstRow = (1)
+	args.RangeOperate.Range_.FirstColumn = 1
+	args.RangeOperate.Range_.FirstRow = 1
 	args.RangeOperate.Range_.ColumnWidth = 100.0
 	args.RangeOperate.Range_.RowHeight = 100.0
 	args.RangeOperate.Range_.RowCount = (100)
@@ -3860,8 +4014,8 @@ func TestCellsRangesPostWorksheetCellsRangeRowHeight(t *testing.T) {
 	args.SheetName = GetSheet1()
 	args.Range_ = new(ModelRange)
 	args.Range_.Worksheet = GetSheet1()
-	args.Range_.FirstColumn = (1)
-	args.Range_.FirstRow = (1)
+	args.Range_.FirstColumn = 1
+	args.Range_.FirstRow = 1
 	args.Range_.ColumnWidth = 100.0
 	args.Range_.RowHeight = 100.0
 	args.Range_.RowCount = (100)
@@ -3891,8 +4045,8 @@ func TestCellsRangesPostWorksheetCellsRangeStyle(t *testing.T) {
 	args.RangeOperate = new(RangeSetStyleRequest)
 	args.RangeOperate.Range_ = new(ModelRange)
 	args.RangeOperate.Range_.Worksheet = GetSheet1()
-	args.RangeOperate.Range_.FirstColumn = (1)
-	args.RangeOperate.Range_.FirstRow = (1)
+	args.RangeOperate.Range_.FirstColumn = 1
+	args.RangeOperate.Range_.FirstRow = 1
 	args.RangeOperate.Range_.ColumnWidth = 100.0
 	args.RangeOperate.Range_.RowHeight = 100.0
 	args.RangeOperate.Range_.RowCount = (100)
@@ -3922,8 +4076,8 @@ func TestCellsRangesPostWorksheetCellsRangeUnmerge(t *testing.T) {
 	args.SheetName = GetSheet1()
 	args.Range_ = new(ModelRange)
 	args.Range_.Worksheet = GetSheet1()
-	args.Range_.FirstColumn = (1)
-	args.Range_.FirstRow = (1)
+	args.Range_.FirstColumn = 1
+	args.Range_.FirstRow = 1
 	args.Range_.ColumnWidth = 100.0
 	args.Range_.RowHeight = 100.0
 	args.Range_.RowCount = (100)
@@ -3954,8 +4108,8 @@ func TestCellsRangesPostWorksheetCellsRangeValue(t *testing.T) {
 	args.SetStyle = true
 	args.Range_ = new(ModelRange)
 	args.Range_.Worksheet = GetSheet1()
-	args.Range_.FirstColumn = (1)
-	args.Range_.FirstRow = (1)
+	args.Range_.FirstColumn = 1
+	args.Range_.FirstRow = 1
 	args.Range_.ColumnWidth = 100.0
 	args.Range_.RowHeight = 100.0
 	args.Range_.RowCount = (100)
@@ -3985,16 +4139,16 @@ func TestCellsRangesPostWorksheetCellsRanges(t *testing.T) {
 	args.RangeOperate.Operate = "copydata"
 	args.RangeOperate.Source = new(ModelRange)
 	args.RangeOperate.Source.Worksheet = GetSheet1()
-	args.RangeOperate.Source.FirstColumn = (1)
-	args.RangeOperate.Source.FirstRow = (1)
+	args.RangeOperate.Source.FirstColumn = 1
+	args.RangeOperate.Source.FirstRow = 1
 	args.RangeOperate.Source.ColumnWidth = 100.0
 	args.RangeOperate.Source.RowHeight = 100.0
 	args.RangeOperate.Source.RowCount = (100)
 	args.RangeOperate.Source.ColumnCount = (100)
 	args.RangeOperate.Target = new(ModelRange)
 	args.RangeOperate.Target.Worksheet = GetSheet1()
-	args.RangeOperate.Target.FirstColumn = (1)
-	args.RangeOperate.Target.FirstRow = (1)
+	args.RangeOperate.Target.FirstColumn = 1
+	args.RangeOperate.Target.FirstRow = 1
 	args.RangeOperate.Target.ColumnWidth = 100.0
 	args.RangeOperate.Target.RowHeight = 100.0
 	args.RangeOperate.Target.RowCount = (100)
@@ -4295,7 +4449,7 @@ func TestCellsWorkbookPostAutofitWorkbookRows(t *testing.T) {
 
 	args := new(CellsWorkbookPostAutofitWorkbookRowsOpts)
 	args.Name = GetBook1()
-	args.StartRow = (0)
+	args.StartRow = 0
 	args.EndRow = (10)
 	args.OnlyAuto = true
 	args.Folder = GetBaseTest().remoteFolder
@@ -4575,7 +4729,7 @@ func TestCellsWorksheetValidationsDeleteWorksheetValidation(t *testing.T) {
 	args := new(CellsWorksheetValidationsDeleteWorksheetValidationOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.ValidationIndex = (0)
+	args.ValidationIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetValidationsDeleteWorksheetValidation(args)
@@ -4639,7 +4793,7 @@ func TestCellsWorksheetValidationsPostWorksheetValidation(t *testing.T) {
 	args := new(CellsWorksheetValidationsPostWorksheetValidationOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.ValidationIndex = (0)
+	args.ValidationIndex = 0
 	args.Validation = new(Validation)
 	args.Validation.Formula1 = "=(OR(A1=\"Yes\",A1=\"No\"))"
 	args.Validation.Type_ = "Custom"
@@ -4796,8 +4950,8 @@ func TestCellsWorksheetsDeleteWorksheetFreezePanes(t *testing.T) {
 	args := new(CellsWorksheetsDeleteWorksheetFreezePanesOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Row = (1)
-	args.Column = (1)
+	args.Row = 1
+	args.Column = 1
 	args.FreezedRows = (10)
 	args.FreezedColumns = (10)
 	args.Folder = GetBaseTest().remoteFolder
@@ -4886,7 +5040,7 @@ func TestCellsWorksheetsGetWorksheetForPageIndex(t *testing.T) {
 	args := new(CellsWorksheetsGetWorksheetOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.PageIndex = (1)
+	args.PageIndex = 1
 	args.Format = "pdf"
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -4951,7 +5105,7 @@ func TestCellsWorksheetsGetWorksheetMergedCell(t *testing.T) {
 	args := new(CellsWorksheetsGetWorksheetMergedCellOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.MergedCellIndex = (0)
+	args.MergedCellIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetsGetWorksheetMergedCell(args)
@@ -5036,9 +5190,9 @@ func TestCellsWorksheetsPostAutofitWorksheetColumns(t *testing.T) {
 	args := new(CellsWorksheetsPostAutofitWorksheetColumnsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.FirstColumn = (1)
+	args.FirstColumn = 1
 	args.LastColumn = (11)
-	args.FirstRow = (1)
+	args.FirstRow = 1
 	args.LastRow = (10)
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -5061,9 +5215,9 @@ func TestCellsWorksheetsPostAutofitWorksheetRow(t *testing.T) {
 	args := new(CellsWorksheetsPostAutofitWorksheetRowOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.FirstColumn = (1)
+	args.FirstColumn = 1
 	args.LastColumn = (11)
-	args.RowIndex = (1)
+	args.RowIndex = 1
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetsPostAutofitWorksheetRow(args)
@@ -5085,7 +5239,7 @@ func TestCellsWorksheetsPostAutofitWorksheetRows(t *testing.T) {
 	args := new(CellsWorksheetsPostAutofitWorksheetRowsOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.StartRow = (1)
+	args.StartRow = 1
 	args.EndRow = (11)
 	args.OnlyAuto = true
 	args.Folder = GetBaseTest().remoteFolder
@@ -5109,7 +5263,7 @@ func TestCellsWorksheetValidationsGetWorksheetValidation(t *testing.T) {
 	args := new(CellsWorksheetValidationsGetWorksheetValidationOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.ValidationIndex = (0)
+	args.ValidationIndex = 0
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetValidationsGetWorksheetValidation(args)
@@ -5334,7 +5488,7 @@ func TestCellsWorksheetsPutAddNewWorksheet(t *testing.T) {
 	args := new(CellsWorksheetsPutAddNewWorksheetOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Position = (1)
+	args.Position = 1
 	args.Sheettype = "VB"
 	args.Folder = GetBaseTest().remoteFolder
 
@@ -5449,10 +5603,10 @@ func TestCellsWorksheetsPutWorksheetFreezePanes(t *testing.T) {
 	args := new(CellsWorksheetsPutWorksheetFreezePanesOpts)
 	args.Name = GetBook1()
 	args.SheetName = GetSheet1()
-	args.Row = (1)
-	args.Column = (1)
-	args.FreezedRows = (1)
-	args.FreezedColumns = (1)
+	args.Row = 1
+	args.Column = 1
+	args.FreezedRows = 1
+	args.FreezedColumns = 1
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetsPutWorksheetFreezePanes(args)
