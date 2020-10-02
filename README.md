@@ -1,6 +1,6 @@
 # Go  API client for asposecellscloud
 
-[Aspose.Cells Cloud SDK for Go](https://products.aspose.cloud/cells/go) empowers your Go applications to connect with excel document formats. The APIs let engineers read, convert, build, alter and control the substance of the [excel document formats](https://docs.aspose.cloud/display/cellscloud/Supported+File+Formats) without any office software installed on the machine..
+[Aspose.Cells Cloud SDK for Go](https://products.aspose.cloud/cells/go) empowers your Go applications to connect with excel document formats. The APIs let engineers read, convert, build, alter and control the substance of the [excel document formats](https://docs.aspose.cloud/cells/supported-file-formats/) without any office software installed on the machine..
 
 ## Spreadsheet Processing Features
 
@@ -132,7 +132,7 @@ name := GetBook1()
 
 All Aspose.Cells Cloud SDKs are licensed under [MIT License](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE).
 
-[Product Page](https://products.aspose.cloud/cells/go) | [Documentation](https://docs.aspose.cloud/display/cellscloud/Home) | [Live Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Code Samples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
+[Product Page](https://products.aspose.cloud/cells/go) | [Documentation](https://docs.aspose.cloud/cells/) | [Live Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Code Samples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
 
 
 
