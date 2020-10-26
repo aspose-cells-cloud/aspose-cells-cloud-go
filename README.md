@@ -20,11 +20,10 @@
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## Enhancements in Version 20.9
+## Enhancements in Version 20.10
 
-- Enhanced chart API.
-- Added API to update Pivot Fields.
-- Supported sparkline groups.
+- Support to upload large file.
+- Enhancement for post sparkline group API.
 
 ## Read & Write Spreadsheet Formats
 
