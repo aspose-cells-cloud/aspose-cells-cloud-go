@@ -58,7 +58,7 @@ func NewBaseTest() *BaseTest {
 		remoteFolder:        "GoTest",
 		localTestDataFolder: "TestData/",
 		TestNumber:          0,
-		// Get App key and App SID from https://aspose.cloud
+		// Get Client Secret and Client Id from https://aspose.cloud
 		CellsAPI: NewCellsApiService(os.Getenv("CellsCloudTestClientId"), os.Getenv("CellsCloudTestClientSecret"), os.Getenv("CellsCloudTestApiBaseUrl"), "v3.0"),
 	}
 	return bt

@@ -57,7 +57,7 @@ First, create an account at [Aspose for Cloud](https://dashboard.aspose.cloud/#/
 
 ```golang
 func GetDocumentCircleAnnotations() (CircleAnnotationsResponse, *http.Response, error) {
-    cellsAPI := NewCellsApiService("AppSid", "AppKey", "https://api.aspose.cloud","v3.0")
+    cellsAPI := NewCellsApiService("clientId", "clientSecret", "https://api.aspose.cloud","v3.0")
 	name := "Book1.xlsx"	
 
 	args := new(UploadFileOpts)

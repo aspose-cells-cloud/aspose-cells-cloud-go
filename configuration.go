@@ -72,20 +72,20 @@ type Configuration struct {
 	DefaultHeader 		map[string]string `json:"defaultHeader,omitempty"`
 	UserAgent     		string            `json:"userAgent,omitempty"`
 	HTTPClient    		*http.Client
-	AppKey        		string
-    AppSid        		string
+	ClientSecret        		string
+    ClientId        	string
     AccessToken   		string
 	GetAccessTokenTime 	time.Time
 }
 
-func NewConfiguration(appSid string, appKey string, basePath string, version string) *Configuration {
+func NewConfiguration(clientId string, clientSecret string, basePath string, version string) *Configuration {
 	cfg := &Configuration{
 		BasePath:      "https://api.aspose.cloud",
 		Version:       "v3.0",
 		DefaultHeader: make(map[string]string),
 		UserAgent:     "Aspose Cells Cloud SDK for Go",
-		AppKey: appKey,
-        AppSid: appSid,
+		ClientSecret: clientSecret,
+        ClientId: clientId,
 	}
 	if basePath != "" {
         cfg.BasePath = basePath

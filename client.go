@@ -407,7 +407,7 @@ func strlen(s string) (int) {
 
 // addAuth add Authorization header to request
 func (a *APIClient) addAuth(request *http.Request) (err error) {
-    if(a.cfg.AppKey=="" && a.cfg.AppSid==""){
+    if(a.cfg.ClientSecret=="" && a.cfg.ClientId==""){
         return nil
     }
        if (a.cfg.AccessToken == "") {
@@ -434,8 +434,8 @@ func (a *APIClient) RequestOauthToken() (error) {
 	   }
        resp, err := http.PostForm(getAccessTokeUri, url.Values{
                "grant_type": {"client_credentials"},
-               "client_id": {a.cfg.AppSid},
-               "client_secret": {a.cfg.AppKey}})
+               "client_id": {a.cfg.ClientId},
+               "client_secret": {a.cfg.ClientSecret}})
 
        if err != nil {
                return err

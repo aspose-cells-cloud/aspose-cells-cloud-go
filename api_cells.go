@@ -35,11 +35,11 @@ func Version() {
 }
 
 /* Create Instance of CellsApiService
- @param appSid string Application SID
- @param appKey string Application Key
+ @param clientId string Client Id
+ @param clientSecret string Client Secret
  @param basePath string Base service path. Set "" for default
  @return *CellsApiService */
- func NewCellsApiService(appSid string, appKey string, opts ...string) *CellsApiService {
+ func NewCellsApiService(clientId string, clientSecret string, opts ...string) *CellsApiService {
 	var basePath = ""
 	var version = ""
 	for i, v := range opts {
@@ -50,7 +50,7 @@ func Version() {
 			version = v
 		}
 	}	 
-	config := NewConfiguration(appSid, appKey, basePath, version)
+	config := NewConfiguration(clientId, clientSecret, basePath, version)
 	client := NewAPIClient(config)
 	return client.CellsApi
 }
@@ -22077,8 +22077,8 @@ func (a *CellsApiService) MoveFolder(    localVarOptionals *MoveFolderOpts) (*ht
 /* 
 CellsApiService Get Access token
  * @param grantType Grant Type
- * @param clientId App SID
- * @param clientSecret App Key
+ * @param clientId Client Id
+ * @param clientSecret Client Secret
 
 @return AccessTokenResponse
 */

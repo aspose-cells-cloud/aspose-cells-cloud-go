@@ -10570,8 +10570,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **grantType** | **string**| Grant Type | 
-  **clientId** | **string**| App SID | 
-  **clientSecret** | **string**| App Key | 
+  **clientId** | **string**| Client Id | 
+  **clientSecret** | **string**|  Client Secret | 
 
 ### Return type
 

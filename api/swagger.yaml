@@ -9697,13 +9697,13 @@ paths:
         x-exportParamName: "GrantType"
       - name: "client_id"
         in: "formData"
-        description: "App SID"
+        description: "Client Id"
         required: true
         type: "string"
         x-exportParamName: "ClientId"
       - name: "client_secret"
         in: "formData"
-        description: "App Key"
+        description: "Client Secret"
         required: true
         type: "string"
         x-exportParamName: "ClientSecret"
@@ -14458,12 +14458,12 @@ securityDefinitions:
     flow: "implicit"
     scopes:
       write:pets: "modify pets in your account"
-  appsid:
-    type: "apiKey"
-    name: "appsid"
+  clientId:
+    type: "clientSecret"
+    name: "clientId"
     in: "query"
   signature:
-    type: "apiKey"
+    type: "clientSecret"
     name: "signature"
     in: "query"
 definitions:
