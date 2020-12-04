@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "20.9"
+  version: "20.11.1"
   title: "Aspose.Cells Cloud SDK APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
