@@ -407,6 +407,9 @@ func strlen(s string) (int) {
 
 // addAuth add Authorization header to request
 func (a *APIClient) addAuth(request *http.Request) (err error) {
+    if(a.cfg.AppKey=="" && a.cfg.AppSid==""){
+        return nil
+    }
        if (a.cfg.AccessToken == "") {
                if err := a.RequestOauthToken(); err != nil {
                        return err

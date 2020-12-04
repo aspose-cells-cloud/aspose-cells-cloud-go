@@ -26,8 +26,9 @@ import (
 	"fmt"
 	"os"
 	"testing"
+	"strconv"
 )
-
+var isDockerSDK , errcon = strconv.ParseBool( os.Getenv("CellsCloudTestIsDockerTest"))
 func TestCellsAutoFilterDeleteWorksheetDateFilter(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -385,6 +386,9 @@ func TestCellsAutoFilterPutWorksheetIconFilter(t *testing.T) {
 }
 
 func TestCellsAutoshapesGetWorksheetAutoshape(t *testing.T) {
+	if isDockerSDK	{
+		return
+	}
 	name := GetMyDoc()
 	if err := GetBaseTest().UploadFile(name); err != nil {
 		t.Error(err)
@@ -408,6 +412,9 @@ func TestCellsAutoshapesGetWorksheetAutoshape(t *testing.T) {
 }
 
 func TestCellsAutoshapesGetWorksheetAutoshapes(t *testing.T) {
+	if isDockerSDK	{
+		return
+	}
 	name := GetMyDoc()
 	if err := GetBaseTest().UploadFile(name); err != nil {
 		t.Error(err)
@@ -4617,7 +4624,7 @@ func TestCellsWorkbookPostWorkbooksMerge(t *testing.T) {
 	}
 	args := new(CellsWorkbookPostWorkbooksMergeOpts)
 	args.Name = GetBook1()
-	args.MergeWith = GetBaseTest().remoteFolder + "/" + GetMyDoc()
+	args.MergeWith =  GetMyDoc()
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPostWorkbooksMerge(args)
@@ -5844,6 +5851,9 @@ func TestGetDiscUsage(t *testing.T) {
 }
 
 func TestGetFileVersions(t *testing.T) {
+	if isDockerSDK  {
+		return 
+	}
 	args := new(GetFileVersionsOpts)
 	args.Path = "GoTest"
 
@@ -5877,12 +5887,22 @@ func TestMoveFile(t *testing.T) {
 	if err := GetBaseTest().UploadFile(name); err != nil {
 		t.Error(err)
 	}
+	args := new(DeleteFileOpts)
+	args.Path = "GoTest/MvTest.xlsx"
 
-	args := new(MoveFileOpts)
-	args.SrcPath = "GoTest/" + GetBook1()
-	args.DestPath = "GoTest/MvTest.xlsx"
+	httpResponse, err := GetBaseTest().CellsAPI.DeleteFile(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestDeleteFile - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
+	}
+	args1 := new(MoveFileOpts)
+	args1.SrcPath = "GoTest/" + GetBook1()
+	args1.DestPath = "GoTest/MvTest.xlsx"
 
-	httpResponse, err := GetBaseTest().CellsAPI.MoveFile(args)
+	httpResponse, err = GetBaseTest().CellsAPI.MoveFile(args1)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
