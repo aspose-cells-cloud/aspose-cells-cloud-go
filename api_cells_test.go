@@ -5758,8 +5758,20 @@ func TestCellsTaskPostRunTasks(t *testing.T) {
 }
 
 func TestCopyFolder(t *testing.T) {
+	argsCF := new(CreateFolderOpts)
+	argsCF.Path = "CreatedFolder"
+
+	httpResponseCF, errCF := GetBaseTest().CellsAPI.CreateFolder(argsCF)
+	if errCF != nil {
+		t.Error(errCF)
+	} else if httpResponseCF.StatusCode < 200 || httpResponseCF.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCreateFolder - %d\n", GetBaseTest().GetTestNumber(), httpResponseCF.StatusCode)
+	}
+
 	args := new(CopyFolderOpts)
-	args.SrcPath = "Temp"
+	args.SrcPath = "CreatedFolder"
 	args.DestPath = "GoTest"
 
 	httpResponse, err := GetBaseTest().CellsAPI.CopyFolder(args)
@@ -5772,19 +5784,7 @@ func TestCopyFolder(t *testing.T) {
 	}
 }
 
-func TestCreateFolder(t *testing.T) {
-	args := new(CreateFolderOpts)
-	args.Path = "GetBookFolder"
 
-	httpResponse, err := GetBaseTest().CellsAPI.CreateFolder(args)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestCreateFolder - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
-	}
-}
 
 func TestDeleteFile(t *testing.T) {
 	name := GetBook1()
