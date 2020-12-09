@@ -5914,30 +5914,40 @@ func TestMoveFile(t *testing.T) {
 
 func TestMoveFolder(t *testing.T) {
 
-	args := new(MoveFolderOpts)
-	args.SrcPath = "Temp"
-	args.DestPath = "Temp1"
+	args := new(CreateFolderOpts)
+	args.Path = "MovedFolder"
 
-	httpResponse, err := GetBaseTest().CellsAPI.MoveFolder(args)
+	httpResponse, err := GetBaseTest().CellsAPI.CreateFolder(args)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestMoveFolder - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
+		fmt.Printf("%d\tTestCreateFolder - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
 	}
+	argsMF := new(MoveFolderOpts)
+	argsMF.SrcPath = "MovedFolder"
+	argsMF.DestPath = "DeletedFolder"
 
-	args.SrcPath = "Temp1"
-	args.DestPath = "Temp"
-
-	httpResponse, err = GetBaseTest().CellsAPI.MoveFolder(args)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+	httpResponseMF, errMF := GetBaseTest().CellsAPI.MoveFolder(argsMF)
+	if errMF != nil {
+		t.Error(errMF)
+	} else if httpResponseMF.StatusCode < 200 || httpResponseMF.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestMoveFolder - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
+		fmt.Printf("%d\tTestMoveFolder - %d\n", GetBaseTest().GetTestNumber(), httpResponseMF.StatusCode)
 	}
+	argsDF := new(DeleteFolderOpts)
+	argsDF.Path = "DeletedFolder"
+	httpResponseDF, errDF := GetBaseTest().CellsAPI.DeleteFolder(argsDF)
+	if errDF != nil {
+		t.Error(errDF)
+	} else if httpResponseDF.StatusCode < 200 || httpResponseDF.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestDeleteFile - %d\n", GetBaseTest().GetTestNumber(), httpResponseDF.StatusCode)
+	}
+	
 }
 
 func TestObjectExists(t *testing.T) {
