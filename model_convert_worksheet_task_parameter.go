@@ -22,8 +22,13 @@
 
 package asposecellscloud
 
-type AutoShapeResponse struct {
-	Status string `json:"Status,omitempty" xml:"Status"`
-	Code int32 `json:"Code" xml:"Code"`
-	AutoShape *AutoShape `json:"AutoShape,omitempty" xml:"AutoShape"`
+type ConvertWorksheetTaskParameter struct {
+	Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
+	Sheet string `json:"Sheet,omitempty" xml:"Sheet"`
+	Target *FileSource `json:"Target,omitempty" xml:"Target"`
+	Format string `json:"Format,omitempty" xml:"Format"`
+	Area string `json:"Area,omitempty" xml:"Area"`
+	PageIndex int64 `json:"PageIndex,omitempty" xml:"PageIndex"`
+	VerticalResolution int64 `json:"VerticalResolution,omitempty" xml:"VerticalResolution"`
+	HorizontalResolution int64 `json:"HorizontalResolution,omitempty" xml:"HorizontalResolution"`
 }
