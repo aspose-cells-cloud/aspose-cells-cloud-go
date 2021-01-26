@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2020 Aspose.Cells Cloud
+ *  Copyright (c) 2021 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -4172,6 +4172,53 @@ func TestCellsRangesPostWorksheetCellsRanges(t *testing.T) {
 		t.Fail()
 	} else {
 		fmt.Printf("%d\tTestCellsRangesPostWorksheetCellsRanges - %d\n", GetBaseTest().GetTestNumber(), response.Code)
+	}
+}
+
+func TestCellsRangesDeleteWorksheetCellsRange(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsRangesDeleteWorksheetCellsRangeOpts)
+	args.Name = GetBook1()
+	args.SheetName = GetSheet1()
+	args.Range_ = "A1:B4"
+	args.Shift = "Up"
+	args.Folder = GetBaseTest().remoteFolder
+
+	response, httpResponse, err := GetBaseTest().CellsAPI.CellsRangesDeleteWorksheetCellsRange(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsRangesDeleteWorksheetCellsRange - %d\n", GetBaseTest().GetTestNumber(), response.Code)
+	}
+}
+
+
+func TestCellsRangesPutWorksheetCellsRange(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsRangesPutWorksheetCellsRangeOpts)
+	args.Name = GetBook1()
+	args.SheetName = GetSheet1()
+	args.Range_ = "A1:B4"
+	args.Shift = "Down"
+	args.Folder = GetBaseTest().remoteFolder
+
+	response, httpResponse, err := GetBaseTest().CellsAPI.CellsRangesPutWorksheetCellsRange(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsRangesPutWorksheetCellsRange - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
 

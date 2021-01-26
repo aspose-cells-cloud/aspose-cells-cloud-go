@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2020 Aspose.Cells Cloud
+ *  Copyright (c) 2021 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -72,8 +72,8 @@ type Configuration struct {
 	DefaultHeader 		map[string]string `json:"defaultHeader,omitempty"`
 	UserAgent     		string            `json:"userAgent,omitempty"`
 	HTTPClient    		*http.Client
-	ClientSecret        		string
-    ClientId        	string
+	ClientSecret   		string
+    ClientId       		string
     AccessToken   		string
 	GetAccessTokenTime 	time.Time
 }

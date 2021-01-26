@@ -20,9 +20,10 @@
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## Enhancements in Version 20.11
+## Feature & Enhancements in Version 21.1
 
-- Support Aspose.Cells Cloud for Docker.
+- Support to convert worksheet on task API
+- Support to add and delete cell or range in worksheet.
 
 ## Read & Write Spreadsheet Formats
 
@@ -57,7 +58,7 @@ First, create an account at [Aspose for Cloud](https://dashboard.aspose.cloud/#/
 
 ```golang
 func GetDocumentCircleAnnotations() (CircleAnnotationsResponse, *http.Response, error) {
-    cellsAPI := NewCellsApiService("clientId", "clientSecret", "https://api.aspose.cloud","v3.0")
+    cellsAPI := NewCellsApiService("AppSid", "AppKey", "https://api.aspose.cloud","v3.0")
 	name := "Book1.xlsx"	
 
 	args := new(UploadFileOpts)

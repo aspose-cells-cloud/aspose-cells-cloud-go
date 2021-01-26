@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2020 Aspose.Cells Cloud
+ *  Copyright (c) 2021 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -31,15 +31,15 @@ import (
 	"os"
 )
 func Version() {
-	fmt.Println("---Version: 20.11.0---")
+	fmt.Println("---Version: 21.1.0---")
 }
 
 /* Create Instance of CellsApiService
- @param clientId string Client Id
- @param clientSecret string Client Secret
+ @param appSid string Application SID
+ @param appKey string Application Key
  @param basePath string Base service path. Set "" for default
  @return *CellsApiService */
- func NewCellsApiService(clientId string, clientSecret string, opts ...string) *CellsApiService {
+ func NewCellsApiService(appSid string, appKey string, opts ...string) *CellsApiService {
 	var basePath = ""
 	var version = ""
 	for i, v := range opts {
@@ -50,7 +50,7 @@ func Version() {
 			version = v
 		}
 	}	 
-	config := NewConfiguration(clientId, clientSecret, basePath, version)
+	config := NewConfiguration(appSid, appKey, basePath, version)
 	client := NewAPIClient(config)
 	return client.CellsApi
 }
@@ -13380,6 +13380,91 @@ func (a *CellsApiService) CellsPutInsertWorksheetRows(    localVarOptionals *Cel
 }
 
 /* 
+CellsApiService Delete range in the worksheet
+ * @param name workbook name
+ * @param sheetName worksheet name
+ * @param range_ range
+ * @param shift Represent the shift options when deleting a range of cells. (Left,Up) 
+ * @param optional nil or *CellsRangesDeleteWorksheetCellsRangeOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -  Workbook folder.
+     * @param "StorageName" (optional.String) -  storage name.
+
+@return CellsCloudResponse
+*/
+
+
+type CellsRangesDeleteWorksheetCellsRangeOpts struct { 
+	Name string
+	SheetName string
+	Range_ string
+	Shift string
+	Folder string
+	StorageName string
+}
+
+
+func (a *CellsApiService) CellsRangesDeleteWorksheetCellsRange(    localVarOptionals *CellsRangesDeleteWorksheetCellsRangeOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Delete")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/ranges"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	localVarQueryParams.Add("range", parameterToString(localVarOptionals.Range_, ""))
+	localVarQueryParams.Add("shift", parameterToString(localVarOptionals.Shift, ""))
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/* 
 CellsApiService Get cells list in a range by range name or row column indexes  
  * @param name workbook name
  * @param sheetName worksheet name
@@ -14263,6 +14348,91 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRanges(    localVarOption
 	if localVarOptionals != nil &&  &localVarOptionals.RangeOperate != nil {
 		
 		localVarPostBody = &localVarOptionals.RangeOperate
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/* 
+CellsApiService Insert range in the worksheet
+ * @param name workbook name
+ * @param sheetName worksheet name
+ * @param range_ range
+ * @param shift Represent the shift options when deleting a range of cells. (Right,Down) 
+ * @param optional nil or *CellsRangesPutWorksheetCellsRangeOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -  Workbook folder.
+     * @param "StorageName" (optional.String) -  storage name.
+
+@return CellsCloudResponse
+*/
+
+
+type CellsRangesPutWorksheetCellsRangeOpts struct { 
+	Name string
+	SheetName string
+	Range_ string
+	Shift string
+	Folder string
+	StorageName string
+}
+
+
+func (a *CellsApiService) CellsRangesPutWorksheetCellsRange(    localVarOptionals *CellsRangesPutWorksheetCellsRangeOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Put")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/ranges"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	localVarQueryParams.Add("range", parameterToString(localVarOptionals.Range_, ""))
+	localVarQueryParams.Add("shift", parameterToString(localVarOptionals.Shift, ""))
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -22077,8 +22247,8 @@ func (a *CellsApiService) MoveFolder(    localVarOptionals *MoveFolderOpts) (*ht
 /* 
 CellsApiService Get Access token
  * @param grantType Grant Type
- * @param clientId Client Id
- * @param clientSecret Client Secret
+ * @param clientId App SID
+ * @param clientSecret App Key
 
 @return AccessTokenResponse
 */
