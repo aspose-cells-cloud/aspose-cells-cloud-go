@@ -80,7 +80,7 @@ type Configuration struct {
 
 func NewConfiguration(clientId string, clientSecret string, basePath string, version string) *Configuration {
 	cfg := &Configuration{
-		BasePath:      "https://api.aspose.cloud",
+		BasePath:      "https://api.aspose.cloud/v3.0",
 		Version:       "v3.0",
 		DefaultHeader: make(map[string]string),
 		UserAgent:     "Aspose Cells Cloud SDK for Go",

@@ -24,7 +24,7 @@ package asposecellscloud
 
 type ChartOperateParameter struct {
 	OperateType string `json:"OperateType,omitempty" xml:"OperateType"`
-	String_ string `json:"string,omitempty" xml:"string"`
+	Title string `json:"Title,omitempty" xml:"Title"`
 	Area string `json:"Area,omitempty" xml:"Area"`
 	CategoryData string `json:"CategoryData,omitempty" xml:"CategoryData"`
 	UpperLeftRow int64 `json:"UpperLeftRow,omitempty" xml:"UpperLeftRow"`

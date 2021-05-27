@@ -31,7 +31,7 @@ import (
 	"os"
 )
 func Version() {
-	fmt.Println("---Version: 21.1.0---")
+	fmt.Println("---Version: 21.5.0---")
 }
 
 /* Create Instance of CellsApiService
@@ -3777,7 +3777,7 @@ CellsApiService Delete worksheet columns.
      * @param "Folder" (optional.String) -  The workbook folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return ColumnsResponse
+@return CellsCloudResponse
 */
 
 
@@ -3792,13 +3792,13 @@ type CellsDeleteWorksheetColumnsOpts struct {
 }
 
 
-func (a *CellsApiService) CellsDeleteWorksheetColumns(    localVarOptionals *CellsDeleteWorksheetColumnsOpts) (ColumnsResponse, *http.Response, error) {
+func (a *CellsApiService) CellsDeleteWorksheetColumns(    localVarOptionals *CellsDeleteWorksheetColumnsOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ColumnsResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -11745,7 +11745,7 @@ CellsApiService Set worksheet column width.
      * @param "Folder" (optional.String) -  The workbook folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return ColumnResponse
+@return CellsCloudResponse
 */
 
 
@@ -11759,13 +11759,13 @@ type CellsPostSetWorksheetColumnWidthOpts struct {
 }
 
 
-func (a *CellsApiService) CellsPostSetWorksheetColumnWidth(    localVarOptionals *CellsPostSetWorksheetColumnWidthOpts) (ColumnResponse, *http.Response, error) {
+func (a *CellsApiService) CellsPostSetWorksheetColumnWidth(    localVarOptionals *CellsPostSetWorksheetColumnWidthOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ColumnResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -13126,7 +13126,7 @@ CellsApiService Insert worksheet columns.
      * @param "Folder" (optional.String) -  The workbook folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return ColumnsResponse
+@return CellsCloudResponse
 */
 
 
@@ -13141,13 +13141,13 @@ type CellsPutInsertWorksheetColumnsOpts struct {
 }
 
 
-func (a *CellsApiService) CellsPutInsertWorksheetColumns(    localVarOptionals *CellsPutInsertWorksheetColumnsOpts) (ColumnsResponse, *http.Response, error) {
+func (a *CellsApiService) CellsPutInsertWorksheetColumns(    localVarOptionals *CellsPutInsertWorksheetColumnsOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ColumnsResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -16688,6 +16688,99 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookTextItems(    localVarOptional
 }
 
 /* 
+CellsApiService Autofit workbook columns.
+ * @param name Document name.
+ * @param optional nil or *CellsWorkbookPostAutofitWorkbookColumnsOpts - Optional Parameters:
+     * @param "AutoFitterOptions" (optional.Interface of AutoFitterOptions) -  Auto Fitter Options.
+     * @param "StartColumn" (optional.Int32) -  Start column.
+     * @param "EndColumn" (optional.Int32) -  End column.
+     * @param "Folder" (optional.String) -  Document&#39;s folder.
+     * @param "StorageName" (optional.String) -  storage name.
+
+@return CellsCloudResponse
+*/
+
+
+type CellsWorkbookPostAutofitWorkbookColumnsOpts struct { 
+	Name string
+	AutoFitterOptions *AutoFitterOptions
+	StartColumn int32
+	EndColumn int32
+	Folder string
+	StorageName string
+}
+
+
+func (a *CellsApiService) CellsWorkbookPostAutofitWorkbookColumns(    localVarOptionals *CellsWorkbookPostAutofitWorkbookColumnsOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/autofitcolumns"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("startColumn", parameterToString(localVarOptionals.StartColumn, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("endColumn", parameterToString(localVarOptionals.EndColumn, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	if localVarOptionals != nil &&  &localVarOptionals.AutoFitterOptions != nil {
+		
+		localVarPostBody = &localVarOptionals.AutoFitterOptions
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/* 
 CellsApiService Autofit workbook rows.
  * @param name Document name.
  * @param optional nil or *CellsWorkbookPostAutofitWorkbookRowsOpts - Optional Parameters:
@@ -17640,7 +17733,7 @@ func (a *CellsApiService) CellsWorkbookPostWorkbooksTextSearch(    localVarOptio
 
 /* 
 CellsApiService Convert workbook from request content to some format.
- * @param workbook
+ * @param file
  * @param optional nil or *CellsWorkbookPutConvertWorkbookOpts - Optional Parameters:
      * @param "Format" (optional.String) -  The format to convert.
      * @param "Password" (optional.String) -  The workbook password.
@@ -17658,7 +17751,7 @@ type CellsWorkbookPutConvertWorkbookOpts struct {
 }
 
 
-func (a *CellsApiService) CellsWorkbookPutConvertWorkbook(   workbook *os.File ,    localVarOptionals *CellsWorkbookPutConvertWorkbookOpts) ([]byte, *http.Response, error) {
+func (a *CellsApiService) CellsWorkbookPutConvertWorkbook(   file *os.File ,    localVarOptionals *CellsWorkbookPutConvertWorkbookOpts) ([]byte, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -17700,7 +17793,7 @@ func (a *CellsApiService) CellsWorkbookPutConvertWorkbook(   workbook *os.File ,
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	var localVarFile (*os.File) =  workbook
+	var localVarFile (*os.File) =  file
 	if localVarFile != nil {
 		fbs, _ := ioutil.ReadAll(localVarFile)
 		localVarFileBytes = fbs

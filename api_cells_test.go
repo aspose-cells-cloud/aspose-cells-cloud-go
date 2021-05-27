@@ -4518,6 +4518,28 @@ func TestCellsWorkbookPostAutofitWorkbookRows(t *testing.T) {
 	}
 }
 
+func TestCellsWorkbookPostAutofitWorkbookColumns(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsWorkbookPostAutofitWorkbookColumnsOpts)
+	args.Name = GetBook1()
+	args.StartColumn = 0
+	args.EndColumn = (10)
+	args.Folder = GetBaseTest().remoteFolder
+
+	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPostAutofitWorkbookColumns(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsWorkbookPostAutofitWorkbookColumns - %d\n", GetBaseTest().GetTestNumber(), response.Code)
+	}
+}
+
 func TestCellsWorkbookPostEncryptDocument(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
