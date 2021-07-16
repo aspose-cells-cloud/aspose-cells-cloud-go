@@ -22,18 +22,6 @@
 
 package asposecellscloud
 
-type CellsDocumentProperty struct {
-	Link *Link `json:"link,omitempty" xml:"link"`
-	// Returns the name of the property.             
-	Name string `json:"Name,omitempty" xml:"Name"`
-	// Gets or sets the value of the property.
-	Value string `json:"Value,omitempty" xml:"Value"`
-	// Indicates whether this property is linked to content
-	IsLinkedToContent string `json:"IsLinkedToContent,omitempty" xml:"IsLinkedToContent"`
-	// The linked content source.
-	Source string `json:"Source,omitempty" xml:"Source"`
-	// Gets the data type of the property.             
-	Type_ string `json:"Type,omitempty" xml:"Type"`
-	// Returns true if this property does not have a name in the OLE2 storage and a   unique name was generated only for the public API.             
-	IsGeneratedName string `json:"IsGeneratedName,omitempty" xml:"IsGeneratedName"`
+type FilesResult struct {
+	Files []FileInfo `json:"Files,omitempty" xml:"Files"`
 }

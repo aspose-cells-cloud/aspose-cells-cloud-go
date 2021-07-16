@@ -20,11 +20,17 @@
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## Feature & Enhancements in Version 21.5
 
-- Support autofit columns for workbook and worksheet.
-- Improve add and post row/column APIs.
-- Improve Task APIs.
+## Feature & Enhancements in Version 21.6
+
+- Improvement document properties.
+- Update the return value of put/post/delete. 
+- Improvement export API.
+- Improve split API.  
+- Improve merge API. 
+- Improve unlock API. 
+- Improve protected API. 
+- Improve watermark API.
 
 ## Read & Write Spreadsheet Formats
 

@@ -33,6 +33,7 @@ type BaseTest struct {
 	remoteFolder        string
 	localTestDataFolder string
 	CellsAPI            *CellsApiService
+	LiteCellsAPI        *LiteCellsApiService
 	TestNumber          int
 }
 
@@ -59,7 +60,8 @@ func NewBaseTest() *BaseTest {
 		localTestDataFolder: "TestData/",
 		TestNumber:          0,
 		// Get Client Secret and Client Id from https://aspose.cloud
-		CellsAPI: NewCellsApiService(os.Getenv("CellsCloudTestClientId"), os.Getenv("CellsCloudTestClientSecret"), os.Getenv("CellsCloudTestApiBaseUrl"), "v3.0"),
+		CellsAPI:     NewCellsApiService(os.Getenv("CellsCloudTestClientId"), os.Getenv("CellsCloudTestClientSecret"), os.Getenv("CellsCloudTestApiBaseUrl"), "v3.0"),
+		LiteCellsAPI: NewLiteCellsApiService(os.Getenv("CellsCloudTestClientId"), os.Getenv("CellsCloudTestClientSecret"), os.Getenv("CellsCloudTestApiBaseUrl"), "v3.0"),
 	}
 	return bt
 }
@@ -79,7 +81,15 @@ func GetImportData() string {
 func GetBook1() string {
 	return "Book1.xlsx"
 }
-
+func GetDataSource() string {
+	return "datasource.xlsx"
+}
+func GetAssemblyTest() string {
+	return "assemblytest.xlsx"
+}
+func GetNeedUnlock() string {
+	return "needUnlock.xlsx"
+}
 func GetWorkbook() []byte {
 	file, err := os.Open("TestData/Book1.xlsx")
 	if err != nil {

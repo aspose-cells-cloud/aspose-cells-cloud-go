@@ -6,10 +6,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -23,15 +23,15 @@
 package asposecellscloud
 
 import (
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
-	"fmt"
 	"os"
+	"strings"
 )
 func Version() {
-	fmt.Println("---Version: 21.5.0---")
+	fmt.Println("---Version: 21.6.0---")
 }
 
 /* Create Instance of CellsApiService
@@ -12363,7 +12363,7 @@ CellsApiService Update worksheet row.
      * @param "Folder" (optional.String) -  The document folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return RowResponse
+@return CellsCloudResponse
 */
 
 
@@ -12377,13 +12377,13 @@ type CellsPostUpdateWorksheetRowOpts struct {
 }
 
 
-func (a *CellsApiService) CellsPostUpdateWorksheetRow(    localVarOptionals *CellsPostUpdateWorksheetRowOpts) (RowResponse, *http.Response, error) {
+func (a *CellsApiService) CellsPostUpdateWorksheetRow(    localVarOptionals *CellsPostUpdateWorksheetRowOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue RowResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -13214,7 +13214,7 @@ CellsApiService Insert new worksheet row.
      * @param "Folder" (optional.String) -  The document folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return RowResponse
+@return CellsCloudResponse
 */
 
 
@@ -13227,13 +13227,13 @@ type CellsPutInsertWorksheetRowOpts struct {
 }
 
 
-func (a *CellsApiService) CellsPutInsertWorksheetRow(    localVarOptionals *CellsPutInsertWorksheetRowOpts) (RowResponse, *http.Response, error) {
+func (a *CellsApiService) CellsPutInsertWorksheetRow(    localVarOptionals *CellsPutInsertWorksheetRowOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue RowResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
