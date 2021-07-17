@@ -1,4 +1,4 @@
-module github.com/aspose-cells-cloud/aspose-cells-cloud-go/v21
+module github.com/aspose-cells-cloud/aspose-cells-cloud-go/v2
 
 go 1.15
 
