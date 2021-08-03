@@ -211,14 +211,7 @@ func (c *APIClient) prepareRequest(
 			// Set the Boundary in the Content-Type
 			headerParams["Content-Type"] = "application/octet-stream"
 		}
-		if postBody != nil {
-			b, err := json.Marshal(postBody)
-			if err != nil {
-				fmt.Println(err)
-				return nil, err
-			}
-			w.WriteField("body", string(b))
-		}
+
 		// Set Content-Length
 		headerParams["Content-Length"] = fmt.Sprintf("%d", body.Len())
 

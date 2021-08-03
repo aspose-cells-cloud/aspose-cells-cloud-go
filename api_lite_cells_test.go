@@ -182,6 +182,26 @@ func TestCellsPostSearch(t *testing.T) {
 	}
 }
 
+func TestCellsPostSearch_Sheet(t *testing.T) {
+	name := GetDataSource()
+	var fileMap map[string]string
+	fileMap = make(map[string]string)
+	fileMap[name] = "TestData\\" + name
+	name = GetAssemblyTest()
+	fileMap[name] = "TestData\\" + name
+	postOpts := new(PostSearchOpts)
+	postOpts.Text = "1"
+	postOpts.Sheetname = "Sheet1"
+	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostSearch(fileMap, postOpts)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t TestCellsPostSearch \n", GetBaseTest().GetTestNumber())
+	}
+}
+
 func TestCellsPostSplit(t *testing.T) {
 	name := GetDataSource()
 	var fileMap map[string]string

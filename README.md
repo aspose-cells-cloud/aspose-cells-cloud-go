@@ -21,16 +21,10 @@
 - Leverage the power of named ranges.
 
 
-## Feature & Enhancements in Version 21.6
+## Feature & Enhancements in Version 21.7
 
-- Improvement document properties.
-- Update the return value of put/post/delete. 
-- Improvement export API.
-- Improve split API.  
-- Improve merge API. 
-- Improve unlock API. 
-- Improve protected API. 
-- Improve watermark API.
+- Fix search API.
+- Fix split API.
 
 ## Read & Write Spreadsheet Formats
 

@@ -23,6 +23,7 @@
 package asposecellscloud
 
 import (
+	"encoding/json"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -538,6 +539,10 @@ func (a *LiteCellsApiService) PostMetadata(file map[string]string, localVarOptio
 	}
 	// body params
 	localVarPostBody = &localVarOptionals.DocumentProperties
+	if localVarPostBody != nil {
+		b, _ := json.Marshal(localVarPostBody)
+		localVarFormParams["DocumentProperties"] = []string{string(b)}
+	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -631,18 +636,14 @@ LiteCellsApiService
  * @param optional nil or *PostSearchOpts - Optional Parameters:
      * @param "Password" (optional.String) -
      * @param "Sheetname" (optional.String) -
-     * @param "Path" (optional.String) -
-     * @param "StorageName" (optional.String) -
 
 @return []TextItem
 */
 
 type PostSearchOpts struct {
-	Text        string
-	Password    string
-	Sheetname   string
-	Path        string
-	StorageName string
+	Text      string
+	Password  string
+	Sheetname string
 }
 
 func (a *LiteCellsApiService) PostSearch(file map[string]string, localVarOptionals *PostSearchOpts) ([]TextItem, *http.Response, error) {
@@ -668,12 +669,7 @@ func (a *LiteCellsApiService) PostSearch(file map[string]string, localVarOptiona
 	if localVarOptionals != nil {
 		localVarQueryParams.Add("sheetname", parameterToString(localVarOptionals.Sheetname, ""))
 	}
-	if localVarOptionals != nil {
-		localVarQueryParams.Add("path", parameterToString(localVarOptionals.Path, ""))
-	}
-	if localVarOptionals != nil {
-		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
-	}
+
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"multipart/form-data"}
 
@@ -721,19 +717,14 @@ LiteCellsApiService
      * @param "Password" (optional.String) -
      * @param "From" (optional.Int32) -
      * @param "To" (optional.Int32) -
-     * @param "Path" (optional.String) -
-     * @param "StorageName" (optional.String) -
-
 @return FilesResult
 */
 
 type PostSplitOpts struct {
-	Format      string
-	Password    string
-	From        int32
-	To          int32
-	Path        string
-	StorageName string
+	Format   string
+	Password string
+	From     int32
+	To       int32
 }
 
 func (a *LiteCellsApiService) PostSplit(file map[string]string, localVarOptionals *PostSplitOpts) (FilesResult, *http.Response, error) {
@@ -762,12 +753,7 @@ func (a *LiteCellsApiService) PostSplit(file map[string]string, localVarOptional
 	if localVarOptionals != nil {
 		localVarQueryParams.Add("to", parameterToString(localVarOptionals.To, ""))
 	}
-	if localVarOptionals != nil {
-		localVarQueryParams.Add("path", parameterToString(localVarOptionals.Path, ""))
-	}
-	if localVarOptionals != nil {
-		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
-	}
+
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"multipart/form-data"}
 
