@@ -155,6 +155,7 @@ Method | HTTP request | Description
 [**CellsPutInsertWorksheetColumns**](CellsApi.md#CellsPutInsertWorksheetColumns) | **Put** /cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex} | Insert worksheet columns.
 [**CellsPutInsertWorksheetRow**](CellsApi.md#CellsPutInsertWorksheetRow) | **Put** /cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex} | Insert new worksheet row.
 [**CellsPutInsertWorksheetRows**](CellsApi.md#CellsPutInsertWorksheetRows) | **Put** /cells/{name}/worksheets/{sheetName}/cells/rows | Insert several new worksheet rows.
+[**CellsRangesDeleteWorksheetCellsRange**](CellsApi.md#CellsRangesDeleteWorksheetCellsRange) | **Delete** /cells/{name}/worksheets/{sheetName}/ranges | Delete range in the worksheet
 [**CellsRangesGetWorksheetCellsRangeValue**](CellsApi.md#CellsRangesGetWorksheetCellsRangeValue) | **Get** /cells/{name}/worksheets/{sheetName}/ranges/value | Get cells list in a range by range name or row column indexes  
 [**CellsRangesPostWorksheetCellsRangeColumnWidth**](CellsApi.md#CellsRangesPostWorksheetCellsRangeColumnWidth) | **Post** /cells/{name}/worksheets/{sheetName}/ranges/columnWidth | Set column width of range
 [**CellsRangesPostWorksheetCellsRangeMerge**](CellsApi.md#CellsRangesPostWorksheetCellsRangeMerge) | **Post** /cells/{name}/worksheets/{sheetName}/ranges/merge | Combines a range of cells into a single cell.              
@@ -165,6 +166,7 @@ Method | HTTP request | Description
 [**CellsRangesPostWorksheetCellsRangeUnmerge**](CellsApi.md#CellsRangesPostWorksheetCellsRangeUnmerge) | **Post** /cells/{name}/worksheets/{sheetName}/ranges/unmerge | Unmerges merged cells of this range.             
 [**CellsRangesPostWorksheetCellsRangeValue**](CellsApi.md#CellsRangesPostWorksheetCellsRangeValue) | **Post** /cells/{name}/worksheets/{sheetName}/ranges/value | Puts a value into the range, if appropriate the value will be converted to other data type and cell&#39;s number format will be reset.             
 [**CellsRangesPostWorksheetCellsRanges**](CellsApi.md#CellsRangesPostWorksheetCellsRanges) | **Post** /cells/{name}/worksheets/{sheetName}/ranges | copy range in the worksheet
+[**CellsRangesPutWorksheetCellsRange**](CellsApi.md#CellsRangesPutWorksheetCellsRange) | **Put** /cells/{name}/worksheets/{sheetName}/ranges | Insert range in the worksheet
 [**CellsSaveAsPostDocumentSaveAs**](CellsApi.md#CellsSaveAsPostDocumentSaveAs) | **Post** /cells/{name}/SaveAs | Convert document and save result to storage.
 [**CellsShapesDeleteWorksheetShape**](CellsApi.md#CellsShapesDeleteWorksheetShape) | **Delete** /cells/{name}/worksheets/{sheetName}/shapes/{shapeindex} | Delete a shape in worksheet
 [**CellsShapesDeleteWorksheetShapes**](CellsApi.md#CellsShapesDeleteWorksheetShapes) | **Delete** /cells/{name}/worksheets/{sheetName}/shapes | delete all shapes in worksheet
@@ -192,6 +194,7 @@ Method | HTTP request | Description
 [**CellsWorkbookGetWorkbookNames**](CellsApi.md#CellsWorkbookGetWorkbookNames) | **Get** /cells/{name}/names | Read workbook&#39;s names.
 [**CellsWorkbookGetWorkbookSettings**](CellsApi.md#CellsWorkbookGetWorkbookSettings) | **Get** /cells/{name}/settings | Get Workbook Settings DTO
 [**CellsWorkbookGetWorkbookTextItems**](CellsApi.md#CellsWorkbookGetWorkbookTextItems) | **Get** /cells/{name}/textItems | Read workbook&#39;s text items.
+[**CellsWorkbookPostAutofitWorkbookColumns**](CellsApi.md#CellsWorkbookPostAutofitWorkbookColumns) | **Post** /cells/{name}/autofitcolumns | Autofit workbook columns.
 [**CellsWorkbookPostAutofitWorkbookRows**](CellsApi.md#CellsWorkbookPostAutofitWorkbookRows) | **Post** /cells/{name}/autofitrows | Autofit workbook rows.
 [**CellsWorkbookPostEncryptDocument**](CellsApi.md#CellsWorkbookPostEncryptDocument) | **Post** /cells/{name}/encryption | Encript document.
 [**CellsWorkbookPostImportData**](CellsApi.md#CellsWorkbookPostImportData) | **Post** /cells/{name}/importdata | 
@@ -2004,7 +2007,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CellsDeleteWorksheetColumns**
-> ColumnsResponse CellsDeleteWorksheetColumns(ctx, name, sheetName, columnIndex, columns, updateReference, optional)
+> CellsCloudResponse CellsDeleteWorksheetColumns(ctx, name, sheetName, columnIndex, columns, updateReference, optional)
 Delete worksheet columns.
 
 ### Required Parameters
@@ -2034,7 +2037,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ColumnsResponse**](ColumnsResponse.md)
+[**CellsCloudResponse**](CellsCloudResponse.md)
 
 ### Authorization
 
@@ -5759,7 +5762,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CellsPostSetWorksheetColumnWidth**
-> ColumnResponse CellsPostSetWorksheetColumnWidth(ctx, name, sheetName, columnIndex, width, optional)
+> CellsCloudResponse CellsPostSetWorksheetColumnWidth(ctx, name, sheetName, columnIndex, width, optional)
 Set worksheet column width.
 
 ### Required Parameters
@@ -5787,7 +5790,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ColumnResponse**](ColumnResponse.md)
+[**CellsCloudResponse**](CellsCloudResponse.md)
 
 ### Authorization
 
@@ -6054,7 +6057,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CellsPostUpdateWorksheetRow**
-> RowResponse CellsPostUpdateWorksheetRow(ctx, name, sheetName, rowIndex, optional)
+> CellsCloudResponse CellsPostUpdateWorksheetRow(ctx, name, sheetName, rowIndex, optional)
 Update worksheet row.
 
 ### Required Parameters
@@ -6081,7 +6084,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RowResponse**](RowResponse.md)
+[**CellsCloudResponse**](CellsCloudResponse.md)
 
 ### Authorization
 
@@ -6417,7 +6420,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CellsPutInsertWorksheetColumns**
-> ColumnsResponse CellsPutInsertWorksheetColumns(ctx, name, sheetName, columnIndex, columns, optional)
+> CellsCloudResponse CellsPutInsertWorksheetColumns(ctx, name, sheetName, columnIndex, columns, optional)
 Insert worksheet columns.
 
 ### Required Parameters
@@ -6446,7 +6449,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ColumnsResponse**](ColumnsResponse.md)
+[**CellsCloudResponse**](CellsCloudResponse.md)
 
 ### Authorization
 
@@ -6460,7 +6463,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CellsPutInsertWorksheetRow**
-> RowResponse CellsPutInsertWorksheetRow(ctx, name, sheetName, rowIndex, optional)
+> CellsCloudResponse CellsPutInsertWorksheetRow(ctx, name, sheetName, rowIndex, optional)
 Insert new worksheet row.
 
 ### Required Parameters
@@ -6486,7 +6489,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RowResponse**](RowResponse.md)
+[**CellsCloudResponse**](CellsCloudResponse.md)
 
 ### Authorization
 
@@ -6524,6 +6527,48 @@ Name | Type | Description  | Notes
  **totalRows** | **optional.Int64**| Number of rows to be operated. | [default to 1]
  **updateReference** | **optional.Bool**| Indicates if update references in other worksheets. | [default to true]
  **folder** | **optional.String**| The document folder. | 
+ **storageName** | **optional.String**| storage name. | 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CellsRangesDeleteWorksheetCellsRange**
+> CellsCloudResponse CellsRangesDeleteWorksheetCellsRange(ctx, name, sheetName, range_, shift, optional)
+Delete range in the worksheet
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **name** | **string**| workbook name | 
+  **sheetName** | **string**| worksheet name | 
+  **range_** | **string**| range | 
+  **shift** | **string**| Represent the shift options when deleting a range of cells. (Left,Up)  | 
+ **optional** | ***CellsRangesDeleteWorksheetCellsRangeOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a CellsRangesDeleteWorksheetCellsRangeOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **folder** | **optional.String**| Workbook folder. | 
  **storageName** | **optional.String**| storage name. | 
 
 ### Return type
@@ -6929,6 +6974,48 @@ Name | Type | Description  | Notes
 
 
  **rangeOperate** | [**optional.Interface of RangeCopyRequest**](RangeCopyRequest.md)| copydata,copystyle,copyto,copyvalue | 
+ **folder** | **optional.String**| Workbook folder. | 
+ **storageName** | **optional.String**| storage name. | 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CellsRangesPutWorksheetCellsRange**
+> CellsCloudResponse CellsRangesPutWorksheetCellsRange(ctx, name, sheetName, range_, shift, optional)
+Insert range in the worksheet
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **name** | **string**| workbook name | 
+  **sheetName** | **string**| worksheet name | 
+  **range_** | **string**| range | 
+  **shift** | **string**| Represent the shift options when deleting a range of cells. (Right,Down)  | 
+ **optional** | ***CellsRangesPutWorksheetCellsRangeOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a CellsRangesPutWorksheetCellsRangeOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
  **folder** | **optional.String**| Workbook folder. | 
  **storageName** | **optional.String**| storage name. | 
 
@@ -7981,6 +8068,45 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **CellsWorkbookPostAutofitWorkbookColumns**
+> CellsCloudResponse CellsWorkbookPostAutofitWorkbookColumns(ctx, name, optional)
+Autofit workbook columns.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **name** | **string**| Document name. | 
+ **optional** | ***CellsWorkbookPostAutofitWorkbookColumnsOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a CellsWorkbookPostAutofitWorkbookColumnsOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **autoFitterOptions** | [**optional.Interface of AutoFitterOptions**](AutoFitterOptions.md)| Auto Fitter Options. | 
+ **startColumn** | **optional.Int32**| Start column. | 
+ **endColumn** | **optional.Int32**| End column. | 
+ **folder** | **optional.String**| Document&#39;s folder. | 
+ **storageName** | **optional.String**| storage name. | 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **CellsWorkbookPostAutofitWorkbookRows**
 > CellsCloudResponse CellsWorkbookPostAutofitWorkbookRows(ctx, name, optional)
 Autofit workbook rows.
@@ -8405,7 +8531,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CellsWorkbookPutConvertWorkbook**
-> *os.File CellsWorkbookPutConvertWorkbook(ctx, workbook, optional)
+> *os.File CellsWorkbookPutConvertWorkbook(ctx, file, optional)
 Convert workbook from request content to some format.
 
 ### Required Parameters
@@ -8413,7 +8539,7 @@ Convert workbook from request content to some format.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **workbook** | ***os.File**|  | 
+  **file** | ***os.File**|  | 
  **optional** | ***CellsWorkbookPutConvertWorkbookOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -10570,8 +10696,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **grantType** | **string**| Grant Type | 
-  **clientId** | **string**| Client Id | 
-  **clientSecret** | **string**|  Client Secret | 
+  **clientId** | **string**| App SID | 
+  **clientSecret** | **string**| App Key | 
 
 ### Return type
 

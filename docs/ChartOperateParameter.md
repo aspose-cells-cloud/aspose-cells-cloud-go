@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **OperateType** | **string** |  | [optional] [default to null]
-**String_** | **string** |  | [optional] [default to null]
+**Title** | **string** |  | [optional] [default to null]
 **Area** | **string** |  | [optional] [default to null]
 **CategoryData** | **string** |  | [optional] [default to null]
 **UpperLeftRow** | **int64** |  | [optional] [default to null]
