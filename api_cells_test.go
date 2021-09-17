@@ -25,10 +25,12 @@ package asposecellscloud
 import (
 	"fmt"
 	"os"
-	"testing"
 	"strconv"
+	"testing"
 )
-var isDockerSDK , errcon = strconv.ParseBool( os.Getenv("CellsCloudTestIsDockerTest"))
+
+var isDockerSDK, errcon = strconv.ParseBool(os.Getenv("CellsCloudTestIsDockerTest"))
+
 func TestCellsAutoFilterDeleteWorksheetDateFilter(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -386,7 +388,7 @@ func TestCellsAutoFilterPutWorksheetIconFilter(t *testing.T) {
 }
 
 func TestCellsAutoshapesGetWorksheetAutoshape(t *testing.T) {
-	if isDockerSDK	{
+	if isDockerSDK {
 		return
 	}
 	name := GetMyDoc()
@@ -412,7 +414,7 @@ func TestCellsAutoshapesGetWorksheetAutoshape(t *testing.T) {
 }
 
 func TestCellsAutoshapesGetWorksheetAutoshapes(t *testing.T) {
-	if isDockerSDK	{
+	if isDockerSDK {
 		return
 	}
 	name := GetMyDoc()
@@ -1476,7 +1478,7 @@ func TestCellsListObjectsGetWorksheetListObject(t *testing.T) {
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestCellsListObjectsGetWorksheetListObject - %d\n", GetBaseTest().GetTestNumber(), response.Code)
+		fmt.Printf("%d\tTestCellsListObjectsGetWorksheetListObject - %d\n", GetBaseTest().GetTestNumber(), response)
 	}
 }
 
@@ -4198,7 +4200,6 @@ func TestCellsRangesDeleteWorksheetCellsRange(t *testing.T) {
 	}
 }
 
-
 func TestCellsRangesPutWorksheetCellsRange(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -4693,7 +4694,7 @@ func TestCellsWorkbookPostWorkbooksMerge(t *testing.T) {
 	}
 	args := new(CellsWorkbookPostWorkbooksMergeOpts)
 	args.Name = GetBook1()
-	args.MergeWith =  GetMyDoc()
+	args.MergeWith = GetMyDoc()
 	args.Folder = GetBaseTest().remoteFolder
 
 	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPostWorkbooksMerge(args)
@@ -5853,8 +5854,6 @@ func TestCopyFolder(t *testing.T) {
 	}
 }
 
-
-
 func TestDeleteFile(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -5920,8 +5919,8 @@ func TestGetDiscUsage(t *testing.T) {
 }
 
 func TestGetFileVersions(t *testing.T) {
-	if isDockerSDK  {
-		return 
+	if isDockerSDK {
+		return
 	}
 	args := new(GetFileVersionsOpts)
 	args.Path = "GoTest"
@@ -6016,7 +6015,7 @@ func TestMoveFolder(t *testing.T) {
 	} else {
 		fmt.Printf("%d\tTestDeleteFile - %d\n", GetBaseTest().GetTestNumber(), httpResponseDF.StatusCode)
 	}
-	
+
 }
 
 func TestObjectExists(t *testing.T) {

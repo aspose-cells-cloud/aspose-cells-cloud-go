@@ -20,11 +20,11 @@
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
+## Feature & Enhancements in Version 21.8
 
-## Feature & Enhancements in Version 21.7
+- Improvement get list object Api.
+- Add import Api.
 
-- Fix search API.
-- Fix split API.
 
 ## Read & Write Spreadsheet Formats
 

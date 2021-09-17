@@ -414,6 +414,80 @@ func (a *LiteCellsApiService) PostExport(file map[string]string, localVarOptiona
 /*
 LiteCellsApiService
  * @param file File to upload
+ * @param documentProperties Cells document property.
+
+@return FilesResult
+*/
+
+type PostImportOpts struct {
+	ImportOption interface{}
+}
+
+func (a *LiteCellsApiService) PostImport(file map[string]string, localVarOptionals *PostImportOpts) (FilesResult, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue FilesResult
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/import"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"multipart/form-data"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"multipart/form-data"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+
+	// localVarFormParams = file
+	for name, path := range file {
+		localVarFormParams["@"+name] = []string{path}
+	}
+	// body params
+	localVarPostBody = &localVarOptionals.ImportOption
+	if localVarPostBody != nil {
+		b, _ := json.Marshal(localVarPostBody)
+		localVarFormParams["ImportOption"] = []string{string(b)}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+LiteCellsApiService
+ * @param file File to upload
  * @param optional nil or *PostMergeOpts - Optional Parameters:
      * @param "Format" (optional.String) -
      * @param "MergeToOneSheet" (optional.Bool) -

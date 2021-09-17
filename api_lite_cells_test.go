@@ -82,7 +82,7 @@ func TestCellsPostClearObjects(t *testing.T) {
 	}
 }
 
-func TestCellsPostExport(t *testing.T) {
+func TestCellsPostExport_chart(t *testing.T) {
 	name := GetDataSource()
 	var fileMap map[string]string
 	fileMap = make(map[string]string)
@@ -102,6 +102,149 @@ func TestCellsPostExport(t *testing.T) {
 	}
 }
 
+func TestCellsPostExport_listobject(t *testing.T) {
+	name := GetDataSource()
+	var fileMap map[string]string
+	fileMap = make(map[string]string)
+	fileMap[name] = "TestData\\" + name
+	name = GetAssemblyTest()
+	fileMap[name] = "TestData\\" + name
+	postOpts := new(PostExportOpts)
+	postOpts.Format = "pdf"
+	postOpts.ObjectType = "listobject"
+	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostExport(fileMap, postOpts)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsPostExport \n", GetBaseTest().GetTestNumber())
+	}
+}
+func TestCellsPostExport_picture(t *testing.T) {
+	name := GetDataSource()
+	var fileMap map[string]string
+	fileMap = make(map[string]string)
+	fileMap[name] = "TestData\\" + name
+	name = GetAssemblyTest()
+	fileMap[name] = "TestData\\" + name
+	postOpts := new(PostExportOpts)
+	postOpts.Format = "png"
+	postOpts.ObjectType = "picture"
+	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostExport(fileMap, postOpts)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsPostExport \n", GetBaseTest().GetTestNumber())
+	}
+}
+func TestCellsPostExport_shape(t *testing.T) {
+	name := GetDataSource()
+	var fileMap map[string]string
+	fileMap = make(map[string]string)
+	fileMap[name] = "TestData\\" + name
+	name = GetAssemblyTest()
+	fileMap[name] = "TestData\\" + name
+	postOpts := new(PostExportOpts)
+	postOpts.Format = "png"
+	postOpts.ObjectType = "shape"
+	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostExport(fileMap, postOpts)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsPostExport \n", GetBaseTest().GetTestNumber())
+	}
+}
+func TestCellsPostExport_oleobject(t *testing.T) {
+	name := GetDataSource()
+	var fileMap map[string]string
+	fileMap = make(map[string]string)
+	fileMap[name] = "TestData\\" + name
+	name = GetAssemblyTest()
+	fileMap[name] = "TestData\\" + name
+	postOpts := new(PostExportOpts)
+	postOpts.Format = "png"
+	postOpts.ObjectType = "oleobject"
+	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostExport(fileMap, postOpts)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsPostExport \n", GetBaseTest().GetTestNumber())
+	}
+}
+func TestCellsPostExport_worksheet(t *testing.T) {
+	name := GetDataSource()
+	var fileMap map[string]string
+	fileMap = make(map[string]string)
+	fileMap[name] = "TestData\\" + name
+	name = GetAssemblyTest()
+	fileMap[name] = "TestData\\" + name
+	postOpts := new(PostExportOpts)
+	postOpts.Format = "pdf"
+	postOpts.ObjectType = "worksheet"
+	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostExport(fileMap, postOpts)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsPostExport \n", GetBaseTest().GetTestNumber())
+	}
+}
+
+func TestCellsPostExport_workbook(t *testing.T) {
+	name := GetDataSource()
+	var fileMap map[string]string
+	fileMap = make(map[string]string)
+	fileMap[name] = "TestData\\" + name
+	name = GetAssemblyTest()
+	fileMap[name] = "TestData\\" + name
+	postOpts := new(PostExportOpts)
+	postOpts.Format = "pdf"
+	postOpts.ObjectType = "workbook"
+	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostExport(fileMap, postOpts)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsPostExport \n", GetBaseTest().GetTestNumber())
+	}
+}
+
+func TestCellsPostImport(t *testing.T) {
+	name := GetDataSource()
+	var fileMap map[string]string
+	fileMap = make(map[string]string)
+	fileMap[name] = "TestData\\" + name
+	name = GetAssemblyTest()
+	fileMap[name] = "TestData\\" + name
+
+	importIntArrayOption := new(ImportIntArrayOption)
+	importIntArrayOption.Data = []int64{1, 2, 3}
+	importIntArrayOption.DestinationWorksheet = GetSheet1()
+	importIntArrayOption.FirstColumn = 2
+	importIntArrayOption.FirstRow = 1
+	importIntArrayOption.IsVertical = true
+	importIntArrayOption.ImportDataType = "IntArray"
+	postOpts := new(PostImportOpts)
+	postOpts.ImportOption = &importIntArrayOption
+
+	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostImport(fileMap, postOpts)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsPostImport \n", GetBaseTest().GetTestNumber())
+	}
+}
 func TestCellsPostMerge(t *testing.T) {
 	name := GetDataSource()
 	var fileMap map[string]string

@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "21.6.0"
+  version: "21.8"
   title: "Aspose.Cells Cloud SDK APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
@@ -1027,7 +1027,7 @@ paths:
         200:
           description: "with common list object info."
           schema:
-            $ref: "#/definitions/ListObjectResponse"
+            type: "file"
           x-nullable: true
       x-operationId: "CellsListObjects_GetWorksheetListObject"
   /cells/{name}/importdata:
@@ -1283,11 +1283,11 @@ paths:
         x-nullable: true
         x-exportParamName: "OutPath"
         x-optionalDataType: "String"
-      - name: "workbook"
+      - name: "File"
         in: "formData"
         required: true
         type: "file"
-        x-exportParamName: "Workbook"
+        x-exportParamName: "File"
       responses:
         200:
           description: "Conversion result."
@@ -4518,6 +4518,122 @@ paths:
             $ref: "#/definitions/CellsCloudResponse"
           x-nullable: true
       x-operationId: "CellsRanges_PostWorksheetCellsRanges"
+    put:
+      tags:
+      - "Cells"
+      summary: "Insert range in the worksheet"
+      operationId: "CellsRanges_PutWorksheetCellsRange"
+      parameters:
+      - name: "name"
+        in: "path"
+        description: "workbook name"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Name"
+      - name: "sheetName"
+        in: "path"
+        description: "worksheet name"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "SheetName"
+      - name: "range"
+        in: "query"
+        description: "range"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Range_"
+      - name: "shift"
+        in: "query"
+        description: "Represent the shift options when deleting a range of cells.\
+          \ (Right,Down) "
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Shift"
+      - name: "folder"
+        in: "query"
+        description: "Workbook folder."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Folder"
+        x-optionalDataType: "String"
+      - name: "storageName"
+        in: "query"
+        description: "storage name."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "StorageName"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/CellsCloudResponse"
+          x-nullable: true
+      x-operationId: "CellsRanges_PutWorksheetCellsRange"
+    delete:
+      tags:
+      - "Cells"
+      summary: "Delete range in the worksheet"
+      operationId: "CellsRanges_DeleteWorksheetCellsRange"
+      parameters:
+      - name: "name"
+        in: "path"
+        description: "workbook name"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Name"
+      - name: "sheetName"
+        in: "path"
+        description: "worksheet name"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "SheetName"
+      - name: "range"
+        in: "query"
+        description: "range"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Range_"
+      - name: "shift"
+        in: "query"
+        description: "Represent the shift options when deleting a range of cells.\
+          \ (Left,Up) "
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Shift"
+      - name: "folder"
+        in: "query"
+        description: "Workbook folder."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Folder"
+        x-optionalDataType: "String"
+      - name: "storageName"
+        in: "query"
+        description: "storage name."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "StorageName"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/CellsCloudResponse"
+          x-nullable: true
+      x-operationId: "CellsRanges_DeleteWorksheetCellsRange"
   /cells/{name}/worksheets/{sheetName}/ranges/style:
     post:
       tags:
@@ -5001,7 +5117,7 @@ paths:
         x-nullable: false
         x-exportParamName: "SheetName"
       - name: "sparklineGroupIndex"
-        in: "query"
+        in: "path"
         required: true
         type: "integer"
         format: "int32"
@@ -8075,6 +8191,69 @@ paths:
             $ref: "#/definitions/CellsCloudResponse"
           x-nullable: true
       x-operationId: "CellsWorkbook_PostAutofitWorkbookRows"
+  /cells/{name}/autofitcolumns:
+    post:
+      tags:
+      - "Cells"
+      summary: "Autofit workbook columns."
+      operationId: "CellsWorkbook_PostAutofitWorkbookColumns"
+      parameters:
+      - name: "name"
+        in: "path"
+        description: "Document name."
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "Name"
+      - in: "body"
+        name: "autoFitterOptions"
+        description: "Auto Fitter Options."
+        required: false
+        schema:
+          $ref: "#/definitions/AutoFitterOptions"
+        x-nullable: true
+        x-exportParamName: "AutoFitterOptions"
+      - name: "startColumn"
+        in: "query"
+        description: "Start column."
+        required: false
+        type: "integer"
+        format: "int32"
+        x-nullable: true
+        x-exportParamName: "StartColumn"
+        x-optionalDataType: "Int32"
+      - name: "endColumn"
+        in: "query"
+        description: "End column."
+        required: false
+        type: "integer"
+        format: "int32"
+        x-nullable: true
+        x-exportParamName: "EndColumn"
+        x-optionalDataType: "Int32"
+      - name: "folder"
+        in: "query"
+        description: "Document's folder."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Folder"
+        x-optionalDataType: "String"
+      - name: "storageName"
+        in: "query"
+        description: "storage name."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "StorageName"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: "response with status code."
+          schema:
+            $ref: "#/definitions/CellsCloudResponse"
+          x-nullable: true
+      x-operationId: "CellsWorkbook_PostAutofitWorkbookColumns"
   /cells/{name}/worksheets/{sheetName}/autoshapes/{autoshapeNumber}:
     get:
       tags:
@@ -8872,7 +9051,6 @@ paths:
         required: false
         type: "boolean"
         default: true
-        x-nullable: true
         x-exportParamName: "DataLabels"
         x-optionalDataType: "Bool"
       - name: "dataLabelsPosition"
@@ -8880,7 +9058,6 @@ paths:
         required: false
         type: "string"
         default: "Above"
-        x-nullable: true
         x-exportParamName: "DataLabelsPosition"
         x-optionalDataType: "String"
       - name: "pivotTableSheet"
@@ -9697,13 +9874,13 @@ paths:
         x-exportParamName: "GrantType"
       - name: "client_id"
         in: "formData"
-        description: "Client Id"
+        description: "App SID"
         required: true
         type: "string"
         x-exportParamName: "ClientId"
       - name: "client_secret"
         in: "formData"
-        description: "Client Secret"
+        description: "App Key"
         required: true
         type: "string"
         x-exportParamName: "ClientSecret"
@@ -11404,7 +11581,7 @@ paths:
         200:
           description: "with the column data."
           schema:
-            $ref: "#/definitions/ColumnResponse"
+            $ref: "#/definitions/CellsCloudResponse"
           x-nullable: true
       x-operationId: "Cells_PostSetWorksheetColumnWidth"
     put:
@@ -11472,7 +11649,7 @@ paths:
         200:
           description: "with the column data."
           schema:
-            $ref: "#/definitions/ColumnsResponse"
+            $ref: "#/definitions/CellsCloudResponse"
           x-nullable: true
       x-operationId: "Cells_PutInsertWorksheetColumns"
     delete:
@@ -11538,7 +11715,7 @@ paths:
         200:
           description: "with the column data."
           schema:
-            $ref: "#/definitions/ColumnsResponse"
+            $ref: "#/definitions/CellsCloudResponse"
           x-nullable: true
       x-operationId: "Cells_DeleteWorksheetColumns"
   /cells/{name}/worksheets/{sheetName}/pivottables:
@@ -12200,7 +12377,7 @@ paths:
         200:
           description: "with the updated row data."
           schema:
-            $ref: "#/definitions/RowResponse"
+            $ref: "#/definitions/CellsCloudResponse"
           x-nullable: true
       x-operationId: "Cells_PostUpdateWorksheetRow"
     put:
@@ -12251,7 +12428,7 @@ paths:
         200:
           description: "with the new row data."
           schema:
-            $ref: "#/definitions/RowResponse"
+            $ref: "#/definitions/CellsCloudResponse"
           x-nullable: true
       x-operationId: "Cells_PutInsertWorksheetRow"
     delete:
@@ -13910,6 +14087,407 @@ paths:
             $ref: "#/definitions/CellsCloudResponse"
           x-nullable: true
       x-operationId: "CellsPageBreaks_DeleteVerticalPageBreak"
+  /cells/assemble:
+    post:
+      tags:
+      - "LiteCells"
+      operationId: "PostAssemble"
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - name: "File"
+        in: "formData"
+        description: "File to upload"
+        required: true
+        type: "file"
+        x-exportParamName: "File"
+      - name: "datasource"
+        in: "query"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Datasource"
+      - name: "format"
+        in: "query"
+        required: false
+        type: "string"
+        default: "Xlsx"
+        x-nullable: true
+        x-exportParamName: "Format"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/FilesResult"
+          x-nullable: true
+      x-operationId: "PostAssemble"
+  /cells/clearobjects:
+    post:
+      tags:
+      - "LiteCells"
+      operationId: "PostClearObjects"
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - name: "File"
+        in: "formData"
+        description: "File to upload"
+        required: true
+        type: "file"
+        x-exportParamName: "File"
+      - name: "objecttype"
+        in: "query"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Objecttype"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/FilesResult"
+          x-nullable: true
+      x-operationId: "PostClearObjects"
+  /cells/export:
+    post:
+      tags:
+      - "LiteCells"
+      operationId: "PostExport"
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - name: "File"
+        in: "formData"
+        description: "File to upload"
+        required: true
+        type: "file"
+        x-exportParamName: "File"
+      - name: "objectType"
+        in: "query"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "ObjectType"
+      - name: "format"
+        in: "query"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Format"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/FilesResult"
+          x-nullable: true
+      x-operationId: "PostExport"
+  /cells/merge:
+    post:
+      tags:
+      - "LiteCells"
+      operationId: "PostMerge"
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - name: "File"
+        in: "formData"
+        description: "File to upload"
+        required: true
+        type: "file"
+        x-exportParamName: "File"
+      - name: "format"
+        in: "query"
+        required: false
+        type: "string"
+        default: "xlsx"
+        x-nullable: true
+        x-exportParamName: "Format"
+        x-optionalDataType: "String"
+      - name: "mergeToOneSheet"
+        in: "query"
+        required: false
+        type: "boolean"
+        default: false
+        x-nullable: false
+        x-exportParamName: "MergeToOneSheet"
+        x-optionalDataType: "Bool"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/FileInfo"
+          x-nullable: true
+      x-operationId: "PostMerge"
+  /cells/metadata/update:
+    post:
+      tags:
+      - "LiteCells"
+      operationId: "PostMetadata"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "multipart/form-data"
+      parameters:
+      - name: "File"
+        in: "formData"
+        description: "File to upload"
+        required: true
+        type: "file"
+        x-exportParamName: "File"
+      - in: "body"
+        name: "DocumentProperties"
+        description: "Cells document property."
+        required: true
+        schema:
+          $ref: "#/definitions/CellsDocumentProperty"
+        x-exportParamName: "DocumentProperties"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/FilesResult"
+          x-nullable: true
+      x-operationId: "PostMetadata"
+  /cells/metadata/get:
+    post:
+      tags:
+      - "LiteCells"
+      operationId: "GetMetadata"
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - name: "File"
+        in: "formData"
+        description: "File to upload"
+        required: true
+        type: "file"
+        x-exportParamName: "File"
+      - name: "type"
+        in: "query"
+        required: false
+        type: "string"
+        default: "all"
+        x-nullable: true
+        x-exportParamName: "Type_"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: ""
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CellsDocumentProperty"
+          x-nullable: true
+  /cells/metadata/delete:
+    post:
+      tags:
+      - "LiteCells"
+      operationId: "DeleteMetadata"
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - name: "File"
+        in: "formData"
+        description: "File to upload"
+        required: true
+        type: "file"
+        x-exportParamName: "File"
+      - name: "type"
+        in: "query"
+        required: false
+        type: "string"
+        default: "all"
+        x-nullable: true
+        x-exportParamName: "Type_"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/FilesResult"
+          x-nullable: true
+      x-operationId: "DeleteMetadata"
+  /cells/protect:
+    post:
+      tags:
+      - "LiteCells"
+      operationId: "PostProtect"
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - name: "File"
+        in: "formData"
+        description: "File to upload"
+        required: true
+        type: "file"
+        x-exportParamName: "File"
+      - name: "password"
+        in: "query"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Password"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/FilesResult"
+          x-nullable: true
+      x-operationId: "PostProtect"
+  /cells/search:
+    post:
+      tags:
+      - "LiteCells"
+      operationId: "PostSearch"
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - name: "File"
+        in: "formData"
+        description: "File to upload"
+        required: true
+        type: "file"
+        x-exportParamName: "File"
+      - name: "text"
+        in: "query"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Text"
+      - name: "password"
+        in: "query"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Password"
+        x-optionalDataType: "String"
+      - name: "sheetname"
+        in: "query"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Sheetname"
+        x-optionalDataType: "String"
+      responses:
+        200:
+          description: ""
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/TextItem"
+          x-nullable: true
+      x-operationId: "PostSearch"
+  /cells/split:
+    post:
+      tags:
+      - "LiteCells"
+      operationId: "PostSplit"
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - name: "File"
+        in: "formData"
+        description: "File to upload"
+        required: true
+        type: "file"
+        x-exportParamName: "File"
+      - name: "format"
+        in: "query"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Format"
+      - name: "password"
+        in: "query"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Password"
+        x-optionalDataType: "String"
+      - name: "from"
+        in: "query"
+        required: false
+        type: "integer"
+        format: "int32"
+        x-nullable: true
+        x-exportParamName: "From"
+        x-optionalDataType: "Int32"
+      - name: "to"
+        in: "query"
+        required: false
+        type: "integer"
+        format: "int32"
+        x-nullable: true
+        x-exportParamName: "To"
+        x-optionalDataType: "Int32"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/FilesResult"
+          x-nullable: true
+      x-operationId: "PostSplit"
+  /cells/unlock:
+    post:
+      tags:
+      - "LiteCells"
+      operationId: "PostUnlock"
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - name: "File"
+        in: "formData"
+        description: "File to upload"
+        required: true
+        type: "file"
+        x-exportParamName: "File"
+      - name: "password"
+        in: "query"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Password"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/FilesResult"
+          x-nullable: true
+      x-operationId: "PostUnlock"
+  /cells/watermark:
+    post:
+      tags:
+      - "LiteCells"
+      operationId: "PostWatermark"
+      consumes:
+      - "multipart/form-data"
+      parameters:
+      - name: "File"
+        in: "formData"
+        description: "File to upload"
+        required: true
+        type: "file"
+        x-exportParamName: "File"
+      - name: "text"
+        in: "query"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Text"
+      - name: "color"
+        in: "query"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "Color"
+      responses:
+        200:
+          description: ""
+          schema:
+            $ref: "#/definitions/FilesResult"
+          x-nullable: true
+      x-operationId: "PostWatermark"
   /cells/storage/file/{path}:
     get:
       tags:
@@ -14458,12 +15036,12 @@ securityDefinitions:
     flow: "implicit"
     scopes:
       write:pets: "modify pets in your account"
-  clientId:
-    type: "clientSecret"
-    name: "clientId"
+  appsid:
+    type: "apiKey"
+    name: "appsid"
     in: "query"
   signature:
-    type: "clientSecret"
+    type: "apiKey"
     name: "signature"
     in: "query"
 definitions:
@@ -16200,7 +16778,7 @@ definitions:
     allOf:
     - type: "object"
       properties:
-        string:
+        Title:
           type: "string"
         Area:
           type: "string"
@@ -16221,6 +16799,19 @@ definitions:
           type: "string"
         IsVertical:
           type: "boolean"
+    - $ref: "#/definitions/OperateParameter"
+  WorksheetOperateParameter:
+    allOf:
+    - type: "object"
+      properties:
+        Name:
+          type: "string"
+        SheetType:
+          type: "string"
+        NewName:
+          type: "string"
+        MovingRequest:
+          $ref: "#/definitions/WorksheetMovingRequest"
     - $ref: "#/definitions/OperateParameter"
   RowsResponse:
     allOf:
@@ -16833,6 +17424,30 @@ definitions:
           $ref: "#/definitions/SaveOptions"
         DestinationFile:
           type: "string"
+    - $ref: "#/definitions/TaskParameter"
+  ConvertWorksheetTaskParameter:
+    allOf:
+    - type: "object"
+      properties:
+        Workbook:
+          $ref: "#/definitions/FileSource"
+        Sheet:
+          type: "string"
+        Target:
+          $ref: "#/definitions/FileSource"
+        Format:
+          type: "string"
+        Area:
+          type: "string"
+        PageIndex:
+          type: "integer"
+          format: "int64"
+        VerticalResolution:
+          type: "integer"
+          format: "int64"
+        HorizontalResolution:
+          type: "integer"
+          format: "int64"
     - $ref: "#/definitions/TaskParameter"
   FontSetting:
     type: "object"
@@ -17758,12 +18373,26 @@ definitions:
     allOf:
     - type: "object"
       properties:
-        BuiltIn:
-          type: "string"
         Name:
           type: "string"
+          description: "Returns the name of the property.\n            "
         Value:
           type: "string"
+          description: "Gets or sets the value of the property."
+        IsLinkedToContent:
+          type: "string"
+          description: "Indicates whether this property is linked to content"
+        Source:
+          type: "string"
+          description: "The linked content source."
+        Type:
+          type: "string"
+          description: "Gets the data type of the property.\n            "
+        IsGeneratedName:
+          type: "string"
+          description: "Returns true if this property does not have a name in the\
+            \ OLE2 storage and a \n unique name was generated only for the public\
+            \ API.\n            "
     - $ref: "#/definitions/LinkElement"
   FormatCondition:
     allOf:
@@ -19226,6 +19855,37 @@ definitions:
           description: "Represents the size of the bottom margin, in unit of centimeters."
     - $ref: "#/definitions/LinkElement"
     description: "excel print page setting"
+  FilesResult:
+    type: "object"
+    properties:
+      Files:
+        type: "array"
+        items:
+          $ref: "#/definitions/FileInfo"
+    example:
+      Files:
+      - FileContent: "FileContent"
+        Filename: "Filename"
+        FileSize: 0
+      - FileContent: "FileContent"
+        Filename: "Filename"
+        FileSize: 0
+  FileInfo:
+    type: "object"
+    required:
+    - "FileSize"
+    properties:
+      Filename:
+        type: "string"
+      FileSize:
+        type: "integer"
+        format: "int64"
+      FileContent:
+        type: "string"
+    example:
+      FileContent: "FileContent"
+      Filename: "Filename"
+      FileSize: 0
   FilesUploadResult:
     type: "object"
     properties:
