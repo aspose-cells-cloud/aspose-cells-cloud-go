@@ -31,7 +31,7 @@ import (
 	"os"
 )
 func Version() {
-	fmt.Println("---Version: 21.8.0---")
+	fmt.Println("---Version: 21.9.0---")
 }
 
 /* Create Instance of CellsApiService
@@ -1996,7 +1996,7 @@ CellsApiService Delete worksheet chart by index.
      * @param "Folder" (optional.String) -  The workbook folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return ChartsResponse
+@return CellsCloudResponse
 */
 
 
@@ -2009,13 +2009,13 @@ type CellsChartsDeleteWorksheetDeleteChartOpts struct {
 }
 
 
-func (a *CellsApiService) CellsChartsDeleteWorksheetDeleteChart(    localVarOptionals *CellsChartsDeleteWorksheetDeleteChartOpts) (ChartsResponse, *http.Response, error) {
+func (a *CellsApiService) CellsChartsDeleteWorksheetDeleteChart(    localVarOptionals *CellsChartsDeleteWorksheetDeleteChartOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ChartsResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -2502,7 +2502,7 @@ CellsApiService Update chart legend
      * @param "Folder" (optional.String) -  The workbook folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return LegendResponse
+@return CellsCloudResponse
 */
 
 
@@ -2516,13 +2516,13 @@ type CellsChartsPostWorksheetChartLegendOpts struct {
 }
 
 
-func (a *CellsApiService) CellsChartsPostWorksheetChartLegend(    localVarOptionals *CellsChartsPostWorksheetChartLegendOpts) (LegendResponse, *http.Response, error) {
+func (a *CellsApiService) CellsChartsPostWorksheetChartLegend(    localVarOptionals *CellsChartsPostWorksheetChartLegendOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue LegendResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -2591,7 +2591,7 @@ CellsApiService Update chart title
      * @param "Folder" (optional.String) -  The workbook folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return TitleResponse
+@return CellsCloudResponse
 */
 
 
@@ -2605,13 +2605,13 @@ type CellsChartsPostWorksheetChartTitleOpts struct {
 }
 
 
-func (a *CellsApiService) CellsChartsPostWorksheetChartTitle(    localVarOptionals *CellsChartsPostWorksheetChartTitleOpts) (TitleResponse, *http.Response, error) {
+func (a *CellsApiService) CellsChartsPostWorksheetChartTitle(    localVarOptionals *CellsChartsPostWorksheetChartTitleOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue TitleResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -2692,7 +2692,7 @@ CellsApiService Add new chart to worksheet.
      * @param "PivotTableSheet" (optional.String) - 
      * @param "PivotTableName" (optional.String) - 
 
-@return ChartsResponse
+@return CellsCloudResponse
 */
 
 
@@ -2718,13 +2718,13 @@ type CellsChartsPutWorksheetAddChartOpts struct {
 }
 
 
-func (a *CellsApiService) CellsChartsPutWorksheetAddChart(    localVarOptionals *CellsChartsPutWorksheetAddChartOpts) (ChartsResponse, *http.Response, error) {
+func (a *CellsApiService) CellsChartsPutWorksheetAddChart(    localVarOptionals *CellsChartsPutWorksheetAddChartOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ChartsResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -2909,7 +2909,7 @@ CellsApiService Add chart title / Set chart title visible
      * @param "Folder" (optional.String) -  The workbook folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return TitleResponse
+@return CellsCloudResponse
 */
 
 
@@ -2923,13 +2923,13 @@ type CellsChartsPutWorksheetChartTitleOpts struct {
 }
 
 
-func (a *CellsApiService) CellsChartsPutWorksheetChartTitle(    localVarOptionals *CellsChartsPutWorksheetChartTitleOpts) (TitleResponse, *http.Response, error) {
+func (a *CellsApiService) CellsChartsPutWorksheetChartTitle(    localVarOptionals *CellsChartsPutWorksheetChartTitleOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue TitleResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -5017,7 +5017,7 @@ CellsApiService Update worksheet hyperlink by index.
      * @param "Folder" (optional.String) -  The document folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return HyperlinkResponse
+@return CellsCloudResponse
 */
 
 
@@ -5031,13 +5031,13 @@ type CellsHypelinksPostWorksheetHyperlinkOpts struct {
 }
 
 
-func (a *CellsApiService) CellsHypelinksPostWorksheetHyperlink(    localVarOptionals *CellsHypelinksPostWorksheetHyperlinkOpts) (HyperlinkResponse, *http.Response, error) {
+func (a *CellsApiService) CellsHypelinksPostWorksheetHyperlink(    localVarOptionals *CellsHypelinksPostWorksheetHyperlinkOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue HyperlinkResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -5109,7 +5109,7 @@ CellsApiService Add worksheet hyperlink.
      * @param "Folder" (optional.String) -  The document folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return HyperlinkResponse
+@return CellsCloudResponse
 */
 
 
@@ -5126,13 +5126,13 @@ type CellsHypelinksPutWorksheetHyperlinkOpts struct {
 }
 
 
-func (a *CellsApiService) CellsHypelinksPutWorksheetHyperlink(    localVarOptionals *CellsHypelinksPutWorksheetHyperlinkOpts) (HyperlinkResponse, *http.Response, error) {
+func (a *CellsApiService) CellsHypelinksPutWorksheetHyperlink(    localVarOptionals *CellsHypelinksPutWorksheetHyperlinkOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue HyperlinkResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -5882,7 +5882,7 @@ CellsApiService Add a list object into worksheet.
      * @param "Folder" (optional.String) -  Document&#39;s folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return ListObjectResponse
+@return CellsCloudResponse
 */
 
 
@@ -5900,13 +5900,13 @@ type CellsListObjectsPutWorksheetListObjectOpts struct {
 }
 
 
-func (a *CellsApiService) CellsListObjectsPutWorksheetListObject(    localVarOptionals *CellsListObjectsPutWorksheetListObjectOpts) (ListObjectResponse, *http.Response, error) {
+func (a *CellsApiService) CellsListObjectsPutWorksheetListObject(    localVarOptionals *CellsListObjectsPutWorksheetListObjectOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ListObjectResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -6406,7 +6406,7 @@ CellsApiService Add OLE object
      * @param "Folder" (optional.String) -  The workbook folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return OleObjectResponse
+@return CellsCloudResponse
 */
 
 
@@ -6425,13 +6425,13 @@ type CellsOleObjectsPutWorksheetOleObjectOpts struct {
 }
 
 
-func (a *CellsApiService) CellsOleObjectsPutWorksheetOleObject(    localVarOptionals *CellsOleObjectsPutWorksheetOleObjectOpts) (OleObjectResponse, *http.Response, error) {
+func (a *CellsApiService) CellsOleObjectsPutWorksheetOleObject(    localVarOptionals *CellsOleObjectsPutWorksheetOleObjectOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue OleObjectResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -8288,7 +8288,7 @@ CellsApiService Update worksheet picture by index.
      * @param "Folder" (optional.String) -  The document folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return PictureResponse
+@return CellsCloudResponse
 */
 
 
@@ -8302,13 +8302,13 @@ type CellsPicturesPostWorksheetPictureOpts struct {
 }
 
 
-func (a *CellsApiService) CellsPicturesPostWorksheetPicture(    localVarOptionals *CellsPicturesPostWorksheetPictureOpts) (PictureResponse, *http.Response, error) {
+func (a *CellsApiService) CellsPicturesPostWorksheetPicture(    localVarOptionals *CellsPicturesPostWorksheetPictureOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue PictureResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -8381,7 +8381,7 @@ CellsApiService Add a new worksheet picture.
      * @param "Folder" (optional.String) -  The workbook folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return PicturesResponse
+@return CellsCloudResponse
 */
 
 
@@ -8399,13 +8399,13 @@ type CellsPicturesPutWorksheetAddPictureOpts struct {
 }
 
 
-func (a *CellsApiService) CellsPicturesPutWorksheetAddPicture(    localVarOptionals *CellsPicturesPutWorksheetAddPictureOpts) (PicturesResponse, *http.Response, error) {
+func (a *CellsApiService) CellsPicturesPutWorksheetAddPicture(    localVarOptionals *CellsPicturesPutWorksheetAddPictureOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue PicturesResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -10178,7 +10178,7 @@ CellsApiService Add a pivot table into worksheet.
      * @param "TableName" (optional.String) -  The name of the new PivotTable report.
      * @param "UseSameSource" (optional.Bool) -  Indicates whether using same data source when another existing pivot table has used this data source. If the property is true, it will save memory.
 
-@return PivotTableResponse
+@return CellsCloudResponse
 */
 
 
@@ -10195,13 +10195,13 @@ type CellsPivotTablesPutWorksheetPivotTableOpts struct {
 }
 
 
-func (a *CellsApiService) CellsPivotTablesPutWorksheetPivotTable(    localVarOptionals *CellsPivotTablesPutWorksheetPivotTableOpts) (PivotTableResponse, *http.Response, error) {
+func (a *CellsApiService) CellsPivotTablesPutWorksheetPivotTable(    localVarOptionals *CellsPivotTablesPutWorksheetPivotTableOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue PivotTableResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -12730,7 +12730,7 @@ CellsApiService Delete all custom document properties and clean built-in ones.
      * @param "Folder" (optional.String) -  The document folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return CellsDocumentPropertiesResponse
+@return CellsCloudResponse
 */
 
 
@@ -12741,13 +12741,13 @@ type CellsPropertiesDeleteDocumentPropertiesOpts struct {
 }
 
 
-func (a *CellsApiService) CellsPropertiesDeleteDocumentProperties(    localVarOptionals *CellsPropertiesDeleteDocumentPropertiesOpts) (CellsDocumentPropertiesResponse, *http.Response, error) {
+func (a *CellsApiService) CellsPropertiesDeleteDocumentProperties(    localVarOptionals *CellsPropertiesDeleteDocumentPropertiesOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue CellsDocumentPropertiesResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -12807,7 +12807,7 @@ CellsApiService Delete document property.
      * @param "Folder" (optional.String) -  The document folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return CellsDocumentPropertiesResponse
+@return CellsCloudResponse
 */
 
 
@@ -12819,13 +12819,13 @@ type CellsPropertiesDeleteDocumentPropertyOpts struct {
 }
 
 
-func (a *CellsApiService) CellsPropertiesDeleteDocumentProperty(    localVarOptionals *CellsPropertiesDeleteDocumentPropertyOpts) (CellsDocumentPropertiesResponse, *http.Response, error) {
+func (a *CellsApiService) CellsPropertiesDeleteDocumentProperty(    localVarOptionals *CellsPropertiesDeleteDocumentPropertyOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue CellsDocumentPropertiesResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -13042,7 +13042,7 @@ CellsApiService Set/create document property.
      * @param "Folder" (optional.String) -  The document folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return CellsDocumentPropertyResponse
+@return CellsCloudResponse
 */
 
 
@@ -13055,13 +13055,13 @@ type CellsPropertiesPutDocumentPropertyOpts struct {
 }
 
 
-func (a *CellsApiService) CellsPropertiesPutDocumentProperty(    localVarOptionals *CellsPropertiesPutDocumentPropertyOpts) (CellsDocumentPropertyResponse, *http.Response, error) {
+func (a *CellsApiService) CellsPropertiesPutDocumentProperty(    localVarOptionals *CellsPropertiesPutDocumentPropertyOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue CellsDocumentPropertyResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -14981,7 +14981,7 @@ CellsApiService Add shape in worksheet
      * @param "Folder" (optional.String) -  Document&#39;s folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return ShapeResponse
+@return CellsCloudResponse
 */
 
 
@@ -15001,13 +15001,13 @@ type CellsShapesPutWorksheetShapeOpts struct {
 }
 
 
-func (a *CellsApiService) CellsShapesPutWorksheetShape(    localVarOptionals *CellsShapesPutWorksheetShapeOpts) (ShapeResponse, *http.Response, error) {
+func (a *CellsApiService) CellsShapesPutWorksheetShape(    localVarOptionals *CellsShapesPutWorksheetShapeOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ShapeResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
@@ -18172,7 +18172,7 @@ CellsApiService Delete worksheet validation by index.
      * @param "Folder" (optional.String) -  Document&#39;s folder.
      * @param "StorageName" (optional.String) -  storage name.
 
-@return ValidationResponse
+@return CellsCloudResponse
 */
 
 
@@ -18185,13 +18185,13 @@ type CellsWorksheetValidationsDeleteWorksheetValidationOpts struct {
 }
 
 
-func (a *CellsApiService) CellsWorksheetValidationsDeleteWorksheetValidation(    localVarOptionals *CellsWorksheetValidationsDeleteWorksheetValidationOpts) (ValidationResponse, *http.Response, error) {
+func (a *CellsApiService) CellsWorksheetValidationsDeleteWorksheetValidation(    localVarOptionals *CellsWorksheetValidationsDeleteWorksheetValidationOpts) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ValidationResponse
+		localVarReturnValue CellsCloudResponse
 	)
 
 	// create path and map variables
