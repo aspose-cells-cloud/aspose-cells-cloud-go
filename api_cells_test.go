@@ -6090,3 +6090,47 @@ func TestCellsWorkbookPutWorkbookBackground(t *testing.T) {
 		fmt.Printf("%d\t CellsWorkbookPutWorkbookBackground - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
+
+func TestCellsWorkbookBatchFilesConvert(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(PostBatchConvertOpts)
+	args.BatchConvertRequest = new(BatchConvertRequest)
+	args.BatchConvertRequest.Format = "pdf"
+	args.BatchConvertRequest.MatchCondition = new(MatchConditionRequest)
+	args.BatchConvertRequest.MatchCondition.FullMatchConditions = []string{"Sheet1", "Sheet2"}
+	_, httpResponse, err := GetBaseTest().CellsAPI.PostBatchConvert(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t PostBatchConvert - %d\n", GetBaseTest().GetTestNumber(), 200)
+	}
+}
+
+func TestCellsWorkbookDeleteWorksheets(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsWorksheetsDeleteWorksheetsOpts)
+	args.MatchCondition = new(MatchConditionRequest)
+
+	args.MatchCondition = new(MatchConditionRequest)
+	args.MatchCondition.FullMatchConditions = []string{"Sheet1", "Sheet2"}
+	args.Folder = "GoTest"
+	args.Name = GetBook1()
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetsDeleteWorksheets(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t PostBatchConvert - %d\n", GetBaseTest().GetTestNumber(), 200)
+	}
+}

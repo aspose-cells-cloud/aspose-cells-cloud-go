@@ -20,27 +20,8 @@
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## Feature & Enhancements in Version 21.9
+## Feature & Enhancements in Version 21.10
 
-- Correct the return type of the following  REST APIs. 
-
-	Delete WorksheetDeleteChart
-	Post WorksheetChartLegend
-	Post WorksheetChartTitle
-	Put WorksheetAddChart
-	Put WorksheetChartTitle
-	Post WorksheetHyperlink
-	Put WorksheetHyperlink
-	Put WorksheetListObject
-	Put WorksheetOleObject
-	Post WorksheetPicture
-	Put WorksheetAddPicture
-	Put WorksheetPivotTable
-	Delete DocumentProperties
-	Delete DocumentProperty
-	Put DocumentProperty
-	Put WorksheetShape
-	Delete WorksheetValidation
 
 ## Read & Write Spreadsheet Formats
 
