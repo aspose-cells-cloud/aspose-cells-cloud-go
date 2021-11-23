@@ -6134,3 +6134,42 @@ func TestCellsWorkbookDeleteWorksheets(t *testing.T) {
 		fmt.Printf("%d\t PostBatchConvert - %d\n", GetBaseTest().GetTestNumber(), 200)
 	}
 }
+
+func TestCellsWorkbookPageCount(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsWorkbookGetPageCountOpts)
+	args.Folder = "GoTest"
+	args.Name = GetBook1()
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookGetPageCount(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t PostBatchConvert - %d\n", GetBaseTest().GetTestNumber(), 200)
+	}
+}
+
+func TestCellsWorksheetsPageCount(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsWorksheetsGetPageCountOpts)
+	args.Folder = "GoTest"
+	args.Name = GetBook1()
+	args.SheetName = "Sheet1"
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetsGetPageCount(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t PostBatchConvert - %d\n", GetBaseTest().GetTestNumber(), 200)
+	}
+}

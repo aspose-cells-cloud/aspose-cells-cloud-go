@@ -20,7 +20,7 @@
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## Feature & Enhancements in Version 21.10
+## Feature & Enhancements in Version 21.11
 
 
 ## Read & Write Spreadsheet Formats

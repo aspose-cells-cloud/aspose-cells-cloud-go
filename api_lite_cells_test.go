@@ -401,3 +401,42 @@ func TestCellsPostWatermark(t *testing.T) {
 		fmt.Printf("%d\t TestCellsPostWatermark \n", GetBaseTest().GetTestNumber())
 	}
 }
+
+func TestCellsPostCompress(t *testing.T) {
+	name := GetDataSource()
+	var fileMap map[string]string
+	fileMap = make(map[string]string)
+	fileMap[name] = "TestData\\" + name
+	name = GetAssemblyTest()
+	fileMap[name] = "TestData\\" + name
+	postOpts := new(PostCompressOpts)
+	postOpts.CompressLevel = 80
+	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostCompress(fileMap, postOpts)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t TestCellsPostCompress \n", GetBaseTest().GetTestNumber())
+	}
+}
+
+func TestCellsPostReplace(t *testing.T) {
+	name := GetDataSource()
+	var fileMap map[string]string
+	fileMap = make(map[string]string)
+	fileMap[name] = "TestData\\" + name
+	name = GetAssemblyTest()
+	fileMap[name] = "TestData\\" + name
+	postOpts := new(PostReplaceOpts)
+	postOpts.Text = "1"
+	postOpts.NewText = "aspose.cells cloud"
+	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostReplace(fileMap, postOpts)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCellsPostReplace	\n", GetBaseTest().GetTestNumber())
+	}
+}

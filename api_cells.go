@@ -31,7 +31,7 @@ import (
 	"os"
 )
 func Version() {
-	fmt.Println("---Version: 21.10.0---")
+	fmt.Println("---Version: 21.11.0---")
 }
 
 /* Create Instance of CellsApiService
@@ -16125,6 +16125,82 @@ func (a *CellsApiService) CellsWorkbookDeleteWorkbookNames(    localVarOptionals
 }
 
 /* 
+CellsApiService Get page count for workbook.
+ * @param name Document name.
+ * @param optional nil or *CellsWorkbookGetPageCountOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -  Document&#39;s folder.
+     * @param "StorageName" (optional.String) -  storage name.
+
+@return interface{}
+*/
+
+
+type CellsWorkbookGetPageCountOpts struct { 
+	Name string
+	Folder string
+	StorageName string
+}
+
+
+func (a *CellsApiService) CellsWorkbookGetPageCount(    localVarOptionals *CellsWorkbookGetPageCountOpts) (interface{}, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		localVarReturnValue interface{}
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/pagecount"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/* 
 CellsApiService Read workbook info or export.
  * @param name The document name.
  * @param optional nil or *CellsWorkbookGetWorkbookOpts - Optional Parameters:
@@ -19271,6 +19347,85 @@ func (a *CellsApiService) CellsWorksheetsGetNamedRanges(    localVarOptionals *C
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/ranges"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/* 
+CellsApiService Get page count for worksheet.
+ * @param name Document name.
+ * @param sheetName The worksheet name.
+ * @param optional nil or *CellsWorksheetsGetPageCountOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -  Document&#39;s folder.
+     * @param "StorageName" (optional.String) -  storage name.
+
+@return interface{}
+*/
+
+
+type CellsWorksheetsGetPageCountOpts struct { 
+	Name string
+	SheetName string
+	Folder string
+	StorageName string
+}
+
+
+func (a *CellsApiService) CellsWorksheetsGetPageCount(    localVarOptionals *CellsWorksheetsGetPageCountOpts) (interface{}, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		localVarReturnValue interface{}
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pagecount"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
