@@ -22,13 +22,21 @@
 
 package asposecellscloud
 
-type ListColumn struct {
-	// Gets and sets the type of calculation in the Totals row of the list column.
-	TotalsCalculation string `json:"TotalsCalculation,omitempty" xml:"TotalsCalculation"`
-	// Gets and sets the name of the column.
-	Name string `json:"Name,omitempty" xml:"Name"`
-	// Gets and sets the formula of the list column.
-	Formula string `json:"Formula,omitempty" xml:"Formula"`
-	// Gets and sets the formula of the list column.
-	Range_ *ModelRange `json:"Range,omitempty" xml:"Range"`
+type ImportPictureOption struct {
+	Source *FileSource `json:"Source,omitempty" xml:"Source"`
+	ImportDataType string `json:"ImportDataType,omitempty" xml:"ImportDataType"`
+	DestinationWorksheet string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
+	IsInsert bool `json:"IsInsert,omitempty" xml:"IsInsert"`
+	// Upper Left Row.
+	UpperLeftRow int32 `json:"UpperLeftRow,omitempty" xml:"UpperLeftRow"`
+	// Upper Left Column.
+	UpperLeftColumn int32 `json:"UpperLeftColumn,omitempty" xml:"UpperLeftColumn"`
+	// Lower Right Row.
+	LowerRightRow int32 `json:"LowerRightRow,omitempty" xml:"LowerRightRow"`
+	// Lower Right Column.
+	LowerRightColumn int32 `json:"LowerRightColumn,omitempty" xml:"LowerRightColumn"`
+	// Filename.
+	Filename string `json:"Filename,omitempty" xml:"Filename"`
+	// data : base64  string.
+	Data string `json:"Data,omitempty" xml:"Data"`
 }

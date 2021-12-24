@@ -6173,3 +6173,98 @@ func TestCellsWorksheetsPageCount(t *testing.T) {
 		fmt.Printf("%d\t PostBatchConvert - %d\n", GetBaseTest().GetTestNumber(), 200)
 	}
 }
+
+func TestCellsListObjectsPostWorksheetListColumnsTotal(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsListObjectsPostWorksheetListColumnsTotalOpts)
+	args.Folder = "GoTest"
+	args.Name = GetBook1()
+	args.SheetName = "Sheet7"
+	args.ListObjectIndex = 0
+	tableTotalRequest := new(TableTotalRequest)
+	tableTotalRequest.ListColumnIndex = 1
+	tableTotalRequest.TotalsCalculation = "Average"
+	args.TableTotalRequests = &[]TableTotalRequest{*tableTotalRequest}
+
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsListObjectsPostWorksheetListColumnsTotal(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t PostBatchConvert - %d\n", GetBaseTest().GetTestNumber(), 200)
+	}
+}
+
+func TestCellsListObjectsPostWorksheetListColumn(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsListObjectsPostWorksheetListColumnOpts)
+	args.Folder = "GoTest"
+	args.Name = GetBook1()
+	args.SheetName = "Sheet7"
+	args.ListObjectIndex = 0
+	args.ListColumn = new(ListColumn)
+	args.ListColumn.Name = "test cloumn"
+	args.ListColumn.TotalsCalculation = "Average"
+
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsListObjectsPostWorksheetListColumn(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t PostBatchConvert - %d\n", GetBaseTest().GetTestNumber(), 200)
+	}
+}
+
+func TestCellsShapesPostWorksheetGroupShape(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsShapesPostWorksheetGroupShapeOpts)
+	args.Folder = "GoTest"
+	args.Name = GetBook1()
+	args.SheetName = "Sheet6"
+	args.ListShape = []int64{0, 2}
+
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsShapesPostWorksheetGroupShape(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t PostBatchConvert - %d\n", GetBaseTest().GetTestNumber(), 200)
+	}
+}
+
+func TestCellsShapesPostWorksheetUngroupShape(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsShapesPostWorksheetUngroupShapeOpts)
+	args.Folder = "GoTest"
+	args.Name = GetBook1()
+	args.SheetName = "Sheet6"
+	args.Shapeindex = 0
+
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsShapesPostWorksheetUngroupShape(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t PostBatchConvert - %d\n", GetBaseTest().GetTestNumber(), 200)
+	}
+}

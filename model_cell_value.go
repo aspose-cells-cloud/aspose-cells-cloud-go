@@ -28,4 +28,5 @@ type CellValue struct {
 	Style *Style `json:"style,omitempty" xml:"style"`
 	Type_ string `json:"type,omitempty" xml:"type"`
 	Value string `json:"value,omitempty" xml:"value"`
+	Formula string `json:"formula,omitempty" xml:"formula"`
 }

@@ -22,13 +22,8 @@
 
 package asposecellscloud
 
-type ListColumn struct {
-	// Gets and sets the type of calculation in the Totals row of the list column.
+type TableTotalRequest struct {
+	ListColumnIndex int32 `json:"ListColumnIndex,omitempty" xml:"ListColumnIndex"`
 	TotalsCalculation string `json:"TotalsCalculation,omitempty" xml:"TotalsCalculation"`
-	// Gets and sets the name of the column.
-	Name string `json:"Name,omitempty" xml:"Name"`
-	// Gets and sets the formula of the list column.
-	Formula string `json:"Formula,omitempty" xml:"Formula"`
-	// Gets and sets the formula of the list column.
-	Range_ *ModelRange `json:"Range,omitempty" xml:"Range"`
+	CustomFormula string `json:"CustomFormula,omitempty" xml:"CustomFormula"`
 }

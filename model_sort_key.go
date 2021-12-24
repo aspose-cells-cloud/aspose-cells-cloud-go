@@ -26,4 +26,7 @@ type SortKey struct {
 	CustomList string `json:"CustomList,omitempty" xml:"CustomList"`
 	SortOrder string `json:"SortOrder,omitempty" xml:"SortOrder"`
 	Key int64 `json:"Key" xml:"Key"`
+	Order string `json:"Order,omitempty" xml:"Order"`
+	Type_ string `json:"Type,omitempty" xml:"Type"`
+	Index int32 `json:"Index,omitempty" xml:"Index"`
 }

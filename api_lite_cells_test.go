@@ -440,3 +440,23 @@ func TestCellsPostReplace(t *testing.T) {
 		fmt.Printf("%d\t func TestCellsPostReplace	\n", GetBaseTest().GetTestNumber())
 	}
 }
+
+func TestCellsPostReverse(t *testing.T) {
+	name := GetDataSource()
+	var fileMap map[string]string
+	fileMap = make(map[string]string)
+	fileMap[name] = "TestData\\" + name
+	name = GetAssemblyTest()
+	fileMap[name] = "TestData\\" + name
+	postOpts := new(PostReverseOpts)
+	postOpts.RotateType = "row"
+	postOpts.Format = "pdf"
+	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostReverse(fileMap, postOpts)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCellsPostReverse	\n", GetBaseTest().GetTestNumber())
+	}
+}

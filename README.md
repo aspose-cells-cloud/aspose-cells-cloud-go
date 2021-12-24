@@ -20,12 +20,8 @@
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## Feature & Enhancements in Version 21.11
+## Feature & Enhancements in Version 21.12
 
-- Add new API for workbook get page count on Aspose.Cells Cloud.
-- Add new API for worksheet get page count on Aspose.Cells Cloud.
-- Add new API for compress excel file on Aspose.Cells Cloud.
-- Add new feature for replace API.
 
 ## Read & Write Spreadsheet Formats
 
