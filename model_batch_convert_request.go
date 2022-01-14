@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2021 Aspose.Cells Cloud
+ *  Copyright (c) 2022 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -24,8 +24,10 @@ package asposecellscloud
 
 type BatchConvertRequest struct {
 	SourceFolder string `json:"SourceFolder,omitempty" xml:"SourceFolder"`
+	SourceStorage string `json:"SourceStorage,omitempty" xml:"SourceStorage"`
 	MatchCondition *MatchConditionRequest `json:"MatchCondition,omitempty" xml:"MatchCondition"`
 	Format string `json:"Format,omitempty" xml:"Format"`
 	OutFolder string `json:"OutFolder,omitempty" xml:"OutFolder"`
+	OutStorage string `json:"OutStorage,omitempty" xml:"OutStorage"`
 	SaveOptions *SaveOptions `json:"SaveOptions,omitempty" xml:"SaveOptions"`
 }

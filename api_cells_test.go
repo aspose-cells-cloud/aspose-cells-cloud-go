@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2021 Aspose.Cells Cloud
+ *  Copyright (c) 2022 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -4373,6 +4373,27 @@ func TestCellsWorkbookGetWorkbook(t *testing.T) {
 		fmt.Printf("%d\tTestCellsWorkbookGetWorkbook - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
 	}
 }
+func TestCellsWorkbookGetWorkbookToOtherStorage(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsWorkbookGetWorkbookOpts)
+	args.Name = GetBook1()
+	args.Format = "PDF"
+	args.Folder = GetBaseTest().remoteFolder
+	args.OutPath = "Freeing/TestCellsWorkbookGetWorkbookToOtherStorage.pdf"
+	args.OutStorageName = "DropBox"
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookGetWorkbook(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsWorkbookGetWorkbook - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
+	}
+}
 
 func TestCellsWorkbookGetWorkbookDefaultStyle(t *testing.T) {
 	name := GetBook1()
@@ -4635,6 +4656,31 @@ func TestCellsWorkbookPostWorkbookGetSmartMarkerResult(t *testing.T) {
 		fmt.Printf("%d\tTestCellsWorkbookPostWorkbookGetSmartMarkerResult - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
 	}
 }
+func TestCellsWorkbookPostWorkbookGetSmartMarkerResultToOtherStorage(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+	name = GetReportDataXml()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+	args := new(CellsWorkbookPostWorkbookGetSmartMarkerResultOpts)
+	args.Name = GetBook1()
+	args.OutPath = "GoTest/NewSmartMark.xlsx"
+	args.XmlFile = "GoTest/" + GetReportDataXml()
+	args.Folder = GetBaseTest().remoteFolder
+	args.OutStorageName = "DropBox"
+
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPostWorkbookGetSmartMarkerResult(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsWorkbookPostWorkbookGetSmartMarkerResult - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
+	}
+}
 
 func TestCellsWorkbookPostWorkbookSettings(t *testing.T) {
 	name := GetBook1()
@@ -4682,6 +4728,31 @@ func TestCellsWorkbookPostWorkbookSplit(t *testing.T) {
 		fmt.Printf("%d\tTestCellsWorkbookPostWorkbookSplit - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
+func TestCellsWorkbookPostWorkbookSplitToOtherStorage(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsWorkbookPostWorkbookSplitOpts)
+	args.Name = GetBook1()
+	args.Format = "png"
+	args.From = 1
+	args.To = 5
+	args.HorizontalResolution = 96
+	args.VerticalResolution = 96
+	args.Folder = GetBaseTest().remoteFolder
+	args.OutFolder = GetBaseTest().remoteFolder
+	args.OutStorageName = "DropBox"
+	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPostWorkbookSplit(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsWorkbookPostWorkbookSplit - %d\n", GetBaseTest().GetTestNumber(), response.Code)
+	}
+}
 
 func TestCellsWorkbookPostWorkbooksMerge(t *testing.T) {
 	name := GetBook1()
@@ -4706,7 +4777,30 @@ func TestCellsWorkbookPostWorkbooksMerge(t *testing.T) {
 		fmt.Printf("%d\tTestCellsWorkbookPostWorkbooksMerge - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
+func TestCellsWorkbookPostWorkbooksMergeOtherStorage(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+	name = GetMyDoc()
+	if err := GetBaseTest().UploadFileToOtherStorage(name, "DropBox"); err != nil {
+		t.Error(err)
+	}
+	args := new(CellsWorkbookPostWorkbooksMergeOpts)
+	args.Name = GetBook1()
+	args.MergeWith = GetMyDoc()
+	args.Folder = GetBaseTest().remoteFolder
+	args.MergedStorageName = "DropBox"
 
+	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPostWorkbooksMerge(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsWorkbookPostWorkbooksMerge - %d\n", GetBaseTest().GetTestNumber(), response.Code)
+	}
+}
 func TestCellsWorkbookPostWorkbooksTextReplace(t *testing.T) {
 	name := GetBook1()
 	if err := GetBaseTest().UploadFile(name); err != nil {
@@ -5722,7 +5816,33 @@ func TestCellsPutConvertWorkbook(t *testing.T) {
 		file1.Close()
 	}
 }
+func TestCellsPutConvertWorkbookToOtherStorage(t *testing.T) {
 
+	args := new(CellsWorkbookPutConvertWorkbookOpts)
+	args.Format = "PDF"
+	args.OutPath = "book1.xlsx.pdf"
+	args.StorageName = "DropBox"
+	file, err := os.Open("../TestData/" + GetBook1())
+	if err != nil {
+		return
+	}
+	localVarReturnValue, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPutConvertWorkbook(file, args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t TestCellsPutConvertWorkbook - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
+		file1, err2 := os.Create("../Book1.pdf")
+		if err2 != nil {
+			return
+		}
+		if _, err3 := file1.Write(localVarReturnValue); err3 != nil {
+			fmt.Println(err3)
+		}
+		file1.Close()
+	}
+}
 func TestCellsImportData(t *testing.T) {
 	name := GetImportData()
 	if err := GetBaseTest().UploadFile(name); err != nil {

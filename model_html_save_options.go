@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2021 Aspose.Cells Cloud
+ *  Copyright (c) 2022 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -35,6 +35,27 @@ type HtmlSaveOptions struct {
 	// If true and the directory does not exist, the directory will be automatically created before saving the file.             
 	CreateDirectory bool `json:"CreateDirectory,omitempty" xml:"CreateDirectory"`
 	SortNames bool `json:"SortNames,omitempty" xml:"SortNames"`
+	SaveAsSingleFile string `json:"SaveAsSingleFile,omitempty" xml:"SaveAsSingleFile"`
+	ExportHiddenWorksheet string `json:"ExportHiddenWorksheet,omitempty" xml:"ExportHiddenWorksheet"`
+	ExportGridLines string `json:"ExportGridLines,omitempty" xml:"ExportGridLines"`
+	PresentationPreference string `json:"PresentationPreference,omitempty" xml:"PresentationPreference"`
+	CellCssPrefix string `json:"CellCssPrefix,omitempty" xml:"CellCssPrefix"`
+	TableCssId string `json:"TableCssId,omitempty" xml:"TableCssId"`
+	IsFullPathLink string `json:"IsFullPathLink,omitempty" xml:"IsFullPathLink"`
+	ExportWorksheetCSSSeparately string `json:"ExportWorksheetCSSSeparately,omitempty" xml:"ExportWorksheetCSSSeparately"`
+	ExportSimilarBorderStyle string `json:"ExportSimilarBorderStyle,omitempty" xml:"ExportSimilarBorderStyle"`
+	MergeEmptyTdForcely string `json:"MergeEmptyTdForcely,omitempty" xml:"MergeEmptyTdForcely"`
+	ExportCellCoordinate string `json:"ExportCellCoordinate,omitempty" xml:"ExportCellCoordinate"`
+	ExportExtraHeadings string `json:"ExportExtraHeadings,omitempty" xml:"ExportExtraHeadings"`
+	ExportHeadings string `json:"ExportHeadings,omitempty" xml:"ExportHeadings"`
+	ExportFormula string `json:"ExportFormula,omitempty" xml:"ExportFormula"`
+	AddTooltipText string `json:"AddTooltipText,omitempty" xml:"AddTooltipText"`
+	ExportBogusRowData string `json:"ExportBogusRowData,omitempty" xml:"ExportBogusRowData"`
+	ExcludeUnusedStyles string `json:"ExcludeUnusedStyles,omitempty" xml:"ExcludeUnusedStyles"`
+	ExportDocumentProperties string `json:"ExportDocumentProperties,omitempty" xml:"ExportDocumentProperties"`
+	ExportWorksheetProperties string `json:"ExportWorksheetProperties,omitempty" xml:"ExportWorksheetProperties"`
+	ExportWorkbookProperties string `json:"ExportWorkbookProperties,omitempty" xml:"ExportWorkbookProperties"`
+	ExportFrameScriptsAndProperties string `json:"ExportFrameScriptsAndProperties,omitempty" xml:"ExportFrameScriptsAndProperties"`
 	AttachedFilesDirectory string `json:"AttachedFilesDirectory,omitempty" xml:"AttachedFilesDirectory"`
 	AttachedFilesUrlPrefix string `json:"AttachedFilesUrlPrefix,omitempty" xml:"AttachedFilesUrlPrefix"`
 	Encoding string `json:"Encoding,omitempty" xml:"Encoding"`

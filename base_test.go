@@ -48,6 +48,18 @@ func (bt *BaseTest) UploadFile(name string) (err error) {
 	_, _, err = GetBaseTest().CellsAPI.UploadFile(file, args)
 	return err
 }
+func (bt *BaseTest) UploadFileToOtherStorage(name string, storageName string) (err error) {
+	args := new(UploadFileOpts)
+	args.StorageName = storageName
+	args.Path = GetBaseTest().remoteFolder + "/" + name
+	file, err := os.Open(bt.localTestDataFolder + "/" + name)
+	if err != nil {
+		return err
+	}
+
+	_, _, err = GetBaseTest().CellsAPI.UploadFile(file, args)
+	return err
+}
 
 func (bt *BaseTest) GetTestNumber() int {
 	bt.TestNumber++
