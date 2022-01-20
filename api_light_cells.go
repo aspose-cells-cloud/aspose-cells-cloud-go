@@ -35,7 +35,7 @@ import (
 @param appKey string Application Key
 @param basePath string Base service path. Set "" for default
 @return *CellsApiService */
-func NewLiteCellsApiService(appSid string, appKey string, opts ...string) *LiteCellsApiService {
+func NewLightCellsApiService(appSid string, appKey string, opts ...string) *LightCellsApiService {
 	var basePath = ""
 	var version = ""
 	for i, v := range opts {
@@ -48,13 +48,13 @@ func NewLiteCellsApiService(appSid string, appKey string, opts ...string) *LiteC
 	}
 	config := NewConfiguration(appSid, appKey, basePath, version)
 	client := NewAPIClient(config)
-	return client.LiteCellsApi
+	return client.LightCellsApi
 }
 
-type LiteCellsApiService service
+type LightCellsApiService service
 
 /*
-LiteCellsApiService
+LightCellsApiService
  * @param file File to upload
  * @param optional nil or *DeleteMetadataOpts - Optional Parameters:
      * @param "Type_" (optional.String) -
@@ -68,7 +68,7 @@ type DeleteMetadataOpts struct {
 
 // var countryCapitalMap map[string]string /*创建集合 */
 //countryCapitalMap = make(map[string]string)
-func (a *LiteCellsApiService) DeleteMetadata(file map[string]string, localVarOptionals *DeleteMetadataOpts) (FilesResult, *http.Response, error) {
+func (a *LightCellsApiService) DeleteMetadata(file map[string]string, localVarOptionals *DeleteMetadataOpts) (FilesResult, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -128,7 +128,7 @@ func (a *LiteCellsApiService) DeleteMetadata(file map[string]string, localVarOpt
 }
 
 /*
-LiteCellsApiService
+LightCellsApiService
  * @param file File to upload
  * @param optional nil or *GetMetadataOpts - Optional Parameters:
      * @param "Type_" (optional.String) -
@@ -140,7 +140,7 @@ type GetMetadataOpts struct {
 	Type_ string
 }
 
-func (a *LiteCellsApiService) GetMetadata(file map[string]string, localVarOptionals *GetMetadataOpts) ([]CellsDocumentProperty, *http.Response, error) {
+func (a *LightCellsApiService) GetMetadata(file map[string]string, localVarOptionals *GetMetadataOpts) ([]CellsDocumentProperty, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -199,7 +199,7 @@ func (a *LiteCellsApiService) GetMetadata(file map[string]string, localVarOption
 }
 
 /*
-LiteCellsApiService
+LightCellsApiService
  * @param file File to upload
  * @param datasource
  * @param optional nil or *PostAssembleOpts - Optional Parameters:
@@ -213,7 +213,7 @@ type PostAssembleOpts struct {
 	Format     string
 }
 
-func (a *LiteCellsApiService) PostAssemble(file map[string]string, localVarOptionals *PostAssembleOpts) (FilesResult, *http.Response, error) {
+func (a *LightCellsApiService) PostAssemble(file map[string]string, localVarOptionals *PostAssembleOpts) (FilesResult, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -273,7 +273,7 @@ func (a *LiteCellsApiService) PostAssemble(file map[string]string, localVarOptio
 }
 
 /*
-LiteCellsApiService
+LightCellsApiService
  * @param file File to upload
  * @param objecttype
 
@@ -284,7 +284,7 @@ type PostClearObjectsOpts struct {
 	Objecttype string
 }
 
-func (a *LiteCellsApiService) PostClearObjects(file map[string]string, localVarOptionals *PostClearObjectsOpts) (FilesResult, *http.Response, error) {
+func (a *LightCellsApiService) PostClearObjects(file map[string]string, localVarOptionals *PostClearObjectsOpts) (FilesResult, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -341,7 +341,7 @@ func (a *LiteCellsApiService) PostClearObjects(file map[string]string, localVarO
 }
 
 /*
-LiteCellsApiService
+LightCellsApiService
  * @param file File to upload
  * @param objectType
  * @param format
@@ -354,7 +354,7 @@ type PostExportOpts struct {
 	Format     string
 }
 
-func (a *LiteCellsApiService) PostExport(file map[string]string, localVarOptionals *PostExportOpts) (FilesResult, *http.Response, error) {
+func (a *LightCellsApiService) PostExport(file map[string]string, localVarOptionals *PostExportOpts) (FilesResult, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -412,7 +412,7 @@ func (a *LiteCellsApiService) PostExport(file map[string]string, localVarOptiona
 }
 
 /*
-LiteCellsApiService
+LightCellsApiService
  * @param file File to upload
  * @param documentProperties Cells document property.
 
@@ -423,7 +423,7 @@ type PostImportOpts struct {
 	ImportOption interface{}
 }
 
-func (a *LiteCellsApiService) PostImport(file map[string]string, localVarOptionals *PostImportOpts) (FilesResult, *http.Response, error) {
+func (a *LightCellsApiService) PostImport(file map[string]string, localVarOptionals *PostImportOpts) (FilesResult, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -486,7 +486,7 @@ func (a *LiteCellsApiService) PostImport(file map[string]string, localVarOptiona
 }
 
 /*
-LiteCellsApiService
+LightCellsApiService
  * @param file File to upload
  * @param optional nil or *PostMergeOpts - Optional Parameters:
      * @param "Format" (optional.String) -
@@ -500,7 +500,7 @@ type PostMergeOpts struct {
 	MergeToOneSheet bool
 }
 
-func (a *LiteCellsApiService) PostMerge(file map[string]string, localVarOptionals *PostMergeOpts) (FileInfo, *http.Response, error) {
+func (a *LightCellsApiService) PostMerge(file map[string]string, localVarOptionals *PostMergeOpts) (FileInfo, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -562,7 +562,7 @@ func (a *LiteCellsApiService) PostMerge(file map[string]string, localVarOptional
 }
 
 /*
-LiteCellsApiService
+LightCellsApiService
  * @param file File to upload
  * @param documentProperties Cells document property.
 
@@ -573,7 +573,7 @@ type PostMetadataOpts struct {
 	DocumentProperties []CellsDocumentProperty
 }
 
-func (a *LiteCellsApiService) PostMetadata(file map[string]string, localVarOptionals *PostMetadataOpts) (FilesResult, *http.Response, error) {
+func (a *LightCellsApiService) PostMetadata(file map[string]string, localVarOptionals *PostMetadataOpts) (FilesResult, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -636,7 +636,7 @@ func (a *LiteCellsApiService) PostMetadata(file map[string]string, localVarOptio
 }
 
 /*
-LiteCellsApiService
+LightCellsApiService
  * @param file File to upload
  * @param password
 
@@ -647,7 +647,7 @@ type PostProtectOpts struct {
 	Password string
 }
 
-func (a *LiteCellsApiService) PostProtect(file map[string]string, localVarOptionals *PostProtectOpts) (FilesResult, *http.Response, error) {
+func (a *LightCellsApiService) PostProtect(file map[string]string, localVarOptionals *PostProtectOpts) (FilesResult, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -704,7 +704,7 @@ func (a *LiteCellsApiService) PostProtect(file map[string]string, localVarOption
 }
 
 /*
-LiteCellsApiService
+LightCellsApiService
  * @param file File to upload
  * @param text
  * @param optional nil or *PostSearchOpts - Optional Parameters:
@@ -720,7 +720,7 @@ type PostSearchOpts struct {
 	Sheetname string
 }
 
-func (a *LiteCellsApiService) PostSearch(file map[string]string, localVarOptionals *PostSearchOpts) ([]TextItem, *http.Response, error) {
+func (a *LightCellsApiService) PostSearch(file map[string]string, localVarOptionals *PostSearchOpts) ([]TextItem, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -784,7 +784,7 @@ func (a *LiteCellsApiService) PostSearch(file map[string]string, localVarOptiona
 }
 
 /*
-LiteCellsApiService
+LightCellsApiService
  * @param file File to upload
  * @param format
  * @param optional nil or *PostSplitOpts - Optional Parameters:
@@ -801,7 +801,7 @@ type PostSplitOpts struct {
 	To       int32
 }
 
-func (a *LiteCellsApiService) PostSplit(file map[string]string, localVarOptionals *PostSplitOpts) (FilesResult, *http.Response, error) {
+func (a *LightCellsApiService) PostSplit(file map[string]string, localVarOptionals *PostSplitOpts) (FilesResult, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -868,7 +868,7 @@ func (a *LiteCellsApiService) PostSplit(file map[string]string, localVarOptional
 }
 
 /*
-LiteCellsApiService
+LightCellsApiService
  * @param file File to upload
  * @param password
 
@@ -879,7 +879,7 @@ type PostUnlockOpts struct {
 	Password string
 }
 
-func (a *LiteCellsApiService) PostUnlock(file map[string]string, localVarOptionals *PostUnlockOpts) (FilesResult, *http.Response, error) {
+func (a *LightCellsApiService) PostUnlock(file map[string]string, localVarOptionals *PostUnlockOpts) (FilesResult, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -936,7 +936,7 @@ func (a *LiteCellsApiService) PostUnlock(file map[string]string, localVarOptiona
 }
 
 /*
-LiteCellsApiService
+LightCellsApiService
  * @param file File to upload
  * @param text
  * @param color
@@ -949,7 +949,7 @@ type PostWatermarkOpts struct {
 	Color string
 }
 
-func (a *LiteCellsApiService) PostWatermark(file map[string]string, localVarOptionals *PostWatermarkOpts) (FilesResult, *http.Response, error) {
+func (a *LightCellsApiService) PostWatermark(file map[string]string, localVarOptionals *PostWatermarkOpts) (FilesResult, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -1007,7 +1007,7 @@ func (a *LiteCellsApiService) PostWatermark(file map[string]string, localVarOpti
 }
 
 /*
-LiteCellsApiService
+LightCellsApiService
  * @param file File to upload
  * @param text
  * @param color
@@ -1019,7 +1019,7 @@ type PostCompressOpts struct {
 	CompressLevel int64
 }
 
-func (a *LiteCellsApiService) PostCompress(file map[string]string, localVarOptionals *PostCompressOpts) (FilesResult, *http.Response, error) {
+func (a *LightCellsApiService) PostCompress(file map[string]string, localVarOptionals *PostCompressOpts) (FilesResult, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -1076,7 +1076,7 @@ func (a *LiteCellsApiService) PostCompress(file map[string]string, localVarOptio
 }
 
 /*
-LiteCellsApiService
+LightCellsApiService
  * @param file File to upload
  * @param text
  * @param color
@@ -1091,7 +1091,7 @@ type PostReplaceOpts struct {
 	SheetName string
 }
 
-func (a *LiteCellsApiService) PostReplace(file map[string]string, localVarOptionals *PostReplaceOpts) (FilesResult, *http.Response, error) {
+func (a *LightCellsApiService) PostReplace(file map[string]string, localVarOptionals *PostReplaceOpts) (FilesResult, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -1151,7 +1151,7 @@ func (a *LiteCellsApiService) PostReplace(file map[string]string, localVarOption
 }
 
 /*
-LiteCellsApiService
+LightCellsApiService
  * @param file File to upload
  * @param rotateType
  * @param color
@@ -1164,7 +1164,7 @@ type PostReverseOpts struct {
 	Format     string
 }
 
-func (a *LiteCellsApiService) PostReverse(file map[string]string, localVarOptionals *PostReverseOpts) (FilesResult, *http.Response, error) {
+func (a *LightCellsApiService) PostReverse(file map[string]string, localVarOptionals *PostReverseOpts) (FilesResult, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}

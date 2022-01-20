@@ -22,6 +22,12 @@
 
 ## Feature & Enhancements in Version 22.1
 
+- SaveAs API add the parameter of target storage name.
+- Workbok merged API add the parameter of merged file storage name.
+- Workbok split API add the parameter of target storage name
+- Workbok smart marker API add the parameter of output storage name.
+- Batch convert API add the parameters of intput and output storage name.
+- Remove AutoshapesController from Aspose.Cells Cloud.
 
 ## Read & Write Spreadsheet Formats
 

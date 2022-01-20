@@ -32,7 +32,7 @@ func TestCellsDeleteMetadata(t *testing.T) {
 	var fileMap map[string]string
 	fileMap = make(map[string]string)
 	fileMap[name] = "TestData\\" + name
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.DeleteMetadata(fileMap, nil)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.DeleteMetadata(fileMap, nil)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -52,7 +52,7 @@ func TestCellsPostAssemble(t *testing.T) {
 	postAssembleOpts := new(PostAssembleOpts)
 	postAssembleOpts.Datasource = "ds"
 	postAssembleOpts.Format = "xlsx"
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostAssemble(fileMap, postAssembleOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostAssemble(fileMap, postAssembleOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -72,7 +72,7 @@ func TestCellsPostClearObjects(t *testing.T) {
 	postOpts := new(PostClearObjectsOpts)
 	postOpts.Objecttype = "chart"
 
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostClearObjects(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostClearObjects(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -92,7 +92,7 @@ func TestCellsPostExport_chart(t *testing.T) {
 	postOpts := new(PostExportOpts)
 	postOpts.Format = "pdf"
 	postOpts.ObjectType = "chart"
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostExport(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostExport(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -112,7 +112,7 @@ func TestCellsPostExport_listobject(t *testing.T) {
 	postOpts := new(PostExportOpts)
 	postOpts.Format = "pdf"
 	postOpts.ObjectType = "listobject"
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostExport(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostExport(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -131,7 +131,7 @@ func TestCellsPostExport_picture(t *testing.T) {
 	postOpts := new(PostExportOpts)
 	postOpts.Format = "png"
 	postOpts.ObjectType = "picture"
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostExport(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostExport(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -150,7 +150,7 @@ func TestCellsPostExport_shape(t *testing.T) {
 	postOpts := new(PostExportOpts)
 	postOpts.Format = "png"
 	postOpts.ObjectType = "shape"
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostExport(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostExport(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -169,7 +169,7 @@ func TestCellsPostExport_oleobject(t *testing.T) {
 	postOpts := new(PostExportOpts)
 	postOpts.Format = "png"
 	postOpts.ObjectType = "oleobject"
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostExport(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostExport(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -188,7 +188,7 @@ func TestCellsPostExport_worksheet(t *testing.T) {
 	postOpts := new(PostExportOpts)
 	postOpts.Format = "pdf"
 	postOpts.ObjectType = "worksheet"
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostExport(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostExport(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -208,7 +208,7 @@ func TestCellsPostExport_workbook(t *testing.T) {
 	postOpts := new(PostExportOpts)
 	postOpts.Format = "pdf"
 	postOpts.ObjectType = "workbook"
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostExport(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostExport(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -236,7 +236,7 @@ func TestCellsPostImport(t *testing.T) {
 	postOpts := new(PostImportOpts)
 	postOpts.ImportOption = &importIntArrayOption
 
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostImport(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostImport(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -255,7 +255,7 @@ func TestCellsPostMerge(t *testing.T) {
 	postOpts := new(PostMergeOpts)
 	postOpts.Format = "pdf"
 
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostMerge(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostMerge(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -277,7 +277,7 @@ func TestCellsPostMetadata(t *testing.T) {
 	cellsDocumentProperty.Name = "test"
 	cellsDocumentProperty.Value = "test"
 	postOpts.DocumentProperties = []CellsDocumentProperty{*cellsDocumentProperty}
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostMetadata(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostMetadata(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -296,7 +296,7 @@ func TestCellsPostProtect(t *testing.T) {
 	fileMap[name] = "TestData\\" + name
 	postOpts := new(PostProtectOpts)
 	postOpts.Password = "123456"
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostProtect(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostProtect(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -315,7 +315,7 @@ func TestCellsPostSearch(t *testing.T) {
 	fileMap[name] = "TestData\\" + name
 	postOpts := new(PostSearchOpts)
 	postOpts.Text = "1"
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostSearch(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostSearch(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -335,7 +335,7 @@ func TestCellsPostSearch_Sheet(t *testing.T) {
 	postOpts := new(PostSearchOpts)
 	postOpts.Text = "1"
 	postOpts.Sheetname = "Sheet1"
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostSearch(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostSearch(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -354,7 +354,7 @@ func TestCellsPostSplit(t *testing.T) {
 	fileMap[name] = "TestData\\" + name
 	postOpts := new(PostSplitOpts)
 	postOpts.Format = "png"
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostSplit(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostSplit(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -372,7 +372,7 @@ func TestCellsPostUnlock(t *testing.T) {
 
 	postOpts := new(PostUnlockOpts)
 	postOpts.Password = "123456"
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostUnlock(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostUnlock(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -392,7 +392,7 @@ func TestCellsPostWatermark(t *testing.T) {
 	postOpts := new(PostWatermarkOpts)
 	postOpts.Color = "#fff"
 	postOpts.Text = "aspose.cells cloud"
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostWatermark(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostWatermark(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -411,7 +411,7 @@ func TestCellsPostCompress(t *testing.T) {
 	fileMap[name] = "TestData\\" + name
 	postOpts := new(PostCompressOpts)
 	postOpts.CompressLevel = 80
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostCompress(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostCompress(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -431,7 +431,7 @@ func TestCellsPostReplace(t *testing.T) {
 	postOpts := new(PostReplaceOpts)
 	postOpts.Text = "1"
 	postOpts.NewText = "aspose.cells cloud"
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostReplace(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostReplace(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -451,7 +451,7 @@ func TestCellsPostReverse(t *testing.T) {
 	postOpts := new(PostReverseOpts)
 	postOpts.RotateType = "row"
 	postOpts.Format = "pdf"
-	_, httpResponse, err := GetBaseTest().LiteCellsAPI.PostReverse(fileMap, postOpts)
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostReverse(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {

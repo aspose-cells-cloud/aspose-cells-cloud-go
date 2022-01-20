@@ -1,21 +1,21 @@
-# \LiteCellsApi
+# \LightCellsApi
 
 All URIs are relative to *https://api.aspose.cloud/v3.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteMetadata**](LiteCellsApi.md#DeleteMetadata) | **Post** /cells/metadata/delete | 
-[**GetMetadata**](LiteCellsApi.md#GetMetadata) | **Post** /cells/metadata/get | 
-[**PostAssemble**](LiteCellsApi.md#PostAssemble) | **Post** /cells/assemble | 
-[**PostClearObjects**](LiteCellsApi.md#PostClearObjects) | **Post** /cells/clearobjects | 
-[**PostExport**](LiteCellsApi.md#PostExport) | **Post** /cells/export | 
-[**PostMerge**](LiteCellsApi.md#PostMerge) | **Post** /cells/merge | 
-[**PostMetadata**](LiteCellsApi.md#PostMetadata) | **Post** /cells/metadata/update | 
-[**PostProtect**](LiteCellsApi.md#PostProtect) | **Post** /cells/protect | 
-[**PostSearch**](LiteCellsApi.md#PostSearch) | **Post** /cells/search | 
-[**PostSplit**](LiteCellsApi.md#PostSplit) | **Post** /cells/split | 
-[**PostUnlock**](LiteCellsApi.md#PostUnlock) | **Post** /cells/unlock | 
-[**PostWatermark**](LiteCellsApi.md#PostWatermark) | **Post** /cells/watermark | 
+[**DeleteMetadata**](LightCellsApi.md#DeleteMetadata) | **Post** /cells/metadata/delete | 
+[**GetMetadata**](LightCellsApi.md#GetMetadata) | **Post** /cells/metadata/get | 
+[**PostAssemble**](LightCellsApi.md#PostAssemble) | **Post** /cells/assemble | 
+[**PostClearObjects**](LightCellsApi.md#PostClearObjects) | **Post** /cells/clearobjects | 
+[**PostExport**](LightCellsApi.md#PostExport) | **Post** /cells/export | 
+[**PostMerge**](LightCellsApi.md#PostMerge) | **Post** /cells/merge | 
+[**PostMetadata**](LightCellsApi.md#PostMetadata) | **Post** /cells/metadata/update | 
+[**PostProtect**](LightCellsApi.md#PostProtect) | **Post** /cells/protect | 
+[**PostSearch**](LightCellsApi.md#PostSearch) | **Post** /cells/search | 
+[**PostSplit**](LightCellsApi.md#PostSplit) | **Post** /cells/split | 
+[**PostUnlock**](LightCellsApi.md#PostUnlock) | **Post** /cells/unlock | 
+[**PostWatermark**](LightCellsApi.md#PostWatermark) | **Post** /cells/watermark | 
 
 
 # **DeleteMetadata**

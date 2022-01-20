@@ -33,7 +33,7 @@ type BaseTest struct {
 	remoteFolder        string
 	localTestDataFolder string
 	CellsAPI            *CellsApiService
-	LiteCellsAPI        *LiteCellsApiService
+	LightCellsApi       *LightCellsApiService
 	TestNumber          int
 }
 
@@ -72,8 +72,8 @@ func NewBaseTest() *BaseTest {
 		localTestDataFolder: "TestData/",
 		TestNumber:          0,
 		// Get Client Secret and Client Id from https://aspose.cloud
-		CellsAPI:     NewCellsApiService(os.Getenv("CellsCloudTestClientId"), os.Getenv("CellsCloudTestClientSecret"), os.Getenv("CellsCloudTestApiBaseUrl"), "v3.0"),
-		LiteCellsAPI: NewLiteCellsApiService(os.Getenv("CellsCloudTestClientId"), os.Getenv("CellsCloudTestClientSecret"), os.Getenv("CellsCloudTestApiBaseUrl"), "v3.0"),
+		CellsAPI:      NewCellsApiService(os.Getenv("CellsCloudTestClientId"), os.Getenv("CellsCloudTestClientSecret"), os.Getenv("CellsCloudTestApiBaseUrl"), "v3.0"),
+		LightCellsApi: NewLightCellsApiService(os.Getenv("CellsCloudTestClientId"), os.Getenv("CellsCloudTestClientSecret"), os.Getenv("CellsCloudTestApiBaseUrl"), "v3.0"),
 	}
 	return bt
 }
