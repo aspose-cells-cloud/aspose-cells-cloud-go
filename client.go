@@ -56,6 +56,8 @@ type APIClient struct {
 	// API Services
 	CellsApi      *CellsApiService
 	LightCellsApi *LightCellsApiService
+	//Deprecated
+	LiteCellsApi *LiteCellsApiService
 }
 
 type service struct {
@@ -85,7 +87,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	// API Services
 	c.CellsApi = (*CellsApiService)(&c.common)
 	c.LightCellsApi = (*LightCellsApiService)(&c.common)
-
+	//Deprecated
+	c.LiteCellsApi = (*LiteCellsApiService)(&c.common)
 	return c
 }
 
