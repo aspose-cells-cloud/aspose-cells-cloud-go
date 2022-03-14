@@ -31,7 +31,7 @@ import (
 	"os"
 )
 func Version() {
-	fmt.Println("---Version: 22.2.0---")
+	fmt.Println("---Version: 22.3.0---")
 }
 
 /* Create Instance of CellsApiService
@@ -17313,6 +17313,88 @@ func (a *CellsApiService) CellsWorkbookPostAutofitWorkbookRows(    localVarOptio
 	if localVarOptionals != nil &&  &localVarOptionals.AutoFitterOptions != nil {
 		
 		localVarPostBody = &localVarOptionals.AutoFitterOptions
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/* 
+CellsApiService Add digital signature.
+ * @param name Workbook name.
+ * @param digitalsignaturefile Digital signature file parameters.
+ * @param password
+ * @param optional nil or *CellsWorkbookPostDigitalSignatureOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -  Workbook&#39;s folder.
+     * @param "StorageName" (optional.String) -  storage name.
+
+@return CellsCloudResponse
+*/
+
+
+type CellsWorkbookPostDigitalSignatureOpts struct { 
+	Name string
+	Digitalsignaturefile string
+	Password string
+	Folder string
+	StorageName string
+}
+
+
+func (a *CellsApiService) CellsWorkbookPostDigitalSignature(    localVarOptionals *CellsWorkbookPostDigitalSignatureOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/digitalsignature"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	localVarQueryParams.Add("digitalsignaturefile", parameterToString(localVarOptionals.Digitalsignaturefile, ""))
+	localVarQueryParams.Add("password", parameterToString(localVarOptionals.Password, ""))
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {

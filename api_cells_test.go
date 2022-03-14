@@ -6388,3 +6388,28 @@ func TestCellsShapesPostWorksheetUngroupShape(t *testing.T) {
 		fmt.Printf("%d\t PostBatchConvert - %d\n", GetBaseTest().GetTestNumber(), 200)
 	}
 }
+
+func TestCellsWorkbookPostDigitalSignature(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	if err := GetBaseTest().UploadFile("roywang.pfx"); err != nil {
+		t.Error(err)
+	}
+	args := new(CellsWorkbookPostDigitalSignatureOpts)
+	args.Folder = "GoTest"
+	args.Name = GetBook1()
+	args.Digitalsignaturefile = "GoTest/roywang.pfx"
+	args.Password = "123456"
+
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPostDigitalSignature(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t CellsWorkbookPostDigitalSignature - %d\n", GetBaseTest().GetTestNumber(), 200)
+	}
+}
