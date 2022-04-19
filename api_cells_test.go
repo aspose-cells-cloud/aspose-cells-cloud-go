@@ -6413,3 +6413,79 @@ func TestCellsWorkbookPostDigitalSignature(t *testing.T) {
 		fmt.Printf("%d\t CellsWorkbookPostDigitalSignature - %d\n", GetBaseTest().GetTestNumber(), 200)
 	}
 }
+func TestCellsPutConvertWorkbook_Extend(t *testing.T) {
+	var extendedQueryParameters map[string]string
+	extendedQueryParameters = make(map[string]string)
+	extendedQueryParameters["OnePagePerSheet"] = "false"
+	args := new(CellsWorkbookPutConvertWorkbookOpts)
+	args.Format = "PDF"
+	args.ExtendedQueryParameters = extendedQueryParameters
+	// args.OutPath = "book1.xlsx.pdf"
+	file, err := os.Open("../TestData/" + GetBook1())
+	if err != nil {
+		return
+	}
+	localVarReturnValue, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPutConvertWorkbook(file, args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t TestCellsPutConvertWorkbook - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
+		file1, err2 := os.Create("../Book1.pdf")
+		if err2 != nil {
+			return
+		}
+		if _, err3 := file1.Write(localVarReturnValue); err3 != nil {
+			fmt.Println(err3)
+		}
+		file1.Close()
+	}
+}
+func TestCellsWorkbookGetWorkbook_Extend(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+	var extendedQueryParameters map[string]string
+	extendedQueryParameters = make(map[string]string)
+	extendedQueryParameters["OnePagePerSheet"] = "false"
+	args := new(CellsWorkbookGetWorkbookOpts)
+	args.Name = GetBook1()
+	args.Format = "PDF"
+	args.Folder = GetBaseTest().remoteFolder
+	args.ExtendedQueryParameters = extendedQueryParameters
+
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookGetWorkbook(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsWorkbookGetWorkbook - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
+	}
+}
+
+func TestCellsSaveAsPostDocumentSaveAs_Extend(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+	var extendedQueryParameters map[string]string
+	extendedQueryParameters = make(map[string]string)
+	extendedQueryParameters["OnePagePerSheet"] = "false"
+	args := new(CellsSaveAsPostDocumentSaveAsOpts)
+	args.Name = GetBook1()
+	args.SaveOptions = nil
+	args.Newfilename = GetBaseTest().remoteFolder + "/newfilego.pdf"
+	args.Folder = GetBaseTest().remoteFolder
+	args.ExtendedQueryParameters = extendedQueryParameters
+	response, httpResponse, err := GetBaseTest().CellsAPI.CellsSaveAsPostDocumentSaveAs(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsSaveAsPostDocumentSaveAs - %d\n", GetBaseTest().GetTestNumber(), response.Code)
+	}
+}

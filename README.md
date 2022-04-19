@@ -20,9 +20,12 @@
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## Feature & Enhancements in Version 22.3
+## Feature & Enhancements in Version 22.4
 
-- Add new API about adding digital signature for cloud file.
+- Export API adds extended query parameters.
+- Convert API adds extended query parameters.
+- SaveAs API adds extended query parameters.
+- Get Workbook API adds extended query parameters.
 
 ## Read & Write Spreadsheet Formats
 

@@ -460,3 +460,26 @@ func TestCellsPostReverse(t *testing.T) {
 		fmt.Printf("%d\t func TestCellsPostReverse	\n", GetBaseTest().GetTestNumber())
 	}
 }
+func TestCellsPostExport_workbook_Extend(t *testing.T) {
+	name := GetDataSource()
+	var fileMap map[string]string
+	fileMap = make(map[string]string)
+	fileMap[name] = "TestData\\" + name
+	name = GetAssemblyTest()
+	fileMap[name] = "TestData\\" + name
+	var extendedQueryParameters map[string]string
+	extendedQueryParameters = make(map[string]string)
+	extendedQueryParameters["OnePagePerSheet"] = "false"
+	postOpts := new(PostExportOpts)
+	postOpts.Format = "pdf"
+	postOpts.ObjectType = "workbook"
+	postOpts.ExtendedQueryParameters = extendedQueryParameters
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostExport(fileMap, postOpts)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsPostExport \n", GetBaseTest().GetTestNumber())
+	}
+}

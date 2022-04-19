@@ -350,8 +350,9 @@ LightCellsApiService
 */
 
 type PostExportOpts struct {
-	ObjectType string
-	Format     string
+	ObjectType              string
+	Format                  string
+	ExtendedQueryParameters map[string]string
 }
 
 func (a *LightCellsApiService) PostExport(file map[string]string, localVarOptionals *PostExportOpts) (FilesResult, *http.Response, error) {
@@ -372,6 +373,12 @@ func (a *LightCellsApiService) PostExport(file map[string]string, localVarOption
 
 	localVarQueryParams.Add("objectType", parameterToString(localVarOptionals.ObjectType, ""))
 	localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format, ""))
+
+	if localVarOptionals.ExtendedQueryParameters != nil {
+		for key, value := range localVarOptionals.ExtendedQueryParameters {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"multipart/form-data"}
 
