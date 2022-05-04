@@ -23,6 +23,7 @@
 package asposecellscloud
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 	"strconv"
@@ -100,6 +101,7 @@ func TestCellsAutoFilterGetWorksheetAutoFilter(t *testing.T) {
 		t.Fail()
 	} else {
 		fmt.Printf("%d\tTestCellsAutoFilterGetWorksheetAutoFilter - %d\n", GetBaseTest().GetTestNumber(), response.Code)
+		fmt.Println(json.Marshal(*(response.AutoFilter)))
 	}
 }
 
@@ -5832,12 +5834,14 @@ func TestCellsPutConvertWorkbookToOtherStorage(t *testing.T) {
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\t TestCellsPutConvertWorkbook - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
-		file1, err2 := os.Create("../Book1.pdf")
+		fmt.Printf("%d\t TestCellsPutConvertWorkbookToOtherStorage - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
+		file1, err2 := os.Create("../Book1withother.pdf")
 		if err2 != nil {
+			fmt.Println(err2)
 			return
 		}
 		if _, err3 := file1.Write(localVarReturnValue); err3 != nil {
+			fmt.Println(err2)
 			fmt.Println(err3)
 		}
 		file1.Close()
@@ -6432,7 +6436,7 @@ func TestCellsPutConvertWorkbook_Extend(t *testing.T) {
 		t.Fail()
 	} else {
 		fmt.Printf("%d\t TestCellsPutConvertWorkbook - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
-		file1, err2 := os.Create("../Book1.pdf")
+		file1, err2 := os.Create("../Book1_extend.pdf")
 		if err2 != nil {
 			return
 		}

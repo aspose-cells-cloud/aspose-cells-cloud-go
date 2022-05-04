@@ -72,13 +72,14 @@ func TestCellsPostClearObjects(t *testing.T) {
 	postOpts := new(PostClearObjectsOpts)
 	postOpts.Objecttype = "chart"
 
-	_, httpResponse, err := GetBaseTest().LightCellsApi.PostClearObjects(fileMap, postOpts)
+	response, httpResponse, err := GetBaseTest().LightCellsApi.PostClearObjects(fileMap, postOpts)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestCellsPostClearObjects \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestCellsPostClearObjects :%d.\n", GetBaseTest().GetTestNumber(), len(response.Files))
+		fmt.Println(response.Files[0].FileContent)
 	}
 }
 

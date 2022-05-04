@@ -123,7 +123,9 @@ func (a *LightCellsApiService) DeleteMetadata(file map[string]string, localVarOp
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -193,6 +195,9 @@ func (a *LightCellsApiService) GetMetadata(file map[string]string, localVarOptio
 	if localVarHttpResponse.StatusCode >= 300 {
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
 	}
 
 	return localVarReturnValue, localVarHttpResponse, err
@@ -268,6 +273,9 @@ func (a *LightCellsApiService) PostAssemble(file map[string]string, localVarOpti
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 
 	return localVarReturnValue, localVarHttpResponse, err
 }
@@ -335,6 +343,9 @@ func (a *LightCellsApiService) PostClearObjects(file map[string]string, localVar
 	if localVarHttpResponse.StatusCode >= 300 {
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
 	}
 
 	return localVarReturnValue, localVarHttpResponse, err
@@ -414,6 +425,9 @@ func (a *LightCellsApiService) PostExport(file map[string]string, localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 
 	return localVarReturnValue, localVarHttpResponse, err
 }
@@ -487,6 +501,9 @@ func (a *LightCellsApiService) PostImport(file map[string]string, localVarOption
 	if localVarHttpResponse.StatusCode >= 300 {
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
 	}
 
 	return localVarReturnValue, localVarHttpResponse, err
@@ -564,6 +581,9 @@ func (a *LightCellsApiService) PostMerge(file map[string]string, localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 
 	return localVarReturnValue, localVarHttpResponse, err
 }
@@ -638,6 +658,9 @@ func (a *LightCellsApiService) PostMetadata(file map[string]string, localVarOpti
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 
 	return localVarReturnValue, localVarHttpResponse, err
 }
@@ -705,6 +728,9 @@ func (a *LightCellsApiService) PostProtect(file map[string]string, localVarOptio
 	if localVarHttpResponse.StatusCode >= 300 {
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
 	}
 
 	return localVarReturnValue, localVarHttpResponse, err
@@ -785,6 +811,9 @@ func (a *LightCellsApiService) PostSearch(file map[string]string, localVarOption
 	if localVarHttpResponse.StatusCode >= 300 {
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
 	}
 
 	return localVarReturnValue, localVarHttpResponse, err
@@ -870,6 +899,9 @@ func (a *LightCellsApiService) PostSplit(file map[string]string, localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 
 	return localVarReturnValue, localVarHttpResponse, err
 }
@@ -937,6 +969,9 @@ func (a *LightCellsApiService) PostUnlock(file map[string]string, localVarOption
 	if localVarHttpResponse.StatusCode >= 300 {
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
 	}
 
 	return localVarReturnValue, localVarHttpResponse, err
@@ -1009,6 +1044,9 @@ func (a *LightCellsApiService) PostWatermark(file map[string]string, localVarOpt
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 
 	return localVarReturnValue, localVarHttpResponse, err
 }
@@ -1077,6 +1115,9 @@ func (a *LightCellsApiService) PostCompress(file map[string]string, localVarOpti
 	if localVarHttpResponse.StatusCode >= 300 {
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
 	}
 
 	return localVarReturnValue, localVarHttpResponse, err
@@ -1153,6 +1194,9 @@ func (a *LightCellsApiService) PostReplace(file map[string]string, localVarOptio
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 
 	return localVarReturnValue, localVarHttpResponse, err
 }
@@ -1223,6 +1267,9 @@ func (a *LightCellsApiService) PostReverse(file map[string]string, localVarOptio
 	if localVarHttpResponse.StatusCode >= 300 {
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
 	}
 
 	return localVarReturnValue, localVarHttpResponse, err

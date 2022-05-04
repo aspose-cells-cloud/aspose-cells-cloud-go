@@ -23,6 +23,7 @@
 package asposecellscloud
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -32,7 +33,7 @@ import (
 )
 
 func Version() {
-	fmt.Println("---Version: 22.4.0---")
+	fmt.Println("---Version: 22.4.1---")
 }
 
 /* Create Instance of CellsApiService
@@ -167,7 +168,9 @@ func (a *CellsApiService) CellsAutoFilterDeleteWorksheetDateFilter(localVarOptio
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -252,7 +255,9 @@ func (a *CellsApiService) CellsAutoFilterDeleteWorksheetFilter(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -329,7 +334,9 @@ func (a *CellsApiService) CellsAutoFilterGetWorksheetAutoFilter(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -406,7 +413,9 @@ func (a *CellsApiService) CellsAutoFilterPostWorksheetAutoFilterRefresh(localVar
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -486,7 +495,9 @@ func (a *CellsApiService) CellsAutoFilterPostWorksheetMatchBlanks(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -566,7 +577,9 @@ func (a *CellsApiService) CellsAutoFilterPostWorksheetMatchNonBlanks(localVarOpt
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -666,7 +679,9 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetColorFilter(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -780,7 +795,9 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetCustomFilter(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -906,7 +923,9 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetDateFilter(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -1002,7 +1021,9 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetDynamicFilter(localVarOptio
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -1098,7 +1119,9 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetFilter(localVarOptionals *C
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -1200,7 +1223,9 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetFilterTop10(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -1299,7 +1324,9 @@ func (a *CellsApiService) CellsAutoFilterPutWorksheetIconFilter(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -1388,7 +1415,9 @@ func (a *CellsApiService) CellsAutoshapesGetWorksheetAutoshape(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -1465,7 +1494,9 @@ func (a *CellsApiService) CellsAutoshapesGetWorksheetAutoshapes(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -1545,7 +1576,9 @@ func (a *CellsApiService) CellsChartAreaGetChartArea(localVarOptionals *CellsCha
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -1625,7 +1658,9 @@ func (a *CellsApiService) CellsChartAreaGetChartAreaBorder(localVarOptionals *Ce
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -1705,7 +1740,9 @@ func (a *CellsApiService) CellsChartAreaGetChartAreaFillFormat(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -1785,7 +1822,9 @@ func (a *CellsApiService) CellsChartsDeleteWorksheetChartLegend(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -1865,7 +1904,9 @@ func (a *CellsApiService) CellsChartsDeleteWorksheetChartTitle(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -1942,7 +1983,9 @@ func (a *CellsApiService) CellsChartsDeleteWorksheetClearCharts(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -2022,7 +2065,9 @@ func (a *CellsApiService) CellsChartsDeleteWorksheetDeleteChart(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -2111,6 +2156,9 @@ func (a *CellsApiService) CellsChartsGetWorksheetChart(localVarOptionals *CellsC
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
+	if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 
 	return localVarReturnValue, localVarHttpResponse, err
 }
@@ -2191,7 +2239,9 @@ func (a *CellsApiService) CellsChartsGetWorksheetChartLegend(localVarOptionals *
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -2271,7 +2321,9 @@ func (a *CellsApiService) CellsChartsGetWorksheetChartTitle(localVarOptionals *C
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -2348,7 +2400,9 @@ func (a *CellsApiService) CellsChartsGetWorksheetCharts(localVarOptionals *Cells
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -2435,7 +2489,9 @@ func (a *CellsApiService) CellsChartsPostWorksheetChart(localVarOptionals *Cells
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -2522,7 +2578,9 @@ func (a *CellsApiService) CellsChartsPostWorksheetChartLegend(localVarOptionals 
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -2609,7 +2667,9 @@ func (a *CellsApiService) CellsChartsPostWorksheetChartTitle(localVarOptionals *
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -2754,7 +2814,9 @@ func (a *CellsApiService) CellsChartsPutWorksheetAddChart(localVarOptionals *Cel
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -2834,7 +2896,9 @@ func (a *CellsApiService) CellsChartsPutWorksheetChartLegend(localVarOptionals *
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -2921,7 +2985,9 @@ func (a *CellsApiService) CellsChartsPutWorksheetChartTitle(localVarOptionals *C
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -3001,7 +3067,9 @@ func (a *CellsApiService) CellsConditionalFormattingsDeleteWorksheetConditionalF
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -3090,7 +3158,9 @@ func (a *CellsApiService) CellsConditionalFormattingsDeleteWorksheetConditionalF
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -3167,7 +3237,9 @@ func (a *CellsApiService) CellsConditionalFormattingsDeleteWorksheetConditionalF
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -3247,7 +3319,9 @@ func (a *CellsApiService) CellsConditionalFormattingsGetWorksheetConditionalForm
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -3324,7 +3398,9 @@ func (a *CellsApiService) CellsConditionalFormattingsGetWorksheetConditionalForm
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -3411,7 +3487,9 @@ func (a *CellsApiService) CellsConditionalFormattingsPutWorksheetConditionalForm
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -3506,7 +3584,9 @@ func (a *CellsApiService) CellsConditionalFormattingsPutWorksheetFormatCondition
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -3589,7 +3669,9 @@ func (a *CellsApiService) CellsConditionalFormattingsPutWorksheetFormatCondition
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -3681,7 +3763,9 @@ func (a *CellsApiService) CellsConditionalFormattingsPutWorksheetFormatCondition
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -3767,7 +3851,9 @@ func (a *CellsApiService) CellsDeleteWorksheetColumns(localVarOptionals *CellsDe
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -3847,7 +3933,9 @@ func (a *CellsApiService) CellsDeleteWorksheetRow(localVarOptionals *CellsDelete
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -3937,7 +4025,9 @@ func (a *CellsApiService) CellsDeleteWorksheetRows(localVarOptionals *CellsDelet
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -4017,7 +4107,9 @@ func (a *CellsApiService) CellsGetCellHtmlString(localVarOptionals *CellsGetCell
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -4097,7 +4189,9 @@ func (a *CellsApiService) CellsGetWorksheetCell(localVarOptionals *CellsGetWorks
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -4177,7 +4271,9 @@ func (a *CellsApiService) CellsGetWorksheetCellStyle(localVarOptionals *CellsGet
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -4264,7 +4360,9 @@ func (a *CellsApiService) CellsGetWorksheetCells(localVarOptionals *CellsGetWork
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -4344,7 +4442,9 @@ func (a *CellsApiService) CellsGetWorksheetColumn(localVarOptionals *CellsGetWor
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -4421,7 +4521,9 @@ func (a *CellsApiService) CellsGetWorksheetColumns(localVarOptionals *CellsGetWo
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -4501,7 +4603,9 @@ func (a *CellsApiService) CellsGetWorksheetRow(localVarOptionals *CellsGetWorksh
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -4578,7 +4682,9 @@ func (a *CellsApiService) CellsGetWorksheetRows(localVarOptionals *CellsGetWorks
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -4658,7 +4764,9 @@ func (a *CellsApiService) CellsHypelinksDeleteWorksheetHyperlink(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -4735,7 +4843,9 @@ func (a *CellsApiService) CellsHypelinksDeleteWorksheetHyperlinks(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -4815,7 +4925,9 @@ func (a *CellsApiService) CellsHypelinksGetWorksheetHyperlink(localVarOptionals 
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -4892,7 +5004,9 @@ func (a *CellsApiService) CellsHypelinksGetWorksheetHyperlinks(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -4979,7 +5093,9 @@ func (a *CellsApiService) CellsHypelinksPostWorksheetHyperlink(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -5071,7 +5187,9 @@ func (a *CellsApiService) CellsHypelinksPutWorksheetHyperlink(localVarOptionals 
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -5151,7 +5269,9 @@ func (a *CellsApiService) CellsListObjectsDeleteWorksheetListObject(localVarOpti
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -5228,7 +5348,9 @@ func (a *CellsApiService) CellsListObjectsDeleteWorksheetListObjects(localVarOpt
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -5312,6 +5434,9 @@ func (a *CellsApiService) CellsListObjectsGetWorksheetListObject(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
+	if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 
 	return localVarReturnValue, localVarHttpResponse, err
 }
@@ -5389,7 +5514,9 @@ func (a *CellsApiService) CellsListObjectsGetWorksheetListObjects(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -5479,7 +5606,9 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListColumn(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -5566,7 +5695,9 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListColumnsTotal(localVar
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -5653,7 +5784,9 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListObject(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -5733,7 +5866,9 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListObjectConvertToRange(
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -5820,7 +5955,9 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListObjectSortTable(local
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -5910,7 +6047,9 @@ func (a *CellsApiService) CellsListObjectsPostWorksheetListObjectSummarizeWithPi
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -6021,7 +6160,9 @@ func (a *CellsApiService) CellsListObjectsPutWorksheetListObject(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -6101,7 +6242,9 @@ func (a *CellsApiService) CellsOleObjectsDeleteWorksheetOleObject(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -6178,7 +6321,9 @@ func (a *CellsApiService) CellsOleObjectsDeleteWorksheetOleObjects(localVarOptio
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -6267,6 +6412,9 @@ func (a *CellsApiService) CellsOleObjectsGetWorksheetOleObject(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
+	if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 
 	return localVarReturnValue, localVarHttpResponse, err
 }
@@ -6344,7 +6492,9 @@ func (a *CellsApiService) CellsOleObjectsGetWorksheetOleObjects(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -6431,7 +6581,9 @@ func (a *CellsApiService) CellsOleObjectsPostUpdateWorksheetOleObject(localVarOp
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -6545,7 +6697,9 @@ func (a *CellsApiService) CellsOleObjectsPutWorksheetOleObject(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -6625,7 +6779,9 @@ func (a *CellsApiService) CellsPageBreaksDeleteHorizontalPageBreak(localVarOptio
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -6707,7 +6863,9 @@ func (a *CellsApiService) CellsPageBreaksDeleteHorizontalPageBreaks(localVarOpti
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -6787,7 +6945,9 @@ func (a *CellsApiService) CellsPageBreaksDeleteVerticalPageBreak(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -6869,7 +7029,9 @@ func (a *CellsApiService) CellsPageBreaksDeleteVerticalPageBreaks(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -6949,7 +7111,9 @@ func (a *CellsApiService) CellsPageBreaksGetHorizontalPageBreak(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -7026,7 +7190,9 @@ func (a *CellsApiService) CellsPageBreaksGetHorizontalPageBreaks(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -7106,7 +7272,9 @@ func (a *CellsApiService) CellsPageBreaksGetVerticalPageBreak(localVarOptionals 
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -7183,7 +7351,9 @@ func (a *CellsApiService) CellsPageBreaksGetVerticalPageBreaks(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -7285,7 +7455,9 @@ func (a *CellsApiService) CellsPageBreaksPutHorizontalPageBreak(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -7387,7 +7559,9 @@ func (a *CellsApiService) CellsPageBreaksPutVerticalPageBreak(localVarOptionals 
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -7464,7 +7638,9 @@ func (a *CellsApiService) CellsPageSetupDeleteHeaderFooter(localVarOptionals *Ce
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -7541,7 +7717,9 @@ func (a *CellsApiService) CellsPageSetupGetFooter(localVarOptionals *CellsPageSe
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -7618,7 +7796,9 @@ func (a *CellsApiService) CellsPageSetupGetHeader(localVarOptionals *CellsPageSe
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -7695,7 +7875,9 @@ func (a *CellsApiService) CellsPageSetupGetPageSetup(localVarOptionals *CellsPag
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -7781,7 +7963,9 @@ func (a *CellsApiService) CellsPageSetupPostFooter(localVarOptionals *CellsPageS
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -7867,7 +8051,9 @@ func (a *CellsApiService) CellsPageSetupPostHeader(localVarOptionals *CellsPageS
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -7951,7 +8137,9 @@ func (a *CellsApiService) CellsPageSetupPostPageSetup(localVarOptionals *CellsPa
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -8031,7 +8219,9 @@ func (a *CellsApiService) CellsPicturesDeleteWorksheetPicture(localVarOptionals 
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -8108,7 +8298,9 @@ func (a *CellsApiService) CellsPicturesDeleteWorksheetPictures(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -8197,6 +8389,9 @@ func (a *CellsApiService) CellsPicturesGetWorksheetPicture(localVarOptionals *Ce
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
+	if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 
 	return localVarReturnValue, localVarHttpResponse, err
 }
@@ -8274,7 +8469,9 @@ func (a *CellsApiService) CellsPicturesGetWorksheetPictures(localVarOptionals *C
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -8361,7 +8558,9 @@ func (a *CellsApiService) CellsPicturesPostWorksheetPicture(localVarOptionals *C
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -8470,7 +8669,9 @@ func (a *CellsApiService) CellsPicturesPutWorksheetAddPicture(localVarOptionals 
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -8560,7 +8761,9 @@ func (a *CellsApiService) CellsPivotTablesDeletePivotTableField(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -8640,7 +8843,9 @@ func (a *CellsApiService) CellsPivotTablesDeleteWorksheetPivotTable(localVarOpti
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -8728,7 +8933,9 @@ func (a *CellsApiService) CellsPivotTablesDeleteWorksheetPivotTableFilter(localV
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -8813,7 +9020,9 @@ func (a *CellsApiService) CellsPivotTablesDeleteWorksheetPivotTableFilters(local
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -8890,7 +9099,9 @@ func (a *CellsApiService) CellsPivotTablesDeleteWorksheetPivotTables(localVarOpt
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -8976,7 +9187,9 @@ func (a *CellsApiService) CellsPivotTablesGetPivotTableField(localVarOptionals *
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -9056,7 +9269,9 @@ func (a *CellsApiService) CellsPivotTablesGetWorksheetPivotTable(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -9139,7 +9354,9 @@ func (a *CellsApiService) CellsPivotTablesGetWorksheetPivotTableFilter(localVarO
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -9219,7 +9436,9 @@ func (a *CellsApiService) CellsPivotTablesGetWorksheetPivotTableFilters(localVar
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -9296,7 +9515,9 @@ func (a *CellsApiService) CellsPivotTablesGetWorksheetPivotTables(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -9394,7 +9615,9 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableCellStyle(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -9491,7 +9714,9 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableFieldHideItem(localVarOp
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -9580,7 +9805,9 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableFieldMoveTo(localVarOpti
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -9672,7 +9899,9 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableStyle(localVarOptionals 
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -9762,7 +9991,9 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableUpdatePivotField(localVa
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -9849,7 +10080,9 @@ func (a *CellsApiService) CellsPivotTablesPostPivotTableUpdatePivotFields(localV
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -9929,7 +10162,9 @@ func (a *CellsApiService) CellsPivotTablesPostWorksheetPivotTableCalculate(local
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -10024,7 +10259,9 @@ func (a *CellsApiService) CellsPivotTablesPostWorksheetPivotTableMove(localVarOp
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -10119,7 +10356,9 @@ func (a *CellsApiService) CellsPivotTablesPutPivotTableField(localVarOptionals *
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -10223,7 +10462,9 @@ func (a *CellsApiService) CellsPivotTablesPutWorksheetPivotTable(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -10315,7 +10556,9 @@ func (a *CellsApiService) CellsPivotTablesPutWorksheetPivotTableFilter(localVarO
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -10402,7 +10645,9 @@ func (a *CellsApiService) CellsPostCellCalculate(localVarOptionals *CellsPostCel
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -10489,7 +10734,9 @@ func (a *CellsApiService) CellsPostCellCharacters(localVarOptionals *CellsPostCe
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -10591,7 +10838,9 @@ func (a *CellsApiService) CellsPostClearContents(localVarOptionals *CellsPostCle
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -10693,7 +10942,9 @@ func (a *CellsApiService) CellsPostClearFormats(localVarOptionals *CellsPostClea
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -10780,7 +11031,9 @@ func (a *CellsApiService) CellsPostColumnStyle(localVarOptionals *CellsPostColum
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -10878,7 +11131,9 @@ func (a *CellsApiService) CellsPostCopyCellIntoCell(localVarOptionals *CellsPost
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -10969,7 +11224,9 @@ func (a *CellsApiService) CellsPostCopyWorksheetColumns(localVarOptionals *Cells
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -11060,7 +11317,9 @@ func (a *CellsApiService) CellsPostCopyWorksheetRows(localVarOptionals *CellsPos
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -11148,7 +11407,9 @@ func (a *CellsApiService) CellsPostGroupWorksheetColumns(localVarOptionals *Cell
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -11236,7 +11497,9 @@ func (a *CellsApiService) CellsPostGroupWorksheetRows(localVarOptionals *CellsPo
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -11319,7 +11582,9 @@ func (a *CellsApiService) CellsPostHideWorksheetColumns(localVarOptionals *Cells
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -11402,7 +11667,9 @@ func (a *CellsApiService) CellsPostHideWorksheetRows(localVarOptionals *CellsPos
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -11489,7 +11756,9 @@ func (a *CellsApiService) CellsPostRowStyle(localVarOptionals *CellsPostRowStyle
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -11573,7 +11842,9 @@ func (a *CellsApiService) CellsPostSetCellHtmlString(localVarOptionals *CellsPos
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -11659,7 +11930,9 @@ func (a *CellsApiService) CellsPostSetCellRangeValue(localVarOptionals *CellsPos
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -11745,7 +12018,9 @@ func (a *CellsApiService) CellsPostSetWorksheetColumnWidth(localVarOptionals *Ce
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -11828,7 +12103,9 @@ func (a *CellsApiService) CellsPostUngroupWorksheetColumns(localVarOptionals *Ce
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -11916,7 +12193,9 @@ func (a *CellsApiService) CellsPostUngroupWorksheetRows(localVarOptionals *Cells
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -12004,7 +12283,9 @@ func (a *CellsApiService) CellsPostUnhideWorksheetColumns(localVarOptionals *Cel
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -12092,7 +12373,9 @@ func (a *CellsApiService) CellsPostUnhideWorksheetRows(localVarOptionals *CellsP
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -12179,7 +12462,9 @@ func (a *CellsApiService) CellsPostUpdateWorksheetCellStyle(localVarOptionals *C
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -12266,7 +12551,9 @@ func (a *CellsApiService) CellsPostUpdateWorksheetRangeStyle(localVarOptionals *
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -12356,7 +12643,9 @@ func (a *CellsApiService) CellsPostUpdateWorksheetRow(localVarOptionals *CellsPo
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -12451,7 +12740,9 @@ func (a *CellsApiService) CellsPostWorksheetCellSetValue(localVarOptionals *Cell
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -12540,7 +12831,9 @@ func (a *CellsApiService) CellsPostWorksheetMerge(localVarOptionals *CellsPostWo
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -12629,7 +12922,9 @@ func (a *CellsApiService) CellsPostWorksheetUnmerge(localVarOptionals *CellsPost
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -12703,7 +12998,9 @@ func (a *CellsApiService) CellsPropertiesDeleteDocumentProperties(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -12780,7 +13077,9 @@ func (a *CellsApiService) CellsPropertiesDeleteDocumentProperty(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -12854,7 +13153,9 @@ func (a *CellsApiService) CellsPropertiesGetDocumentProperties(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -12931,7 +13232,9 @@ func (a *CellsApiService) CellsPropertiesGetDocumentProperty(localVarOptionals *
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -13015,7 +13318,9 @@ func (a *CellsApiService) CellsPropertiesPutDocumentProperty(localVarOptionals *
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -13103,7 +13408,9 @@ func (a *CellsApiService) CellsPutInsertWorksheetColumns(localVarOptionals *Cell
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -13183,7 +13490,9 @@ func (a *CellsApiService) CellsPutInsertWorksheetRow(localVarOptionals *CellsPut
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -13273,7 +13582,9 @@ func (a *CellsApiService) CellsPutInsertWorksheetRows(localVarOptionals *CellsPu
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -13356,7 +13667,9 @@ func (a *CellsApiService) CellsRangesDeleteWorksheetCellsRange(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -13458,7 +13771,9 @@ func (a *CellsApiService) CellsRangesGetWorksheetCellsRangeValue(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -13545,7 +13860,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeColumnWidth(localVar
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -13629,7 +13946,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeMerge(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -13719,7 +14038,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeMoveTo(localVarOptio
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -13803,7 +14124,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeOutlineBorder(localV
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -13890,7 +14213,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeRowHeight(localVarOp
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -13974,7 +14299,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeStyle(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -14058,7 +14385,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeUnmerge(localVarOpti
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -14155,7 +14484,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeValue(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -14239,7 +14570,9 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRanges(localVarOptionals 
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -14322,7 +14655,9 @@ func (a *CellsApiService) CellsRangesPutWorksheetCellsRange(localVarOptionals *C
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -14388,11 +14723,14 @@ func (a *CellsApiService) CellsSaveAsPostDocumentSaveAs(localVarOptionals *Cells
 	if localVarOptionals != nil {
 		localVarQueryParams.Add("outStorageName", parameterToString(localVarOptionals.OutStorageName, ""))
 	}
-	if localVarOptionals.ExtendedQueryParameters != nil {
-		for key, value := range localVarOptionals.ExtendedQueryParameters {
-			localVarQueryParams.Add(key, parameterToString(value, ""))
+	if localVarOptionals != nil {
+		if localVarOptionals.ExtendedQueryParameters != nil {
+			for name, value := range localVarOptionals.ExtendedQueryParameters {
+				localVarQueryParams.Add(name, parameterToString(value, ""))
+			}
 		}
 	}
+
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -14429,7 +14767,9 @@ func (a *CellsApiService) CellsSaveAsPostDocumentSaveAs(localVarOptionals *Cells
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -14509,7 +14849,9 @@ func (a *CellsApiService) CellsShapesDeleteWorksheetShape(localVarOptionals *Cel
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -14586,7 +14928,9 @@ func (a *CellsApiService) CellsShapesDeleteWorksheetShapes(localVarOptionals *Ce
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -14666,7 +15010,9 @@ func (a *CellsApiService) CellsShapesGetWorksheetShape(localVarOptionals *CellsS
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -14743,7 +15089,9 @@ func (a *CellsApiService) CellsShapesGetWorksheetShapes(localVarOptionals *Cells
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -14824,7 +15172,9 @@ func (a *CellsApiService) CellsShapesPostWorksheetGroupShape(localVarOptionals *
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -14911,7 +15261,9 @@ func (a *CellsApiService) CellsShapesPostWorksheetShape(localVarOptionals *Cells
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -14991,7 +15343,9 @@ func (a *CellsApiService) CellsShapesPostWorksheetUngroupShape(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -15110,7 +15464,9 @@ func (a *CellsApiService) CellsShapesPutWorksheetShape(localVarOptionals *CellsS
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -15190,7 +15546,9 @@ func (a *CellsApiService) CellsSparklineGroupsDeleteWorksheetSparklineGroup(loca
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -15267,7 +15625,9 @@ func (a *CellsApiService) CellsSparklineGroupsDeleteWorksheetSparklineGroups(loc
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -15347,7 +15707,9 @@ func (a *CellsApiService) CellsSparklineGroupsGetWorksheetSparklineGroup(localVa
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -15424,7 +15786,9 @@ func (a *CellsApiService) CellsSparklineGroupsGetWorksheetSparklineGroups(localV
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -15508,7 +15872,9 @@ func (a *CellsApiService) CellsSparklineGroupsPostWorksheetSparklineGroup(localV
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -15597,7 +15963,9 @@ func (a *CellsApiService) CellsSparklineGroupsPutWorksheetSparklineGroup(localVa
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -15661,7 +16029,9 @@ func (a *CellsApiService) CellsTaskPostRunTask(localVarOptionals *CellsTaskPostR
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -15742,7 +16112,9 @@ func (a *CellsApiService) CellsWorkbookDeleteDecryptDocument(localVarOptionals *
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -15816,7 +16188,9 @@ func (a *CellsApiService) CellsWorkbookDeleteDocumentUnprotectFromChanges(localV
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -15897,7 +16271,9 @@ func (a *CellsApiService) CellsWorkbookDeleteUnprotectDocument(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -15971,7 +16347,9 @@ func (a *CellsApiService) CellsWorkbookDeleteWorkbookBackground(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -16048,7 +16426,9 @@ func (a *CellsApiService) CellsWorkbookDeleteWorkbookName(localVarOptionals *Cel
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -16122,7 +16502,9 @@ func (a *CellsApiService) CellsWorkbookDeleteWorkbookNames(localVarOptionals *Ce
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -16196,7 +16578,9 @@ func (a *CellsApiService) CellsWorkbookGetPageCount(localVarOptionals *CellsWork
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -16270,9 +16654,11 @@ func (a *CellsApiService) CellsWorkbookGetWorkbook(localVarOptionals *CellsWorkb
 	if localVarOptionals != nil {
 		localVarQueryParams.Add("outStorageName", parameterToString(localVarOptionals.OutStorageName, ""))
 	}
-	if localVarOptionals.ExtendedQueryParameters != nil {
-		for key, value := range localVarOptionals.ExtendedQueryParameters {
-			localVarQueryParams.Add(key, parameterToString(value, ""))
+	if localVarOptionals != nil {
+		if localVarOptionals.ExtendedQueryParameters != nil {
+			for name, value := range localVarOptionals.ExtendedQueryParameters {
+				localVarQueryParams.Add(name, parameterToString(value, ""))
+			}
 		}
 	}
 	// to determine the Content-Type header
@@ -16310,7 +16696,9 @@ func (a *CellsApiService) CellsWorkbookGetWorkbook(localVarOptionals *CellsWorkb
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -16384,7 +16772,9 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookDefaultStyle(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -16461,7 +16851,9 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookName(localVarOptionals *CellsW
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -16538,7 +16930,9 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookNameValue(localVarOptionals *C
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -16612,7 +17006,9 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookNames(localVarOptionals *Cells
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -16686,7 +17082,9 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookSettings(localVarOptionals *Ce
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -16760,7 +17158,9 @@ func (a *CellsApiService) CellsWorkbookGetWorkbookTextItems(localVarOptionals *C
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -16851,7 +17251,9 @@ func (a *CellsApiService) CellsWorkbookPostAutofitWorkbookColumns(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -16947,7 +17349,9 @@ func (a *CellsApiService) CellsWorkbookPostAutofitWorkbookRows(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -17027,7 +17431,9 @@ func (a *CellsApiService) CellsWorkbookPostDigitalSignature(localVarOptionals *C
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -17108,7 +17514,9 @@ func (a *CellsApiService) CellsWorkbookPostEncryptDocument(localVarOptionals *Ce
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -17186,7 +17594,9 @@ func (a *CellsApiService) CellsWorkbookPostImportData(localVarOptionals *CellsWo
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -17267,7 +17677,9 @@ func (a *CellsApiService) CellsWorkbookPostProtectDocument(localVarOptionals *Ce
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -17353,7 +17765,9 @@ func (a *CellsApiService) CellsWorkbookPostWorkbookCalculateFormula(localVarOpti
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -17446,6 +17860,9 @@ func (a *CellsApiService) CellsWorkbookPostWorkbookGetSmartMarkerResult(localVar
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
+	if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 
 	return localVarReturnValue, localVarHttpResponse, err
 }
@@ -17527,7 +17944,9 @@ func (a *CellsApiService) CellsWorkbookPostWorkbookSettings(localVarOptionals *C
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -17636,7 +18055,9 @@ func (a *CellsApiService) CellsWorkbookPostWorkbookSplit(localVarOptionals *Cell
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -17718,7 +18139,9 @@ func (a *CellsApiService) CellsWorkbookPostWorkbooksMerge(localVarOptionals *Cel
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -17798,7 +18221,9 @@ func (a *CellsApiService) CellsWorkbookPostWorkbooksTextReplace(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -17875,7 +18300,9 @@ func (a *CellsApiService) CellsWorkbookPostWorkbooksTextSearch(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -17927,9 +18354,11 @@ func (a *CellsApiService) CellsWorkbookPutConvertWorkbook(file *os.File, localVa
 	if localVarOptionals != nil {
 		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
 	}
-	if localVarOptionals.ExtendedQueryParameters != nil {
-		for key, value := range localVarOptionals.ExtendedQueryParameters {
-			localVarQueryParams.Add(key, parameterToString(value, ""))
+	if localVarOptionals != nil {
+		if localVarOptionals.ExtendedQueryParameters != nil {
+			for name, value := range localVarOptionals.ExtendedQueryParameters {
+				localVarQueryParams.Add(name, parameterToString(value, ""))
+			}
 		}
 	}
 	// to determine the Content-Type header
@@ -17969,12 +18398,18 @@ func (a *CellsApiService) CellsWorkbookPutConvertWorkbook(file *os.File, localVa
 		}
 		return localVarReturnValue, localVarHttpResponse, err
 	}
-	defer localVarHttpResponse.Body.Close()
+
+	//
 	if localVarHttpResponse.StatusCode >= 300 {
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
+	if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	defer localVarHttpResponse.Body.Close()
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -18055,7 +18490,9 @@ func (a *CellsApiService) CellsWorkbookPutDocumentProtectFromChanges(localVarOpt
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -18133,7 +18570,9 @@ func (a *CellsApiService) CellsWorkbookPutWorkbookBackground(localVarOptionals *
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -18222,7 +18661,9 @@ func (a *CellsApiService) CellsWorkbookPutWorkbookCreate(localVarOptionals *Cell
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -18303,7 +18744,9 @@ func (a *CellsApiService) CellsWorkbookPutWorkbookWaterMarker(localVarOptionals 
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -18383,7 +18826,9 @@ func (a *CellsApiService) CellsWorksheetValidationsDeleteWorksheetValidation(loc
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -18460,7 +18905,9 @@ func (a *CellsApiService) CellsWorksheetValidationsDeleteWorksheetValidations(lo
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -18540,7 +18987,9 @@ func (a *CellsApiService) CellsWorksheetValidationsGetWorksheetValidation(localV
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -18617,7 +19066,9 @@ func (a *CellsApiService) CellsWorksheetValidationsGetWorksheetValidations(local
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -18704,7 +19155,9 @@ func (a *CellsApiService) CellsWorksheetValidationsPostWorksheetValidation(local
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -18793,7 +19246,9 @@ func (a *CellsApiService) CellsWorksheetValidationsPutWorksheetValidation(localV
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -18877,7 +19332,9 @@ func (a *CellsApiService) CellsWorksheetsDeleteUnprotectWorksheet(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -18954,7 +19411,9 @@ func (a *CellsApiService) CellsWorksheetsDeleteWorksheet(localVarOptionals *Cell
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -19031,7 +19490,9 @@ func (a *CellsApiService) CellsWorksheetsDeleteWorksheetBackground(localVarOptio
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -19111,7 +19572,9 @@ func (a *CellsApiService) CellsWorksheetsDeleteWorksheetComment(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -19188,7 +19651,9 @@ func (a *CellsApiService) CellsWorksheetsDeleteWorksheetComments(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -19277,7 +19742,9 @@ func (a *CellsApiService) CellsWorksheetsDeleteWorksheetFreezePanes(localVarOpti
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -19355,7 +19822,9 @@ func (a *CellsApiService) CellsWorksheetsDeleteWorksheets(localVarOptionals *Cel
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -19429,7 +19898,9 @@ func (a *CellsApiService) CellsWorksheetsGetNamedRanges(localVarOptionals *Cells
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -19506,7 +19977,9 @@ func (a *CellsApiService) CellsWorksheetsGetPageCount(localVarOptionals *CellsWo
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -19612,6 +20085,9 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheet(localVarOptionals *CellsWo
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
+	if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 
 	return localVarReturnValue, localVarHttpResponse, err
 }
@@ -19692,7 +20168,9 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetCalculateFormula(localVarOp
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -19772,7 +20250,9 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetComment(localVarOptionals *
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -19849,7 +20329,9 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetComments(localVarOptionals 
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -19929,7 +20411,9 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetMergedCell(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -20006,7 +20490,9 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetMergedCells(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -20083,7 +20569,9 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheetTextItems(localVarOptionals
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -20157,7 +20645,9 @@ func (a *CellsApiService) CellsWorksheetsGetWorksheets(localVarOptionals *CellsW
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -20257,7 +20747,9 @@ func (a *CellsApiService) CellsWorksheetsPostAutofitWorksheetColumns(localVarOpt
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -20350,7 +20842,9 @@ func (a *CellsApiService) CellsWorksheetsPostAutofitWorksheetRow(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -20449,7 +20943,9 @@ func (a *CellsApiService) CellsWorksheetsPostAutofitWorksheetRows(localVarOption
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -20546,7 +21042,9 @@ func (a *CellsApiService) CellsWorksheetsPostCopyWorksheet(localVarOptionals *Ce
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -20630,7 +21128,9 @@ func (a *CellsApiService) CellsWorksheetsPostMoveWorksheet(localVarOptionals *Ce
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -20710,7 +21210,9 @@ func (a *CellsApiService) CellsWorksheetsPostRenameWorksheet(localVarOptionals *
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -20794,7 +21296,9 @@ func (a *CellsApiService) CellsWorksheetsPostUpdateWorksheetProperty(localVarOpt
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -20874,7 +21378,9 @@ func (a *CellsApiService) CellsWorksheetsPostUpdateWorksheetZoom(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -20961,7 +21467,9 @@ func (a *CellsApiService) CellsWorksheetsPostWorksheetComment(localVarOptionals 
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -21048,7 +21556,9 @@ func (a *CellsApiService) CellsWorksheetsPostWorksheetRangeSort(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -21128,7 +21638,9 @@ func (a *CellsApiService) CellsWorksheetsPostWorksheetTextSearch(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -21211,7 +21723,9 @@ func (a *CellsApiService) CellsWorksheetsPostWorsheetTextReplace(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -21298,7 +21812,9 @@ func (a *CellsApiService) CellsWorksheetsPutAddNewWorksheet(localVarOptionals *C
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -21378,7 +21894,9 @@ func (a *CellsApiService) CellsWorksheetsPutChangeVisibilityWorksheet(localVarOp
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -21462,7 +21980,9 @@ func (a *CellsApiService) CellsWorksheetsPutProtectWorksheet(localVarOptionals *
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -21543,7 +22063,9 @@ func (a *CellsApiService) CellsWorksheetsPutWorksheetBackground(localVarOptional
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -21630,7 +22152,9 @@ func (a *CellsApiService) CellsWorksheetsPutWorksheetComment(localVarOptionals *
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -21719,7 +22243,9 @@ func (a *CellsApiService) CellsWorksheetsPutWorksheetFreezePanes(localVarOptiona
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -21800,7 +22326,6 @@ func (a *CellsApiService) CopyFile(localVarOptionals *CopyFileOpts) (*http.Respo
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
 	return localVarHttpResponse, err
 }
 
@@ -21876,7 +22401,6 @@ func (a *CellsApiService) CopyFolder(localVarOptionals *CopyFolderOpts) (*http.R
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
 	return localVarHttpResponse, err
 }
 
@@ -21944,7 +22468,6 @@ func (a *CellsApiService) CreateFolder(localVarOptionals *CreateFolderOpts) (*ht
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
 	return localVarHttpResponse, err
 }
 
@@ -22017,7 +22540,6 @@ func (a *CellsApiService) DeleteFile(localVarOptionals *DeleteFileOpts) (*http.R
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
 	return localVarHttpResponse, err
 }
 
@@ -22090,7 +22612,6 @@ func (a *CellsApiService) DeleteFolder(localVarOptionals *DeleteFolderOpts) (*ht
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
 	return localVarHttpResponse, err
 }
 
@@ -22168,7 +22689,9 @@ func (a *CellsApiService) DownloadFile(localVarOptionals *DownloadFileOpts) ([]b
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -22234,7 +22757,9 @@ func (a *CellsApiService) GetDiscUsage(localVarOptionals *GetDiscUsageOpts) (Dis
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -22303,7 +22828,9 @@ func (a *CellsApiService) GetFileVersions(localVarOptionals *GetFileVersionsOpts
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -22372,7 +22899,9 @@ func (a *CellsApiService) GetFilesList(localVarOptionals *GetFilesListOpts) (Fil
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -22453,7 +22982,6 @@ func (a *CellsApiService) MoveFile(localVarOptionals *MoveFileOpts) (*http.Respo
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
 	return localVarHttpResponse, err
 }
 
@@ -22529,7 +23057,6 @@ func (a *CellsApiService) MoveFolder(localVarOptionals *MoveFolderOpts) (*http.R
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
 	return localVarHttpResponse, err
 }
 
@@ -22598,7 +23125,9 @@ func (a *CellsApiService) OAuthPost(localVarOptionals *OAuthPostOpts) (AccessTok
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -22672,7 +23201,9 @@ func (a *CellsApiService) ObjectExists(localVarOptionals *ObjectExistsOpts) (Obj
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -22741,6 +23272,9 @@ func (a *CellsApiService) PostBatchConvert(localVarOptionals *PostBatchConvertOp
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
+	if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -22803,7 +23337,9 @@ func (a *CellsApiService) StorageExists(localVarOptionals *StorageExistsOpts) (S
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
@@ -22881,6 +23417,8 @@ func (a *CellsApiService) UploadFile(file *os.File, localVarOptionals *UploadFil
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
 	return localVarReturnValue, localVarHttpResponse, err
 }
