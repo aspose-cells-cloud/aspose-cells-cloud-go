@@ -20,17 +20,9 @@
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## Feature & Enhancements in Version 22.4
+## Feature & Enhancements in Version 22.5
 
-- Export API adds extended query parameters.
-- Convert API adds extended query parameters.
-- SaveAs API adds extended query parameters.
-- Get Workbook API adds extended query parameters.
-
-## Feature & Enhancements in Version 22.4.1
-
-- Fix return value for all APIs.
-
+Add new api for getting barcode description.
 
 ## Read & Write Spreadsheet Formats
 
