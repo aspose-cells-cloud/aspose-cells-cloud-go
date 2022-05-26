@@ -22,7 +22,7 @@
 
 ## Feature & Enhancements in Version 22.5
 
-- Add a snew API for getting barcode description.
+- Add a new API for getting barcode description.
 
 ## Read & Write Spreadsheet Formats
 
