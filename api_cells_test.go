@@ -6493,3 +6493,24 @@ func TestCellsSaveAsPostDocumentSaveAs_Extend(t *testing.T) {
 		fmt.Printf("%d\tTestCellsSaveAsPostDocumentSaveAs - %d\n", GetBaseTest().GetTestNumber(), response.Code)
 	}
 }
+
+func TestCellsPictureGetExtractBarcodes(t *testing.T) {
+	name := GetBook1()
+	if err := GetBaseTest().UploadFile(name); err != nil {
+		t.Error(err)
+	}
+
+	args := new(CellsPictureGetExtractBarcodesOpts)
+	args.Name = GetBook1()
+	args.SheetName = "Sheet8"
+	args.PictureIndex = 0
+	args.Folder = GetBaseTest().remoteFolder
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsPictureGetExtractBarcodes(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestCellsSaveAsPostDocumentSaveAs - %d\n", GetBaseTest().GetTestNumber(), 200)
+	}
+}
