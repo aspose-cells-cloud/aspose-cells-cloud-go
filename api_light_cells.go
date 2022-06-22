@@ -290,6 +290,8 @@ LightCellsApiService
 
 type PostClearObjectsOpts struct {
 	Objecttype string
+	Sheetname  string
+	OutFormat  string
 }
 
 func (a *LightCellsApiService) PostClearObjects(file map[string]string, localVarOptionals *PostClearObjectsOpts) (FilesResult, *http.Response, error) {
@@ -309,6 +311,13 @@ func (a *LightCellsApiService) PostClearObjects(file map[string]string, localVar
 	localVarFormParams := url.Values{}
 
 	localVarQueryParams.Add("objecttype", parameterToString(localVarOptionals.Objecttype, ""))
+
+	if len(localVarOptionals.OutFormat) > 0 {
+		localVarQueryParams.Add("sheetname", parameterToString(localVarOptionals.Sheetname, ""))
+	}
+	if len(localVarOptionals.OutFormat) > 0 {
+		localVarQueryParams.Add("outFormat", parameterToString(localVarOptionals.OutFormat, ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"multipart/form-data"}
 

@@ -14686,6 +14686,7 @@ type CellsSaveAsPostDocumentSaveAsOpts struct {
 	StorageName             string
 	OutStorageName          string
 	ExtendedQueryParameters map[string]string
+	checkExcelRestriction   bool
 }
 
 func (a *CellsApiService) CellsSaveAsPostDocumentSaveAs(localVarOptionals *CellsSaveAsPostDocumentSaveAsOpts) (SaveResponse, *http.Response, error) {
@@ -14722,6 +14723,9 @@ func (a *CellsApiService) CellsSaveAsPostDocumentSaveAs(localVarOptionals *Cells
 	}
 	if localVarOptionals != nil {
 		localVarQueryParams.Add("outStorageName", parameterToString(localVarOptionals.OutStorageName, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.checkExcelRestriction, ""))
 	}
 	if localVarOptionals != nil {
 		if localVarOptionals.ExtendedQueryParameters != nil {
