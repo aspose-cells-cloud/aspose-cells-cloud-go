@@ -63,7 +63,8 @@ LightCellsApiService
 */
 
 type DeleteMetadataOpts struct {
-	Type_ string
+	Type_                 string
+	checkExcelRestriction bool
 }
 
 // var countryCapitalMap map[string]string /*创建集合 */
@@ -86,6 +87,9 @@ func (a *LightCellsApiService) DeleteMetadata(file map[string]string, localVarOp
 
 	if localVarOptionals != nil {
 		localVarQueryParams.Add("type", parameterToString(localVarOptionals.Type_, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.checkExcelRestriction, ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"multipart/form-data"}
@@ -139,7 +143,8 @@ LightCellsApiService
 */
 
 type GetMetadataOpts struct {
-	Type_ string
+	Type_                 string
+	checkExcelRestriction bool
 }
 
 func (a *LightCellsApiService) GetMetadata(file map[string]string, localVarOptionals *GetMetadataOpts) ([]CellsDocumentProperty, *http.Response, error) {
@@ -160,6 +165,9 @@ func (a *LightCellsApiService) GetMetadata(file map[string]string, localVarOptio
 
 	if localVarOptionals != nil {
 		localVarQueryParams.Add("type", parameterToString(localVarOptionals.Type_, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.checkExcelRestriction, ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"multipart/form-data"}
@@ -214,8 +222,9 @@ LightCellsApiService
 */
 
 type PostAssembleOpts struct {
-	Datasource string
-	Format     string
+	Datasource            string
+	Format                string
+	checkExcelRestriction bool
 }
 
 func (a *LightCellsApiService) PostAssemble(file map[string]string, localVarOptionals *PostAssembleOpts) (FilesResult, *http.Response, error) {
@@ -237,6 +246,9 @@ func (a *LightCellsApiService) PostAssemble(file map[string]string, localVarOpti
 	localVarQueryParams.Add("datasource", parameterToString(localVarOptionals.Datasource, ""))
 	if localVarOptionals != nil {
 		localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.checkExcelRestriction, ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"multipart/form-data"}
@@ -289,9 +301,10 @@ LightCellsApiService
 */
 
 type PostClearObjectsOpts struct {
-	Objecttype string
-	Sheetname  string
-	OutFormat  string
+	Objecttype            string
+	Sheetname             string
+	OutFormat             string
+	checkExcelRestriction bool
 }
 
 func (a *LightCellsApiService) PostClearObjects(file map[string]string, localVarOptionals *PostClearObjectsOpts) (FilesResult, *http.Response, error) {
@@ -317,6 +330,9 @@ func (a *LightCellsApiService) PostClearObjects(file map[string]string, localVar
 	}
 	if len(localVarOptionals.OutFormat) > 0 {
 		localVarQueryParams.Add("outFormat", parameterToString(localVarOptionals.OutFormat, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.checkExcelRestriction, ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"multipart/form-data"}
@@ -373,6 +389,7 @@ type PostExportOpts struct {
 	ObjectType              string
 	Format                  string
 	ExtendedQueryParameters map[string]string
+	checkExcelRestriction   bool
 }
 
 func (a *LightCellsApiService) PostExport(file map[string]string, localVarOptionals *PostExportOpts) (FilesResult, *http.Response, error) {
@@ -393,7 +410,9 @@ func (a *LightCellsApiService) PostExport(file map[string]string, localVarOption
 
 	localVarQueryParams.Add("objectType", parameterToString(localVarOptionals.ObjectType, ""))
 	localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format, ""))
-
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.checkExcelRestriction, ""))
+	}
 	if localVarOptionals.ExtendedQueryParameters != nil {
 		for key, value := range localVarOptionals.ExtendedQueryParameters {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -529,8 +548,9 @@ LightCellsApiService
 */
 
 type PostMergeOpts struct {
-	Format          string
-	MergeToOneSheet bool
+	Format                string
+	MergeToOneSheet       bool
+	checkExcelRestriction bool
 }
 
 func (a *LightCellsApiService) PostMerge(file map[string]string, localVarOptionals *PostMergeOpts) (FileInfo, *http.Response, error) {
@@ -554,6 +574,9 @@ func (a *LightCellsApiService) PostMerge(file map[string]string, localVarOptiona
 	}
 	if localVarOptionals != nil {
 		localVarQueryParams.Add("mergeToOneSheet", parameterToString(localVarOptionals.MergeToOneSheet, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.checkExcelRestriction, ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"multipart/form-data"}
@@ -606,7 +629,8 @@ LightCellsApiService
 */
 
 type PostMetadataOpts struct {
-	DocumentProperties []CellsDocumentProperty
+	DocumentProperties    []CellsDocumentProperty
+	checkExcelRestriction bool
 }
 
 func (a *LightCellsApiService) PostMetadata(file map[string]string, localVarOptionals *PostMetadataOpts) (FilesResult, *http.Response, error) {
@@ -642,7 +666,9 @@ func (a *LightCellsApiService) PostMetadata(file map[string]string, localVarOpti
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.checkExcelRestriction, ""))
+	}
 	// localVarFormParams = file
 	for name, path := range file {
 		localVarFormParams["@"+name] = []string{path}
@@ -757,9 +783,10 @@ LightCellsApiService
 */
 
 type PostSearchOpts struct {
-	Text      string
-	Password  string
-	Sheetname string
+	Text                  string
+	Password              string
+	Sheetname             string
+	checkExcelRestriction bool
 }
 
 func (a *LightCellsApiService) PostSearch(file map[string]string, localVarOptionals *PostSearchOpts) ([]TextItem, *http.Response, error) {
@@ -785,7 +812,9 @@ func (a *LightCellsApiService) PostSearch(file map[string]string, localVarOption
 	if localVarOptionals != nil {
 		localVarQueryParams.Add("sheetname", parameterToString(localVarOptionals.Sheetname, ""))
 	}
-
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.checkExcelRestriction, ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"multipart/form-data"}
 
@@ -840,10 +869,11 @@ LightCellsApiService
 */
 
 type PostSplitOpts struct {
-	Format   string
-	Password string
-	From     int32
-	To       int32
+	Format                string
+	Password              string
+	From                  int32
+	To                    int32
+	checkExcelRestriction bool
 }
 
 func (a *LightCellsApiService) PostSplit(file map[string]string, localVarOptionals *PostSplitOpts) (FilesResult, *http.Response, error) {
@@ -872,7 +902,9 @@ func (a *LightCellsApiService) PostSplit(file map[string]string, localVarOptiona
 	if localVarOptionals != nil {
 		localVarQueryParams.Add("to", parameterToString(localVarOptionals.To, ""))
 	}
-
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.checkExcelRestriction, ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"multipart/form-data"}
 
@@ -996,8 +1028,9 @@ LightCellsApiService
 */
 
 type PostWatermarkOpts struct {
-	Text  string
-	Color string
+	Text                  string
+	Color                 string
+	checkExcelRestriction bool
 }
 
 func (a *LightCellsApiService) PostWatermark(file map[string]string, localVarOptionals *PostWatermarkOpts) (FilesResult, *http.Response, error) {
@@ -1035,6 +1068,9 @@ func (a *LightCellsApiService) PostWatermark(file map[string]string, localVarOpt
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.checkExcelRestriction, ""))
+	}
 	// localVarFormParams = file
 	for name, path := range file {
 		localVarFormParams["@"+name] = []string{path}
@@ -1070,7 +1106,8 @@ LightCellsApiService
 */
 
 type PostCompressOpts struct {
-	CompressLevel int64
+	CompressLevel         int64
+	checkExcelRestriction bool
 }
 
 func (a *LightCellsApiService) PostCompress(file map[string]string, localVarOptionals *PostCompressOpts) (FilesResult, *http.Response, error) {
@@ -1107,6 +1144,9 @@ func (a *LightCellsApiService) PostCompress(file map[string]string, localVarOpti
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.checkExcelRestriction, ""))
+	}
 	// localVarFormParams = file
 	for name, path := range file {
 		localVarFormParams["@"+name] = []string{path}
@@ -1142,10 +1182,11 @@ LightCellsApiService
 */
 
 type PostReplaceOpts struct {
-	Text      string
-	NewText   string
-	Password  string
-	SheetName string
+	Text                  string
+	NewText               string
+	Password              string
+	SheetName             string
+	checkExcelRestriction bool
 }
 
 func (a *LightCellsApiService) PostReplace(file map[string]string, localVarOptionals *PostReplaceOpts) (FilesResult, *http.Response, error) {
@@ -1185,6 +1226,9 @@ func (a *LightCellsApiService) PostReplace(file map[string]string, localVarOptio
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.checkExcelRestriction, ""))
+	}
 	// localVarFormParams = file
 	for name, path := range file {
 		localVarFormParams["@"+name] = []string{path}
@@ -1220,8 +1264,9 @@ LightCellsApiService
 */
 
 type PostReverseOpts struct {
-	RotateType string
-	Format     string
+	RotateType            string
+	Format                string
+	checkExcelRestriction bool
 }
 
 func (a *LightCellsApiService) PostReverse(file map[string]string, localVarOptionals *PostReverseOpts) (FilesResult, *http.Response, error) {
@@ -1242,6 +1287,9 @@ func (a *LightCellsApiService) PostReverse(file map[string]string, localVarOptio
 
 	localVarQueryParams.Add("rotateType", parameterToString(localVarOptionals.RotateType, ""))
 	localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format, ""))
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.checkExcelRestriction, ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"multipart/form-data"}
 

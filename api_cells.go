@@ -33,7 +33,7 @@ import (
 )
 
 func Version() {
-	fmt.Println("---Version: 22.4.1---")
+	fmt.Println("---Version: 22.7---")
 }
 
 /* Create Instance of CellsApiService
