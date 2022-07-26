@@ -22,21 +22,17 @@
 
 package asposecellscloud
 
-type ImportPictureOption struct {
-	Source *FileSource `json:"Source,omitempty" xml:"Source"`
-	ImportDataType string `json:"ImportDataType,omitempty" xml:"ImportDataType"`
-	DestinationWorksheet string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
-	IsInsert bool `json:"IsInsert,omitempty" xml:"IsInsert"`
-	// Upper Left Row.
-	UpperLeftRow int64 `json:"UpperLeftRow,omitempty" xml:"UpperLeftRow"`
-	// Upper Left Column.
-	UpperLeftColumn int64 `json:"UpperLeftColumn,omitempty" xml:"UpperLeftColumn"`
-	// Lower Right Row.
-	LowerRightRow int64 `json:"LowerRightRow,omitempty" xml:"LowerRightRow"`
-	// Lower Right Column.
-	LowerRightColumn int64 `json:"LowerRightColumn,omitempty" xml:"LowerRightColumn"`
-	// Filename.
-	Filename string `json:"Filename,omitempty" xml:"Filename"`
-	// data : base64  string.
-	Data string `json:"Data,omitempty" xml:"Data"`
+type PptxSaveOptions struct {
+	EnableHTTPCompression bool `json:"EnableHTTPCompression,omitempty" xml:"EnableHTTPCompression"`
+	SaveFormat string `json:"SaveFormat,omitempty" xml:"SaveFormat"`
+	// Make the workbook empty after saving the file.
+	ClearData bool `json:"ClearData,omitempty" xml:"ClearData"`
+	// The cached file folder is used to store some large data.
+	CachedFileFolder string `json:"CachedFileFolder,omitempty" xml:"CachedFileFolder"`
+	// Indicates whether validate merged areas before saving the file. The default value is false.             
+	ValidateMergedAreas bool `json:"ValidateMergedAreas,omitempty" xml:"ValidateMergedAreas"`
+	RefreshChartCache bool `json:"RefreshChartCache,omitempty" xml:"RefreshChartCache"`
+	// If true and the directory does not exist, the directory will be automatically created before saving the file.             
+	CreateDirectory bool `json:"CreateDirectory,omitempty" xml:"CreateDirectory"`
+	SortNames bool `json:"SortNames,omitempty" xml:"SortNames"`
 }
