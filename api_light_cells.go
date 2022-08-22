@@ -1331,3 +1331,81 @@ func (a *LightCellsApiService) PostReverse(file map[string]string, localVarOptio
 
 	return localVarReturnValue, localVarHttpResponse, err
 }
+
+/*
+LightCellsApiService
+ * @param file File to upload
+ * @param rotateType
+ * @param color
+
+@return FilesResult
+*/
+
+type PostRotateOpts struct {
+	RotateType            string
+	Format                string
+	checkExcelRestriction bool
+}
+
+func (a *LightCellsApiService) PostRotate(file map[string]string, localVarOptionals *PostRotateOpts) (FilesResult, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue FilesResult
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/rotate"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	localVarQueryParams.Add("rotateType", parameterToString(localVarOptionals.RotateType, ""))
+	localVarQueryParams.Add("format", parameterToString(localVarOptionals.Format, ""))
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.checkExcelRestriction, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"multipart/form-data"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// localVarFormParams = file
+	for name, path := range file {
+		localVarFormParams["@"+name] = []string{path}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}

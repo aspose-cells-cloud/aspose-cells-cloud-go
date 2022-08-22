@@ -484,3 +484,23 @@ func TestCellsPostExport_workbook_Extend(t *testing.T) {
 		fmt.Printf("%d\tTestCellsPostExport \n", GetBaseTest().GetTestNumber())
 	}
 }
+
+func TestCellsPostRotate(t *testing.T) {
+	name := GetDataSource()
+	var fileMap map[string]string
+	fileMap = make(map[string]string)
+	fileMap[name] = "TestData\\" + name
+	name = GetAssemblyTest()
+	fileMap[name] = "TestData\\" + name
+	postOpts := new(PostRotateOpts)
+	postOpts.RotateType = "270"
+	postOpts.Format = "pdf"
+	_, httpResponse, err := GetBaseTest().LightCellsApi.PostRotate(fileMap, postOpts)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells PostRotate	\n", GetBaseTest().GetTestNumber())
+	}
+}
