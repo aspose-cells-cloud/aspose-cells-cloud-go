@@ -6514,3 +6514,68 @@ func TestCellsPictureGetExtractBarcodes(t *testing.T) {
 		fmt.Printf("%d\tTestCellsSaveAsPostDocumentSaveAs - %d\n", GetBaseTest().GetTestNumber(), 200)
 	}
 }
+func TestCellsPutConvertWorkbookPDF(t *testing.T) {
+
+	args := new(CellsWorkbookPutConvertWorkbookOpts)
+	args.Format = "PDF"
+	// args.OutPath = "book1.xlsx.pdf"
+	file, err := os.Open("../TestData/" + GetBook1())
+	if err != nil {
+		return
+	}
+	localVarReturnValue, httpResponse, err := GetBaseTest().CellsAPI.CellsWorkbookPutConvertWorkbook(file, args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t TestCellsPutConvertWorkbook - %d\n", GetBaseTest().GetTestNumber(), httpResponse.StatusCode)
+		file1, err2 := os.Create("../Book1.pdf")
+		if err2 != nil {
+			return
+		}
+		if _, err3 := file1.Write(localVarReturnValue); err3 != nil {
+			fmt.Println(err3)
+		}
+		file1.Close()
+	}
+}
+func TestCellsPostConvertWorkbookToPNG(t *testing.T) {
+
+	args := new(PostConvertWorkbookToPNGOpts)
+
+	_, httpResponse, err := GetBaseTest().CellsAPI.PostConvertWorkbookToPNG("../TestData/"+GetBook1(), args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells PostConvertWorkbookToPNG	\n", GetBaseTest().GetTestNumber())
+	}
+}
+
+func TestCellsPostConvertWorkbookToPDF(t *testing.T) {
+
+	args := new(PostConvertWorkbookToPDFOpts)
+
+	_, httpResponse, err := GetBaseTest().CellsAPI.PostConvertWorkbookToPDF("../TestData/"+GetBook1(), args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells PostConvertWorkbookToPDF	\n", GetBaseTest().GetTestNumber())
+	}
+}
+func TestCellsPostConvertWorkbookToDocx(t *testing.T) {
+
+	args := new(PostConvertWorkbookToDocxOpts)
+	_, httpResponse, err := GetBaseTest().CellsAPI.PostConvertWorkbookToDocx("../TestData/"+GetBook1(), args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells PostConvertWorkbookToDocx \n", GetBaseTest().GetTestNumber())
+	}
+}
