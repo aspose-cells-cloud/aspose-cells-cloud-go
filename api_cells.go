@@ -33,7 +33,7 @@ import (
 )
 
 func Version() {
-	fmt.Println("---Version: 22.9---")
+	fmt.Println("---Version: 22.10---")
 }
 
 /* Create Instance of CellsApiService
@@ -23547,6 +23547,231 @@ func (a *CellsApiService) PostConvertWorkbookToPNG(file string, localVarOptional
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/convert/png"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("password", parameterToString(localVarOptionals.Password, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.CheckExcelRestriction, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"multipart/form-data"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	localVarFormParams["@file"] = []string{file}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService
+ * @param file File to upload
+ * @param optional nil or *PostConvertWorkbookToPptxOpts - Optional Parameters:
+     * @param "Password" (optional.String) -
+     * @param "CheckExcelRestriction" (optional.Bool) -
+
+@return FileInfo
+*/
+
+type PostConvertWorkbookToPptxOpts struct {
+	Password              string
+	CheckExcelRestriction bool
+}
+
+func (a *CellsApiService) PostConvertWorkbookToPptx(file string, localVarOptionals *PostConvertWorkbookToPptxOpts) (FileInfo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue FileInfo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/convert/pptx"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("password", parameterToString(localVarOptionals.Password, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.CheckExcelRestriction, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"multipart/form-data"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	localVarFormParams["@file"] = []string{file}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService
+ * @param file File to upload
+ * @param optional nil or *PostConvertWorkbookToHtmlOpts - Optional Parameters:
+     * @param "Password" (optional.String) -
+     * @param "CheckExcelRestriction" (optional.Bool) -
+
+@return FileInfo
+*/
+
+type PostConvertWorkbookToHtmlOpts struct {
+	Password              string
+	CheckExcelRestriction bool
+}
+
+func (a *CellsApiService) PostConvertWorkbookToHtml(file string, localVarOptionals *PostConvertWorkbookToHtmlOpts) (FileInfo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue FileInfo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/convert/html"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("password", parameterToString(localVarOptionals.Password, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("checkExcelRestriction", parameterToString(localVarOptionals.CheckExcelRestriction, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"multipart/form-data"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	localVarFormParams["@file"] = []string{file}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService
+ * @param file File to upload
+ * @param optional nil or *PostConvertWorkbookToMarkdownOpts - Optional Parameters:
+     * @param "Password" (optional.String) -
+     * @param "CheckExcelRestriction" (optional.Bool) -
+
+@return FileInfo
+*/
+
+type PostConvertWorkbookToMarkdownOpts struct {
+	Password              string
+	CheckExcelRestriction bool
+}
+
+func (a *CellsApiService) PostConvertWorkbookToMarkdown(file string, localVarOptionals *PostConvertWorkbookToMarkdownOpts) (FileInfo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue FileInfo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/convert/markdown"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
