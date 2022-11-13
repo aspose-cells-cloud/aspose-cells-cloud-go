@@ -6618,3 +6618,40 @@ func TestCellsPostConvertWorkbookToMarkdown(t *testing.T) {
 		fmt.Printf("%d\t func TestCells PostConvertWorkbookToMarkdown \n", GetBaseTest().GetTestNumber())
 	}
 }
+
+func TestCellsPostConvertWorkbookToJson(t *testing.T) {
+
+	args := new(PostConvertWorkbookToJsonOpts)
+	_, httpResponse, err := GetBaseTest().CellsAPI.PostConvertWorkbookToJson("../TestData/"+GetBook1(), args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells TestCellsPostConvertWorkbookToJson \n", GetBaseTest().GetTestNumber())
+	}
+}
+func TestCellsPostConvertWorkbookToSQL(t *testing.T) {
+
+	args := new(PostConvertWorkbookToSQLOpts)
+	_, httpResponse, err := GetBaseTest().CellsAPI.PostConvertWorkbookToSQL("../TestData/"+GetBook1(), args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells TestCellsPostConvertWorkbookToSQL \n", GetBaseTest().GetTestNumber())
+	}
+}
+func TestCellsPostConvertWorkbookToCSV(t *testing.T) {
+
+	args := new(PostConvertWorkbookToCSVOpts)
+	_, httpResponse, err := GetBaseTest().CellsAPI.PostConvertWorkbookToCSV("../TestData/"+GetBook1(), args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells TestCellsPostConvertWorkbookToCSV \n", GetBaseTest().GetTestNumber())
+	}
+}
