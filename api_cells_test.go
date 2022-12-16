@@ -6655,3 +6655,176 @@ func TestCellsPostConvertWorkbookToCSV(t *testing.T) {
 		fmt.Printf("%d\t func TestCells TestCellsPostConvertWorkbookToCSV \n", GetBaseTest().GetTestNumber())
 	}
 }
+func TestCellsGetChartCategoryAxis(t *testing.T) {
+
+	args := new(CellsChartsGetChartCategoryAxisOpts)
+	args.Name = GetBook1()
+	args.SheetName = GetSheet4()
+	args.ChartIndex = 0
+	args.Folder = GetBaseTest().remoteFolder
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsGetChartCategoryAxis(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells TestCellsGetChartCategoryAxis \n", GetBaseTest().GetTestNumber())
+	}
+}
+func TestCellsChartsGetChartSecondCategoryAxis(t *testing.T) {
+
+	args := new(CellsChartsGetChartSecondCategoryAxisOpts)
+	args.Name = GetBook1()
+	args.SheetName = GetSheet4()
+	args.ChartIndex = 0
+	args.Folder = GetBaseTest().remoteFolder
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsGetChartSecondCategoryAxis(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells TestCellsGetChartCategoryAxis \n", GetBaseTest().GetTestNumber())
+	}
+}
+
+func TestCellsGetChartValueAxis(t *testing.T) {
+
+	args := new(CellsChartsGetChartValueAxisOpts)
+	args.Name = GetBook1()
+	args.SheetName = GetSheet4()
+	args.ChartIndex = 0
+	args.Folder = GetBaseTest().remoteFolder
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsGetChartValueAxis(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells TestCellsGetChartValueAxis \n", GetBaseTest().GetTestNumber())
+	}
+}
+func TestCellsChartsGetChartSecondValueAxis(t *testing.T) {
+
+	args := new(CellsChartsGetChartSecondValueAxisOpts)
+	args.Name = GetBook1()
+	args.SheetName = GetSheet4()
+	args.ChartIndex = 0
+	args.Folder = GetBaseTest().remoteFolder
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsGetChartSecondValueAxis(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells TestCellsGetChartValueAxis \n", GetBaseTest().GetTestNumber())
+	}
+}
+func TestCellsChartsGetChartSeriesAxis(t *testing.T) {
+
+	args := new(CellsChartsGetChartSeriesAxisOpts)
+	args.Name = GetBook1()
+	args.SheetName = GetSheet4()
+	args.ChartIndex = 0
+	args.Folder = GetBaseTest().remoteFolder
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsGetChartSeriesAxis(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells TestCellsGetChartValueAxis \n", GetBaseTest().GetTestNumber())
+	}
+}
+
+func TestCellsPostChartCategoryAxis(t *testing.T) {
+
+	args := new(CellsChartsPostChartCategoryAxisOpts)
+	args.Name = GetBook1()
+	args.SheetName = GetSheet4()
+	args.ChartIndex = 0
+	args.Axis = new(Axis)
+	args.Axis.MinValue = 1.0
+	args.Folder = GetBaseTest().remoteFolder
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsPostChartCategoryAxis(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells TestCellsGetChartCategoryAxis \n", GetBaseTest().GetTestNumber())
+	}
+}
+func TestCellsChartsPostChartSecondCategoryAxis(t *testing.T) {
+
+	args := new(CellsChartsPostChartSecondCategoryAxisOpts)
+	args.Name = GetBook1()
+	args.SheetName = GetSheet4()
+	args.ChartIndex = 0
+	args.Axis = new(Axis)
+	args.Axis.MinValue = 1.0
+	args.Folder = GetBaseTest().remoteFolder
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsPostChartSecondCategoryAxis(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells TestCellsPostChartCategoryAxis \n", GetBaseTest().GetTestNumber())
+	}
+}
+
+func TestCellsPostChartValueAxis(t *testing.T) {
+
+	args := new(CellsChartsPostChartValueAxisOpts)
+	args.Name = GetBook1()
+	args.SheetName = GetSheet4()
+	args.ChartIndex = 0
+	args.Axis = new(Axis)
+	args.Axis.MinValue = 1.0
+	args.Folder = GetBaseTest().remoteFolder
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsPostChartValueAxis(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells TestCellsPostChartValueAxis \n", GetBaseTest().GetTestNumber())
+	}
+}
+func TestCellsChartsPostChartSecondValueAxis(t *testing.T) {
+
+	args := new(CellsChartsPostChartSecondValueAxisOpts)
+	args.Name = GetBook1()
+	args.SheetName = GetSheet4()
+	args.ChartIndex = 0
+	args.Axis = new(Axis)
+	args.Axis.MinValue = 1.0
+	args.Folder = GetBaseTest().remoteFolder
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsPostChartSecondValueAxis(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells TestCellsPostChartValueAxis \n", GetBaseTest().GetTestNumber())
+	}
+}
+func TestCellsChartsPostChartSeriesAxis(t *testing.T) {
+
+	args := new(CellsChartsPostChartSeriesAxisOpts)
+	args.Name = GetBook1()
+	args.SheetName = GetSheet4()
+	args.ChartIndex = 0
+	args.Axis = new(Axis)
+	args.Axis.MinValue = 1.0
+	args.Folder = GetBaseTest().remoteFolder
+	_, httpResponse, err := GetBaseTest().CellsAPI.CellsChartsPostChartSeriesAxis(args)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\t func TestCells TestCellsPostChartValueAxis \n", GetBaseTest().GetTestNumber())
+	}
+}

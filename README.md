@@ -20,11 +20,9 @@
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## Feature & Enhancements in Version 22.11
+## Feature & Enhancements in Version 22.12
 
-- Add api for converting workbook to Json.
-- Add api for converting workbook to SQL.
-- Add api for converting workbook to CSV.
+- Support chart axis operations.
 
 ## Read & Write Spreadsheet Formats
 

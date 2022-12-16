@@ -2072,6 +2072,416 @@ func (a *CellsApiService) CellsChartsDeleteWorksheetDeleteChart(localVarOptional
 }
 
 /*
+CellsApiService Get chart Category Axis
+ * @param name
+ * @param sheetName
+ * @param chartIndex
+ * @param optional nil or *CellsChartsGetChartCategoryAxisOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -
+     * @param "StorageName" (optional.String) -
+
+@return AxisResponse
+*/
+
+type CellsChartsGetChartCategoryAxisOpts struct {
+	Name        string
+	SheetName   string
+	ChartIndex  int64
+	Folder      string
+	StorageName string
+}
+
+func (a *CellsApiService) CellsChartsGetChartCategoryAxis(localVarOptionals *CellsChartsGetChartCategoryAxisOpts) (AxisResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue AxisResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/categoryaxis"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService Get chart second category axis
+ * @param name
+ * @param sheetName
+ * @param chartIndex
+ * @param optional nil or *CellsChartsGetChartSecondCategoryAxisOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -
+     * @param "StorageName" (optional.String) -
+
+@return AxisResponse
+*/
+
+type CellsChartsGetChartSecondCategoryAxisOpts struct {
+	Name        string
+	SheetName   string
+	ChartIndex  int64
+	Folder      string
+	StorageName string
+}
+
+func (a *CellsApiService) CellsChartsGetChartSecondCategoryAxis(localVarOptionals *CellsChartsGetChartSecondCategoryAxisOpts) (AxisResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue AxisResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/secondcategoryaxis"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService Get chart second value axis
+ * @param name
+ * @param sheetName
+ * @param chartIndex
+ * @param optional nil or *CellsChartsGetChartSecondValueAxisOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -
+     * @param "StorageName" (optional.String) -
+
+@return AxisResponse
+*/
+
+type CellsChartsGetChartSecondValueAxisOpts struct {
+	Name        string
+	SheetName   string
+	ChartIndex  int64
+	Folder      string
+	StorageName string
+}
+
+func (a *CellsApiService) CellsChartsGetChartSecondValueAxis(localVarOptionals *CellsChartsGetChartSecondValueAxisOpts) (AxisResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue AxisResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/secondvalueaxis"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService Get chart Series Axis
+ * @param name
+ * @param sheetName
+ * @param chartIndex
+ * @param optional nil or *CellsChartsGetChartSeriesAxisOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -
+     * @param "StorageName" (optional.String) -
+
+@return AxisResponse
+*/
+
+type CellsChartsGetChartSeriesAxisOpts struct {
+	Name        string
+	SheetName   string
+	ChartIndex  int64
+	Folder      string
+	StorageName string
+}
+
+func (a *CellsApiService) CellsChartsGetChartSeriesAxis(localVarOptionals *CellsChartsGetChartSeriesAxisOpts) (AxisResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue AxisResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/seriesaxis"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService Get chart Value Axis
+ * @param name
+ * @param sheetName
+ * @param chartIndex
+ * @param optional nil or *CellsChartsGetChartValueAxisOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -
+     * @param "StorageName" (optional.String) -
+
+@return AxisResponse
+*/
+
+type CellsChartsGetChartValueAxisOpts struct {
+	Name        string
+	SheetName   string
+	ChartIndex  int64
+	Folder      string
+	StorageName string
+}
+
+func (a *CellsApiService) CellsChartsGetChartValueAxis(localVarOptionals *CellsChartsGetChartValueAxisOpts) (AxisResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue AxisResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/valueaxis"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
 CellsApiService Get chart info.
  * @param name Document name.
  * @param sheetName Worksheet name.
@@ -2386,6 +2796,436 @@ func (a *CellsApiService) CellsChartsGetWorksheetCharts(localVarOptionals *Cells
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService Update chart Category Axis
+ * @param name
+ * @param sheetName
+ * @param chartIndex
+ * @param axis
+ * @param optional nil or *CellsChartsPostChartCategoryAxisOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -
+     * @param "StorageName" (optional.String) -
+
+@return CellsCloudResponse
+*/
+
+type CellsChartsPostChartCategoryAxisOpts struct {
+	Name        string
+	SheetName   string
+	ChartIndex  int64
+	Axis        *Axis
+	Folder      string
+	StorageName string
+}
+
+func (a *CellsApiService) CellsChartsPostChartCategoryAxis(localVarOptionals *CellsChartsPostChartCategoryAxisOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/categoryaxis"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &localVarOptionals.Axis
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService Update chart second category axis
+ * @param name
+ * @param sheetName
+ * @param chartIndex
+ * @param axis
+ * @param optional nil or *CellsChartsPostChartSecondCategoryAxisOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -
+     * @param "StorageName" (optional.String) -
+
+@return CellsCloudResponse
+*/
+
+type CellsChartsPostChartSecondCategoryAxisOpts struct {
+	Name        string
+	SheetName   string
+	ChartIndex  int64
+	Axis        *Axis
+	Folder      string
+	StorageName string
+}
+
+func (a *CellsApiService) CellsChartsPostChartSecondCategoryAxis(localVarOptionals *CellsChartsPostChartSecondCategoryAxisOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/secondcategoryaxis"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &localVarOptionals.Axis
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService Update chart second value axis
+ * @param name
+ * @param sheetName
+ * @param chartIndex
+ * @param axis
+ * @param optional nil or *CellsChartsPostChartSecondValueAxisOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -
+     * @param "StorageName" (optional.String) -
+
+@return CellsCloudResponse
+*/
+
+type CellsChartsPostChartSecondValueAxisOpts struct {
+	Name        string
+	SheetName   string
+	ChartIndex  int64
+	Axis        *Axis
+	Folder      string
+	StorageName string
+}
+
+func (a *CellsApiService) CellsChartsPostChartSecondValueAxis(localVarOptionals *CellsChartsPostChartSecondValueAxisOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/secondvalueaxis"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &localVarOptionals.Axis
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService Update chart Series Axis
+ * @param name
+ * @param sheetName
+ * @param chartIndex
+ * @param axis
+ * @param optional nil or *CellsChartsPostChartSeriesAxisOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -
+     * @param "StorageName" (optional.String) -
+
+@return CellsCloudResponse
+*/
+
+type CellsChartsPostChartSeriesAxisOpts struct {
+	Name        string
+	SheetName   string
+	ChartIndex  int64
+	Axis        *Axis
+	Folder      string
+	StorageName string
+}
+
+func (a *CellsApiService) CellsChartsPostChartSeriesAxis(localVarOptionals *CellsChartsPostChartSeriesAxisOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/seriesaxis"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &localVarOptionals.Axis
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
+/*
+CellsApiService Update chart value axis
+ * @param name
+ * @param sheetName
+ * @param chartIndex
+ * @param axis
+ * @param optional nil or *CellsChartsPostChartValueAxisOpts - Optional Parameters:
+     * @param "Folder" (optional.String) -
+     * @param "StorageName" (optional.String) -
+
+@return CellsCloudResponse
+*/
+
+type CellsChartsPostChartValueAxisOpts struct {
+	Name        string
+	SheetName   string
+	ChartIndex  int64
+	Axis        *Axis
+	Folder      string
+	StorageName string
+}
+
+func (a *CellsApiService) CellsChartsPostChartValueAxis(localVarOptionals *CellsChartsPostChartValueAxisOpts) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue CellsCloudResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/" + a.client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/valueaxis"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", localVarOptionals.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", localVarOptionals.SheetName), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", localVarOptionals.ChartIndex), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("folder", parameterToString(localVarOptionals.Folder, ""))
+	}
+	if localVarOptionals != nil {
+		localVarQueryParams.Add("storageName", parameterToString(localVarOptionals.StorageName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &localVarOptionals.Axis
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
