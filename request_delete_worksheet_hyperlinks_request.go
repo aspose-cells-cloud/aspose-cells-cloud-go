@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="delete_work_sheet_pictures_request.go">
+* <copyright company="Aspose" file="delete_work_sheet_hyperlinks_request.go">
 *   Copyright (c) 2023 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -9,10 +9,10 @@
 *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 *  copies of the Software, and to permit persons to whom the Software is
 *  furnished to do so, subject to the following conditions:
-* 
+*
 *  The above copyright notice and this permission notice shall be included in all
 *  copies or substantial portions of the Software.
-* 
+*
 *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -20,36 +20,35 @@
 *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 *  SOFTWARE.
-* </summary> 
+* </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
 package asposecellscloud
 
 import (
 	"fmt"
-	"net/url"
 	"net/http"
+	"net/url"
 	"strings"
 )
 
-type DeleteWorkSheetPicturesRequest struct {
-    Name string `json:"name,omitempty" xml:"name"`
-    SheetName string `json:"sheet_name,omitempty" xml:"sheet_name"`
-	Folder string `json:"folder,omitempty" xml:"folder"`
+type DeleteWorksheetHyperlinksRequest struct {
+	Name        string `json:"name,omitempty" xml:"name"`
+	SheetName   string `json:"sheet_name,omitempty" xml:"sheet_name"`
+	Folder      string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-	
 }
 
-func (data *DeleteWorkSheetPicturesRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+func (data *DeleteWorksheetHyperlinksRequest) CreateRequestData(client *APIClient) (localVarRequest *http.Request, err error) {
 	var (
-		localVarHttpMethod  = strings.ToUpper("DELETE")
-		localVarPostBody    interface{}
-		localVarFileName    string
-		localVarFileBytes   []byte
+		localVarHttpMethod = strings.ToUpper("DELETE")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pictures"
+	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/hyperlinks"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -57,18 +56,17 @@ func (data *DeleteWorkSheetPicturesRequest) CreateRequestData( client *APIClient
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-    // query params : folder
-    if data.Folder != "" {
-        localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
-    }
+	// query params : folder
+	if data.Folder != "" {
+		localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
+	}
 
-    // query params : storageName
-    if data.StorageName != "" {
-        localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
-    }
+	// query params : storageName
+	if data.StorageName != "" {
+		localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
+	}
 
-
-	localVarHttpContentTypes := []string{"application/json"} 
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -86,5 +84,5 @@ func (data *DeleteWorkSheetPicturesRequest) CreateRequestData( client *APIClient
 	}
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
-	return r,err
+	return r, err
 }

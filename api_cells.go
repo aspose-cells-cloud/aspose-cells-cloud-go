@@ -28115,7 +28115,7 @@ func (a *CellsApiService) PostConvertWorkbookToCSV(data *PostConvertWorkbookToCS
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
-func (a *CellsApiService) GetWorkSheetHyperlinks(data *GetWorkSheetHyperlinksRequest) (HyperlinksResponse, *http.Response, error) {
+func (a *CellsApiService) GetWorksheetHyperlinks(data *GetWorksheetHyperlinksRequest) (HyperlinksResponse, *http.Response, error) {
 	var (
 		localVarReturnValue HyperlinksResponse
 	)
@@ -28141,7 +28141,7 @@ func (a *CellsApiService) GetWorkSheetHyperlinks(data *GetWorkSheetHyperlinksReq
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
-func (a *CellsApiService) GetWorkSheetHyperlink(data *GetWorkSheetHyperlinkRequest) (HyperlinkResponse, *http.Response, error) {
+func (a *CellsApiService) GetWorksheetHyperlink(data *GetWorksheetHyperlinkRequest) (HyperlinkResponse, *http.Response, error) {
 	var (
 		localVarReturnValue HyperlinkResponse
 	)
@@ -28167,7 +28167,7 @@ func (a *CellsApiService) GetWorkSheetHyperlink(data *GetWorkSheetHyperlinkReque
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
-func (a *CellsApiService) DeleteWorkSheetHyperlink(data *DeleteWorkSheetHyperlinkRequest) (CellsCloudResponse, *http.Response, error) {
+func (a *CellsApiService) DeleteWorksheetHyperlink(data *DeleteWorksheetHyperlinkRequest) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarReturnValue CellsCloudResponse
 	)
@@ -28193,7 +28193,7 @@ func (a *CellsApiService) DeleteWorkSheetHyperlink(data *DeleteWorkSheetHyperlin
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
-func (a *CellsApiService) PostWorkSheetHyperlink(data *PostWorkSheetHyperlinkRequest) (CellsCloudResponse, *http.Response, error) {
+func (a *CellsApiService) PostWorksheetHyperlink(data *PostWorksheetHyperlinkRequest) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarReturnValue CellsCloudResponse
 	)
@@ -28219,7 +28219,7 @@ func (a *CellsApiService) PostWorkSheetHyperlink(data *PostWorkSheetHyperlinkReq
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
-func (a *CellsApiService) PutWorkSheetHyperlink(data *PutWorkSheetHyperlinkRequest) (CellsCloudResponse, *http.Response, error) {
+func (a *CellsApiService) PutWorksheetHyperlink(data *PutWorksheetHyperlinkRequest) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarReturnValue CellsCloudResponse
 	)
@@ -28245,7 +28245,7 @@ func (a *CellsApiService) PutWorkSheetHyperlink(data *PutWorkSheetHyperlinkReque
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
-func (a *CellsApiService) DeleteWorkSheetHyperlinks(data *DeleteWorkSheetHyperlinksRequest) (CellsCloudResponse, *http.Response, error) {
+func (a *CellsApiService) DeleteWorksheetHyperlinks(data *DeleteWorksheetHyperlinksRequest) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarReturnValue CellsCloudResponse
 	)
@@ -29678,7 +29678,7 @@ func (a *CellsApiService) PutWorksheetAddPicture(data *PutWorksheetAddPictureReq
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
-func (a *CellsApiService) PostWorkSheetPicture(data *PostWorkSheetPictureRequest) (CellsCloudResponse, *http.Response, error) {
+func (a *CellsApiService) PostWorksheetPicture(data *PostWorksheetPictureRequest) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarReturnValue CellsCloudResponse
 	)
@@ -29730,7 +29730,7 @@ func (a *CellsApiService) DeleteWorksheetPicture(data *DeleteWorksheetPictureReq
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
-func (a *CellsApiService) DeleteWorkSheetPictures(data *DeleteWorkSheetPicturesRequest) (CellsCloudResponse, *http.Response, error) {
+func (a *CellsApiService) DeleteWorksheetPictures(data *DeleteWorksheetPicturesRequest) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarReturnValue CellsCloudResponse
 	)
