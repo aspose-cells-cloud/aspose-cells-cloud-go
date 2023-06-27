@@ -42,6 +42,7 @@ type PostWorkbookImportXMLRequest struct {
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	ImportXMLRequest interface{} `json:"import_xml_request,omitempty" xml:"import_xml_request"` 
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWorkbookImportXMLRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -90,7 +91,11 @@ func (data *PostWorkbookImportXMLRequest) CreateRequestData( client *APIClient) 
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

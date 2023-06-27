@@ -38,6 +38,7 @@ type PostSplitRequest struct {
 	To int64 `json:"to,omitempty" xml:"to"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostSplitRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -80,7 +81,11 @@ func (data *PostSplitRequest) CreateRequestData( client *APIClient) (localVarReq
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"multipart/form-data"} 
 
 	// set Content-Type header

@@ -38,6 +38,7 @@ type PutWorkbookBackgroundRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PutWorkbookBackgroundRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -71,7 +72,11 @@ func (data *PutWorkbookBackgroundRequest) CreateRequestData( client *APIClient) 
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"multipart/form-data"} 
 
 	// set Content-Type header

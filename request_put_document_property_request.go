@@ -38,6 +38,7 @@ type PutDocumentPropertyRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	Property interface{} `json:"property,omitempty" xml:"property"` 
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PutDocumentPropertyRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -49,7 +50,7 @@ func (data *PutDocumentPropertyRequest) CreateRequestData( client *APIClient) (l
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/documentproperties/{propertyName}"
+	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/documentproperties"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -66,7 +67,11 @@ func (data *PutDocumentPropertyRequest) CreateRequestData( client *APIClient) (l
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

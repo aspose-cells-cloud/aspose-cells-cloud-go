@@ -41,6 +41,7 @@ type PutWorkbookCreateRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PutWorkbookCreateRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -89,7 +90,11 @@ func (data *PutWorkbookCreateRequest) CreateRequestData( client *APIClient) (loc
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

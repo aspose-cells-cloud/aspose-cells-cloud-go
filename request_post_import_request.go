@@ -33,6 +33,7 @@ import (
 
 type PostImportRequest struct {
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostImportRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -50,7 +51,11 @@ func (data *PostImportRequest) CreateRequestData( client *APIClient) (localVarRe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"multipart/form-data"} 
 
 	// set Content-Type header

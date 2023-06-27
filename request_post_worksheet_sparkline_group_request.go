@@ -40,6 +40,7 @@ type PostWorksheetSparklineGroupRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	SparklineGroup interface{} `json:"sparkline_group,omitempty" xml:"sparkline_group"` 
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWorksheetSparklineGroupRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -70,7 +71,11 @@ func (data *PostWorksheetSparklineGroupRequest) CreateRequestData( client *APICl
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

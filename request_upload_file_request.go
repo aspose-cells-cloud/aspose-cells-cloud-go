@@ -36,6 +36,7 @@ type UploadFileRequest struct {
     Path string `json:"path,omitempty" xml:"path"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	UploadFiles map[string]string  `json:"UploadFiles,omitempty" xml:"UploadFiles"` 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *UploadFileRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -59,7 +60,11 @@ func (data *UploadFileRequest) CreateRequestData( client *APIClient) (localVarRe
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"multipart/form-data"} 
 
 	// set Content-Type header

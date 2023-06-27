@@ -39,6 +39,7 @@ type PostWorksheetCellsRangeUnMergeRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	Range_ interface{} `json:"range,omitempty" xml:"range"` 
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWorksheetCellsRangeUnMergeRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -68,7 +69,11 @@ func (data *PostWorksheetCellsRangeUnMergeRequest) CreateRequestData( client *AP
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

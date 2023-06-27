@@ -37,6 +37,7 @@ type ObjectExistsRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	VersionId string `json:"version_id,omitempty" xml:"version_id"`
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *ObjectExistsRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -65,7 +66,11 @@ func (data *ObjectExistsRequest) CreateRequestData( client *APIClient) (localVar
         localVarQueryParams.Add("versionId", parameterToString(data.VersionId, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

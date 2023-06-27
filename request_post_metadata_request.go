@@ -37,6 +37,7 @@ type PostMetadataRequest struct {
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	CellsDocuments interface{} `json:"cells_documents,omitempty" xml:"cells_documents"` 
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostMetadataRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -64,7 +65,11 @@ func (data *PostMetadataRequest) CreateRequestData( client *APIClient) (localVar
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"multipart/form-data"} 
 
 	// set Content-Type header

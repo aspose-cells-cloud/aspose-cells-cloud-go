@@ -34,6 +34,7 @@ import (
 type PostBatchConvertRequest struct {
 	BatchConvertRequest interface{} `json:"batch_convert_request,omitempty" xml:"batch_convert_request"` 
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostBatchConvertRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -51,7 +52,11 @@ func (data *PostBatchConvertRequest) CreateRequestData( client *APIClient) (loca
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

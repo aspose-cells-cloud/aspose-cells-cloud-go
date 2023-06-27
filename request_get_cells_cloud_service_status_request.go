@@ -33,6 +33,7 @@ import (
 
 type GetCellsCloudServiceStatusRequest struct {
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *GetCellsCloudServiceStatusRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -50,7 +51,11 @@ func (data *GetCellsCloudServiceStatusRequest) CreateRequestData( client *APICli
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

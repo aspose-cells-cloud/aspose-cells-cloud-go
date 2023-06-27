@@ -38,6 +38,7 @@ type MoveFolderRequest struct {
 	SrcStorageName string `json:"src_storage_name,omitempty" xml:"src_storage_name"`
 	DestStorageName string `json:"dest_storage_name,omitempty" xml:"dest_storage_name"`
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *MoveFolderRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -71,7 +72,11 @@ func (data *MoveFolderRequest) CreateRequestData( client *APIClient) (localVarRe
         localVarQueryParams.Add("destStorageName", parameterToString(data.DestStorageName, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

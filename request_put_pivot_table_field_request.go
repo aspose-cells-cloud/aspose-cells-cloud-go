@@ -42,6 +42,7 @@ type PutPivotTableFieldRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	PivotTableFieldRequest interface{} `json:"pivot_table_field_request,omitempty" xml:"pivot_table_field_request"` 
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PutPivotTableFieldRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -82,7 +83,11 @@ func (data *PutPivotTableFieldRequest) CreateRequestData( client *APIClient) (lo
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

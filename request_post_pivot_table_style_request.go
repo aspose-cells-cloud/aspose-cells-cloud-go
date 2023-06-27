@@ -41,6 +41,7 @@ type PostPivotTableStyleRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	Style interface{} `json:"style,omitempty" xml:"style"` 
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostPivotTableStyleRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -76,7 +77,11 @@ func (data *PostPivotTableStyleRequest) CreateRequestData( client *APIClient) (l
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

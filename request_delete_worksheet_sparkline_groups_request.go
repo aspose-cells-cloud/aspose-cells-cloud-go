@@ -38,6 +38,7 @@ type DeleteWorksheetSparklineGroupsRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *DeleteWorksheetSparklineGroupsRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -67,7 +68,11 @@ func (data *DeleteWorksheetSparklineGroupsRequest) CreateRequestData( client *AP
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

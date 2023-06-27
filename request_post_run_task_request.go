@@ -34,6 +34,7 @@ import (
 type PostRunTaskRequest struct {
 	TaskData interface{} `json:"task_data,omitempty" xml:"task_data"` 
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostRunTaskRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -51,7 +52,11 @@ func (data *PostRunTaskRequest) CreateRequestData( client *APIClient) (localVarR
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

@@ -52,6 +52,7 @@ type PutWorksheetAddChartRequest struct {
 	PivotTableName string `json:"pivot_table_name,omitempty" xml:"pivot_table_name"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PutWorksheetAddChartRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -151,7 +152,11 @@ func (data *PutWorksheetAddChartRequest) CreateRequestData( client *APIClient) (
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

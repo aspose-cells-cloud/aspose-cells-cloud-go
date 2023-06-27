@@ -34,6 +34,7 @@ import (
 type PostBatchSplitRequest struct {
 	BatchSplitRequest interface{} `json:"batch_split_request,omitempty" xml:"batch_split_request"` 
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostBatchSplitRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -51,7 +52,11 @@ func (data *PostBatchSplitRequest) CreateRequestData( client *APIClient) (localV
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

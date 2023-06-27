@@ -38,6 +38,7 @@ type DeleteWorksheetsRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	MatchCondition interface{} `json:"match_condition,omitempty" xml:"match_condition"` 
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *DeleteWorksheetsRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -66,7 +67,11 @@ func (data *DeleteWorksheetsRequest) CreateRequestData( client *APIClient) (loca
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

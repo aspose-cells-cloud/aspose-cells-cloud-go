@@ -40,6 +40,7 @@ type PostUpdateWorksheetOleObjectRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	Ole interface{} `json:"ole,omitempty" xml:"ole"` 
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostUpdateWorksheetOleObjectRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -70,7 +71,11 @@ func (data *PostUpdateWorksheetOleObjectRequest) CreateRequestData( client *APIC
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

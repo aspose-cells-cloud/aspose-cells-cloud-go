@@ -41,6 +41,7 @@ type PostWorksheetListObjectSummarizeWithPivotTableRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	CreatePivotTableRequest interface{} `json:"create_pivot_table_request,omitempty" xml:"create_pivot_table_request"` 
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWorksheetListObjectSummarizeWithPivotTableRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -76,7 +77,11 @@ func (data *PostWorksheetListObjectSummarizeWithPivotTableRequest) CreateRequest
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

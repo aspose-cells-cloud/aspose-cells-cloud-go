@@ -39,6 +39,7 @@ type PostPageSetupRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	PageSetup interface{} `json:"page_setup,omitempty" xml:"page_setup"` 
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostPageSetupRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -68,7 +69,11 @@ func (data *PostPageSetupRequest) CreateRequestData( client *APIClient) (localVa
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

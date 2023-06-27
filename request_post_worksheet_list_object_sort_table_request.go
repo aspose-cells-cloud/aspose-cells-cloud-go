@@ -40,6 +40,7 @@ type PostWorksheetListObjectSortTableRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	DataSorter interface{} `json:"data_sorter,omitempty" xml:"data_sorter"` 
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWorksheetListObjectSortTableRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -70,7 +71,11 @@ func (data *PostWorksheetListObjectSortTableRequest) CreateRequestData( client *
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header

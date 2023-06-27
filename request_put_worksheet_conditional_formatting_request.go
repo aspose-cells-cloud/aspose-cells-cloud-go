@@ -40,6 +40,7 @@ type PutWorksheetConditionalFormattingRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	Formatcondition interface{} `json:"formatcondition,omitempty" xml:"formatcondition"` 
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PutWorksheetConditionalFormattingRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -74,7 +75,11 @@ func (data *PutWorksheetConditionalFormattingRequest) CreateRequestData( client 
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
 
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header
