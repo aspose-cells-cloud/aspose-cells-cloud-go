@@ -20,11 +20,13 @@
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## Feature & Enhancements in Version 23.5
+## Feature & Enhancements in Version 23.6
 
-- Adopt the new model.
-- Add import xml data api.
-- Add export xml data api.
+- Support to batch lock multi-files.
+- Support to batch unlock multi-files.
+- Support to protect lock multi-files.
+- Support to split lock multi-files.
+- Fix put document property api.
 
 ## Read & Write Spreadsheet Formats
 
