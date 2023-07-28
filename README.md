@@ -20,13 +20,10 @@
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## Feature & Enhancements in Version 23.6
+## Feature & Enhancements in Version 23.7
 
-- Support to batch lock multi-files.
-- Support to batch unlock multi-files.
-- Support to protect lock multi-files.
-- Support to split lock multi-files.
-- Fix put document property api.
+- Support to repair api.
+- Remove GetExtractBarcodes API.
 
 ## Read & Write Spreadsheet Formats
 
