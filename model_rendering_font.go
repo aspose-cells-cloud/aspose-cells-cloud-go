@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="TaskRunResult.go">
+* <copyright company="Aspose" file="RenderingFont.go">
 *   Copyright (c) 2023 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,8 +25,11 @@
 
 package asposecellscloud
 
-type TaskRunResult struct {
+type RenderingFont struct {
  
-    Description string `json:"Description,omitempty" xml:"Description"`
-    OutFileList []FileSource `json:"OutFileList,omitempty" xml:"OutFileList"`
+    Name string `json:"Name,omitempty" xml:"Name"`
+    Size float64 `json:"Size,omitempty" xml:"Size"`
+    Bold bool `json:"Bold,omitempty" xml:"Bold"`
+    Italic bool `json:"Italic,omitempty" xml:"Italic"`
+    Color *Color `json:"Color,omitempty" xml:"Color"`
 }

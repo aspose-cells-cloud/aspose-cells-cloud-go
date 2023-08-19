@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="TaskRunResult.go">
+* <copyright company="Aspose" file="DigitalSignature.go">
 *   Copyright (c) 2023 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,8 +25,14 @@
 
 package asposecellscloud
 
-type TaskRunResult struct {
+type DigitalSignature struct {
  
-    Description string `json:"Description,omitempty" xml:"Description"`
-    OutFileList []FileSource `json:"OutFileList,omitempty" xml:"OutFileList"`
+    Comments string `json:"Comments,omitempty" xml:"Comments"`
+    SignTime string `json:"SignTime,omitempty" xml:"SignTime"`
+    Id string `json:"Id,omitempty" xml:"Id"`
+    Password string `json:"Password,omitempty" xml:"Password"`
+    Image []int64 `json:"Image,omitempty" xml:"Image"`
+    ProviderId string `json:"ProviderId,omitempty" xml:"ProviderId"`
+    IsValid bool `json:"IsValid,omitempty" xml:"IsValid"`
+    XAdESType string `json:"XAdESType,omitempty" xml:"XAdESType"`
 }

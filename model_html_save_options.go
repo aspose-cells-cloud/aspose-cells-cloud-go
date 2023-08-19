@@ -36,6 +36,11 @@ type HtmlSaveOptions struct {
         SortNames bool `json:"SortNames,omitempty" xml:"SortNames"`
         ValidateMergedAreas bool `json:"ValidateMergedAreas,omitempty" xml:"ValidateMergedAreas"`
  
+    ExportPageHeaders bool `json:"ExportPageHeaders,omitempty" xml:"ExportPageHeaders"`
+    ExportPageFooters bool `json:"ExportPageFooters,omitempty" xml:"ExportPageFooters"`
+    ExportRowColumnHeadings bool `json:"ExportRowColumnHeadings,omitempty" xml:"ExportRowColumnHeadings"`
+    ShowAllSheets bool `json:"ShowAllSheets,omitempty" xml:"ShowAllSheets"`
+    ImageOptions *ImageOrPrintOptions `json:"ImageOptions,omitempty" xml:"ImageOptions"`
     SaveAsSingleFile bool `json:"SaveAsSingleFile,omitempty" xml:"SaveAsSingleFile"`
     ExportHiddenWorksheet bool `json:"ExportHiddenWorksheet,omitempty" xml:"ExportHiddenWorksheet"`
     ExportGridLines bool `json:"ExportGridLines,omitempty" xml:"ExportGridLines"`

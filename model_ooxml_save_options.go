@@ -37,4 +37,8 @@ type OoxmlSaveOptions struct {
         ValidateMergedAreas bool `json:"ValidateMergedAreas,omitempty" xml:"ValidateMergedAreas"`
  
     ExportCellName bool `json:"ExportCellName,omitempty" xml:"ExportCellName"`
+    UpdateZoom bool `json:"UpdateZoom,omitempty" xml:"UpdateZoom"`
+    EnableZip64 bool `json:"EnableZip64,omitempty" xml:"EnableZip64"`
+    EmbedOoxmlAsOleObject bool `json:"EmbedOoxmlAsOleObject,omitempty" xml:"EmbedOoxmlAsOleObject"`
+    CompressionType string `json:"CompressionType,omitempty" xml:"CompressionType"`
 }

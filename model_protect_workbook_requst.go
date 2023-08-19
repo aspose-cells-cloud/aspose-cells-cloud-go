@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="TaskRunResult.go">
+* <copyright company="Aspose" file="ProtectWorkbookRequst.go">
 *   Copyright (c) 2023 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,8 +25,12 @@
 
 package asposecellscloud
 
-type TaskRunResult struct {
+type ProtectWorkbookRequst struct {
  
-    Description string `json:"Description,omitempty" xml:"Description"`
-    OutFileList []FileSource `json:"OutFileList,omitempty" xml:"OutFileList"`
+    AwaysOpenOnlyReady bool `json:"AwaysOpenOnlyReady,omitempty" xml:"AwaysOpenOnlyReady"`
+    EncryptWithPassword string `json:"EncryptWithPassword,omitempty" xml:"EncryptWithPassword"`
+    ProtectCurrentSheet *Protection `json:"ProtectCurrentSheet,omitempty" xml:"ProtectCurrentSheet"`
+    ProtectWorkbookStructure string `json:"ProtectWorkbookStructure,omitempty" xml:"ProtectWorkbookStructure"`
+    DigitalSignature *DigitalSignature `json:"DigitalSignature,omitempty" xml:"DigitalSignature"`
+    MarkAsFinal bool `json:"MarkAsFinal,omitempty" xml:"MarkAsFinal"`
 }

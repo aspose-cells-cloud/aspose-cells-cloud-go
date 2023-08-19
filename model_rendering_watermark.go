@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="TaskRunResult.go">
+* <copyright company="Aspose" file="RenderingWatermark.go">
 *   Copyright (c) 2023 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,8 +25,17 @@
 
 package asposecellscloud
 
-type TaskRunResult struct {
+type RenderingWatermark struct {
  
-    Description string `json:"Description,omitempty" xml:"Description"`
-    OutFileList []FileSource `json:"OutFileList,omitempty" xml:"OutFileList"`
+    Rotation float64 `json:"Rotation,omitempty" xml:"Rotation"`
+    ScaleToPagePercent int64 `json:"ScaleToPagePercent,omitempty" xml:"ScaleToPagePercent"`
+    Opacity float64 `json:"Opacity,omitempty" xml:"Opacity"`
+    IsBackground bool `json:"IsBackground,omitempty" xml:"IsBackground"`
+    Text string `json:"Text,omitempty" xml:"Text"`
+    Font *RenderingFont `json:"Font,omitempty" xml:"Font"`
+    Image []int64 `json:"Image,omitempty" xml:"Image"`
+    HAlignment string `json:"HAlignment,omitempty" xml:"HAlignment"`
+    VAlignment string `json:"VAlignment,omitempty" xml:"VAlignment"`
+    OffsetX float64 `json:"OffsetX,omitempty" xml:"OffsetX"`
+    OffsetY float64 `json:"OffsetY,omitempty" xml:"OffsetY"`
 }

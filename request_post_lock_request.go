@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="post_repair_request.go">
+* <copyright company="Aspose" file="post_lock_request.go">
 *   Copyright (c) 2023 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -31,13 +31,13 @@ import (
 	"strings"
 )
 
-type PostRepairRequest struct {
-	Format string `json:"format,omitempty" xml:"format"`
+type PostLockRequest struct {
+	Password string `json:"password,omitempty" xml:"password"`
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
-func (data *PostRepairRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+func (data *PostLockRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("POST")
 		localVarPostBody    interface{}
@@ -46,15 +46,15 @@ func (data *PostRepairRequest) CreateRequestData( client *APIClient) (localVarRe
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/repair"
+	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/lock"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-    // query params : format
-    if data.Format != "" {
-        localVarQueryParams.Add("format", parameterToString(data.Format, ""))
+    // query params : password
+    if data.Password != "" {
+        localVarQueryParams.Add("password", parameterToString(data.Password, ""))
     }
 
 	if data.ExtendQueryParameterMap != nil {
