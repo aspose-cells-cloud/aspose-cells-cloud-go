@@ -20,10 +20,10 @@
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## Feature & Enhancements in Version 23.7
+## Feature & Enhancements in Version 23.8
 
-- Support to repair api.
-- Remove GetExtractBarcodes API.
+- Support to lock API.
+- Optimize protect API.
 
 ## Read & Write Spreadsheet Formats
 
