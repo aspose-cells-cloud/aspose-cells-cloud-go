@@ -5199,6 +5199,33 @@ func TestLightCells_PostProtect(t *testing.T) {
 	}
 }
 
+func TestLightCells_PostProtectRequestion(t *testing.T) {
+
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
+
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostProtectRequest)
+	request.File = mapFiles
+	var protectWorkbookRequst = new(ProtectWorkbookRequst)
+	protectWorkbookRequst.AwaysOpenOnlyReady = true
+	request.ProtectWorkbookRequst = protectWorkbookRequst
+
+	_, httpResponse, err := GetBaseTest().CellsApi.PostProtect(request)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestLightCells_PostProtect \n", GetBaseTest().GetTestNumber())
+	}
+}
+
 func TestLightCells_PostSearch(t *testing.T) {
 
 	assemblyTestXlsx := "assemblytest.xlsx"
