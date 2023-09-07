@@ -15055,6 +15055,32 @@ func (a *CellsApiService) CellsRangesPostWorksheetCellsRangeMoveTo(localVarOptio
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
+func (a *CellsApiService) PostWorksheetCellsRangeSort(data *PostWorksheetCellsRangeSortRequest) (CellsCloudResponse, *http.Response, error) {
+	var (
+		localVarReturnValue CellsCloudResponse
+	)
+
+	r, err := data.CreateRequestData(a.client)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, err
+}
+
 /*
 CellsApiService Sets outline border around a range of cells.
  * @param name workbook name

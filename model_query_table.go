@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="AutoFitterOptions.go">
+* <copyright company="Aspose" file="QueryTable.go">
 *   Copyright (c) 2023 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,15 +25,11 @@
 
 package asposecellscloud
 
-type AutoFitterOptions struct {
+type QueryTable struct {
  
-    AutoFitMergedCellsType string `json:"AutoFitMergedCellsType,omitempty" xml:"AutoFitMergedCellsType"`
-    AutoFitMergedCells bool `json:"AutoFitMergedCells,omitempty" xml:"AutoFitMergedCells"`
-    IgnoreHidden bool `json:"IgnoreHidden,omitempty" xml:"IgnoreHidden"`
-    OnlyAuto bool `json:"OnlyAuto,omitempty" xml:"OnlyAuto"`
-    DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
-    MaxRowHeight float64 `json:"MaxRowHeight,omitempty" xml:"MaxRowHeight"`
-    AutoFitWrappedTextType string `json:"AutoFitWrappedTextType,omitempty" xml:"AutoFitWrappedTextType"`
-    FormatStrategy string `json:"FormatStrategy,omitempty" xml:"FormatStrategy"`
-    ForRendering bool `json:"ForRendering,omitempty" xml:"ForRendering"`
+    ConnectionId int64 `json:"ConnectionId,omitempty" xml:"ConnectionId"`
+    Name string `json:"Name,omitempty" xml:"Name"`
+    ResultRange *Range `json:"ResultRange,omitempty" xml:"ResultRange"`
+    PreserveFormatting bool `json:"PreserveFormatting,omitempty" xml:"PreserveFormatting"`
+    AdjustColumnWidth bool `json:"AdjustColumnWidth,omitempty" xml:"AdjustColumnWidth"`
 }

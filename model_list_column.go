@@ -31,4 +31,5 @@ type ListColumn struct {
     Range_ *Range `json:"Range,omitempty" xml:"Range"`
     TotalsCalculation string `json:"TotalsCalculation,omitempty" xml:"TotalsCalculation"`
     Formula string `json:"Formula,omitempty" xml:"Formula"`
+    TotalsRowLabel string `json:"TotalsRowLabel,omitempty" xml:"TotalsRowLabel"`
 }

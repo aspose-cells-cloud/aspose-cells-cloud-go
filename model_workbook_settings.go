@@ -72,4 +72,22 @@ type WorkbookSettings struct {
     WindowLeft float64 `json:"WindowLeft,omitempty" xml:"WindowLeft"`
     WindowTop float64 `json:"WindowTop,omitempty" xml:"WindowTop"`
     WindowWidth float64 `json:"WindowWidth,omitempty" xml:"WindowWidth"`
+    Author string `json:"Author,omitempty" xml:"Author"`
+    CheckCustomNumberFormat bool `json:"CheckCustomNumberFormat,omitempty" xml:"CheckCustomNumberFormat"`
+    ProtectionType string `json:"ProtectionType,omitempty" xml:"ProtectionType"`
+    GlobalizationSettings *GlobalizationSettings `json:"GlobalizationSettings,omitempty" xml:"GlobalizationSettings"`
+    Password string `json:"Password,omitempty" xml:"Password"`
+    WriteProtection *WriteProtection `json:"WriteProtection,omitempty" xml:"WriteProtection"`
+    IsEncrypted bool `json:"IsEncrypted,omitempty" xml:"IsEncrypted"`
+    IsProtected bool `json:"IsProtected,omitempty" xml:"IsProtected"`
+    MaxRow int64 `json:"MaxRow,omitempty" xml:"MaxRow"`
+    MaxColumn int64 `json:"MaxColumn,omitempty" xml:"MaxColumn"`
+    SignificantDigits int64 `json:"SignificantDigits,omitempty" xml:"SignificantDigits"`
+    CheckCompatibility bool `json:"CheckCompatibility,omitempty" xml:"CheckCompatibility"`
+    PaperSize string `json:"PaperSize,omitempty" xml:"PaperSize"`
+    MaxRowsOfSharedFormula int64 `json:"MaxRowsOfSharedFormula,omitempty" xml:"MaxRowsOfSharedFormula"`
+    Compliance string `json:"Compliance,omitempty" xml:"Compliance"`
+    QuotePrefixToStyle bool `json:"QuotePrefixToStyle,omitempty" xml:"QuotePrefixToStyle"`
+    FormulaSettings *FormulaSettings `json:"FormulaSettings,omitempty" xml:"FormulaSettings"`
+    ForceFullCalculate bool `json:"ForceFullCalculate,omitempty" xml:"ForceFullCalculate"`
 }

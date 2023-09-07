@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="get_extract_barcodes_request.go">
+* <copyright company="Aspose" file="post_worksheet_list_object_insert_slicer_request.go">
 *   Copyright (c) 2023 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -32,33 +32,45 @@ import (
 	"strings"
 )
 
-type GetExtractBarcodesRequest struct {
+type PostWorksheetListObjectInsertSlicerRequest struct {
     Name string `json:"name,omitempty" xml:"name"`
     SheetName string `json:"sheet_name,omitempty" xml:"sheet_name"`
-    PictureIndex int64 `json:"picture_index,omitempty" xml:"picture_index"`
+    ListObjectIndex int64 `json:"list_object_index,omitempty" xml:"list_object_index"`
+	ColumnIndex int64 `json:"column_index,omitempty" xml:"column_index"`
+	DestCellName string `json:"dest_cell_name,omitempty" xml:"dest_cell_name"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
-func (data *GetExtractBarcodesRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+func (data *PostWorksheetListObjectInsertSlicerRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
 	var (
-		localVarHttpMethod  = strings.ToUpper("GET")
+		localVarHttpMethod  = strings.ToUpper("POST")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}/recognize"
+	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/InsertSlicer"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"pictureIndex"+"}", fmt.Sprintf("%v", data.PictureIndex), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"listObjectIndex"+"}", fmt.Sprintf("%v", data.ListObjectIndex), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+
+    // query params : columnIndex
+    if &data.ColumnIndex != nil {
+        localVarQueryParams.Add("columnIndex", parameterToString(data.ColumnIndex, ""))
+    }
+
+    // query params : destCellName
+    if data.DestCellName != "" {
+        localVarQueryParams.Add("destCellName", parameterToString(data.DestCellName, ""))
+    }
 
     // query params : folder
     if data.Folder != "" {

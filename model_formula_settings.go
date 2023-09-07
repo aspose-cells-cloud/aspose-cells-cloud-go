@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="AutoFitterOptions.go">
+* <copyright company="Aspose" file="FormulaSettings.go">
 *   Copyright (c) 2023 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,15 +25,17 @@
 
 package asposecellscloud
 
-type AutoFitterOptions struct {
+type FormulaSettings struct {
  
-    AutoFitMergedCellsType string `json:"AutoFitMergedCellsType,omitempty" xml:"AutoFitMergedCellsType"`
-    AutoFitMergedCells bool `json:"AutoFitMergedCells,omitempty" xml:"AutoFitMergedCells"`
-    IgnoreHidden bool `json:"IgnoreHidden,omitempty" xml:"IgnoreHidden"`
-    OnlyAuto bool `json:"OnlyAuto,omitempty" xml:"OnlyAuto"`
-    DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
-    MaxRowHeight float64 `json:"MaxRowHeight,omitempty" xml:"MaxRowHeight"`
-    AutoFitWrappedTextType string `json:"AutoFitWrappedTextType,omitempty" xml:"AutoFitWrappedTextType"`
-    FormatStrategy string `json:"FormatStrategy,omitempty" xml:"FormatStrategy"`
-    ForRendering bool `json:"ForRendering,omitempty" xml:"ForRendering"`
+    CalculateOnOpen bool `json:"CalculateOnOpen,omitempty" xml:"CalculateOnOpen"`
+    CalculateOnSave bool `json:"CalculateOnSave,omitempty" xml:"CalculateOnSave"`
+    ForceFullCalculation bool `json:"ForceFullCalculation,omitempty" xml:"ForceFullCalculation"`
+    CalculationMode string `json:"CalculationMode,omitempty" xml:"CalculationMode"`
+    CalculationId string `json:"CalculationId,omitempty" xml:"CalculationId"`
+    EnableIterativeCalculation bool `json:"EnableIterativeCalculation,omitempty" xml:"EnableIterativeCalculation"`
+    MaxIteration int64 `json:"MaxIteration,omitempty" xml:"MaxIteration"`
+    MaxChange float64 `json:"MaxChange,omitempty" xml:"MaxChange"`
+    PrecisionAsDisplayed bool `json:"PrecisionAsDisplayed,omitempty" xml:"PrecisionAsDisplayed"`
+    EnableCalculationChain bool `json:"EnableCalculationChain,omitempty" xml:"EnableCalculationChain"`
+    PreservePaddingSpaces bool `json:"PreservePaddingSpaces,omitempty" xml:"PreservePaddingSpaces"`
 }

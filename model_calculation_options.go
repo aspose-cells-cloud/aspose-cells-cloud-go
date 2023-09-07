@@ -31,4 +31,7 @@ type CalculationOptions struct {
     IgnoreError bool `json:"IgnoreError,omitempty" xml:"IgnoreError"`
     PrecisionStrategy string `json:"PrecisionStrategy,omitempty" xml:"PrecisionStrategy"`
     Recursive bool `json:"Recursive,omitempty" xml:"Recursive"`
+    CustomEngine *AbstractCalculationEngine `json:"CustomEngine,omitempty" xml:"CustomEngine"`
+    CalculationMonitor *AbstractCalculationMonitor `json:"CalculationMonitor,omitempty" xml:"CalculationMonitor"`
+    LinkedDataSources []Workbook `json:"LinkedDataSources,omitempty" xml:"LinkedDataSources"`
 }

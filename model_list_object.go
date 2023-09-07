@@ -44,4 +44,10 @@ type ListObject struct {
     ShowTotals bool `json:"ShowTotals,omitempty" xml:"ShowTotals"`
     TableStyleName string `json:"TableStyleName,omitempty" xml:"TableStyleName"`
     TableStyleType string `json:"TableStyleType,omitempty" xml:"TableStyleType"`
+    DataRange *Range `json:"DataRange,omitempty" xml:"DataRange"`
+    DataSourceType string `json:"DataSourceType,omitempty" xml:"DataSourceType"`
+    Comment string `json:"Comment,omitempty" xml:"Comment"`
+    XmlMap *XmlMap `json:"XmlMap,omitempty" xml:"XmlMap"`
+    AlternativeText string `json:"AlternativeText,omitempty" xml:"AlternativeText"`
+    AlternativeDescription string `json:"AlternativeDescription,omitempty" xml:"AlternativeDescription"`
 }
