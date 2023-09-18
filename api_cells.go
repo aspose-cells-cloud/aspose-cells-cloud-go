@@ -33,7 +33,7 @@ import (
 )
 
 func Version() {
-	fmt.Println("---Version: 23.8---")
+	fmt.Println("---Version: 23.9---")
 }
 
 /*
