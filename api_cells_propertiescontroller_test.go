@@ -76,9 +76,9 @@ func TestPropertiesController_PutDocumentProperty(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var property = new(CellsDocumentProperty);
-     property.Name =        "Author"      ;
-     property.Value =        "cells developer"      ;
+    var property = new(CellsDocumentProperty)
+     property.Name =        "Author"      
+     property.Value =        "cells developer"      
 
     request := new (PutDocumentPropertyRequest)
     request.Name =         remoteName    

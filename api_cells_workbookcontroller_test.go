@@ -126,8 +126,8 @@ func TestWorkbookController_PostProtectWorkbook(t *testing.T) {
 
 	request := new(PostProtectWorkbookRequest)
 	request.Name = remoteName
-	request.Protection = protection
 	request.Folder = remoteFolder
+	request.ProtectWorkbookRequest = protection
 	request.StorageName = ""
 	_, httpResponse, err := GetBaseTest().CellsApi.PostProtectWorkbook(request)
 	if err != nil {
@@ -152,14 +152,10 @@ func TestWorkbookController_DeleteUnProtectWorkbook(t *testing.T) {
 	localNameRequest.StorageName = ""
 	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-	var protection = new(WorkbookProtectionRequest)
-	protection.Password = "123456"
-	protection.ProtectionType = "ALL"
-
 	request := new(DeleteUnProtectWorkbookRequest)
 	request.Name = remoteName
-	request.Protection = protection
 	request.Folder = remoteFolder
+	request.Password = "123456"
 	request.StorageName = ""
 	_, httpResponse, err := GetBaseTest().CellsApi.DeleteUnProtectWorkbook(request)
 	if err != nil {
@@ -671,11 +667,11 @@ func TestWorkbookController_PostWorkbookSplit(t *testing.T) {
 
 	request := new(PostWorkbookSplitRequest)
 	request.Name = remoteName
-	request.Format = "pdf"
-	request.OutFolder = ""
+	request.Format = "png"
+	request.OutFolder = "OutResult"
 	request.From = int64(1)
 	request.To = int64(5)
-	request.SplitNameRule = ""
+	request.SplitNameRule = "sheetname"
 	request.Folder = remoteFolder
 	request.StorageName = ""
 	request.OutStorageName = ""

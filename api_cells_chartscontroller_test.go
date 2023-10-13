@@ -145,9 +145,9 @@ func TestChartsController_PostWorksheetChart(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var chart = new(Chart);
-     chart.ShowLegend =  true      ;
-     chart.ShowDataTable =  true      ;
+    var chart = new(Chart)
+     chart.ShowLegend =  true      
+     chart.ShowDataTable =  true      
 
     request := new (PostWorksheetChartRequest)
     request.Name =         remoteName    
@@ -209,8 +209,8 @@ func TestChartsController_PostWorksheetChartLegend(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var legend = new(Legend);
-     legend.Position =        "Top"      ;
+    var legend = new(Legend)
+     legend.Position =        "Top"      
 
     request := new (PostWorksheetChartLegendRequest)
     request.Name =         remoteName    
@@ -361,8 +361,8 @@ func TestChartsController_PostWorksheetChartTitle(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var title = new(Title);
-     title.IsVisible =  true      ;
+    var title = new(Title)
+     title.IsVisible =  true      
 
     request := new (PostWorksheetChartTitleRequest)
     request.Name =         remoteName    
@@ -394,8 +394,8 @@ func TestChartsController_PutWorksheetChartTitle(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var title = new(Title);
-     title.IsVisible =  true      ;
+    var title = new(Title)
+     title.IsVisible =  true      
 
     request := new (PutWorksheetChartTitleRequest)
     request.Name =         remoteName    

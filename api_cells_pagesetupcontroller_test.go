@@ -47,10 +47,10 @@ func TestPageSetupController_PostPageSetup(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var pageSetup = new(PageSetup);
-     pageSetup.BlackAndWhite =  true      ;
-     pageSetup.CenterHorizontally =  true      ;
-     pageSetup.CenterVertically =  true      ;
+    var pageSetup = new(PageSetup)
+     pageSetup.BlackAndWhite =  true      
+     pageSetup.CenterHorizontally =  true      
+     pageSetup.CenterVertically =  true      
 
     request := new (PostPageSetupRequest)
     request.Name =         remoteName    

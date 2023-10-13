@@ -36,7 +36,7 @@ type PostProtectWorkbookRequest struct {
     Name string `json:"name,omitempty" xml:"name"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-	Protection interface{} `json:"protection,omitempty" xml:"protection"` 
+	ProtectWorkbookRequest interface{} `json:"protect_workbook_request,omitempty" xml:"protect_workbook_request"` 
 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -88,7 +88,7 @@ func (data *PostProtectWorkbookRequest) CreateRequestData( client *APIClient) (l
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.Protection
+	localVarPostBody = &data.ProtectWorkbookRequest
 
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)

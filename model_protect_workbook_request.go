@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="ProtectWorkbookRequst.go">
+* <copyright company="Aspose" file="ProtectWorkbookRequest.go">
 *   Copyright (c) 2023 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,9 +25,9 @@
 
 package asposecellscloud
 
-type ProtectWorkbookRequst struct {
+type ProtectWorkbookRequest struct {
  
-    AwaysOpenOnlyReady bool `json:"AwaysOpenOnlyReady,omitempty" xml:"AwaysOpenOnlyReady"`
+    AwaysOpenReadOnly bool `json:"AwaysOpenReadOnly,omitempty" xml:"AwaysOpenReadOnly"`
     EncryptWithPassword string `json:"EncryptWithPassword,omitempty" xml:"EncryptWithPassword"`
     ProtectCurrentSheet *Protection `json:"ProtectCurrentSheet,omitempty" xml:"ProtectCurrentSheet"`
     ProtectWorkbookStructure string `json:"ProtectWorkbookStructure,omitempty" xml:"ProtectWorkbookStructure"`

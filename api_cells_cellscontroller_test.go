@@ -86,10 +86,10 @@ func TestCellsController_PostUpdateWorksheetRangeStyle(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var styleFont = new(Font);
-     styleFont.Size = int64(16)          ;
-    var style = new(Style);
-     style.Font =        styleFont      ;
+    var styleFont = new(Font)
+     styleFont.Size = int64(16)          
+    var style = new(Style)
+     style.Font =        styleFont      
 
     request := new (PostUpdateWorksheetRangeStyleRequest)
     request.Name =         remoteName    
@@ -310,10 +310,10 @@ func TestCellsController_PostUpdateWorksheetCellStyle(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var styleFont = new(Font);
-     styleFont.Size = int64(16)          ;
-    var style = new(Style);
-     style.Font =        styleFont      ;
+    var styleFont = new(Font)
+     styleFont.Size = int64(16)          
+    var style = new(Style)
+     style.Font =        styleFont      
 
     request := new (PostUpdateWorksheetCellStyleRequest)
     request.Name =         remoteName    
@@ -471,9 +471,9 @@ func TestCellsController_PostCellCalculate(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var options = new(CalculationOptions);
-     options.Recursive =  true      ;
-     options.IgnoreError =  true      ;
+    var options = new(CalculationOptions)
+     options.Recursive =  true      
+     options.IgnoreError =  true      
 
     request := new (PostCellCalculateRequest)
     request.Name =         remoteName    
@@ -505,13 +505,13 @@ func TestCellsController_PostCellCharacters(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var optionsvalue0Font = new(Font);
-     optionsvalue0Font.IsBold =  true      ;
-     optionsvalue0Font.Size = int64(16)          ;
-    var optionsvalue0 = new(FontSetting);
-     optionsvalue0.Length = int64(5)          ;
-     optionsvalue0.StartIndex = int64(0)          ;
-     optionsvalue0.Font =        optionsvalue0Font      ;
+    var optionsvalue0Font = new(Font)
+     optionsvalue0Font.IsBold =  true      
+     optionsvalue0Font.Size = int64(16)          
+    var optionsvalue0 = new(FontSetting)
+     optionsvalue0.Length = int64(5)          
+     optionsvalue0.StartIndex = int64(0)          
+     optionsvalue0.Font =        optionsvalue0Font      
     var options = []FontSetting   {*       optionsvalue0    }    
 
     request := new (PostCellCharactersRequest)
@@ -860,10 +860,10 @@ func TestCellsController_PostColumnStyle(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var styleFont = new(Font);
-     styleFont.Size = int64(16)          ;
-    var style = new(Style);
-     style.Font =        styleFont      ;
+    var styleFont = new(Font)
+     styleFont.Size = int64(16)          
+    var style = new(Style)
+     style.Font =        styleFont      
 
     request := new (PostColumnStyleRequest)
     request.Name =         remoteName    
@@ -930,7 +930,7 @@ func TestCellsController_GetWorksheetRow(t *testing.T) {
     request := new (GetWorksheetRowRequest)
     request.Name =         remoteName    
     request.SheetName =         "Sheet1"    
-    request.RowIndex =  int64(0)        
+    request.RowIndex =  int64(1)        
     request.Folder =         remoteFolder    
     request.StorageName =         ""    
     _, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetRow(request)
@@ -1054,7 +1054,7 @@ func TestCellsController_PutInsertWorksheetRow(t *testing.T) {
     request := new (PutInsertWorksheetRowRequest)
     request.Name =         remoteName    
     request.SheetName =         "Sheet1"    
-    request.RowIndex =  int64(0)        
+    request.RowIndex =  int64(1)        
     request.Folder =         remoteFolder    
     request.StorageName =         ""    
     _, httpResponse, err := GetBaseTest().CellsApi.PutInsertWorksheetRow(request)
@@ -1084,7 +1084,7 @@ func TestCellsController_PostUpdateWorksheetRow(t *testing.T) {
     request := new (PostUpdateWorksheetRowRequest)
     request.Name =         remoteName    
     request.SheetName =         "Sheet1"    
-    request.RowIndex =  int64(0)        
+    request.RowIndex =  int64(1)        
     request.Height =  10.8    
     request.Count =  int64(9)        
     request.Folder =         remoteFolder    
@@ -1272,10 +1272,10 @@ func TestCellsController_PostRowStyle(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var styleFont = new(Font);
-     styleFont.Size = int64(16)          ;
-    var style = new(Style);
-     style.Font =        styleFont      ;
+    var styleFont = new(Font)
+     styleFont.Size = int64(16)          
+    var style = new(Style)
+     style.Font =        styleFont      
 
     request := new (PostRowStyleRequest)
     request.Name =         remoteName    

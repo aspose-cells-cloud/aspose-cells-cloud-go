@@ -77,7 +77,7 @@ func TestShapesController_PutWorksheetShape(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var shapeDTO = new(Shape);
+    var shapeDTO = new(Shape)
 
 
     request := new (PutWorksheetShapeRequest)
@@ -175,8 +175,8 @@ func TestShapesController_PostWorksheetShape(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var dto = new(Shape);
-     dto.LowerRightColumn = int64(10)          ;
+    var dto = new(Shape)
+     dto.LowerRightColumn = int64(10)          
 
     request := new (PostWorksheetShapeRequest)
     request.Name =         remoteName    

@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="DataSorter.go">
+* <copyright company="Aspose" file="DataSorterKey.go">
 *   Copyright (c) 2023 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,12 +25,12 @@
 
 package asposecellscloud
 
-type DataSorter struct {
+type DataSorterKey struct {
  
-    CaseSensitive bool `json:"CaseSensitive,omitempty" xml:"CaseSensitive"`
-    HasHeaders bool `json:"HasHeaders,omitempty" xml:"HasHeaders"`
-    KeyList []SortKey `json:"KeyList,omitempty" xml:"KeyList"`
-    SortLeftToRight bool `json:"SortLeftToRight,omitempty" xml:"SortLeftToRight"`
-    SortAsNumber bool `json:"SortAsNumber,omitempty" xml:"SortAsNumber"`
-    Keys []DataSorterKey `json:"Keys,omitempty" xml:"Keys"`
+    Order string `json:"Order,omitempty" xml:"Order"`
+    Index int64 `json:"Index,omitempty" xml:"Index"`
+    Type_ string `json:"Type,omitempty" xml:"Type"`
+    IconSetType string `json:"IconSetType,omitempty" xml:"IconSetType"`
+    IconId int64 `json:"IconId,omitempty" xml:"IconId"`
+    Color *Color `json:"Color,omitempty" xml:"Color"`
 }

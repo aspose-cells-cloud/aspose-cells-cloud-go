@@ -34,9 +34,9 @@ import (
 
 type DeleteUnProtectWorkbookRequest struct {
     Name string `json:"name,omitempty" xml:"name"`
+	Password string `json:"password,omitempty" xml:"password"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-	Protection interface{} `json:"protection,omitempty" xml:"protection"` 
 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -56,6 +56,11 @@ func (data *DeleteUnProtectWorkbookRequest) CreateRequestData( client *APIClient
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+
+    // query params : password
+    if data.Password != "" {
+        localVarQueryParams.Add("password", parameterToString(data.Password, ""))
+    }
 
     // query params : folder
     if data.Folder != "" {
@@ -88,8 +93,6 @@ func (data *DeleteUnProtectWorkbookRequest) CreateRequestData( client *APIClient
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.Protection
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

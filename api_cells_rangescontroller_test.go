@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestRangesController_PostWorksheetCellsRanges(t *testing.T) {
+func TestRangesController_PostWorksheetCellsRangesCopy(t *testing.T) {
 	remoteFolder := "TestData/In"
 
 	localName := "Book1.xlsx"
@@ -33,19 +33,19 @@ func TestRangesController_PostWorksheetCellsRanges(t *testing.T) {
 	rangeOperate.Source = rangeOperateSource
 	rangeOperate.Target = rangeOperateTarget
 
-	request := new(PostWorksheetCellsRangesRequest)
+	request := new(PostWorksheetCellsRangesCopyRequest)
 	request.Name = remoteName
 	request.SheetName = "Sheet1"
 	request.RangeOperate = rangeOperate
 	request.Folder = remoteFolder
 	request.StorageName = ""
-	_, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetCellsRanges(request)
+	_, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetCellsRangesCopy(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestRangesController_PostWorksheetCellsRanges \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestRangesController_PostWorksheetCellsRangesCopy \n", GetBaseTest().GetTestNumber())
 	}
 }
 
@@ -472,8 +472,8 @@ func TestRangesController_PostWorksheetCellsRangeSort(t *testing.T) {
 	request := new(PostWorksheetCellsRangeSortRequest)
 	request.Name = remoteName
 	request.SheetName = "book1"
-	request.RangeOperate = rangeOperate
 	request.Folder = remoteFolder
+	request.RangeSortRequest = rangeOperate
 	request.StorageName = ""
 	_, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetCellsRangeSort(request)
 	if err != nil {

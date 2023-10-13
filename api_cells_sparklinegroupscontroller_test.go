@@ -169,9 +169,9 @@ func TestSparklineGroupsController_PostWorksheetSparklineGroup(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var sparklineGroup = new(SparklineGroup);
-     sparklineGroup.DisplayHidden =  true      ;
-     sparklineGroup.PlotRightToLeft =  true      ;
+    var sparklineGroup = new(SparklineGroup)
+     sparklineGroup.DisplayHidden =  true      
+     sparklineGroup.PlotRightToLeft =  true      
 
     request := new (PostWorksheetSparklineGroupRequest)
     request.Name =         remoteName    

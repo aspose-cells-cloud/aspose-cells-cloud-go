@@ -77,11 +77,11 @@ func TestConditionalFormattingsController_PutWorksheetConditionalFormatting(t *t
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var formatcondition = new(FormatCondition);
-     formatcondition.Type_ =        "CellValue"      ;
-     formatcondition.Operator =        "Between"      ;
-     formatcondition.Formula1 =        "v1"      ;
-     formatcondition.Formula2 =        "v2"      ;
+    var formatcondition = new(FormatCondition)
+     formatcondition.Type_ =        "CellValue"      
+     formatcondition.Operator =        "Between"      
+     formatcondition.Formula1 =        "v1"      
+     formatcondition.Formula2 =        "v2"      
 
     request := new (PutWorksheetConditionalFormattingRequest)
     request.Name =         remoteName    

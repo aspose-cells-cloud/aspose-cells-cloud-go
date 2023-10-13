@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="post_workbook_imort_xml_request.go">
+* <copyright company="Aspose" file="post_worksheet_cells_ranges_copy_request.go">
 *   Copyright (c) 2023 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -32,19 +32,17 @@ import (
 	"strings"
 )
 
-type PostWorkbookImortXMLRequest struct {
+type PostWorksheetCellsRangesCopyRequest struct {
     Name string `json:"name,omitempty" xml:"name"`
-	Password string `json:"password,omitempty" xml:"password"`
+    SheetName string `json:"sheet_name,omitempty" xml:"sheet_name"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-	OutPath string `json:"out_path,omitempty" xml:"out_path"`
-	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
-	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
-	ImportXMLRequest interface{} `json:"import_xml_request,omitempty" xml:"import_xml_request"` 
+	RangeOperate interface{} `json:"range_operate,omitempty" xml:"range_operate"` 
 	
+	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
-func (data *PostWorkbookImortXMLRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+func (data *PostWorksheetCellsRangesCopyRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("POST")
 		localVarPostBody    interface{}
@@ -53,17 +51,13 @@ func (data *PostWorkbookImortXMLRequest) CreateRequestData( client *APIClient) (
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/importxml"
+	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/ranges/copy"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-
-    // query params : password
-    if data.Password != "" {
-        localVarQueryParams.Add("password", parameterToString(data.Password, ""))
-    }
 
     // query params : folder
     if data.Folder != "" {
@@ -75,22 +69,11 @@ func (data *PostWorkbookImortXMLRequest) CreateRequestData( client *APIClient) (
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
 
-    // query params : outPath
-    if data.OutPath != "" {
-        localVarQueryParams.Add("outPath", parameterToString(data.OutPath, ""))
-    }
-
-    // query params : outStorageName
-    if data.OutStorageName != "" {
-        localVarQueryParams.Add("outStorageName", parameterToString(data.OutStorageName, ""))
-    }
-
-    // query params : checkExcelRestriction
-    if &data.CheckExcelRestriction != nil {
-        localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
-    }
-
-
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
 	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header
@@ -107,7 +90,7 @@ func (data *PostWorkbookImortXMLRequest) CreateRequestData( client *APIClient) (
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.ImportXMLRequest
+	localVarPostBody = &data.RangeOperate
 
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)

@@ -107,9 +107,9 @@ func TestWorksheetValidationsController_PostWorksheetValidation(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var validation = new(Validation);
-     validation.Formula1 =        "=A1"      ;
-     validation.Type_ =        "Custom"      ;
+    var validation = new(Validation)
+     validation.Formula1 =        "=A1"      
+     validation.Type_ =        "Custom"      
 
     request := new (PostWorksheetValidationRequest)
     request.Name =         remoteName    

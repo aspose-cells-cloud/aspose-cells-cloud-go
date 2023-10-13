@@ -228,8 +228,8 @@ func TestWorksheetController_DeleteWorksheets(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var matchCondition = new(MatchConditionRequest);
-     matchCondition.RegexPattern =        "{*}"      ;
+    var matchCondition = new(MatchConditionRequest)
+     matchCondition.RegexPattern =        "{*}"      
 
     request := new (DeleteWorksheetsRequest)
     request.Name =         remoteName    
@@ -259,9 +259,9 @@ func TestWorksheetController_PostMoveWorksheet(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var moving = new(WorksheetMovingRequest);
-     moving.DestinationWorksheet =        "Sheet4"      ;
-     moving.Position =        "After"      ;
+    var moving = new(WorksheetMovingRequest)
+     moving.DestinationWorksheet =        "Sheet4"      
+     moving.Position =        "After"      
 
     request := new (PostMoveWorksheetRequest)
     request.Name =         remoteName    
@@ -292,9 +292,9 @@ func TestWorksheetController_PutProtectWorksheet(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var protectParameter = new(ProtectSheetParameter);
-     protectParameter.ProtectionType =        "ALL"      ;
-     protectParameter.Password =        "123"      ;
+    var protectParameter = new(ProtectSheetParameter)
+     protectParameter.ProtectionType =        "ALL"      
+     protectParameter.Password =        "123"      
 
     request := new (PutProtectWorksheetRequest)
     request.Name =         remoteName    
@@ -325,9 +325,9 @@ func TestWorksheetController_DeleteUnprotectWorksheet(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var protectParameter = new(ProtectSheetParameter);
-     protectParameter.ProtectionType =        "ALL"      ;
-     protectParameter.Password =        "123"      ;
+    var protectParameter = new(ProtectSheetParameter)
+     protectParameter.ProtectionType =        "ALL"      
+     protectParameter.Password =        "123"      
 
     request := new (DeleteUnprotectWorksheetRequest)
     request.Name =         remoteName    
@@ -446,9 +446,9 @@ func TestWorksheetController_PutWorksheetComment(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var comment = new(Comment);
-     comment.Author =        "aspose cells developer"      ;
-     comment.Note =        "aspose cells cloud api add comment."      ;
+    var comment = new(Comment)
+     comment.Author =        "aspose cells developer"      
+     comment.Note =        "aspose cells cloud api add comment."      
 
     request := new (PutWorksheetCommentRequest)
     request.Name =         remoteName    
@@ -480,9 +480,9 @@ func TestWorksheetController_PostWorksheetComment(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var comment = new(Comment);
-     comment.Author =        "aspose cells developer"      ;
-     comment.Note =        "aspose cells cloud api update comment."      ;
+    var comment = new(Comment)
+     comment.Author =        "aspose cells developer"      
+     comment.Note =        "aspose cells cloud api update comment."      
 
     request := new (PostWorksheetCommentRequest)
     request.Name =         remoteName    
@@ -753,8 +753,8 @@ func TestWorksheetController_PostWorksheetRangeSort(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var dataSorter = new(DataSorter);
-     dataSorter.CaseSensitive =  true      ;
+    var dataSorter = new(DataSorter)
+     dataSorter.CaseSensitive =  true      
 
     request := new (PostWorksheetRangeSortRequest)
     request.Name =         remoteName    
@@ -1014,8 +1014,8 @@ func TestWorksheetController_PostCopyWorksheet(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var options = new(CopyOptions);
-     options.ColumnCharacterWidth =  true      ;
+    var options = new(CopyOptions)
+     options.ColumnCharacterWidth =  true      
 
     request := new (PostCopyWorksheetRequest)
     request.Name =         remoteName    
@@ -1079,9 +1079,9 @@ func TestWorksheetController_PostUpdateWorksheetProperty(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var sheet = new(Worksheet);
-     sheet.Name =        "sheet65"      ;
-     sheet.IsGridlinesVisible =  true      ;
+    var sheet = new(Worksheet)
+     sheet.Name =        "sheet65"      
+     sheet.IsGridlinesVisible =  true      
 
     request := new (PostUpdateWorksheetPropertyRequest)
     request.Name =         remoteName    

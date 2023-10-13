@@ -21,8 +21,8 @@ func TestConversion_WorkbookSaveAs_csv_DotNetSDKOutResultPostExcelSaveAscsv(t *t
      format := "csv"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.csv"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -55,8 +55,8 @@ func TestConversion_WorkbookSaveAs_xls_DotNetSDKOutResultPostExcelSaveAsxls(t *t
      format := "xls"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.xls"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -89,8 +89,8 @@ func TestConversion_WorkbookSaveAs_html_DotNetSDKOutResultPostExcelSaveAshtml(t 
      format := "html"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.html"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -123,8 +123,8 @@ func TestConversion_WorkbookSaveAs_mhtml_DotNetSDKOutResultPostExcelSaveAsmhtml(
      format := "mhtml"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.mhtml"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -157,8 +157,8 @@ func TestConversion_WorkbookSaveAs_ods_DotNetSDKOutResultPostExcelSaveAsods(t *t
      format := "ods"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.ods"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -191,8 +191,8 @@ func TestConversion_WorkbookSaveAs_pdf_DotNetSDKOutResultPostExcelSaveAspdf(t *t
      format := "pdf"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.pdf"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -225,8 +225,8 @@ func TestConversion_WorkbookSaveAs_xml_DotNetSDKOutResultPostExcelSaveAsxml(t *t
      format := "xml"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.xml"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -259,8 +259,8 @@ func TestConversion_WorkbookSaveAs_txt_DotNetSDKOutResultPostExcelSaveAstxt(t *t
      format := "txt"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.txt"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -293,8 +293,8 @@ func TestConversion_WorkbookSaveAs_tif_DotNetSDKOutResultPostExcelSaveAstif(t *t
      format := "tif"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.tif"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -327,8 +327,8 @@ func TestConversion_WorkbookSaveAs_xlsb_DotNetSDKOutResultPostExcelSaveAsxlsb(t 
      format := "xlsb"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.xlsb"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -361,8 +361,8 @@ func TestConversion_WorkbookSaveAs_xlsm_DotNetSDKOutResultPostExcelSaveAsxlsm(t 
      format := "xlsm"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.xlsm"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -395,8 +395,8 @@ func TestConversion_WorkbookSaveAs_xlsx_DotNetSDKOutResultPostExcelSaveAsxlsx(t 
      format := "xlsx"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.xlsx"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -429,8 +429,8 @@ func TestConversion_WorkbookSaveAs_xltm_DotNetSDKOutResultPostExcelSaveAsxltm(t 
      format := "xltm"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.xltm"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -463,8 +463,8 @@ func TestConversion_WorkbookSaveAs_xltx_DotNetSDKOutResultPostExcelSaveAsxltx(t 
      format := "xltx"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.xltx"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -497,8 +497,8 @@ func TestConversion_WorkbookSaveAs_xps_DotNetSDKOutResultPostExcelSaveAsxps(t *t
      format := "xps"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.xps"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -531,8 +531,8 @@ func TestConversion_WorkbookSaveAs_png_DotNetSDKOutResultPostExcelSaveAspng(t *t
      format := "png"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.png"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -565,8 +565,8 @@ func TestConversion_WorkbookSaveAs_jpg_DotNetSDKOutResultPostExcelSaveAsjpg(t *t
      format := "jpg"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.jpg"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -599,8 +599,8 @@ func TestConversion_WorkbookSaveAs_gif_DotNetSDKOutResultPostExcelSaveAsgif(t *t
      format := "gif"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.gif"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -633,8 +633,8 @@ func TestConversion_WorkbookSaveAs_emf_DotNetSDKOutResultPostExcelSaveAsemf(t *t
      format := "emf"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.emf"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -667,8 +667,8 @@ func TestConversion_WorkbookSaveAs_bmp_DotNetSDKOutResultPostExcelSaveAsbmp(t *t
      format := "bmp"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.bmp"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -701,8 +701,8 @@ func TestConversion_WorkbookSaveAs_md_DotNetSDKOutResultPostExcelSaveAsmd(t *tes
      format := "md"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.md"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -735,8 +735,8 @@ func TestConversion_WorkbookSaveAs_numbers_DotNetSDKOutResultPostExcelSaveAsnumb
      format := "numbers"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.numbers"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -769,8 +769,8 @@ func TestConversion_WorkbookSaveAs_wmf_DotNetSDKOutResultPostExcelSaveAswmf(t *t
      format := "wmf"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.wmf"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -803,8 +803,8 @@ func TestConversion_WorkbookSaveAs_svg_DotNetSDKOutResultPostExcelSaveAssvg(t *t
      format := "svg"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.svg"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -837,8 +837,8 @@ func TestConversion_WorkbookSaveAs_docx_DotNetSDKOutResultPostExcelSaveAsdocx(t 
      format := "docx"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.docx"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -871,8 +871,8 @@ func TestConversion_WorkbookSaveAs_pptx_DotNetSDKOutResultPostExcelSaveAspptx(t 
      format := "pptx"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.pptx"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -905,8 +905,8 @@ func TestConversion_WorkbookSaveAs_json_DotNetSDKOutResultPostExcelSaveAsjson(t 
      format := "json"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.json"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    
@@ -939,8 +939,8 @@ func TestConversion_WorkbookSaveAs_sql_DotNetSDKOutResultPostExcelSaveAssql(t *t
      format := "sql"
      newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.sql"
 
-    var saveOptions = new(PdfSaveOptions);
-     saveOptions.SaveFormat =        format      ;
+    var saveOptions = new(PdfSaveOptions)
+     saveOptions.SaveFormat =        format      
 
     request := new (PostWorkbookSaveAsRequest)
     request.Name =         remoteName    

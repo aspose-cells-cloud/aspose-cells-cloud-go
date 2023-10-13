@@ -34,7 +34,7 @@ import (
 
 type PostProtectRequest struct {
 	Password string `json:"password,omitempty" xml:"password"`
-	ProtectWorkbookRequst interface{} `json:"protect_workbook_requst,omitempty" xml:"protect_workbook_requst"` 
+	ProtectWorkbookRequest interface{} `json:"protect_workbook_request,omitempty" xml:"protect_workbook_request"` 
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -83,8 +83,8 @@ func (data *PostProtectRequest) CreateRequestData( client *APIClient) (localVarR
 	for name, path := range data.File {
 		localVarFormParams["@"+name] = []string{path}
 	}
-	b, _ := json.Marshal( &data.ProtectWorkbookRequst)
-	localVarFormParams["ProtectWorkbookRequst"] = []string{string(b)}
+	b, _ := json.Marshal( &data.ProtectWorkbookRequest)
+	localVarFormParams["ProtectWorkbookRequest"] = []string{string(b)}
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

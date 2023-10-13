@@ -30560,7 +30560,7 @@ func (a *CellsApiService) DeleteDocumentProperties(data *DeleteDocumentPropertie
 	return localVarReturnValue, localVarHttpResponse, err
 }
 
-func (a *CellsApiService) PostWorksheetCellsRanges(data *PostWorksheetCellsRangesRequest) (CellsCloudResponse, *http.Response, error) {
+func (a *CellsApiService) PostWorksheetCellsRangesCopy(data *PostWorksheetCellsRangesCopyRequest) (CellsCloudResponse, *http.Response, error) {
 	var (
 		localVarReturnValue CellsCloudResponse
 	)

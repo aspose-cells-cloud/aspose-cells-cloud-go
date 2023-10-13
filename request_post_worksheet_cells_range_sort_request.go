@@ -37,7 +37,7 @@ type PostWorksheetCellsRangeSortRequest struct {
     SheetName string `json:"sheet_name,omitempty" xml:"sheet_name"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-	RangeOperate interface{} `json:"range_operate,omitempty" xml:"range_operate"` 
+	RangeSortRequest interface{} `json:"range_sort_request,omitempty" xml:"range_sort_request"` 
 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -90,7 +90,7 @@ func (data *PostWorksheetCellsRangeSortRequest) CreateRequestData( client *APICl
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.RangeOperate
+	localVarPostBody = &data.RangeSortRequest
 
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)

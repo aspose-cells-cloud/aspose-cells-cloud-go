@@ -137,11 +137,11 @@ func TestOleObjectsController_PostUpdateWorksheetOleObject(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var ole = new(OleObject);
-     ole.Left = int64(10)          ;
-     ole.Right = int64(10)          ;
-     ole.Height = int64(90)          ;
-     ole.Width = int64(78)          ;
+    var ole = new(OleObject)
+     ole.Left = int64(10)          
+     ole.Right = int64(10)          
+     ole.Height = int64(90)          
+     ole.Width = int64(78)          
 
     request := new (PostUpdateWorksheetOleObjectRequest)
     request.Name =         remoteName    
