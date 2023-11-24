@@ -20,14 +20,13 @@
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## Feature & Enhancements in Version 23.10
+## Feature & Enhancements in Version 23.11
 
 Full list of issues covering all changes in this release:
 
-- Fix protect workbook request.
-- Fix range copy API.
-- Fix workbook import API.
-- Optimize workbook protect API.
+- Optimize import xml data into Excel file.
+- Optimize import json data into Excel file.
+- Remove deprecated functions, class and test case.
 
 
 ## Read & Write Spreadsheet Formats
@@ -63,43 +62,51 @@ First, create an account at [Aspose for Cloud](https://dashboard.aspose.cloud/#/
 
 ```golang
 func GetDocumentCircleAnnotations() (CircleAnnotationsResponse, *http.Response, error) {
-    cellsAPI := NewCellsApiService("AppSid", "AppKey", "https://api.aspose.cloud","v3.0")
-	name := "Book1.xlsx"	
+	remoteFolder := "TestData/In"
+	localFolder := "testdata/"
+	localName := "Book1.xlsx"
+	remoteName := "Book1.xlsx"
+	instance := asposecellscloud.NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"), "https://api.aspose.cloud", "v3.0")
 
-	args := new(UploadFileOpts)
-	args.Path = "GoTest/Booka1.xlsx"
-	file, err := os.Open( "test_data/" + name)
-	if err != nil {
-		return err
-	}
-
-	_, _, err =cellsAPI.UploadFile(file, args)
-	return err
+	localNameRequest := new(asposecellscloud.UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = localFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	instance.UploadFile(localNameRequest)
 }
 ```
 
 ## Add Worksheet to Excel File via Go
 
 ```golang
-   name := GetBook1()
-	if err := GetBaseTest().UploadFile(name); err != nil {
-		t.Error(err)
-	}
+    remoteFolder := "TestData/In"
+  
+    localName := "Book1.xlsx"
+    remoteName := "Book1.xlsx"
 
-	args := new(CellsWorksheetsPutAddNewWorksheetOpts)
-	args.Name = GetBook1()
-	args.SheetName = GetSheet1()
-	args.Position = 1
-	args.Sheettype = "VB"
-	args.Folder = GetBaseTest().remoteFolder
+    localNameRequest := new(UploadFileRequest)
+    localNameRequest.UploadFiles = make(map[string]string) 
+    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
+    localNameRequest.Path = remoteFolder + "/" + remoteName 
+    localNameRequest.StorageName =""
+    GetBaseTest().CellsApi.UploadFile(localNameRequest )
+ 
 
-	response, httpResponse, err := GetBaseTest().CellsAPI.CellsWorksheetsPutAddNewWorksheet(args)
+    request := new (PutAddNewWorksheetRequest)
+    request.Name =         remoteName    
+    request.SheetName =         "Sheet1"    
+    request.Position =  int64(0)        
+    request.Sheettype =         "VB"    
+    request.Folder =         remoteFolder    
+    request.StorageName =         ""    
+    _, httpResponse, err := GetBaseTest().CellsApi.PutAddNewWorksheet(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestCellsWorksheetsPutAddNewWorksheet - %d\n", GetBaseTest().GetTestNumber(), response.Code)
+		fmt.Printf("%d\tTestWorksheetController_PutAddNewWorksheet \n", GetBaseTest().GetTestNumber())
 	}
 ```
 
@@ -107,24 +114,34 @@ func GetDocumentCircleAnnotations() (CircleAnnotationsResponse, *http.Response, 
 
 ```golang
 // Upload source file to aspose cloud storage
-name := GetBook1()
-	if err := GetBaseTest().UploadFile(name); err != nil {
-		t.Error(err)
-	}
+	remoteFolder := "TestData/In"
+	localFolder := "testdata/"
+	localName := "Book1.xlsx"
+	remoteName := "Book1.xlsx"
+	instance := asposecellscloud.NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"), "https://api.aspose.cloud", "v3.0")
 
-	args := new(CellsSaveAsPostDocumentSaveAsOpts)
-	args.Name = GetBook1()
-	args.Newfilename = "GoTest/newfilego.pdf"
-	args.Folder = GetBaseTest().remoteFolder
+	localNameRequest := new(asposecellscloud.UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = localFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	instance.UploadFile(localNameRequest)
 
-	response, httpResponse, err := GetBaseTest().CellsAPI.CellsSaveAsPostDocumentSaveAs(args)
+	newfilename := "TestData/OutResult/PostExcelSaveAs.pdf"
+
+	var saveOptions = new(asposecellscloud.PdfSaveOptions)
+	saveOptions.SaveFormat = "pdf"
+
+	request := new(asposecellscloud.PostWorkbookSaveAsRequest)
+	request.Name = remoteName
+	request.Newfilename = newfilename
+	request.SaveOptions = saveOptions
+	request.Folder = remoteFolder
+	_, httpResponse, err := instance.PostWorkbookSaveAs(request)
 	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestCellsSaveAsPostDocumentSaveAs - %d\n", GetBaseTest().GetTestNumber(), response.Code)
+		println(err)
 	}
+	println(httpResponse.StatusCode)
 ```
 
 ## Aspose.Cells Cloud SDKs in Popular Languages

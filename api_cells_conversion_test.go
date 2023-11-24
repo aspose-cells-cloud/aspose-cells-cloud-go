@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestConversion_WorkbookSaveAs_csv_DotNetSDKOutResultPostExcelSaveAscsv(t *testing.T) {
+func TestConversion_WorkbookSaveAs_csv_OutResultPostExcelSaveAscsv(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -19,7 +19,7 @@ func TestConversion_WorkbookSaveAs_csv_DotNetSDKOutResultPostExcelSaveAscsv(t *t
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "csv"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.csv"
+     newfilename := "OutResult/PostExcelSaveAs.csv"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -35,11 +35,11 @@ func TestConversion_WorkbookSaveAs_csv_DotNetSDKOutResultPostExcelSaveAscsv(t *t
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_csv_DotNetSDKOutResultPostExcelSaveAscsv \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_csv_OutResultPostExcelSaveAscsv \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_xls_DotNetSDKOutResultPostExcelSaveAsxls(t *testing.T) {
+func TestConversion_WorkbookSaveAs_xls_OutResultPostExcelSaveAsxls(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -53,7 +53,7 @@ func TestConversion_WorkbookSaveAs_xls_DotNetSDKOutResultPostExcelSaveAsxls(t *t
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "xls"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.xls"
+     newfilename := "OutResult/PostExcelSaveAs.xls"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -69,11 +69,11 @@ func TestConversion_WorkbookSaveAs_xls_DotNetSDKOutResultPostExcelSaveAsxls(t *t
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_xls_DotNetSDKOutResultPostExcelSaveAsxls \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_xls_OutResultPostExcelSaveAsxls \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_html_DotNetSDKOutResultPostExcelSaveAshtml(t *testing.T) {
+func TestConversion_WorkbookSaveAs_html_OutResultPostExcelSaveAshtml(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -87,7 +87,7 @@ func TestConversion_WorkbookSaveAs_html_DotNetSDKOutResultPostExcelSaveAshtml(t 
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "html"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.html"
+     newfilename := "OutResult/PostExcelSaveAs.html"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -103,11 +103,11 @@ func TestConversion_WorkbookSaveAs_html_DotNetSDKOutResultPostExcelSaveAshtml(t 
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_html_DotNetSDKOutResultPostExcelSaveAshtml \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_html_OutResultPostExcelSaveAshtml \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_mhtml_DotNetSDKOutResultPostExcelSaveAsmhtml(t *testing.T) {
+func TestConversion_WorkbookSaveAs_mhtml_OutResultPostExcelSaveAsmhtml(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -121,7 +121,7 @@ func TestConversion_WorkbookSaveAs_mhtml_DotNetSDKOutResultPostExcelSaveAsmhtml(
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "mhtml"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.mhtml"
+     newfilename := "OutResult/PostExcelSaveAs.mhtml"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -137,11 +137,11 @@ func TestConversion_WorkbookSaveAs_mhtml_DotNetSDKOutResultPostExcelSaveAsmhtml(
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_mhtml_DotNetSDKOutResultPostExcelSaveAsmhtml \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_mhtml_OutResultPostExcelSaveAsmhtml \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_ods_DotNetSDKOutResultPostExcelSaveAsods(t *testing.T) {
+func TestConversion_WorkbookSaveAs_ods_OutResultPostExcelSaveAsods(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -155,7 +155,7 @@ func TestConversion_WorkbookSaveAs_ods_DotNetSDKOutResultPostExcelSaveAsods(t *t
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "ods"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.ods"
+     newfilename := "OutResult/PostExcelSaveAs.ods"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -171,11 +171,11 @@ func TestConversion_WorkbookSaveAs_ods_DotNetSDKOutResultPostExcelSaveAsods(t *t
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_ods_DotNetSDKOutResultPostExcelSaveAsods \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_ods_OutResultPostExcelSaveAsods \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_pdf_DotNetSDKOutResultPostExcelSaveAspdf(t *testing.T) {
+func TestConversion_WorkbookSaveAs_pdf_OutResultPostExcelSaveAspdf(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -189,7 +189,7 @@ func TestConversion_WorkbookSaveAs_pdf_DotNetSDKOutResultPostExcelSaveAspdf(t *t
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "pdf"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.pdf"
+     newfilename := "OutResult/PostExcelSaveAs.pdf"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -205,11 +205,11 @@ func TestConversion_WorkbookSaveAs_pdf_DotNetSDKOutResultPostExcelSaveAspdf(t *t
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_pdf_DotNetSDKOutResultPostExcelSaveAspdf \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_pdf_OutResultPostExcelSaveAspdf \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_xml_DotNetSDKOutResultPostExcelSaveAsxml(t *testing.T) {
+func TestConversion_WorkbookSaveAs_xml_OutResultPostExcelSaveAsxml(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -223,7 +223,7 @@ func TestConversion_WorkbookSaveAs_xml_DotNetSDKOutResultPostExcelSaveAsxml(t *t
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "xml"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.xml"
+     newfilename := "OutResult/PostExcelSaveAs.xml"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -239,11 +239,11 @@ func TestConversion_WorkbookSaveAs_xml_DotNetSDKOutResultPostExcelSaveAsxml(t *t
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_xml_DotNetSDKOutResultPostExcelSaveAsxml \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_xml_OutResultPostExcelSaveAsxml \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_txt_DotNetSDKOutResultPostExcelSaveAstxt(t *testing.T) {
+func TestConversion_WorkbookSaveAs_txt_OutResultPostExcelSaveAstxt(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -257,7 +257,7 @@ func TestConversion_WorkbookSaveAs_txt_DotNetSDKOutResultPostExcelSaveAstxt(t *t
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "txt"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.txt"
+     newfilename := "OutResult/PostExcelSaveAs.txt"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -273,11 +273,11 @@ func TestConversion_WorkbookSaveAs_txt_DotNetSDKOutResultPostExcelSaveAstxt(t *t
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_txt_DotNetSDKOutResultPostExcelSaveAstxt \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_txt_OutResultPostExcelSaveAstxt \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_tif_DotNetSDKOutResultPostExcelSaveAstif(t *testing.T) {
+func TestConversion_WorkbookSaveAs_tif_OutResultPostExcelSaveAstif(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -291,7 +291,7 @@ func TestConversion_WorkbookSaveAs_tif_DotNetSDKOutResultPostExcelSaveAstif(t *t
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "tif"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.tif"
+     newfilename := "OutResult/PostExcelSaveAs.tif"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -307,11 +307,11 @@ func TestConversion_WorkbookSaveAs_tif_DotNetSDKOutResultPostExcelSaveAstif(t *t
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_tif_DotNetSDKOutResultPostExcelSaveAstif \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_tif_OutResultPostExcelSaveAstif \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_xlsb_DotNetSDKOutResultPostExcelSaveAsxlsb(t *testing.T) {
+func TestConversion_WorkbookSaveAs_xlsb_OutResultPostExcelSaveAsxlsb(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -325,7 +325,7 @@ func TestConversion_WorkbookSaveAs_xlsb_DotNetSDKOutResultPostExcelSaveAsxlsb(t 
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "xlsb"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.xlsb"
+     newfilename := "OutResult/PostExcelSaveAs.xlsb"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -341,11 +341,11 @@ func TestConversion_WorkbookSaveAs_xlsb_DotNetSDKOutResultPostExcelSaveAsxlsb(t 
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_xlsb_DotNetSDKOutResultPostExcelSaveAsxlsb \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_xlsb_OutResultPostExcelSaveAsxlsb \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_xlsm_DotNetSDKOutResultPostExcelSaveAsxlsm(t *testing.T) {
+func TestConversion_WorkbookSaveAs_xlsm_OutResultPostExcelSaveAsxlsm(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -359,7 +359,7 @@ func TestConversion_WorkbookSaveAs_xlsm_DotNetSDKOutResultPostExcelSaveAsxlsm(t 
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "xlsm"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.xlsm"
+     newfilename := "OutResult/PostExcelSaveAs.xlsm"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -375,11 +375,11 @@ func TestConversion_WorkbookSaveAs_xlsm_DotNetSDKOutResultPostExcelSaveAsxlsm(t 
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_xlsm_DotNetSDKOutResultPostExcelSaveAsxlsm \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_xlsm_OutResultPostExcelSaveAsxlsm \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_xlsx_DotNetSDKOutResultPostExcelSaveAsxlsx(t *testing.T) {
+func TestConversion_WorkbookSaveAs_xlsx_OutResultPostExcelSaveAsxlsx(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -393,7 +393,7 @@ func TestConversion_WorkbookSaveAs_xlsx_DotNetSDKOutResultPostExcelSaveAsxlsx(t 
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "xlsx"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.xlsx"
+     newfilename := "OutResult/PostExcelSaveAs.xlsx"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -409,11 +409,11 @@ func TestConversion_WorkbookSaveAs_xlsx_DotNetSDKOutResultPostExcelSaveAsxlsx(t 
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_xlsx_DotNetSDKOutResultPostExcelSaveAsxlsx \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_xlsx_OutResultPostExcelSaveAsxlsx \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_xltm_DotNetSDKOutResultPostExcelSaveAsxltm(t *testing.T) {
+func TestConversion_WorkbookSaveAs_xltm_OutResultPostExcelSaveAsxltm(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -427,7 +427,7 @@ func TestConversion_WorkbookSaveAs_xltm_DotNetSDKOutResultPostExcelSaveAsxltm(t 
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "xltm"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.xltm"
+     newfilename := "OutResult/PostExcelSaveAs.xltm"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -443,11 +443,11 @@ func TestConversion_WorkbookSaveAs_xltm_DotNetSDKOutResultPostExcelSaveAsxltm(t 
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_xltm_DotNetSDKOutResultPostExcelSaveAsxltm \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_xltm_OutResultPostExcelSaveAsxltm \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_xltx_DotNetSDKOutResultPostExcelSaveAsxltx(t *testing.T) {
+func TestConversion_WorkbookSaveAs_xltx_OutResultPostExcelSaveAsxltx(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -461,7 +461,7 @@ func TestConversion_WorkbookSaveAs_xltx_DotNetSDKOutResultPostExcelSaveAsxltx(t 
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "xltx"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.xltx"
+     newfilename := "OutResult/PostExcelSaveAs.xltx"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -477,11 +477,11 @@ func TestConversion_WorkbookSaveAs_xltx_DotNetSDKOutResultPostExcelSaveAsxltx(t 
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_xltx_DotNetSDKOutResultPostExcelSaveAsxltx \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_xltx_OutResultPostExcelSaveAsxltx \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_xps_DotNetSDKOutResultPostExcelSaveAsxps(t *testing.T) {
+func TestConversion_WorkbookSaveAs_xps_OutResultPostExcelSaveAsxps(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -495,7 +495,7 @@ func TestConversion_WorkbookSaveAs_xps_DotNetSDKOutResultPostExcelSaveAsxps(t *t
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "xps"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.xps"
+     newfilename := "OutResult/PostExcelSaveAs.xps"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -511,11 +511,11 @@ func TestConversion_WorkbookSaveAs_xps_DotNetSDKOutResultPostExcelSaveAsxps(t *t
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_xps_DotNetSDKOutResultPostExcelSaveAsxps \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_xps_OutResultPostExcelSaveAsxps \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_png_DotNetSDKOutResultPostExcelSaveAspng(t *testing.T) {
+func TestConversion_WorkbookSaveAs_png_OutResultPostExcelSaveAspng(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -529,7 +529,7 @@ func TestConversion_WorkbookSaveAs_png_DotNetSDKOutResultPostExcelSaveAspng(t *t
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "png"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.png"
+     newfilename := "OutResult/PostExcelSaveAs.png"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -545,147 +545,11 @@ func TestConversion_WorkbookSaveAs_png_DotNetSDKOutResultPostExcelSaveAspng(t *t
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_png_DotNetSDKOutResultPostExcelSaveAspng \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_png_OutResultPostExcelSaveAspng \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_jpg_DotNetSDKOutResultPostExcelSaveAsjpg(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "jpg"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.jpg"
-
-    var saveOptions = new(PdfSaveOptions)
-     saveOptions.SaveFormat =        format      
-
-    request := new (PostWorkbookSaveAsRequest)
-    request.Name =         remoteName    
-    request.Newfilename =         newfilename    
-    request.SaveOptions =         saveOptions    
-    request.Folder =         remoteFolder    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostWorkbookSaveAs(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_jpg_DotNetSDKOutResultPostExcelSaveAsjpg \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_WorkbookSaveAs_gif_DotNetSDKOutResultPostExcelSaveAsgif(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "gif"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.gif"
-
-    var saveOptions = new(PdfSaveOptions)
-     saveOptions.SaveFormat =        format      
-
-    request := new (PostWorkbookSaveAsRequest)
-    request.Name =         remoteName    
-    request.Newfilename =         newfilename    
-    request.SaveOptions =         saveOptions    
-    request.Folder =         remoteFolder    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostWorkbookSaveAs(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_gif_DotNetSDKOutResultPostExcelSaveAsgif \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_WorkbookSaveAs_emf_DotNetSDKOutResultPostExcelSaveAsemf(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "emf"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.emf"
-
-    var saveOptions = new(PdfSaveOptions)
-     saveOptions.SaveFormat =        format      
-
-    request := new (PostWorkbookSaveAsRequest)
-    request.Name =         remoteName    
-    request.Newfilename =         newfilename    
-    request.SaveOptions =         saveOptions    
-    request.Folder =         remoteFolder    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostWorkbookSaveAs(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_emf_DotNetSDKOutResultPostExcelSaveAsemf \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_WorkbookSaveAs_bmp_DotNetSDKOutResultPostExcelSaveAsbmp(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "bmp"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.bmp"
-
-    var saveOptions = new(PdfSaveOptions)
-     saveOptions.SaveFormat =        format      
-
-    request := new (PostWorkbookSaveAsRequest)
-    request.Name =         remoteName    
-    request.Newfilename =         newfilename    
-    request.SaveOptions =         saveOptions    
-    request.Folder =         remoteFolder    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostWorkbookSaveAs(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_bmp_DotNetSDKOutResultPostExcelSaveAsbmp \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_WorkbookSaveAs_md_DotNetSDKOutResultPostExcelSaveAsmd(t *testing.T) {
+func TestConversion_WorkbookSaveAs_md_OutResultPostExcelSaveAsmd(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -699,7 +563,7 @@ func TestConversion_WorkbookSaveAs_md_DotNetSDKOutResultPostExcelSaveAsmd(t *tes
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "md"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.md"
+     newfilename := "OutResult/PostExcelSaveAs.md"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -715,11 +579,11 @@ func TestConversion_WorkbookSaveAs_md_DotNetSDKOutResultPostExcelSaveAsmd(t *tes
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_md_DotNetSDKOutResultPostExcelSaveAsmd \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_md_OutResultPostExcelSaveAsmd \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_numbers_DotNetSDKOutResultPostExcelSaveAsnumbers(t *testing.T) {
+func TestConversion_WorkbookSaveAs_numbers_OutResultPostExcelSaveAsnumbers(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -733,7 +597,7 @@ func TestConversion_WorkbookSaveAs_numbers_DotNetSDKOutResultPostExcelSaveAsnumb
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "numbers"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.numbers"
+     newfilename := "OutResult/PostExcelSaveAs.numbers"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -749,45 +613,11 @@ func TestConversion_WorkbookSaveAs_numbers_DotNetSDKOutResultPostExcelSaveAsnumb
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_numbers_DotNetSDKOutResultPostExcelSaveAsnumbers \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_numbers_OutResultPostExcelSaveAsnumbers \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_wmf_DotNetSDKOutResultPostExcelSaveAswmf(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "wmf"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.wmf"
-
-    var saveOptions = new(PdfSaveOptions)
-     saveOptions.SaveFormat =        format      
-
-    request := new (PostWorkbookSaveAsRequest)
-    request.Name =         remoteName    
-    request.Newfilename =         newfilename    
-    request.SaveOptions =         saveOptions    
-    request.Folder =         remoteFolder    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostWorkbookSaveAs(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_wmf_DotNetSDKOutResultPostExcelSaveAswmf \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_WorkbookSaveAs_svg_DotNetSDKOutResultPostExcelSaveAssvg(t *testing.T) {
+func TestConversion_WorkbookSaveAs_svg_OutResultPostExcelSaveAssvg(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -801,7 +631,7 @@ func TestConversion_WorkbookSaveAs_svg_DotNetSDKOutResultPostExcelSaveAssvg(t *t
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "svg"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.svg"
+     newfilename := "OutResult/PostExcelSaveAs.svg"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -817,11 +647,11 @@ func TestConversion_WorkbookSaveAs_svg_DotNetSDKOutResultPostExcelSaveAssvg(t *t
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_svg_DotNetSDKOutResultPostExcelSaveAssvg \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_svg_OutResultPostExcelSaveAssvg \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_docx_DotNetSDKOutResultPostExcelSaveAsdocx(t *testing.T) {
+func TestConversion_WorkbookSaveAs_docx_OutResultPostExcelSaveAsdocx(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -835,7 +665,7 @@ func TestConversion_WorkbookSaveAs_docx_DotNetSDKOutResultPostExcelSaveAsdocx(t 
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "docx"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.docx"
+     newfilename := "OutResult/PostExcelSaveAs.docx"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -851,11 +681,11 @@ func TestConversion_WorkbookSaveAs_docx_DotNetSDKOutResultPostExcelSaveAsdocx(t 
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_docx_DotNetSDKOutResultPostExcelSaveAsdocx \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_docx_OutResultPostExcelSaveAsdocx \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_pptx_DotNetSDKOutResultPostExcelSaveAspptx(t *testing.T) {
+func TestConversion_WorkbookSaveAs_pptx_OutResultPostExcelSaveAspptx(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -869,7 +699,7 @@ func TestConversion_WorkbookSaveAs_pptx_DotNetSDKOutResultPostExcelSaveAspptx(t 
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "pptx"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.pptx"
+     newfilename := "OutResult/PostExcelSaveAs.pptx"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -885,11 +715,11 @@ func TestConversion_WorkbookSaveAs_pptx_DotNetSDKOutResultPostExcelSaveAspptx(t 
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_pptx_DotNetSDKOutResultPostExcelSaveAspptx \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_pptx_OutResultPostExcelSaveAspptx \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_json_DotNetSDKOutResultPostExcelSaveAsjson(t *testing.T) {
+func TestConversion_WorkbookSaveAs_json_OutResultPostExcelSaveAsjson(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -903,7 +733,7 @@ func TestConversion_WorkbookSaveAs_json_DotNetSDKOutResultPostExcelSaveAsjson(t 
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "json"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.json"
+     newfilename := "OutResult/PostExcelSaveAs.json"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -919,11 +749,11 @@ func TestConversion_WorkbookSaveAs_json_DotNetSDKOutResultPostExcelSaveAsjson(t 
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_json_DotNetSDKOutResultPostExcelSaveAsjson \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_json_OutResultPostExcelSaveAsjson \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_WorkbookSaveAs_sql_DotNetSDKOutResultPostExcelSaveAssql(t *testing.T) {
+func TestConversion_WorkbookSaveAs_sql_OutResultPostExcelSaveAssql(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -937,7 +767,7 @@ func TestConversion_WorkbookSaveAs_sql_DotNetSDKOutResultPostExcelSaveAssql(t *t
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "sql"
-     newfilename := "DotNetSDK/OutResult/PostExcelSaveAs.sql"
+     newfilename := "OutResult/PostExcelSaveAs.sql"
 
     var saveOptions = new(PdfSaveOptions)
      saveOptions.SaveFormat =        format      
@@ -953,7 +783,7 @@ func TestConversion_WorkbookSaveAs_sql_DotNetSDKOutResultPostExcelSaveAssql(t *t
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_sql_DotNetSDKOutResultPostExcelSaveAssql \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_WorkbookSaveAs_sql_OutResultPostExcelSaveAssql \n", GetBaseTest().GetTestNumber())
 	}
 }
 
@@ -1257,126 +1087,6 @@ func TestConversion_GetWorkbookFormat_xlsb(t *testing.T) {
 	}
 }
 
-func TestConversion_GetWorkbookFormat_xlsm(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "xlsm"
-
-
-    request := new (GetWorkbookRequest)
-    request.Name =         remoteName    
-    request.Format =         format    
-    request.Folder =         remoteFolder    
-    _, httpResponse, err := GetBaseTest().CellsApi.GetWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_GetWorkbookFormat_xlsm \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_GetWorkbookFormat_xlsx(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "xlsx"
-
-
-    request := new (GetWorkbookRequest)
-    request.Name =         remoteName    
-    request.Format =         format    
-    request.Folder =         remoteFolder    
-    _, httpResponse, err := GetBaseTest().CellsApi.GetWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_GetWorkbookFormat_xlsx \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_GetWorkbookFormat_xltm(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "xltm"
-
-
-    request := new (GetWorkbookRequest)
-    request.Name =         remoteName    
-    request.Format =         format    
-    request.Folder =         remoteFolder    
-    _, httpResponse, err := GetBaseTest().CellsApi.GetWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_GetWorkbookFormat_xltm \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_GetWorkbookFormat_xltx(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "xltx"
-
-
-    request := new (GetWorkbookRequest)
-    request.Name =         remoteName    
-    request.Format =         format    
-    request.Folder =         remoteFolder    
-    _, httpResponse, err := GetBaseTest().CellsApi.GetWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_GetWorkbookFormat_xltx \n", GetBaseTest().GetTestNumber())
-	}
-}
-
 func TestConversion_GetWorkbookFormat_xps(t *testing.T) {
     remoteFolder := "TestData/In"
   
@@ -1434,126 +1144,6 @@ func TestConversion_GetWorkbookFormat_png(t *testing.T) {
 		t.Fail()
 	} else {
 		fmt.Printf("%d\tTestConversion_GetWorkbookFormat_png \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_GetWorkbookFormat_jpg(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "jpg"
-
-
-    request := new (GetWorkbookRequest)
-    request.Name =         remoteName    
-    request.Format =         format    
-    request.Folder =         remoteFolder    
-    _, httpResponse, err := GetBaseTest().CellsApi.GetWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_GetWorkbookFormat_jpg \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_GetWorkbookFormat_gif(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "gif"
-
-
-    request := new (GetWorkbookRequest)
-    request.Name =         remoteName    
-    request.Format =         format    
-    request.Folder =         remoteFolder    
-    _, httpResponse, err := GetBaseTest().CellsApi.GetWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_GetWorkbookFormat_gif \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_GetWorkbookFormat_emf(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "emf"
-
-
-    request := new (GetWorkbookRequest)
-    request.Name =         remoteName    
-    request.Format =         format    
-    request.Folder =         remoteFolder    
-    _, httpResponse, err := GetBaseTest().CellsApi.GetWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_GetWorkbookFormat_emf \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_GetWorkbookFormat_bmp(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "bmp"
-
-
-    request := new (GetWorkbookRequest)
-    request.Name =         remoteName    
-    request.Format =         format    
-    request.Folder =         remoteFolder    
-    _, httpResponse, err := GetBaseTest().CellsApi.GetWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_GetWorkbookFormat_bmp \n", GetBaseTest().GetTestNumber())
 	}
 }
 
@@ -2127,138 +1717,6 @@ func TestConversion_ConvertWorkbook_xlsb(t *testing.T) {
 	}
 }
 
-func TestConversion_ConvertWorkbook_xlsm(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "xlsm"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbook_xlsm \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_ConvertWorkbook_xlsx(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "xlsx"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbook_xlsx \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_ConvertWorkbook_xltm(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "xltm"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbook_xltm \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_ConvertWorkbook_xltx(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "xltx"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbook_xltx \n", GetBaseTest().GetTestNumber())
-	}
-}
-
 func TestConversion_ConvertWorkbook_xps(t *testing.T) {
     remoteFolder := "TestData/In"
   
@@ -2322,138 +1780,6 @@ func TestConversion_ConvertWorkbook_png(t *testing.T) {
 		t.Fail()
 	} else {
 		fmt.Printf("%d\tTestConversion_ConvertWorkbook_png \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_ConvertWorkbook_jpg(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "jpg"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbook_jpg \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_ConvertWorkbook_gif(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "gif"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbook_gif \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_ConvertWorkbook_emf(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "emf"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbook_emf \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_ConvertWorkbook_bmp(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "bmp"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbook_bmp \n", GetBaseTest().GetTestNumber())
 	}
 }
 
@@ -2721,7 +2047,7 @@ func TestConversion_ConvertWorkbook_sql(t *testing.T) {
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_csv_DotNetSDKOutResultConvertWorkbookcsv(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_csv_OutResultConvertWorkbookcsv(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -2735,7 +2061,7 @@ func TestConversion_ConvertWorkbookSaveCloud_csv_DotNetSDKOutResultConvertWorkbo
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "csv"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.csv"
+     outPath := "OutResult/ConvertWorkbook.csv"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -2752,11 +2078,11 @@ func TestConversion_ConvertWorkbookSaveCloud_csv_DotNetSDKOutResultConvertWorkbo
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_csv_DotNetSDKOutResultConvertWorkbookcsv \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_csv_OutResultConvertWorkbookcsv \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_xls_DotNetSDKOutResultConvertWorkbookxls(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_xls_OutResultConvertWorkbookxls(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -2770,7 +2096,7 @@ func TestConversion_ConvertWorkbookSaveCloud_xls_DotNetSDKOutResultConvertWorkbo
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "xls"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.xls"
+     outPath := "OutResult/ConvertWorkbook.xls"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -2787,11 +2113,11 @@ func TestConversion_ConvertWorkbookSaveCloud_xls_DotNetSDKOutResultConvertWorkbo
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_xls_DotNetSDKOutResultConvertWorkbookxls \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_xls_OutResultConvertWorkbookxls \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_html_DotNetSDKOutResultConvertWorkbookhtml(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_html_OutResultConvertWorkbookhtml(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -2805,7 +2131,7 @@ func TestConversion_ConvertWorkbookSaveCloud_html_DotNetSDKOutResultConvertWorkb
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "html"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.html"
+     outPath := "OutResult/ConvertWorkbook.html"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -2822,11 +2148,11 @@ func TestConversion_ConvertWorkbookSaveCloud_html_DotNetSDKOutResultConvertWorkb
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_html_DotNetSDKOutResultConvertWorkbookhtml \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_html_OutResultConvertWorkbookhtml \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_mhtml_DotNetSDKOutResultConvertWorkbookmhtml(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_mhtml_OutResultConvertWorkbookmhtml(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -2840,7 +2166,7 @@ func TestConversion_ConvertWorkbookSaveCloud_mhtml_DotNetSDKOutResultConvertWork
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "mhtml"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.mhtml"
+     outPath := "OutResult/ConvertWorkbook.mhtml"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -2857,11 +2183,11 @@ func TestConversion_ConvertWorkbookSaveCloud_mhtml_DotNetSDKOutResultConvertWork
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_mhtml_DotNetSDKOutResultConvertWorkbookmhtml \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_mhtml_OutResultConvertWorkbookmhtml \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_ods_DotNetSDKOutResultConvertWorkbookods(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_ods_OutResultConvertWorkbookods(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -2875,7 +2201,7 @@ func TestConversion_ConvertWorkbookSaveCloud_ods_DotNetSDKOutResultConvertWorkbo
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "ods"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.ods"
+     outPath := "OutResult/ConvertWorkbook.ods"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -2892,11 +2218,11 @@ func TestConversion_ConvertWorkbookSaveCloud_ods_DotNetSDKOutResultConvertWorkbo
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_ods_DotNetSDKOutResultConvertWorkbookods \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_ods_OutResultConvertWorkbookods \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_pdf_DotNetSDKOutResultConvertWorkbookpdf(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_pdf_OutResultConvertWorkbookpdf(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -2910,7 +2236,7 @@ func TestConversion_ConvertWorkbookSaveCloud_pdf_DotNetSDKOutResultConvertWorkbo
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "pdf"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.pdf"
+     outPath := "OutResult/ConvertWorkbook.pdf"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -2927,11 +2253,11 @@ func TestConversion_ConvertWorkbookSaveCloud_pdf_DotNetSDKOutResultConvertWorkbo
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_pdf_DotNetSDKOutResultConvertWorkbookpdf \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_pdf_OutResultConvertWorkbookpdf \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_xml_DotNetSDKOutResultConvertWorkbookxml(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_xml_OutResultConvertWorkbookxml(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -2945,7 +2271,7 @@ func TestConversion_ConvertWorkbookSaveCloud_xml_DotNetSDKOutResultConvertWorkbo
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "xml"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.xml"
+     outPath := "OutResult/ConvertWorkbook.xml"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -2962,11 +2288,11 @@ func TestConversion_ConvertWorkbookSaveCloud_xml_DotNetSDKOutResultConvertWorkbo
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_xml_DotNetSDKOutResultConvertWorkbookxml \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_xml_OutResultConvertWorkbookxml \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_txt_DotNetSDKOutResultConvertWorkbooktxt(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_txt_OutResultConvertWorkbooktxt(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -2980,7 +2306,7 @@ func TestConversion_ConvertWorkbookSaveCloud_txt_DotNetSDKOutResultConvertWorkbo
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "txt"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.txt"
+     outPath := "OutResult/ConvertWorkbook.txt"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -2997,11 +2323,11 @@ func TestConversion_ConvertWorkbookSaveCloud_txt_DotNetSDKOutResultConvertWorkbo
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_txt_DotNetSDKOutResultConvertWorkbooktxt \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_txt_OutResultConvertWorkbooktxt \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_tif_DotNetSDKOutResultConvertWorkbooktif(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_tif_OutResultConvertWorkbooktif(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -3015,7 +2341,7 @@ func TestConversion_ConvertWorkbookSaveCloud_tif_DotNetSDKOutResultConvertWorkbo
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "tif"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.tif"
+     outPath := "OutResult/ConvertWorkbook.tif"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -3032,11 +2358,11 @@ func TestConversion_ConvertWorkbookSaveCloud_tif_DotNetSDKOutResultConvertWorkbo
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_tif_DotNetSDKOutResultConvertWorkbooktif \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_tif_OutResultConvertWorkbooktif \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_xlsb_DotNetSDKOutResultConvertWorkbookxlsb(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_xlsb_OutResultConvertWorkbookxlsb(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -3050,7 +2376,7 @@ func TestConversion_ConvertWorkbookSaveCloud_xlsb_DotNetSDKOutResultConvertWorkb
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "xlsb"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.xlsb"
+     outPath := "OutResult/ConvertWorkbook.xlsb"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -3067,11 +2393,11 @@ func TestConversion_ConvertWorkbookSaveCloud_xlsb_DotNetSDKOutResultConvertWorkb
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_xlsb_DotNetSDKOutResultConvertWorkbookxlsb \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_xlsb_OutResultConvertWorkbookxlsb \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_xlsm_DotNetSDKOutResultConvertWorkbookxlsm(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_xlsm_OutResultConvertWorkbookxlsm(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -3085,7 +2411,7 @@ func TestConversion_ConvertWorkbookSaveCloud_xlsm_DotNetSDKOutResultConvertWorkb
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "xlsm"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.xlsm"
+     outPath := "OutResult/ConvertWorkbook.xlsm"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -3102,11 +2428,11 @@ func TestConversion_ConvertWorkbookSaveCloud_xlsm_DotNetSDKOutResultConvertWorkb
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_xlsm_DotNetSDKOutResultConvertWorkbookxlsm \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_xlsm_OutResultConvertWorkbookxlsm \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_xlsx_DotNetSDKOutResultConvertWorkbookxlsx(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_xlsx_OutResultConvertWorkbookxlsx(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -3120,7 +2446,7 @@ func TestConversion_ConvertWorkbookSaveCloud_xlsx_DotNetSDKOutResultConvertWorkb
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "xlsx"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.xlsx"
+     outPath := "OutResult/ConvertWorkbook.xlsx"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -3137,11 +2463,11 @@ func TestConversion_ConvertWorkbookSaveCloud_xlsx_DotNetSDKOutResultConvertWorkb
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_xlsx_DotNetSDKOutResultConvertWorkbookxlsx \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_xlsx_OutResultConvertWorkbookxlsx \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_xltm_DotNetSDKOutResultConvertWorkbookxltm(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_xltm_OutResultConvertWorkbookxltm(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -3155,7 +2481,7 @@ func TestConversion_ConvertWorkbookSaveCloud_xltm_DotNetSDKOutResultConvertWorkb
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "xltm"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.xltm"
+     outPath := "OutResult/ConvertWorkbook.xltm"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -3172,11 +2498,11 @@ func TestConversion_ConvertWorkbookSaveCloud_xltm_DotNetSDKOutResultConvertWorkb
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_xltm_DotNetSDKOutResultConvertWorkbookxltm \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_xltm_OutResultConvertWorkbookxltm \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_xltx_DotNetSDKOutResultConvertWorkbookxltx(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_xltx_OutResultConvertWorkbookxltx(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -3190,7 +2516,7 @@ func TestConversion_ConvertWorkbookSaveCloud_xltx_DotNetSDKOutResultConvertWorkb
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "xltx"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.xltx"
+     outPath := "OutResult/ConvertWorkbook.xltx"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -3207,11 +2533,11 @@ func TestConversion_ConvertWorkbookSaveCloud_xltx_DotNetSDKOutResultConvertWorkb
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_xltx_DotNetSDKOutResultConvertWorkbookxltx \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_xltx_OutResultConvertWorkbookxltx \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_xps_DotNetSDKOutResultConvertWorkbookxps(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_xps_OutResultConvertWorkbookxps(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -3225,7 +2551,7 @@ func TestConversion_ConvertWorkbookSaveCloud_xps_DotNetSDKOutResultConvertWorkbo
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "xps"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.xps"
+     outPath := "OutResult/ConvertWorkbook.xps"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -3242,11 +2568,11 @@ func TestConversion_ConvertWorkbookSaveCloud_xps_DotNetSDKOutResultConvertWorkbo
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_xps_DotNetSDKOutResultConvertWorkbookxps \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_xps_OutResultConvertWorkbookxps \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_png_DotNetSDKOutResultConvertWorkbookpng(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_png_OutResultConvertWorkbookpng(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -3260,7 +2586,7 @@ func TestConversion_ConvertWorkbookSaveCloud_png_DotNetSDKOutResultConvertWorkbo
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "png"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.png"
+     outPath := "OutResult/ConvertWorkbook.png"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -3277,151 +2603,11 @@ func TestConversion_ConvertWorkbookSaveCloud_png_DotNetSDKOutResultConvertWorkbo
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_png_DotNetSDKOutResultConvertWorkbookpng \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_png_OutResultConvertWorkbookpng \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_jpg_DotNetSDKOutResultConvertWorkbookjpg(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "jpg"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.jpg"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    request.OutPath =         outPath    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_jpg_DotNetSDKOutResultConvertWorkbookjpg \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_ConvertWorkbookSaveCloud_gif_DotNetSDKOutResultConvertWorkbookgif(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "gif"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.gif"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    request.OutPath =         outPath    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_gif_DotNetSDKOutResultConvertWorkbookgif \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_ConvertWorkbookSaveCloud_emf_DotNetSDKOutResultConvertWorkbookemf(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "emf"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.emf"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    request.OutPath =         outPath    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_emf_DotNetSDKOutResultConvertWorkbookemf \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_ConvertWorkbookSaveCloud_bmp_DotNetSDKOutResultConvertWorkbookbmp(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "bmp"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.bmp"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    request.OutPath =         outPath    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_bmp_DotNetSDKOutResultConvertWorkbookbmp \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_ConvertWorkbookSaveCloud_md_DotNetSDKOutResultConvertWorkbookmd(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_md_OutResultConvertWorkbookmd(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -3435,7 +2621,7 @@ func TestConversion_ConvertWorkbookSaveCloud_md_DotNetSDKOutResultConvertWorkboo
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "md"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.md"
+     outPath := "OutResult/ConvertWorkbook.md"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -3452,11 +2638,11 @@ func TestConversion_ConvertWorkbookSaveCloud_md_DotNetSDKOutResultConvertWorkboo
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_md_DotNetSDKOutResultConvertWorkbookmd \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_md_OutResultConvertWorkbookmd \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_numbers_DotNetSDKOutResultConvertWorkbooknumbers(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_numbers_OutResultConvertWorkbooknumbers(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -3470,7 +2656,7 @@ func TestConversion_ConvertWorkbookSaveCloud_numbers_DotNetSDKOutResultConvertWo
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "numbers"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.numbers"
+     outPath := "OutResult/ConvertWorkbook.numbers"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -3487,46 +2673,11 @@ func TestConversion_ConvertWorkbookSaveCloud_numbers_DotNetSDKOutResultConvertWo
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_numbers_DotNetSDKOutResultConvertWorkbooknumbers \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_numbers_OutResultConvertWorkbooknumbers \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_wmf_DotNetSDKOutResultConvertWorkbookwmf(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "wmf"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.wmf"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    request.OutPath =         outPath    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_wmf_DotNetSDKOutResultConvertWorkbookwmf \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversion_ConvertWorkbookSaveCloud_svg_DotNetSDKOutResultConvertWorkbooksvg(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_svg_OutResultConvertWorkbooksvg(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -3540,7 +2691,7 @@ func TestConversion_ConvertWorkbookSaveCloud_svg_DotNetSDKOutResultConvertWorkbo
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "svg"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.svg"
+     outPath := "OutResult/ConvertWorkbook.svg"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -3557,11 +2708,11 @@ func TestConversion_ConvertWorkbookSaveCloud_svg_DotNetSDKOutResultConvertWorkbo
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_svg_DotNetSDKOutResultConvertWorkbooksvg \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_svg_OutResultConvertWorkbooksvg \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_docx_DotNetSDKOutResultConvertWorkbookdocx(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_docx_OutResultConvertWorkbookdocx(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -3575,7 +2726,7 @@ func TestConversion_ConvertWorkbookSaveCloud_docx_DotNetSDKOutResultConvertWorkb
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "docx"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.docx"
+     outPath := "OutResult/ConvertWorkbook.docx"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -3592,11 +2743,11 @@ func TestConversion_ConvertWorkbookSaveCloud_docx_DotNetSDKOutResultConvertWorkb
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_docx_DotNetSDKOutResultConvertWorkbookdocx \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_docx_OutResultConvertWorkbookdocx \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_pptx_DotNetSDKOutResultConvertWorkbookpptx(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_pptx_OutResultConvertWorkbookpptx(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -3610,7 +2761,7 @@ func TestConversion_ConvertWorkbookSaveCloud_pptx_DotNetSDKOutResultConvertWorkb
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "pptx"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.pptx"
+     outPath := "OutResult/ConvertWorkbook.pptx"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -3627,11 +2778,11 @@ func TestConversion_ConvertWorkbookSaveCloud_pptx_DotNetSDKOutResultConvertWorkb
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_pptx_DotNetSDKOutResultConvertWorkbookpptx \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_pptx_OutResultConvertWorkbookpptx \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_json_DotNetSDKOutResultConvertWorkbookjson(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_json_OutResultConvertWorkbookjson(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -3645,7 +2796,7 @@ func TestConversion_ConvertWorkbookSaveCloud_json_DotNetSDKOutResultConvertWorkb
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "json"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.json"
+     outPath := "OutResult/ConvertWorkbook.json"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -3662,11 +2813,11 @@ func TestConversion_ConvertWorkbookSaveCloud_json_DotNetSDKOutResultConvertWorkb
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_json_DotNetSDKOutResultConvertWorkbookjson \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_json_OutResultConvertWorkbookjson \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestConversion_ConvertWorkbookSaveCloud_sql_DotNetSDKOutResultConvertWorkbooksql(t *testing.T) {
+func TestConversion_ConvertWorkbookSaveCloud_sql_OutResultConvertWorkbooksql(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -3680,7 +2831,7 @@ func TestConversion_ConvertWorkbookSaveCloud_sql_DotNetSDKOutResultConvertWorkbo
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
      format := "sql"
-     outPath := "DotNetSDK/OutResult/ConvertWorkbook.sql"
+     outPath := "OutResult/ConvertWorkbook.sql"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -3697,7 +2848,7 @@ func TestConversion_ConvertWorkbookSaveCloud_sql_DotNetSDKOutResultConvertWorkbo
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_sql_DotNetSDKOutResultConvertWorkbooksql \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestConversion_ConvertWorkbookSaveCloud_sql_OutResultConvertWorkbooksql \n", GetBaseTest().GetTestNumber())
 	}
 }
 

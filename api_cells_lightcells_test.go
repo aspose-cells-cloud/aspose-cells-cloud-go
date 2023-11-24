@@ -5372,11 +5372,15 @@ func TestLightCells_PostProtect(t *testing.T) {
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
 
+    var protectWorkbookRequest = new(ProtectWorkbookRequest)
+     protectWorkbookRequest.AwaysOpenReadOnly =  true      
+     protectWorkbookRequest.EncryptWithPassword =        "123456"      
      mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
      mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
 
     request := new (PostProtectRequest)
     request.File =         mapFiles    
+    request.ProtectWorkbookRequest =         protectWorkbookRequest    
     request.Password =         "123456"    
     _, httpResponse, err := GetBaseTest().CellsApi.PostProtect(request)
 	if err != nil {
@@ -5397,14 +5401,15 @@ func TestLightCells_PostProtect_ProtectWorkbookRequest(t *testing.T) {
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
 
-    var protectWorkbookRequst = new(ProtectWorkbookRequest)
-     protectWorkbookRequst.AwaysOpenReadOnly =  true      
-     protectWorkbookRequst.EncryptWithPassword =        "123456"      
+    var protectWorkbookRequest = new(ProtectWorkbookRequest)
+     protectWorkbookRequest.AwaysOpenReadOnly =  true      
+     protectWorkbookRequest.EncryptWithPassword =        "123456"      
      mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
      mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
 
     request := new (PostProtectRequest)
     request.File =         mapFiles    
+    request.ProtectWorkbookRequest =         protectWorkbookRequest    
     _, httpResponse, err := GetBaseTest().CellsApi.PostProtect(request)
 	if err != nil {
 		t.Error(err)

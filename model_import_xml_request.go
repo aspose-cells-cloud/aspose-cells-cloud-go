@@ -29,4 +29,5 @@ type ImportXMLRequest struct {
  
     XMLFileSource *FileSource `json:"XMLFileSource,omitempty" xml:"XMLFileSource"`
     ImportPosition *ImportPosition `json:"ImportPosition,omitempty" xml:"ImportPosition"`
+    XMLContent string `json:"XMLContent,omitempty" xml:"XMLContent"`
 }

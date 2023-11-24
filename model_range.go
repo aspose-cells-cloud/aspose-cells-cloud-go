@@ -9,10 +9,10 @@
 *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 *  copies of the Software, and to permit persons to whom the Software is
 *  furnished to do so, subject to the following conditions:
-*
+* 
 *  The above copyright notice and this permission notice shall be included in all
 *  copies or substantial portions of the Software.
-*
+* 
 *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -20,40 +20,20 @@
 *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 *  SOFTWARE.
-* </summary>
+* </summary> 
 -------------------------------------------------------------------------------------------------------------------- **/
 
 package asposecellscloud
 
 type Range struct {
-	ColumnCount int64   `json:"ColumnCount,omitempty" xml:"ColumnCount"`
-	ColumnWidth float64 `json:"ColumnWidth,omitempty" xml:"ColumnWidth"`
-	FirstColumn int64   `json:"FirstColumn,omitempty" xml:"FirstColumn"`
-	FirstRow    int64   `json:"FirstRow,omitempty" xml:"FirstRow"`
-	Name        string  `json:"Name,omitempty" xml:"Name"`
-	RefersTo    string  `json:"RefersTo,omitempty" xml:"RefersTo"`
-	RowCount    int64   `json:"RowCount,omitempty" xml:"RowCount"`
-	RowHeight   float64 `json:"RowHeight,omitempty" xml:"RowHeight"`
-	Worksheet   string  `json:"Worksheet,omitempty" xml:"Worksheet"`
-}
-
-type ModelRange struct {
-	// Gets the count of columns in the range.
-	ColumnCount int64 `json:"ColumnCount" xml:"ColumnCount"`
-	// Sets or gets the height of rows in this range
-	RowHeight float64 `json:"RowHeight" xml:"RowHeight"`
-	// Gets or sets the name of the range.
-	Name string `json:"Name,omitempty" xml:"Name"`
-	// Gets the index of the first column of the range.
-	FirstColumn int64 `json:"FirstColumn" xml:"FirstColumn"`
-	// Sets or gets the column width of this range
-	ColumnWidth float64 `json:"ColumnWidth" xml:"ColumnWidth"`
-	// Gets the range's refers to.
-	RefersTo string `json:"RefersTo,omitempty" xml:"RefersTo"`
-	// Gets the count of rows in the range.
-	RowCount int64 `json:"RowCount" xml:"RowCount"`
-	// Gets the index of the first row of the range.
-	FirstRow int64 `json:"FirstRow" xml:"FirstRow"`
-	// Gets the Aspose.Cells.Range.Worksheetobject which contains this range.
-	Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
+ 
+    ColumnCount int64 `json:"ColumnCount,omitempty" xml:"ColumnCount"`
+    ColumnWidth float64 `json:"ColumnWidth,omitempty" xml:"ColumnWidth"`
+    FirstColumn int64 `json:"FirstColumn,omitempty" xml:"FirstColumn"`
+    FirstRow int64 `json:"FirstRow,omitempty" xml:"FirstRow"`
+    Name string `json:"Name,omitempty" xml:"Name"`
+    RefersTo string `json:"RefersTo,omitempty" xml:"RefersTo"`
+    RowCount int64 `json:"RowCount,omitempty" xml:"RowCount"`
+    RowHeight float64 `json:"RowHeight,omitempty" xml:"RowHeight"`
+    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
 }

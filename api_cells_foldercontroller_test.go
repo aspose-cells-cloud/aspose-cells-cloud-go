@@ -47,7 +47,7 @@ func TestFolderController_CreateFolder(t *testing.T) {
  
 
     request := new (CreateFolderRequest)
-    request.Path =         "OutResul/NewFolder"    
+    request.Path =         "OutResult/NewFolder"    
     request.StorageName =         ""    
     httpResponse, err := GetBaseTest().CellsApi.CreateFolder(request)
 	if err != nil {
