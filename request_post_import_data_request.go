@@ -36,6 +36,7 @@ type PostImportDataRequest struct {
     Name string `json:"name,omitempty" xml:"name"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+	Region string `json:"region,omitempty" xml:"region"`
 	ImportOption interface{} `json:"import_option,omitempty" xml:"import_option"` 
 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -65,6 +66,11 @@ func (data *PostImportDataRequest) CreateRequestData( client *APIClient) (localV
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
+    }
+
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
 
 	if data.ExtendQueryParameterMap != nil {

@@ -43,6 +43,7 @@ type GetWorkbookRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
+	Region string `json:"region,omitempty" xml:"region"`
 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -106,6 +107,11 @@ func (data *GetWorkbookRequest) CreateRequestData( client *APIClient) (localVarR
     // query params : checkExcelRestriction
     if &data.CheckExcelRestriction != nil {
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
+    }
+
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
 
 	if data.ExtendQueryParameterMap != nil {

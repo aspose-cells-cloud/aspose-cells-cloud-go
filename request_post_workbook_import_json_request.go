@@ -40,6 +40,7 @@ type PostWorkbookImportJsonRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
+	Region string `json:"region,omitempty" xml:"region"`
 	ImportJsonRequest interface{} `json:"import_json_request,omitempty" xml:"import_json_request"` 
 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -89,6 +90,11 @@ func (data *PostWorkbookImportJsonRequest) CreateRequestData( client *APIClient)
     // query params : checkExcelRestriction
     if &data.CheckExcelRestriction != nil {
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
+    }
+
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
 
 	if data.ExtendQueryParameterMap != nil {

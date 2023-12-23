@@ -33,9 +33,10 @@ import (
 
 type PostReverseRequest struct {
 	RotateType string `json:"rotate_type,omitempty" xml:"rotate_type"`
-	Format string `json:"format,omitempty" xml:"format"`
+	OutFormat string `json:"out_format,omitempty" xml:"out_format"`
 	Password string `json:"password,omitempty" xml:"password"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
+	Region string `json:"region,omitempty" xml:"region"`
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -60,9 +61,9 @@ func (data *PostReverseRequest) CreateRequestData( client *APIClient) (localVarR
         localVarQueryParams.Add("rotateType", parameterToString(data.RotateType, ""))
     }
 
-    // query params : format
-    if data.Format != "" {
-        localVarQueryParams.Add("format", parameterToString(data.Format, ""))
+    // query params : outFormat
+    if data.OutFormat != "" {
+        localVarQueryParams.Add("outFormat", parameterToString(data.OutFormat, ""))
     }
 
     // query params : password
@@ -73,6 +74,11 @@ func (data *PostReverseRequest) CreateRequestData( client *APIClient) (localVarR
     // query params : checkExcelRestriction
     if &data.CheckExcelRestriction != nil {
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
+    }
+
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
 
 	if data.ExtendQueryParameterMap != nil {

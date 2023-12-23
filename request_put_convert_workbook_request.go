@@ -38,6 +38,7 @@ type PutConvertWorkbookRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	StreamFormat string `json:"stream_format,omitempty" xml:"stream_format"`
+	Region string `json:"region,omitempty" xml:"region"`
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -85,6 +86,11 @@ func (data *PutConvertWorkbookRequest) CreateRequestData( client *APIClient) (lo
     // query params : streamFormat
     if data.StreamFormat != "" {
         localVarQueryParams.Add("streamFormat", parameterToString(data.StreamFormat, ""))
+    }
+
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
 
 	if data.ExtendQueryParameterMap != nil {

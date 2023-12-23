@@ -32,10 +32,11 @@ import (
 )
 
 type PostMergeRequest struct {
-	Format string `json:"format,omitempty" xml:"format"`
+	OutFormat string `json:"out_format,omitempty" xml:"out_format"`
 	MergeToOneSheet bool `json:"merge_to_one_sheet,omitempty" xml:"merge_to_one_sheet"`
 	Password string `json:"password,omitempty" xml:"password"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
+	Region string `json:"region,omitempty" xml:"region"`
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -55,9 +56,9 @@ func (data *PostMergeRequest) CreateRequestData( client *APIClient) (localVarReq
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-    // query params : format
-    if data.Format != "" {
-        localVarQueryParams.Add("format", parameterToString(data.Format, ""))
+    // query params : outFormat
+    if data.OutFormat != "" {
+        localVarQueryParams.Add("outFormat", parameterToString(data.OutFormat, ""))
     }
 
     // query params : mergeToOneSheet
@@ -73,6 +74,11 @@ func (data *PostMergeRequest) CreateRequestData( client *APIClient) (localVarReq
     // query params : checkExcelRestriction
     if &data.CheckExcelRestriction != nil {
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
+    }
+
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
 
 	if data.ExtendQueryParameterMap != nil {

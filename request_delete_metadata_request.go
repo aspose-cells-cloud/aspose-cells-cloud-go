@@ -33,6 +33,7 @@ import (
 
 type DeleteMetadataRequest struct {
 	Type_ string `json:"type,omitempty" xml:"type"`
+	OutFormat string `json:"out_format,omitempty" xml:"out_format"`
 	Password string `json:"password,omitempty" xml:"password"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
@@ -57,6 +58,11 @@ func (data *DeleteMetadataRequest) CreateRequestData( client *APIClient) (localV
     // query params : type
     if data.Type_ != "" {
         localVarQueryParams.Add("type", parameterToString(data.Type_, ""))
+    }
+
+    // query params : outFormat
+    if data.OutFormat != "" {
+        localVarQueryParams.Add("outFormat", parameterToString(data.OutFormat, ""))
     }
 
     // query params : password

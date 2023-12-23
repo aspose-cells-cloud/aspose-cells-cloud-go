@@ -302,39 +302,6 @@ func TestConversionJson_ConvertWorkbook_xlsb(t *testing.T) {
 	}
 }
 
-func TestConversionJson_ConvertWorkbook_xlsx(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "xlsx"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversionJson_ConvertWorkbook_xlsx \n", GetBaseTest().GetTestNumber())
-	}
-}
-
 func TestConversionJson_ConvertWorkbook_xps(t *testing.T) {
     remoteFolder := "TestData/In"
   
@@ -365,39 +332,6 @@ func TestConversionJson_ConvertWorkbook_xps(t *testing.T) {
 		t.Fail()
 	} else {
 		fmt.Printf("%d\tTestConversionJson_ConvertWorkbook_xps \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestConversionJson_ConvertWorkbook_png(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "png"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversionJson_ConvertWorkbook_png \n", GetBaseTest().GetTestNumber())
 	}
 }
 

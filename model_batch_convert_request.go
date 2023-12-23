@@ -33,5 +33,6 @@ type BatchConvertRequest struct {
     Format string `json:"Format,omitempty" xml:"Format"`
     OutFolder string `json:"OutFolder,omitempty" xml:"OutFolder"`
     OutStorage string `json:"OutStorage,omitempty" xml:"OutStorage"`
+    Region string `json:"Region,omitempty" xml:"Region"`
     SaveOptions *SaveOptions `json:"SaveOptions,omitempty" xml:"SaveOptions"`
 }

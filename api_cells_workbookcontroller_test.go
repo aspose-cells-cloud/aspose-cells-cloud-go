@@ -687,6 +687,8 @@ func TestWorkbookController_PostWorkbookSplit(t *testing.T) {
     request.OutFolder =         "OutResult"    
     request.From =  int64(1)        
     request.To =  int64(5)        
+    request.HorizontalResolution =  int64(96)        
+    request.VerticalResolution =  int64(96)        
     request.SplitNameRule =         "sheetname"    
     request.Folder =         remoteFolder    
     request.StorageName =         ""    

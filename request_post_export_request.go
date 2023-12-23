@@ -36,6 +36,7 @@ type PostExportRequest struct {
 	Format string `json:"format,omitempty" xml:"format"`
 	Password string `json:"password,omitempty" xml:"password"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
+	Region string `json:"region,omitempty" xml:"region"`
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -73,6 +74,11 @@ func (data *PostExportRequest) CreateRequestData( client *APIClient) (localVarRe
     // query params : checkExcelRestriction
     if &data.CheckExcelRestriction != nil {
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
+    }
+
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
 
 	if data.ExtendQueryParameterMap != nil {

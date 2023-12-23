@@ -34,8 +34,10 @@ import (
 type PostWatermarkRequest struct {
 	Text string `json:"text,omitempty" xml:"text"`
 	Color string `json:"color,omitempty" xml:"color"`
+	OutFormat string `json:"out_format,omitempty" xml:"out_format"`
 	Password string `json:"password,omitempty" xml:"password"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
+	Region string `json:"region,omitempty" xml:"region"`
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -65,6 +67,11 @@ func (data *PostWatermarkRequest) CreateRequestData( client *APIClient) (localVa
         localVarQueryParams.Add("color", parameterToString(data.Color, ""))
     }
 
+    // query params : outFormat
+    if data.OutFormat != "" {
+        localVarQueryParams.Add("outFormat", parameterToString(data.OutFormat, ""))
+    }
+
     // query params : password
     if data.Password != "" {
         localVarQueryParams.Add("password", parameterToString(data.Password, ""))
@@ -73,6 +80,11 @@ func (data *PostWatermarkRequest) CreateRequestData( client *APIClient) (localVa
     // query params : checkExcelRestriction
     if &data.CheckExcelRestriction != nil {
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
+    }
+
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
 
 	if data.ExtendQueryParameterMap != nil {

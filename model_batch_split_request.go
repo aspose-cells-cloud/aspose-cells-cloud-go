@@ -35,5 +35,6 @@ type BatchSplitRequest struct {
     ToIndex int64 `json:"ToIndex,omitempty" xml:"ToIndex"`
     OutFolder string `json:"OutFolder,omitempty" xml:"OutFolder"`
     OutStorage string `json:"OutStorage,omitempty" xml:"OutStorage"`
+    Region string `json:"Region,omitempty" xml:"Region"`
     SaveOptions *SaveOptions `json:"SaveOptions,omitempty" xml:"SaveOptions"`
 }

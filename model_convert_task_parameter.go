@@ -30,5 +30,6 @@ type ConvertTaskParameter struct {
  
     Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
     DestinationFile string `json:"DestinationFile,omitempty" xml:"DestinationFile"`
+    Region string `json:"Region,omitempty" xml:"Region"`
     SaveOptions *SaveOptions `json:"SaveOptions,omitempty" xml:"SaveOptions"`
 }

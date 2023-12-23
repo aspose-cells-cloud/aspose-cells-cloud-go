@@ -11,7 +11,7 @@ func TestLightCells_PostSplit_csv(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "csv"
+     outFormat := "csv"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -21,7 +21,7 @@ func TestLightCells_PostSplit_csv(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -38,7 +38,7 @@ func TestLightCells_PostSplit_xls(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "xls"
+     outFormat := "xls"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -48,7 +48,7 @@ func TestLightCells_PostSplit_xls(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -65,7 +65,7 @@ func TestLightCells_PostSplit_html(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "html"
+     outFormat := "html"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -75,7 +75,7 @@ func TestLightCells_PostSplit_html(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -92,7 +92,7 @@ func TestLightCells_PostSplit_mhtml(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "mhtml"
+     outFormat := "mhtml"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -102,7 +102,7 @@ func TestLightCells_PostSplit_mhtml(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -119,7 +119,7 @@ func TestLightCells_PostSplit_ods(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "ods"
+     outFormat := "ods"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -129,7 +129,7 @@ func TestLightCells_PostSplit_ods(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -146,7 +146,7 @@ func TestLightCells_PostSplit_pdf(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "pdf"
+     outFormat := "pdf"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -156,7 +156,7 @@ func TestLightCells_PostSplit_pdf(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -173,7 +173,7 @@ func TestLightCells_PostSplit_xml(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "xml"
+     outFormat := "xml"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -183,7 +183,7 @@ func TestLightCells_PostSplit_xml(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -200,7 +200,7 @@ func TestLightCells_PostSplit_txt(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "txt"
+     outFormat := "txt"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -210,7 +210,7 @@ func TestLightCells_PostSplit_txt(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -227,7 +227,7 @@ func TestLightCells_PostSplit_tif(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "tif"
+     outFormat := "tif"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -237,7 +237,7 @@ func TestLightCells_PostSplit_tif(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -254,7 +254,7 @@ func TestLightCells_PostSplit_xlsb(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "xlsb"
+     outFormat := "xlsb"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -264,7 +264,7 @@ func TestLightCells_PostSplit_xlsb(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -275,40 +275,13 @@ func TestLightCells_PostSplit_xlsb(t *testing.T) {
 	}
 }
 
-func TestLightCells_PostSplit_xlsm(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
-
- 
-     format := "xlsm"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
-
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestLightCells_PostSplit_xlsm \n", GetBaseTest().GetTestNumber())
-	}
-}
-
 func TestLightCells_PostSplit_xlsx(t *testing.T) {
   
     assemblyTestXlsx := "assemblytest.xlsx"
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "xlsx"
+     outFormat := "xlsx"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -318,7 +291,7 @@ func TestLightCells_PostSplit_xlsx(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -329,67 +302,13 @@ func TestLightCells_PostSplit_xlsx(t *testing.T) {
 	}
 }
 
-func TestLightCells_PostSplit_xltm(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
-
- 
-     format := "xltm"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
-
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestLightCells_PostSplit_xltm \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestLightCells_PostSplit_xltx(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
-
- 
-     format := "xltx"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
-
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestLightCells_PostSplit_xltx \n", GetBaseTest().GetTestNumber())
-	}
-}
-
 func TestLightCells_PostSplit_xps(t *testing.T) {
   
     assemblyTestXlsx := "assemblytest.xlsx"
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "xps"
+     outFormat := "xps"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -399,7 +318,7 @@ func TestLightCells_PostSplit_xps(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -416,7 +335,7 @@ func TestLightCells_PostSplit_png(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "png"
+     outFormat := "png"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -426,7 +345,7 @@ func TestLightCells_PostSplit_png(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -443,7 +362,7 @@ func TestLightCells_PostSplit_jpg(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "jpg"
+     outFormat := "jpg"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -453,7 +372,7 @@ func TestLightCells_PostSplit_jpg(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -464,94 +383,13 @@ func TestLightCells_PostSplit_jpg(t *testing.T) {
 	}
 }
 
-func TestLightCells_PostSplit_gif(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
-
- 
-     format := "gif"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
-
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestLightCells_PostSplit_gif \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestLightCells_PostSplit_emf(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
-
- 
-     format := "emf"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
-
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestLightCells_PostSplit_emf \n", GetBaseTest().GetTestNumber())
-	}
-}
-
-func TestLightCells_PostSplit_bmp(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
-
- 
-     format := "bmp"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
-
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestLightCells_PostSplit_bmp \n", GetBaseTest().GetTestNumber())
-	}
-}
-
 func TestLightCells_PostSplit_md(t *testing.T) {
   
     assemblyTestXlsx := "assemblytest.xlsx"
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "md"
+     outFormat := "md"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -561,7 +399,7 @@ func TestLightCells_PostSplit_md(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -578,7 +416,7 @@ func TestLightCells_PostSplit_numbers(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "numbers"
+     outFormat := "numbers"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -588,7 +426,7 @@ func TestLightCells_PostSplit_numbers(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -599,40 +437,13 @@ func TestLightCells_PostSplit_numbers(t *testing.T) {
 	}
 }
 
-func TestLightCells_PostSplit_wmf(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
-
- 
-     format := "wmf"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
-
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestLightCells_PostSplit_wmf \n", GetBaseTest().GetTestNumber())
-	}
-}
-
 func TestLightCells_PostSplit_svg(t *testing.T) {
   
     assemblyTestXlsx := "assemblytest.xlsx"
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "svg"
+     outFormat := "svg"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -642,7 +453,7 @@ func TestLightCells_PostSplit_svg(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -659,7 +470,7 @@ func TestLightCells_PostSplit_docx(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "docx"
+     outFormat := "docx"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -669,7 +480,7 @@ func TestLightCells_PostSplit_docx(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -686,7 +497,7 @@ func TestLightCells_PostSplit_pptx(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "pptx"
+     outFormat := "pptx"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -696,7 +507,7 @@ func TestLightCells_PostSplit_pptx(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -713,7 +524,7 @@ func TestLightCells_PostSplit_json(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "json"
+     outFormat := "json"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -723,7 +534,7 @@ func TestLightCells_PostSplit_json(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -740,7 +551,7 @@ func TestLightCells_PostSplit_sql(t *testing.T) {
     dataSourceXlsx := "datasource.xlsx"
 
  
-     format := "sql"
+     outFormat := "sql"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
@@ -750,7 +561,7 @@ func TestLightCells_PostSplit_sql(t *testing.T) {
 
     request := new (PostSplitRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         outFormat    
     _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
@@ -4545,7 +4356,7 @@ func TestLightCells_PostMerge_csv_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -4574,7 +4385,7 @@ func TestLightCells_PostMerge_xls_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -4603,7 +4414,7 @@ func TestLightCells_PostMerge_html_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -4632,7 +4443,7 @@ func TestLightCells_PostMerge_mhtml_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -4661,7 +4472,7 @@ func TestLightCells_PostMerge_ods_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -4690,7 +4501,7 @@ func TestLightCells_PostMerge_pdf_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -4719,7 +4530,7 @@ func TestLightCells_PostMerge_xml_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -4748,7 +4559,7 @@ func TestLightCells_PostMerge_txt_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -4777,7 +4588,7 @@ func TestLightCells_PostMerge_tif_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -4806,7 +4617,7 @@ func TestLightCells_PostMerge_xlsb_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -4835,7 +4646,7 @@ func TestLightCells_PostMerge_xlsm_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -4864,7 +4675,7 @@ func TestLightCells_PostMerge_xlsx_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -4893,7 +4704,7 @@ func TestLightCells_PostMerge_xltm_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -4922,7 +4733,7 @@ func TestLightCells_PostMerge_xltx_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -4951,7 +4762,7 @@ func TestLightCells_PostMerge_xps_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -4980,7 +4791,7 @@ func TestLightCells_PostMerge_png_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -5009,7 +4820,7 @@ func TestLightCells_PostMerge_jpg_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -5038,7 +4849,7 @@ func TestLightCells_PostMerge_gif_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -5067,7 +4878,7 @@ func TestLightCells_PostMerge_emf_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -5096,7 +4907,7 @@ func TestLightCells_PostMerge_bmp_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -5125,7 +4936,7 @@ func TestLightCells_PostMerge_md_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -5154,7 +4965,7 @@ func TestLightCells_PostMerge_numbers_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -5183,7 +4994,7 @@ func TestLightCells_PostMerge_wmf_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -5212,7 +5023,7 @@ func TestLightCells_PostMerge_svg_true(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -5241,7 +5052,7 @@ func TestLightCells_PostMerge_docx_false(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -5270,7 +5081,7 @@ func TestLightCells_PostMerge_pptx_false(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -5299,7 +5110,7 @@ func TestLightCells_PostMerge_json_false(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -5328,7 +5139,7 @@ func TestLightCells_PostMerge_sql_false(t *testing.T) {
 
     request := new (PostMergeRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     request.MergeToOneSheet =   mergeToOneSheet    
     _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
@@ -5808,7 +5619,7 @@ func TestLightCells_PostRepair_xlsx(t *testing.T) {
 
     request := new (PostRepairRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostRepair(request)
 	if err != nil {
 		t.Error(err)
@@ -5833,7 +5644,7 @@ func TestLightCells_PostRepair_pdf(t *testing.T) {
 
     request := new (PostRepairRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostRepair(request)
 	if err != nil {
 		t.Error(err)
@@ -5858,7 +5669,7 @@ func TestLightCells_PostRepair_csv(t *testing.T) {
 
     request := new (PostRepairRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostRepair(request)
 	if err != nil {
 		t.Error(err)
@@ -5883,7 +5694,7 @@ func TestLightCells_PostRepair_png(t *testing.T) {
 
     request := new (PostRepairRequest)
     request.File =         mapFiles    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostRepair(request)
 	if err != nil {
 		t.Error(err)
@@ -5910,7 +5721,7 @@ func TestLightCells_PostReverse_rows_pdf(t *testing.T) {
     request := new (PostReverseRequest)
     request.File =         mapFiles    
     request.RotateType =         rotateType    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
 	if err != nil {
 		t.Error(err)
@@ -5937,7 +5748,7 @@ func TestLightCells_PostReverse_cols_pdf(t *testing.T) {
     request := new (PostReverseRequest)
     request.File =         mapFiles    
     request.RotateType =         rotateType    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
 	if err != nil {
 		t.Error(err)
@@ -5964,7 +5775,7 @@ func TestLightCells_PostReverse_both_pdf(t *testing.T) {
     request := new (PostReverseRequest)
     request.File =         mapFiles    
     request.RotateType =         rotateType    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
 	if err != nil {
 		t.Error(err)
@@ -5991,7 +5802,7 @@ func TestLightCells_PostReverse_rows_csv(t *testing.T) {
     request := new (PostReverseRequest)
     request.File =         mapFiles    
     request.RotateType =         rotateType    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
 	if err != nil {
 		t.Error(err)
@@ -6018,7 +5829,7 @@ func TestLightCells_PostReverse_cols_png(t *testing.T) {
     request := new (PostReverseRequest)
     request.File =         mapFiles    
     request.RotateType =         rotateType    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
 	if err != nil {
 		t.Error(err)
@@ -6045,7 +5856,7 @@ func TestLightCells_PostReverse_both_xlsx(t *testing.T) {
     request := new (PostReverseRequest)
     request.File =         mapFiles    
     request.RotateType =         rotateType    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
 	if err != nil {
 		t.Error(err)

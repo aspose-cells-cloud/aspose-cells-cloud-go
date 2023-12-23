@@ -32,6 +32,10 @@ import (
 )
 
 type PostImportRequest struct {
+	OutFormat string `json:"out_format,omitempty" xml:"out_format"`
+	Password string `json:"password,omitempty" xml:"password"`
+	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
+	Region string `json:"region,omitempty" xml:"region"`
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -50,6 +54,26 @@ func (data *PostImportRequest) CreateRequestData( client *APIClient) (localVarRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+
+    // query params : outFormat
+    if data.OutFormat != "" {
+        localVarQueryParams.Add("outFormat", parameterToString(data.OutFormat, ""))
+    }
+
+    // query params : password
+    if data.Password != "" {
+        localVarQueryParams.Add("password", parameterToString(data.Password, ""))
+    }
+
+    // query params : checkExcelRestriction
+    if &data.CheckExcelRestriction != nil {
+        localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
+    }
+
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
+    }
 
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {

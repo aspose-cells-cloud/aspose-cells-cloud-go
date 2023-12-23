@@ -31,7 +31,7 @@ func TestBatchController_PostBatchConvert(t *testing.T) {
     var batchConvertRequest = new(BatchConvertRequest)
      batchConvertRequest.SourceFolder =        remoteFolder      
      batchConvertRequest.Format =        "pdf"      
-     batchConvertRequest.OutFolder =        "TestResult"      
+     batchConvertRequest.OutFolder =        "OutResult"      
      batchConvertRequest.MatchCondition =        batchConvertRequestMatchCondition      
 
     request := new (PostBatchConvertRequest)
@@ -73,7 +73,7 @@ func TestBatchController_PostBatchProtect(t *testing.T) {
      batchProtectRequest.SourceFolder =        remoteFolder      
      batchProtectRequest.ProtectionType =        "All"      
      batchProtectRequest.Password =        "123456"      
-     batchProtectRequest.OutFolder =        "TestResult"      
+     batchProtectRequest.OutFolder =        "OutResult"      
      batchProtectRequest.MatchCondition =        batchProtectRequestMatchCondition      
 
     request := new (PostBatchProtectRequest)
@@ -114,7 +114,7 @@ func TestBatchController_PostBatchLock(t *testing.T) {
     var batchLockRequest = new(BatchLockRequest)
      batchLockRequest.SourceFolder =        remoteFolder      
      batchLockRequest.Password =        "123456"      
-     batchLockRequest.OutFolder =        "TestResult"      
+     batchLockRequest.OutFolder =        "OutResult"      
      batchLockRequest.MatchCondition =        batchLockRequestMatchCondition      
 
     request := new (PostBatchLockRequest)
@@ -155,7 +155,7 @@ func TestBatchController_PostBatchUnlock(t *testing.T) {
     var batchLockRequest = new(BatchLockRequest)
      batchLockRequest.SourceFolder =        remoteFolder      
      batchLockRequest.Password =        "123456"      
-     batchLockRequest.OutFolder =        "TestResult"      
+     batchLockRequest.OutFolder =        "OutResult"      
      batchLockRequest.MatchCondition =        batchLockRequestMatchCondition      
 
     request := new (PostBatchUnlockRequest)

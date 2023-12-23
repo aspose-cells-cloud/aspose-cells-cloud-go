@@ -32,7 +32,7 @@ import (
 )
 
 type PostRepairRequest struct {
-	Format string `json:"format,omitempty" xml:"format"`
+	OutFormat string `json:"out_format,omitempty" xml:"out_format"`
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -52,9 +52,9 @@ func (data *PostRepairRequest) CreateRequestData( client *APIClient) (localVarRe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-    // query params : format
-    if data.Format != "" {
-        localVarQueryParams.Add("format", parameterToString(data.Format, ""))
+    // query params : outFormat
+    if data.OutFormat != "" {
+        localVarQueryParams.Add("outFormat", parameterToString(data.OutFormat, ""))
     }
 
 	if data.ExtendQueryParameterMap != nil {

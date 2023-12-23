@@ -20,13 +20,20 @@
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## Feature & Enhancements in Version 23.11
+## Feature & Enhancements in Version 23.12
 
 Full list of issues covering all changes in this release:
 
-- Optimize import xml data into Excel file.
-- Optimize import json data into Excel file.
-- Remove deprecated functions, class and test case.
+- Optimize conversion APIs.
+- Optimize protection APIs.
+- Optimize assemble data API.
+- Optimize merge files API.
+- Optimize split files API.
+- Optimize import data API.
+- Optimize watermark API.
+- Optimize clear object API.
+- Optimize reverse data API.
+- Optimize rotate data API.
 
 
 ## Read & Write Spreadsheet Formats

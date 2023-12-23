@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "23.11"
+  version: "23.12.1"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
@@ -14,7 +14,7 @@ paths:
     get:
       tags:
       - "Cells"
-      summary: "Get auto filters description in worksheet."
+      summary: "Retrieve the description of auto filters from a worksheet."
       operationId: "GetWorksheetAutoFilter"
       parameters:
       - name: "name"
@@ -33,14 +33,14 @@ paths:
         x-exportParamName: "sheetName"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -49,12 +49,12 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "Adds date filter in worksheet."
+      summary: "Apply a date filter in the worksheet."
       operationId: "PutWorksheetDateFilter"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -82,7 +82,7 @@ paths:
         x-exportParamName: "fieldIndex"
       - name: "datetimegroupingtype"
         in: "Query"
-        description: "Specifies how to group dateTime values(Day,Hour,Minute,Month,Second,Year)."
+        description: "Specifies how to group dateTime values (Day, Hour, Minute, Month, Second, Year)."
         required: true
         type: "string"
         x-nullable: true
@@ -131,28 +131,28 @@ paths:
         x-exportParamName: "second"
       - name: "matchblanks"
         in: "Query"
-        description: "Match all blank or not blank cell in the list.(true/false)"
+        description: "Match all blank cell in the list."
         required: false
         type: "boolean"
         x-nullable: true
         x-exportParamName: "matchBlanks"
       - name: "refresh"
         in: "Query"
-        description: "If true, hide the filtered rows."
+        description: "Refresh auto filters to hide or unhide the rows."
         required: false
         type: "boolean"
         x-nullable: true
         x-exportParamName: "refresh"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -161,12 +161,12 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "Adds a filter for a filter column in worksheet.            "
+      summary: "Add a filter for a column in the worksheet."
       operationId: "PutWorksheetFilter"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -201,28 +201,28 @@ paths:
         x-exportParamName: "criteria"
       - name: "matchblanks"
         in: "Query"
-        description: "Match all blank or  not blank cell in the list.(true/false)"
+        description: "Match all blank cell in the list."
         required: false
         type: "boolean"
         x-nullable: true
         x-exportParamName: "matchBlanks"
       - name: "refresh"
         in: "Query"
-        description: "If true, hide the filtered rows."
+        description: "Refresh auto filters to hide or unhide the rows."
         required: false
         type: "boolean"
         x-nullable: true
         x-exportParamName: "refresh"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -231,12 +231,12 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "Adds an icon filter in worksheet."
+      summary: "Add an icon filter in the worksheet."
       operationId: "PutWorksheetIconFilter"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -278,28 +278,28 @@ paths:
         x-exportParamName: "iconId"
       - name: "matchblanks"
         in: "Query"
-        description: "Match all blank or  not blank cell in the list.(true/false)"
+        description: "Match all blank cell in the list."
         required: false
         type: "boolean"
         x-nullable: true
         x-exportParamName: "matchBlanks"
       - name: "refresh"
         in: "Query"
-        description: "If true, hide the filtered rows."
+        description: "Refresh auto filters to hide or unhide the rows."
         required: false
         type: "boolean"
         x-nullable: true
         x-exportParamName: "refresh"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -308,7 +308,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "Filters a list with a custom criteria in worksheet.            "
+      summary: "Filter a list with custom criteria in the worksheet."
       operationId: "PutWorksheetCustomFilter"
       parameters:
       - name: "name"
@@ -376,28 +376,28 @@ paths:
         x-exportParamName: "criteria2"
       - name: "matchblanks"
         in: "Query"
-        description: "Match all blank or  not blank cell in the list.(true/false)"
+        description: "Match all blank cell in the list."
         required: false
         type: "boolean"
         x-nullable: true
         x-exportParamName: "matchBlanks"
       - name: "refresh"
         in: "Query"
-        description: "If true, hide the filtered rows."
+        description: "Refresh auto filters to hide or unhide the rows."
         required: false
         type: "boolean"
         x-nullable: true
         x-exportParamName: "refresh"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -406,7 +406,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "Adds a dynamic filter in worksheet."
+      summary: "Add a dynamic filter in the worksheet."
       operationId: "PutWorksheetDynamicFilter"
       parameters:
       - name: "name"
@@ -446,28 +446,28 @@ paths:
         x-exportParamName: "dynamicFilterType"
       - name: "matchblanks"
         in: "Query"
-        description: "Match all blank or  not blank cell in the list.(true/false)"
+        description: "Match all blank cell in the list."
         required: false
         type: "boolean"
         x-nullable: true
         x-exportParamName: "matchBlanks"
       - name: "refresh"
         in: "Query"
-        description: "If true, hide the filtered rows."
+        description: "Refresh auto filters to hide or unhide the rows."
         required: false
         type: "boolean"
         x-nullable: true
         x-exportParamName: "refresh"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -476,7 +476,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "Filters the top 10 item in the list in worksheet"
+      summary: "Filter the top 10 items in the list in the worksheet."
       operationId: "PutWorksheetFilterTop10"
       parameters:
       - name: "name"
@@ -530,28 +530,28 @@ paths:
         x-exportParamName: "itemCount"
       - name: "matchblanks"
         in: "Query"
-        description: "Match all blank or  not blank cell in the list.(true/false)"
+        description: "Match all blank cell in the list."
         required: false
         type: "boolean"
         x-nullable: true
         x-exportParamName: "matchBlanks"
       - name: "refresh"
         in: "Query"
-        description: "If true, hide the filtered rows."
+        description: "Refresh auto filters to hide or unhide the rows."
         required: false
         type: "boolean"
         x-nullable: true
         x-exportParamName: "refresh"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -560,7 +560,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "Adds a color filter in worksheet."
+      summary: "Add a color filter in the worksheet."
       operationId: "PutWorksheetColorFilter"
       parameters:
       - name: "name"
@@ -600,28 +600,28 @@ paths:
         x-exportParamName: "colorFilter"
       - name: "matchblanks"
         in: "Query"
-        description: "Match all blank or  not blank cell in the list.(true/false)"
+        description: "Match all blank cell in the list."
         required: false
         type: "boolean"
         x-nullable: true
         x-exportParamName: "matchBlanks"
       - name: "refresh"
         in: "Query"
-        description: "If true, hide the filtered rows."
+        description: "Refresh auto filters to hide or unhide the rows."
         required: false
         type: "boolean"
         x-nullable: true
         x-exportParamName: "refresh"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -630,7 +630,7 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Match all blank cell in the list."
+      summary: "Match all blank cells in the list."
       operationId: "PostWorksheetMatchBlanks"
       parameters:
       - name: "name"
@@ -656,14 +656,14 @@ paths:
         x-exportParamName: "fieldIndex"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -672,7 +672,7 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Match all not blank cell in the list.            "
+      summary: "Match all not blank cells in the list."
       operationId: "PostWorksheetMatchNonBlanks"
       parameters:
       - name: "name"
@@ -698,14 +698,14 @@ paths:
         x-exportParamName: "fieldIndex"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -714,7 +714,7 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Refresh auto filters in worksheet."
+      summary: "Refresh auto filters in the worksheet."
       operationId: "PostWorksheetAutoFilterRefresh"
       parameters:
       - name: "name"
@@ -733,14 +733,14 @@ paths:
         x-exportParamName: "sheetName"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -749,7 +749,7 @@ paths:
     delete:
       tags:
       - "Cells"
-      summary: "Removes a date filter in worksheet.            "
+      summary: "Remove a date filter in the worksheet."
       operationId: "DeleteWorksheetDateFilter"
       parameters:
       - name: "name"
@@ -824,14 +824,14 @@ paths:
         x-exportParamName: "second"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -840,7 +840,7 @@ paths:
     delete:
       tags:
       - "Cells"
-      summary: "Deletes a filter for a filter column in worksheet.            "
+      summary: "Delete a filter for a column in the worksheet."
       operationId: "DeleteWorksheetFilter"
       parameters:
       - name: "name"
@@ -873,14 +873,14 @@ paths:
         x-exportParamName: "criteria"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -973,12 +973,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Batch converting files that meet specific matching conditions."
       operationId: "PostBatchConvert"
       parameters:
       - name: "batchconvertrequest"
         in: "Body"
-        description: ""
+        description: "BatchConvertRequest Batch conversion file request. "
         required: true
         type: "class:batchconvertrequest"
         x-nullable: true
@@ -987,12 +987,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Batch protecting files that meet specific matching conditions."
       operationId: "PostBatchProtect"
       parameters:
       - name: "batchprotectrequest"
         in: "Body"
-        description: ""
+        description: "BatchProtectRequest Batch protection file request.  "
         required: true
         type: "class:batchprotectrequest"
         x-nullable: true
@@ -1001,12 +1001,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Batch locking files that meet specific matching conditions."
       operationId: "PostBatchLock"
       parameters:
       - name: "batchlockrequest"
         in: "Body"
-        description: ""
+        description: "BatchLockRequest Batch locking file request.  "
         required: true
         type: "class:batchlockrequest"
         x-nullable: true
@@ -1015,12 +1015,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Batch unlocking files that meet specific matching conditions."
       operationId: "PostBatchUnlock"
       parameters:
       - name: "batchlockrequest"
         in: "Body"
-        description: ""
+        description: "BatchLockRequest Batch locking file request.  "
         required: true
         type: "class:batchlockrequest"
         x-nullable: true
@@ -1029,12 +1029,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Batch splitting files that meet specific matching conditions."
       operationId: "PostBatchSplit"
       parameters:
       - name: "batchsplitrequest"
         in: "Body"
-        description: ""
+        description: "BatchSplitRequest Batch splitting file request.  "
         required: true
         type: "class:batchsplitrequest"
         x-nullable: true
@@ -1043,12 +1043,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Clear cells contents in worksheet."
+      summary: "Clear cell area contents in the worksheet."
       operationId: "PostClearContents"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -1069,42 +1069,42 @@ paths:
         x-exportParamName: "range"
       - name: "startrow"
         in: "Query"
-        description: "The start row."
+        description: "The start row index."
         required: false
         type: "integer"
         x-nullable: true
         x-exportParamName: "startRow"
       - name: "startcolumn"
         in: "Query"
-        description: "The start column."
+        description: "The start column index."
         required: false
         type: "integer"
         x-nullable: true
         x-exportParamName: "startColumn"
       - name: "endrow"
         in: "Query"
-        description: "The end row."
+        description: "The end row index."
         required: false
         type: "integer"
         x-nullable: true
         x-exportParamName: "endRow"
       - name: "endcolumn"
         in: "Query"
-        description: "The end column."
+        description: "The end column index."
         required: false
         type: "integer"
         x-nullable: true
         x-exportParamName: "endColumn"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -1113,12 +1113,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Clear cells formats in worksheet."
+      summary: "Clear cell formats in the worksheet."
       operationId: "PostClearFormats"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -1139,42 +1139,42 @@ paths:
         x-exportParamName: "range"
       - name: "startrow"
         in: "Query"
-        description: "The start row."
+        description: "The start row index."
         required: false
         type: "integer"
         x-nullable: true
         x-exportParamName: "startRow"
       - name: "startcolumn"
         in: "Query"
-        description: "The start column."
+        description: "The start column index."
         required: false
         type: "integer"
         x-nullable: true
         x-exportParamName: "startColumn"
       - name: "endrow"
         in: "Query"
-        description: "The end row."
+        description: "The end row index."
         required: false
         type: "integer"
         x-nullable: true
         x-exportParamName: "endRow"
       - name: "endcolumn"
         in: "Query"
-        description: "The end column."
+        description: "The end column index."
         required: false
         type: "integer"
         x-nullable: true
         x-exportParamName: "endColumn"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -1183,12 +1183,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Updates cell's range style in worksheet."
+      summary: "Update cell range styles in the worksheet."
       operationId: "PostUpdateWorksheetRangeStyle"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -1216,14 +1216,14 @@ paths:
         x-exportParamName: "style"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -1232,12 +1232,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Merge cells in worksheet."
+      summary: "Merge cells in the worksheet."
       operationId: "PostWorksheetMerge"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -1251,42 +1251,42 @@ paths:
         x-exportParamName: "sheetName"
       - name: "startrow"
         in: "Query"
-        description: "The start row."
+        description: "The start row index."
         required: true
         type: "integer"
         x-nullable: true
         x-exportParamName: "startRow"
       - name: "startcolumn"
         in: "Query"
-        description: "The start column."
+        description: "The start column index."
         required: true
         type: "integer"
         x-nullable: true
         x-exportParamName: "startColumn"
       - name: "totalrows"
         in: "Query"
-        description: "The total rows"
+        description: "The total rows number."
         required: true
         type: "integer"
         x-nullable: true
         x-exportParamName: "totalRows"
       - name: "totalcolumns"
         in: "Query"
-        description: "The total columns."
+        description: "The total columns number."
         required: true
         type: "integer"
         x-nullable: true
         x-exportParamName: "totalColumns"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -1295,12 +1295,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Unmerge cells in worksheet."
+      summary: "Unmerge cells in the worksheet."
       operationId: "PostWorksheetUnmerge"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -1314,42 +1314,42 @@ paths:
         x-exportParamName: "sheetName"
       - name: "startrow"
         in: "Query"
-        description: "The start row."
+        description: "The start row index."
         required: true
         type: "integer"
         x-nullable: true
         x-exportParamName: "startRow"
       - name: "startcolumn"
         in: "Query"
-        description: "The start column."
+        description: "The start column index."
         required: true
         type: "integer"
         x-nullable: true
         x-exportParamName: "startColumn"
       - name: "totalrows"
         in: "Query"
-        description: "The total rows"
+        description: "The total rows number."
         required: true
         type: "integer"
         x-nullable: true
         x-exportParamName: "totalRows"
       - name: "totalcolumns"
         in: "Query"
-        description: "The total columns."
+        description: "The total columns number."
         required: true
         type: "integer"
         x-nullable: true
         x-exportParamName: "totalColumns"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -1358,12 +1358,12 @@ paths:
     get:
       tags:
       - "Cells"
-      summary: "Gets cells description in some format."
+      summary: "Retrieve cell descriptions in a specified format."
       operationId: "GetWorksheetCells"
       parameters:
       - name: "name"
         in: "Path"
-        description: "Document name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -1391,14 +1391,14 @@ paths:
         x-exportParamName: "count"
       - name: "folder"
         in: "Query"
-        description: "Document's folder name."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -1407,12 +1407,12 @@ paths:
     get:
       tags:
       - "Cells"
-      summary: "Gets cell data by cell or method name in worksheet."
+      summary: "Retrieve cell data using either cell reference or method name in the worksheet."
       operationId: "GetWorksheetCell"
       parameters:
       - name: "name"
         in: "Path"
-        description: "Document name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -1433,14 +1433,14 @@ paths:
         x-exportParamName: "cellOrMethodName"
       - name: "folder"
         in: "Query"
-        description: "Document's folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -1449,12 +1449,12 @@ paths:
     get:
       tags:
       - "Cells"
-      summary: "Gets cell's style description in worksheet."
+      summary: "Retrieve cell style descriptions in the worksheet."
       operationId: "GetWorksheetCellStyle"
       parameters:
       - name: "name"
         in: "Path"
-        description: "Document name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -1475,14 +1475,14 @@ paths:
         x-exportParamName: "cellName"
       - name: "folder"
         in: "Query"
-        description: "Document's folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -1491,12 +1491,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Sets cell value by cell name in worksheet."
+      summary: "Set cell value using cell name in the worksheet."
       operationId: "PostWorksheetCellSetValue"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -1538,14 +1538,14 @@ paths:
         x-exportParamName: "formula"
       - name: "folder"
         in: "Query"
-        description: "The document folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -1554,12 +1554,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Sets cell's style by cell name in worksheet."
+      summary: "Set cell style using cell name in the worksheet."
       operationId: "PostUpdateWorksheetCellStyle"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -1587,14 +1587,14 @@ paths:
         x-exportParamName: "style"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -1603,12 +1603,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Sets the value of the range in worksheet."
+      summary: "Set the value of the range in the worksheet."
       operationId: "PostSetCellRangeValue"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -1643,14 +1643,14 @@ paths:
         x-exportParamName: "type"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -1659,68 +1659,68 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Copies data to destination cell from a source cell in worksheet."
+      summary: "Copy data from a source cell to a destination cell in the worksheet."
       operationId: "PostCopyCellIntoCell"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "destcellname"
         in: "Path"
-        description: "Destination cell name"
+        description: "The destination cell name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "destCellName"
       - name: "sheetname"
         in: "Path"
-        description: "Destination worksheet name."
+        description: "The destination worksheet name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "sheetName"
       - name: "worksheet"
         in: "Query"
-        description: "Source worksheet name."
+        description: "The source worksheet name."
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "worksheet"
       - name: "cellname"
         in: "Query"
-        description: "Source cell name"
+        description: "The source cell name."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "cellname"
       - name: "row"
         in: "Query"
-        description: "Source row"
+        description: "The source row index."
         required: false
         type: "integer"
         x-nullable: true
         x-exportParamName: "row"
       - name: "column"
         in: "Query"
-        description: "Source column"
+        description: "The source column index."
         required: false
         type: "integer"
         x-nullable: true
         x-exportParamName: "column"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -1729,12 +1729,12 @@ paths:
     get:
       tags:
       - "Cells"
-      summary: "Gets the html string which contains data and some formats in this cell."
+      summary: "Retrieve the HTML string containing data and specific formats in this cell."
       operationId: "GetCellHtmlString"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -1755,14 +1755,14 @@ paths:
         x-exportParamName: "cellName"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -1771,12 +1771,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Sets the html string which contains data and some formats in this cell."
+      summary: "Set the HTML string containing data and specific formats in this cell."
       operationId: "PostSetCellHtmlString"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -1797,14 +1797,14 @@ paths:
         x-exportParamName: "cellName"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -1813,12 +1813,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Calculates cell formula in worksheet."
+      summary: "Calculate cell formula in the worksheet."
       operationId: "PostCellCalculate"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -1846,14 +1846,14 @@ paths:
         x-exportParamName: "options"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -1862,12 +1862,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Sets cell characters in worksheet."
+      summary: "Set cell characters in the worksheet."
       operationId: "PostCellCharacters"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -1895,14 +1895,14 @@ paths:
         x-exportParamName: "options"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3115,7 +3115,7 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Applies formats for a whole row in worksheet.            "
+      summary: "Applies formats for a whole row in worksheet."
       operationId: "PostRowStyle"
       parameters:
       - name: "name"
@@ -3164,7 +3164,7 @@ paths:
     get:
       tags:
       - "Cells"
-      summary: "Gets cells description in some format."
+      summary: "Retrieve cell descriptions in a specified format."
       operationId: "GetCellsCloudServicesHealthCheck"
       parameters:
 
@@ -3172,7 +3172,7 @@ paths:
     get:
       tags:
       - "Cells"
-      summary: "Aspose.Cells Cloud service health status check(old). "
+      summary: "Aspose.Cells Cloud service health status check."
       operationId: "GetCellsCloudServiceStatus"
       parameters:
 
@@ -3180,12 +3180,12 @@ paths:
     get:
       tags:
       - "Cells"
-      summary: "Gets chart area description in worksheet."
+      summary: "Retrieve chart area description in the worksheet."
       operationId: "GetChartArea"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3206,14 +3206,14 @@ paths:
         x-exportParamName: "chartIndex"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: ""
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3222,12 +3222,12 @@ paths:
     get:
       tags:
       - "Cells"
-      summary: "Gets chart area fill format description in worksheet."
+      summary: "Retrieve chart area fill format description in the worksheet."
       operationId: "GetChartAreaFillFormat"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3248,14 +3248,14 @@ paths:
         x-exportParamName: "chartIndex"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: ""
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3264,12 +3264,12 @@ paths:
     get:
       tags:
       - "Cells"
-      summary: "Gets chart area border description."
+      summary: "Retrieve chart area border description."
       operationId: "GetChartAreaBorder"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3290,14 +3290,14 @@ paths:
         x-exportParamName: "chartIndex"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: ""
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3306,12 +3306,12 @@ paths:
     get:
       tags:
       - "Cells"
-      summary: "Get worksheet charts description."
+      summary: "Retrieve descriptions of charts in the worksheet."
       operationId: "GetWorksheetCharts"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3325,14 +3325,14 @@ paths:
         x-exportParamName: "sheetName"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3341,12 +3341,12 @@ paths:
     get:
       tags:
       - "Cells"
-      summary: "Gets chart in some format."
+      summary: "Retrieve the chart in a specified format."
       operationId: "GetWorksheetChart"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3374,14 +3374,14 @@ paths:
         x-exportParamName: "format"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3390,12 +3390,12 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "Adds new chart in worksheet."
+      summary: "Add a new chart in the worksheet."
       operationId: "PutWorksheetAddChart"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3416,105 +3416,105 @@ paths:
         x-exportParamName: "chartType"
       - name: "upperleftrow"
         in: "Query"
-        description: "New chart upper left row."
+        description: "Upper-left row for the new chart."
         required: false
         type: "integer"
         x-nullable: false
         x-exportParamName: "upperLeftRow"
       - name: "upperleftcolumn"
         in: "Query"
-        description: "New chart upperleft column."
+        description: "Upper-left column for the new chart."
         required: false
         type: "integer"
         x-nullable: false
         x-exportParamName: "upperLeftColumn"
       - name: "lowerrightrow"
         in: "Query"
-        description: "New chart lower right row."
+        description: "Lower-left row for the new chart."
         required: false
         type: "integer"
         x-nullable: false
         x-exportParamName: "lowerRightRow"
       - name: "lowerrightcolumn"
         in: "Query"
-        description: "New chart lower right column."
+        description: "Lower-left column for the new chart."
         required: false
         type: "integer"
         x-nullable: false
         x-exportParamName: "lowerRightColumn"
       - name: "area"
         in: "Query"
-        description: "Specifies values from which to plot the data series. "
+        description: "Specify the values from which to plot the data series."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "area"
       - name: "isvertical"
         in: "Query"
-        description: "Specifies whether to plot the series from a range of cell values by row or by column. "
+        description: "Specify whether to plot the series from a range of cell values by row or by column. "
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "isVertical"
       - name: "categorydata"
         in: "Query"
-        description: "Gets or sets the range of category Axis values. It can be a range of cells (such as, "d1:e10"). "
+        description: "Get or set the range of category axis values. It can be a range of cells (e.g., "D1:E10")."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "categoryData"
       - name: "isautogetserialname"
         in: "Query"
-        description: "Specifies whether auto update serial name. "
+        description: "Specify whether to auto-update the serial name."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "isAutoGetSerialName"
       - name: "title"
         in: "Query"
-        description: "Specifies chart title name."
+        description: "Specify the chart title name."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "title"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "datalabels"
         in: "Query"
-        description: "Represents a specified chart's data label values display behavior. True displays the values. False to hide."
+        description: "Represents the specified chart's data label values display behavior. True to display the values, False to hide them."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "dataLabels"
       - name: "datalabelsposition"
         in: "Query"
-        description: "Represents data label position(Center/InsideBase/InsideEnd/OutsideEnd/Above/Below/Left/Right/BestFit/Moved)."
+        description: "Represents data label position (Center/InsideBase/InsideEnd/OutsideEnd/Above/Below/Left/Right/BestFit/Moved)."
         required: false
         type: "string"
         x-nullable: false
         x-exportParamName: "dataLabelsPosition"
       - name: "pivottablesheet"
         in: "Query"
-        description: "The source is the data of the pivotTable. If PivotSource is not empty ,the chart is PivotChart."
+        description: "The source is the data of the pivotTable. If PivotSource is not empty, the chart is a PivotChart."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "pivotTableSheet"
       - name: "pivottablename"
         in: "Query"
-        description: "The source is the data of the pivotTable."
+        description: "The pivot table name."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "pivotTableName"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3523,12 +3523,12 @@ paths:
     delete:
       tags:
       - "Cells"
-      summary: "Deletes a chart by index in worksheet."
+      summary: "Delete a chart by index in the worksheet."
       operationId: "DeleteWorksheetDeleteChart"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3549,14 +3549,14 @@ paths:
         x-exportParamName: "chartIndex"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3565,12 +3565,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Update chart propreties in worksheet."
+      summary: "Update chart properties in the worksheet."
       operationId: "PostWorksheetChart"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3591,21 +3591,21 @@ paths:
         x-exportParamName: "chartIndex"
       - name: "chart"
         in: "Body"
-        description: "Represents a specified chart."
+        description: "Chart Represents a specified chart."
         required: true
         type: "class:chart"
         x-nullable: true
         x-exportParamName: "chart"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3614,12 +3614,12 @@ paths:
     get:
       tags:
       - "Cells"
-      summary: "Gets chart legend description in worksheet."
+      summary: "Retrieve chart legend description in the worksheet."
       operationId: "GetWorksheetChartLegend"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3640,14 +3640,14 @@ paths:
         x-exportParamName: "chartIndex"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3656,12 +3656,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Updates chart legend in worksheet."
+      summary: "Update chart legend in the worksheet."
       operationId: "PostWorksheetChartLegend"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3689,14 +3689,14 @@ paths:
         x-exportParamName: "legend"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3710,7 +3710,7 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3731,14 +3731,14 @@ paths:
         x-exportParamName: "chartIndex"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3752,7 +3752,7 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3773,14 +3773,14 @@ paths:
         x-exportParamName: "chartIndex"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3794,7 +3794,7 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3808,14 +3808,14 @@ paths:
         x-exportParamName: "sheetName"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3829,7 +3829,7 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3850,14 +3850,14 @@ paths:
         x-exportParamName: "chartIndex"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3871,7 +3871,7 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3899,14 +3899,14 @@ paths:
         x-exportParamName: "title"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3920,7 +3920,7 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3948,14 +3948,14 @@ paths:
         x-exportParamName: "title"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -3969,7 +3969,7 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -3990,14 +3990,14 @@ paths:
         x-exportParamName: "chartIndex"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -4011,35 +4011,35 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: ""
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "sheetname"
         in: "Path"
-        description: ""
+        description: "The worksheet name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "sheetName"
       - name: "chartindex"
         in: "Path"
-        description: ""
+        description: "The chart index."
         required: true
         type: "integer"
         x-nullable: false
         x-exportParamName: "chartIndex"
       - name: "folder"
         in: "Query"
-        description: ""
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: ""
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -4053,35 +4053,35 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: ""
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "sheetname"
         in: "Path"
-        description: ""
+        description: "The worksheet name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "sheetName"
       - name: "chartindex"
         in: "Path"
-        description: ""
+        description: "The chart index."
         required: true
         type: "integer"
         x-nullable: false
         x-exportParamName: "chartIndex"
       - name: "folder"
         in: "Query"
-        description: ""
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: ""
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -4095,35 +4095,35 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: ""
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "sheetname"
         in: "Path"
-        description: ""
+        description: "The worksheet name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "sheetName"
       - name: "chartindex"
         in: "Path"
-        description: ""
+        description: "The chart index."
         required: true
         type: "integer"
         x-nullable: false
         x-exportParamName: "chartIndex"
       - name: "folder"
         in: "Query"
-        description: ""
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: ""
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -4137,35 +4137,35 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: ""
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "sheetname"
         in: "Path"
-        description: ""
+        description: "The worksheet name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "sheetName"
       - name: "chartindex"
         in: "Path"
-        description: ""
+        description: "The chart index."
         required: true
         type: "integer"
         x-nullable: false
         x-exportParamName: "chartIndex"
       - name: "folder"
         in: "Query"
-        description: ""
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: ""
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -4179,35 +4179,35 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: ""
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "sheetname"
         in: "Path"
-        description: ""
+        description: "The worksheet name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "sheetName"
       - name: "chartindex"
         in: "Path"
-        description: ""
+        description: "The chart index."
         required: true
         type: "integer"
         x-nullable: false
         x-exportParamName: "chartIndex"
       - name: "folder"
         in: "Query"
-        description: ""
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: ""
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -4221,42 +4221,42 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: ""
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "sheetname"
         in: "Path"
-        description: ""
+        description: "The worksheet name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "sheetName"
       - name: "chartindex"
         in: "Path"
-        description: ""
+        description: "The chart index."
         required: true
         type: "integer"
         x-nullable: false
         x-exportParamName: "chartIndex"
       - name: "axis"
         in: "Body"
-        description: ""
+        description: "Axis "
         required: true
         type: "class:axis"
         x-nullable: true
         x-exportParamName: "axis"
       - name: "folder"
         in: "Query"
-        description: ""
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: ""
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -4270,42 +4270,42 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: ""
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "sheetname"
         in: "Path"
-        description: ""
+        description: "The worksheet name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "sheetName"
       - name: "chartindex"
         in: "Path"
-        description: ""
+        description: "The chart index."
         required: true
         type: "integer"
         x-nullable: false
         x-exportParamName: "chartIndex"
       - name: "axis"
         in: "Body"
-        description: ""
+        description: "Axis "
         required: true
         type: "class:axis"
         x-nullable: true
         x-exportParamName: "axis"
       - name: "folder"
         in: "Query"
-        description: ""
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: ""
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -4319,42 +4319,42 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: ""
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "sheetname"
         in: "Path"
-        description: ""
+        description: "The worksheet name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "sheetName"
       - name: "chartindex"
         in: "Path"
-        description: ""
+        description: "The chart index."
         required: true
         type: "integer"
         x-nullable: false
         x-exportParamName: "chartIndex"
       - name: "axis"
         in: "Body"
-        description: ""
+        description: "Axis "
         required: true
         type: "class:axis"
         x-nullable: true
         x-exportParamName: "axis"
       - name: "folder"
         in: "Query"
-        description: ""
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: ""
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -4368,42 +4368,42 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: ""
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "sheetname"
         in: "Path"
-        description: ""
+        description: "The worksheet name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "sheetName"
       - name: "chartindex"
         in: "Path"
-        description: ""
+        description: "The chart index."
         required: true
         type: "integer"
         x-nullable: false
         x-exportParamName: "chartIndex"
       - name: "axis"
         in: "Body"
-        description: ""
+        description: "Axis "
         required: true
         type: "class:axis"
         x-nullable: true
         x-exportParamName: "axis"
       - name: "folder"
         in: "Query"
-        description: ""
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: ""
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -4417,42 +4417,42 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: ""
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "sheetname"
         in: "Path"
-        description: ""
+        description: "The worksheet name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "sheetName"
       - name: "chartindex"
         in: "Path"
-        description: ""
+        description: "The chart index."
         required: true
         type: "integer"
         x-nullable: false
         x-exportParamName: "chartIndex"
       - name: "axis"
         in: "Body"
-        description: ""
+        description: "Axis "
         required: true
         type: "class:axis"
         x-nullable: true
         x-exportParamName: "axis"
       - name: "folder"
         in: "Query"
-        description: ""
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: ""
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -4923,12 +4923,12 @@ paths:
     get:
       tags:
       - "Cells"
-      summary: "Exports workbook to some format."
+      summary: "Retrieve workbooks in various formats."
       operationId: "GetWorkbook"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -4942,7 +4942,7 @@ paths:
         x-exportParamName: "format"
       - name: "password"
         in: "Query"
-        description: "The excel password."
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
@@ -4963,44 +4963,51 @@ paths:
         x-exportParamName: "onlySaveTable"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "outpath"
         in: "Query"
-        description: "Path to save result"
+        description: "Path to save the result. If it's a single file, the `outPath` should encompass both the filename and extension. In the case of multiple files, the `outPath` should only include the folder."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "outPath"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "storageName"
       - name: "outstoragename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the output file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "outStorageName"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/convert:
     put:
       tags:
       - "Cells"
-      summary: "Converts workbook from request content to some format."
+      summary: "Convert the workbook from the requested content into files in different formats."
       operationId: "PutConvertWorkbook"
       parameters:
       - name: "file"
@@ -5019,44 +5026,51 @@ paths:
         x-exportParamName: "format"
       - name: "password"
         in: "Query"
-        description: "The workbook password."
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "outpath"
         in: "Query"
-        description: "Path to save result"
+        description: "Path to save the result. If it's a single file, the `outPath` should encompass both the filename and extension. In the case of multiple files, the `outPath` should only include the folder."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "outPath"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "storageName"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
       - name: "streamformat"
         in: "Query"
-        description: ""
+        description: "The format of the input file stream. "
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "streamFormat"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/{name}/SaveAs:
     post:
       tags:
       - "Cells"
-      summary: "Converts document and saves result to storage."
+      summary: "Save an Excel file in various formats."
       operationId: "PostWorkbookSaveAs"
       parameters:
       - name: "name"
@@ -5068,7 +5082,7 @@ paths:
         x-exportParamName: "name"
       - name: "newfilename"
         in: "Query"
-        description: "The new file name."
+        description: "newfilename to save the result.The `newfilename` should encompass both the filename and extension."
         required: true
         type: "string"
         x-nullable: true
@@ -5096,543 +5110,648 @@ paths:
         x-exportParamName: "isAutoFitColumns"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "storageName"
       - name: "outstoragename"
         in: "Query"
-        description: ""
+        description: "The storage name where the output file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "outStorageName"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/convert/pdf:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Convert Excel file to PDF files."
       operationId: "PostConvertWorkbookToPDF"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "The password needed to open an Excel file."
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/convert/png:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Convert Excel file to PNG files."
       operationId: "PostConvertWorkbookToPNG"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "The password needed to open an Excel file."
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/convert/docx:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Convert Excel file to Docx files."
       operationId: "PostConvertWorkbookToDocx"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "The password needed to open an Excel file."
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/convert/pptx:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Convert Excel file to Pptx files."
       operationId: "PostConvertWorkbookToPptx"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "The password needed to open an Excel file."
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/convert/html:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Convert Excel file to HTML files."
       operationId: "PostConvertWorkbookToHtml"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "The password needed to open an Excel file."
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/convert/markdown:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Convert Excel file to Markdown files."
       operationId: "PostConvertWorkbookToMarkdown"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "The password needed to open an Excel file."
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/convert/json:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Convert Excel file to Json files."
       operationId: "PostConvertWorkbookToJson"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "The password needed to open an Excel file."
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/convert/sql:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Convert Excel file to SQL Script files."
       operationId: "PostConvertWorkbookToSQL"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "The password needed to open an Excel file."
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/convert/csv:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Convert Excel file to Csv files."
       operationId: "PostConvertWorkbookToCSV"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "The password needed to open an Excel file."
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/export:
     post:
       tags:
       - "Cells"
-      summary: "Export excel internal elements or itself to kinds of format files."
+      summary: "Export Excel internal elements or the workbook itself to various format files."
       operationId: "PostExport"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "workbook/worksheet/chart/comment/picture/shape/listobject/oleobject"
+        description: "Exported object type:workbook/worksheet/chart/comment/picture/shape/listobject/oleobject."
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "objecttype"
         in: "Query"
-        description: "workbook/worksheet/chart/comment/picture/shape/listobject/oleobject"
+        description: "Exported object type:workbook/worksheet/chart/comment/picture/shape/listobject/oleobject."
         required: false
         type: "string"
         x-nullable: false
         x-exportParamName: "objectType"
       - name: "format"
         in: "Query"
-        description: "The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
+        description: "The conversion format(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)."
         required: false
         type: "string"
         x-nullable: false
         x-exportParamName: "format"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/{name}/exportxml:
     post:
       tags:
       - "Cells"
-      summary: "Export XML data from Excel file. When there are Xml Maps in Excel file, export xml data. When there is not xml map in Excel file, convert Excel file to xml file. "
+      summary: "Export XML data from an Excel file.When there are XML Maps in an Excel file, export XML data. When there is no XML map in the Excel file, convert the Excel file to an XML file."
       operationId: "PostWorkbookExportXML"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook(Excel/ODS/...) name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "password"
         in: "Query"
-        description: "password"
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "storageName"
       - name: "outpath"
         in: "Query"
-        description: "Output file path."
+        description: "Path to save the result. If it's a single file, the `outPath` should encompass both the filename and extension. In the case of multiple files, the `outPath` should only include the folder."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "outPath"
       - name: "outstoragename"
         in: "Query"
-        description: "Storage name for output file."
+        description: "The storage name where the output file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "outStorageName"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: "check excel restriction."
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/{name}/importjson:
     post:
       tags:
       - "Cells"
-      summary: "Imports/Updates an XML data file into the workbook.The XML data file can be a cloud file or HTTP URI data."
+      summary: "Import a JSON data file into the workbook. The JSON data file can either be a cloud file or data from an HTTP URI."
       operationId: "PostWorkbookImportJson"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook(Excel/ODS/...) name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "importjsonrequest"
         in: "Body"
-        description: ""
+        description: "Import Json request."
         required: true
         type: "class:importjsonrequest"
         x-nullable: true
         x-exportParamName: "importJsonRequest"
       - name: "password"
         in: "Query"
-        description: "password"
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "storageName"
       - name: "outpath"
         in: "Query"
-        description: "Output file path."
+        description: "Path to save the result. If it's a single file, the `outPath` should encompass both the filename and extension. In the case of multiple files, the `outPath` should only include the folder."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "outPath"
       - name: "outstoragename"
         in: "Query"
-        description: "Storage name for output file."
+        description: "The storage name where the output file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "outStorageName"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: "check Excel restriction."
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/{name}/importxml:
     post:
       tags:
       - "Cells"
-      summary: "Imports/Updates an XML data file into the workbook.The XML data file can be a cloud file or HTTP URI data."
+      summary: "Import an XML data file into an Excel file. The XML data file can either be a cloud file or data from an HTTP URI."
       operationId: "PostWorkbookImportXML"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook(Excel/ODS/...) name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "importxmlrequest"
         in: "Body"
-        description: ""
+        description: "Import XML request."
         required: true
         type: "class:importxmlrequest"
         x-nullable: true
         x-exportParamName: "importXMLRequest"
       - name: "password"
         in: "Query"
-        description: "password"
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "storageName"
       - name: "outpath"
         in: "Query"
-        description: "Output file path."
+        description: "Path to save the result. If it's a single file, the `outPath` should encompass both the filename and extension. In the case of multiple files, the `outPath` should only include the folder."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "outPath"
       - name: "outstoragename"
         in: "Query"
-        description: "Storage name for output file."
+        description: "The storage name where the output file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "outStorageName"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: "check Excel restriction."
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/{name}/importdata:
     post:
       tags:
       - "Cells"
-      summary: "Imports data into workbook."
+      summary: "Import data into the Excel file."
       operationId: "PostImportData"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "importoption"
         in: "Body"
-        description: ""
+        description: "Import option. They are include of ImportCSVDataOption, ImportBatchDataOption, ImportPictureOption, ImportStringArrayOption, Import2DimensionStringArrayOption, and so on.  "
         required: false
         type: "class:importoption"
         x-nullable: true
         x-exportParamName: "importOption"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "storageName"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/{name}/worksheets/{sheetName}/hyperlinks:
     get:
       tags:
@@ -5910,7 +6029,7 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Combine data files and template files to kinds of format files. "
+      summary: "Assemble data files with template files to generate files in various formats."
       operationId: "PostAssemble"
       parameters:
       - name: "file"
@@ -5936,49 +6055,56 @@ paths:
         x-exportParamName: "format"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/compress:
     post:
       tags:
       - "Cells"
-      summary: "Compress XLS, XLSX, XLSM, XLSB, ODS and more"
+      summary: "Compress files and generate target files in various formats, supported file formats are include Xls, Xlsx, Xlsm, Xlsb, Ods and more."
       operationId: "PostCompress"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "Compress level. The compression ratio 1-100."
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "compresslevel"
         in: "Query"
-        description: ""
+        description: "Compress level. The compression ratio 1-100."
         required: false
         type: "integer"
         x-nullable: false
         x-exportParamName: "CompressLevel"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
@@ -5987,68 +6113,75 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Merge cells in worksheet."
+      summary: "Merge cells in the worksheet."
       operationId: "PostMerge"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
+        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
-      - name: "format"
+      - name: "outformat"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
-        x-nullable: false
-        x-exportParamName: "format"
+        x-nullable: true
+        x-exportParamName: "outFormat"
       - name: "mergetoonesheet"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "mergeToOneSheet"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The regional settings for workbook."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Upload files."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/split:
     post:
       tags:
       - "Cells"
-      summary: "Split Excel spreadsheet files by worksheet, save as kinds of format files."
+      summary: "Split Excel spreadsheet files based on worksheets and create output files in various formats."
       operationId: "PostSplit"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
+        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
-      - name: "format"
+      - name: "outformat"
         in: "Query"
-        description: "The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
+        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
         required: true
         type: "string"
         x-nullable: true
-        x-exportParamName: "format"
+        x-exportParamName: "outFormat"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
@@ -6069,49 +6202,56 @@ paths:
         x-exportParamName: "to"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/search:
     post:
       tags:
       - "Cells"
-      summary: "Search specify the text from excel files."
+      summary: "Search for specified text within Excel files."
       operationId: "PostSearch"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "Find content"
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "text"
         in: "Query"
-        description: ""
+        description: "Find content"
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "text"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "sheetname"
         in: "Query"
-        description: ""
+        description: "The worksheet name. Locate the specified text content in the worksheet."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "sheetname"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
@@ -6120,47 +6260,47 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Use new text to replace specify the text from excel files."
+      summary: "Replace specified text with new text in Excel files."
       operationId: "PostReplace"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "Find content"
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "text"
         in: "Query"
-        description: ""
+        description: "Find content"
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "text"
       - name: "newtext"
         in: "Query"
-        description: ""
+        description: "Replace content"
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "newtext"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "sheetname"
         in: "Query"
-        description: ""
+        description: "The worksheet name. Locate the specified text content in the worksheet."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "sheetname"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
@@ -6169,21 +6309,49 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Import data into excel file."
+      summary: "Import data into an Excel file and generate output files in various formats."
       operationId: "PostImport"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
+      - name: "outformat"
+        in: "Query"
+        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "outFormat"
+      - name: "password"
+        in: "Query"
+        description: "The password needed to open an Excel file."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "password"
+      - name: "checkexcelrestriction"
+        in: "Query"
+        description: "Whether check restriction of excel file when user modify cells related objects."
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/watermark:
     post:
       tags:
       - "Cells"
-      summary: "Add Text Watermark to Excel files."
+      summary: "Add Text Watermark to Excel files and generate output files in various formats."
       operationId: "PostWatermark"
       parameters:
       - name: "file"
@@ -6207,25 +6375,39 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "color"
+      - name: "outformat"
+        in: "Query"
+        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "outFormat"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/clearobjects:
     post:
       tags:
       - "Cells"
-      summary: "Clear excel internal elements for excel files"
+      summary: "Clear internal elements in Excel files and generate output files in various formats."
       operationId: "PostClearObjects"
       parameters:
       - name: "file"
@@ -6244,37 +6426,44 @@ paths:
         x-exportParamName: "objecttype"
       - name: "sheetname"
         in: "Query"
-        description: ""
+        description: "The worksheet name, specify the scope of the deletion."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "sheetname"
       - name: "outformat"
         in: "Query"
-        description: ""
+        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "outFormat"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/reverse:
     post:
       tags:
       - "Cells"
-      summary: "Reverse rows or columns of Excel files, save as kinds of format files."
+      summary: "Reverse rows or columns in Excel files and create output files in various formats."
       operationId: "PostReverse"
       parameters:
       - name: "file"
@@ -6291,53 +6480,60 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "rotateType"
-      - name: "format"
+      - name: "outformat"
         in: "Query"
-        description: "CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers"
+        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
         required: false
         type: "string"
         x-nullable: true
-        x-exportParamName: "format"
+        x-exportParamName: "outFormat"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/repair:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Repair abnormal files and generate files in various formats."
       operationId: "PostRepair"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
-      - name: "format"
+      - name: "outformat"
         in: "Query"
-        description: ""
+        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
         required: false
         type: "string"
         x-nullable: true
-        x-exportParamName: "format"
+        x-exportParamName: "outFormat"
   /cells/rotate:
     post:
       tags:
       - "Cells"
-      summary: "Reverse rows or columns of Excel files, save as kinds of format files."
+      summary: "Rotate rows, columns, or other objects in Excel files and save them in various formats."
       operationId: "PostRotate"
       parameters:
       - name: "file"
@@ -6354,93 +6550,114 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "rotateType"
-      - name: "format"
+      - name: "outformat"
         in: "Query"
-        description: "CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers"
+        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
         required: false
         type: "string"
         x-nullable: true
-        x-exportParamName: "format"
+        x-exportParamName: "outFormat"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/metadata/update:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Update document properties in Excel file, and save them is various formats."
       operationId: "PostMetadata"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "document properties"
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "cellsdocuments"
         in: "Body"
-        description: ""
+        description: "document properties"
         required: true
         type: "container"
         x-nullable: true
         x-exportParamName: "cellsDocuments"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
+      - name: "outformat"
+        in: "Query"
+        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "outFormat"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
   /cells/metadata/get:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Get cells document properties."
       operationId: "GetMetadata"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "Cells document property name."
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "type"
         in: "Query"
-        description: ""
+        description: "Cells document property name."
         required: false
         type: "string"
         x-nullable: false
         x-exportParamName: "type"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
@@ -6449,33 +6666,40 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Delete cells document properties in Excel file, and save them is various formats."
       operationId: "DeleteMetadata"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "Cells document property name."
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "type"
         in: "Query"
-        description: ""
+        description: "Cells document property name."
         required: false
         type: "string"
         x-nullable: false
         x-exportParamName: "type"
+      - name: "outformat"
+        in: "Query"
+        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "outFormat"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: ""
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
@@ -8024,7 +8248,7 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Updates page header in worksheet. "
+      summary: "Updates page header in worksheet."
       operationId: "PostHeader"
       parameters:
       - name: "name"
@@ -8115,7 +8339,7 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Update  page footer description in worksheet. "
+      summary: "Update  page footer description in worksheet."
       operationId: "PostFooter"
       parameters:
       - name: "name"
@@ -9781,40 +10005,40 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Digital Signature."
+      summary: "Excel file digital signature."
       operationId: "PostDigitalSignature"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "digitalsignaturefile"
         in: "Query"
-        description: "Digital signature file parameters."
+        description: "The digital signature file path should include both the folder and the file name, along with the extension."
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "digitalsignaturefile"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -9823,33 +10047,33 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Encripts workbook."
+      summary: "Excel Encryption."
       operationId: "PostEncryptWorkbook"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "encryption"
         in: "Body"
-        description: "Encryption parameters."
+        description: "WorkbookEncryptionRequestEncryption parameters."
         required: true
         type: "class:workbookencryptionrequest"
         x-nullable: true
         x-exportParamName: "encryption"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -9858,33 +10082,33 @@ paths:
     delete:
       tags:
       - "Cells"
-      summary: "Decrypts workbook."
+      summary: "Excel files decryption."
       operationId: "DeleteDecryptWorkbook"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "encryption"
         in: "Body"
-        description: "Encryption settings, only password can be specified."
+        description: "WorkbookEncryptionRequestEncryption parameters."
         required: true
         type: "class:workbookencryptionrequest"
         x-nullable: true
         x-exportParamName: "encryption"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -9893,12 +10117,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Protects workbook."
+      summary: "Excel protection."
       operationId: "PostProtectWorkbook"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -9912,14 +10136,14 @@ paths:
         x-exportParamName: "protectWorkbookRequest"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -9928,12 +10152,12 @@ paths:
     delete:
       tags:
       - "Cells"
-      summary: "Unprotects workbook."
+      summary: "Excel unprotection."
       operationId: "DeleteUnProtectWorkbook"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
@@ -9947,14 +10171,14 @@ paths:
         x-exportParamName: "password"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -9963,33 +10187,33 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "Protects document from changes."
+      summary: "Excel file write protection."
       operationId: "PutDocumentProtectFromChanges"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "password"
         in: "Body"
-        description: "Modification password."
+        description: "The password needed to open an Excel file."
         required: true
         type: "class:passwordrequest"
         x-nullable: true
         x-exportParamName: "password"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -9998,26 +10222,26 @@ paths:
     delete:
       tags:
       - "Cells"
-      summary: "Unprotects document from changes."
+      summary: "Excel file cancel write protection."
       operationId: "DeleteDocumentUnProtectFromChanges"
       parameters:
       - name: "name"
         in: "Path"
-        description: "The workbook name."
+        description: "The file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "folder"
         in: "Query"
-        description: "Original workbook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: "Storage name."
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -10026,19 +10250,19 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Unprotect password protected Excel file."
+      summary: "Unlock Excel files."
       operationId: "PostUnlock"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "The password needed to open an Excel file."
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: true
         type: "string"
         x-nullable: true
@@ -10047,19 +10271,19 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Setting access password."
+      summary: "Lock Excel files."
       operationId: "PostLock"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "The password needed to open an Excel file."
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: true
         type: "string"
         x-nullable: true
@@ -10068,12 +10292,12 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Protect MS Excel and OpenDocument Spreadsheet by making them password protected."
+      summary: "Excel files encryption."
       operationId: "PostProtect"
       parameters:
       - name: "file"
         in: "FormData"
-        description: "File to upload"
+        description: "The password needed to open an Excel file."
         required: true
         type: "file"
         x-nullable: false
@@ -10087,7 +10311,7 @@ paths:
         x-exportParamName: "protectWorkbookRequest"
       - name: "password"
         in: "Query"
-        description: ""
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
@@ -10138,7 +10362,7 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Combines a range of cells into a single cell. "
+      summary: "Combines a range of cells into a single cell."
       operationId: "PostWorksheetCellsRangeMerge"
       parameters:
       - name: "name"
@@ -10334,7 +10558,7 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Puts a value into the range, if appropriate the value will be converted to other data type and cell's number format will be reset.            "
+      summary: "Puts a value into the range, if appropriate the value will be converted to other data type and cell's number format will be reset."
       operationId: "PostWorksheetCellsRangeValue"
       parameters:
       - name: "name"
@@ -10397,7 +10621,7 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Moves the current range to the dest range.            "
+      summary: "Moves the current range to the dest range."
       operationId: "PostWorksheetCellsRangeMoveTo"
       parameters:
       - name: "name"
@@ -10453,7 +10677,7 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Sets outline border around a range of cells."
+      summary: "Sets data sort around a range of cells."
       operationId: "PostWorksheetCellsRangeSort"
       parameters:
       - name: "name"
@@ -10635,7 +10859,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "Inserts a range of cells and shift cells according to the shift option.            "
+      summary: "Inserts a range of cells and shift cells according to the shift option."
       operationId: "PutWorksheetCellsRange"
       parameters:
       - name: "name"
@@ -11545,7 +11769,7 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: "Update workbook's name. "
+      summary: "Update workbook's name."
       operationId: "PostWorkbookName"
       parameters:
       - name: "name"
@@ -17118,6 +17342,9 @@ definitions:
       DestinationFile:
         type: "string"
         description: ""
+      Region:
+        type: "string"
+        description: ""
       SaveOptions:
         type: "class:saveoptions"
         description: ""
@@ -18592,25 +18819,6 @@ definitions:
       Status:
         type: "string"
         description: ""
-  BarcodeResponse:
-    type: "object"    
-    properties:
-      BarcodeValue:
-        type: "string"
-        description: "Gets or sets barcode data."
-      BarcodeType:
-        type: "string"
-        description: "Gets or sets type of the barcode."
-      Region:
-        type: "array<class:point>"
-        description: "Gets or sets region with barcode."
-      Checksum:
-        type: "string"
-        description: "Gets or sets checksum of barcode."
-  BarcodeResponseList:
-    type: "object"    
-    properties:
-
   BorderResponse:
     allOf:
     - type: "object"
@@ -20106,6 +20314,9 @@ definitions:
       OutStorage:
         type: "string"
         description: "Aspose Cloud storage name."
+      Region:
+        type: "string"
+        description: "The regional settings for workbook."
       SaveOptions:
         type: "class:saveoptions"
         description: "Indicates save options."
@@ -20181,6 +20392,9 @@ definitions:
       OutStorage:
         type: "string"
         description: "Aspose Cloud storage name."
+      Region:
+        type: "string"
+        description: "The regional settings for workbook."
       SaveOptions:
         type: "class:saveoptions"
         description: "Indicates save options."
@@ -20234,7 +20448,7 @@ definitions:
     properties:
       JsonFileSource:
         type: "class:filesource"
-        description: "XML file source"
+        description: "Json file source"
       ImportPosition:
         type: "class:importposition"
         description: "Import position description."
