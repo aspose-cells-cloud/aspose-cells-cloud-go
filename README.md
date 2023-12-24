@@ -24,16 +24,17 @@
 
 Full list of issues covering all changes in this release:
 
-- Optimize conversion APIs.
-- Optimize protection APIs.
-- Optimize assemble data API.
-- Optimize merge files API.
-- Optimize split files API.
-- Optimize import data API.
-- Optimize watermark API.
-- Optimize clear object API.
-- Optimize reverse data API.
-- Optimize rotate data API.
+- Conversion APIs add region parameter.
+- Protection APIs add region parameter.
+- Assemble data API adds region parameter.
+- Merge files API adds region parameter.
+- Split files API adds region parameter.
+- Import data API adds region parameter.
+- Watermark API adds region parameter.
+- Clear object API adds region parameter.
+- Reverse data API adds region parameter.
+- Rotate data API adds region parameter.
+
 
 
 ## Read & Write Spreadsheet Formats
