@@ -20,7 +20,7 @@
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## Feature & Enhancements in Version 24.1
+## Feature & Enhancements in Version 24.1.1
 
 Full list of issues covering all changes in this release:
 
