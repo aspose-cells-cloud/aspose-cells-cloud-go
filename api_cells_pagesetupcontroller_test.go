@@ -219,3 +219,61 @@ func TestPageSetupController_PostFooter(t *testing.T) {
 	}
 }
 
+func TestPageSetupController_PostFitWideToPages(t *testing.T) {
+    remoteFolder := "TestData/In"
+  
+    localName := "Book1.xlsx"
+    remoteName := "Book1.xlsx"
+
+    localNameRequest := new(UploadFileRequest)
+    localNameRequest.UploadFiles = make(map[string]string) 
+    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
+    localNameRequest.Path = remoteFolder + "/" + remoteName 
+    localNameRequest.StorageName =""
+    GetBaseTest().CellsApi.UploadFile(localNameRequest )
+ 
+
+    request := new (PostFitWideToPagesRequest)
+    request.Name =         remoteName    
+    request.SheetName =         "Sheet1"    
+    request.Folder =         remoteFolder    
+    request.StorageName =         ""    
+    _, httpResponse, err := GetBaseTest().CellsApi.PostFitWideToPages(request)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestPageSetupController_PostFitWideToPages \n", GetBaseTest().GetTestNumber())
+	}
+}
+
+func TestPageSetupController_PostFitTallToPages(t *testing.T) {
+    remoteFolder := "TestData/In"
+  
+    localName := "Book1.xlsx"
+    remoteName := "Book1.xlsx"
+
+    localNameRequest := new(UploadFileRequest)
+    localNameRequest.UploadFiles = make(map[string]string) 
+    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
+    localNameRequest.Path = remoteFolder + "/" + remoteName 
+    localNameRequest.StorageName =""
+    GetBaseTest().CellsApi.UploadFile(localNameRequest )
+ 
+
+    request := new (PostFitTallToPagesRequest)
+    request.Name =         remoteName    
+    request.SheetName =         "Sheet1"    
+    request.Folder =         remoteFolder    
+    request.StorageName =         ""    
+    _, httpResponse, err := GetBaseTest().CellsApi.PostFitTallToPages(request)
+	if err != nil {
+		t.Error(err)
+	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+		t.Fail()
+	} else {
+		fmt.Printf("%d\tTestPageSetupController_PostFitTallToPages \n", GetBaseTest().GetTestNumber())
+	}
+}
+

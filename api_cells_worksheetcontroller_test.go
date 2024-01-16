@@ -709,7 +709,7 @@ func TestWorksheetController_PostWorksheetTextSearch(t *testing.T) {
 	}
 }
 
-func TestWorksheetController_PostWorsheetTextReplace(t *testing.T) {
+func TestWorksheetController_PostWorksheetTextReplace(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -723,20 +723,20 @@ func TestWorksheetController_PostWorsheetTextReplace(t *testing.T) {
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
 
-    request := new (PostWorsheetTextReplaceRequest)
+    request := new (PostWorksheetTextReplaceRequest)
     request.Name =         remoteName    
     request.SheetName =         "Sheet1"    
     request.OldValue =         "123"    
     request.NewValue =         "456"    
     request.Folder =         remoteFolder    
     request.StorageName =         ""    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostWorsheetTextReplace(request)
+    _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetTextReplace(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestWorksheetController_PostWorsheetTextReplace \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestWorksheetController_PostWorksheetTextReplace \n", GetBaseTest().GetTestNumber())
 	}
 }
 

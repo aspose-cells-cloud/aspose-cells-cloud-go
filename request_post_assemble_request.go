@@ -1,6 +1,6 @@
 /** --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="post_assemble_request.go">
-*   Copyright (c) 2023 Aspose.Cells Cloud
+*   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -33,7 +33,7 @@ import (
 
 type PostAssembleRequest struct {
 	Datasource string `json:"datasource,omitempty" xml:"datasource"`
-	Format string `json:"format,omitempty" xml:"format"`
+	OutFormat string `json:"out_format,omitempty" xml:"out_format"`
 	Password string `json:"password,omitempty" xml:"password"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	Region string `json:"region,omitempty" xml:"region"`
@@ -61,9 +61,9 @@ func (data *PostAssembleRequest) CreateRequestData( client *APIClient) (localVar
         localVarQueryParams.Add("datasource", parameterToString(data.Datasource, ""))
     }
 
-    // query params : format
-    if data.Format != "" {
-        localVarQueryParams.Add("format", parameterToString(data.Format, ""))
+    // query params : outFormat
+    if data.OutFormat != "" {
+        localVarQueryParams.Add("outFormat", parameterToString(data.OutFormat, ""))
     }
 
     // query params : password

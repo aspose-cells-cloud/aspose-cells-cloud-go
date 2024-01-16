@@ -589,7 +589,7 @@ func TestLightCells_PostAssemble_csv(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -617,7 +617,7 @@ func TestLightCells_PostAssemble_xls(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -645,7 +645,7 @@ func TestLightCells_PostAssemble_html(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -673,7 +673,7 @@ func TestLightCells_PostAssemble_mhtml(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -701,7 +701,7 @@ func TestLightCells_PostAssemble_ods(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -729,7 +729,7 @@ func TestLightCells_PostAssemble_pdf(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -757,7 +757,7 @@ func TestLightCells_PostAssemble_xml(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -785,7 +785,7 @@ func TestLightCells_PostAssemble_txt(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -813,7 +813,7 @@ func TestLightCells_PostAssemble_tif(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -841,7 +841,7 @@ func TestLightCells_PostAssemble_xlsb(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -869,7 +869,7 @@ func TestLightCells_PostAssemble_xlsm(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -897,7 +897,7 @@ func TestLightCells_PostAssemble_xlsx(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -925,7 +925,7 @@ func TestLightCells_PostAssemble_xltm(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -953,7 +953,7 @@ func TestLightCells_PostAssemble_xltx(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -981,7 +981,7 @@ func TestLightCells_PostAssemble_xps(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -1009,7 +1009,7 @@ func TestLightCells_PostAssemble_png(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -1037,7 +1037,7 @@ func TestLightCells_PostAssemble_jpg(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -1065,7 +1065,7 @@ func TestLightCells_PostAssemble_gif(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -1093,7 +1093,7 @@ func TestLightCells_PostAssemble_emf(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -1121,7 +1121,7 @@ func TestLightCells_PostAssemble_bmp(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -1149,7 +1149,7 @@ func TestLightCells_PostAssemble_md(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -1177,7 +1177,7 @@ func TestLightCells_PostAssemble_numbers(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -1205,7 +1205,7 @@ func TestLightCells_PostAssemble_wmf(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -1233,7 +1233,7 @@ func TestLightCells_PostAssemble_svg(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -1261,7 +1261,7 @@ func TestLightCells_PostAssemble_docx(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -1289,7 +1289,7 @@ func TestLightCells_PostAssemble_pptx(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -1317,7 +1317,7 @@ func TestLightCells_PostAssemble_json(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
@@ -1345,7 +1345,7 @@ func TestLightCells_PostAssemble_sql(t *testing.T) {
     request := new (PostAssembleRequest)
     request.File =         mapFiles    
     request.Datasource =         "ds"    
-    request.Format =         format    
+    request.OutFormat =         format    
     _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)

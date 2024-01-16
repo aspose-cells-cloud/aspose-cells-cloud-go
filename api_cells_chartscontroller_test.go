@@ -65,7 +65,7 @@ func TestChartsController_GetWorksheetChart(t *testing.T) {
 	}
 }
 
-func TestChartsController_PutWorksheetAddChart(t *testing.T) {
+func TestChartsController_PutWorksheetChart(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -79,7 +79,7 @@ func TestChartsController_PutWorksheetAddChart(t *testing.T) {
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
 
-    request := new (PutWorksheetAddChartRequest)
+    request := new (PutWorksheetChartRequest)
     request.Name =         remoteName    
     request.SheetName =         "Sheet4"    
     request.ChartType =         "Pie"    
@@ -92,17 +92,17 @@ func TestChartsController_PutWorksheetAddChart(t *testing.T) {
     request.Title =         "Aspose Chart"    
     request.Folder =         remoteFolder    
     request.StorageName =         ""    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetAddChart(request)
+    _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetChart(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestChartsController_PutWorksheetAddChart \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestChartsController_PutWorksheetChart \n", GetBaseTest().GetTestNumber())
 	}
 }
 
-func TestChartsController_DeleteWorksheetDeleteChart(t *testing.T) {
+func TestChartsController_DeleteWorksheetChart(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -116,19 +116,19 @@ func TestChartsController_DeleteWorksheetDeleteChart(t *testing.T) {
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
 
-    request := new (DeleteWorksheetDeleteChartRequest)
+    request := new (DeleteWorksheetChartRequest)
     request.Name =         remoteName    
     request.SheetName =         "Sheet4"    
     request.ChartIndex =  int64(0)        
     request.Folder =         remoteFolder    
     request.StorageName =         ""    
-    _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetDeleteChart(request)
+    _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetChart(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestChartsController_DeleteWorksheetDeleteChart \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestChartsController_DeleteWorksheetChart \n", GetBaseTest().GetTestNumber())
 	}
 }
 
@@ -289,7 +289,7 @@ func TestChartsController_DeleteWorksheetChartLegend(t *testing.T) {
 	}
 }
 
-func TestChartsController_DeleteWorksheetClearCharts(t *testing.T) {
+func TestChartsController_DeleteWorksheetCharts(t *testing.T) {
     remoteFolder := "TestData/In"
   
     localName := "Book1.xlsx"
@@ -303,18 +303,18 @@ func TestChartsController_DeleteWorksheetClearCharts(t *testing.T) {
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
 
-    request := new (DeleteWorksheetClearChartsRequest)
+    request := new (DeleteWorksheetChartsRequest)
     request.Name =         remoteName    
     request.SheetName =         "Sheet4"    
     request.Folder =         remoteFolder    
     request.StorageName =         ""    
-    _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetClearCharts(request)
+    _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetCharts(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		t.Fail()
 	} else {
-		fmt.Printf("%d\tTestChartsController_DeleteWorksheetClearCharts \n", GetBaseTest().GetTestNumber())
+		fmt.Printf("%d\tTestChartsController_DeleteWorksheetCharts \n", GetBaseTest().GetTestNumber())
 	}
 }
 

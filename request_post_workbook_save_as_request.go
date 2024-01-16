@@ -1,6 +1,6 @@
 /** --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="post_workbook_save_as_request.go">
-*   Copyright (c) 2023 Aspose.Cells Cloud
+*   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -42,6 +42,8 @@ type PostWorkbookSaveAsRequest struct {
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	Region string `json:"region,omitempty" xml:"region"`
+	PageWideFitOnPerSheet bool `json:"page_wide_fit_on_per_sheet,omitempty" xml:"page_wide_fit_on_per_sheet"`
+	PageTallFitOnPerSheet bool `json:"page_tall_fit_on_per_sheet,omitempty" xml:"page_tall_fit_on_per_sheet"`
 	SaveOptions interface{} `json:"save_options,omitempty" xml:"save_options"` 
 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -101,6 +103,16 @@ func (data *PostWorkbookSaveAsRequest) CreateRequestData( client *APIClient) (lo
     // query params : region
     if data.Region != "" {
         localVarQueryParams.Add("region", parameterToString(data.Region, ""))
+    }
+
+    // query params : pageWideFitOnPerSheet
+    if &data.PageWideFitOnPerSheet != nil {
+        localVarQueryParams.Add("pageWideFitOnPerSheet", parameterToString(data.PageWideFitOnPerSheet, ""))
+    }
+
+    // query params : pageTallFitOnPerSheet
+    if &data.PageTallFitOnPerSheet != nil {
+        localVarQueryParams.Add("pageTallFitOnPerSheet", parameterToString(data.PageTallFitOnPerSheet, ""))
     }
 
 	if data.ExtendQueryParameterMap != nil {

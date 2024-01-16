@@ -1,6 +1,6 @@
 /** --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="api_cells">
-*   Copyright (c) 2023 Aspose.Cells Cloud
+*   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -33,7 +33,7 @@ import (
 )
 
 func Version() {
-	fmt.Println("---Version: 23.12.1---")
+	fmt.Println("---Version: 24.1.1---")
 }
 
 func NewCellsApiService(appSid string, appKey string, opts ...string) *CellsApiService {
@@ -1941,7 +1941,7 @@ func (a *CellsApiService) GetWorksheetChart(data *GetWorksheetChartRequest) (  [
 }
 
 
-func (a *CellsApiService) PutWorksheetAddChart(data *PutWorksheetAddChartRequest) (  CellsCloudResponse,  *http.Response, error) {
+func (a *CellsApiService) PutWorksheetChart(data *PutWorksheetChartRequest) (  CellsCloudResponse,  *http.Response, error) {
 	var (
 	localVarReturnValue CellsCloudResponse 
 
@@ -1969,7 +1969,7 @@ func (a *CellsApiService) PutWorksheetAddChart(data *PutWorksheetAddChartRequest
 }
 
 
-func (a *CellsApiService) DeleteWorksheetDeleteChart(data *DeleteWorksheetDeleteChartRequest) (  CellsCloudResponse,  *http.Response, error) {
+func (a *CellsApiService) DeleteWorksheetChart(data *DeleteWorksheetChartRequest) (  CellsCloudResponse,  *http.Response, error) {
 	var (
 	localVarReturnValue CellsCloudResponse 
 
@@ -2137,7 +2137,7 @@ func (a *CellsApiService) DeleteWorksheetChartLegend(data *DeleteWorksheetChartL
 }
 
 
-func (a *CellsApiService) DeleteWorksheetClearCharts(data *DeleteWorksheetClearChartsRequest) (  CellsCloudResponse,  *http.Response, error) {
+func (a *CellsApiService) DeleteWorksheetCharts(data *DeleteWorksheetChartsRequest) (  CellsCloudResponse,  *http.Response, error) {
 	var (
 	localVarReturnValue CellsCloudResponse 
 
@@ -4861,6 +4861,62 @@ func (a *CellsApiService) GetFooter(data *GetFooterRequest) (  PageSectionsRespo
 
 
 func (a *CellsApiService) PostFooter(data *PostFooterRequest) (  CellsCloudResponse,  *http.Response, error) {
+	var (
+	localVarReturnValue CellsCloudResponse 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) PostFitWideToPages(data *PostFitWideToPagesRequest) (  CellsCloudResponse,  *http.Response, error) {
+	var (
+	localVarReturnValue CellsCloudResponse 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) PostFitTallToPages(data *PostFitTallToPagesRequest) (  CellsCloudResponse,  *http.Response, error) {
 	var (
 	localVarReturnValue CellsCloudResponse 
 
@@ -8168,7 +8224,7 @@ func (a *CellsApiService) PostWorksheetTextSearch(data *PostWorksheetTextSearchR
 }
 
 
-func (a *CellsApiService) PostWorsheetTextReplace(data *PostWorsheetTextReplaceRequest) (  WorksheetReplaceResponse,  *http.Response, error) {
+func (a *CellsApiService) PostWorksheetTextReplace(data *PostWorksheetTextReplaceRequest) (  WorksheetReplaceResponse,  *http.Response, error) {
 	var (
 	localVarReturnValue WorksheetReplaceResponse 
 

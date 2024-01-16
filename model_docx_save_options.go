@@ -1,6 +1,6 @@
 /** --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="DocxSaveOptions.go">
-*   Copyright (c) 2023 Aspose.Cells Cloud
+*   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,13 +27,23 @@ package asposecellscloud
 
 type DocxSaveOptions struct {
      
-        SaveFormat string `json:"SaveFormat,omitempty" xml:"SaveFormat"`
-        CachedFileFolder string `json:"CachedFileFolder,omitempty" xml:"CachedFileFolder"`
-        ClearData bool `json:"ClearData,omitempty" xml:"ClearData"`
-        CreateDirectory bool `json:"CreateDirectory,omitempty" xml:"CreateDirectory"`
-        EnableHTTPCompression bool `json:"EnableHTTPCompression,omitempty" xml:"EnableHTTPCompression"`
-        RefreshChartCache bool `json:"RefreshChartCache,omitempty" xml:"RefreshChartCache"`
-        SortNames bool `json:"SortNames,omitempty" xml:"SortNames"`
-        ValidateMergedAreas bool `json:"ValidateMergedAreas,omitempty" xml:"ValidateMergedAreas"`
+        DefaultFont string `json:"DefaultFont,omitempty" xml:"DefaultFont"`
+        CheckWorkbookDefaultFont bool `json:"CheckWorkbookDefaultFont,omitempty" xml:"CheckWorkbookDefaultFont"`
+        CheckFontCompatibility bool `json:"CheckFontCompatibility,omitempty" xml:"CheckFontCompatibility"`
+        IsFontSubstitutionCharGranularity bool `json:"IsFontSubstitutionCharGranularity,omitempty" xml:"IsFontSubstitutionCharGranularity"`
+        OnePagePerSheet bool `json:"OnePagePerSheet,omitempty" xml:"OnePagePerSheet"`
+        AllColumnsInOnePagePerSheet bool `json:"AllColumnsInOnePagePerSheet,omitempty" xml:"AllColumnsInOnePagePerSheet"`
+        IgnoreError bool `json:"IgnoreError,omitempty" xml:"IgnoreError"`
+        OutputBlankPageWhenNothingToPrint bool `json:"OutputBlankPageWhenNothingToPrint,omitempty" xml:"OutputBlankPageWhenNothingToPrint"`
+        PageIndex int64 `json:"PageIndex,omitempty" xml:"PageIndex"`
+        PageCount int64 `json:"PageCount,omitempty" xml:"PageCount"`
+        PrintingPageType string `json:"PrintingPageType,omitempty" xml:"PrintingPageType"`
+        GridlineType string `json:"GridlineType,omitempty" xml:"GridlineType"`
+        TextCrossType string `json:"TextCrossType,omitempty" xml:"TextCrossType"`
+        DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
+        EmfRenderSetting string `json:"EmfRenderSetting,omitempty" xml:"EmfRenderSetting"`
+        MergeAreas bool `json:"MergeAreas,omitempty" xml:"MergeAreas"`
+        SortExternalNames bool `json:"SortExternalNames,omitempty" xml:"SortExternalNames"`
+        UpdateSmartArt bool `json:"UpdateSmartArt,omitempty" xml:"UpdateSmartArt"`
  
 }

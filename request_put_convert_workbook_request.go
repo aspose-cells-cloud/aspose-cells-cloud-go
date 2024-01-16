@@ -1,6 +1,6 @@
 /** --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="put_convert_workbook_request.go">
-*   Copyright (c) 2023 Aspose.Cells Cloud
+*   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,6 +39,8 @@ type PutConvertWorkbookRequest struct {
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	StreamFormat string `json:"stream_format,omitempty" xml:"stream_format"`
 	Region string `json:"region,omitempty" xml:"region"`
+	PageWideFitOnPerSheet bool `json:"page_wide_fit_on_per_sheet,omitempty" xml:"page_wide_fit_on_per_sheet"`
+	PageTallFitOnPerSheet bool `json:"page_tall_fit_on_per_sheet,omitempty" xml:"page_tall_fit_on_per_sheet"`
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -91,6 +93,16 @@ func (data *PutConvertWorkbookRequest) CreateRequestData( client *APIClient) (lo
     // query params : region
     if data.Region != "" {
         localVarQueryParams.Add("region", parameterToString(data.Region, ""))
+    }
+
+    // query params : pageWideFitOnPerSheet
+    if &data.PageWideFitOnPerSheet != nil {
+        localVarQueryParams.Add("pageWideFitOnPerSheet", parameterToString(data.PageWideFitOnPerSheet, ""))
+    }
+
+    // query params : pageTallFitOnPerSheet
+    if &data.PageTallFitOnPerSheet != nil {
+        localVarQueryParams.Add("pageTallFitOnPerSheet", parameterToString(data.PageTallFitOnPerSheet, ""))
     }
 
 	if data.ExtendQueryParameterMap != nil {

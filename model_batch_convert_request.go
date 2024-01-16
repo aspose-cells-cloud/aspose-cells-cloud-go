@@ -1,6 +1,6 @@
 /** --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="BatchConvertRequest.go">
-*   Copyright (c) 2023 Aspose.Cells Cloud
+*   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,5 +34,7 @@ type BatchConvertRequest struct {
     OutFolder string `json:"OutFolder,omitempty" xml:"OutFolder"`
     OutStorage string `json:"OutStorage,omitempty" xml:"OutStorage"`
     Region string `json:"Region,omitempty" xml:"Region"`
+    PageWideFitOnPerSheet bool `json:"PageWideFitOnPerSheet,omitempty" xml:"PageWideFitOnPerSheet"`
+    PageTallFitOnPerSheet bool `json:"PageTallFitOnPerSheet,omitempty" xml:"PageTallFitOnPerSheet"`
     SaveOptions *SaveOptions `json:"SaveOptions,omitempty" xml:"SaveOptions"`
 }
