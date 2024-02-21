@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="AutoFitterOptions.go">
+* <copyright company="Aspose" file="DiscoverPivotTable.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,14 +25,13 @@
 
 package asposecellscloud
 
-type AutoFitterOptions struct {
+type DiscoverPivotTable struct {
  
-    AutoFitMergedCellsType string `json:"AutoFitMergedCellsType,omitempty" xml:"AutoFitMergedCellsType"`
-    IgnoreHidden bool `json:"IgnoreHidden,omitempty" xml:"IgnoreHidden"`
-    OnlyAuto bool `json:"OnlyAuto,omitempty" xml:"OnlyAuto"`
-    DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
-    MaxRowHeight float64 `json:"MaxRowHeight,omitempty" xml:"MaxRowHeight"`
-    AutoFitWrappedTextType string `json:"AutoFitWrappedTextType,omitempty" xml:"AutoFitWrappedTextType"`
-    FormatStrategy string `json:"FormatStrategy,omitempty" xml:"FormatStrategy"`
-    ForRendering bool `json:"ForRendering,omitempty" xml:"ForRendering"`
+    Name string `json:"Name,omitempty" xml:"Name"`
+    Title string `json:"Title,omitempty" xml:"Title"`
+    DataRange string `json:"DataRange,omitempty" xml:"DataRange"`
+    PivotFieldRows []int64 `json:"PivotFieldRows,omitempty" xml:"PivotFieldRows"`
+    PivotFieldColumns []int64 `json:"PivotFieldColumns,omitempty" xml:"PivotFieldColumns"`
+    PivotFieldData []int64 `json:"PivotFieldData,omitempty" xml:"PivotFieldData"`
+    Thumbnail string `json:"Thumbnail,omitempty" xml:"Thumbnail"`
 }

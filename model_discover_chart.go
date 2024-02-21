@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="AutoFitterOptions.go">
+* <copyright company="Aspose" file="DiscoverChart.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,14 +25,12 @@
 
 package asposecellscloud
 
-type AutoFitterOptions struct {
+type DiscoverChart struct {
  
-    AutoFitMergedCellsType string `json:"AutoFitMergedCellsType,omitempty" xml:"AutoFitMergedCellsType"`
-    IgnoreHidden bool `json:"IgnoreHidden,omitempty" xml:"IgnoreHidden"`
-    OnlyAuto bool `json:"OnlyAuto,omitempty" xml:"OnlyAuto"`
-    DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
-    MaxRowHeight float64 `json:"MaxRowHeight,omitempty" xml:"MaxRowHeight"`
-    AutoFitWrappedTextType string `json:"AutoFitWrappedTextType,omitempty" xml:"AutoFitWrappedTextType"`
-    FormatStrategy string `json:"FormatStrategy,omitempty" xml:"FormatStrategy"`
-    ForRendering bool `json:"ForRendering,omitempty" xml:"ForRendering"`
+    Name string `json:"Name,omitempty" xml:"Name"`
+    SheetName string `json:"SheetName,omitempty" xml:"SheetName"`
+    Title string `json:"Title,omitempty" xml:"Title"`
+    Type_ string `json:"Type,omitempty" xml:"Type"`
+    DataRange string `json:"DataRange,omitempty" xml:"DataRange"`
+    Thumbnail string `json:"Thumbnail,omitempty" xml:"Thumbnail"`
 }

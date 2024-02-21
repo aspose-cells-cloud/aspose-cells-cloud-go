@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="AutoFitterOptions.go">
+* <copyright company="Aspose" file="AnalyzedTableDescription.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,14 +25,22 @@
 
 package asposecellscloud
 
-type AutoFitterOptions struct {
+type AnalyzedTableDescription struct {
  
-    AutoFitMergedCellsType string `json:"AutoFitMergedCellsType,omitempty" xml:"AutoFitMergedCellsType"`
-    IgnoreHidden bool `json:"IgnoreHidden,omitempty" xml:"IgnoreHidden"`
-    OnlyAuto bool `json:"OnlyAuto,omitempty" xml:"OnlyAuto"`
-    DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
-    MaxRowHeight float64 `json:"MaxRowHeight,omitempty" xml:"MaxRowHeight"`
-    AutoFitWrappedTextType string `json:"AutoFitWrappedTextType,omitempty" xml:"AutoFitWrappedTextType"`
-    FormatStrategy string `json:"FormatStrategy,omitempty" xml:"FormatStrategy"`
-    ForRendering bool `json:"ForRendering,omitempty" xml:"ForRendering"`
+    Name string `json:"Name,omitempty" xml:"Name"`
+    SheetName string `json:"SheetName,omitempty" xml:"SheetName"`
+    Columns []AnalyzedColumnDescription `json:"Columns,omitempty" xml:"Columns"`
+    DateColumns []int64 `json:"DateColumns,omitempty" xml:"DateColumns"`
+    NumberColumns []int64 `json:"NumberColumns,omitempty" xml:"NumberColumns"`
+    TextColumns []int64 `json:"TextColumns,omitempty" xml:"TextColumns"`
+    ExceptionColumns []int64 `json:"ExceptionColumns,omitempty" xml:"ExceptionColumns"`
+    HasTableHeaderRow bool `json:"HasTableHeaderRow,omitempty" xml:"HasTableHeaderRow"`
+    HasTableTotalRow bool `json:"HasTableTotalRow,omitempty" xml:"HasTableTotalRow"`
+    StartDataColumnIndex int64 `json:"StartDataColumnIndex,omitempty" xml:"StartDataColumnIndex"`
+    EndDataColumnIndex int64 `json:"EndDataColumnIndex,omitempty" xml:"EndDataColumnIndex"`
+    StartDataRowIndex int64 `json:"StartDataRowIndex,omitempty" xml:"StartDataRowIndex"`
+    EndDataRowIndex int64 `json:"EndDataRowIndex,omitempty" xml:"EndDataRowIndex"`
+    Thumbnail string `json:"Thumbnail,omitempty" xml:"Thumbnail"`
+    DiscoverCharts []DiscoverChart `json:"DiscoverCharts,omitempty" xml:"DiscoverCharts"`
+    DiscoverPivotTables []DiscoverPivotTable `json:"DiscoverPivotTables,omitempty" xml:"DiscoverPivotTables"`
 }

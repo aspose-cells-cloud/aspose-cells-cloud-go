@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="AutoFitterOptions.go">
+* <copyright company="Aspose" file="AnalyzeExcelResponse.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,14 +25,7 @@
 
 package asposecellscloud
 
-type AutoFitterOptions struct {
+type AnalyzeExcelResponse struct {
  
-    AutoFitMergedCellsType string `json:"AutoFitMergedCellsType,omitempty" xml:"AutoFitMergedCellsType"`
-    IgnoreHidden bool `json:"IgnoreHidden,omitempty" xml:"IgnoreHidden"`
-    OnlyAuto bool `json:"OnlyAuto,omitempty" xml:"OnlyAuto"`
-    DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
-    MaxRowHeight float64 `json:"MaxRowHeight,omitempty" xml:"MaxRowHeight"`
-    AutoFitWrappedTextType string `json:"AutoFitWrappedTextType,omitempty" xml:"AutoFitWrappedTextType"`
-    FormatStrategy string `json:"FormatStrategy,omitempty" xml:"FormatStrategy"`
-    ForRendering bool `json:"ForRendering,omitempty" xml:"ForRendering"`
+    Suggestions []AnalyzeSuggestion `json:"Suggestions,omitempty" xml:"Suggestions"`
 }

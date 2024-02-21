@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="AutoFitterOptions.go">
+* <copyright company="Aspose" file="AnalyzeSuggestion.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,14 +25,14 @@
 
 package asposecellscloud
 
-type AutoFitterOptions struct {
+type AnalyzeSuggestion struct {
  
-    AutoFitMergedCellsType string `json:"AutoFitMergedCellsType,omitempty" xml:"AutoFitMergedCellsType"`
-    IgnoreHidden bool `json:"IgnoreHidden,omitempty" xml:"IgnoreHidden"`
-    OnlyAuto bool `json:"OnlyAuto,omitempty" xml:"OnlyAuto"`
-    DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
-    MaxRowHeight float64 `json:"MaxRowHeight,omitempty" xml:"MaxRowHeight"`
-    AutoFitWrappedTextType string `json:"AutoFitWrappedTextType,omitempty" xml:"AutoFitWrappedTextType"`
-    FormatStrategy string `json:"FormatStrategy,omitempty" xml:"FormatStrategy"`
-    ForRendering bool `json:"ForRendering,omitempty" xml:"ForRendering"`
+    Name string `json:"Name,omitempty" xml:"Name"`
+    Filename string `json:"Filename,omitempty" xml:"Filename"`
+    SheetName string `json:"SheetName,omitempty" xml:"SheetName"`
+    DateSourceType string `json:"DateSourceType,omitempty" xml:"DateSourceType"`
+    SuggestedOutputType string `json:"SuggestedOutputType,omitempty" xml:"SuggestedOutputType"`
+    Description string `json:"Description,omitempty" xml:"Description"`
+    DataSouceThumbnail string `json:"DataSouceThumbnail,omitempty" xml:"DataSouceThumbnail"`
+    Thumbnail string `json:"Thumbnail,omitempty" xml:"Thumbnail"`
 }

@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="AutoFitterOptions.go">
+* <copyright company="Aspose" file="WorksheetDataStatistics.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,14 +25,16 @@
 
 package asposecellscloud
 
-type AutoFitterOptions struct {
+type WorksheetDataStatistics struct {
  
-    AutoFitMergedCellsType string `json:"AutoFitMergedCellsType,omitempty" xml:"AutoFitMergedCellsType"`
-    IgnoreHidden bool `json:"IgnoreHidden,omitempty" xml:"IgnoreHidden"`
-    OnlyAuto bool `json:"OnlyAuto,omitempty" xml:"OnlyAuto"`
-    DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
-    MaxRowHeight float64 `json:"MaxRowHeight,omitempty" xml:"MaxRowHeight"`
-    AutoFitWrappedTextType string `json:"AutoFitWrappedTextType,omitempty" xml:"AutoFitWrappedTextType"`
-    FormatStrategy string `json:"FormatStrategy,omitempty" xml:"FormatStrategy"`
-    ForRendering bool `json:"ForRendering,omitempty" xml:"ForRendering"`
+    Name string `json:"Name,omitempty" xml:"Name"`
+    ChartsCount int64 `json:"ChartsCount,omitempty" xml:"ChartsCount"`
+    TablesCount int64 `json:"TablesCount,omitempty" xml:"TablesCount"`
+    PivotTablesCount int64 `json:"PivotTablesCount,omitempty" xml:"PivotTablesCount"`
+    ShapesCount int64 `json:"ShapesCount,omitempty" xml:"ShapesCount"`
+    HyperlinksCount int64 `json:"HyperlinksCount,omitempty" xml:"HyperlinksCount"`
+    QueryTablesCount int64 `json:"QueryTablesCount,omitempty" xml:"QueryTablesCount"`
+    CellsCount int64 `json:"CellsCount,omitempty" xml:"CellsCount"`
+    CellsCountInTable int64 `json:"CellsCountInTable,omitempty" xml:"CellsCountInTable"`
+    CellsCountIsFormula int64 `json:"CellsCountIsFormula,omitempty" xml:"CellsCountIsFormula"`
 }

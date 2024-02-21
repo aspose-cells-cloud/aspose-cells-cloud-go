@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="AutoFitterOptions.go">
+* <copyright company="Aspose" file="AnalyzedResult.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,14 +25,11 @@
 
 package asposecellscloud
 
-type AutoFitterOptions struct {
+type AnalyzedResult struct {
  
-    AutoFitMergedCellsType string `json:"AutoFitMergedCellsType,omitempty" xml:"AutoFitMergedCellsType"`
-    IgnoreHidden bool `json:"IgnoreHidden,omitempty" xml:"IgnoreHidden"`
-    OnlyAuto bool `json:"OnlyAuto,omitempty" xml:"OnlyAuto"`
-    DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
-    MaxRowHeight float64 `json:"MaxRowHeight,omitempty" xml:"MaxRowHeight"`
-    AutoFitWrappedTextType string `json:"AutoFitWrappedTextType,omitempty" xml:"AutoFitWrappedTextType"`
-    FormatStrategy string `json:"FormatStrategy,omitempty" xml:"FormatStrategy"`
-    ForRendering bool `json:"ForRendering,omitempty" xml:"ForRendering"`
+    Filename string `json:"Filename,omitempty" xml:"Filename"`
+    Description string `json:"Description,omitempty" xml:"Description"`
+    BasicStatistics *ExcelDataStatistics `json:"BasicStatistics,omitempty" xml:"BasicStatistics"`
+    Results []AnalyzedTableDescription `json:"Results,omitempty" xml:"Results"`
+    SuggestedFile string `json:"SuggestedFile,omitempty" xml:"SuggestedFile"`
 }

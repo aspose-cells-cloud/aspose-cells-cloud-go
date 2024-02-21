@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="AutoFitterOptions.go">
+* <copyright company="Aspose" file="AnalyzedColumnDescription.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,14 +25,15 @@
 
 package asposecellscloud
 
-type AutoFitterOptions struct {
+type AnalyzedColumnDescription struct {
  
-    AutoFitMergedCellsType string `json:"AutoFitMergedCellsType,omitempty" xml:"AutoFitMergedCellsType"`
-    IgnoreHidden bool `json:"IgnoreHidden,omitempty" xml:"IgnoreHidden"`
-    OnlyAuto bool `json:"OnlyAuto,omitempty" xml:"OnlyAuto"`
-    DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
-    MaxRowHeight float64 `json:"MaxRowHeight,omitempty" xml:"MaxRowHeight"`
-    AutoFitWrappedTextType string `json:"AutoFitWrappedTextType,omitempty" xml:"AutoFitWrappedTextType"`
-    FormatStrategy string `json:"FormatStrategy,omitempty" xml:"FormatStrategy"`
-    ForRendering bool `json:"ForRendering,omitempty" xml:"ForRendering"`
+    Index int64 `json:"Index,omitempty" xml:"Index"`
+    ColumnIndex int64 `json:"ColumnIndex,omitempty" xml:"ColumnIndex"`
+    Title string `json:"Title,omitempty" xml:"Title"`
+    RepetitionRate float64 `json:"RepetitionRate,omitempty" xml:"RepetitionRate"`
+    ColumnDataDataType string `json:"ColumnDataDataType,omitempty" xml:"ColumnDataDataType"`
+    NumberCategoryType string `json:"NumberCategoryType,omitempty" xml:"NumberCategoryType"`
+    TextCategoryType string `json:"TextCategoryType,omitempty" xml:"TextCategoryType"`
+    StyleNumber int64 `json:"StyleNumber,omitempty" xml:"StyleNumber"`
+    ColumnDataExceptionDescription string `json:"columnDataExceptionDescription,omitempty" xml:"columnDataExceptionDescription"`
 }
