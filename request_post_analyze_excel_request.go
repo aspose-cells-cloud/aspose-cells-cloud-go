@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="post_analyze_table_request.go">
+* <copyright company="Aspose" file="post_analyze_excel_request.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -31,13 +31,13 @@ import (
 	"strings"
 )
 
-type PostAnalyzeTableRequest struct {
+type PostAnalyzeExcelRequest struct {
 	AnalyzeExcelRequest interface{} `json:"analyze_excel_request,omitempty" xml:"analyze_excel_request"` 
 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
-func (data *PostAnalyzeTableRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+func (data *PostAnalyzeExcelRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("POST")
 		localVarPostBody    interface{}

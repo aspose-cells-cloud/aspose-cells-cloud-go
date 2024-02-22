@@ -54,7 +54,7 @@ func NewCellsApiService(appSid string, appKey string, opts ...string) *CellsApiS
 
 type CellsApiService service
 
-func (a *CellsApiService) PostAnalyzeTable(data *PostAnalyzeTableRequest) (  []AnalyzedResult,  *http.Response, error) {
+func (a *CellsApiService) PostAnalyzeExcel(data *PostAnalyzeExcelRequest) (  []AnalyzedResult,  *http.Response, error) {
 	var (
 	localVarReturnValue []AnalyzedResult 
 
