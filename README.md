@@ -24,7 +24,7 @@
 
 Full list of issues covering all changes in this release:
 
-- Add the PostFitTallToPages method for page setup controller.
+- Add the analyze excel api for analyze controller.
 
 ## Read & Write Spreadsheet Formats
 
