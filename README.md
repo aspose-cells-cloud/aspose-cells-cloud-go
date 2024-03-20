@@ -1,31 +1,71 @@
 ![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE) 
 
-# Go API Client for Aspose.Cells Cloud
+# Go package for Aspose.Cells Cloud SDK
 
-[Aspose.Cells Cloud SDK for Go](https://products.aspose.cloud/cells/go) empowers your Go applications to connect with excel document formats. The APIs let engineers read, convert, build, alter and control the substance of the [excel document formats](https://docs.aspose.cloud/cells/supported-file-formats/) without any office software installed on the machine.
+Enhance your Go applications with the [Aspose.Cells Cloud SDK](https://products.aspose.cloud/cells/go) , enabling seamless integration with [Excel, ODS, CSV, Json and other spreadsheet document formats](https://docs.aspose.cloud/cells/supported-file-formats/). With its powerful APIs, developers can effortlessly read, convert, create, edit, and manipulate the contents of Excel documents without the need for any office software installed on the machine
 
-## Excel® File Manipulation in the Cloud
+## Manipulate Excel and other spreadsheet files in the Cloud
 
-- Create Excel files from scratch via API or [Smart Markers](https://docs.aspose.cloud/cells/create-excel-workbook-from-a-smartmarker-template/).
-- Load, process & [convert Excel files](https://docs.aspose.cloud/cells/convert-excel-workbook-to-different-file-formats/) via Cloud SDK.
-- Add, update or delete worksheet, charts, pictures, shapes, hyperlinks & validations.
-- Add or remove cells area for conditional formatting from Excel worksheets.
-- Insert or delete, horizontal or vertical page breaks.
-- Add ListObject or convert ListObjects to a range of cells.
-- Summarize data with [Pivot Tables](https://docs.aspose.cloud/cells/working-with-pivot-tables/) & Excel charts.
-- Apply custom criteria to list filters of various types.
-- Get, update, show or hide chart legend & titles.
-- Manipulate page setup, header & footer.
-- Create, update, fetch or delete document properties.
-- Fetch the required shape from worksheet.
-- Leverage the power of named ranges.
+- File Manipulation: Users can upload, download, delete, and manage Excel files stored in the cloud.
+- Formatting: Supports formatting of cells, fonts, colors, and alignment modes in Excel files to cater to users' specific requirements.
+- Data Processing: Powerful functions for data processing including reading, writing, modifying cell data, performing formula calculations, and formatting data.
+- Formula Calculation: Built-in formula engine handles complex formula calculations in Excel and returns accurate results.
+- Chart Manipulation: Users can create, edit, and delete charts from Excel files for data analysis and visualization needs.
+- Table Processing: Offers robust processing capabilities for various form operations such as creation, editing, formatting, and conversion, meeting diverse form processing needs.
+- Data Verification: Includes data verification function to set cell data type, range, uniqueness, ensuring data accuracy and integrity.
+- Batch Processing: Supports batch processing of multiple Excel documents, such as batch format conversion, data extraction, and style application..
+- Import/Export: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
+- Security Management: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
 
-## Feature & Enhancements in Version 24.2.1
+
+
+## Feature & Enhancements in Version 24.3
 
 Full list of issues covering all changes in this release:
 
-- Add the analyze excel api for analyze controller.
+- Support data deduplication.
+- Support data filling.
+- Support to delete incomplete rows.
+- Support data cleansing.
 
+
+
+
+|**Format**|**Description**|**Load**|**Save**|
+| :- | :- | :- | :- |
+|[XLS](https://docs.fileformat.com/spreadsheet/xls/)|Excel 95/5.0 - 2003 Workbook.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|[XLSX](https://docs.fileformat.com/spreadsheet/xlsx/)|Office Open XML SpreadsheetML Workbook or template file, with or without macros.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|[XLSB](https://docs.fileformat.com/spreadsheet/xlsb/)|Excel Binary Workbook.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|[XLSM](https://docs.fileformat.com/spreadsheet/xlsm/)|Excel Macro-Enabled Workbook.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|[XLT](https://docs.fileformat.com/spreadsheet/xlt/)|Excel 97 - Excel 2003 Template.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|[XLTX](https://docs.fileformat.com/spreadsheet/xltx/)|Excel Template.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|[XLTM](https://docs.fileformat.com/spreadsheet/xltm/)|Excel Macro-Enabled Template.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|[XLAM](https://docs.fileformat.com/spreadsheet/xlam/)|An Excel Macro-Enabled Add-In file that's used to add new functions to Excel.| |{{< emoticons/tick >}}|
+|[CSV](https://docs.fileformat.com/spreadsheet/csv/)|CSV (Comma Separated Value) file.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|[TSV](https://docs.fileformat.com/spreadsheet/tsv/)|TSV (Tab-separated values) file.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|TabDelimited|Tab-delimited text file, same with TSV file.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|[TXT](https://docs.fileformat.com/word-processing/txt/)|Delimited plain text file.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|[HTML](https://docs.fileformat.com/web/html/)|HTML format.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|[MHTML](https://docs.fileformat.com/web/mhtml/)|MHTML file.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|[ODS](https://docs.fileformat.com/spreadsheet/ods/)|ODS (OpenDocument Spreadsheet).|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|SpreadsheetML|Excel 2003 XML file.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|[Numbers](https://docs.fileformat.com/spreadsheet/numbers/)|The document is created by Apple's "Numbers" application which forms part of Apple's iWork office suite, a set of applications which run on the Mac OS X and iOS operating systems.|{{< emoticons/tick >}}||
+|[JSON](https://docs.fileformat.com/web/json/)|JavaScript Object Notation|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|[DIF](https://docs.fileformat.com/spreadsheet/dif/)|Data Interchange Format.| |{{< emoticons/tick >}}|
+|[PDF](https://docs.fileformat.com/pdf/)|Adobe Portable Document Format.| |{{< emoticons/tick >}}|
+|[XPS](https://docs.fileformat.com/page-description-language/xps/)|XML Paper Specification Format.| |{{< emoticons/tick >}}|
+|[SVG](https://docs.fileformat.com/page-description-language/svg/)|Scalable Vector Graphics Format.| |{{< emoticons/tick >}}|
+|[TIFF](https://docs.fileformat.com/image/tiff/)|Tagged Image File Format| |{{< emoticons/tick >}}|
+|[PNG](https://docs.fileformat.com/image/png/)|Portable Network Graphics Format| |{{< emoticons/tick >}}|
+|[BMP](https://docs.fileformat.com/image/bmp/)|Bitmap Image Format| |{{< emoticons/tick >}}|
+|[EMF](https://docs.fileformat.com/image/emf/)|Enhanced metafile Format| |{{< emoticons/tick >}}|
+|[JPEG](https://docs.fileformat.com/image/jpeg/)|JPEG is a type of image format that is saved using the method of lossy compression.| |{{< emoticons/tick >}}|
+|[GIF](https://docs.fileformat.com/image/gif/)|Graphical Interchange Format| |{{< emoticons/tick >}}|
+|[MARKDOWN](https://docs.fileformat.com/word-processing/md/)|Represents a markdown document.| |{{< emoticons/tick >}}|
+|[SXC](https://docs.fileformat.com/spreadsheet/sxc/)|An XML based format used by OpenOffice and StarOffice|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|[FODS](https://docs.fileformat.com/spreadsheet/fods/)|This is an Open Document format stored as flat XML.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
+|[DOCX](https://docs.fileformat.com/word-processing/docx/)|A well-known format for Microsoft Word documents that is a combination of XML and binary files.||{{< emoticons/tick >}}|
+|[PPTX](https://docs.fileformat.com/presentation/pptx/)|The PPTX format is based on the Microsoft PowerPoint open XML presentation file format.||{{< emoticons/tick >}}|
 ## Read & Write Spreadsheet Formats
 
 **Microsoft Excel:** XLS, XLSX, XLSB, XLSM, XLT, XLTX, XLTM
