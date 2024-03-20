@@ -28,129 +28,55 @@ Full list of issues covering all changes in this release:
 - Support to delete incomplete rows.
 - Support data cleansing.
 
-
-
+## Support file format
 
 |**Format**|**Description**|**Load**|**Save**|
 | :- | :- | :- | :- |
-|[XLS](https://docs.fileformat.com/spreadsheet/xls/)|Excel 95/5.0 - 2003 Workbook.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|[XLSX](https://docs.fileformat.com/spreadsheet/xlsx/)|Office Open XML SpreadsheetML Workbook or template file, with or without macros.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|[XLSB](https://docs.fileformat.com/spreadsheet/xlsb/)|Excel Binary Workbook.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|[XLSM](https://docs.fileformat.com/spreadsheet/xlsm/)|Excel Macro-Enabled Workbook.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|[XLT](https://docs.fileformat.com/spreadsheet/xlt/)|Excel 97 - Excel 2003 Template.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|[XLTX](https://docs.fileformat.com/spreadsheet/xltx/)|Excel Template.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|[XLTM](https://docs.fileformat.com/spreadsheet/xltm/)|Excel Macro-Enabled Template.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|[XLAM](https://docs.fileformat.com/spreadsheet/xlam/)|An Excel Macro-Enabled Add-In file that's used to add new functions to Excel.| |{{< emoticons/tick >}}|
-|[CSV](https://docs.fileformat.com/spreadsheet/csv/)|CSV (Comma Separated Value) file.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|[TSV](https://docs.fileformat.com/spreadsheet/tsv/)|TSV (Tab-separated values) file.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|TabDelimited|Tab-delimited text file, same with TSV file.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|[TXT](https://docs.fileformat.com/word-processing/txt/)|Delimited plain text file.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|[HTML](https://docs.fileformat.com/web/html/)|HTML format.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|[MHTML](https://docs.fileformat.com/web/mhtml/)|MHTML file.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|[ODS](https://docs.fileformat.com/spreadsheet/ods/)|ODS (OpenDocument Spreadsheet).|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|SpreadsheetML|Excel 2003 XML file.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|[Numbers](https://docs.fileformat.com/spreadsheet/numbers/)|The document is created by Apple's "Numbers" application which forms part of Apple's iWork office suite, a set of applications which run on the Mac OS X and iOS operating systems.|{{< emoticons/tick >}}||
-|[JSON](https://docs.fileformat.com/web/json/)|JavaScript Object Notation|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|[DIF](https://docs.fileformat.com/spreadsheet/dif/)|Data Interchange Format.| |{{< emoticons/tick >}}|
-|[PDF](https://docs.fileformat.com/pdf/)|Adobe Portable Document Format.| |{{< emoticons/tick >}}|
-|[XPS](https://docs.fileformat.com/page-description-language/xps/)|XML Paper Specification Format.| |{{< emoticons/tick >}}|
-|[SVG](https://docs.fileformat.com/page-description-language/svg/)|Scalable Vector Graphics Format.| |{{< emoticons/tick >}}|
-|[TIFF](https://docs.fileformat.com/image/tiff/)|Tagged Image File Format| |{{< emoticons/tick >}}|
-|[PNG](https://docs.fileformat.com/image/png/)|Portable Network Graphics Format| |{{< emoticons/tick >}}|
-|[BMP](https://docs.fileformat.com/image/bmp/)|Bitmap Image Format| |{{< emoticons/tick >}}|
-|[EMF](https://docs.fileformat.com/image/emf/)|Enhanced metafile Format| |{{< emoticons/tick >}}|
-|[JPEG](https://docs.fileformat.com/image/jpeg/)|JPEG is a type of image format that is saved using the method of lossy compression.| |{{< emoticons/tick >}}|
-|[GIF](https://docs.fileformat.com/image/gif/)|Graphical Interchange Format| |{{< emoticons/tick >}}|
-|[MARKDOWN](https://docs.fileformat.com/word-processing/md/)|Represents a markdown document.| |{{< emoticons/tick >}}|
-|[SXC](https://docs.fileformat.com/spreadsheet/sxc/)|An XML based format used by OpenOffice and StarOffice|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|[FODS](https://docs.fileformat.com/spreadsheet/fods/)|This is an Open Document format stored as flat XML.|{{< emoticons/tick >}}|{{< emoticons/tick >}}|
-|[DOCX](https://docs.fileformat.com/word-processing/docx/)|A well-known format for Microsoft Word documents that is a combination of XML and binary files.||{{< emoticons/tick >}}|
-|[PPTX](https://docs.fileformat.com/presentation/pptx/)|The PPTX format is based on the Microsoft PowerPoint open XML presentation file format.||{{< emoticons/tick >}}|
-## Read & Write Spreadsheet Formats
+|[XLS](https://docs.fileformat.com/spreadsheet/xls/)|Excel 95/5.0 - 2003 Workbook.|&radic;|&radic;|
+|[XLSX](https://docs.fileformat.com/spreadsheet/xlsx/)|Office Open XML SpreadsheetML Workbook or template file, with or without macros.|&radic;|&radic;|
+|[XLSB](https://docs.fileformat.com/spreadsheet/xlsb/)|Excel Binary Workbook.|&radic;|&radic;|
+|[XLSM](https://docs.fileformat.com/spreadsheet/xlsm/)|Excel Macro-Enabled Workbook.|&radic;|&radic;|
+|[XLT](https://docs.fileformat.com/spreadsheet/xlt/)|Excel 97 - Excel 2003 Template.|&radic;|&radic;|
+|[XLTX](https://docs.fileformat.com/spreadsheet/xltx/)|Excel Template.|&radic;|&radic;|
+|[XLTM](https://docs.fileformat.com/spreadsheet/xltm/)|Excel Macro-Enabled Template.|&radic;|&radic;|
+|[XLAM](https://docs.fileformat.com/spreadsheet/xlam/)|An Excel Macro-Enabled Add-In file that's used to add new functions to Excel.| |&radic;|
+|[CSV](https://docs.fileformat.com/spreadsheet/csv/)|CSV (Comma Separated Value) file.|&radic;|&radic;|
+|[TSV](https://docs.fileformat.com/spreadsheet/tsv/)|TSV (Tab-separated values) file.|&radic;|&radic;|
+|TabDelimited|Tab-delimited text file, same with TSV file.|&radic;|&radic;|
+|[TXT](https://docs.fileformat.com/word-processing/txt/)|Delimited plain text file.|&radic;|&radic;|
+|[HTML](https://docs.fileformat.com/web/html/)|HTML format.|&radic;|&radic;|
+|[MHTML](https://docs.fileformat.com/web/mhtml/)|MHTML file.|&radic;|&radic;|
+|[ODS](https://docs.fileformat.com/spreadsheet/ods/)|ODS (OpenDocument Spreadsheet).|&radic;|&radic;|
+|SpreadsheetML|Excel 2003 XML file.|&radic;|&radic;|
+|[Numbers](https://docs.fileformat.com/spreadsheet/numbers/)|The document is created by Apple's "Numbers" application which forms part of Apple's iWork office suite, a set of applications which run on the Mac OS X and iOS operating systems.|&radic;||
+|[JSON](https://docs.fileformat.com/web/json/)|JavaScript Object Notation|&radic;|&radic;|
+|[DIF](https://docs.fileformat.com/spreadsheet/dif/)|Data Interchange Format.| |&radic;|
+|[PDF](https://docs.fileformat.com/pdf/)|Adobe Portable Document Format.| |&radic;|
+|[XPS](https://docs.fileformat.com/page-description-language/xps/)|XML Paper Specification Format.| |&radic;|
+|[SVG](https://docs.fileformat.com/page-description-language/svg/)|Scalable Vector Graphics Format.| |&radic;|
+|[TIFF](https://docs.fileformat.com/image/tiff/)|Tagged Image File Format| |&radic;|
+|[PNG](https://docs.fileformat.com/image/png/)|Portable Network Graphics Format| |&radic;|
+|[BMP](https://docs.fileformat.com/image/bmp/)|Bitmap Image Format| |&radic;|
+|[EMF](https://docs.fileformat.com/image/emf/)|Enhanced metafile Format| |&radic;|
+|[JPEG](https://docs.fileformat.com/image/jpeg/)|JPEG is a type of image format that is saved using the method of lossy compression.| |&radic;|
+|[GIF](https://docs.fileformat.com/image/gif/)|Graphical Interchange Format| |&radic;|
+|[MARKDOWN](https://docs.fileformat.com/word-processing/md/)|Represents a markdown document.| |&radic;|
+|[SXC](https://docs.fileformat.com/spreadsheet/sxc/)|An XML based format used by OpenOffice and StarOffice|&radic;|&radic;|
+|[FODS](https://docs.fileformat.com/spreadsheet/fods/)|This is an Open Document format stored as flat XML.|&radic;|&radic;|
+|[DOCX](https://docs.fileformat.com/word-processing/docx/)|A well-known format for Microsoft Word documents that is a combination of XML and binary files.||&radic;|
+|[PPTX](https://docs.fileformat.com/presentation/pptx/)|The PPTX format is based on the Microsoft PowerPoint open XML presentation file format.||&radic;|
 
-**Microsoft Excel:** XLS, XLSX, XLSB, XLSM, XLT, XLTX, XLTM
-**OpenOffice:** ODS
-**SpreadsheetML:** XML
-**Text:** CSV, TSV, TXT (TabDelimited)
-**Web:** HTML, MHTML
 
-## Save Spreadsheets As
+## Quick Start Guide
 
-**Microsoft Excel:** XLS, XLSX, XLSB
-**OpenOffice:** ODS
-**SpreadsheetML:** XML
-**Text:** CSV, TSV, TXT (TabDelimited)
-**Web:** HTML, MHTML
-**Fixed Layout:** PDF, XPS
-**Images:** PNG, JPG, TIFF, SVG
-**Markdown:** MD
-**Other:** DIF
+To get started with Aspose.Cells Cloud SDK for Go, follow these steps:
 
-## Read Other Formats
+1. Create an account at  [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) and obtain your application information.
+2. Download the code and add or modify your application by referring to cells_cloud_test.go.
+3. If you prefer to use [Go Module](https://pkg.go.dev), import "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v24" in your code.
 
-SXC, FODS
-
-## Get Started with Aspose.Cells Cloud SDK for Go
-
-First, create an account at [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) and get your application information. Then, follow these steps.
-
-- Download the code and Add/Modify your application and refer to cells_cloud_test.go.
-- If you want to download [Go Module](https://pkg.go.dev),please use `import "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v20"` in your code.
 
 ```golang
-func GetDocumentCircleAnnotations() (CircleAnnotationsResponse, *http.Response, error) {
-	remoteFolder := "TestData/In"
-	localFolder := "testdata/"
-	localName := "Book1.xlsx"
-	remoteName := "Book1.xlsx"
-	instance := asposecellscloud.NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"), "https://api.aspose.cloud", "v3.0")
-
-	localNameRequest := new(asposecellscloud.UploadFileRequest)
-	localNameRequest.UploadFiles = make(map[string]string)
-	localNameRequest.UploadFiles[localName] = localFolder + localName
-	localNameRequest.Path = remoteFolder + "/" + remoteName
-	localNameRequest.StorageName = ""
-	instance.UploadFile(localNameRequest)
-}
-```
-
-## Add Worksheet to Excel File via Go
-
-```golang
-    remoteFolder := "TestData/In"
-  
-    localName := "Book1.xlsx"
-    remoteName := "Book1.xlsx"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-
-    request := new (PutAddNewWorksheetRequest)
-    request.Name =         remoteName    
-    request.SheetName =         "Sheet1"    
-    request.Position =  int64(0)        
-    request.Sheettype =         "VB"    
-    request.Folder =         remoteFolder    
-    request.StorageName =         ""    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutAddNewWorksheet(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestWorksheetController_PutAddNewWorksheet \n", GetBaseTest().GetTestNumber())
-	}
-```
-
-## Using Go to Convert an Excel File in the Cloud
-
-```golang
-// Upload source file to aspose cloud storage
 	remoteFolder := "TestData/In"
 	localFolder := "testdata/"
 	localName := "Book1.xlsx"
@@ -181,6 +107,7 @@ func GetDocumentCircleAnnotations() (CircleAnnotationsResponse, *http.Response, 
 	println(httpResponse.StatusCode)
 ```
 
+
 ## Aspose.Cells Cloud SDKs in Popular Languages
 
 | .NET | Java | PHP | Python | Ruby | Node.js | Android | Swift | Perl |
@@ -189,3 +116,219 @@ func GetDocumentCircleAnnotations() (CircleAnnotationsResponse, *http.Response, 
 | [NuGet](https://www.nuget.org/packages/Aspose.Cells-Cloud/) | [Maven](https://repository.aspose.cloud/webapp/#/artifacts/browse/tree/General/repo/com/aspose/aspose-cells-cloud) | [Composer](https://packagist.org/packages/aspose/cells-sdk-php) | [PIP](https://pypi.org/project/asposecellscloud/)  | [GEM](https://rubygems.org/gems/aspose_cells_cloud) | [NPM](https://www.npmjs.com/package/asposecellscloud) | [Maven](https://repository.aspose.cloud/webapp/#/artifacts/browse/tree/General/repo/com/aspose/aspose-cells-cloud-android) |  [POD](https://cocoapods.org/pods/AsposeCellsCloud) | [CPAN](https://metacpan.org/release/AsposeCellsCloud-CellsApi) |
 
 [Product Page](https://products.aspose.cloud/cells/go) | [Documentation](https://docs.aspose.cloud/cells/) | [Live Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Code Samples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
+
+# Release history version
+
+## Enhancements in Version 24.2.1
+
+- Support data deduplication.
+
+## Enhancements in Version 24.1.1
+
+- Fixed spelling mistakes for several functions.
+- Add the PostFitTallToPages method for page setup controller.
+- Add the PostFitWideToPages method for page setup controller.
+- Optimize save options about paginated.
+
+## Enhancements in Version 23.12.0
+
+- Conversion APIs add region parameter.
+- Protection APIs add region parameter.
+- Assemble data API adds region parameter.
+- Merge files API adds region parameter.
+- Split files API adds region parameter.
+- Import data API adds region parameter.
+- Watermark API adds region parameter.
+- Clear object API adds region parameter.
+- Reverse data API adds region parameter.
+- Rotate data API adds region parameter.
+
+## Enhancements in Version 23.11
+
+- Optimize import xml data into Excel file.
+- Optimize import json data into Excel file.
+- Remove deprecated functions, class and test case.
+
+## Enhancements in Version 23.10
+
+- Fix protect workbook request.
+- Fix range copy API.
+- Optimize workbook protect API.
+
+## Enhancements in Version 23.9
+
+- Support to data sorting on range controller.
+- Support to remove duplicate data on list object.
+- Support to insert slicer for list object.
+- Optimize list object and related objects.
+
+## Enhancements in Version 23.8
+
+- Support to lock API.
+- Optimize protect API.
+
+## Enhancements in Version 23.7
+
+- Support to repair API.
+- Remove GetExtractBarcodes API.
+
+## Enhancements in Version 23.6
+
+- Support to batch lock multi-files.
+- Support to batch unlock multi-files.
+- Support to protect lock multi-files.
+- Support to split lock multi-files.
+- Fix put document property api.
+
+## Enhancements in Version 23.5
+
+- Fix few method names for spelling error.
+
+## Enhancements in Version 23.4
+
+-Add import xml data api.
+-Add export xml data api.
+
+## Enhancements in Version 23.3
+
+- Adopt the new model.
+
+## Enhancements in Version 22.12
+
+- Support chart axis operations.
+
+## Enhancements in Version 22.11
+
+- Add api for converting workbook to json.
+- Add api for converting workbook to sql.
+- Add api for converting workbook to csv.
+
+## Enhancements in Version 22.10
+
+- Add api for converting workbook to pptx.
+- Add api for converting workbook to html.
+- Add api for converting workbook to markdown.
+
+## Enhancements in Version 22.9
+
+- Add api for converting workbook to png.
+- Add api for converting workbook to pdf.
+- Add api for converting workbook to docx
+
+## Enhancements in Version 22.8
+
+- Support transposing Excel Rows to Columns.
+
+## Enhancements in Version 22.7
+
+- Add 4 kinds of Save Option.
+- Add the checkExcelRestriction parameter for multiple APIs.
+
+## Enhancements in Version 22.5
+
+- Add a new API for getting barcode description.
+
+## Enhancements in Version 22.4
+
+- Export API adds extended query parameters.
+- Convert API adds extended query parameters.
+- SaveAs API adds extended query parameters.
+- Get Workbook API adds extended query parameters.
+
+## Enhancements in Version 22.3
+
+-Add new API about adding digital signature for cloud file.
+
+## Enhancements in Version 22.2
+
+- Update return value for the DeleteUnprotectWorksheet API on Aspose.Cells Cloud.
+- Update return value for the PutProtectWorksheet API on Aspose.Cells Cloud.
+- Update return value for the PostSetCellHtmlString API on Aspose.Cells Cloud.
+- Update return value for the PostUpdateWorksheetProperty API on Aspose.Cells Cloud.
+
+## Enhancements in Version 22.1
+
+- SaveAs API add the parameter of target storage name.
+- Workbok merged API add the parameter of merged file storage name.
+- Workbok split API add the parameter of target storage name
+- Workbok smart marker API add the parameter of output storage name.
+- Batch convert API add the parameters of intput and output storage name.
+- Remove AutoshapesController from Aspose.Cells Cloud.
+- Rename LiteCellsApi to LightCellsApi.
+
+## Enhancements in Version 21.12
+
+- Improvement for conversion API.
+- Improvement for batch data import to support to set cell formula.
+- Improvement for setting row height and column wight to support to set multi-rows and multi-columns.
+- Support to set cell formula in batch data import.
+- Add a new API for updating the list column.
+- Add a new API for reversing columns and rows.
+- Add new APIs for grouping and ungrouping shapes.
+
+## Enhancements in Version 21.11
+
+- Add new API for workbook get page count on Aspose.Cells Cloud.
+- Add new API for worksheet get page count on Aspose.Cells Cloud.
+- Add new API for compress excel file on Aspose.Cells Cloud.
+- Add new feature for replace API.
+
+## Enhancements in Version 21.10
+
+- Add new API for support delete multiple worksheets in a single call.
+- Add new API for supports batch convert excel files.
+
+## Enhancements in Version 21.9
+
+- Correct the return type of the following REST APIs.
+
+## Enhancements in Version 21.8
+
+- Improvement for getting list object Api.
+- Add import Api.
+
+## Enhancements in Version 21.7
+
+- Fix search API.
+- Fix split API.
+
+## Enhancements in Version 21.6
+
+- Improvement document properties.
+- Update the return value of put/post/delete.
+- Improvement export API.
+- Improve split API.
+- Improve merge API.
+- Improve unlock API.
+- Improve protected API.
+- Improve watermark API.
+
+## Enhancements in Version 21.5
+
+- Support autofit columns for workbook and worksheet.
+- Improve add and post row/column APIs.
+- Improve Task APIs.
+
+## Enhancements in Version 21.1
+
+- Support to convert worksheet on task API
+- Support to add and delete cell or range in worksheet.
+
+## Enhancements in Version 20.11
+
+- Support Aspose.Cells Cloud for Docker.
+
+## Enhancements in Version 20.10
+
+- Support to upload large file.
+
+## Enhancements in Version 20.9
+
+- Support sparkline groups.
+- Add API about updating pivot field.
+
+## Enhancements in Version 20.8
+
+- Aspose.Cells Cloud API calls are not working with explicit storage name but only default storage.
+- Get output file size without downloading during conversion.
+- Enhancement for CellsShapesPutWorksheetShape API.
