@@ -30,7 +30,6 @@ type PdfSecurityOptions struct {
     AnnotationsPermission bool `json:"AnnotationsPermission,omitempty" xml:"AnnotationsPermission"`
     AssembleDocumentPermission bool `json:"AssembleDocumentPermission,omitempty" xml:"AssembleDocumentPermission"`
     ExtractContentPermission bool `json:"ExtractContentPermission,omitempty" xml:"ExtractContentPermission"`
-    ExtractContentPermissionObsolete bool `json:"ExtractContentPermissionObsolete,omitempty" xml:"ExtractContentPermissionObsolete"`
     FillFormsPermission bool `json:"FillFormsPermission,omitempty" xml:"FillFormsPermission"`
     FullQualityPrintPermission bool `json:"FullQualityPrintPermission,omitempty" xml:"FullQualityPrintPermission"`
     ModifyDocumentPermission bool `json:"ModifyDocumentPermission,omitempty" xml:"ModifyDocumentPermission"`

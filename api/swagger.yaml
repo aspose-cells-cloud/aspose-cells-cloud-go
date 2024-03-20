@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "24.1.1"
+  version: "24.3"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
@@ -10,6 +10,20 @@ consumes:
 produces:
 - "application/json"
 paths:
+  /cells/analyze:
+    post:
+      tags:
+      - "Cells"
+      summary: "Perform business analysis of data in Excel files."
+      operationId: "PostAnalyzeExcel"
+      parameters:
+      - name: "analyzeexcelrequest"
+        in: "Body"
+        description: "Excel files and analysis output requirements"
+        required: true
+        type: "class:analyzeexcelrequest"
+        x-nullable: true
+        x-exportParamName: "analyzeExcelRequest"
   /cells/{name}/worksheets/{sheetName}/autoFilter:
     get:
       tags:
@@ -1930,28 +1944,28 @@ paths:
         x-exportParamName: "sheetName"
       - name: "offset"
         in: "Query"
-        description: "The folder where the file is situated."
+        description: "The workdook folder."
         required: false
         type: "integer"
         x-nullable: false
         x-exportParamName: "offset"
       - name: "count"
         in: "Query"
-        description: "The storage name where the file is situated."
+        description: ""
         required: false
         type: "integer"
         x-nullable: false
         x-exportParamName: "count"
       - name: "folder"
         in: "Query"
-        description: "The workdook folder."
+        description: "The folder where the file is situated."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "folder"
       - name: "storagename"
         in: "Query"
-        description: ""
+        description: "The storage name where the file is situated."
         required: false
         type: "string"
         x-nullable: true
@@ -5026,7 +5040,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -5194,7 +5208,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The password needed to open an Excel file."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -5229,7 +5243,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The password needed to open an Excel file."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -5264,7 +5278,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The password needed to open an Excel file."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -5299,7 +5313,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The password needed to open an Excel file."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -5334,7 +5348,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The password needed to open an Excel file."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -5369,7 +5383,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The password needed to open an Excel file."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -5404,7 +5418,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The password needed to open an Excel file."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -5439,7 +5453,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The password needed to open an Excel file."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -5474,7 +5488,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The password needed to open an Excel file."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -5509,7 +5523,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "Exported object type:workbook/worksheet/chart/comment/picture/shape/listobject/oleobject."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -5794,6 +5808,230 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "region"
+  /cells/{name}/datacleansing:
+    post:
+      tags:
+      - "Cells"
+      summary: "Data cleaning of spreadsheet files is a data management process used to identify, correct, and remove errors, incompleteness, duplicates, or inaccuracies in tables and ranges."
+      operationId: "PostWorkbookDataCleansing"
+      parameters:
+      - name: "name"
+        in: "Path"
+        description: "The file name."
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "name"
+      - name: "datacleansing"
+        in: "Body"
+        description: "data cleansing content."
+        required: true
+        type: "class:datacleansing"
+        x-nullable: true
+        x-exportParamName: "dataCleansing"
+      - name: "folder"
+        in: "Query"
+        description: "The folder where the file is situated."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "folder"
+      - name: "storagename"
+        in: "Query"
+        description: "The storage name where the file is situated."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "storageName"
+      - name: "password"
+        in: "Query"
+        description: "The file password. "
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "password"
+      - name: "region"
+        in: "Query"
+        description: "The regional settings for workbook."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
+      - name: "checkexcelrestriction"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "checkExcelRestriction"
+  /cells/datacleansing:
+    post:
+      tags:
+      - "Cells"
+      summary: "Data cleansing of spreadsheet files is a data management process used to identify, correct, and remove errors, incompleteness, duplicates, or inaccuracies in tables and ranges."
+      operationId: "PostDataCleansing"
+      parameters:
+      - name: "datacleansingrequest"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:datacleansingrequest"
+        x-nullable: true
+        x-exportParamName: "dataCleansingRequest"
+  /cells/{name}/datadeduplication:
+    post:
+      tags:
+      - "Cells"
+      summary: "Data deduplication of spreadsheet files is mainly used to eliminate duplicate data in tables and ranges."
+      operationId: "PostWorkbookDataDeduplication"
+      parameters:
+      - name: "name"
+        in: "Path"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "name"
+      - name: "deduplicationregion"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:deduplicationregion"
+        x-nullable: true
+        x-exportParamName: "deduplicationRegion"
+      - name: "folder"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "folder"
+      - name: "storagename"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "storageName"
+      - name: "password"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "password"
+      - name: "region"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
+      - name: "checkexcelrestriction"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "checkExcelRestriction"
+  /cells/datadeduplication:
+    post:
+      tags:
+      - "Cells"
+      summary: "Data deduplication of spreadsheet files is mainly used to eliminate duplicate data in tables and ranges."
+      operationId: "PostDataDeduplication"
+      parameters:
+      - name: "datadeduplicationrequest"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:datadeduplicationrequest"
+        x-nullable: true
+        x-exportParamName: "dataDeduplicationRequest"
+  /cells/{name}/datafill:
+    post:
+      tags:
+      - "Cells"
+      summary: "Data filling for spreadsheet files is primarily used to fill empty data in tables and ranges."
+      operationId: "PostWorkbookDataFill"
+      parameters:
+      - name: "name"
+        in: "Path"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "name"
+      - name: "datafill"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:datafill"
+        x-nullable: true
+        x-exportParamName: "dataFill"
+      - name: "folder"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "folder"
+      - name: "storagename"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "storageName"
+      - name: "password"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "password"
+      - name: "region"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "region"
+      - name: "checkexcelrestriction"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "checkExcelRestriction"
+  /cells/datafill:
+    post:
+      tags:
+      - "Cells"
+      summary: "Data filling for spreadsheet files is primarily used to fill empty data in tables and ranges."
+      operationId: "PostDataFill"
+      parameters:
+      - name: "datafillrequest"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:datafillrequest"
+        x-nullable: true
+        x-exportParamName: "dataFillRequest"
+  /cells/deleteincompleterows:
+    post:
+      tags:
+      - "Cells"
+      summary: "Deleting incomplete rows of spreadsheet files is mainly used to eliminate incomplete rows in tables and ranges."
+      operationId: "PostDeleteIncompleteRows"
+      parameters:
+      - name: "deleteincompleterowsrequest"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:deleteincompleterowsrequest"
+        x-nullable: true
+        x-exportParamName: "deleteIncompleteRowsRequest"
   /cells/{name}/worksheets/{sheetName}/hyperlinks:
     get:
       tags:
@@ -6076,7 +6314,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -6125,7 +6363,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "Compress level. The compression ratio 1-100."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -6160,42 +6398,42 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "outformat"
         in: "Query"
-        description: "The password needed to open an Excel file."
+        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "outFormat"
       - name: "mergetoonesheet"
         in: "Query"
-        description: "Whether check restriction of excel file when user modify cells related objects."
+        description: "Merge all workbooks into a sheet."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "mergeToOneSheet"
       - name: "password"
         in: "Query"
-        description: "The regional settings for workbook."
+        description: "The password needed to open an Excel file."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "password"
       - name: "checkexcelrestriction"
         in: "Query"
-        description: "Upload files."
+        description: "Whether check restriction of excel file when user modify cells related objects."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "checkExcelRestriction"
       - name: "region"
         in: "Query"
-        description: ""
+        description: "The regional settings for workbook."
         required: false
         type: "string"
         x-nullable: true
@@ -6209,7 +6447,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -6265,7 +6503,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "Find content"
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -6307,7 +6545,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "Find content"
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -6356,7 +6594,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -6398,14 +6636,14 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "e.g. #1032ff"
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
         x-exportParamName: "File"
       - name: "text"
         in: "Query"
-        description: ""
+        description: "background text."
         required: true
         type: "string"
         x-nullable: true
@@ -6454,7 +6692,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "chart/comment/picture/shape/listobject/hyperlink/oleobject/pivottable/validation/Background"
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -6510,7 +6748,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "rows/cols/both"
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -6559,7 +6797,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)"
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -6580,7 +6818,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "270/90/row/col/row2col"
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -6629,7 +6867,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "document properties"
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -6678,7 +6916,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "Cells document property name."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -6713,7 +6951,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "Cells document property name."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -10367,7 +10605,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The password needed to open an Excel file."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -10388,7 +10626,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The password needed to open an Excel file."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -10409,7 +10647,7 @@ paths:
       parameters:
       - name: "file"
         in: "FormData"
-        description: "The password needed to open an Excel file."
+        description: "File to upload"
         required: true
         type: "file"
         x-nullable: false
@@ -15207,9 +15445,6 @@ definitions:
       AutoFitMergedCellsType:
         type: "string"
         description: "Gets and set the type of auto fitting row height of merged cells."
-      AutoFitMergedCells:
-        type: "boolean"
-        description: "Indicates whether auto fit row height when the cells is merged in a row.                        The default value is false."
       IgnoreHidden:
         type: "boolean"
         description: "Ignores the hidden rows/columns."
@@ -15334,16 +15569,16 @@ definitions:
     properties:
       EndColumn:
         type: "integer"
-        description: ""
+        description: "The end column index."
       EndRow:
         type: "integer"
-        description: ""
+        description: "The end row index."
       StartColumn:
         type: "integer"
-        description: ""
+        description: "The start column index."
       StartRow:
         type: "integer"
-        description: ""
+        description: "The start row index."
   Cells:
     allOf:
     - type: "object"
@@ -15375,16 +15610,16 @@ definitions:
     properties:
       Name:
         type: "string"
-        description: ""
+        description: "The file name."
       Size:
         type: "long"
-        description: ""
+        description: "The file size."
       Folder:
         type: "string"
-        description: ""
+        description: "The file position."
       Storage:
         type: "string"
-        description: ""
+        description: "The storage name."
   CellsColor:
     type: "object"    
     properties:
@@ -15417,7 +15652,7 @@ definitions:
     properties:
       DocumentPropertyList:
         type: "container"
-        description: ""
+        description: "Document property list."
   CellsDocumentProperty:
     type: "object"    
     properties:
@@ -15444,22 +15679,22 @@ definitions:
     properties:
       A:
         type: "byte"
-        description: ""
+        description: "Gets the alpha component value of this System.Drawing.Color structure.            "
       R:
         type: "byte"
-        description: ""
+        description: "Gets the red component value of this System.Drawing.Color structure.            "
       G:
         type: "byte"
-        description: ""
+        description: "Gets the green component value of this System.Drawing.Color structure."
       B:
         type: "byte"
-        description: ""
+        description: "Gets the blue component value of this System.Drawing.Color structure.            "
   ColorFilter:
     type: "object"    
     properties:
       FilterByFillColor:
         type: "boolean"
-        description: "Flag indicating whether filter by the cell's fill color. "
+        description: "Whether filter by the cell's fill color.            "
       Pattern:
         type: "string"
         description: ""
@@ -15523,13 +15758,13 @@ definitions:
     properties:
       MaxColumn:
         type: "integer"
-        description: ""
+        description: "The max column index."
       ColumnsCount:
         type: "integer"
-        description: ""
+        description: "Column count."
       ColumnsList:
         type: "container"
-        description: ""
+        description: "Columns list."
       link:
         type: "class:link"
         description: ""
@@ -15723,6 +15958,57 @@ definitions:
       Type:
         type: "string"
         description: "Gets or sets the border's type of data bars specified by a conditional formatting rule. "
+  DataCleansing:
+    type: "object"    
+    properties:
+      Ranges:
+        type: "container"
+        description: ""
+      NeedFillData:
+        type: "boolean"
+        description: ""
+      DataFill:
+        type: "class:datafill"
+        description: ""
+  DataColumnFillValue:
+    type: "object"    
+    properties:
+      ColumnIndex:
+        type: "integer"
+        description: ""
+      DataFillValue:
+        type: "class:datafillvalue"
+        description: ""
+  DataFill:
+    type: "object"    
+    properties:
+      Ranges:
+        type: "container"
+        description: ""
+      DataFillDefaultValue:
+        type: "class:datafillvalue"
+        description: ""
+      DataColumnFillValueList:
+        type: "container"
+        description: ""
+  DataFillValue:
+    type: "object"    
+    properties:
+      DefaultBoolean:
+        type: "boolean"
+        description: ""
+      DefaultString:
+        type: "string"
+        description: ""
+      DefaultNumber:
+        type: "integer"
+        description: ""
+      DefaultDouble:
+        type: "floating"
+        description: ""
+      DefaultDate:
+        type: "string"
+        description: ""
   DataSorter:
     type: "object"    
     properties:
@@ -15791,6 +16077,15 @@ definitions:
       Year:
         type: "integer"
         description: "Gets and sets the year of the grouped date time."
+  DeduplicationRegion:
+    type: "object"    
+    properties:
+      Ranges:
+        type: "container"
+        description: ""
+      WorksheetNameList:
+        type: "container"
+        description: ""
   DynamicFilter:
     type: "object"    
     properties:
@@ -15808,13 +16103,13 @@ definitions:
     properties:
       Filename:
         type: "string"
-        description: ""
+        description: "Filename. "
       FileSize:
         type: "long"
-        description: ""
+        description: "File size."
       FileContent:
         type: "string"
-        description: ""
+        description: "File content,  byte to base64 string."
   FilesResult:
     type: "object"    
     properties:
@@ -16420,9 +16715,6 @@ definitions:
         type: "boolean"
         description: ""
       ExtractContentPermission:
-        type: "boolean"
-        description: ""
-      ExtractContentPermissionObsolete:
         type: "boolean"
         description: ""
       FillFormsPermission:
@@ -17192,9 +17484,6 @@ definitions:
       CalcMode:
         type: "string"
         description: "It specifies whether to calculate formulas manually,            automatically or automatically except for multiple table operations. "
-      CalcStackSize:
-        type: "integer"
-        description: "Specifies the stack size for calculating cells recursively.            The large value for this size will give better performance when there are lots of cells need to be calculated recursively.            On the other hand, larger value will raise the risk of StackOverflowException.            If user gets StackOverflowException when calculating formulas, this value should be decreased. "
       CalculationId:
         type: "string"
         description: "Specifies the version of the calculation engine used to calculate values in the workbook. "
@@ -19115,6 +19404,12 @@ definitions:
       ValidateMergedAreas:
         type: "boolean"
         description: ""
+  AnalyzeExcelResponse:
+    type: "object"    
+    properties:
+      Suggestions:
+        type: "container"
+        description: ""
   ArcShapeResponse:
     allOf:
     - type: "object"
@@ -20659,6 +20954,18 @@ definitions:
       Status:
         type: "string"
         description: ""
+  AnalyzeExcelRequest:
+    type: "object"    
+    properties:
+      Files:
+        type: "container"
+        description: ""
+      NeedThumbnail:
+        type: "boolean"
+        description: ""
+      BuildSuggestoinSheet:
+        type: "boolean"
+        description: ""
   BatchConvertRequest:
     type: "object"    
     properties:
@@ -20815,6 +21122,78 @@ definitions:
       PivotFieldData:
         type: "array<integer>"
         description: "Represents data fields in a PivotTable report."
+  DataCleansingRequest:
+    type: "object"    
+    properties:
+      File:
+        type: "class:fileinfo"
+        description: "Spreadsheet files that require data cleaning. "
+      CheckExcelRestriction:
+        type: "boolean"
+        description: "Whether check restriction of Spreadsheet file when user modify cells related objects."
+      Region:
+        type: "string"
+        description: "The regional settings for workbook."
+      OutFileFormat:
+        type: "string"
+        description: "finish to data cleansing, outfile`s file format."
+      DataCleansing:
+        type: "class:datacleansing"
+        description: "Data cleansing content"
+  DataDeduplicationRequest:
+    type: "object"    
+    properties:
+      File:
+        type: "class:fileinfo"
+        description: "Spreadsheet files that require data fulling. "
+      DeduplicationRegion:
+        type: "class:deduplicationregion"
+        description: ""
+      OutFileFormat:
+        type: "string"
+        description: "finish to data cleansing, outfile`s file format."
+      CheckExcelRestriction:
+        type: "boolean"
+        description: "Whether check restriction of Spreadsheet file when user modify cells related objects."
+      Region:
+        type: "string"
+        description: "The regional settings for workbook."
+  DataFillRequest:
+    type: "object"    
+    properties:
+      File:
+        type: "class:fileinfo"
+        description: "Spreadsheet files that require data fulling. "
+      OutFileFormat:
+        type: "string"
+        description: "finish to data cleansing, outfile`s file format."
+      CheckExcelRestriction:
+        type: "boolean"
+        description: "Whether check restriction of Spreadsheet file when user modify cells related objects."
+      Region:
+        type: "string"
+        description: "The regional settings for workbook."
+      DataFill:
+        type: "class:datafill"
+        description: "Fill data default value."
+  DeleteIncompleteRowsRequest:
+    type: "object"    
+    properties:
+      File:
+        type: "class:fileinfo"
+        description: "Spreadsheet files that require data fulling. "
+      OutFileFormat:
+        type: "string"
+        description: "finish to data cleansing, outfile`s file format."
+      CheckExcelRestriction:
+        type: "boolean"
+        description: "Whether check restriction of Spreadsheet file when user modify cells related objects."
+      Region:
+        type: "string"
+        description: "The regional settings for workbook."
+      Ranges:
+        type: "container"
+        description: ""
   ImportJsonRequest:
     type: "object"    
     properties:
@@ -25168,7 +25547,7 @@ definitions:
         description: "Gets the chart legend."
       Name:
         type: "string"
-        description: "Gets and sets the name of the chart."
+        description: ""
       NSeries:
         type: "class:linkelement"
         description: "Gets a  collection representing the data series in the chart."
@@ -25231,10 +25610,10 @@ definitions:
         description: "Gets and sets the builtin style."
       Title:
         type: "class:linkelement"
-        description: "Gets the chart's title."
+        description: ""
       Type:
         type: "string"
-        description: "Gets or sets a chart's type."
+        description: ""
       ValueAxis:
         type: "class:linkelement"
         description: "Gets the chart's Y axis."
@@ -26509,6 +26888,243 @@ definitions:
         description: ""
       Transparency:
         type: "floating"
+        description: ""
+  ColumnDataExceptionDescription:
+    allOf:
+    - type: "object"
+    
+    properties:
+
+  TextCategoryType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
+  AnalyzedColumnDescription:
+    type: "object"    
+    properties:
+      Index:
+        type: "integer"
+        description: "Column index."
+      ColumnIndex:
+        type: "integer"
+        description: "The true position index value of the column."
+      Title:
+        type: "string"
+        description: ""
+      RepetitionRate:
+        type: "floating"
+        description: "When the repetition rate is high, can it be viewed as a group display?"
+      ColumnDataDataType:
+        type: "string"
+        description: "The column type is identified, and the attributes of the column are determined after data analysis."
+      NumberCategoryType:
+        type: "string"
+        description: ""
+      TextCategoryType:
+        type: "string"
+        description: ""
+      StyleNumber:
+        type: "integer"
+        description: ""
+      columnDataExceptionDescription:
+        type: "string"
+        description: "Column data exception description."
+  AnalyzedResult:
+    type: "object"    
+    properties:
+      Filename:
+        type: "string"
+        description: ""
+      Description:
+        type: "string"
+        description: ""
+      BasicStatistics:
+        type: "class:exceldatastatistics"
+        description: ""
+      Results:
+        type: "container"
+        description: ""
+      SuggestedFile:
+        type: "string"
+        description: "base64String Excel file"
+  AnalyzedTableDescription:
+    type: "object"    
+    properties:
+      Name:
+        type: "string"
+        description: ""
+      SheetName:
+        type: "string"
+        description: ""
+      Columns:
+        type: "container"
+        description: ""
+      DateColumns:
+        type: "container"
+        description: ""
+      NumberColumns:
+        type: "container"
+        description: ""
+      TextColumns:
+        type: "container"
+        description: ""
+      ExceptionColumns:
+        type: "container"
+        description: ""
+      HasTableHeaderRow:
+        type: "boolean"
+        description: ""
+      HasTableTotalRow:
+        type: "boolean"
+        description: ""
+      StartDataColumnIndex:
+        type: "integer"
+        description: ""
+      EndDataColumnIndex:
+        type: "integer"
+        description: ""
+      StartDataRowIndex:
+        type: "integer"
+        description: ""
+      EndDataRowIndex:
+        type: "integer"
+        description: ""
+      Thumbnail:
+        type: "string"
+        description: "Base64String"
+      DiscoverCharts:
+        type: "container"
+        description: ""
+      DiscoverPivotTables:
+        type: "container"
+        description: ""
+  DateSourceType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
+  SuggestedOutputType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
+  AnalyzeSuggestion:
+    type: "object"    
+    properties:
+      Name:
+        type: "string"
+        description: ""
+      Filename:
+        type: "string"
+        description: "Excel file name."
+      SheetName:
+        type: "string"
+        description: "The worksheet where the data is aAnalyzed."
+      DateSourceType:
+        type: "string"
+        description: "The type of data being analyzed."
+      SuggestedOutputType:
+        type: "string"
+        description: "Based on the results of the data analysis, suggestions for creating new data types are given."
+      Description:
+        type: "string"
+        description: "Based on the results of the data analysis, a business description of the new data object is created."
+      DataSouceThumbnail:
+        type: "string"
+        description: ""
+      Thumbnail:
+        type: "string"
+        description: ""
+  DiscoverChart:
+    type: "object"    
+    properties:
+      Name:
+        type: "string"
+        description: ""
+      SheetName:
+        type: "string"
+        description: ""
+      Title:
+        type: "string"
+        description: ""
+      Type:
+        type: "string"
+        description: ""
+      DataRange:
+        type: "string"
+        description: ""
+      Thumbnail:
+        type: "string"
+        description: "Base64String"
+  DiscoverPivotTable:
+    type: "object"    
+    properties:
+      Name:
+        type: "string"
+        description: ""
+      Title:
+        type: "string"
+        description: ""
+      DataRange:
+        type: "string"
+        description: ""
+      PivotFieldRows:
+        type: "array<integer>"
+        description: "Represents row fields in a PivotTable report."
+      PivotFieldColumns:
+        type: "array<integer>"
+        description: "Represents column fields in a PivotTable report."
+      PivotFieldData:
+        type: "array<integer>"
+        description: "Represents data fields in a PivotTable report."
+      Thumbnail:
+        type: "string"
+        description: "Base64String"
+  ExcelDataStatistics:
+    type: "object"    
+    properties:
+      WorksheetDataStatistics:
+        type: "container"
+        description: ""
+      NamesCount:
+        type: "integer"
+        description: ""
+  WorksheetDataStatistics:
+    type: "object"    
+    properties:
+      Name:
+        type: "string"
+        description: ""
+      ChartsCount:
+        type: "integer"
+        description: ""
+      TablesCount:
+        type: "integer"
+        description: ""
+      PivotTablesCount:
+        type: "integer"
+        description: ""
+      ShapesCount:
+        type: "integer"
+        description: ""
+      HyperlinksCount:
+        type: "integer"
+        description: ""
+      QueryTablesCount:
+        type: "integer"
+        description: ""
+      CellsCount:
+        type: "integer"
+        description: ""
+      CellsCountInTable:
+        type: "integer"
+        description: ""
+      CellsCountIsFormula:
+        type: "integer"
         description: ""
   Error:
     type: "object"    

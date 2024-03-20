@@ -31,7 +31,6 @@ type WorkbookSettings struct {
     AutoRecover bool `json:"AutoRecover,omitempty" xml:"AutoRecover"`
     BuildVersion string `json:"BuildVersion,omitempty" xml:"BuildVersion"`
     CalcMode string `json:"CalcMode,omitempty" xml:"CalcMode"`
-    CalcStackSize int64 `json:"CalcStackSize,omitempty" xml:"CalcStackSize"`
     CalculationId string `json:"CalculationId,omitempty" xml:"CalculationId"`
     CheckComptiliblity bool `json:"CheckComptiliblity,omitempty" xml:"CheckComptiliblity"`
     CheckExcelRestriction bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
