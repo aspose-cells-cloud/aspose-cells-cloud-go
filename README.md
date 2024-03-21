@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE) 
 
-# Go package for Aspose.Cells Cloud SDK
+# Go package for Aspose.Cells Cloud
 
-Enhance your Go applications with the [Aspose.Cells Cloud SDK](https://products.aspose.cloud/cells/go) , enabling seamless integration with [Excel, ODS, CSV, Json and other spreadsheet document formats](https://docs.aspose.cloud/cells/supported-file-formats/). With its powerful APIs, developers can effortlessly read, convert, create, edit, and manipulate the contents of Excel documents without the need for any office software installed on the machine
+Enhance your Go applications with the [Aspose.Cells Cloud](https://products.aspose.cloud/cells/go) , enabling seamless integration with [Excel, ODS, CSV, Json and other spreadsheet document formats](https://docs.aspose.cloud/cells/supported-file-formats/). With its powerful APIs, developers can effortlessly read, convert, create, edit, and manipulate the contents of Excel documents without the need for any office software installed on the machine
 
 ## Manipulate Excel and other spreadsheet files in the Cloud
 
@@ -69,7 +69,7 @@ Full list of issues covering all changes in this release:
 
 ## Quick Start Guide
 
-To get started with Aspose.Cells Cloud SDK for Go, follow these steps:
+To get started with Aspose.Cells Cloud for Go, follow these steps:
 
 1. Create an account at  [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) and obtain your application information.
 2. Download the code and add or modify your application by referring to cells_cloud_test.go.
@@ -108,7 +108,7 @@ To get started with Aspose.Cells Cloud SDK for Go, follow these steps:
 ```
 
 
-## Aspose.Cells Cloud SDKs in Popular Languages
+## Aspose.Cells Cloud in Popular Languages
 
 | .NET | Java | PHP | Python | Ruby | Node.js | Android | Swift | Perl |
 |---|---|---|---|---|---|---|---|---|
