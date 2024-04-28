@@ -31,4 +31,7 @@ type SmartMarkerTaskParameter struct {
     SourceWorkbook *FileSource `json:"SourceWorkbook,omitempty" xml:"SourceWorkbook"`
     DestinationWorkbook *FileSource `json:"DestinationWorkbook,omitempty" xml:"DestinationWorkbook"`
     XmlFile *FileSource `json:"xmlFile,omitempty" xml:"xmlFile"`
+    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+    TargetDataSource *DataSource `json:"TargetDataSource,omitempty" xml:"TargetDataSource"`
+    XMLFileDataSource *DataSource `json:"XMLFileDataSource,omitempty" xml:"XMLFileDataSource"`
 }

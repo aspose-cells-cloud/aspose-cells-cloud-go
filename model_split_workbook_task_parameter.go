@@ -30,6 +30,8 @@ type SplitWorkbookTaskParameter struct {
  
     Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
     DestinationFilePosition *FileSource `json:"DestinationFilePosition,omitempty" xml:"DestinationFilePosition"`
+    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+    TargetDataSource *DataSource `json:"TargetDataSource,omitempty" xml:"TargetDataSource"`
     DestinationFileFormat string `json:"DestinationFileFormat,omitempty" xml:"DestinationFileFormat"`
     SplitNameRule string `json:"SplitNameRule,omitempty" xml:"SplitNameRule"`
     VerticalResolution int64 `json:"VerticalResolution,omitempty" xml:"VerticalResolution"`

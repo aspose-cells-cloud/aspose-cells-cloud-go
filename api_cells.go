@@ -33,7 +33,7 @@ import (
 )
 
 func Version() {
-	fmt.Println("---Version: 24.3---")
+	fmt.Println("---Version: 24.4---")
 }
 
 func NewCellsApiService(appSid string, appKey string, opts ...string) *CellsApiService {
@@ -3487,6 +3487,34 @@ func (a *CellsApiService) PostDataFill(data *PostDataFillRequest) (  FileInfo,  
 
 
 func (a *CellsApiService) PostDeleteIncompleteRows(data *PostDeleteIncompleteRowsRequest) (  FileInfo,  *http.Response, error) {
+	var (
+	localVarReturnValue FileInfo 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) PostDataTransformation(data *PostDataTransformationRequest) (  FileInfo,  *http.Response, error) {
 	var (
 	localVarReturnValue FileInfo 
 

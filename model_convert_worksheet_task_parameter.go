@@ -28,8 +28,10 @@ package asposecellscloud
 type ConvertWorksheetTaskParameter struct {
      
  
+    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
     Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
     Sheet string `json:"Sheet,omitempty" xml:"Sheet"`
+    TargetDataSource *DataSource `json:"TargetDataSource,omitempty" xml:"TargetDataSource"`
     Target *FileSource `json:"Target,omitempty" xml:"Target"`
     Format string `json:"Format,omitempty" xml:"Format"`
     Area string `json:"Area,omitempty" xml:"Area"`

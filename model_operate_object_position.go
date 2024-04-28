@@ -27,6 +27,7 @@ package asposecellscloud
 
 type OperateObjectPosition struct {
  
+    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
     Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
     SheetName string `json:"SheetName,omitempty" xml:"SheetName"`
     ChartIndex int64 `json:"ChartIndex,omitempty" xml:"ChartIndex"`

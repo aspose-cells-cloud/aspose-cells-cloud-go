@@ -30,6 +30,7 @@ type Import2DimensionIntArrayOption struct {
         DestinationWorksheet string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
         IsInsert bool `json:"IsInsert,omitempty" xml:"IsInsert"`
         ImportDataType string `json:"ImportDataType,omitempty" xml:"ImportDataType"`
+        DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
         Source *FileSource `json:"Source,omitempty" xml:"Source"`
  
     FirstRow int64 `json:"FirstRow,omitempty" xml:"FirstRow"`

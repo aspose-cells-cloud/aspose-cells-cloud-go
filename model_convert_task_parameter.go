@@ -28,6 +28,7 @@ package asposecellscloud
 type ConvertTaskParameter struct {
      
  
+    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
     Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
     DestinationFile string `json:"DestinationFile,omitempty" xml:"DestinationFile"`
     Region string `json:"Region,omitempty" xml:"Region"`

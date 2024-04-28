@@ -28,7 +28,7 @@ package asposecellscloud
 type SaveFilesToCloudResult struct {
      
         Description string `json:"Description,omitempty" xml:"Description"`
-        OutFileList []FileSource `json:"OutFileList,omitempty" xml:"OutFileList"`
+        OutFileList []DataSource `json:"OutFileList,omitempty" xml:"OutFileList"`
  
     SavedFiles []Link `json:"SavedFiles,omitempty" xml:"SavedFiles"`
 }

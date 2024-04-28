@@ -28,7 +28,9 @@ package asposecellscloud
 type ImportDataTaskParameter struct {
      
  
+    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
     Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
     ImportOption *ImportOption `json:"ImportOption,omitempty" xml:"ImportOption"`
+    TargetDataSource *DataSource `json:"TargetDataSource,omitempty" xml:"TargetDataSource"`
     DestinationWorkbook *FileSource `json:"DestinationWorkbook,omitempty" xml:"DestinationWorkbook"`
 }

@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "24.3"
+  version: "24.4"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
@@ -6032,6 +6032,20 @@ paths:
         type: "class:deleteincompleterowsrequest"
         x-nullable: true
         x-exportParamName: "deleteIncompleteRowsRequest"
+  /cells/datatransformation:
+    post:
+      tags:
+      - "Cells"
+      summary: "Transform spreadsheet data is mainly used to pivot columns, unpivot columns."
+      operationId: "PostDataTransformation"
+      parameters:
+      - name: "datatransformationrequest"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:datatransformationrequest"
+        x-nullable: true
+        x-exportParamName: "dataTransformationRequest"
   /cells/{name}/worksheets/{sheetName}/hyperlinks:
     get:
       tags:
@@ -16009,6 +16023,21 @@ definitions:
       DefaultDate:
         type: "string"
         description: ""
+  DataItem:
+    type: "object"    
+    properties:
+      DataItemType:
+        type: "string"
+        description: ""
+      Value:
+        type: "string"
+        description: ""
+  DataItemType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
   DataSorter:
     type: "object"    
     properties:
@@ -16051,6 +16080,21 @@ definitions:
       Color:
         type: "class:color"
         description: "Gets the sorted color. "
+  DataSource:
+    type: "object"    
+    properties:
+      DataSourceType:
+        type: "string"
+        description: ""
+      DataPath:
+        type: "string"
+        description: ""
+  DataSourceType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
   DateTimeGroupItem:
     allOf:
     - type: "object"
@@ -16110,6 +16154,21 @@ definitions:
       FileContent:
         type: "string"
         description: "File content,  byte to base64 string."
+  FileSource:
+    type: "object"    
+    properties:
+      FileSourceType:
+        type: "string"
+        description: ""
+      FilePath:
+        type: "string"
+        description: ""
+  FileSourceType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
   FilesResult:
     type: "object"    
     properties:
@@ -16840,24 +16899,6 @@ definitions:
       AllowUsingPivotTable:
         type: "string"
         description: ""
-  QueryTable:
-    type: "object"    
-    properties:
-      ConnectionId:
-        type: "integer"
-        description: "Gets the connection id of the query table."
-      Name:
-        type: "string"
-        description: "Gets the name of querytable."
-      ResultRange:
-        type: "class:range"
-        description: "Gets the range of the result."
-      PreserveFormatting:
-        type: "boolean"
-        description: "Returns or sets the PreserveFormatting of the object."
-      AdjustColumnWidth:
-        type: "boolean"
-        description: "Returns or sets the AdjustColumnWidth of the object."
   Range:
     type: "object"    
     properties:
@@ -17812,6 +17853,9 @@ definitions:
       OperateParameter:
         type: "class:operateparameter"
         description: ""
+      DestinatioDataSource:
+        type: "class:datasource"
+        description: ""
       DestinationWorkbook:
         type: "class:filesource"
         description: ""
@@ -17820,6 +17864,9 @@ definitions:
     - type: "object"
     
     properties:
+      DataSource:
+        type: "class:datasource"
+        description: ""
       Workbook:
         type: "class:filesource"
         description: ""
@@ -17837,11 +17884,17 @@ definitions:
     - type: "object"
     
     properties:
+      DataSource:
+        type: "class:datasource"
+        description: ""
       Workbook:
         type: "class:filesource"
         description: ""
       Sheet:
         type: "string"
+        description: ""
+      TargetDataSource:
+        type: "class:datasource"
         description: ""
       Target:
         type: "class:filesource"
@@ -17861,31 +17914,22 @@ definitions:
       HorizontalResolution:
         type: "integer"
         description: ""
-  FileSource:
-    type: "object"    
-    properties:
-      FileSourceType:
-        type: "string"
-        description: ""
-      FilePath:
-        type: "string"
-        description: ""
-  FileSourceType:
-    allOf:
-    - type: "object"
-    
-    properties:
-
   ImportDataTaskParameter:
     allOf:
     - type: "object"
     
     properties:
+      DataSource:
+        type: "class:datasource"
+        description: ""
       Workbook:
         type: "class:filesource"
         description: ""
       ImportOption:
         type: "class:importoption"
+        description: ""
+      TargetDataSource:
+        type: "class:datasource"
         description: ""
       DestinationWorkbook:
         type: "class:filesource"
@@ -17953,6 +17997,15 @@ definitions:
       xmlFile:
         type: "class:filesource"
         description: ""
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      TargetDataSource:
+        type: "class:datasource"
+        description: ""
+      XMLFileDataSource:
+        type: "class:datasource"
+        description: ""
   SplitWorkbookTaskParameter:
     allOf:
     - type: "object"
@@ -17963,6 +18016,12 @@ definitions:
         description: ""
       DestinationFilePosition:
         type: "class:filesource"
+        description: ""
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      TargetDataSource:
+        type: "class:datasource"
         description: ""
       DestinationFileFormat:
         type: "string"
@@ -18080,6 +18139,9 @@ definitions:
   OperateObjectPosition:
     type: "object"    
     properties:
+      DataSource:
+        type: "class:datasource"
+        description: ""
       Workbook:
         type: "class:filesource"
         description: ""
@@ -18969,13 +19031,13 @@ definitions:
     properties:
       IgnoreHiddenRows:
         type: "boolean"
-        description: ""
+        description: "Ignore hidden rows"
       AdjustFontSizeForRowType:
         type: "string"
-        description: ""
+        description: "Adjust font size for row type"
       ExportViewType:
         type: "string"
-        description: ""
+        description: "Gets and sets the display type when exporting to PowerPoint. The default exporting type is working as printing."
       DefaultFont:
         type: "string"
         description: ""
@@ -21176,6 +21238,24 @@ definitions:
       DataFill:
         type: "class:datafill"
         description: "Fill data default value."
+  DataTransformationRequest:
+    type: "object"    
+    properties:
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
+      Transformation:
+        type: "class:transformation"
+        description: ""
+      LoadData:
+        type: "class:loaddata"
+        description: ""
+      Region:
+        type: "string"
+        description: ""
+      OutFormat:
+        type: "string"
+        description: ""
   DeleteIncompleteRowsRequest:
     type: "object"    
     properties:
@@ -21198,7 +21278,7 @@ definitions:
     type: "object"    
     properties:
       JsonFileSource:
-        type: "class:filesource"
+        type: "class:datasource"
         description: "Json file source"
       ImportPosition:
         type: "class:importposition"
@@ -21210,7 +21290,7 @@ definitions:
     type: "object"    
     properties:
       XMLFileSource:
-        type: "class:filesource"
+        type: "class:datasource"
         description: "XML file source"
       ImportPosition:
         type: "class:importposition"
@@ -21499,6 +21579,99 @@ definitions:
         description: ""
       OffsetY:
         type: "floating"
+        description: ""
+  LoadData:
+    type: "object"    
+    properties:
+      LoadTo:
+        type: "class:loadto"
+        description: "Indicates begin position for loading data. "
+      DataSource:
+        type: "class:datasource"
+        description: "Indicates the source of the mount data."
+      FileInfo:
+        type: "class:fileinfo"
+        description: "When data souce is request files, FileInfo store the contents of the file."
+      DataItem:
+        type: "class:dataitem"
+        description: "The specific data object type and name."
+  LoadTo:
+    type: "object"    
+    properties:
+      Worksheet:
+        type: "string"
+        description: ""
+      beginRowIndex:
+        type: "integer"
+        description: ""
+      beginColumnIndex:
+        type: "integer"
+        description: ""
+  PivotColumn:
+    type: "object"    
+    properties:
+      PivotColumnName:
+        type: "string"
+        description: ""
+      ValueColumnNames:
+        type: "container"
+        description: ""
+  QueryDataSource:
+    type: "object"    
+    properties:
+      DataSourceDataType:
+        type: "string"
+        description: ""
+      DataFile:
+        type: "class:datasource"
+        description: ""
+      DataSource:
+        type: "string"
+        description: ""
+  QueryDataSourceDataType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
+  QueryTable:
+    type: "object"    
+    properties:
+      ConnectionId:
+        type: "integer"
+        description: "Gets the connection id of the query table."
+      Name:
+        type: "string"
+        description: "Gets the name of querytable."
+      ResultRange:
+        type: "class:range"
+        description: "Gets the range of the result."
+      PreserveFormatting:
+        type: "boolean"
+        description: "Returns or sets the PreserveFormatting of the object."
+      AdjustColumnWidth:
+        type: "boolean"
+        description: "Returns or sets the AdjustColumnWidth of the object."
+  Transformation:
+    type: "object"    
+    properties:
+      PivotColumn:
+        type: "class:pivotcolumn"
+        description: "long table to a wide table."
+      UnpivotColumn:
+        type: "class:unpivotcolumn"
+        description: "wide table to a long table"
+  UnpivotColumn:
+    type: "object"    
+    properties:
+      UnpivotColumnNames:
+        type: "container"
+        description: ""
+      ColumnMapName:
+        type: "string"
+        description: ""
+      ValueMapName:
+        type: "string"
         description: ""
   PivotField:
     type: "object"    
@@ -21923,6 +22096,9 @@ definitions:
       ImportDataType:
         type: "string"
         description: ""
+      DataSource:
+        type: "class:datasource"
+        description: ""
       Source:
         type: "class:filesource"
         description: ""
@@ -21949,6 +22125,9 @@ definitions:
       ImportDataType:
         type: "string"
         description: ""
+      DataSource:
+        type: "class:datasource"
+        description: ""
       Source:
         type: "class:filesource"
         description: ""
@@ -21974,6 +22153,9 @@ definitions:
         description: ""
       ImportDataType:
         type: "string"
+        description: ""
+      DataSource:
+        type: "class:datasource"
         description: ""
       Source:
         type: "class:filesource"
@@ -22016,6 +22198,9 @@ definitions:
       ImportDataType:
         type: "string"
         description: ""
+      DataSource:
+        type: "class:datasource"
+        description: ""
       Source:
         type: "class:filesource"
         description: ""
@@ -22050,6 +22235,9 @@ definitions:
         description: ""
       ImportDataType:
         type: "string"
+        description: ""
+      DataSource:
+        type: "class:datasource"
         description: ""
       Source:
         type: "class:filesource"
@@ -22086,6 +22274,9 @@ definitions:
       ImportDataType:
         type: "string"
         description: ""
+      DataSource:
+        type: "class:datasource"
+        description: ""
       Source:
         type: "class:filesource"
         description: ""
@@ -22115,6 +22306,9 @@ definitions:
       ImportDataType:
         type: "string"
         description: ""
+      DataSource:
+        type: "class:datasource"
+        description: ""
       Source:
         type: "class:filesource"
         description: ""
@@ -22129,6 +22323,9 @@ definitions:
         description: ""
       ImportDataType:
         type: "string"
+        description: ""
+      DataSource:
+        type: "class:datasource"
         description: ""
       Source:
         type: "class:filesource"
@@ -22164,6 +22361,9 @@ definitions:
         description: ""
       ImportDataType:
         type: "string"
+        description: ""
+      DataSource:
+        type: "class:datasource"
         description: ""
       Source:
         type: "class:filesource"
@@ -22205,6 +22405,9 @@ definitions:
         description: ""
       ImportDataType:
         type: "string"
+        description: ""
+      DataSource:
+        type: "class:datasource"
         description: ""
       Source:
         type: "class:filesource"

@@ -30,6 +30,7 @@ type ImportBatchDataOption struct {
         DestinationWorksheet string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
         IsInsert bool `json:"IsInsert,omitempty" xml:"IsInsert"`
         ImportDataType string `json:"ImportDataType,omitempty" xml:"ImportDataType"`
+        DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
         Source *FileSource `json:"Source,omitempty" xml:"Source"`
  
     BatchData []CellValue `json:"BatchData,omitempty" xml:"BatchData"`

@@ -30,5 +30,6 @@ type CellsObjectOperateTaskParameter struct {
  
     OperateObject *OperateObject `json:"OperateObject,omitempty" xml:"OperateObject"`
     OperateParameter *OperateParameter `json:"OperateParameter,omitempty" xml:"OperateParameter"`
+    DestinatioDataSource *DataSource `json:"DestinatioDataSource,omitempty" xml:"DestinatioDataSource"`
     DestinationWorkbook *FileSource `json:"DestinationWorkbook,omitempty" xml:"DestinationWorkbook"`
 }

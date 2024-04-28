@@ -53,9 +53,9 @@ func TestXmlController_PostWorkbookImportXML(t *testing.T) {
     dataXMLRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(dataXMLRequest )
  
-    var importXMLRequestXMLFileSource = new(FileSource)
-     importXMLRequestXMLFileSource.FileSourceType =        "CloudFileSystem"      
-     importXMLRequestXMLFileSource.FilePath =        remoteFolder + "/data.xml"      
+    var importXMLRequestXMLFileSource = new(DataSource)
+     importXMLRequestXMLFileSource.DataSourceType =        "CloudFileSystem"      
+     importXMLRequestXMLFileSource.DataPath =        remoteFolder + "/data.xml"      
     var importXMLRequestImportPosition = new(ImportPosition)
      importXMLRequestImportPosition.SheetName =        "Sheet1"      
      importXMLRequestImportPosition.RowIndex = int64(3)          

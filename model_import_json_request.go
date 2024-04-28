@@ -27,7 +27,7 @@ package asposecellscloud
 
 type ImportJsonRequest struct {
  
-    JsonFileSource *FileSource `json:"JsonFileSource,omitempty" xml:"JsonFileSource"`
+    JsonFileSource *DataSource `json:"JsonFileSource,omitempty" xml:"JsonFileSource"`
     ImportPosition *ImportPosition `json:"ImportPosition,omitempty" xml:"ImportPosition"`
     JsonContent string `json:"JsonContent,omitempty" xml:"JsonContent"`
 }
