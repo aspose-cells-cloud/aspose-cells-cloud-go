@@ -21,7 +21,10 @@ Enhance your Go applications with the [Aspose.Cells Cloud](https://products.aspo
 
 
 
-## Feature & Enhancements in Version 24.5
+## There are major problems with v24.5.0 and it does not work properly, please use v24.5.1.
+
+
+## Feature & Enhancements in Version 24.5.1
 
 Full list of issues covering all changes in this release:
 
