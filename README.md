@@ -27,7 +27,7 @@ Full list of issues covering all changes in this release:
 
 - Add merge queries method for loading data of data transformation.
 - Optimize chart data model.
-
+- Update obtaining access token address.
 
 ## Support file format
 
