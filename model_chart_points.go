@@ -29,5 +29,5 @@ type ChartPoints struct {
      
         Link *Link `json:"link,omitempty" xml:"link"`
  
-    ChartPointList []LinkElement `json:"ChartPointList,omitempty" xml:"ChartPointList"`
+    ChartPointList []ChartPoint `json:"ChartPointList,omitempty" xml:"ChartPointList"`
 }

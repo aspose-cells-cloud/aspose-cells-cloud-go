@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="AnalyzeExcelResponse.go">
+* <copyright company="Aspose" file="MergeQueries.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,7 +25,15 @@
 
 package asposecellscloud
 
-type AnalyzeExcelResponse struct {
+type MergeQueries struct {
  
-    Suggestions []AnalyzeSuggestion `json:"Suggestions,omitempty" xml:"Suggestions"`
+    DataSourceA *DataSource `json:"DataSourceA,omitempty" xml:"DataSourceA"`
+    FileInfoA *FileInfo `json:"FileInfoA,omitempty" xml:"FileInfoA"`
+    DataItemA *DataItem `json:"DataItemA,omitempty" xml:"DataItemA"`
+    DataAIndexField string `json:"DataAIndexField,omitempty" xml:"DataAIndexField"`
+    DataSourceB *DataSource `json:"DataSourceB,omitempty" xml:"DataSourceB"`
+    FileInfoB *FileInfo `json:"FileInfoB,omitempty" xml:"FileInfoB"`
+    DataItemB *DataItem `json:"DataItemB,omitempty" xml:"DataItemB"`
+    DataBIndexField string `json:"DataBIndexField,omitempty" xml:"DataBIndexField"`
+    JoinType string `json:"JoinType,omitempty" xml:"JoinType"`
 }

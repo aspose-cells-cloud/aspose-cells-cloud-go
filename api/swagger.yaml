@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "24.4"
+  version: "24.5"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
@@ -15980,58 +15980,58 @@ definitions:
         description: ""
       NeedFillData:
         type: "boolean"
-        description: ""
+        description: "Represents whether the data needs to be populated."
       DataFill:
         type: "class:datafill"
-        description: ""
+        description: "Represents data fill."
   DataColumnFillValue:
     type: "object"    
     properties:
       ColumnIndex:
         type: "integer"
-        description: ""
+        description: "Represents specified column index."
       DataFillValue:
         type: "class:datafillvalue"
-        description: ""
+        description: "Represents specified data fill value."
   DataFill:
     type: "object"    
     properties:
       Ranges:
         type: "container"
-        description: ""
+        description: "Represents range of data filling."
       DataFillDefaultValue:
         type: "class:datafillvalue"
-        description: ""
+        description: "Represents that the data column is populated with the default value."
       DataColumnFillValueList:
         type: "container"
-        description: ""
+        description: "Represents that the data column is populated with the specified value."
   DataFillValue:
     type: "object"    
     properties:
       DefaultBoolean:
         type: "boolean"
-        description: ""
+        description: "Represents default bool value. "
       DefaultString:
         type: "string"
-        description: ""
+        description: "Represents default string value.             "
       DefaultNumber:
         type: "integer"
-        description: ""
+        description: "Represents default number value.             "
       DefaultDouble:
         type: "floating"
-        description: ""
+        description: "Represents default double value.             "
       DefaultDate:
         type: "string"
-        description: ""
+        description: "Represents default date value.             "
   DataItem:
     type: "object"    
     properties:
       DataItemType:
         type: "string"
-        description: ""
+        description: "Represents data item type.            "
       Value:
         type: "string"
-        description: ""
+        description: "Represents data item value.            "
   DataItemType:
     allOf:
     - type: "object"
@@ -16085,10 +16085,10 @@ definitions:
     properties:
       DataSourceType:
         type: "string"
-        description: ""
+        description: "Represents data source type."
       DataPath:
         type: "string"
-        description: ""
+        description: "Represents data path."
   DataSourceType:
     allOf:
     - type: "object"
@@ -16126,10 +16126,10 @@ definitions:
     properties:
       Ranges:
         type: "container"
-        description: ""
+        description: "Represents data range."
       WorksheetNameList:
         type: "container"
-        description: ""
+        description: "Represents worksheet name list."
   DynamicFilter:
     type: "object"    
     properties:
@@ -16147,13 +16147,13 @@ definitions:
     properties:
       Filename:
         type: "string"
-        description: "Filename. "
+        description: "Represents filename. "
       FileSize:
         type: "long"
-        description: "File size."
+        description: "Represents file size."
       FileContent:
         type: "string"
-        description: "File content,  byte to base64 string."
+        description: "Represents file content,  byte to base64 string."
   FileSource:
     type: "object"    
     properties:
@@ -16986,7 +16986,7 @@ definitions:
     properties:
       Documents:
         type: "container"
-        description: ""
+        description: "Represents cells cloud file infomation."
   PaginatedSaveOptions:
     allOf:
     - type: "object"
@@ -17075,19 +17075,19 @@ definitions:
     properties:
       Value:
         type: "string"
-        description: ""
+        description: "Represents value."
       ValueType:
         type: "class:valuetype"
-        description: ""
+        description: "Represents value type."
   SortKey:
     type: "object"    
     properties:
       Key:
         type: "integer"
-        description: ""
+        description: "Represents the key of sorting."
       SortOrder:
         type: "string"
-        description: ""
+        description: "Represents the order of sorting."
       CustomList:
         type: "array<string>"
         description: ""
@@ -17105,18 +17105,7 @@ definitions:
     properties:
       Documents:
         type: "container"
-        description: ""
-  SplitResultDocument:
-    allOf:
-    - type: "object"
-    
-    properties:
-      Id:
-        type: "integer"
-        description: ""
-      link:
-        type: "class:link"
-        description: ""
+        description: "Represents cells cloud file information."
   Style:
     type: "object"    
     properties:
@@ -17274,7 +17263,7 @@ definitions:
     properties:
       Text:
         type: "string"
-        description: ""
+        description: "Represents text content."
       link:
         type: "class:link"
         description: ""
@@ -17285,7 +17274,7 @@ definitions:
     properties:
       TextItemList:
         type: "container"
-        description: ""
+        description: "Represents text item collection"
       link:
         type: "class:link"
         description: ""
@@ -17296,22 +17285,22 @@ definitions:
     properties:
       Fill:
         type: "class:fillformat"
-        description: ""
+        description: "Represents fill format."
       Kerning:
         type: "floating"
-        description: ""
+        description: "Represents kerning."
       Outline:
         type: "class:lineformat"
-        description: ""
+        description: "Represents outline format."
       Shadow:
         type: "class:shadoweffect"
-        description: ""
+        description: "Represents shadow effect."
       Spacing:
         type: "floating"
-        description: ""
+        description: "Represents spacing."
       UnderlineColor:
         type: "class:cellscolor"
-        description: ""
+        description: "Represents under line color."
       Color:
         type: "class:color"
         description: ""
@@ -17849,16 +17838,16 @@ definitions:
     properties:
       OperateObject:
         type: "class:operateobject"
-        description: ""
+        description: "Represents object operate."
       OperateParameter:
         type: "class:operateparameter"
-        description: ""
-      DestinatioDataSource:
+        description: "Represents operate parameter."
+      DestinationDataSource:
         type: "class:datasource"
-        description: ""
+        description: "Represents destination data source."
       DestinationWorkbook:
         type: "class:filesource"
-        description: ""
+        description: "Represents destination data source."
   ConvertTaskParameter:
     allOf:
     - type: "object"
@@ -17866,19 +17855,19 @@ definitions:
     properties:
       DataSource:
         type: "class:datasource"
-        description: ""
+        description: "Represents data source of task object."
       Workbook:
         type: "class:filesource"
-        description: ""
+        description: "Represents data source of task object."
       DestinationFile:
         type: "string"
-        description: ""
+        description: "Represents destination file."
       Region:
         type: "string"
-        description: ""
+        description: "Represents Excel data region."
       SaveOptions:
         type: "class:saveoptions"
-        description: ""
+        description: "Represents save options."
   ConvertWorksheetTaskParameter:
     allOf:
     - type: "object"
@@ -17886,34 +17875,34 @@ definitions:
     properties:
       DataSource:
         type: "class:datasource"
-        description: ""
+        description: "Represents data source of task object."
       Workbook:
         type: "class:filesource"
-        description: ""
+        description: "Represents data source of task object."
       Sheet:
         type: "string"
-        description: ""
+        description: "Represents worksheet."
       TargetDataSource:
         type: "class:datasource"
-        description: ""
+        description: "Represents destination data source."
       Target:
         type: "class:filesource"
-        description: ""
+        description: "Represents destination data source."
       Format:
         type: "string"
-        description: ""
+        description: "Represents destination data format."
       Area:
         type: "string"
-        description: ""
+        description: "Represents converted data area."
       PageIndex:
         type: "integer"
-        description: ""
+        description: "Represents converted page index."
       VerticalResolution:
         type: "integer"
-        description: ""
+        description: "Represents vertical resolution."
       HorizontalResolution:
         type: "integer"
-        description: ""
+        description: "Represents horizontal resolution."
   ImportDataTaskParameter:
     allOf:
     - type: "object"
@@ -17921,31 +17910,31 @@ definitions:
     properties:
       DataSource:
         type: "class:datasource"
-        description: ""
+        description: "Represents data source of task object."
       Workbook:
         type: "class:filesource"
-        description: ""
+        description: "Represents data source of task object."
       ImportOption:
         type: "class:importoption"
-        description: ""
+        description: "Represents import option."
       TargetDataSource:
         type: "class:datasource"
-        description: ""
+        description: "Represents destination data source."
       DestinationWorkbook:
         type: "class:filesource"
-        description: ""
+        description: "Represents destination data source."
   ResultDestination:
     type: "object"    
     properties:
       DestinationType:
         type: "string"
-        description: ""
+        description: "Represents destination data type."
       InputFile:
         type: "string"
-        description: ""
+        description: "Represents input file."
       OutputFile:
         type: "string"
-        description: ""
+        description: "Represents output file."
   ResultDestinationType:
     allOf:
     - type: "object"
@@ -17979,10 +17968,10 @@ definitions:
     properties:
       ResultSource:
         type: "string"
-        description: ""
+        description: "Represents result data source."
       ResultDestination:
         type: "class:resultdestination"
-        description: ""
+        description: "Represents result destination data."
   SmartMarkerTaskParameter:
     allOf:
     - type: "object"
@@ -17990,22 +17979,22 @@ definitions:
     properties:
       SourceWorkbook:
         type: "class:filesource"
-        description: ""
+        description: "Represents data source of task object."
       DestinationWorkbook:
         type: "class:filesource"
-        description: ""
+        description: "Represents data source of task object."
       xmlFile:
         type: "class:filesource"
-        description: ""
+        description: "Represents xml file."
       DataSource:
         type: "class:datasource"
-        description: ""
+        description: "Represents destination data source."
       TargetDataSource:
         type: "class:datasource"
-        description: ""
+        description: "Represents destination data source."
       XMLFileDataSource:
         type: "class:datasource"
-        description: ""
+        description: "Represents xml file."
   SplitWorkbookTaskParameter:
     allOf:
     - type: "object"
@@ -18013,19 +18002,19 @@ definitions:
     properties:
       Workbook:
         type: "class:filesource"
-        description: ""
+        description: "Represents data source of task object."
       DestinationFilePosition:
         type: "class:filesource"
-        description: ""
+        description: "Represents data source of task object."
       DataSource:
         type: "class:datasource"
-        description: ""
+        description: "Represents destination data source."
       TargetDataSource:
         type: "class:datasource"
-        description: ""
+        description: "Represents destination data source."
       DestinationFileFormat:
         type: "string"
-        description: ""
+        description: "Represents destination data file format."
       SplitNameRule:
         type: "string"
         description: "SheetName /NewGuid"
@@ -18040,16 +18029,16 @@ definitions:
     properties:
       Tasks:
         type: "container"
-        description: ""
+        description: "Represents task description list."
   TaskDescription:
     type: "object"    
     properties:
       TaskType:
         type: "string"
-        description: ""
+        description: "Represents task type."
       TaskParameter:
         type: "class:taskparameter"
-        description: ""
+        description: "Represents task parameter."
   TaskParameter:
     type: "object"    
     properties:
@@ -18065,10 +18054,10 @@ definitions:
     properties:
       Description:
         type: "string"
-        description: ""
+        description: "Represents task run result description."
       OutFileList:
         type: "container"
-        description: ""
+        description: "Represents out data file list."
   TaskType:
     allOf:
     - type: "object"
@@ -18082,37 +18071,37 @@ definitions:
     properties:
       ChartIndex:
         type: "integer"
-        description: ""
+        description: "Represents chart index."
       ChartType:
         type: "string"
-        description: ""
+        description: "Represents chart type."
       UpperLeftRow:
         type: "integer"
-        description: ""
+        description: "Represents upper left row index of chart."
       UpperLeftColumn:
         type: "integer"
-        description: ""
+        description: "Represents upper left column index of chart."
       LowerRightRow:
         type: "integer"
-        description: ""
+        description: "Represents lower right row index of chart."
       LowerRightColumn:
         type: "integer"
-        description: ""
+        description: "Represents lower right column index of chart."
       Area:
         type: "string"
-        description: ""
+        description: "Represents chart area."
       IsVertical:
         type: "boolean"
-        description: ""
+        description: "Represents whether to plot the series from a range of cell values by row or by column."
       CategoryData:
         type: "string"
-        description: ""
+        description: "Represents chart category data."
       IsAutoGetSerialName:
         type: "boolean"
-        description: ""
+        description: "Represents whether auto get serial name."
       Title:
         type: "string"
-        description: ""
+        description: "Represents chart title."
       OperateType:
         type: "string"
         description: ""
@@ -18123,7 +18112,7 @@ definitions:
     properties:
       ListObject:
         type: "class:listobject"
-        description: ""
+        description: "Represents list object of operate object."
       OperateType:
         type: "string"
         description: ""
@@ -18132,34 +18121,34 @@ definitions:
     properties:
       OperateObjectType:
         type: "string"
-        description: ""
+        description: "Represents operate object type."
       Position:
         type: "class:operateobjectposition"
-        description: ""
+        description: "Represents position of operate object."
   OperateObjectPosition:
     type: "object"    
     properties:
       DataSource:
         type: "class:datasource"
-        description: ""
+        description: "Represents data source of operate object."
       Workbook:
         type: "class:filesource"
-        description: ""
+        description: "Represents data source of operate object."
       SheetName:
         type: "string"
-        description: ""
+        description: "Represents worksheet name of operate object."
       ChartIndex:
         type: "integer"
-        description: ""
+        description: "Represents chart index of operate object."
       ShapeIndex:
         type: "integer"
-        description: ""
+        description: "Represents shape index of operate object."
       CellName:
         type: "string"
-        description: ""
+        description: "Represents cell name of operate object."
       ListObjectIndex:
         type: "integer"
-        description: ""
+        description: "Represents list object index of operate object."
   OperateObjectType:
     allOf:
     - type: "object"
@@ -18171,7 +18160,7 @@ definitions:
     properties:
       OperateType:
         type: "string"
-        description: ""
+        description: "Represents task operate type."
   OperateType:
     allOf:
     - type: "object"
@@ -18185,22 +18174,22 @@ definitions:
     properties:
       PageBreakType:
         type: "string"
-        description: ""
+        description: "Represents page break type."
       Index:
         type: "integer"
-        description: ""
+        description: "Represents page break index."
       Row:
         type: "integer"
-        description: ""
+        description: "Represents row index of page break."
       Column:
         type: "integer"
-        description: ""
+        description: "Represents column index of page break."
       StartIndex:
         type: "integer"
-        description: ""
+        description: "Represents start row index of page break."
       EndIndex:
         type: "integer"
-        description: ""
+        description: "Represents end row index of page break."
       OperateType:
         type: "string"
         description: ""
@@ -18211,7 +18200,7 @@ definitions:
     properties:
       PageSetup:
         type: "class:pagesetup"
-        description: ""
+        description: "Represents worksheet page setup."
       OperateType:
         type: "string"
         description: ""
@@ -18222,28 +18211,28 @@ definitions:
     properties:
       SourceData:
         type: "string"
-        description: ""
+        description: "Represents source data of pivot table."
       DestCellName:
         type: "string"
-        description: ""
+        description: "Represents start cell name of the pivot table."
       TableName:
         type: "string"
-        description: ""
+        description: "Represents table name of pivot table."
       UseSameSource:
         type: "boolean"
-        description: ""
+        description: "Represents whether the same source is used."
       PivotTableIndex:
         type: "integer"
-        description: ""
+        description: "Represents pivot table index."
       PivotFieldRows:
         type: "array<integer>"
-        description: ""
+        description: "Represents pivot row fields."
       PivotFieldColumns:
         type: "array<integer>"
-        description: ""
+        description: "Represents pivot column fields."
       PivotFieldData:
         type: "array<integer>"
-        description: ""
+        description: "Represents pivot data field."
       OperateType:
         type: "string"
         description: ""
@@ -18254,7 +18243,7 @@ definitions:
     properties:
       Shape:
         type: "class:shape"
-        description: ""
+        description: "Represents shape object."
       OperateType:
         type: "string"
         description: ""
@@ -18273,7 +18262,7 @@ definitions:
     properties:
       WorkbookSettings:
         type: "class:workbooksettings"
-        description: ""
+        description: "Represents workbook setting."
       OperateType:
         type: "string"
         description: ""
@@ -18284,16 +18273,16 @@ definitions:
     properties:
       Name:
         type: "string"
-        description: ""
+        description: "Represents worksheet name."
       SheetType:
         type: "string"
-        description: ""
+        description: "Represents worksheet type."
       NewName:
         type: "string"
         description: "rename worksheet name"
       MovingRequest:
         type: "class:worksheetmovingrequest"
-        description: ""
+        description: "Represents move position."
       OperateType:
         type: "string"
         description: ""
@@ -19465,12 +19454,6 @@ definitions:
         description: ""
       ValidateMergedAreas:
         type: "boolean"
-        description: ""
-  AnalyzeExcelResponse:
-    type: "object"    
-    properties:
-      Suggestions:
-        type: "container"
         description: ""
   ArcShapeResponse:
     allOf:
@@ -21580,6 +21563,12 @@ definitions:
       OffsetY:
         type: "floating"
         description: ""
+  JoinType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
   LoadData:
     type: "object"    
     properties:
@@ -21595,6 +21584,9 @@ definitions:
       DataItem:
         type: "class:dataitem"
         description: "The specific data object type and name."
+      MergeQueries:
+        type: "class:mergequeries"
+        description: ""
   LoadTo:
     type: "object"    
     properties:
@@ -21606,6 +21598,36 @@ definitions:
         description: ""
       beginColumnIndex:
         type: "integer"
+        description: ""
+  MergeQueries:
+    type: "object"    
+    properties:
+      DataSourceA:
+        type: "class:datasource"
+        description: "Indicates the source of the mount data."
+      FileInfoA:
+        type: "class:fileinfo"
+        description: ""
+      DataItemA:
+        type: "class:dataitem"
+        description: "Represents data item."
+      DataAIndexField:
+        type: "string"
+        description: "Represents index field  of DataA"
+      DataSourceB:
+        type: "class:datasource"
+        description: "Indicates the source of the mount data."
+      FileInfoB:
+        type: "class:fileinfo"
+        description: ""
+      DataItemB:
+        type: "class:dataitem"
+        description: "Represents data item."
+      DataBIndexField:
+        type: "string"
+        description: "Represents index field  of DataB"
+      JoinType:
+        type: "string"
         description: ""
   PivotColumn:
     type: "object"    
@@ -21947,7 +21969,7 @@ definitions:
         description: ""
       Name:
         type: "string"
-        description: ""
+        description: "Represents pivot table name."
       NullString:
         type: "string"
         description: ""
@@ -22061,6 +22083,27 @@ definitions:
       link:
         type: "class:link"
         description: ""
+  CellValue:
+    type: "object"    
+    properties:
+      rowIndex:
+        type: "integer"
+        description: ""
+      columnIndex:
+        type: "integer"
+        description: ""
+      type:
+        type: "string"
+        description: ""
+      value:
+        type: "string"
+        description: ""
+      formula:
+        type: "string"
+        description: ""
+      style:
+        type: "class:style"
+        description: ""
   CustomParserConfig:
     type: "object"    
     properties:
@@ -22159,27 +22202,6 @@ definitions:
         description: ""
       Source:
         type: "class:filesource"
-        description: ""
-  CellValue:
-    type: "object"    
-    properties:
-      rowIndex:
-        type: "integer"
-        description: ""
-      columnIndex:
-        type: "integer"
-        description: ""
-      type:
-        type: "string"
-        description: ""
-      value:
-        type: "string"
-        description: ""
-      formula:
-        type: "string"
-        description: ""
-      style:
-        type: "class:style"
         description: ""
   ImportBatchDataOption:
     allOf:
@@ -25612,7 +25634,7 @@ definitions:
         type: "string"
         description: "Represents the unit label for the specified axis."
       DisplayUnitLabel:
-        type: "class:linkelement"
+        type: "class:displayunitlabel"
         description: "Represents a unit label on an axis in the specified chart.                         Unit labels are useful for charting large values— for example, in the millions or billions."
       HasMultiLevelLabels:
         type: "boolean"
@@ -25701,16 +25723,16 @@ definitions:
         type: "boolean"
         description: "True if Microsoft Excel scales a 3-D chart so that it's closer in size to the equivalent 2-D chart.                         The RightAngleAxes property must be True."
       BackWall:
-        type: "class:linkelement"
+        type: "class:walls"
         description: "Returns a  object that represents the back wall of a 3-D chart."
       CategoryAxis:
-        type: "class:linkelement"
+        type: "class:axis"
         description: "Gets the chart's X axis."
       ChartArea:
-        type: "class:linkelement"
+        type: "class:chartarea"
         description: "Gets the chart area in the worksheet."
       ChartDataTable:
-        type: "class:linkelement"
+        type: "class:chartdatatable"
         description: "Represents the chart data table."
       ChartObject:
         type: "class:linkelement"
@@ -25725,7 +25747,7 @@ definitions:
         type: "integer"
         description: "Gets or sets the angle of the first pie-chart or doughnut-chart slice, in degrees (clockwise from vertical).                         Applies only to pie, 3-D pie, and doughnut charts, 0 to 360."
       Floor:
-        type: "class:linkelement"
+        type: "class:floor"
         description: "Returns a  object that represents the walls of a 3-D chart."
       GapDepth:
         type: "integer"
@@ -25746,13 +25768,13 @@ definitions:
         type: "boolean"
         description: "Gets or sets a value indicating whether the chart area is rectangular cornered.                        Default is true."
       Legend:
-        type: "class:linkelement"
+        type: "class:legend"
         description: "Gets the chart legend."
       Name:
         type: "string"
-        description: ""
+        description: "Represents chart name."
       NSeries:
-        type: "class:linkelement"
+        type: "class:seriesitems"
         description: "Gets a  collection representing the data series in the chart."
       PageSetup:
         type: "class:linkelement"
@@ -25767,7 +25789,7 @@ definitions:
         type: "string"
         description: "Represents the way the chart is attached to the cells below it."
       PlotArea:
-        type: "class:linkelement"
+        type: "class:plotarea"
         description: "Gets the chart's plot area which includes axis tick labels."
       PlotEmptyCellsType:
         type: "string"
@@ -25813,12 +25835,12 @@ definitions:
         description: "Gets and sets the builtin style."
       Title:
         type: "class:linkelement"
-        description: ""
+        description: "Represents chart title."
       Type:
         type: "string"
-        description: ""
+        description: "Represents chart type."
       ValueAxis:
-        type: "class:linkelement"
+        type: "class:axis"
         description: "Gets the chart's Y axis."
       Walls:
         type: "class:linkelement"
@@ -25857,9 +25879,6 @@ definitions:
         description: ""
       Shadow:
         type: "boolean"
-        description: ""
-      ShapeProperties:
-        type: "container"
         description: ""
       Width:
         type: "integer"
@@ -25932,9 +25951,6 @@ definitions:
       Shadow:
         type: "boolean"
         description: "True if the frame has a shadow. "
-      ShapeProperties:
-        type: "container"
-        description: "Gets the  object. "
       Width:
         type: "integer"
         description: "Gets or sets the width of frame in units of 1/4000 of the chart area. "
@@ -25975,11 +25991,14 @@ definitions:
         type: "boolean"
         description: "True if the chartpoint has a shadow."
       XValue:
-        type: "string"
+        type: "class:object"
         description: "Gets or sets the X value of the chart point."
       YValue:
-        type: "string"
+        type: "class:object"
         description: "Gets or sets the Y value of the chart point."
+      IsInSecondaryPlot:
+        type: "boolean"
+        description: "Gets or sets a value indicates whether this data points is in the second pie or bar on a pie of pie or bar of pie chart."
       link:
         type: "class:link"
         description: ""
@@ -26207,9 +26226,6 @@ definitions:
       Shadow:
         type: "boolean"
         description: ""
-      ShapeProperties:
-        type: "container"
-        description: ""
       Width:
         type: "integer"
         description: ""
@@ -26236,9 +26252,6 @@ definitions:
       Text:
         type: "string"
         description: "Gets or sets the text of display unit label."
-      TextDirection:
-        type: "string"
-        description: ""
       TextHorizontalAlignment:
         type: "string"
         description: ""
@@ -26268,9 +26281,6 @@ definitions:
         description: ""
       Shadow:
         type: "boolean"
-        description: ""
-      ShapeProperties:
-        type: "container"
         description: ""
       Width:
         type: "integer"
@@ -26442,9 +26452,6 @@ definitions:
       Shadow:
         type: "boolean"
         description: ""
-      ShapeProperties:
-        type: "container"
-        description: ""
       Width:
         type: "integer"
         description: ""
@@ -26474,7 +26481,7 @@ definitions:
     
     properties:
       AutoScaleFont:
-        type: "string"
+        type: "boolean"
         description: "True if the text in the object changes font size when the object size changes.                         The default value is True."
       BackgroundMode:
         type: "string"
@@ -26483,7 +26490,7 @@ definitions:
         type: "class:font"
         description: "Gets a  object of the specified ChartFrame object."
       IsDeleted:
-        type: "string"
+        type: "boolean"
         description: "Gets and sets whether the legend entry is deleted."
       link:
         type: "class:link"
@@ -26493,16 +26500,16 @@ definitions:
     properties:
       Border:
         type: "class:line"
-        description: "Gets the border."
+        description: "Gets the border. "
       Area:
         type: "class:area"
-        description: "Gets the area."
+        description: "Gets the area. "
       MarkerSize:
         type: "integer"
-        description: "Represents the marker size in unit of points. Applies to line chart, scatter chart, or radar chart."
+        description: "Represents the marker size in unit of points. Applies to line chart, scatter chart, or radar chart. "
       MarkerStyle:
         type: "string"
-        description: "Represents the marker style. Applies to line chart, scatter chart, or radar chart."
+        description: "Represents the marker style. Applies to line chart, scatter chart, or radar chart. "
   PlotArea:
     allOf:
     - type: "object"
@@ -26544,9 +26551,6 @@ definitions:
       Shadow:
         type: "boolean"
         description: ""
-      ShapeProperties:
-        type: "container"
-        description: ""
       Width:
         type: "integer"
         description: ""
@@ -26583,7 +26587,7 @@ definitions:
         type: "integer"
         description: "Gets the number of the data values."
       DataLabels:
-        type: "class:linkelement"
+        type: "class:datalabels"
         description: "Represents the DataLabels object for the specified ASeries."
       DisplayName:
         type: "string"
@@ -26592,7 +26596,7 @@ definitions:
         type: "integer"
         description: "Returns or sets the size of the hole in a doughnut chart group.                         The hole size is expressed as a percentage of the chart size, between 10 and 90 percent."
       DownBars:
-        type: "class:linkelement"
+        type: "class:dropbars"
         description: "Returns a  object that represents the down bars on a line chart.                        Applies only to line charts."
       DropLines:
         type: "class:line"
@@ -26640,11 +26644,8 @@ definitions:
         type: "class:line"
         description: "Represents leader lines on a chart. Leader lines connect data labels to data points.                         This object isn’t a collection; there’s no object that represents a single leader line."
       LegendEntry:
-        type: "class:linkelement"
+        type: "class:legendentry"
         description: "Gets the legend entry according to this series."
-      Line:
-        type: "class:line"
-        description: ""
       Marker:
         type: "class:marker"
         description: "Gets the marker."
@@ -26669,9 +26670,6 @@ definitions:
       Shadow:
         type: "boolean"
         description: "True if the series has a shadow."
-      ShapeProperties:
-        type: "class:linkelement"
-        description: "Gets the  object that holds the visual shape properties of the Series."
       ShowNegativeBubbles:
         type: "boolean"
         description: "True if negative bubbles are shown for the chart group. Valid only for bubble charts."
@@ -26688,25 +26686,25 @@ definitions:
         type: "floating"
         description: "Returns or sets a value that shall be used to determine which data points are in the second pie or bar on                        a pie of pie or bar of pie chart."
       TrendLines:
-        type: "class:linkelement"
+        type: "class:trendlines"
         description: "Returns an object that represents a collection of all the trendlines for the series."
       Type:
         type: "string"
         description: "Gets or sets a data series' type."
       UpBars:
-        type: "class:linkelement"
+        type: "class:dropbars"
         description: "Returns an DropBars object that represents the up bars on a line chart.                        Applies only to line charts."
       Values:
         type: "string"
         description: "Represents the data of the chart series."
       XErrorBar:
-        type: "class:linkelement"
+        type: "class:errorbar"
         description: "Represents X direction error bar of the series."
       XValues:
         type: "string"
         description: "Represents the x values of the chart series."
       YErrorBar:
-        type: "class:linkelement"
+        type: "class:errorbar"
         description: "Represents Y direction error bar of the series."
       link:
         type: "class:link"
@@ -26924,9 +26922,6 @@ definitions:
       Shadow:
         type: "boolean"
         description: ""
-      ShapeProperties:
-        type: "container"
-        description: ""
       Width:
         type: "integer"
         description: ""
@@ -26951,7 +26946,7 @@ definitions:
         type: "floating"
         description: "Returns or sets the number of periods (or units on a scatter chart) that the trendline extends backward.                         The number of periods must be greater than or equal to zero.                        If the chart type is column ,the number of periods must be between 0 and 0.5"
       DataLabels:
-        type: "class:linkelement"
+        type: "class:datalabels"
         description: "Represents the DataLabels object for the specified series."
       DisplayEquation:
         type: "boolean"
@@ -26969,7 +26964,7 @@ definitions:
         type: "boolean"
         description: "Returns if Microsoft Excel automatically determines the name of the trendline."
       LegendEntry:
-        type: "class:linkelement"
+        type: "class:legendentry"
         description: "Gets the legend entry according to this trendline"
       Name:
         type: "string"
@@ -27139,16 +27134,16 @@ definitions:
     properties:
       Filename:
         type: "string"
-        description: ""
+        description: "Represents the file name of data file."
       Description:
         type: "string"
-        description: ""
+        description: "Represents summary about results of analyzed data."
       BasicStatistics:
         type: "class:exceldatastatistics"
-        description: ""
+        description: "Represents Excel data statistics."
       Results:
         type: "container"
-        description: ""
+        description: "Represents analyzed table description."
       SuggestedFile:
         type: "string"
         description: "base64String Excel file"
@@ -27157,124 +27152,85 @@ definitions:
     properties:
       Name:
         type: "string"
-        description: ""
+        description: "Represents table name."
       SheetName:
         type: "string"
-        description: ""
+        description: "Represents worksheet name which is where the table is located."
       Columns:
         type: "container"
-        description: ""
+        description: "Represents analyzed description about table columns."
       DateColumns:
         type: "container"
-        description: ""
+        description: "Represents date columns list."
       NumberColumns:
         type: "container"
-        description: ""
+        description: "Represents number columns list."
       TextColumns:
         type: "container"
-        description: ""
+        description: "Represents string columns list."
       ExceptionColumns:
         type: "container"
-        description: ""
+        description: "Represents exception columns list."
       HasTableHeaderRow:
         type: "boolean"
-        description: ""
+        description: "Represents there is a table header in the table."
       HasTableTotalRow:
         type: "boolean"
-        description: ""
+        description: "Represents there is a total row in the table."
       StartDataColumnIndex:
         type: "integer"
-        description: ""
+        description: "Represents the column index as the start data column."
       EndDataColumnIndex:
         type: "integer"
-        description: ""
+        description: "Represents the column index as the end data column."
       StartDataRowIndex:
         type: "integer"
-        description: ""
+        description: "Represents the row index as the start data row."
       EndDataRowIndex:
         type: "integer"
-        description: ""
+        description: "Represents the row index as the end data row."
       Thumbnail:
         type: "string"
-        description: "Base64String"
+        description: "Represents table thumbnail. Base64String"
       DiscoverCharts:
         type: "container"
-        description: ""
+        description: "Represents a collection of charts, which is a collection of charts created based on data analysis of a table."
       DiscoverPivotTables:
         type: "container"
-        description: ""
-  DateSourceType:
-    allOf:
-    - type: "object"
-    
-    properties:
-
-  SuggestedOutputType:
-    allOf:
-    - type: "object"
-    
-    properties:
-
-  AnalyzeSuggestion:
-    type: "object"    
-    properties:
-      Name:
-        type: "string"
-        description: ""
-      Filename:
-        type: "string"
-        description: "Excel file name."
-      SheetName:
-        type: "string"
-        description: "The worksheet where the data is aAnalyzed."
-      DateSourceType:
-        type: "string"
-        description: "The type of data being analyzed."
-      SuggestedOutputType:
-        type: "string"
-        description: "Based on the results of the data analysis, suggestions for creating new data types are given."
-      Description:
-        type: "string"
-        description: "Based on the results of the data analysis, a business description of the new data object is created."
-      DataSouceThumbnail:
-        type: "string"
-        description: ""
-      Thumbnail:
-        type: "string"
-        description: ""
+        description: "Represents a collection of pivot tables, which is a collection of pivot tables created based on data analysis of a table."
   DiscoverChart:
     type: "object"    
     properties:
       Name:
         type: "string"
-        description: ""
+        description: "Represents chart name."
       SheetName:
         type: "string"
-        description: ""
+        description: "Represents worksheet name which is where the chart is located."
       Title:
         type: "string"
-        description: ""
+        description: "Represents chart title."
       Type:
         type: "string"
-        description: ""
+        description: "Represents chart type."
       DataRange:
         type: "string"
-        description: ""
+        description: "Represents chart data range."
       Thumbnail:
         type: "string"
-        description: "Base64String"
+        description: "Represents chart thumbnail. Base64String"
   DiscoverPivotTable:
     type: "object"    
     properties:
       Name:
         type: "string"
-        description: ""
+        description: "Represents pivot table name."
       Title:
         type: "string"
-        description: ""
+        description: "Represents pivot table title."
       DataRange:
         type: "string"
-        description: ""
+        description: "Represents pivot table data range."
       PivotFieldRows:
         type: "array<integer>"
         description: "Represents row fields in a PivotTable report."
@@ -27286,49 +27242,46 @@ definitions:
         description: "Represents data fields in a PivotTable report."
       Thumbnail:
         type: "string"
-        description: "Base64String"
+        description: "Represents pivot table thumbnail. Base64String"
   ExcelDataStatistics:
     type: "object"    
     properties:
       WorksheetDataStatistics:
         type: "container"
-        description: ""
-      NamesCount:
-        type: "integer"
-        description: ""
+        description: "Represents worksheet data statistics list."
   WorksheetDataStatistics:
     type: "object"    
     properties:
       Name:
         type: "string"
-        description: ""
+        description: "Represents worksheet name."
       ChartsCount:
         type: "integer"
-        description: ""
+        description: "Represents chart number."
       TablesCount:
         type: "integer"
-        description: ""
+        description: "Represents list object number."
       PivotTablesCount:
         type: "integer"
-        description: ""
+        description: "Represents pivot table number."
       ShapesCount:
         type: "integer"
-        description: ""
+        description: "Represents shape number."
       HyperlinksCount:
         type: "integer"
-        description: ""
+        description: "Represents shape number."
       QueryTablesCount:
         type: "integer"
-        description: ""
+        description: "Represents hyperlink number."
       CellsCount:
         type: "integer"
-        description: ""
+        description: "Represents query table number."
       CellsCountInTable:
         type: "integer"
-        description: ""
+        description: "Represents cell number."
       CellsCountIsFormula:
         type: "integer"
-        description: ""
+        description: "Represents formula number."
   Error:
     type: "object"    
     properties:

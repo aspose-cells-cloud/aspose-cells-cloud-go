@@ -35,6 +35,7 @@ type ChartPoint struct {
     Explosion int64 `json:"Explosion,omitempty" xml:"Explosion"`
     Marker *Marker `json:"Marker,omitempty" xml:"Marker"`
     Shadow bool `json:"Shadow,omitempty" xml:"Shadow"`
-    XValue string `json:"XValue,omitempty" xml:"XValue"`
-    YValue string `json:"YValue,omitempty" xml:"YValue"`
+    XValue *interface{} `json:"XValue,omitempty" xml:"XValue"`
+    YValue *interface{} `json:"YValue,omitempty" xml:"YValue"`
+    IsInSecondaryPlot bool `json:"IsInSecondaryPlot,omitempty" xml:"IsInSecondaryPlot"`
 }

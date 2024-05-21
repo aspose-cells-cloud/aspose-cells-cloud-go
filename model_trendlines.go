@@ -29,5 +29,5 @@ type Trendlines struct {
      
         Link *Link `json:"link,omitempty" xml:"link"`
  
-    TrendlineList []LinkElement `json:"TrendlineList,omitempty" xml:"TrendlineList"`
+    TrendlineList []Trendline `json:"TrendlineList,omitempty" xml:"TrendlineList"`
 }

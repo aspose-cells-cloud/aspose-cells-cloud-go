@@ -29,8 +29,8 @@ type LegendEntry struct {
      
         Link *Link `json:"link,omitempty" xml:"link"`
  
-    AutoScaleFont string `json:"AutoScaleFont,omitempty" xml:"AutoScaleFont"`
+    AutoScaleFont bool `json:"AutoScaleFont,omitempty" xml:"AutoScaleFont"`
     BackgroundMode string `json:"BackgroundMode,omitempty" xml:"BackgroundMode"`
     Font *Font `json:"Font,omitempty" xml:"Font"`
-    IsDeleted string `json:"IsDeleted,omitempty" xml:"IsDeleted"`
+    IsDeleted bool `json:"IsDeleted,omitempty" xml:"IsDeleted"`
 }

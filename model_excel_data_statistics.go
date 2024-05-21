@@ -28,5 +28,4 @@ package asposecellscloud
 type ExcelDataStatistics struct {
  
     WorksheetDataStatistics []WorksheetDataStatistics `json:"WorksheetDataStatistics,omitempty" xml:"WorksheetDataStatistics"`
-    NamesCount int64 `json:"NamesCount,omitempty" xml:"NamesCount"`
 }

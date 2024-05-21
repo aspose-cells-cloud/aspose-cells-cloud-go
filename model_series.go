@@ -35,10 +35,10 @@ type Series struct {
     BubbleScale int64 `json:"BubbleScale,omitempty" xml:"BubbleScale"`
     BubbleSizes string `json:"BubbleSizes,omitempty" xml:"BubbleSizes"`
     CountOfDataValues int64 `json:"CountOfDataValues,omitempty" xml:"CountOfDataValues"`
-    DataLabels *LinkElement `json:"DataLabels,omitempty" xml:"DataLabels"`
+    DataLabels *DataLabels `json:"DataLabels,omitempty" xml:"DataLabels"`
     DisplayName string `json:"DisplayName,omitempty" xml:"DisplayName"`
     DoughnutHoleSize int64 `json:"DoughnutHoleSize,omitempty" xml:"DoughnutHoleSize"`
-    DownBars *LinkElement `json:"DownBars,omitempty" xml:"DownBars"`
+    DownBars *DropBars `json:"DownBars,omitempty" xml:"DownBars"`
     DropLines *Line `json:"DropLines,omitempty" xml:"DropLines"`
     Explosion int64 `json:"Explosion,omitempty" xml:"Explosion"`
     FirstSliceAngle int64 `json:"FirstSliceAngle,omitempty" xml:"FirstSliceAngle"`
@@ -54,8 +54,7 @@ type Series struct {
     IsAutoSplit bool `json:"IsAutoSplit,omitempty" xml:"IsAutoSplit"`
     IsColorVaried bool `json:"IsColorVaried,omitempty" xml:"IsColorVaried"`
     LeaderLines *Line `json:"LeaderLines,omitempty" xml:"LeaderLines"`
-    LegendEntry *LinkElement `json:"LegendEntry,omitempty" xml:"LegendEntry"`
-    Line *Line `json:"Line,omitempty" xml:"Line"`
+    LegendEntry *LegendEntry `json:"LegendEntry,omitempty" xml:"LegendEntry"`
     Marker *Marker `json:"Marker,omitempty" xml:"Marker"`
     Name string `json:"Name,omitempty" xml:"Name"`
     Overlap int64 `json:"Overlap,omitempty" xml:"Overlap"`
@@ -64,17 +63,16 @@ type Series struct {
     SecondPlotSize int64 `json:"SecondPlotSize,omitempty" xml:"SecondPlotSize"`
     SeriesLines *Line `json:"SeriesLines,omitempty" xml:"SeriesLines"`
     Shadow bool `json:"Shadow,omitempty" xml:"Shadow"`
-    ShapeProperties *LinkElement `json:"ShapeProperties,omitempty" xml:"ShapeProperties"`
     ShowNegativeBubbles bool `json:"ShowNegativeBubbles,omitempty" xml:"ShowNegativeBubbles"`
     SizeRepresents string `json:"SizeRepresents,omitempty" xml:"SizeRepresents"`
     Smooth bool `json:"Smooth,omitempty" xml:"Smooth"`
     SplitType string `json:"SplitType,omitempty" xml:"SplitType"`
     SplitValue float64 `json:"SplitValue,omitempty" xml:"SplitValue"`
-    TrendLines *LinkElement `json:"TrendLines,omitempty" xml:"TrendLines"`
+    TrendLines *Trendlines `json:"TrendLines,omitempty" xml:"TrendLines"`
     Type_ string `json:"Type,omitempty" xml:"Type"`
-    UpBars *LinkElement `json:"UpBars,omitempty" xml:"UpBars"`
+    UpBars *DropBars `json:"UpBars,omitempty" xml:"UpBars"`
     Values string `json:"Values,omitempty" xml:"Values"`
-    XErrorBar *LinkElement `json:"XErrorBar,omitempty" xml:"XErrorBar"`
+    XErrorBar *ErrorBar `json:"XErrorBar,omitempty" xml:"XErrorBar"`
     XValues string `json:"XValues,omitempty" xml:"XValues"`
-    YErrorBar *LinkElement `json:"YErrorBar,omitempty" xml:"YErrorBar"`
+    YErrorBar *ErrorBar `json:"YErrorBar,omitempty" xml:"YErrorBar"`
 }

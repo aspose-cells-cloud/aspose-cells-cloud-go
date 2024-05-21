@@ -32,5 +32,5 @@ type SeriesItems struct {
     CategoryData string `json:"CategoryData,omitempty" xml:"CategoryData"`
     IsColorVaried bool `json:"IsColorVaried,omitempty" xml:"IsColorVaried"`
     SecondCatergoryData string `json:"SecondCatergoryData,omitempty" xml:"SecondCatergoryData"`
-    SeriesList []LinkElement `json:"SeriesList,omitempty" xml:"SeriesList"`
+    SeriesList []Series `json:"SeriesList,omitempty" xml:"SeriesList"`
 }

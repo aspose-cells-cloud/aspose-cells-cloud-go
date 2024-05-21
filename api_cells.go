@@ -33,7 +33,7 @@ import (
 )
 
 func Version() {
-	fmt.Println("---Version: 24.4---")
+	fmt.Println("---Version: 24.5---")
 }
 
 func NewCellsApiService(appSid string, appKey string, opts ...string) *CellsApiService {

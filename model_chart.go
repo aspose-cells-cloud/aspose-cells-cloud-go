@@ -30,29 +30,29 @@ type Chart struct {
         Link *Link `json:"link,omitempty" xml:"link"`
  
     AutoScaling bool `json:"AutoScaling,omitempty" xml:"AutoScaling"`
-    BackWall *LinkElement `json:"BackWall,omitempty" xml:"BackWall"`
-    CategoryAxis *LinkElement `json:"CategoryAxis,omitempty" xml:"CategoryAxis"`
-    ChartArea *LinkElement `json:"ChartArea,omitempty" xml:"ChartArea"`
-    ChartDataTable *LinkElement `json:"ChartDataTable,omitempty" xml:"ChartDataTable"`
+    BackWall *Walls `json:"BackWall,omitempty" xml:"BackWall"`
+    CategoryAxis *Axis `json:"CategoryAxis,omitempty" xml:"CategoryAxis"`
+    ChartArea *ChartArea `json:"ChartArea,omitempty" xml:"ChartArea"`
+    ChartDataTable *ChartDataTable `json:"ChartDataTable,omitempty" xml:"ChartDataTable"`
     ChartObject *LinkElement `json:"ChartObject,omitempty" xml:"ChartObject"`
     DepthPercent int64 `json:"DepthPercent,omitempty" xml:"DepthPercent"`
     Elevation int64 `json:"Elevation,omitempty" xml:"Elevation"`
     FirstSliceAngle int64 `json:"FirstSliceAngle,omitempty" xml:"FirstSliceAngle"`
-    Floor *LinkElement `json:"Floor,omitempty" xml:"Floor"`
+    Floor *Floor `json:"Floor,omitempty" xml:"Floor"`
     GapDepth int64 `json:"GapDepth,omitempty" xml:"GapDepth"`
     GapWidth int64 `json:"GapWidth,omitempty" xml:"GapWidth"`
     HeightPercent int64 `json:"HeightPercent,omitempty" xml:"HeightPercent"`
     HidePivotFieldButtons bool `json:"HidePivotFieldButtons,omitempty" xml:"HidePivotFieldButtons"`
     Is3D bool `json:"Is3D,omitempty" xml:"Is3D"`
     IsRectangularCornered bool `json:"IsRectangularCornered,omitempty" xml:"IsRectangularCornered"`
-    Legend *LinkElement `json:"Legend,omitempty" xml:"Legend"`
+    Legend *Legend `json:"Legend,omitempty" xml:"Legend"`
     Name string `json:"Name,omitempty" xml:"Name"`
-    NSeries *LinkElement `json:"NSeries,omitempty" xml:"NSeries"`
+    NSeries *SeriesItems `json:"NSeries,omitempty" xml:"NSeries"`
     PageSetup *LinkElement `json:"PageSetup,omitempty" xml:"PageSetup"`
     Perspective int64 `json:"Perspective,omitempty" xml:"Perspective"`
     PivotSource string `json:"PivotSource,omitempty" xml:"PivotSource"`
     Placement string `json:"Placement,omitempty" xml:"Placement"`
-    PlotArea *LinkElement `json:"PlotArea,omitempty" xml:"PlotArea"`
+    PlotArea *PlotArea `json:"PlotArea,omitempty" xml:"PlotArea"`
     PlotEmptyCellsType string `json:"PlotEmptyCellsType,omitempty" xml:"PlotEmptyCellsType"`
     PlotVisibleCells bool `json:"PlotVisibleCells,omitempty" xml:"PlotVisibleCells"`
     PrintSize string `json:"PrintSize,omitempty" xml:"PrintSize"`
@@ -69,7 +69,7 @@ type Chart struct {
     Style int64 `json:"Style,omitempty" xml:"Style"`
     Title *LinkElement `json:"Title,omitempty" xml:"Title"`
     Type_ string `json:"Type,omitempty" xml:"Type"`
-    ValueAxis *LinkElement `json:"ValueAxis,omitempty" xml:"ValueAxis"`
+    ValueAxis *Axis `json:"ValueAxis,omitempty" xml:"ValueAxis"`
     Walls *LinkElement `json:"Walls,omitempty" xml:"Walls"`
     WallsAndGridlines2D bool `json:"WallsAndGridlines2D,omitempty" xml:"WallsAndGridlines2D"`
 }

@@ -35,7 +35,6 @@ type PlotArea struct {
         IsAutomaticSize bool `json:"IsAutomaticSize,omitempty" xml:"IsAutomaticSize"`
         IsInnerMode bool `json:"IsInnerMode,omitempty" xml:"IsInnerMode"`
         Shadow bool `json:"Shadow,omitempty" xml:"Shadow"`
-        ShapeProperties []LinkElement `json:"ShapeProperties,omitempty" xml:"ShapeProperties"`
         Width int64 `json:"Width,omitempty" xml:"Width"`
         Height int64 `json:"Height,omitempty" xml:"Height"`
         X int64 `json:"X,omitempty" xml:"X"`

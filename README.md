@@ -21,11 +21,12 @@ Enhance your Go applications with the [Aspose.Cells Cloud](https://products.aspo
 
 
 
-## Feature & Enhancements in Version 24.4
+## Feature & Enhancements in Version 24.5
 
 Full list of issues covering all changes in this release:
 
-- Support data transformation.
+- Add merge queries method for loading data of data transformation.
+- Optimize chart data model.
 
 
 ## Support file format
@@ -119,13 +120,17 @@ To get started with Aspose.Cells Cloud for Go, follow these steps:
 
 # Release history version
 
+## Feature & Enhancements in Version 24.4
+
+- Support data transformation.
+
 ## Feature & Enhancements in Version 24.3
 
 - Support data deduplication.
 - Support data filling.
 - Support to delete incomplete rows.
 - Support data cleansing.
-- 
+ 
 ## Enhancements in Version 24.2.1
 
 - Support data deduplication.

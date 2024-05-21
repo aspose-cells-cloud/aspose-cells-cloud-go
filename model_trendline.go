@@ -49,13 +49,13 @@ type Trendline struct {
  
     Link *Link `json:"link,omitempty" xml:"link"`
     Backward float64 `json:"Backward,omitempty" xml:"Backward"`
-    DataLabels *LinkElement `json:"DataLabels,omitempty" xml:"DataLabels"`
+    DataLabels *DataLabels `json:"DataLabels,omitempty" xml:"DataLabels"`
     DisplayEquation bool `json:"DisplayEquation,omitempty" xml:"DisplayEquation"`
     DisplayRSquared bool `json:"DisplayRSquared,omitempty" xml:"DisplayRSquared"`
     Forward float64 `json:"Forward,omitempty" xml:"Forward"`
     Intercept float64 `json:"Intercept,omitempty" xml:"Intercept"`
     IsNameAuto bool `json:"IsNameAuto,omitempty" xml:"IsNameAuto"`
-    LegendEntry *LinkElement `json:"LegendEntry,omitempty" xml:"LegendEntry"`
+    LegendEntry *LegendEntry `json:"LegendEntry,omitempty" xml:"LegendEntry"`
     Name string `json:"Name,omitempty" xml:"Name"`
     Order int64 `json:"Order,omitempty" xml:"Order"`
     Period int64 `json:"Period,omitempty" xml:"Period"`

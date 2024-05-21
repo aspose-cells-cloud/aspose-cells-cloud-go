@@ -37,7 +37,7 @@ type Axis struct {
     CrossAt float64 `json:"CrossAt,omitempty" xml:"CrossAt"`
     CrossType string `json:"CrossType,omitempty" xml:"CrossType"`
     DisplayUnit string `json:"DisplayUnit,omitempty" xml:"DisplayUnit"`
-    DisplayUnitLabel *LinkElement `json:"DisplayUnitLabel,omitempty" xml:"DisplayUnitLabel"`
+    DisplayUnitLabel *DisplayUnitLabel `json:"DisplayUnitLabel,omitempty" xml:"DisplayUnitLabel"`
     HasMultiLevelLabels bool `json:"HasMultiLevelLabels,omitempty" xml:"HasMultiLevelLabels"`
     IsAutomaticMajorUnit bool `json:"IsAutomaticMajorUnit,omitempty" xml:"IsAutomaticMajorUnit"`
     IsAutomaticMaxValue bool `json:"IsAutomaticMaxValue,omitempty" xml:"IsAutomaticMaxValue"`
