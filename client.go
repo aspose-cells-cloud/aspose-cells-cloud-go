@@ -70,15 +70,15 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	if cfg.HTTPClient == nil {
 		cfg.HTTPClient = http.DefaultClient
 	}
-	proxyStr := "http://127.0.0.1:8888"
-	proxyURL, err := url.Parse(proxyStr)
-	if err != nil {
+	// proxyStr := "http://127.0.0.1:8888"
+	// proxyURL, err := url.Parse(proxyStr)
+	// if err != nil {
 
-	}
-	transport := &http.Transport{
-		Proxy: http.ProxyURL(proxyURL),
-	}
-	cfg.HTTPClient.Transport = transport
+	// }
+	// transport := &http.Transport{
+	// 	Proxy: http.ProxyURL(proxyURL),
+	// }
+	// cfg.HTTPClient.Transport = transport
 
 	c := &APIClient{}
 	c.cfg = cfg
