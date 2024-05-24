@@ -431,8 +431,8 @@ func (a *APIClient) addAuth(request *http.Request) (err error) {
 
 // RequestOauthToken function for requests OAuth token
 func (a *APIClient) RequestOauthToken() error {
-	// var getAccessTokeUri = a.cfg.BasePath + "/connect/token"
-	var getAccessTokeUri = "https://id.aspose.cloud/connect/token"
+	var getAccessTokeUri = a.cfg.BasePath + "/connect/token"
+	// var getAccessTokeUri = "https://id.aspose.cloud/connect/token"
 	if a.cfg.Version == "v1.1" {
 		getAccessTokeUri = a.cfg.BasePath + "/oauth2/token"
 	}

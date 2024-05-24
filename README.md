@@ -24,13 +24,14 @@ Enhance your Go applications with the [Aspose.Cells Cloud](https://products.aspo
 ## There are major problems with v24.5.0 and it does not work properly, please use v24.5.1.
 
 
-## Feature & Enhancements in Version 24.5.1
+## Feature & Enhancements in Version 24.5.2
 
 Full list of issues covering all changes in this release:
 
 - Add merge queries method for loading data of data transformation.
 - Optimize chart data model.
-- Update obtaining access token address.
+
+
 
 ## Support file format
 
