@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="QueryTable.go">
+* <copyright company="Aspose" file="DataQuery.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,11 +25,11 @@
 
 package asposecellscloud
 
-type QueryTable struct {
+type DataQuery struct {
  
-    ConnectionId int64 `json:"ConnectionId,omitempty" xml:"ConnectionId"`
     Name string `json:"Name,omitempty" xml:"Name"`
-    ResultRange *Range `json:"ResultRange,omitempty" xml:"ResultRange"`
-    PreserveFormatting bool `json:"PreserveFormatting,omitempty" xml:"PreserveFormatting"`
-    AdjustColumnWidth bool `json:"AdjustColumnWidth,omitempty" xml:"AdjustColumnWidth"`
+    DataSourceDataType string `json:"DataSourceDataType,omitempty" xml:"DataSourceDataType"`
+    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
+    DataItem *DataItem `json:"DataItem,omitempty" xml:"DataItem"`
 }

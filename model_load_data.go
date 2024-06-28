@@ -28,8 +28,5 @@ package asposecellscloud
 type LoadData struct {
  
     LoadTo *LoadTo `json:"LoadTo,omitempty" xml:"LoadTo"`
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    DataItem *DataItem `json:"DataItem,omitempty" xml:"DataItem"`
-    MergeQueries *MergeQueries `json:"MergeQueries,omitempty" xml:"MergeQueries"`
+    DataQuery *DataQuery `json:"DataQuery,omitempty" xml:"DataQuery"`
 }

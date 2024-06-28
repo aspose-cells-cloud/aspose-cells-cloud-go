@@ -28,8 +28,9 @@ package asposecellscloud
 type DataTransformationRequest struct {
  
     FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    Transformation *Transformation `json:"Transformation,omitempty" xml:"Transformation"`
+    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
     LoadData *LoadData `json:"LoadData,omitempty" xml:"LoadData"`
+    AppliedSteps []AppliedStep `json:"AppliedSteps,omitempty" xml:"AppliedSteps"`
     Region string `json:"Region,omitempty" xml:"Region"`
     OutFormat string `json:"OutFormat,omitempty" xml:"OutFormat"`
 }

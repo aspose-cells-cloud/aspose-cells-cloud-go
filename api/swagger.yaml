@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "24.5"
+  version: "24.6"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
@@ -15426,13 +15426,13 @@ definitions:
     properties:
       OriginalValue:
         type: "class:object"
-        description: "Gets the old value of the calculated cell.            Should be used only in  and . "
+        description: "Gets the old value of the calculated cell. Should be used only in  and . "
       ValueChanged:
         type: "boolean"
-        description: "Whether the cell's value has been changed after the calculation.            Should be used only in . "
+        description: "Whether the cell's value has been changed after the calculation.  Should be used only in .        "
       CalculatedValue:
         type: "class:object"
-        description: "Gets the newly calculated value of the cell.            Should be used only in . "
+        description: "Gets the newly calculated value of the cell. Should be used only in .        "
   AutoFilter:
     allOf:
     - type: "object"
@@ -21226,19 +21226,22 @@ definitions:
     properties:
       FileInfo:
         type: "class:fileinfo"
-        description: ""
-      Transformation:
-        type: "class:transformation"
-        description: ""
+        description: "Indicates the source of the mount data."
+      DataSource:
+        type: "class:datasource"
+        description: "Indicates the source of the mount data."
       LoadData:
         type: "class:loaddata"
-        description: ""
+        description: "Indicates load data."
+      AppliedSteps:
+        type: "container"
+        description: "Indicates applied step list. "
       Region:
         type: "string"
         description: ""
       OutFormat:
         type: "string"
-        description: ""
+        description: "Indicates output format "
   DeleteIncompleteRowsRequest:
     type: "object"    
     properties:
@@ -21563,6 +21566,45 @@ definitions:
       OffsetY:
         type: "floating"
         description: ""
+  AppliedOperate:
+    type: "object"    
+    properties:
+      AppliedOperateType:
+        type: "string"
+        description: ""
+  AppliedOperateType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
+  AppliedStep:
+    type: "object"    
+    properties:
+      StepName:
+        type: "string"
+        description: "Data manipulation step name."
+      AppliedOperate:
+        type: "class:appliedoperate"
+        description: "Data manipulation name."
+  DataQuery:
+    type: "object"    
+    properties:
+      Name:
+        type: "string"
+        description: "Define a name for data query. Unique identification."
+      DataSourceDataType:
+        type: "string"
+        description: "The specific data object type. When the value is File, DataItem is invalid."
+      DataSource:
+        type: "class:datasource"
+        description: "Indicates the source of the mount data."
+      FileInfo:
+        type: "class:fileinfo"
+        description: "When data souce is request files, FileInfo store the contents of the file."
+      DataItem:
+        type: "class:dataitem"
+        description: "The specific data object type and name."
   JoinType:
     allOf:
     - type: "object"
@@ -21575,124 +21617,79 @@ definitions:
       LoadTo:
         type: "class:loadto"
         description: "Indicates begin position for loading data. "
-      DataSource:
-        type: "class:datasource"
-        description: "Indicates the source of the mount data."
-      FileInfo:
-        type: "class:fileinfo"
-        description: "When data souce is request files, FileInfo store the contents of the file."
-      DataItem:
-        type: "class:dataitem"
-        description: "The specific data object type and name."
-      MergeQueries:
-        type: "class:mergequeries"
-        description: ""
+      DataQuery:
+        type: "class:dataquery"
+        description: "Indicates data query for data loading. "
   LoadTo:
     type: "object"    
     properties:
       Worksheet:
         type: "string"
-        description: ""
+        description: "The worksheet name."
       beginRowIndex:
         type: "integer"
-        description: ""
+        description: "The begin row index of worksheet."
       beginColumnIndex:
         type: "integer"
-        description: ""
+        description: "The begin column index of worksheet."
   MergeQueries:
-    type: "object"    
+    allOf:
+    - type: "object"
+    
     properties:
-      DataSourceA:
-        type: "class:datasource"
-        description: "Indicates the source of the mount data."
-      FileInfoA:
-        type: "class:fileinfo"
-        description: ""
-      DataItemA:
-        type: "class:dataitem"
-        description: "Represents data item."
+      DataQueryNameA:
+        type: "string"
+        description: "Indicates the name of the data query , it is matched in the data query set."
       DataAIndexField:
         type: "string"
-        description: "Represents index field  of DataA"
-      DataSourceB:
-        type: "class:datasource"
-        description: "Indicates the source of the mount data."
-      FileInfoB:
-        type: "class:fileinfo"
-        description: ""
-      DataItemB:
-        type: "class:dataitem"
-        description: "Represents data item."
+        description: "Represents index field  of DataA."
+      DataQueryNameB:
+        type: "string"
+        description: "Indicates the name of the data query , it is matched in the data query set."
       DataBIndexField:
         type: "string"
-        description: "Represents index field  of DataB"
+        description: "Represents index field  of DataB."
       JoinType:
+        type: "string"
+        description: "Represents ethods of data consolidation."
+      AppliedOperateType:
         type: "string"
         description: ""
   PivotColumn:
-    type: "object"    
+    allOf:
+    - type: "object"
+    
     properties:
       PivotColumnName:
         type: "string"
-        description: ""
+        description: "Represents pivot column name."
       ValueColumnNames:
         type: "container"
-        description: ""
-  QueryDataSource:
-    type: "object"    
-    properties:
-      DataSourceDataType:
+        description: "Represents column name that sets the column's value to the value of the pivot column."
+      AppliedOperateType:
         type: "string"
         description: ""
-      DataFile:
-        type: "class:datasource"
-        description: ""
-      DataSource:
-        type: "string"
-        description: ""
-  QueryDataSourceDataType:
+  QueryDataSourceType:
     allOf:
     - type: "object"
     
     properties:
 
-  QueryTable:
-    type: "object"    
-    properties:
-      ConnectionId:
-        type: "integer"
-        description: "Gets the connection id of the query table."
-      Name:
-        type: "string"
-        description: "Gets the name of querytable."
-      ResultRange:
-        type: "class:range"
-        description: "Gets the range of the result."
-      PreserveFormatting:
-        type: "boolean"
-        description: "Returns or sets the PreserveFormatting of the object."
-      AdjustColumnWidth:
-        type: "boolean"
-        description: "Returns or sets the AdjustColumnWidth of the object."
-  Transformation:
-    type: "object"    
-    properties:
-      PivotColumn:
-        type: "class:pivotcolumn"
-        description: "long table to a wide table."
-      UnpivotColumn:
-        type: "class:unpivotcolumn"
-        description: "wide table to a long table"
   UnpivotColumn:
-    type: "object"    
+    allOf:
+    - type: "object"
+    
     properties:
       UnpivotColumnNames:
         type: "container"
-        description: ""
+        description: "Indicates unpivot column names."
       ColumnMapName:
         type: "string"
-        description: ""
+        description: "Indicates the column is used to store the name of unpivot columns."
       ValueMapName:
+        type: "string"
+        description: "Indicates the column is used to store the value of unpivot columns."
+      AppliedOperateType:
         type: "string"
         description: ""
   PivotField:

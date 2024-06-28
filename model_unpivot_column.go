@@ -26,6 +26,8 @@
 package asposecellscloud
 
 type UnpivotColumn struct {
+     
+        AppliedOperateType string `json:"AppliedOperateType,omitempty" xml:"AppliedOperateType"`
  
     UnpivotColumnNames []string `json:"UnpivotColumnNames,omitempty" xml:"UnpivotColumnNames"`
     ColumnMapName string `json:"ColumnMapName,omitempty" xml:"ColumnMapName"`

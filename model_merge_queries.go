@@ -26,14 +26,12 @@
 package asposecellscloud
 
 type MergeQueries struct {
+     
+        AppliedOperateType string `json:"AppliedOperateType,omitempty" xml:"AppliedOperateType"`
  
-    DataSourceA *DataSource `json:"DataSourceA,omitempty" xml:"DataSourceA"`
-    FileInfoA *FileInfo `json:"FileInfoA,omitempty" xml:"FileInfoA"`
-    DataItemA *DataItem `json:"DataItemA,omitempty" xml:"DataItemA"`
+    DataQueryNameA string `json:"DataQueryNameA,omitempty" xml:"DataQueryNameA"`
     DataAIndexField string `json:"DataAIndexField,omitempty" xml:"DataAIndexField"`
-    DataSourceB *DataSource `json:"DataSourceB,omitempty" xml:"DataSourceB"`
-    FileInfoB *FileInfo `json:"FileInfoB,omitempty" xml:"FileInfoB"`
-    DataItemB *DataItem `json:"DataItemB,omitempty" xml:"DataItemB"`
+    DataQueryNameB string `json:"DataQueryNameB,omitempty" xml:"DataQueryNameB"`
     DataBIndexField string `json:"DataBIndexField,omitempty" xml:"DataBIndexField"`
     JoinType string `json:"JoinType,omitempty" xml:"JoinType"`
 }

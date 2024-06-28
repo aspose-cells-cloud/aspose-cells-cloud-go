@@ -19,19 +19,14 @@ Enhance your Go applications with the [Aspose.Cells Cloud](https://products.aspo
 - Import/Export: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
 - Security Management: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
 
-
-
 ## There are major problems with v24.5.0 and it does not work properly, please use v24.5.1.
 
-
-## Feature & Enhancements in Version 24.5.2
+## Feature & Enhancements in Version 24.6
 
 Full list of issues covering all changes in this release:
 
-- Add merge queries method for loading data of data transformation.
-- Optimize chart data model.
-
-
+- Optimize load data function of data transformation.
+- Optimize the data conversion applied steps.
 
 ## Support file format
 
@@ -123,6 +118,11 @@ To get started with Aspose.Cells Cloud for Go, follow these steps:
 [Product Page](https://products.aspose.cloud/cells/go) | [Documentation](https://docs.aspose.cloud/cells/) | [Live Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Code Samples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
 
 # Release history version
+
+## Feature & Enhancements in Version 24.5
+
+- Add merge queries method for loading data of data transformation.
+- Optimize chart data model.
 
 ## Feature & Enhancements in Version 24.4
 

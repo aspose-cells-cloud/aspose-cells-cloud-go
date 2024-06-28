@@ -26,6 +26,8 @@
 package asposecellscloud
 
 type PivotColumn struct {
+     
+        AppliedOperateType string `json:"AppliedOperateType,omitempty" xml:"AppliedOperateType"`
  
     PivotColumnName string `json:"PivotColumnName,omitempty" xml:"PivotColumnName"`
     ValueColumnNames []string `json:"ValueColumnNames,omitempty" xml:"ValueColumnNames"`
