@@ -28,7 +28,6 @@ package asposecellscloud
 import (
 	"time"
 )
-
 type GoogleDriveStorageFile struct {
      
         Name string `json:"Name,omitempty" xml:"Name"`

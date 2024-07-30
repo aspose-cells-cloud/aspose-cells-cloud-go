@@ -21,12 +21,13 @@ Enhance your Go applications with the [Aspose.Cells Cloud](https://products.aspo
 
 ## There are major problems with v24.5.0 and it does not work properly, please use v24.5.1.
 
-## Feature & Enhancements in Version 24.6
+## Feature & Enhancements in Version 24.7
 
 Full list of issues covering all changes in this release:
 
-- Optimize load data function of data transformation.
-- Optimize the data conversion applied steps.
+- Add a new feature about adding text content. 
+- Add get access token by client id and client secret.
+
 
 ## Support file format
 
@@ -118,6 +119,11 @@ To get started with Aspose.Cells Cloud for Go, follow these steps:
 [Product Page](https://products.aspose.cloud/cells/go) | [Documentation](https://docs.aspose.cloud/cells/) | [Live Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Code Samples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
 
 # Release history version
+
+## Feature & Enhancements in Version 24.6
+
+- Optimize load data function of data transformation.
+- Optimize the data conversion applied steps.
 
 ## Feature & Enhancements in Version 24.5
 

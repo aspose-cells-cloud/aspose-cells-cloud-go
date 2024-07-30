@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="StorageFile.go">
+* <copyright company="Aspose" file="AddTextOptions.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,14 +25,16 @@
 
 package asposecellscloud
 
-import (
-	"time"
-)
-type StorageFile struct {
+type AddTextOptions struct {
+     
+        Name string `json:"Name,omitempty" xml:"Name"`
  
-    Name string `json:"Name,omitempty" xml:"Name"`
-    IsFolder bool `json:"IsFolder,omitempty" xml:"IsFolder"`
-    ModifiedDate  time.Time `json:"ModifiedDate,omitempty" xml:"ModifiedDate"`
-    Size int64 `json:"Size,omitempty" xml:"Size"`
-    Path string `json:"Path,omitempty" xml:"Path"`
+    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
+    Text string `json:"Text,omitempty" xml:"Text"`
+    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
+    Range_ string `json:"Range,omitempty" xml:"Range"`
+    SelectPoistion string `json:"SelectPoistion,omitempty" xml:"SelectPoistion"`
+    SelectText string `json:"SelectText,omitempty" xml:"SelectText"`
+    SkipEmptyCells bool `json:"SkipEmptyCells,omitempty" xml:"SkipEmptyCells"`
 }

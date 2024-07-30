@@ -25,6 +25,5 @@
 
 package asposecellscloud
 
-type MultipleFilter struct {
- 
+type MultipleFilter interface {
 }

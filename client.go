@@ -9,10 +9,10 @@
 *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 *  copies of the Software, and to permit persons to whom the Software is
 *  furnished to do so, subject to the following conditions:
-* 
+*
 *  The above copyright notice and this permission notice shall be included in all
 *  copies or substantial portions of the Software.
-* 
+*
 *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -20,7 +20,7 @@
 *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 *  SOFTWARE.
-* </summary> 
+* </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
 package asposecellscloud
@@ -57,7 +57,7 @@ type APIClient struct {
 	common service // Reuse a single struct instead of allocating one for each service on the heap.
 
 	// API Services
-	CellsApi      *CellsApiService
+	CellsApi *CellsApiService
 }
 
 type service struct {
@@ -424,7 +424,7 @@ func (a *APIClient) addAuth(request *http.Request) (err error) {
 
 // RequestOauthToken function for requests OAuth token
 func (a *APIClient) RequestOauthToken() error {
-	var getAccessTokeUri = a.cfg.BasePath + "/connect/token"
+	var getAccessTokeUri = a.cfg.BasePath + "/v3.0/cells/connect/token"
 	if a.cfg.Version == "v1.1" {
 		getAccessTokeUri = a.cfg.BasePath + "/oauth2/token"
 	}

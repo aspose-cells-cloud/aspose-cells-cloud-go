@@ -25,6 +25,5 @@
 
 package asposecellscloud
 
-type ObjectExistsExtensions struct {
- 
+type ObjectExistsExtensions interface {
 }

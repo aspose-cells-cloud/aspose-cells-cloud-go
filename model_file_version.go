@@ -28,7 +28,6 @@ package asposecellscloud
 import (
 	"time"
 )
-
 type FileVersion struct {
      
         Name string `json:"Name,omitempty" xml:"Name"`

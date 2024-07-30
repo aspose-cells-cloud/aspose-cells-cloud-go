@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "24.6"
+  version: "24.7"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
@@ -1053,6 +1053,14 @@ paths:
         type: "class:batchsplitrequest"
         x-nullable: true
         x-exportParamName: "batchSplitRequest"
+  /cells/connect/token:
+    post:
+      tags:
+      - "Cells"
+      summary: "Get Access Token Result"
+      operationId: "PostAccessToken"
+      parameters:
+
   /cells/{name}/worksheets/{sheetName}/cells/clearcontents:
     post:
       tags:
@@ -11975,11 +11983,25 @@ paths:
         type: "class:taskdata"
         x-nullable: false
         x-exportParamName: "TaskData"
+  /cells/addtext:
+    post:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "PostAddTextContent"
+      parameters:
+      - name: "addtextoptions"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:addtextoptions"
+        x-nullable: true
+        x-exportParamName: "addTextOptions"
   /cells/{name}/defaultstyle:
     get:
       tags:
       - "Cells"
-      summary: "Retrieve the description of the default style for the workbook."
+      summary: "Retrieve the description of the default style for the workbook ."
       operationId: "GetWorkbookDefaultStyle"
       parameters:
       - name: "name"
@@ -22080,6 +22102,56 @@ definitions:
       link:
         type: "class:link"
         description: ""
+  AddTextOptions:
+    allOf:
+    - type: "object"
+    
+    properties:
+      Name:
+        type: "string"
+        description: ""
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
+      Text:
+        type: "string"
+        description: ""
+      Worksheet:
+        type: "string"
+        description: ""
+      Range:
+        type: "string"
+        description: ""
+      SelectPoistion:
+        type: "string"
+        description: ""
+      SelectText:
+        type: "string"
+        description: ""
+      SkipEmptyCells:
+        type: "boolean"
+        description: ""
+  BaseOperateOptions:
+    type: "object"    
+    properties:
+      Name:
+        type: "string"
+        description: ""
+  SearchScopeOptionsType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
+  SelectPositionOptionsType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
   CellValue:
     type: "object"    
     properties:

@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="StorageFile.go">
+* <copyright company="Aspose" file="BaseOperateOptions.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,14 +25,5 @@
 
 package asposecellscloud
 
-import (
-	"time"
-)
-type StorageFile struct {
- 
-    Name string `json:"Name,omitempty" xml:"Name"`
-    IsFolder bool `json:"IsFolder,omitempty" xml:"IsFolder"`
-    ModifiedDate  time.Time `json:"ModifiedDate,omitempty" xml:"ModifiedDate"`
-    Size int64 `json:"Size,omitempty" xml:"Size"`
-    Path string `json:"Path,omitempty" xml:"Path"`
+type BaseOperateOptions interface {
 }
