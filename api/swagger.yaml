@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "24.7"
+  version: "24.8"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
@@ -11997,6 +11997,20 @@ paths:
         type: "class:addtextoptions"
         x-nullable: true
         x-exportParamName: "addTextOptions"
+  /cells/trimcontent:
+    post:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "PostTrimContent"
+      parameters:
+      - name: "trimcontentoptions"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:trimcontentoptions"
+        x-nullable: true
+        x-exportParamName: "trimContentOptions"
   /cells/{name}/defaultstyle:
     get:
       tags:
@@ -22140,7 +22154,25 @@ definitions:
       Name:
         type: "string"
         description: ""
-  SearchScopeOptionsType:
+  ScopeItem:
+    type: "object"    
+    properties:
+      WorksheetName:
+        type: "string"
+        description: ""
+      Ranges:
+        type: "array<string>"
+        description: ""
+  ScopeOptions:
+    type: "object"    
+    properties:
+      Scope:
+        type: "string"
+        description: ""
+      ScopeItems:
+        type: "array<class:scopeitem>"
+        description: ""
+  ScopeOptionsType:
     allOf:
     - type: "object"
     
@@ -22152,6 +22184,39 @@ definitions:
     
     properties:
 
+  TrimContentOptions:
+    type: "object"    
+    properties:
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
+      TrimContent:
+        type: "string"
+        description: ""
+      TrimLeading:
+        type: "boolean"
+        description: ""
+      TrimTrailing:
+        type: "boolean"
+        description: ""
+      TrimSpaceBetweenWordTo1:
+        type: "boolean"
+        description: ""
+      TrimNonBreakingSpaces:
+        type: "boolean"
+        description: ""
+      RemoveExtraLineBreaks:
+        type: "boolean"
+        description: ""
+      RemoveAllLineBreaks:
+        type: "boolean"
+        description: ""
+      ScopeOptions:
+        type: "class:scopeoptions"
+        description: ""
   CellValue:
     type: "object"    
     properties:
