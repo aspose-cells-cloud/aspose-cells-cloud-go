@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="put_workbook_background_request.go">
+* <copyright company="Aspose" file="post_update_word_case_request.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -26,64 +26,38 @@
 package asposecellscloud
 
 import (
-	"fmt"
 	"net/url"
 	"net/http"
 	"strings"
 )
 
-type PutWorkbookBackgroundRequest struct {
-    Name string `json:"name,omitempty" xml:"name"`
-	PicPath string `json:"pic_path,omitempty" xml:"pic_path"`
-	ImageAdaptOption string `json:"image_adapt_option,omitempty" xml:"image_adapt_option"`
-	Folder string `json:"folder,omitempty" xml:"folder"`
-	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-	File map[string]string  `json:"File,omitempty" xml:"File"` 	
+type PostUpdateWordCaseRequest struct {
+	WordCaseOptions interface{} `json:"word_case_options,omitempty" xml:"word_case_options"` 
+	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
-func (data *PutWorkbookBackgroundRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+func (data *PostUpdateWordCaseRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
 	var (
-		localVarHttpMethod  = strings.ToUpper("PUT")
+		localVarHttpMethod  = strings.ToUpper("POST")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/background"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
+	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/updatewordcase"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-
-    // query params : picPath
-    if data.PicPath != "" {
-        localVarQueryParams.Add("picPath", parameterToString(data.PicPath, ""))
-    }
-
-    // query params : imageAdaptOption
-    if data.ImageAdaptOption != "" {
-        localVarQueryParams.Add("imageAdaptOption", parameterToString(data.ImageAdaptOption, ""))
-    }
-
-    // query params : folder
-    if data.Folder != "" {
-        localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
-    }
-
-    // query params : storageName
-    if data.StorageName != "" {
-        localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
-    }
 
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
 		}
 	}
-	localVarHttpContentTypes := []string{"multipart/form-data"} 
+	localVarHttpContentTypes := []string{"application/json"} 
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -99,9 +73,8 @@ func (data *PutWorkbookBackgroundRequest) CreateRequestData( client *APIClient) 
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	for name, path := range data.File {
-		localVarFormParams["@"+name] = []string{path}
-	}
+	localVarPostBody = &data.WordCaseOptions
+
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

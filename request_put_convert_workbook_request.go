@@ -41,6 +41,8 @@ type PutConvertWorkbookRequest struct {
 	Region string `json:"region,omitempty" xml:"region"`
 	PageWideFitOnPerSheet bool `json:"page_wide_fit_on_per_sheet,omitempty" xml:"page_wide_fit_on_per_sheet"`
 	PageTallFitOnPerSheet bool `json:"page_tall_fit_on_per_sheet,omitempty" xml:"page_tall_fit_on_per_sheet"`
+	SheetName string `json:"sheet_name,omitempty" xml:"sheet_name"`
+	PageIndex int64 `json:"page_index,omitempty" xml:"page_index"`
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -103,6 +105,16 @@ func (data *PutConvertWorkbookRequest) CreateRequestData( client *APIClient) (lo
     // query params : pageTallFitOnPerSheet
     if &data.PageTallFitOnPerSheet != nil {
         localVarQueryParams.Add("pageTallFitOnPerSheet", parameterToString(data.PageTallFitOnPerSheet, ""))
+    }
+
+    // query params : sheetName
+    if data.SheetName != "" {
+        localVarQueryParams.Add("sheetName", parameterToString(data.SheetName, ""))
+    }
+
+    // query params : pageIndex
+    if &data.PageIndex != nil {
+        localVarQueryParams.Add("pageIndex", parameterToString(data.PageIndex, ""))
     }
 
 	if data.ExtendQueryParameterMap != nil {

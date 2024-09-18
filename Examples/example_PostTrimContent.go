@@ -26,7 +26,7 @@ func main() {
      trimContentOptionsScopeOptions.Scope =        "EntireWorkbook"      
     var trimContentOptions = new(TrimContentOptions)
      trimContentOptions.DataSource =        trimContentOptionsDataSource      
-     trimContentOptions.TrimLeading =  true.      
+     trimContentOptions.TrimLeading =  true      
      trimContentOptions.TrimTrailing =  true      
      trimContentOptions.TrimSpaceBetweenWordTo1 =  true      
      trimContentOptions.RemoveAllLineBreaks =  true      

@@ -36,6 +36,7 @@ type PutWorksheetBackgroundRequest struct {
     Name string `json:"name,omitempty" xml:"name"`
     SheetName string `json:"sheet_name,omitempty" xml:"sheet_name"`
 	PicPath string `json:"pic_path,omitempty" xml:"pic_path"`
+	ImageAdaptOption string `json:"image_adapt_option,omitempty" xml:"image_adapt_option"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	File map[string]string  `json:"File,omitempty" xml:"File"` 	
@@ -62,6 +63,11 @@ func (data *PutWorksheetBackgroundRequest) CreateRequestData( client *APIClient)
     // query params : picPath
     if data.PicPath != "" {
         localVarQueryParams.Add("picPath", parameterToString(data.PicPath, ""))
+    }
+
+    // query params : imageAdaptOption
+    if data.ImageAdaptOption != "" {
+        localVarQueryParams.Add("imageAdaptOption", parameterToString(data.ImageAdaptOption, ""))
     }
 
     // query params : folder

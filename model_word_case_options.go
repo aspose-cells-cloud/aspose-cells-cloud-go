@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="ProtectWorkbookRequest.go">
+* <copyright company="Aspose" file="WordCaseOptions.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,13 +25,10 @@
 
 package asposecellscloud
 
-type ProtectWorkbookRequest struct {
+type WordCaseOptions struct {
  
-    AwaysOpenReadOnly bool `json:"AwaysOpenReadOnly,omitempty" xml:"AwaysOpenReadOnly"`
-    EncryptWithPassword string `json:"EncryptWithPassword,omitempty" xml:"EncryptWithPassword"`
-    ProtectCurrentSheet *Protection `json:"ProtectCurrentSheet,omitempty" xml:"ProtectCurrentSheet"`
-    ProtectAllSheets *Protection `json:"ProtectAllSheets,omitempty" xml:"ProtectAllSheets"`
-    ProtectWorkbookStructure string `json:"ProtectWorkbookStructure,omitempty" xml:"ProtectWorkbookStructure"`
-    DigitalSignature *DigitalSignature `json:"DigitalSignature,omitempty" xml:"DigitalSignature"`
-    MarkAsFinal bool `json:"MarkAsFinal,omitempty" xml:"MarkAsFinal"`
+    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
+    WordCaseType string `json:"WordCaseType,omitempty" xml:"WordCaseType"`
+    ScopeOptions *ScopeOptions `json:"ScopeOptions,omitempty" xml:"ScopeOptions"`
 }

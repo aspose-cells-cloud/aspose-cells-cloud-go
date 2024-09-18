@@ -19,8 +19,9 @@ func main() {
     localNameRequest.StorageName =""
     instance.UploadFile(localNameRequest )
  
+    var deduplicationRegionRanges = []Range   {}    
     var deduplicationRegion = new(DeduplicationRegion)
-
+     deduplicationRegion.Ranges =        deduplicationRegionRanges      
 
     request := new (asposecellscloud.PostWorkbookDataDeduplicationRequest)
     request.Name =         remoteName    

@@ -32,4 +32,5 @@ type TextWaterMarkerRequest struct {
     FontSize int64 `json:"FontSize,omitempty" xml:"FontSize"`
     Height int64 `json:"Height,omitempty" xml:"Height"`
     Width int64 `json:"Width,omitempty" xml:"Width"`
+    ImageAdaptOption string `json:"ImageAdaptOption,omitempty" xml:"ImageAdaptOption"`
 }

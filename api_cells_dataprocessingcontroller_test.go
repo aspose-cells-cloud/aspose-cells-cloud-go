@@ -56,8 +56,9 @@ func TestDataProcessingController_PostWorkbookDataDeduplication(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
+    var deduplicationRegionRanges = []Range   {}    
     var deduplicationRegion = new(DeduplicationRegion)
-
+     deduplicationRegion.Ranges =        deduplicationRegionRanges      
 
     request := new (PostWorkbookDataDeduplicationRequest)
     request.Name =         remoteName    

@@ -74,4 +74,5 @@ type HtmlSaveOptions struct {
     IsExpImageToTempDir bool `json:"IsExpImageToTempDir,omitempty" xml:"IsExpImageToTempDir"`
     PageTitle string `json:"PageTitle,omitempty" xml:"PageTitle"`
     ParseHtmlTagInCell bool `json:"ParseHtmlTagInCell,omitempty" xml:"ParseHtmlTagInCell"`
+    CellNameAttribute string `json:"CellNameAttribute,omitempty" xml:"CellNameAttribute"`
 }

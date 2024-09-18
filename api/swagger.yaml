@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "24.8"
+  version: "24.9"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
@@ -5116,6 +5116,20 @@ paths:
         type: "boolean"
         x-nullable: true
         x-exportParamName: "pageTallFitOnPerSheet"
+      - name: "sheetname"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "sheetName"
+      - name: "pageindex"
+        in: "Query"
+        description: ""
+        required: false
+        type: "integer"
+        x-nullable: true
+        x-exportParamName: "pageIndex"
   /cells/{name}/SaveAs:
     post:
       tags:
@@ -12011,6 +12025,20 @@ paths:
         type: "class:trimcontentoptions"
         x-nullable: true
         x-exportParamName: "trimContentOptions"
+  /cells/updatewordcase:
+    post:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "PostUpdateWordCase"
+      parameters:
+      - name: "wordcaseoptions"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:wordcaseoptions"
+        x-nullable: true
+        x-exportParamName: "wordCaseOptions"
   /cells/{name}/defaultstyle:
     get:
       tags:
@@ -12830,6 +12858,13 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "picPath"
+      - name: "imageadaptoption"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "imageAdaptOption"
       - name: "folder"
         in: "Query"
         description: "The folder where the file is situated."
@@ -14202,6 +14237,13 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "picPath"
+      - name: "imageadaptoption"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "imageAdaptOption"
       - name: "folder"
         in: "Query"
         description: "The folder where the file is situated."
@@ -16495,6 +16537,12 @@ definitions:
       IconSetType:
         type: "string"
         description: "Get or Set the icon set type to display.  Setting the type will auto check   if the current Cfvos's count is accord with the new type. If not accord,   old Cfvos will be cleaned and default Cfvos will be added.            "
+  ImageAdaptOptions:
+    allOf:
+    - type: "object"
+    
+    properties:
+
   Link:
     type: "object"    
     properties:
@@ -18641,10 +18689,10 @@ definitions:
         description: ""
       HiddenColDisplayType:
         type: "string"
-        description: "Hidden column(the width of this column is 0) in excel,before save this into                html format, if HtmlHiddenColDisplayType is "Remove",the hidden column would               ont been output, if the value is "Hidden", the column would been output,but was hidden,the default value is "Hidden""
+        description: "Hidden column(the width of this column is 0) in excel,before save this into               html format, if HtmlHiddenColDisplayType is "Remove",the hidden column would               ont been output, if the value is "Hidden", the column would been output,but was hidden,the default value is "Hidden""
       HiddenRowDisplayType:
         type: "string"
-        description: "Hidden row(the height of this row is 0) in excel,before save this into html                format, if HtmlHiddenRowDisplayType is "Remove",the hidden row would ont               been output, if the value is "Hidden", the row would been output,but was               hidden,the default value is "Hidden""
+        description: "Hidden row(the height of this row is 0) in excel,before save this into html               format, if HtmlHiddenRowDisplayType is "Remove",the hidden row would ont               been output, if the value is "Hidden", the row would been output,but was               hidden,the default value is "Hidden""
       HtmlCrossStringType:
         type: "string"
         description: "Indicates if a cross-cell string will be displayed in the same way as MS               Excel when saving an Excel file in html format.  By default the value is               Default, so, for cross-cell strings, there is little difference between the               html files created by Aspose.Cells and MS Excel. But the performance for               creating large html files,setting the value to Cross would be several times               faster than setting it to Default or Fit2Cell."
@@ -18657,6 +18705,9 @@ definitions:
       ParseHtmlTagInCell:
         type: "boolean"
         description: "Parse html tag in cell,like ,as cell value,or as html tag,default is true"
+      CellNameAttribute:
+        type: "string"
+        description: ""
       SaveFormat:
         type: "string"
         description: ""
@@ -21353,6 +21404,9 @@ definitions:
       ProtectCurrentSheet:
         type: "class:protection"
         description: "Represents the various types of protection options available for a worksheet.            "
+      ProtectAllSheets:
+        type: "class:protection"
+        description: "Represents the various types of protection options available for all worksheets.            "
       ProtectWorkbookStructure:
         type: "string"
         description: "Indicates protect workbook structure. All, Contents, Objects, Scenarios, Structure, Windows, and None."
@@ -21440,6 +21494,9 @@ definitions:
       Width:
         type: "integer"
         description: "Indicates image width."
+      ImageAdaptOption:
+        type: "string"
+        description: ""
   WorkbookEncryptionRequest:
     type: "object"    
     properties:
@@ -22217,6 +22274,27 @@ definitions:
       ScopeOptions:
         type: "class:scopeoptions"
         description: ""
+  WordCaseOptions:
+    type: "object"    
+    properties:
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
+      WordCaseType:
+        type: "string"
+        description: ""
+      ScopeOptions:
+        type: "class:scopeoptions"
+        description: ""
+  WordCaseType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
   CellValue:
     type: "object"    
     properties:
