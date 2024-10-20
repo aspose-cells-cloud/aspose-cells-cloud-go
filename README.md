@@ -21,12 +21,11 @@ Enhance your Go applications with the [Aspose.Cells Cloud](https://products.aspo
 
 ## There are major problems with v24.5.0 and it does not work properly, please use v24.5.1.
 
-## Feature & Enhancements in Version 24.9
+## Feature & Enhancements in Version 24.10
 
 Full list of issues covering all changes in this release:
 
-- Add word case function for TextProcessingController.
-- Support to export Worksheet to HTML with cell address or id.
+- Add the new feature about removing characters on TextProcessingController.
 
 ## Support file format
 
@@ -118,6 +117,11 @@ To get started with Aspose.Cells Cloud for Go, follow these steps:
 [Product Page](https://products.aspose.cloud/cells/go) | [Documentation](https://docs.aspose.cloud/cells/) | [Live Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Code Samples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
 
 # Release history version
+
+## Feature & Enhancements in Version 24.9
+
+- Add word case function for TextProcessingController.
+- Support to export Worksheet to HTML with cell address or id.
 
 ## Feature & Enhancements in Version 24.8
 

@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "24.9"
+  version: "24.10"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
@@ -12039,6 +12039,20 @@ paths:
         type: "class:wordcaseoptions"
         x-nullable: true
         x-exportParamName: "wordCaseOptions"
+  /cells/removecharacters:
+    post:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "PostRemoveCharacters"
+      parameters:
+      - name: "removecharactersoptions"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:removecharactersoptions"
+        x-nullable: true
+        x-exportParamName: "removeCharactersOptions"
   /cells/{name}/defaultstyle:
     get:
       tags:
@@ -22211,6 +22225,71 @@ definitions:
       Name:
         type: "string"
         description: ""
+  CharacterSetsType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
+  RemoveCharactersByCharacter:
+    type: "object"    
+    properties:
+      RemoveTextMethod:
+        type: "string"
+        description: ""
+      RemoveCharacters:
+        type: "container"
+        description: ""
+      RemoveCharacterSetsType:
+        type: "string"
+        description: ""
+  RemoveCharactersByPosition:
+    type: "object"    
+    properties:
+      TheFirstNCharacters:
+        type: "integer"
+        description: ""
+      TheLastNCharacters:
+        type: "integer"
+        description: ""
+      AllCharactersBeforeText:
+        type: "string"
+        description: ""
+      AllCharactersAfterText:
+        type: "string"
+        description: ""
+  RemoveCharactersOptions:
+    allOf:
+    - type: "object"
+    
+    properties:
+      Name:
+        type: "string"
+        description: ""
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
+      Worksheet:
+        type: "string"
+        description: ""
+      Range:
+        type: "string"
+        description: ""
+      RemoveCharactersByCharacter:
+        type: "class:removecharactersbycharacter"
+        description: ""
+      RemoveCharactersByPosition:
+        type: "class:removecharactersbyposition"
+        description: ""
+  RemoveTextMethodType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
   ScopeItem:
     type: "object"    
     properties:
