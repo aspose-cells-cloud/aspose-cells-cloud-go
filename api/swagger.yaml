@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "24.10"
+  version: "24.11"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
@@ -12053,6 +12053,20 @@ paths:
         type: "class:removecharactersoptions"
         x-nullable: true
         x-exportParamName: "removeCharactersOptions"
+  /cells/converttext:
+    post:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "PostConvertText"
+      parameters:
+      - name: "converttextoptions"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:converttextoptions"
+        x-nullable: true
+        x-exportParamName: "convertTextOptions"
   /cells/{name}/defaultstyle:
     get:
       tags:
@@ -22226,6 +22240,41 @@ definitions:
         type: "string"
         description: ""
   CharacterSetsType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
+  ConvertTextOptions:
+    allOf:
+    - type: "object"
+    
+    properties:
+      Name:
+        type: "string"
+        description: ""
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
+      Worksheet:
+        type: "string"
+        description: ""
+      Range:
+        type: "string"
+        description: ""
+      ConvertTextType:
+        type: "string"
+        description: ""
+      SourceCharacters:
+        type: "string"
+        description: ""
+      TargetCharacters:
+        type: "string"
+        description: ""
+  ConvertTextType:
     allOf:
     - type: "object"
     

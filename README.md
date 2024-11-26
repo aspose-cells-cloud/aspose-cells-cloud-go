@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE) 
+![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE)
 
 Aspose.Cells Cloud for Go enables you to handle various aspects of Excel files, including cell data, styles, formulas, charts, pivot tables, data validation, comments, drawing objects, images, hyperlinks, and so on. Additionally, it supports operations such as splitting, merging, repairing, and converting to other compatible file formats.
 
@@ -19,13 +19,13 @@ Enhance your Go applications with the [Aspose.Cells Cloud](https://products.aspo
 - Import/Export: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
 - Security Management: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
 
-## There are major problems with v24.5.0 and it does not work properly, please use v24.5.1.
+## There are major problems with v24.5.0 and it does not work properly, please use v24.5.1
 
-## Feature & Enhancements in Version 24.10
+## Feature & Enhancements in Version 24.11
 
 Full list of issues covering all changes in this release:
 
-- Add the new feature about removing characters on TextProcessingController.
+- Add convert text feature on TextProcessingController.
 
 ## Support file format
 
@@ -65,7 +65,6 @@ Full list of issues covering all changes in this release:
 |[DOCX](https://docs.fileformat.com/word-processing/docx/)|A well-known format for Microsoft Word documents that is a combination of XML and binary files.||&radic;|
 |[PPTX](https://docs.fileformat.com/presentation/pptx/)|The PPTX format is based on the Microsoft PowerPoint open XML presentation file format.||&radic;|
 
-
 ## Quick Start Guide
 
 To get started with Aspose.Cells Cloud for Go, follow these steps:
@@ -74,38 +73,36 @@ To get started with Aspose.Cells Cloud for Go, follow these steps:
 2. Download the code and add or modify your application by referring to cells_cloud_test.go.
 3. If you prefer to use [Go Module](https://pkg.go.dev), import "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v24" in your code.
 
-
 ```golang
-	remoteFolder := "TestData/In"
-	localFolder := "testdata/"
-	localName := "Book1.xlsx"
-	remoteName := "Book1.xlsx"
-	instance := asposecellscloud.NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"), "https://api.aspose.cloud", "v3.0")
+ remoteFolder := "TestData/In"
+ localFolder := "testdata/"
+ localName := "Book1.xlsx"
+ remoteName := "Book1.xlsx"
+ instance := asposecellscloud.NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"), "https://api.aspose.cloud", "v3.0")
 
-	localNameRequest := new(asposecellscloud.UploadFileRequest)
-	localNameRequest.UploadFiles = make(map[string]string)
-	localNameRequest.UploadFiles[localName] = localFolder + localName
-	localNameRequest.Path = remoteFolder + "/" + remoteName
-	localNameRequest.StorageName = ""
-	instance.UploadFile(localNameRequest)
+ localNameRequest := new(asposecellscloud.UploadFileRequest)
+ localNameRequest.UploadFiles = make(map[string]string)
+ localNameRequest.UploadFiles[localName] = localFolder + localName
+ localNameRequest.Path = remoteFolder + "/" + remoteName
+ localNameRequest.StorageName = ""
+ instance.UploadFile(localNameRequest)
 
-	newfilename := "TestData/OutResult/PostExcelSaveAs.pdf"
+ newfilename := "TestData/OutResult/PostExcelSaveAs.pdf"
 
-	var saveOptions = new(asposecellscloud.PdfSaveOptions)
-	saveOptions.SaveFormat = "pdf"
+ var saveOptions = new(asposecellscloud.PdfSaveOptions)
+ saveOptions.SaveFormat = "pdf"
 
-	request := new(asposecellscloud.PostWorkbookSaveAsRequest)
-	request.Name = remoteName
-	request.Newfilename = newfilename
-	request.SaveOptions = saveOptions
-	request.Folder = remoteFolder
-	_, httpResponse, err := instance.PostWorkbookSaveAs(request)
-	if err != nil {
-		println(err)
-	}
-	println(httpResponse.StatusCode)
+ request := new(asposecellscloud.PostWorkbookSaveAsRequest)
+ request.Name = remoteName
+ request.Newfilename = newfilename
+ request.SaveOptions = saveOptions
+ request.Folder = remoteFolder
+ _, httpResponse, err := instance.PostWorkbookSaveAs(request)
+ if err != nil {
+  println(err)
+ }
+ println(httpResponse.StatusCode)
 ```
-
 
 ## Aspose.Cells Cloud in Popular Languages
 
@@ -118,6 +115,10 @@ To get started with Aspose.Cells Cloud for Go, follow these steps:
 
 # Release history version
 
+## Feature & Enhancements in Version 24.10
+
+- Add the new feature about removing characters on TextProcessingController.
+
 ## Feature & Enhancements in Version 24.9
 
 - Add word case function for TextProcessingController.
@@ -125,11 +126,11 @@ To get started with Aspose.Cells Cloud for Go, follow these steps:
 
 ## Feature & Enhancements in Version 24.8
 
-- Add text trim feature on Cells Cloud Services. 
+- Add text trim feature on Cells Cloud Services.
 
 ## Feature & Enhancements in Version 24.7
 
-- Add Text Trim feature on Cells Cloud Services. 
+- Add Text Trim feature on Cells Cloud Services.
 - Add get access token by client id and client secret.
 
 ## Feature & Enhancements in Version 24.6
@@ -152,7 +153,7 @@ To get started with Aspose.Cells Cloud for Go, follow these steps:
 - Support data filling.
 - Support to delete incomplete rows.
 - Support data cleansing.
- 
+
 ## Enhancements in Version 24.2.1
 
 - Support data deduplication.
