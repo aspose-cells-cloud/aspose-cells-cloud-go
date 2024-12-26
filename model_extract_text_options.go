@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="Top10Filter.go">
+* <copyright company="Aspose" file="ExtractTextOptions.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,11 +25,18 @@
 
 package asposecellscloud
 
-type Top10Filter struct {
+type ExtractTextOptions struct {
+     
+        Name string `json:"Name,omitempty" xml:"Name"`
  
-    FieldIndex int64 `json:"FieldIndex,omitempty" xml:"FieldIndex"`
-    Criteria string `json:"Criteria,omitempty" xml:"Criteria"`
-    IsPercent bool `json:"IsPercent,omitempty" xml:"IsPercent"`
-    IsTop bool `json:"IsTop,omitempty" xml:"IsTop"`
-    Items int64 `json:"Items,omitempty" xml:"Items"`
+    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
+    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
+    Range_ string `json:"Range,omitempty" xml:"Range"`
+    ExtractTextType string `json:"ExtractTextType,omitempty" xml:"ExtractTextType"`
+    BeforeText string `json:"BeforeText,omitempty" xml:"BeforeText"`
+    AfterText string `json:"AfterText,omitempty" xml:"AfterText"`
+    BeforePosition int64 `json:"BeforePosition,omitempty" xml:"BeforePosition"`
+    AfterPosition int64 `json:"AfterPosition,omitempty" xml:"AfterPosition"`
+    OutPositionRange string `json:"OutPositionRange,omitempty" xml:"OutPositionRange"`
 }

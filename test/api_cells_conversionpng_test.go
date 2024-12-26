@@ -1,9 +1,10 @@
-package asposecellscloud
+package asposecellscloudtest
 
 import (
-	. "asposecellscloud"
 	"fmt"
 	"testing"
+
+	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v24"
 )
 
 func TestConversionPng_ConvertWorkbook_html(t *testing.T) {

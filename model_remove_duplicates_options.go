@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="Top10Filter.go">
+* <copyright company="Aspose" file="RemoveDuplicatesOptions.go">
 *   Copyright (c) 2024 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,11 +25,13 @@
 
 package asposecellscloud
 
-type Top10Filter struct {
+type RemoveDuplicatesOptions struct {
+     
+        Name string `json:"Name,omitempty" xml:"Name"`
  
-    FieldIndex int64 `json:"FieldIndex,omitempty" xml:"FieldIndex"`
-    Criteria string `json:"Criteria,omitempty" xml:"Criteria"`
-    IsPercent bool `json:"IsPercent,omitempty" xml:"IsPercent"`
-    IsTop bool `json:"IsTop,omitempty" xml:"IsTop"`
-    Items int64 `json:"Items,omitempty" xml:"Items"`
+    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
+    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
+    RemoveDuplicatesArea string `json:"RemoveDuplicatesArea,omitempty" xml:"RemoveDuplicatesArea"`
+    RemoveDuplicatesAreaValue string `json:"RemoveDuplicatesAreaValue,omitempty" xml:"RemoveDuplicatesAreaValue"`
 }

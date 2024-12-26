@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "24.11"
+  version: "24.12"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
@@ -12067,6 +12067,34 @@ paths:
         type: "class:converttextoptions"
         x-nullable: true
         x-exportParamName: "convertTextOptions"
+  /cells/removeduplicates:
+    post:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "PostRemoveDuplicates"
+      parameters:
+      - name: "removeduplicatesoptions"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:removeduplicatesoptions"
+        x-nullable: true
+        x-exportParamName: "removeDuplicatesOptions"
+  /cells/extracttext:
+    post:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "PostExtractText"
+      parameters:
+      - name: "extracttextoptions"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:extracttextoptions"
+        x-nullable: true
+        x-exportParamName: "extractTextOptions"
   /cells/{name}/defaultstyle:
     get:
       tags:
@@ -17473,6 +17501,9 @@ definitions:
   Top10Filter:
     type: "object"    
     properties:
+      FieldIndex:
+        type: "integer"
+        description: ""
       Criteria:
         type: "string"
         description: " "
@@ -21948,7 +21979,7 @@ definitions:
       FilterType:
         type: "string"
         description: "Gets the autofilter type of the pivot filter."
-      MeasureFldIndex:
+      ValueFieldIndex:
         type: "integer"
         description: "Gets the measure field index of the pivot filter.            "
       MemberPropertyFieldIndex:
@@ -21963,6 +21994,9 @@ definitions:
       Value2:
         type: "string"
         description: "Gets the string value2 of the label pivot filter.            "
+      Top10Filter:
+        type: "class:top10filter"
+        description: ""
   PivotItem:
     type: "object"    
     properties:
@@ -22280,6 +22314,50 @@ definitions:
     
     properties:
 
+  ExtractTextOptions:
+    allOf:
+    - type: "object"
+    
+    properties:
+      Name:
+        type: "string"
+        description: ""
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
+      Worksheet:
+        type: "string"
+        description: ""
+      Range:
+        type: "string"
+        description: ""
+      ExtractTextType:
+        type: "string"
+        description: ""
+      BeforeText:
+        type: "string"
+        description: ""
+      AfterText:
+        type: "string"
+        description: ""
+      BeforePosition:
+        type: "integer"
+        description: ""
+      AfterPosition:
+        type: "integer"
+        description: ""
+      OutPositionRange:
+        type: "string"
+        description: ""
+  ExtractTextType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
   RemoveCharactersByCharacter:
     type: "object"    
     properties:
@@ -22332,6 +22410,35 @@ definitions:
         description: ""
       RemoveCharactersByPosition:
         type: "class:removecharactersbyposition"
+        description: ""
+  RemoveDuplicatesAreaType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
+  RemoveDuplicatesOptions:
+    allOf:
+    - type: "object"
+    
+    properties:
+      Name:
+        type: "string"
+        description: ""
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
+      Worksheet:
+        type: "string"
+        description: ""
+      RemoveDuplicatesArea:
+        type: "string"
+        description: ""
+      RemoveDuplicatesAreaValue:
+        type: "string"
         description: ""
   RemoveTextMethodType:
     allOf:

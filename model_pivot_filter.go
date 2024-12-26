@@ -31,9 +31,10 @@ type PivotFilter struct {
     EvaluationOrder int64 `json:"EvaluationOrder,omitempty" xml:"EvaluationOrder"`
     FieldIndex int64 `json:"FieldIndex,omitempty" xml:"FieldIndex"`
     FilterType string `json:"FilterType,omitempty" xml:"FilterType"`
-    MeasureFldIndex int64 `json:"MeasureFldIndex,omitempty" xml:"MeasureFldIndex"`
+    ValueFieldIndex int64 `json:"ValueFieldIndex,omitempty" xml:"ValueFieldIndex"`
     MemberPropertyFieldIndex int64 `json:"MemberPropertyFieldIndex,omitempty" xml:"MemberPropertyFieldIndex"`
     Name string `json:"Name,omitempty" xml:"Name"`
     Value1 string `json:"Value1,omitempty" xml:"Value1"`
     Value2 string `json:"Value2,omitempty" xml:"Value2"`
+    Top10Filter *Top10Filter `json:"Top10Filter,omitempty" xml:"Top10Filter"`
 }

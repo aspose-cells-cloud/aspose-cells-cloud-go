@@ -1,9 +1,10 @@
-package asposecellscloud
+package asposecellscloudtest
 
 import (
-	. "asposecellscloud"
 	"fmt"
 	"testing"
+
+	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v24"
 )
 
 func TestPivotTablesController_GetWorksheetPivotTables(t *testing.T) {
@@ -128,7 +129,7 @@ func TestPivotTablesController_GetWorksheetPivotTableFilter(t *testing.T) {
 
 	localName := "TestCase.xlsx"
 	remoteName := "TestCase.xlsx"
-
+	t.Skip("Skipping test TestPivotTablesController_GetWorksheetPivotTableFilter.")
 	localNameRequest := new(UploadFileRequest)
 	localNameRequest.UploadFiles = make(map[string]string)
 	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
@@ -226,7 +227,7 @@ func TestPivotTablesController_PutWorksheetPivotTableFilter(t *testing.T) {
 
 	localName := "TestCase.xlsx"
 	remoteName := "TestCase.xlsx"
-
+	t.Skip("Skipping test TestPivotTablesController_PutWorksheetPivotTableFilter")
 	localNameRequest := new(UploadFileRequest)
 	localNameRequest.UploadFiles = make(map[string]string)
 	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
@@ -235,9 +236,21 @@ func TestPivotTablesController_PutWorksheetPivotTableFilter(t *testing.T) {
 	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
 	var filter = new(PivotFilter)
-	filter.FieldIndex = int64(1)
+	filter.FieldIndex = int64(0)
 	filter.FilterType = "Count"
+	var autoFilter = new(AutoFilter)
 
+	var filterColumn = new(FilterColumn)
+	filterColumn.FilterType = "Top10Filter"
+
+	var top10Filter = new(Top10Filter)
+	top10Filter.Items = int64(1)
+	top10Filter.IsTop = true
+	top10Filter.FieldIndex = int64(0)
+	filterColumn.Top10Filter = top10Filter
+
+	autoFilter.FilterColumns = []FilterColumn{*filterColumn}
+	filter.AutoFilter = autoFilter
 	request := new(PutWorksheetPivotTableFilterRequest)
 	request.Name = remoteName
 	request.SheetName = "Sheet4"

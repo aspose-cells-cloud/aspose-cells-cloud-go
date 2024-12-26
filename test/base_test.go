@@ -23,12 +23,13 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-package asposecellscloud
+package asposecellscloudtest
 
 import (
-	. "asposecellscloud"
 	"os"
 	"strconv"
+
+	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v24"
 )
 
 var BaseTestInstance *BaseTest
