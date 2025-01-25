@@ -29,7 +29,7 @@ import (
 	"os"
 	"strconv"
 
-	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v24"
+	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
 )
 
 var BaseTestInstance *BaseTest

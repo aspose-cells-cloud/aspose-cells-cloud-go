@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE) 
+![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE)
 
 Aspose.Cells Cloud for Go enables you to handle various aspects of Excel files, including cell data, styles, formulas, charts, pivot tables, data validation, comments, drawing objects, images, hyperlinks, and so on. Additionally, it supports operations such as splitting, merging, repairing, and converting to other compatible file formats.
 
@@ -19,13 +19,12 @@ Enhance your Go applications with the [Aspose.Cells Cloud](https://products.aspo
 - Import/Export: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
 - Security Management: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
 
-## Feature & Enhancements in Version 24.12
+## Feature & Enhancements in Version v25.1.0
 
 Full list of issues covering all changes in this release:
 
--  Add the new remove duplicates api.
--  Add the new extract text API.
--  The pivot filter could not be created successfully.
+- Add the new API for splitting text in the cell.
+- Optimize pivot table filter-related APIs.
 
 ## Support file format
 
@@ -103,7 +102,6 @@ To get started with Aspose.Cells Cloud for Go, follow these steps:
  }
  println(httpResponse.StatusCode)
 ```
-
 
 ## Aspose.Cells Cloud SDKs in Popular Languages
 

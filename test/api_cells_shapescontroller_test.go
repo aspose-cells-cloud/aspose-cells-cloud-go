@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v24"
+	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
 )
 
 func TestShapesController_GetWorksheetShapes(t *testing.T) {

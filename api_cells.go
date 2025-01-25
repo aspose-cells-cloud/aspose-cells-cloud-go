@@ -1,6 +1,6 @@
 /** --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="api_cells">
-*   Copyright (c) 2024 Aspose.Cells Cloud
+*   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -33,7 +33,7 @@ import (
 )
 
 func Version() {
-	fmt.Println("---Version: 24.12---")
+	fmt.Println("---Version: 25.1---")
 }
 
 func NewCellsApiService(appSid string, appKey string, opts ...string) *CellsApiService {
@@ -7356,6 +7356,34 @@ func (a *CellsApiService) PostRemoveDuplicates(data *PostRemoveDuplicatesRequest
 
 
 func (a *CellsApiService) PostExtractText(data *PostExtractTextRequest) (  FileInfo,  *http.Response, error) {
+	var (
+	localVarReturnValue FileInfo 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) PostSplitText(data *PostSplitTextRequest) (  FileInfo,  *http.Response, error) {
 	var (
 	localVarReturnValue FileInfo 
 
