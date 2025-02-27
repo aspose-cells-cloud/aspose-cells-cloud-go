@@ -1,6 +1,6 @@
 /** --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="base_test.go">
-*   Copyright (c) 2024 Aspose.Cells Cloud
+*   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,10 +26,9 @@
 package asposecellscloudtest
 
 import (
+	. "asposecellscloud"
 	"os"
 	"strconv"
-
-	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
 )
 
 var BaseTestInstance *BaseTest

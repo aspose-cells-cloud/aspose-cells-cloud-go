@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="CopyOptions.go">
+* <copyright company="Aspose" file="ConvertWorksheetOptions.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,13 +25,16 @@
 
 package asposecellscloud
 
-type CopyOptions struct {
+type ConvertWorksheetOptions struct {
+     
+        Name string `json:"Name,omitempty" xml:"Name"`
  
-    ColumnCharacterWidth bool `json:"ColumnCharacterWidth,omitempty" xml:"ColumnCharacterWidth"`
-    CopyInvalidFormulasAsValues bool `json:"CopyInvalidFormulasAsValues,omitempty" xml:"CopyInvalidFormulasAsValues"`
-    CopyNames bool `json:"CopyNames,omitempty" xml:"CopyNames"`
-    ExtendToAdjacentRange bool `json:"ExtendToAdjacentRange,omitempty" xml:"ExtendToAdjacentRange"`
-    ReferToDestinationSheet bool `json:"ReferToDestinationSheet,omitempty" xml:"ReferToDestinationSheet"`
-    ReferToSheetWithSameName bool `json:"ReferToSheetWithSameName,omitempty" xml:"ReferToSheetWithSameName"`
-    CopyTheme bool `json:"CopyTheme,omitempty" xml:"CopyTheme"`
+    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
+    WorksheetName string `json:"WorksheetName,omitempty" xml:"WorksheetName"`
+    PageSetup *PageSetup `json:"PageSetup,omitempty" xml:"PageSetup"`
+    ImageOrPrintOptions *ImageOrPrintOptions `json:"ImageOrPrintOptions,omitempty" xml:"ImageOrPrintOptions"`
+    ConvertFormat string `json:"ConvertFormat,omitempty" xml:"ConvertFormat"`
+    CheckExcelRestriction bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
+    Region string `json:"Region,omitempty" xml:"Region"`
 }

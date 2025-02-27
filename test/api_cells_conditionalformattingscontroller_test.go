@@ -4,28 +4,29 @@ import (
 	"fmt"
 	"testing"
 
-	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
+    . "asposecellscloud"
 )
 
 func TestConditionalFormattingsController_GetWorksheetConditionalFormattings(t *testing.T) {
-	remoteFolder := "TestData/In"
+    remoteFolder := "TestData/In"
+  
+    localName := "Book1.xlsx"
+    remoteName := "Book1.xlsx"
 
-	localName := "Book1.xlsx"
-	remoteName := "Book1.xlsx"
+    localNameRequest := new(UploadFileRequest)
+    localNameRequest.UploadFiles = make(map[string]string) 
+    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
+    localNameRequest.Path = remoteFolder + "/" + remoteName 
+    localNameRequest.StorageName =""
+    GetBaseTest().CellsApi.UploadFile(localNameRequest )
+ 
 
-	localNameRequest := new(UploadFileRequest)
-	localNameRequest.UploadFiles = make(map[string]string)
-	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
-	localNameRequest.Path = remoteFolder + "/" + remoteName
-	localNameRequest.StorageName = ""
-	GetBaseTest().CellsApi.UploadFile(localNameRequest)
-
-	request := new(GetWorksheetConditionalFormattingsRequest)
-	request.Name = remoteName
-	request.SheetName = "Sheet1"
-	request.Folder = remoteFolder
-	request.StorageName = ""
-	_, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetConditionalFormattings(request)
+    request := new (GetWorksheetConditionalFormattingsRequest)
+    request.Name =         remoteName    
+    request.SheetName =         "Sheet1"    
+    request.Folder =         remoteFolder    
+    request.StorageName =         ""    
+    _, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetConditionalFormattings(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -36,25 +37,26 @@ func TestConditionalFormattingsController_GetWorksheetConditionalFormattings(t *
 }
 
 func TestConditionalFormattingsController_GetWorksheetConditionalFormatting(t *testing.T) {
-	remoteFolder := "TestData/In"
+    remoteFolder := "TestData/In"
+  
+    localName := "Book1.xlsx"
+    remoteName := "Book1.xlsx"
 
-	localName := "Book1.xlsx"
-	remoteName := "Book1.xlsx"
+    localNameRequest := new(UploadFileRequest)
+    localNameRequest.UploadFiles = make(map[string]string) 
+    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
+    localNameRequest.Path = remoteFolder + "/" + remoteName 
+    localNameRequest.StorageName =""
+    GetBaseTest().CellsApi.UploadFile(localNameRequest )
+ 
 
-	localNameRequest := new(UploadFileRequest)
-	localNameRequest.UploadFiles = make(map[string]string)
-	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
-	localNameRequest.Path = remoteFolder + "/" + remoteName
-	localNameRequest.StorageName = ""
-	GetBaseTest().CellsApi.UploadFile(localNameRequest)
-
-	request := new(GetWorksheetConditionalFormattingRequest)
-	request.Name = remoteName
-	request.SheetName = "Sheet1"
-	request.Index = int64(0)
-	request.Folder = remoteFolder
-	request.StorageName = ""
-	_, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetConditionalFormatting(request)
+    request := new (GetWorksheetConditionalFormattingRequest)
+    request.Name =         remoteName    
+    request.SheetName =         "Sheet1"    
+    request.Index =  int64(0)        
+    request.Folder =         remoteFolder    
+    request.StorageName =         ""    
+    _, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetConditionalFormatting(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -65,32 +67,32 @@ func TestConditionalFormattingsController_GetWorksheetConditionalFormatting(t *t
 }
 
 func TestConditionalFormattingsController_PutWorksheetConditionalFormatting(t *testing.T) {
-	remoteFolder := "TestData/In"
+    remoteFolder := "TestData/In"
+  
+    localName := "Book1.xlsx"
+    remoteName := "Book1.xlsx"
 
-	localName := "Book1.xlsx"
-	remoteName := "Book1.xlsx"
+    localNameRequest := new(UploadFileRequest)
+    localNameRequest.UploadFiles = make(map[string]string) 
+    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
+    localNameRequest.Path = remoteFolder + "/" + remoteName 
+    localNameRequest.StorageName =""
+    GetBaseTest().CellsApi.UploadFile(localNameRequest )
+ 
+    var formatcondition = new(FormatCondition)
+     formatcondition.Type_ =        "CellValue"      
+     formatcondition.Operator =        "Between"      
+     formatcondition.Formula1 =        "v1"      
+     formatcondition.Formula2 =        "v2"      
 
-	localNameRequest := new(UploadFileRequest)
-	localNameRequest.UploadFiles = make(map[string]string)
-	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
-	localNameRequest.Path = remoteFolder + "/" + remoteName
-	localNameRequest.StorageName = ""
-	GetBaseTest().CellsApi.UploadFile(localNameRequest)
-
-	var formatcondition = new(FormatCondition)
-	formatcondition.Type_ = "CellValue"
-	formatcondition.Operator = "Between"
-	formatcondition.Formula1 = "v1"
-	formatcondition.Formula2 = "v2"
-
-	request := new(PutWorksheetConditionalFormattingRequest)
-	request.Name = remoteName
-	request.SheetName = "Sheet1"
-	request.Formatcondition = formatcondition
-	request.CellArea = "A1:C10"
-	request.Folder = remoteFolder
-	request.StorageName = ""
-	_, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetConditionalFormatting(request)
+    request := new (PutWorksheetConditionalFormattingRequest)
+    request.Name =         remoteName    
+    request.SheetName =         "Sheet1"    
+    request.Formatcondition =         formatcondition    
+    request.CellArea =         "A1:C10"    
+    request.Folder =         remoteFolder    
+    request.StorageName =         ""    
+    _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetConditionalFormatting(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -101,30 +103,31 @@ func TestConditionalFormattingsController_PutWorksheetConditionalFormatting(t *t
 }
 
 func TestConditionalFormattingsController_PutWorksheetFormatCondition(t *testing.T) {
-	remoteFolder := "TestData/In"
+    remoteFolder := "TestData/In"
+  
+    localName := "Book1.xlsx"
+    remoteName := "Book1.xlsx"
 
-	localName := "Book1.xlsx"
-	remoteName := "Book1.xlsx"
+    localNameRequest := new(UploadFileRequest)
+    localNameRequest.UploadFiles = make(map[string]string) 
+    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
+    localNameRequest.Path = remoteFolder + "/" + remoteName 
+    localNameRequest.StorageName =""
+    GetBaseTest().CellsApi.UploadFile(localNameRequest )
+ 
 
-	localNameRequest := new(UploadFileRequest)
-	localNameRequest.UploadFiles = make(map[string]string)
-	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
-	localNameRequest.Path = remoteFolder + "/" + remoteName
-	localNameRequest.StorageName = ""
-	GetBaseTest().CellsApi.UploadFile(localNameRequest)
-
-	request := new(PutWorksheetFormatConditionRequest)
-	request.Name = remoteName
-	request.SheetName = "Sheet1"
-	request.Index = int64(0)
-	request.CellArea = "A1:C10"
-	request.Type_ = "CellValue"
-	request.OperatorType = "Between"
-	request.Formula1 = "v1"
-	request.Formula2 = "v2"
-	request.Folder = remoteFolder
-	request.StorageName = ""
-	_, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetFormatCondition(request)
+    request := new (PutWorksheetFormatConditionRequest)
+    request.Name =         remoteName    
+    request.SheetName =         "Sheet1"    
+    request.Index =  int64(0)        
+    request.CellArea =         "A1:C10"    
+    request.Type_ =         "CellValue"    
+    request.OperatorType =         "Between"    
+    request.Formula1 =         "v1"    
+    request.Formula2 =         "v2"    
+    request.Folder =         remoteFolder    
+    request.StorageName =         ""    
+    _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetFormatCondition(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -135,26 +138,27 @@ func TestConditionalFormattingsController_PutWorksheetFormatCondition(t *testing
 }
 
 func TestConditionalFormattingsController_PutWorksheetFormatConditionArea(t *testing.T) {
-	remoteFolder := "TestData/In"
+    remoteFolder := "TestData/In"
+  
+    localName := "Book1.xlsx"
+    remoteName := "Book1.xlsx"
 
-	localName := "Book1.xlsx"
-	remoteName := "Book1.xlsx"
+    localNameRequest := new(UploadFileRequest)
+    localNameRequest.UploadFiles = make(map[string]string) 
+    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
+    localNameRequest.Path = remoteFolder + "/" + remoteName 
+    localNameRequest.StorageName =""
+    GetBaseTest().CellsApi.UploadFile(localNameRequest )
+ 
 
-	localNameRequest := new(UploadFileRequest)
-	localNameRequest.UploadFiles = make(map[string]string)
-	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
-	localNameRequest.Path = remoteFolder + "/" + remoteName
-	localNameRequest.StorageName = ""
-	GetBaseTest().CellsApi.UploadFile(localNameRequest)
-
-	request := new(PutWorksheetFormatConditionAreaRequest)
-	request.Name = remoteName
-	request.SheetName = "Sheet1"
-	request.Index = int64(0)
-	request.CellArea = "A1:C10"
-	request.Folder = remoteFolder
-	request.StorageName = ""
-	_, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetFormatConditionArea(request)
+    request := new (PutWorksheetFormatConditionAreaRequest)
+    request.Name =         remoteName    
+    request.SheetName =         "Sheet1"    
+    request.Index =  int64(0)        
+    request.CellArea =         "A1:C10"    
+    request.Folder =         remoteFolder    
+    request.StorageName =         ""    
+    _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetFormatConditionArea(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -165,29 +169,30 @@ func TestConditionalFormattingsController_PutWorksheetFormatConditionArea(t *tes
 }
 
 func TestConditionalFormattingsController_PutWorksheetFormatConditionCondition(t *testing.T) {
-	remoteFolder := "TestData/In"
+    remoteFolder := "TestData/In"
+  
+    localName := "Book1.xlsx"
+    remoteName := "Book1.xlsx"
 
-	localName := "Book1.xlsx"
-	remoteName := "Book1.xlsx"
+    localNameRequest := new(UploadFileRequest)
+    localNameRequest.UploadFiles = make(map[string]string) 
+    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
+    localNameRequest.Path = remoteFolder + "/" + remoteName 
+    localNameRequest.StorageName =""
+    GetBaseTest().CellsApi.UploadFile(localNameRequest )
+ 
 
-	localNameRequest := new(UploadFileRequest)
-	localNameRequest.UploadFiles = make(map[string]string)
-	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
-	localNameRequest.Path = remoteFolder + "/" + remoteName
-	localNameRequest.StorageName = ""
-	GetBaseTest().CellsApi.UploadFile(localNameRequest)
-
-	request := new(PutWorksheetFormatConditionConditionRequest)
-	request.Name = remoteName
-	request.SheetName = "Sheet1"
-	request.Index = int64(0)
-	request.Type_ = "CellValue"
-	request.OperatorType = "Between"
-	request.Formula1 = "v1"
-	request.Formula2 = "v2"
-	request.Folder = remoteFolder
-	request.StorageName = ""
-	_, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetFormatConditionCondition(request)
+    request := new (PutWorksheetFormatConditionConditionRequest)
+    request.Name =         remoteName    
+    request.SheetName =         "Sheet1"    
+    request.Index =  int64(0)        
+    request.Type_ =         "CellValue"    
+    request.OperatorType =         "Between"    
+    request.Formula1 =         "v1"    
+    request.Formula2 =         "v2"    
+    request.Folder =         remoteFolder    
+    request.StorageName =         ""    
+    _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetFormatConditionCondition(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -198,24 +203,25 @@ func TestConditionalFormattingsController_PutWorksheetFormatConditionCondition(t
 }
 
 func TestConditionalFormattingsController_DeleteWorksheetConditionalFormattings(t *testing.T) {
-	remoteFolder := "TestData/In"
+    remoteFolder := "TestData/In"
+  
+    localName := "Book1.xlsx"
+    remoteName := "Book1.xlsx"
 
-	localName := "Book1.xlsx"
-	remoteName := "Book1.xlsx"
+    localNameRequest := new(UploadFileRequest)
+    localNameRequest.UploadFiles = make(map[string]string) 
+    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
+    localNameRequest.Path = remoteFolder + "/" + remoteName 
+    localNameRequest.StorageName =""
+    GetBaseTest().CellsApi.UploadFile(localNameRequest )
+ 
 
-	localNameRequest := new(UploadFileRequest)
-	localNameRequest.UploadFiles = make(map[string]string)
-	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
-	localNameRequest.Path = remoteFolder + "/" + remoteName
-	localNameRequest.StorageName = ""
-	GetBaseTest().CellsApi.UploadFile(localNameRequest)
-
-	request := new(DeleteWorksheetConditionalFormattingsRequest)
-	request.Name = remoteName
-	request.SheetName = "Sheet1"
-	request.Folder = remoteFolder
-	request.StorageName = ""
-	_, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetConditionalFormattings(request)
+    request := new (DeleteWorksheetConditionalFormattingsRequest)
+    request.Name =         remoteName    
+    request.SheetName =         "Sheet1"    
+    request.Folder =         remoteFolder    
+    request.StorageName =         ""    
+    _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetConditionalFormattings(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -226,25 +232,26 @@ func TestConditionalFormattingsController_DeleteWorksheetConditionalFormattings(
 }
 
 func TestConditionalFormattingsController_DeleteWorksheetConditionalFormatting(t *testing.T) {
-	remoteFolder := "TestData/In"
+    remoteFolder := "TestData/In"
+  
+    localName := "Book1.xlsx"
+    remoteName := "Book1.xlsx"
 
-	localName := "Book1.xlsx"
-	remoteName := "Book1.xlsx"
+    localNameRequest := new(UploadFileRequest)
+    localNameRequest.UploadFiles = make(map[string]string) 
+    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
+    localNameRequest.Path = remoteFolder + "/" + remoteName 
+    localNameRequest.StorageName =""
+    GetBaseTest().CellsApi.UploadFile(localNameRequest )
+ 
 
-	localNameRequest := new(UploadFileRequest)
-	localNameRequest.UploadFiles = make(map[string]string)
-	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
-	localNameRequest.Path = remoteFolder + "/" + remoteName
-	localNameRequest.StorageName = ""
-	GetBaseTest().CellsApi.UploadFile(localNameRequest)
-
-	request := new(DeleteWorksheetConditionalFormattingRequest)
-	request.Name = remoteName
-	request.SheetName = "Sheet1"
-	request.Index = int64(0)
-	request.Folder = remoteFolder
-	request.StorageName = ""
-	_, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetConditionalFormatting(request)
+    request := new (DeleteWorksheetConditionalFormattingRequest)
+    request.Name =         remoteName    
+    request.SheetName =         "Sheet1"    
+    request.Index =  int64(0)        
+    request.Folder =         remoteFolder    
+    request.StorageName =         ""    
+    _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetConditionalFormatting(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -255,28 +262,29 @@ func TestConditionalFormattingsController_DeleteWorksheetConditionalFormatting(t
 }
 
 func TestConditionalFormattingsController_DeleteWorksheetConditionalFormattingArea(t *testing.T) {
-	remoteFolder := "TestData/In"
+    remoteFolder := "TestData/In"
+  
+    localName := "Book1.xlsx"
+    remoteName := "Book1.xlsx"
 
-	localName := "Book1.xlsx"
-	remoteName := "Book1.xlsx"
+    localNameRequest := new(UploadFileRequest)
+    localNameRequest.UploadFiles = make(map[string]string) 
+    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
+    localNameRequest.Path = remoteFolder + "/" + remoteName 
+    localNameRequest.StorageName =""
+    GetBaseTest().CellsApi.UploadFile(localNameRequest )
+ 
 
-	localNameRequest := new(UploadFileRequest)
-	localNameRequest.UploadFiles = make(map[string]string)
-	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
-	localNameRequest.Path = remoteFolder + "/" + remoteName
-	localNameRequest.StorageName = ""
-	GetBaseTest().CellsApi.UploadFile(localNameRequest)
-
-	request := new(DeleteWorksheetConditionalFormattingAreaRequest)
-	request.Name = remoteName
-	request.SheetName = "Sheet1"
-	request.StartRow = int64(1)
-	request.StartColumn = int64(1)
-	request.TotalRows = int64(4)
-	request.TotalColumns = int64(6)
-	request.Folder = remoteFolder
-	request.StorageName = ""
-	_, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetConditionalFormattingArea(request)
+    request := new (DeleteWorksheetConditionalFormattingAreaRequest)
+    request.Name =         remoteName    
+    request.SheetName =         "Sheet1"    
+    request.StartRow =  int64(1)        
+    request.StartColumn =  int64(1)        
+    request.TotalRows =  int64(4)        
+    request.TotalColumns =  int64(6)        
+    request.Folder =         remoteFolder    
+    request.StorageName =         ""    
+    _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetConditionalFormattingArea(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -285,3 +293,4 @@ func TestConditionalFormattingsController_DeleteWorksheetConditionalFormattingAr
 		fmt.Printf("%d\tTestConditionalFormattingsController_DeleteWorksheetConditionalFormattingArea \n", GetBaseTest().GetTestNumber())
 	}
 }
+

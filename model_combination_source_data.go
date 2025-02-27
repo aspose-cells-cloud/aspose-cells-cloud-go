@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="CopyOptions.go">
+* <copyright company="Aspose" file="CombinationSourceData.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,13 +25,13 @@
 
 package asposecellscloud
 
-type CopyOptions struct {
+type CombinationSourceData struct {
  
-    ColumnCharacterWidth bool `json:"ColumnCharacterWidth,omitempty" xml:"ColumnCharacterWidth"`
-    CopyInvalidFormulasAsValues bool `json:"CopyInvalidFormulasAsValues,omitempty" xml:"CopyInvalidFormulasAsValues"`
-    CopyNames bool `json:"CopyNames,omitempty" xml:"CopyNames"`
-    ExtendToAdjacentRange bool `json:"ExtendToAdjacentRange,omitempty" xml:"ExtendToAdjacentRange"`
-    ReferToDestinationSheet bool `json:"ReferToDestinationSheet,omitempty" xml:"ReferToDestinationSheet"`
-    ReferToSheetWithSameName bool `json:"ReferToSheetWithSameName,omitempty" xml:"ReferToSheetWithSameName"`
-    CopyTheme bool `json:"CopyTheme,omitempty" xml:"CopyTheme"`
+    Tag string `json:"Tag,omitempty" xml:"Tag"`
+    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
+    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
+    TableName string `json:"TableName,omitempty" xml:"TableName"`
+    CellArea string `json:"CellArea,omitempty" xml:"CellArea"`
+    HasHeader bool `json:"HasHeader,omitempty" xml:"HasHeader"`
 }

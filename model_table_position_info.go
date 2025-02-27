@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="CopyOptions.go">
+* <copyright company="Aspose" file="TablePositionInfo.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,13 +25,6 @@
 
 package asposecellscloud
 
-type CopyOptions struct {
+type TablePositionInfo struct {
  
-    ColumnCharacterWidth bool `json:"ColumnCharacterWidth,omitempty" xml:"ColumnCharacterWidth"`
-    CopyInvalidFormulasAsValues bool `json:"CopyInvalidFormulasAsValues,omitempty" xml:"CopyInvalidFormulasAsValues"`
-    CopyNames bool `json:"CopyNames,omitempty" xml:"CopyNames"`
-    ExtendToAdjacentRange bool `json:"ExtendToAdjacentRange,omitempty" xml:"ExtendToAdjacentRange"`
-    ReferToDestinationSheet bool `json:"ReferToDestinationSheet,omitempty" xml:"ReferToDestinationSheet"`
-    ReferToSheetWithSameName bool `json:"ReferToSheetWithSameName,omitempty" xml:"ReferToSheetWithSameName"`
-    CopyTheme bool `json:"CopyTheme,omitempty" xml:"CopyTheme"`
 }

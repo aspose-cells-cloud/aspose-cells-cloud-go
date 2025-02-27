@@ -30,5 +30,6 @@ type RangeCopyRequest struct {
     Operate string `json:"Operate,omitempty" xml:"Operate"`
     Source *Range `json:"Source,omitempty" xml:"Source"`
     Target *Range `json:"Target,omitempty" xml:"Target"`
+    TargetWorkbook string `json:"TargetWorkbook,omitempty" xml:"TargetWorkbook"`
     PasteOptions *PasteOptions `json:"PasteOptions,omitempty" xml:"PasteOptions"`
 }

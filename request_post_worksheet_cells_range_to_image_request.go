@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="get_worksheet_with_format_request.go">
+* <copyright company="Aspose" file="post_worksheet_cells_range_to_image_request.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -32,73 +32,32 @@ import (
 	"strings"
 )
 
-type GetWorksheetWithFormatRequest struct {
+type PostWorksheetCellsRangeToImageRequest struct {
     Name string `json:"name,omitempty" xml:"name"`
     SheetName string `json:"sheet_name,omitempty" xml:"sheet_name"`
-	Format string `json:"format,omitempty" xml:"format"`
-	VerticalResolution int64 `json:"vertical_resolution,omitempty" xml:"vertical_resolution"`
-	HorizontalResolution int64 `json:"horizontal_resolution,omitempty" xml:"horizontal_resolution"`
-	Area string `json:"area,omitempty" xml:"area"`
-	PageIndex int64 `json:"page_index,omitempty" xml:"page_index"`
-	OnePagePerSheet bool `json:"one_page_per_sheet,omitempty" xml:"one_page_per_sheet"`
-	PrintHeadings bool `json:"print_headings,omitempty" xml:"print_headings"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+	RangeConvertRequest interface{} `json:"range_convert_request,omitempty" xml:"range_convert_request"` 
 	
 	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
-func (data *GetWorksheetWithFormatRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+func (data *PostWorksheetCellsRangeToImageRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
 	var (
-		localVarHttpMethod  = strings.ToUpper("GET")
+		localVarHttpMethod  = strings.ToUpper("POST")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}"
+	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/ranges/convertToImage"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-
-    // query params : format
-    if data.Format != "" {
-        localVarQueryParams.Add("format", parameterToString(data.Format, ""))
-    }
-
-    // query params : verticalResolution
-    if &data.VerticalResolution != nil {
-        localVarQueryParams.Add("verticalResolution", parameterToString(data.VerticalResolution, ""))
-    }
-
-    // query params : horizontalResolution
-    if &data.HorizontalResolution != nil {
-        localVarQueryParams.Add("horizontalResolution", parameterToString(data.HorizontalResolution, ""))
-    }
-
-    // query params : area
-    if data.Area != "" {
-        localVarQueryParams.Add("area", parameterToString(data.Area, ""))
-    }
-
-    // query params : pageIndex
-    if &data.PageIndex != nil {
-        localVarQueryParams.Add("pageIndex", parameterToString(data.PageIndex, ""))
-    }
-
-    // query params : onePagePerSheet
-    if &data.OnePagePerSheet != nil {
-        localVarQueryParams.Add("onePagePerSheet", parameterToString(data.OnePagePerSheet, ""))
-    }
-
-    // query params : printHeadings
-    if &data.PrintHeadings != nil {
-        localVarQueryParams.Add("printHeadings", parameterToString(data.PrintHeadings, ""))
-    }
 
     // query params : folder
     if data.Folder != "" {
@@ -131,6 +90,8 @@ func (data *GetWorksheetWithFormatRequest) CreateRequestData( client *APIClient)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
+	localVarPostBody = &data.RangeConvertRequest
+
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

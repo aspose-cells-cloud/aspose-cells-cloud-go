@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="CopyOptions.go">
+* <copyright company="Aspose" file="RangeConvertRequest.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,13 +25,10 @@
 
 package asposecellscloud
 
-type CopyOptions struct {
+type RangeConvertRequest struct {
  
-    ColumnCharacterWidth bool `json:"ColumnCharacterWidth,omitempty" xml:"ColumnCharacterWidth"`
-    CopyInvalidFormulasAsValues bool `json:"CopyInvalidFormulasAsValues,omitempty" xml:"CopyInvalidFormulasAsValues"`
-    CopyNames bool `json:"CopyNames,omitempty" xml:"CopyNames"`
-    ExtendToAdjacentRange bool `json:"ExtendToAdjacentRange,omitempty" xml:"ExtendToAdjacentRange"`
-    ReferToDestinationSheet bool `json:"ReferToDestinationSheet,omitempty" xml:"ReferToDestinationSheet"`
-    ReferToSheetWithSameName bool `json:"ReferToSheetWithSameName,omitempty" xml:"ReferToSheetWithSameName"`
-    CopyTheme bool `json:"CopyTheme,omitempty" xml:"CopyTheme"`
+    Source *Range `json:"Source,omitempty" xml:"Source"`
+    ImageType string `json:"ImageType,omitempty" xml:"ImageType"`
+    ImageOrPrintOptions *ImageOrPrintOptions `json:"ImageOrPrintOptions,omitempty" xml:"ImageOrPrintOptions"`
+    PageSetup *PageSetup `json:"PageSetup,omitempty" xml:"PageSetup"`
 }

@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="CopyOptions.go">
+* <copyright company="Aspose" file="MergeTableOptions.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,13 +25,12 @@
 
 package asposecellscloud
 
-type CopyOptions struct {
+type MergeTableOptions struct {
  
-    ColumnCharacterWidth bool `json:"ColumnCharacterWidth,omitempty" xml:"ColumnCharacterWidth"`
-    CopyInvalidFormulasAsValues bool `json:"CopyInvalidFormulasAsValues,omitempty" xml:"CopyInvalidFormulasAsValues"`
-    CopyNames bool `json:"CopyNames,omitempty" xml:"CopyNames"`
-    ExtendToAdjacentRange bool `json:"ExtendToAdjacentRange,omitempty" xml:"ExtendToAdjacentRange"`
-    ReferToDestinationSheet bool `json:"ReferToDestinationSheet,omitempty" xml:"ReferToDestinationSheet"`
-    ReferToSheetWithSameName bool `json:"ReferToSheetWithSameName,omitempty" xml:"ReferToSheetWithSameName"`
-    CopyTheme bool `json:"CopyTheme,omitempty" xml:"CopyTheme"`
+    MainTable *CombinationSourceData `json:"MainTable,omitempty" xml:"MainTable"`
+    SecondaryTable *CombinationSourceData `json:"SecondaryTable,omitempty" xml:"SecondaryTable"`
+    DataMergeType string `json:"DataMergeType,omitempty" xml:"DataMergeType"`
+    OverwriteMainTable bool `json:"OverwriteMainTable,omitempty" xml:"OverwriteMainTable"`
+    SyncDataToTargetWorkbook bool `json:"SyncDataToTargetWorkbook,omitempty" xml:"SyncDataToTargetWorkbook"`
+    MergedDataToPosition *DataOutputLocation `json:"MergedDataToPosition,omitempty" xml:"MergedDataToPosition"`
 }
