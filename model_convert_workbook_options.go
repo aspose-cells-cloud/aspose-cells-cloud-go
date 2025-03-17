@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="Styles.go">
+* <copyright company="Aspose" file="ConvertWorkbookOptions.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,9 +25,14 @@
 
 package asposecellscloud
 
-type Styles struct {
+type ConvertWorkbookOptions struct {
      
-        Link *Link `json:"link,omitempty" xml:"link"`
+        Name string `json:"Name,omitempty" xml:"Name"`
  
-    StyleList []Style `json:"StyleList,omitempty" xml:"StyleList"`
+    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
+    PageSetup *PageSetup `json:"PageSetup,omitempty" xml:"PageSetup"`
+    SaveOptions *SaveOptions `json:"SaveOptions,omitempty" xml:"SaveOptions"`
+    ConvertFormat string `json:"ConvertFormat,omitempty" xml:"ConvertFormat"`
+    CheckExcelRestriction bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
 }

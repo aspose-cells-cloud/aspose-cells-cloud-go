@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="SpreadsheetML2003SaveOptions.go">
+* <copyright company="Aspose" file="SpecifyCellsObject.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,18 +25,9 @@
 
 package asposecellscloud
 
-type SpreadsheetML2003SaveOptions struct {
-     
-        SaveFormat string `json:"SaveFormat,omitempty" xml:"SaveFormat"`
-        CachedFileFolder string `json:"CachedFileFolder,omitempty" xml:"CachedFileFolder"`
-        ClearData bool `json:"ClearData,omitempty" xml:"ClearData"`
-        CreateDirectory bool `json:"CreateDirectory,omitempty" xml:"CreateDirectory"`
-        EnableHTTPCompression bool `json:"EnableHTTPCompression,omitempty" xml:"EnableHTTPCompression"`
-        RefreshChartCache bool `json:"RefreshChartCache,omitempty" xml:"RefreshChartCache"`
-        SortNames bool `json:"SortNames,omitempty" xml:"SortNames"`
-        ValidateMergedAreas bool `json:"ValidateMergedAreas,omitempty" xml:"ValidateMergedAreas"`
+type SpecifyCellsObject struct {
  
-    ExportColumnIndexOfCell bool `json:"ExportColumnIndexOfCell,omitempty" xml:"ExportColumnIndexOfCell"`
-    IsIndentedFormatting bool `json:"IsIndentedFormatting,omitempty" xml:"IsIndentedFormatting"`
-    LimitAsXls bool `json:"LimitAsXls,omitempty" xml:"LimitAsXls"`
+    WorksheetName string `json:"WorksheetName,omitempty" xml:"WorksheetName"`
+    PageIndex int64 `json:"PageIndex,omitempty" xml:"PageIndex"`
+    Region string `json:"Region,omitempty" xml:"Region"`
 }

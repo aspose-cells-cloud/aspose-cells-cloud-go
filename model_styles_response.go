@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="Styles.go">
+* <copyright company="Aspose" file="StylesResponse.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,9 +25,10 @@
 
 package asposecellscloud
 
-type Styles struct {
+type StylesResponse struct {
      
-        Link *Link `json:"link,omitempty" xml:"link"`
+        Code int64 `json:"Code,omitempty" xml:"Code"`
+        Status string `json:"Status,omitempty" xml:"Status"`
  
-    StyleList []Style `json:"StyleList,omitempty" xml:"StyleList"`
+    Styles *Styles `json:"Styles,omitempty" xml:"Styles"`
 }

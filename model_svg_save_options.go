@@ -35,6 +35,23 @@ type SvgSaveOptions struct {
         RefreshChartCache bool `json:"RefreshChartCache,omitempty" xml:"RefreshChartCache"`
         SortNames bool `json:"SortNames,omitempty" xml:"SortNames"`
         ValidateMergedAreas bool `json:"ValidateMergedAreas,omitempty" xml:"ValidateMergedAreas"`
+        MergeAreas bool `json:"MergeAreas,omitempty" xml:"MergeAreas"`
+        SortExternalNames bool `json:"SortExternalNames,omitempty" xml:"SortExternalNames"`
+        CheckExcelRestriction bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
+        UpdateSmartArt bool `json:"UpdateSmartArt,omitempty" xml:"UpdateSmartArt"`
+        EncryptDocumentProperties bool `json:"EncryptDocumentProperties,omitempty" xml:"EncryptDocumentProperties"`
  
     SheetIndex int64 `json:"SheetIndex,omitempty" xml:"SheetIndex"`
+    ChartImageType string `json:"ChartImageType,omitempty" xml:"ChartImageType"`
+    EmbededImageNameInSvg string `json:"EmbededImageNameInSvg,omitempty" xml:"EmbededImageNameInSvg"`
+    HorizontalResolution int64 `json:"HorizontalResolution,omitempty" xml:"HorizontalResolution"`
+    ImageFormat string `json:"ImageFormat,omitempty" xml:"ImageFormat"`
+    IsCellAutoFit bool `json:"IsCellAutoFit,omitempty" xml:"IsCellAutoFit"`
+    OnePagePerSheet bool `json:"OnePagePerSheet,omitempty" xml:"OnePagePerSheet"`
+    OnlyArea bool `json:"OnlyArea,omitempty" xml:"OnlyArea"`
+    PrintingPage string `json:"PrintingPage,omitempty" xml:"PrintingPage"`
+    PrintWithStatusDialog bool `json:"PrintWithStatusDialog,omitempty" xml:"PrintWithStatusDialog"`
+    Quality int64 `json:"Quality,omitempty" xml:"Quality"`
+    TiffCompression string `json:"TiffCompression,omitempty" xml:"TiffCompression"`
+    VerticalResolution int64 `json:"VerticalResolution,omitempty" xml:"VerticalResolution"`
 }

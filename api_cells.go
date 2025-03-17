@@ -33,7 +33,7 @@ import (
 )
 
 func Version() {
-	fmt.Println("---Version: 25.2---")
+	fmt.Println("---Version: 25.3---")
 }
 
 func NewCellsApiService(appSid string, appKey string, opts ...string) *CellsApiService {
@@ -3232,6 +3232,34 @@ func (a *CellsApiService) PostConvertWorksheetToImage(data *PostConvertWorksheet
 }
 
 
+func (a *CellsApiService) PostConvertWorkbook(data *PostConvertWorkbookRequest) (  FileInfo,  *http.Response, error) {
+	var (
+	localVarReturnValue FileInfo 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
 func (a *CellsApiService) PostExport(data *PostExportRequest) (  FilesResult,  *http.Response, error) {
 	var (
 	localVarReturnValue FilesResult 
@@ -5338,6 +5366,34 @@ func (a *CellsApiService) PutWorksheetAddPicture(data *PutWorksheetAddPictureReq
 }
 
 
+func (a *CellsApiService) AddPictureInCell(data *AddPictureInCellRequest) (  CellsCloudResponse,  *http.Response, error) {
+	var (
+	localVarReturnValue CellsCloudResponse 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
 func (a *CellsApiService) PostWorksheetPicture(data *PostWorksheetPictureRequest) (  CellsCloudResponse,  *http.Response, error) {
 	var (
 	localVarReturnValue CellsCloudResponse 
@@ -6738,9 +6794,9 @@ func (a *CellsApiService) PostWorksheetCellsRangeRowHeight(data *PostWorksheetCe
 }
 
 
-func (a *CellsApiService) PostWorksheetCellsRangeToImage(data *PostWorksheetCellsRangeToImageRequest) (  CellsCloudResponse,  *http.Response, error) {
+func (a *CellsApiService) PostWorksheetCellsRangeToImage(data *PostWorksheetCellsRangeToImageRequest) (  []byte,  *http.Response, error) {
 	var (
-	localVarReturnValue CellsCloudResponse 
+	localVarReturnValue []byte 
 
 	)
 
@@ -6758,7 +6814,8 @@ func (a *CellsApiService) PostWorksheetCellsRangeToImage(data *PostWorksheetCell
 		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
-		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
 			return localVarReturnValue, localVarHttpResponse, err
 		}
  
@@ -8202,6 +8259,34 @@ func (a *CellsApiService) PutWorkbookWaterMarker(data *PutWorkbookWaterMarkerReq
 func (a *CellsApiService) GetPageCount(data *GetPageCountRequest) (  *int64,  *http.Response, error) {
 	var (
 	localVarReturnValue *int64 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) GetAllStyles(data *GetAllStylesRequest) (  StylesResponse,  *http.Response, error) {
+	var (
+	localVarReturnValue StylesResponse 
 
 	)
 

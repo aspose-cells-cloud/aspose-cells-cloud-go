@@ -35,6 +35,11 @@ type PaginatedSaveOptions struct {
         RefreshChartCache bool `json:"RefreshChartCache,omitempty" xml:"RefreshChartCache"`
         SortNames bool `json:"SortNames,omitempty" xml:"SortNames"`
         ValidateMergedAreas bool `json:"ValidateMergedAreas,omitempty" xml:"ValidateMergedAreas"`
+        MergeAreas bool `json:"MergeAreas,omitempty" xml:"MergeAreas"`
+        SortExternalNames bool `json:"SortExternalNames,omitempty" xml:"SortExternalNames"`
+        CheckExcelRestriction bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
+        UpdateSmartArt bool `json:"UpdateSmartArt,omitempty" xml:"UpdateSmartArt"`
+        EncryptDocumentProperties bool `json:"EncryptDocumentProperties,omitempty" xml:"EncryptDocumentProperties"`
  
     DefaultFont string `json:"DefaultFont,omitempty" xml:"DefaultFont"`
     CheckWorkbookDefaultFont bool `json:"CheckWorkbookDefaultFont,omitempty" xml:"CheckWorkbookDefaultFont"`
@@ -51,7 +56,4 @@ type PaginatedSaveOptions struct {
     TextCrossType string `json:"TextCrossType,omitempty" xml:"TextCrossType"`
     DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
     EmfRenderSetting string `json:"EmfRenderSetting,omitempty" xml:"EmfRenderSetting"`
-    MergeAreas bool `json:"MergeAreas,omitempty" xml:"MergeAreas"`
-    SortExternalNames bool `json:"SortExternalNames,omitempty" xml:"SortExternalNames"`
-    UpdateSmartArt bool `json:"UpdateSmartArt,omitempty" xml:"UpdateSmartArt"`
 }

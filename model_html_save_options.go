@@ -35,6 +35,11 @@ type HtmlSaveOptions struct {
         RefreshChartCache bool `json:"RefreshChartCache,omitempty" xml:"RefreshChartCache"`
         SortNames bool `json:"SortNames,omitempty" xml:"SortNames"`
         ValidateMergedAreas bool `json:"ValidateMergedAreas,omitempty" xml:"ValidateMergedAreas"`
+        MergeAreas bool `json:"MergeAreas,omitempty" xml:"MergeAreas"`
+        SortExternalNames bool `json:"SortExternalNames,omitempty" xml:"SortExternalNames"`
+        CheckExcelRestriction bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
+        UpdateSmartArt bool `json:"UpdateSmartArt,omitempty" xml:"UpdateSmartArt"`
+        EncryptDocumentProperties bool `json:"EncryptDocumentProperties,omitempty" xml:"EncryptDocumentProperties"`
  
     ExportPageHeaders bool `json:"ExportPageHeaders,omitempty" xml:"ExportPageHeaders"`
     ExportPageFooters bool `json:"ExportPageFooters,omitempty" xml:"ExportPageFooters"`

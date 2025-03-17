@@ -42,8 +42,5 @@ type XpsSaveOptions struct {
         TextCrossType string `json:"TextCrossType,omitempty" xml:"TextCrossType"`
         DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
         EmfRenderSetting string `json:"EmfRenderSetting,omitempty" xml:"EmfRenderSetting"`
-        MergeAreas bool `json:"MergeAreas,omitempty" xml:"MergeAreas"`
-        SortExternalNames bool `json:"SortExternalNames,omitempty" xml:"SortExternalNames"`
-        UpdateSmartArt bool `json:"UpdateSmartArt,omitempty" xml:"UpdateSmartArt"`
  
 }
