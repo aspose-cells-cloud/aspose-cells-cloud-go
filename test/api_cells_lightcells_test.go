@@ -4,27 +4,26 @@ import (
 	"fmt"
 	"testing"
 
-    . "asposecellscloud"
+	. "asposecellscloud"
 )
 
 func TestLightCells_PostSplit_csv(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "csv"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "csv"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -35,23 +34,22 @@ func TestLightCells_PostSplit_csv(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_xls(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "xls"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "xls"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -62,23 +60,22 @@ func TestLightCells_PostSplit_xls(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_html(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "html"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "html"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -89,23 +86,22 @@ func TestLightCells_PostSplit_html(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_mhtml(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "mhtml"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "mhtml"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -116,23 +112,22 @@ func TestLightCells_PostSplit_mhtml(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_ods(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "ods"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "ods"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -143,23 +138,22 @@ func TestLightCells_PostSplit_ods(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_pdf(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "pdf"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "pdf"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -170,23 +164,22 @@ func TestLightCells_PostSplit_pdf(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_xml(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "xml"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "xml"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -197,23 +190,22 @@ func TestLightCells_PostSplit_xml(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_txt(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "txt"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "txt"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -224,23 +216,22 @@ func TestLightCells_PostSplit_txt(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_tif(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "tif"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "tif"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -251,23 +242,22 @@ func TestLightCells_PostSplit_tif(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_xlsb(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "xlsb"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "xlsb"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -278,23 +268,22 @@ func TestLightCells_PostSplit_xlsb(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_xlsx(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "xlsx"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "xlsx"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -305,23 +294,22 @@ func TestLightCells_PostSplit_xlsx(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_xps(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "xps"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "xps"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -332,23 +320,22 @@ func TestLightCells_PostSplit_xps(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_png(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "png"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "png"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -359,23 +346,22 @@ func TestLightCells_PostSplit_png(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_jpg(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "jpg"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "jpg"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -386,23 +372,22 @@ func TestLightCells_PostSplit_jpg(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_md(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "md"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "md"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -412,51 +397,23 @@ func TestLightCells_PostSplit_md(t *testing.T) {
 	}
 }
 
-func TestLightCells_PostSplit_numbers(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
-
- 
-     outFormat := "numbers"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
-
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestLightCells_PostSplit_numbers \n", GetBaseTest().GetTestNumber())
-	}
-}
-
 func TestLightCells_PostSplit_svg(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "svg"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "svg"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -467,23 +424,22 @@ func TestLightCells_PostSplit_svg(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_docx(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "docx"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "docx"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -494,23 +450,22 @@ func TestLightCells_PostSplit_docx(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_pptx(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "pptx"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "pptx"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -521,23 +476,22 @@ func TestLightCells_PostSplit_pptx(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_json(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "json"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "json"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -548,23 +502,22 @@ func TestLightCells_PostSplit_json(t *testing.T) {
 }
 
 func TestLightCells_PostSplit_sql(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     outFormat := "sql"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	outFormat := "sql"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSplitRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         outFormat    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSplitRequest)
+	request.File = mapFiles
+	request.OutFormat = outFormat
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSplit(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -575,24 +528,23 @@ func TestLightCells_PostSplit_sql(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_csv(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "csv"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "csv"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -603,24 +555,23 @@ func TestLightCells_PostAssemble_csv(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_xls(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "xls"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xls"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -631,24 +582,23 @@ func TestLightCells_PostAssemble_xls(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_html(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "html"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "html"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -659,24 +609,23 @@ func TestLightCells_PostAssemble_html(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_mhtml(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "mhtml"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "mhtml"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -687,24 +636,23 @@ func TestLightCells_PostAssemble_mhtml(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_ods(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "ods"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "ods"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -715,24 +663,23 @@ func TestLightCells_PostAssemble_ods(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_pdf(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "pdf"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "pdf"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -743,24 +690,23 @@ func TestLightCells_PostAssemble_pdf(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_xml(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "xml"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xml"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -771,24 +717,23 @@ func TestLightCells_PostAssemble_xml(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_txt(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "txt"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "txt"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -799,24 +744,23 @@ func TestLightCells_PostAssemble_txt(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_tif(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "tif"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "tif"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -827,24 +771,23 @@ func TestLightCells_PostAssemble_tif(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_xlsb(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "xlsb"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xlsb"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -855,24 +798,23 @@ func TestLightCells_PostAssemble_xlsb(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_xlsm(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "xlsm"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xlsm"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -883,24 +825,23 @@ func TestLightCells_PostAssemble_xlsm(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_xlsx(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "xlsx"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xlsx"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -911,24 +852,23 @@ func TestLightCells_PostAssemble_xlsx(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_xltm(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "xltm"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xltm"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -939,24 +879,23 @@ func TestLightCells_PostAssemble_xltm(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_xltx(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "xltx"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xltx"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -967,24 +906,23 @@ func TestLightCells_PostAssemble_xltx(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_xps(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "xps"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xps"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -995,24 +933,23 @@ func TestLightCells_PostAssemble_xps(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_png(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "png"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "png"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1023,24 +960,23 @@ func TestLightCells_PostAssemble_png(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_jpg(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "jpg"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "jpg"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1051,24 +987,23 @@ func TestLightCells_PostAssemble_jpg(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_gif(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "gif"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "gif"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1079,24 +1014,23 @@ func TestLightCells_PostAssemble_gif(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_emf(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "emf"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "emf"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1107,24 +1041,23 @@ func TestLightCells_PostAssemble_emf(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_bmp(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "bmp"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "bmp"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1135,24 +1068,23 @@ func TestLightCells_PostAssemble_bmp(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_md(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "md"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "md"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1162,53 +1094,24 @@ func TestLightCells_PostAssemble_md(t *testing.T) {
 	}
 }
 
-func TestLightCells_PostAssemble_numbers(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
-
- 
-     format := "numbers"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
-
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestLightCells_PostAssemble_numbers \n", GetBaseTest().GetTestNumber())
-	}
-}
-
 func TestLightCells_PostAssemble_wmf(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "wmf"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "wmf"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1219,24 +1122,23 @@ func TestLightCells_PostAssemble_wmf(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_svg(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "svg"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "svg"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1247,24 +1149,23 @@ func TestLightCells_PostAssemble_svg(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_docx(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "docx"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "docx"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1275,24 +1176,23 @@ func TestLightCells_PostAssemble_docx(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_pptx(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "pptx"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "pptx"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1303,24 +1203,23 @@ func TestLightCells_PostAssemble_pptx(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_json(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "json"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "json"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1331,24 +1230,23 @@ func TestLightCells_PostAssemble_json(t *testing.T) {
 }
 
 func TestLightCells_PostAssemble_sql(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "sql"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "sql"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostAssembleRequest)
-    request.File =         mapFiles    
-    request.Datasource =         "ds"    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostAssembleRequest)
+	request.File = mapFiles
+	request.Datasource = "ds"
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostAssemble(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1359,25 +1257,24 @@ func TestLightCells_PostAssemble_sql(t *testing.T) {
 }
 
 func TestLightCells_PostExport_csv_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "csv"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "csv"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1388,25 +1285,24 @@ func TestLightCells_PostExport_csv_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xls_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xls"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xls"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1417,25 +1313,24 @@ func TestLightCells_PostExport_xls_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_html_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "html"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "html"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1446,25 +1341,24 @@ func TestLightCells_PostExport_html_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_mhtml_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "mhtml"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "mhtml"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1475,25 +1369,24 @@ func TestLightCells_PostExport_mhtml_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_ods_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "ods"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "ods"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1504,25 +1397,24 @@ func TestLightCells_PostExport_ods_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_pdf_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "pdf"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "pdf"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1533,25 +1425,24 @@ func TestLightCells_PostExport_pdf_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xml_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xml"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xml"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1562,25 +1453,24 @@ func TestLightCells_PostExport_xml_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_txt_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "txt"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "txt"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1591,25 +1481,24 @@ func TestLightCells_PostExport_txt_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_tif_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "tif"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "tif"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1620,25 +1509,24 @@ func TestLightCells_PostExport_tif_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xlsb_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xlsb"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xlsb"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1649,25 +1537,24 @@ func TestLightCells_PostExport_xlsb_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xlsm_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xlsm"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xlsm"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1678,25 +1565,24 @@ func TestLightCells_PostExport_xlsm_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xlsx_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xlsx"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xlsx"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1707,25 +1593,24 @@ func TestLightCells_PostExport_xlsx_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xltm_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xltm"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xltm"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1736,25 +1621,24 @@ func TestLightCells_PostExport_xltm_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xltx_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xltx"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xltx"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1765,25 +1649,24 @@ func TestLightCells_PostExport_xltx_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xps_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xps"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xps"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1794,25 +1677,24 @@ func TestLightCells_PostExport_xps_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_png_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "png"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "png"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1823,25 +1705,24 @@ func TestLightCells_PostExport_png_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_jpg_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "jpg"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "jpg"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1852,25 +1733,24 @@ func TestLightCells_PostExport_jpg_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_gif_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "gif"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "gif"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1881,25 +1761,24 @@ func TestLightCells_PostExport_gif_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_emf_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "emf"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "emf"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1910,25 +1789,24 @@ func TestLightCells_PostExport_emf_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_bmp_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "bmp"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "bmp"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1939,25 +1817,24 @@ func TestLightCells_PostExport_bmp_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_md_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "md"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "md"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -1967,55 +1844,25 @@ func TestLightCells_PostExport_md_workbook(t *testing.T) {
 	}
 }
 
-func TestLightCells_PostExport_numbers_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
-
- 
-     format := "numbers"
-     objectType := "workbook"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
-
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestLightCells_PostExport_numbers_workbook \n", GetBaseTest().GetTestNumber())
-	}
-}
-
 func TestLightCells_PostExport_wmf_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "wmf"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "wmf"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2026,25 +1873,24 @@ func TestLightCells_PostExport_wmf_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_svg_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "svg"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "svg"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2055,25 +1901,24 @@ func TestLightCells_PostExport_svg_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_docx_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "docx"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "docx"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2084,25 +1929,24 @@ func TestLightCells_PostExport_docx_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_pptx_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "pptx"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "pptx"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2113,25 +1957,24 @@ func TestLightCells_PostExport_pptx_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_json_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "json"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "json"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2142,25 +1985,24 @@ func TestLightCells_PostExport_json_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_sql_workbook(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "sql"
-     objectType := "workbook"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "sql"
+	objectType := "workbook"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2171,25 +2013,24 @@ func TestLightCells_PostExport_sql_workbook(t *testing.T) {
 }
 
 func TestLightCells_PostExport_csv_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "csv"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "csv"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2200,25 +2041,24 @@ func TestLightCells_PostExport_csv_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xls_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xls"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xls"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2229,25 +2069,24 @@ func TestLightCells_PostExport_xls_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_html_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "html"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "html"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2258,25 +2097,24 @@ func TestLightCells_PostExport_html_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_mhtml_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "mhtml"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "mhtml"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2287,25 +2125,24 @@ func TestLightCells_PostExport_mhtml_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_ods_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "ods"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "ods"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2316,25 +2153,24 @@ func TestLightCells_PostExport_ods_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_pdf_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "pdf"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "pdf"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2345,25 +2181,24 @@ func TestLightCells_PostExport_pdf_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xml_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xml"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xml"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2374,25 +2209,24 @@ func TestLightCells_PostExport_xml_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_txt_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "txt"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "txt"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2403,25 +2237,24 @@ func TestLightCells_PostExport_txt_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_tif_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "tif"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "tif"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2432,25 +2265,24 @@ func TestLightCells_PostExport_tif_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xlsb_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xlsb"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xlsb"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2461,25 +2293,24 @@ func TestLightCells_PostExport_xlsb_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xlsm_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xlsm"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xlsm"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2490,25 +2321,24 @@ func TestLightCells_PostExport_xlsm_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xlsx_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xlsx"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xlsx"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2519,25 +2349,24 @@ func TestLightCells_PostExport_xlsx_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xltm_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xltm"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xltm"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2548,25 +2377,24 @@ func TestLightCells_PostExport_xltm_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xltx_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xltx"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xltx"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2577,25 +2405,24 @@ func TestLightCells_PostExport_xltx_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xps_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xps"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xps"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2606,25 +2433,24 @@ func TestLightCells_PostExport_xps_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_png_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "png"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "png"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2635,25 +2461,24 @@ func TestLightCells_PostExport_png_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_jpg_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "jpg"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "jpg"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2664,25 +2489,24 @@ func TestLightCells_PostExport_jpg_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_gif_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "gif"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "gif"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2693,25 +2517,24 @@ func TestLightCells_PostExport_gif_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_emf_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "emf"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "emf"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2722,25 +2545,24 @@ func TestLightCells_PostExport_emf_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_bmp_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "bmp"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "bmp"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2751,25 +2573,24 @@ func TestLightCells_PostExport_bmp_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_md_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "md"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "md"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2779,55 +2600,25 @@ func TestLightCells_PostExport_md_worksheet(t *testing.T) {
 	}
 }
 
-func TestLightCells_PostExport_numbers_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
-
- 
-     format := "numbers"
-     objectType := "worksheet"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
-
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestLightCells_PostExport_numbers_worksheet \n", GetBaseTest().GetTestNumber())
-	}
-}
-
 func TestLightCells_PostExport_wmf_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "wmf"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "wmf"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2838,25 +2629,24 @@ func TestLightCells_PostExport_wmf_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_svg_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "svg"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "svg"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2867,25 +2657,24 @@ func TestLightCells_PostExport_svg_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_docx_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "docx"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "docx"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2896,25 +2685,24 @@ func TestLightCells_PostExport_docx_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_pptx_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "pptx"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "pptx"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2925,25 +2713,24 @@ func TestLightCells_PostExport_pptx_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_json_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "json"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "json"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2954,25 +2741,24 @@ func TestLightCells_PostExport_json_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_sql_worksheet(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "sql"
-     objectType := "worksheet"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "sql"
+	objectType := "worksheet"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -2983,25 +2769,24 @@ func TestLightCells_PostExport_sql_worksheet(t *testing.T) {
 }
 
 func TestLightCells_PostExport_pdf_chart(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "pdf"
-     objectType := "chart"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "pdf"
+	objectType := "chart"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3012,25 +2797,24 @@ func TestLightCells_PostExport_pdf_chart(t *testing.T) {
 }
 
 func TestLightCells_PostExport_tif_chart(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "tif"
-     objectType := "chart"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "tif"
+	objectType := "chart"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3041,25 +2825,24 @@ func TestLightCells_PostExport_tif_chart(t *testing.T) {
 }
 
 func TestLightCells_PostExport_png_chart(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "png"
-     objectType := "chart"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "png"
+	objectType := "chart"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3070,25 +2853,24 @@ func TestLightCells_PostExport_png_chart(t *testing.T) {
 }
 
 func TestLightCells_PostExport_jpg_chart(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "jpg"
-     objectType := "chart"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "jpg"
+	objectType := "chart"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3099,25 +2881,24 @@ func TestLightCells_PostExport_jpg_chart(t *testing.T) {
 }
 
 func TestLightCells_PostExport_gif_chart(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "gif"
-     objectType := "chart"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "gif"
+	objectType := "chart"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3128,25 +2909,24 @@ func TestLightCells_PostExport_gif_chart(t *testing.T) {
 }
 
 func TestLightCells_PostExport_emf_chart(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "emf"
-     objectType := "chart"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "emf"
+	objectType := "chart"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3157,25 +2937,24 @@ func TestLightCells_PostExport_emf_chart(t *testing.T) {
 }
 
 func TestLightCells_PostExport_bmp_chart(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "bmp"
-     objectType := "chart"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "bmp"
+	objectType := "chart"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3186,25 +2965,24 @@ func TestLightCells_PostExport_bmp_chart(t *testing.T) {
 }
 
 func TestLightCells_PostExport_png_picture(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "png"
-     objectType := "picture"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "png"
+	objectType := "picture"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3215,25 +2993,24 @@ func TestLightCells_PostExport_png_picture(t *testing.T) {
 }
 
 func TestLightCells_PostExport_jpg_picture(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "jpg"
-     objectType := "picture"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "jpg"
+	objectType := "picture"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3244,25 +3021,24 @@ func TestLightCells_PostExport_jpg_picture(t *testing.T) {
 }
 
 func TestLightCells_PostExport_gif_picture(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "gif"
-     objectType := "picture"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "gif"
+	objectType := "picture"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3273,25 +3049,24 @@ func TestLightCells_PostExport_gif_picture(t *testing.T) {
 }
 
 func TestLightCells_PostExport_emf_picture(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "emf"
-     objectType := "picture"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "emf"
+	objectType := "picture"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3302,25 +3077,24 @@ func TestLightCells_PostExport_emf_picture(t *testing.T) {
 }
 
 func TestLightCells_PostExport_bmp_picture(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "bmp"
-     objectType := "picture"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "bmp"
+	objectType := "picture"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3331,25 +3105,24 @@ func TestLightCells_PostExport_bmp_picture(t *testing.T) {
 }
 
 func TestLightCells_PostExport_csv_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "csv"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "csv"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3360,25 +3133,24 @@ func TestLightCells_PostExport_csv_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xls_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xls"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xls"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3389,25 +3161,24 @@ func TestLightCells_PostExport_xls_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_html_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "html"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "html"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3418,25 +3189,24 @@ func TestLightCells_PostExport_html_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_mhtml_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "mhtml"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "mhtml"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3447,25 +3217,24 @@ func TestLightCells_PostExport_mhtml_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_ods_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "ods"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "ods"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3476,25 +3245,24 @@ func TestLightCells_PostExport_ods_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_pdf_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "pdf"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "pdf"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3505,25 +3273,24 @@ func TestLightCells_PostExport_pdf_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xml_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xml"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xml"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3534,25 +3301,24 @@ func TestLightCells_PostExport_xml_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_txt_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "txt"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "txt"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3563,25 +3329,24 @@ func TestLightCells_PostExport_txt_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_tif_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "tif"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "tif"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3592,25 +3357,24 @@ func TestLightCells_PostExport_tif_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xlsb_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xlsb"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xlsb"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3621,25 +3385,24 @@ func TestLightCells_PostExport_xlsb_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xlsm_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xlsm"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xlsm"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3650,25 +3413,24 @@ func TestLightCells_PostExport_xlsm_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xlsx_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xlsx"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xlsx"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3679,25 +3441,24 @@ func TestLightCells_PostExport_xlsx_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xltm_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xltm"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xltm"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3708,25 +3469,24 @@ func TestLightCells_PostExport_xltm_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xltx_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xltx"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xltx"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3737,25 +3497,24 @@ func TestLightCells_PostExport_xltx_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_xps_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xps"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xps"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3766,25 +3525,24 @@ func TestLightCells_PostExport_xps_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_png_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "png"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "png"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3795,25 +3553,24 @@ func TestLightCells_PostExport_png_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_jpg_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "jpg"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "jpg"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3824,25 +3581,24 @@ func TestLightCells_PostExport_jpg_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_gif_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "gif"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "gif"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3853,25 +3609,24 @@ func TestLightCells_PostExport_gif_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_emf_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "emf"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "emf"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3882,25 +3637,24 @@ func TestLightCells_PostExport_emf_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_bmp_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "bmp"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "bmp"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3911,25 +3665,24 @@ func TestLightCells_PostExport_bmp_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_md_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "md"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "md"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3939,55 +3692,25 @@ func TestLightCells_PostExport_md_listobject(t *testing.T) {
 	}
 }
 
-func TestLightCells_PostExport_numbers_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
-
- 
-     format := "numbers"
-     objectType := "listobject"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
-
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestLightCells_PostExport_numbers_listobject \n", GetBaseTest().GetTestNumber())
-	}
-}
-
 func TestLightCells_PostExport_wmf_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "wmf"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "wmf"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -3998,25 +3721,24 @@ func TestLightCells_PostExport_wmf_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_svg_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "svg"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "svg"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4027,25 +3749,24 @@ func TestLightCells_PostExport_svg_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_docx_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "docx"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "docx"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4056,25 +3777,24 @@ func TestLightCells_PostExport_docx_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_pptx_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "pptx"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "pptx"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4085,25 +3805,24 @@ func TestLightCells_PostExport_pptx_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_json_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "json"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "json"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4114,25 +3833,24 @@ func TestLightCells_PostExport_json_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_sql_listobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "sql"
-     objectType := "listobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "sql"
+	objectType := "listobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4143,25 +3861,24 @@ func TestLightCells_PostExport_sql_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_png_oleobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "png"
-     objectType := "oleobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "png"
+	objectType := "oleobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4172,25 +3889,24 @@ func TestLightCells_PostExport_png_oleobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_jpg_oleobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "jpg"
-     objectType := "oleobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "jpg"
+	objectType := "oleobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4201,25 +3917,24 @@ func TestLightCells_PostExport_jpg_oleobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_gif_oleobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "gif"
-     objectType := "oleobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "gif"
+	objectType := "oleobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4230,25 +3945,24 @@ func TestLightCells_PostExport_gif_oleobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_emf_oleobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "emf"
-     objectType := "oleobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "emf"
+	objectType := "oleobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4259,25 +3973,24 @@ func TestLightCells_PostExport_emf_oleobject(t *testing.T) {
 }
 
 func TestLightCells_PostExport_bmp_oleobject(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "bmp"
-     objectType := "oleobject"
+	assemblyTestXlsx := "assemblytest.xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "bmp"
+	objectType := "oleobject"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostExportRequest)
-    request.File =         mapFiles    
-    request.ObjectType =         objectType    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostExportRequest)
+	request.File = mapFiles
+	request.ObjectType = objectType
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostExport(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4288,23 +4001,22 @@ func TestLightCells_PostExport_bmp_oleobject(t *testing.T) {
 }
 
 func TestLightCells_PostCompress_50(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     compressLevel := 50
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	compressLevel := 50
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostCompressRequest)
-    request.File =         mapFiles    
-    request.CompressLevel =  int64(compressLevel)        
-    _, httpResponse, err := GetBaseTest().CellsApi.PostCompress(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostCompressRequest)
+	request.File = mapFiles
+	request.CompressLevel = int64(compressLevel)
+	_, httpResponse, err := GetBaseTest().CellsApi.PostCompress(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4315,23 +4027,22 @@ func TestLightCells_PostCompress_50(t *testing.T) {
 }
 
 func TestLightCells_PostCompress_90(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     compressLevel := 90
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	compressLevel := 90
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostCompressRequest)
-    request.File =         mapFiles    
-    request.CompressLevel =  int64(compressLevel)        
-    _, httpResponse, err := GetBaseTest().CellsApi.PostCompress(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostCompressRequest)
+	request.File = mapFiles
+	request.CompressLevel = int64(compressLevel)
+	_, httpResponse, err := GetBaseTest().CellsApi.PostCompress(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4342,25 +4053,24 @@ func TestLightCells_PostCompress_90(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_csv_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "csv"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "csv"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4371,25 +4081,24 @@ func TestLightCells_PostMerge_csv_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_xls_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "xls"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xls"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4400,25 +4109,24 @@ func TestLightCells_PostMerge_xls_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_html_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "html"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "html"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4429,25 +4137,24 @@ func TestLightCells_PostMerge_html_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_mhtml_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "mhtml"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "mhtml"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4458,25 +4165,24 @@ func TestLightCells_PostMerge_mhtml_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_ods_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "ods"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "ods"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4487,25 +4193,24 @@ func TestLightCells_PostMerge_ods_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_pdf_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "pdf"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "pdf"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4516,25 +4221,24 @@ func TestLightCells_PostMerge_pdf_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_xml_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "xml"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xml"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4545,25 +4249,24 @@ func TestLightCells_PostMerge_xml_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_txt_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "txt"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "txt"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4574,25 +4277,24 @@ func TestLightCells_PostMerge_txt_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_tif_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "tif"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "tif"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4603,25 +4305,24 @@ func TestLightCells_PostMerge_tif_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_xlsb_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "xlsb"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xlsb"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4632,25 +4333,24 @@ func TestLightCells_PostMerge_xlsb_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_xlsm_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "xlsm"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xlsm"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4661,25 +4361,24 @@ func TestLightCells_PostMerge_xlsm_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_xlsx_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "xlsx"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xlsx"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4690,25 +4389,24 @@ func TestLightCells_PostMerge_xlsx_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_xltm_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "xltm"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xltm"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4719,25 +4417,24 @@ func TestLightCells_PostMerge_xltm_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_xltx_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "xltx"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xltx"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4748,25 +4445,24 @@ func TestLightCells_PostMerge_xltx_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_xps_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "xps"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xps"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4777,25 +4473,24 @@ func TestLightCells_PostMerge_xps_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_png_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "png"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "png"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4806,25 +4501,24 @@ func TestLightCells_PostMerge_png_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_jpg_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "jpg"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "jpg"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4835,25 +4529,24 @@ func TestLightCells_PostMerge_jpg_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_gif_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "gif"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "gif"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4864,25 +4557,24 @@ func TestLightCells_PostMerge_gif_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_emf_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "emf"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "emf"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4893,25 +4585,24 @@ func TestLightCells_PostMerge_emf_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_bmp_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "bmp"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "bmp"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4922,25 +4613,24 @@ func TestLightCells_PostMerge_bmp_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_md_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "md"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "md"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -4950,55 +4640,25 @@ func TestLightCells_PostMerge_md_true(t *testing.T) {
 	}
 }
 
-func TestLightCells_PostMerge_numbers_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
-
- 
-     format := "numbers"
-     mergeToOneSheet := true
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
-
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestLightCells_PostMerge_numbers_true \n", GetBaseTest().GetTestNumber())
-	}
-}
-
 func TestLightCells_PostMerge_wmf_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "wmf"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "wmf"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5009,25 +4669,24 @@ func TestLightCells_PostMerge_wmf_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_svg_true(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "svg"
-     mergeToOneSheet := true
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "svg"
+	mergeToOneSheet := true
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5038,25 +4697,24 @@ func TestLightCells_PostMerge_svg_true(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_docx_false(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "docx"
-     mergeToOneSheet := false
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "docx"
+	mergeToOneSheet := false
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5067,25 +4725,24 @@ func TestLightCells_PostMerge_docx_false(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_pptx_false(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "pptx"
-     mergeToOneSheet := false
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "pptx"
+	mergeToOneSheet := false
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5096,25 +4753,24 @@ func TestLightCells_PostMerge_pptx_false(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_json_false(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "json"
-     mergeToOneSheet := false
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "json"
+	mergeToOneSheet := false
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5125,25 +4781,24 @@ func TestLightCells_PostMerge_json_false(t *testing.T) {
 }
 
 func TestLightCells_PostMerge_sql_false(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     format := "sql"
-     mergeToOneSheet := false
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "sql"
+	mergeToOneSheet := false
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMergeRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    request.MergeToOneSheet =   mergeToOneSheet    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostMergeRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	request.MergeToOneSheet = mergeToOneSheet
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMerge(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5154,19 +4809,18 @@ func TestLightCells_PostMerge_sql_false(t *testing.T) {
 }
 
 func TestLightCells_PostUnlock(t *testing.T) {
-  
-    needUnlockXlsx := "needUnlock.xlsx"
 
- 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	needUnlockXlsx := "needUnlock.xlsx"
 
-     mapFiles[needUnlockXlsx]= GetBaseTest().localTestDataFolder + needUnlockXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostUnlockRequest)
-    request.File =         mapFiles    
-    request.Password =         "123456"    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostUnlock(request)
+	mapFiles[needUnlockXlsx] = GetBaseTest().localTestDataFolder + needUnlockXlsx
+
+	request := new(PostUnlockRequest)
+	request.File = mapFiles
+	request.Password = "123456"
+	_, httpResponse, err := GetBaseTest().CellsApi.PostUnlock(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5177,25 +4831,24 @@ func TestLightCells_PostUnlock(t *testing.T) {
 }
 
 func TestLightCells_PostProtect(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var protectWorkbookRequest = new(ProtectWorkbookRequest)
-     protectWorkbookRequest.AwaysOpenReadOnly =  true      
-     protectWorkbookRequest.EncryptWithPassword =        "123456"      
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostProtectRequest)
-    request.File =         mapFiles    
-    request.ProtectWorkbookRequest =         protectWorkbookRequest    
-    request.Password =         "123456"    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostProtect(request)
+	var protectWorkbookRequest = new(ProtectWorkbookRequest)
+	protectWorkbookRequest.AwaysOpenReadOnly = true
+	protectWorkbookRequest.EncryptWithPassword = "123456"
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostProtectRequest)
+	request.File = mapFiles
+	request.ProtectWorkbookRequest = protectWorkbookRequest
+	request.Password = "123456"
+	_, httpResponse, err := GetBaseTest().CellsApi.PostProtect(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5206,24 +4859,23 @@ func TestLightCells_PostProtect(t *testing.T) {
 }
 
 func TestLightCells_PostProtect_ProtectWorkbookRequest(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var protectWorkbookRequest = new(ProtectWorkbookRequest)
-     protectWorkbookRequest.AwaysOpenReadOnly =  true      
-     protectWorkbookRequest.EncryptWithPassword =        "123456"      
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostProtectRequest)
-    request.File =         mapFiles    
-    request.ProtectWorkbookRequest =         protectWorkbookRequest    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostProtect(request)
+	var protectWorkbookRequest = new(ProtectWorkbookRequest)
+	protectWorkbookRequest.AwaysOpenReadOnly = true
+	protectWorkbookRequest.EncryptWithPassword = "123456"
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostProtectRequest)
+	request.File = mapFiles
+	request.ProtectWorkbookRequest = protectWorkbookRequest
+	_, httpResponse, err := GetBaseTest().CellsApi.PostProtect(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5234,21 +4886,20 @@ func TestLightCells_PostProtect_ProtectWorkbookRequest(t *testing.T) {
 }
 
 func TestLightCells_PostSearch(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostSearchRequest)
-    request.File =         mapFiles    
-    request.Text =         "12"    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostSearch(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostSearchRequest)
+	request.File = mapFiles
+	request.Text = "12"
+	_, httpResponse, err := GetBaseTest().CellsApi.PostSearch(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5259,22 +4910,21 @@ func TestLightCells_PostSearch(t *testing.T) {
 }
 
 func TestLightCells_PostReplace(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostReplaceRequest)
-    request.File =         mapFiles    
-    request.Text =         "12"    
-    request.Newtext =         "newtext"    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostReplace(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostReplaceRequest)
+	request.File = mapFiles
+	request.Text = "12"
+	request.Newtext = "newtext"
+	_, httpResponse, err := GetBaseTest().CellsApi.PostReplace(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5285,23 +4935,22 @@ func TestLightCells_PostReplace(t *testing.T) {
 }
 
 func TestLightCells_PostReplaceOnlySheetname(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostReplaceRequest)
-    request.File =         mapFiles    
-    request.Text =         "12"    
-    request.Newtext =         "newtext"    
-    request.Sheetname =         "Sheet1"    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostReplace(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostReplaceRequest)
+	request.File = mapFiles
+	request.Text = "12"
+	request.Newtext = "newtext"
+	request.Sheetname = "Sheet1"
+	_, httpResponse, err := GetBaseTest().CellsApi.PostReplace(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5312,22 +4961,21 @@ func TestLightCells_PostReplaceOnlySheetname(t *testing.T) {
 }
 
 func TestLightCells_PostWatermark(t *testing.T) {
-  
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	assemblyTestXlsx := "assemblytest.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostWatermarkRequest)
-    request.File =         mapFiles    
-    request.Text =         "aspose.cells cloud sdk"    
-    request.Color =         "#773322"    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostWatermark(request)
+	mapFiles[assemblyTestXlsx] = GetBaseTest().localTestDataFolder + assemblyTestXlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostWatermarkRequest)
+	request.File = mapFiles
+	request.Text = "aspose.cells cloud sdk"
+	request.Color = "#773322"
+	_, httpResponse, err := GetBaseTest().CellsApi.PostWatermark(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5338,23 +4986,22 @@ func TestLightCells_PostWatermark(t *testing.T) {
 }
 
 func TestLightCells_PostClearObjects_chart(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     objecttype := "chart"
+	book1Xlsx := "Book1.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	objecttype := "chart"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostClearObjectsRequest)
-    request.File =         mapFiles    
-    request.Objecttype =         objecttype    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostClearObjectsRequest)
+	request.File = mapFiles
+	request.Objecttype = objecttype
+	_, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5365,23 +5012,22 @@ func TestLightCells_PostClearObjects_chart(t *testing.T) {
 }
 
 func TestLightCells_PostClearObjects_comment(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     objecttype := "comment"
+	book1Xlsx := "Book1.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	objecttype := "comment"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostClearObjectsRequest)
-    request.File =         mapFiles    
-    request.Objecttype =         objecttype    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostClearObjectsRequest)
+	request.File = mapFiles
+	request.Objecttype = objecttype
+	_, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5392,23 +5038,22 @@ func TestLightCells_PostClearObjects_comment(t *testing.T) {
 }
 
 func TestLightCells_PostClearObjects_picture(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     objecttype := "picture"
+	book1Xlsx := "Book1.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	objecttype := "picture"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostClearObjectsRequest)
-    request.File =         mapFiles    
-    request.Objecttype =         objecttype    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostClearObjectsRequest)
+	request.File = mapFiles
+	request.Objecttype = objecttype
+	_, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5419,23 +5064,22 @@ func TestLightCells_PostClearObjects_picture(t *testing.T) {
 }
 
 func TestLightCells_PostClearObjects_shape(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     objecttype := "shape"
+	book1Xlsx := "Book1.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	objecttype := "shape"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostClearObjectsRequest)
-    request.File =         mapFiles    
-    request.Objecttype =         objecttype    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostClearObjectsRequest)
+	request.File = mapFiles
+	request.Objecttype = objecttype
+	_, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5446,23 +5090,22 @@ func TestLightCells_PostClearObjects_shape(t *testing.T) {
 }
 
 func TestLightCells_PostClearObjects_listobject(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     objecttype := "listobject"
+	book1Xlsx := "Book1.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	objecttype := "listobject"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostClearObjectsRequest)
-    request.File =         mapFiles    
-    request.Objecttype =         objecttype    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostClearObjectsRequest)
+	request.File = mapFiles
+	request.Objecttype = objecttype
+	_, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5473,23 +5116,22 @@ func TestLightCells_PostClearObjects_listobject(t *testing.T) {
 }
 
 func TestLightCells_PostClearObjects_hyperlink(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     objecttype := "hyperlink"
+	book1Xlsx := "Book1.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	objecttype := "hyperlink"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostClearObjectsRequest)
-    request.File =         mapFiles    
-    request.Objecttype =         objecttype    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostClearObjectsRequest)
+	request.File = mapFiles
+	request.Objecttype = objecttype
+	_, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5500,23 +5142,22 @@ func TestLightCells_PostClearObjects_hyperlink(t *testing.T) {
 }
 
 func TestLightCells_PostClearObjects_oleobject(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     objecttype := "oleobject"
+	book1Xlsx := "Book1.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	objecttype := "oleobject"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostClearObjectsRequest)
-    request.File =         mapFiles    
-    request.Objecttype =         objecttype    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostClearObjectsRequest)
+	request.File = mapFiles
+	request.Objecttype = objecttype
+	_, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5527,23 +5168,22 @@ func TestLightCells_PostClearObjects_oleobject(t *testing.T) {
 }
 
 func TestLightCells_PostClearObjects_pivottable(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     objecttype := "pivottable"
+	book1Xlsx := "Book1.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	objecttype := "pivottable"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostClearObjectsRequest)
-    request.File =         mapFiles    
-    request.Objecttype =         objecttype    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostClearObjectsRequest)
+	request.File = mapFiles
+	request.Objecttype = objecttype
+	_, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5554,23 +5194,22 @@ func TestLightCells_PostClearObjects_pivottable(t *testing.T) {
 }
 
 func TestLightCells_PostClearObjects_validation(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     objecttype := "validation"
+	book1Xlsx := "Book1.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	objecttype := "validation"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostClearObjectsRequest)
-    request.File =         mapFiles    
-    request.Objecttype =         objecttype    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostClearObjectsRequest)
+	request.File = mapFiles
+	request.Objecttype = objecttype
+	_, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5581,23 +5220,22 @@ func TestLightCells_PostClearObjects_validation(t *testing.T) {
 }
 
 func TestLightCells_PostClearObjects_Background(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
- 
-     objecttype := "Background"
+	book1Xlsx := "Book1.xlsx"
+	dataSourceXlsx := "datasource.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	objecttype := "Background"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostClearObjectsRequest)
-    request.File =         mapFiles    
-    request.Objecttype =         objecttype    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+	mapFiles[dataSourceXlsx] = GetBaseTest().localTestDataFolder + dataSourceXlsx
+
+	request := new(PostClearObjectsRequest)
+	request.File = mapFiles
+	request.Objecttype = objecttype
+	_, httpResponse, err := GetBaseTest().CellsApi.PostClearObjects(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5608,21 +5246,20 @@ func TestLightCells_PostClearObjects_Background(t *testing.T) {
 }
 
 func TestLightCells_PostRepair_xlsx(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "xlsx"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostRepairRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostRepair(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostRepairRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostRepair(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5633,21 +5270,20 @@ func TestLightCells_PostRepair_xlsx(t *testing.T) {
 }
 
 func TestLightCells_PostRepair_pdf(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "pdf"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "pdf"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostRepairRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostRepair(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostRepairRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostRepair(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5658,21 +5294,20 @@ func TestLightCells_PostRepair_pdf(t *testing.T) {
 }
 
 func TestLightCells_PostRepair_csv(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "csv"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "csv"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostRepairRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostRepair(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostRepairRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostRepair(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5683,21 +5318,20 @@ func TestLightCells_PostRepair_csv(t *testing.T) {
 }
 
 func TestLightCells_PostRepair_png(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
 
- 
-     format := "png"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	format := "png"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostRepairRequest)
-    request.File =         mapFiles    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostRepair(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostRepairRequest)
+	request.File = mapFiles
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostRepair(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5708,23 +5342,22 @@ func TestLightCells_PostRepair_png(t *testing.T) {
 }
 
 func TestLightCells_PostReverse_rows_pdf(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
 
- 
-     rotateType := "rows"
-     format := "pdf"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	rotateType := "rows"
+	format := "pdf"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostReverseRequest)
-    request.File =         mapFiles    
-    request.RotateType =         rotateType    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostReverseRequest)
+	request.File = mapFiles
+	request.RotateType = rotateType
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5735,23 +5368,22 @@ func TestLightCells_PostReverse_rows_pdf(t *testing.T) {
 }
 
 func TestLightCells_PostReverse_cols_pdf(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
 
- 
-     rotateType := "cols"
-     format := "pdf"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	rotateType := "cols"
+	format := "pdf"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostReverseRequest)
-    request.File =         mapFiles    
-    request.RotateType =         rotateType    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostReverseRequest)
+	request.File = mapFiles
+	request.RotateType = rotateType
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5762,23 +5394,22 @@ func TestLightCells_PostReverse_cols_pdf(t *testing.T) {
 }
 
 func TestLightCells_PostReverse_both_pdf(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
 
- 
-     rotateType := "both"
-     format := "pdf"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	rotateType := "both"
+	format := "pdf"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostReverseRequest)
-    request.File =         mapFiles    
-    request.RotateType =         rotateType    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostReverseRequest)
+	request.File = mapFiles
+	request.RotateType = rotateType
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5789,23 +5420,22 @@ func TestLightCells_PostReverse_both_pdf(t *testing.T) {
 }
 
 func TestLightCells_PostReverse_rows_csv(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
 
- 
-     rotateType := "rows"
-     format := "csv"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	rotateType := "rows"
+	format := "csv"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostReverseRequest)
-    request.File =         mapFiles    
-    request.RotateType =         rotateType    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostReverseRequest)
+	request.File = mapFiles
+	request.RotateType = rotateType
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5816,23 +5446,22 @@ func TestLightCells_PostReverse_rows_csv(t *testing.T) {
 }
 
 func TestLightCells_PostReverse_cols_png(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
 
- 
-     rotateType := "cols"
-     format := "png"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	rotateType := "cols"
+	format := "png"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostReverseRequest)
-    request.File =         mapFiles    
-    request.RotateType =         rotateType    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostReverseRequest)
+	request.File = mapFiles
+	request.RotateType = rotateType
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5843,23 +5472,22 @@ func TestLightCells_PostReverse_cols_png(t *testing.T) {
 }
 
 func TestLightCells_PostReverse_both_xlsx(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
 
- 
-     rotateType := "both"
-     format := "xlsx"
+	book1Xlsx := "Book1.xlsx"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	rotateType := "both"
+	format := "xlsx"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostReverseRequest)
-    request.File =         mapFiles    
-    request.RotateType =         rotateType    
-    request.OutFormat =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostReverseRequest)
+	request.File = mapFiles
+	request.RotateType = rotateType
+	request.OutFormat = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PostReverse(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5870,19 +5498,18 @@ func TestLightCells_PostReverse_both_xlsx(t *testing.T) {
 }
 
 func TestLightCells_GetMetadata(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
 
- 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	book1Xlsx := "Book1.xlsx"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (GetMetadataRequest)
-    request.File =         mapFiles    
-    request.Type_ =         "all"    
-    _, httpResponse, err := GetBaseTest().CellsApi.GetMetadata(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(GetMetadataRequest)
+	request.File = mapFiles
+	request.Type_ = "all"
+	_, httpResponse, err := GetBaseTest().CellsApi.GetMetadata(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5893,19 +5520,18 @@ func TestLightCells_GetMetadata(t *testing.T) {
 }
 
 func TestLightCells_DeleteMetadata(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
 
- 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	book1Xlsx := "Book1.xlsx"
 
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (DeleteMetadataRequest)
-    request.File =         mapFiles    
-    request.Type_ =         "all"    
-    _, httpResponse, err := GetBaseTest().CellsApi.DeleteMetadata(request)
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(DeleteMetadataRequest)
+	request.File = mapFiles
+	request.Type_ = "all"
+	_, httpResponse, err := GetBaseTest().CellsApi.DeleteMetadata(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5916,23 +5542,22 @@ func TestLightCells_DeleteMetadata(t *testing.T) {
 }
 
 func TestLightCells_PostMetadata(t *testing.T) {
-  
-    book1Xlsx := "Book1.xlsx"
 
- 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	book1Xlsx := "Book1.xlsx"
 
-    var cellsDocumentscellsDocument0 = new(CellsDocumentProperty)
-     cellsDocumentscellsDocument0.Name =        "Author"      
-     cellsDocumentscellsDocument0.Value =        "roy.wang"      
-    var cellsDocuments = []CellsDocumentProperty   {*       cellsDocumentscellsDocument0    }    
-     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
 
-    request := new (PostMetadataRequest)
-    request.File =         mapFiles    
-    request.CellsDocuments =         cellsDocuments    
-    _, httpResponse, err := GetBaseTest().CellsApi.PostMetadata(request)
+	var cellsDocumentscellsDocument0 = new(CellsDocumentProperty)
+	cellsDocumentscellsDocument0.Name = "Author"
+	cellsDocumentscellsDocument0.Value = "roy.wang"
+	var cellsDocuments = []CellsDocumentProperty{*cellsDocumentscellsDocument0}
+	mapFiles[book1Xlsx] = GetBaseTest().localTestDataFolder + book1Xlsx
+
+	request := new(PostMetadataRequest)
+	request.File = mapFiles
+	request.CellsDocuments = cellsDocuments
+	_, httpResponse, err := GetBaseTest().CellsApi.PostMetadata(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -5941,4 +5566,3 @@ func TestLightCells_PostMetadata(t *testing.T) {
 		fmt.Printf("%d\tTestLightCells_PostMetadata \n", GetBaseTest().GetTestNumber())
 	}
 }
-

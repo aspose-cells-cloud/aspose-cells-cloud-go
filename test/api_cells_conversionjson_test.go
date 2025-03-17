@@ -4,33 +4,33 @@ import (
 	"fmt"
 	"testing"
 
-    . "asposecellscloud"
+	. "asposecellscloud"
 )
 
 func TestConversionJson_ConvertWorkbook_csv(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
+	remoteFolder := "TestData/In"
 
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "csv"
+	localName := "codegen-spec.json"
+	remoteName := "codegen-spec.json"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	localNameRequest := new(UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
+	format := "csv"
 
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[localName] = GetBaseTest().localTestDataFolder + localName
+
+	request := new(PutConvertWorkbookRequest)
+	request.File = mapFiles
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -41,29 +41,29 @@ func TestConversionJson_ConvertWorkbook_csv(t *testing.T) {
 }
 
 func TestConversionJson_ConvertWorkbook_xls(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
+	remoteFolder := "TestData/In"
 
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "xls"
+	localName := "codegen-spec.json"
+	remoteName := "codegen-spec.json"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	localNameRequest := new(UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
+	format := "xls"
 
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[localName] = GetBaseTest().localTestDataFolder + localName
+
+	request := new(PutConvertWorkbookRequest)
+	request.File = mapFiles
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -74,29 +74,29 @@ func TestConversionJson_ConvertWorkbook_xls(t *testing.T) {
 }
 
 func TestConversionJson_ConvertWorkbook_html(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
+	remoteFolder := "TestData/In"
 
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "html"
+	localName := "codegen-spec.json"
+	remoteName := "codegen-spec.json"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	localNameRequest := new(UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
+	format := "html"
 
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[localName] = GetBaseTest().localTestDataFolder + localName
+
+	request := new(PutConvertWorkbookRequest)
+	request.File = mapFiles
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -107,29 +107,29 @@ func TestConversionJson_ConvertWorkbook_html(t *testing.T) {
 }
 
 func TestConversionJson_ConvertWorkbook_mhtml(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
+	remoteFolder := "TestData/In"
 
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "mhtml"
+	localName := "codegen-spec.json"
+	remoteName := "codegen-spec.json"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	localNameRequest := new(UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
+	format := "mhtml"
 
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[localName] = GetBaseTest().localTestDataFolder + localName
+
+	request := new(PutConvertWorkbookRequest)
+	request.File = mapFiles
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -140,29 +140,29 @@ func TestConversionJson_ConvertWorkbook_mhtml(t *testing.T) {
 }
 
 func TestConversionJson_ConvertWorkbook_ods(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
+	remoteFolder := "TestData/In"
 
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "ods"
+	localName := "codegen-spec.json"
+	remoteName := "codegen-spec.json"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	localNameRequest := new(UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
+	format := "ods"
 
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[localName] = GetBaseTest().localTestDataFolder + localName
+
+	request := new(PutConvertWorkbookRequest)
+	request.File = mapFiles
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -173,29 +173,29 @@ func TestConversionJson_ConvertWorkbook_ods(t *testing.T) {
 }
 
 func TestConversionJson_ConvertWorkbook_pdf(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
+	remoteFolder := "TestData/In"
 
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "pdf"
+	localName := "codegen-spec.json"
+	remoteName := "codegen-spec.json"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	localNameRequest := new(UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
+	format := "pdf"
 
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[localName] = GetBaseTest().localTestDataFolder + localName
+
+	request := new(PutConvertWorkbookRequest)
+	request.File = mapFiles
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -206,29 +206,29 @@ func TestConversionJson_ConvertWorkbook_pdf(t *testing.T) {
 }
 
 func TestConversionJson_ConvertWorkbook_xml(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
+	remoteFolder := "TestData/In"
 
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "xml"
+	localName := "codegen-spec.json"
+	remoteName := "codegen-spec.json"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	localNameRequest := new(UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
+	format := "xml"
 
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[localName] = GetBaseTest().localTestDataFolder + localName
+
+	request := new(PutConvertWorkbookRequest)
+	request.File = mapFiles
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -239,29 +239,29 @@ func TestConversionJson_ConvertWorkbook_xml(t *testing.T) {
 }
 
 func TestConversionJson_ConvertWorkbook_txt(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
+	remoteFolder := "TestData/In"
 
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "txt"
+	localName := "codegen-spec.json"
+	remoteName := "codegen-spec.json"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	localNameRequest := new(UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
+	format := "txt"
 
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[localName] = GetBaseTest().localTestDataFolder + localName
+
+	request := new(PutConvertWorkbookRequest)
+	request.File = mapFiles
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -272,29 +272,29 @@ func TestConversionJson_ConvertWorkbook_txt(t *testing.T) {
 }
 
 func TestConversionJson_ConvertWorkbook_xlsb(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
+	remoteFolder := "TestData/In"
 
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "xlsb"
+	localName := "codegen-spec.json"
+	remoteName := "codegen-spec.json"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	localNameRequest := new(UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
+	format := "xlsb"
 
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[localName] = GetBaseTest().localTestDataFolder + localName
+
+	request := new(PutConvertWorkbookRequest)
+	request.File = mapFiles
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -305,29 +305,29 @@ func TestConversionJson_ConvertWorkbook_xlsb(t *testing.T) {
 }
 
 func TestConversionJson_ConvertWorkbook_xps(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
+	remoteFolder := "TestData/In"
 
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "xps"
+	localName := "codegen-spec.json"
+	remoteName := "codegen-spec.json"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	localNameRequest := new(UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
+	format := "xps"
 
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[localName] = GetBaseTest().localTestDataFolder + localName
+
+	request := new(PutConvertWorkbookRequest)
+	request.File = mapFiles
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -338,29 +338,29 @@ func TestConversionJson_ConvertWorkbook_xps(t *testing.T) {
 }
 
 func TestConversionJson_ConvertWorkbook_md(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
+	remoteFolder := "TestData/In"
 
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "md"
+	localName := "codegen-spec.json"
+	remoteName := "codegen-spec.json"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	localNameRequest := new(UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
+	format := "md"
 
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[localName] = GetBaseTest().localTestDataFolder + localName
+
+	request := new(PutConvertWorkbookRequest)
+	request.File = mapFiles
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -370,63 +370,30 @@ func TestConversionJson_ConvertWorkbook_md(t *testing.T) {
 	}
 }
 
-func TestConversionJson_ConvertWorkbook_numbers(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
-
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "numbers"
-
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
-	if err != nil {
-		t.Error(err)
-	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
-		t.Fail()
-	} else {
-		fmt.Printf("%d\tTestConversionJson_ConvertWorkbook_numbers \n", GetBaseTest().GetTestNumber())
-	}
-}
-
 func TestConversionJson_ConvertWorkbook_svg(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
+	remoteFolder := "TestData/In"
 
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "svg"
+	localName := "codegen-spec.json"
+	remoteName := "codegen-spec.json"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	localNameRequest := new(UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
+	format := "svg"
 
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[localName] = GetBaseTest().localTestDataFolder + localName
+
+	request := new(PutConvertWorkbookRequest)
+	request.File = mapFiles
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -437,29 +404,29 @@ func TestConversionJson_ConvertWorkbook_svg(t *testing.T) {
 }
 
 func TestConversionJson_ConvertWorkbook_docx(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
+	remoteFolder := "TestData/In"
 
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "docx"
+	localName := "codegen-spec.json"
+	remoteName := "codegen-spec.json"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	localNameRequest := new(UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
+	format := "docx"
 
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[localName] = GetBaseTest().localTestDataFolder + localName
+
+	request := new(PutConvertWorkbookRequest)
+	request.File = mapFiles
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -470,29 +437,29 @@ func TestConversionJson_ConvertWorkbook_docx(t *testing.T) {
 }
 
 func TestConversionJson_ConvertWorkbook_pptx(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
+	remoteFolder := "TestData/In"
 
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "pptx"
+	localName := "codegen-spec.json"
+	remoteName := "codegen-spec.json"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	localNameRequest := new(UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
+	format := "pptx"
 
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[localName] = GetBaseTest().localTestDataFolder + localName
+
+	request := new(PutConvertWorkbookRequest)
+	request.File = mapFiles
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -503,29 +470,29 @@ func TestConversionJson_ConvertWorkbook_pptx(t *testing.T) {
 }
 
 func TestConversionJson_ConvertWorkbook_json(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
+	remoteFolder := "TestData/In"
 
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "json"
+	localName := "codegen-spec.json"
+	remoteName := "codegen-spec.json"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	localNameRequest := new(UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
+	format := "json"
 
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[localName] = GetBaseTest().localTestDataFolder + localName
+
+	request := new(PutConvertWorkbookRequest)
+	request.File = mapFiles
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -536,29 +503,29 @@ func TestConversionJson_ConvertWorkbook_json(t *testing.T) {
 }
 
 func TestConversionJson_ConvertWorkbook_sql(t *testing.T) {
-    remoteFolder := "TestData/In"
-  
-    localName := "codegen-spec.json"
-    remoteName := "codegen-spec.json"
+	remoteFolder := "TestData/In"
 
-    localNameRequest := new(UploadFileRequest)
-    localNameRequest.UploadFiles = make(map[string]string) 
-    localNameRequest.UploadFiles[localName] =  GetBaseTest().localTestDataFolder  + localName
-    localNameRequest.Path = remoteFolder + "/" + remoteName 
-    localNameRequest.StorageName =""
-    GetBaseTest().CellsApi.UploadFile(localNameRequest )
- 
-     format := "sql"
+	localName := "codegen-spec.json"
+	remoteName := "codegen-spec.json"
 
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
+	localNameRequest := new(UploadFileRequest)
+	localNameRequest.UploadFiles = make(map[string]string)
+	localNameRequest.UploadFiles[localName] = GetBaseTest().localTestDataFolder + localName
+	localNameRequest.Path = remoteFolder + "/" + remoteName
+	localNameRequest.StorageName = ""
+	GetBaseTest().CellsApi.UploadFile(localNameRequest)
 
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
+	format := "sql"
 
-    request := new (PutConvertWorkbookRequest)
-    request.File =         mapFiles    
-    request.Format =         format    
-    _, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
+	var mapFiles map[string]string
+	mapFiles = make(map[string]string)
+
+	mapFiles[localName] = GetBaseTest().localTestDataFolder + localName
+
+	request := new(PutConvertWorkbookRequest)
+	request.File = mapFiles
+	request.Format = format
+	_, httpResponse, err := GetBaseTest().CellsApi.PutConvertWorkbook(request)
 	if err != nil {
 		t.Error(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -567,4 +534,3 @@ func TestConversionJson_ConvertWorkbook_sql(t *testing.T) {
 		fmt.Printf("%d\tTestConversionJson_ConvertWorkbook_sql \n", GetBaseTest().GetTestNumber())
 	}
 }
-
