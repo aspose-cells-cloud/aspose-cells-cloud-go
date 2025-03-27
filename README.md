@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE) 
+![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE)
 
 Aspose.Cells Cloud for Go enables you to handle various aspects of Excel files, including cell data, styles, formulas, charts, pivot tables, data validation, comments, drawing objects, images, hyperlinks, and so on. Additionally, it supports operations such as splitting, merging, repairing, and converting to other compatible file formats.
 
@@ -71,39 +71,35 @@ Full list of issues covering all changes in this release:
 
 To get started with Aspose.Cells Cloud for Go, follow these steps:
 
-1. Create an account at  [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) and obtain your application information.
-2. Download the code and add or modify your application by referring to cells_cloud_test.go.
-3. If you prefer to use [Go Module](https://pkg.go.dev), import "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v24" in your code.
+- Create an account at  [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) and obtain your application client id and secret.
+- Create a directory for your project and a main.go file within. Add the following code to your main.go.
 
 ```golang
- remoteFolder := "TestData/In"
- localFolder := "testdata/"
- localName := "Book1.xlsx"
- remoteName := "Book1.xlsx"
- instance := asposecellscloud.NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"), "https://api.aspose.cloud", "v3.0")
+package main
 
- localNameRequest := new(asposecellscloud.UploadFileRequest)
- localNameRequest.UploadFiles = make(map[string]string)
- localNameRequest.UploadFiles[localName] = localFolder + localName
- localNameRequest.Path = remoteFolder + "/" + remoteName
- localNameRequest.StorageName = ""
- instance.UploadFile(localNameRequest)
+import (
+ "os"
+ . "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
+)
 
- newfilename := "TestData/OutResult/PostExcelSaveAs.pdf"
-
- var saveOptions = new(asposecellscloud.PdfSaveOptions)
- saveOptions.SaveFormat = "pdf"
-
- request := new(asposecellscloud.PostWorkbookSaveAsRequest)
- request.Name = remoteName
- request.Newfilename = newfilename
- request.SaveOptions = saveOptions
- request.Folder = remoteFolder
- _, httpResponse, err := instance.PostWorkbookSaveAs(request)
- if err != nil {
-  println(err)
+func main() {
+ instance := NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"))
+ request := PutConvertWorkbookRequest{File: map[string]string{"Book1.xlsx": "TestData/Book1.xlsx"}, Format: "pdf"}
+ data, _, err := instance.PutConvertWorkbook(&request)
+ if err == nil {
+  file, _ := os.OpenFile("Book1.pdf", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
+  file.Write(data)
+  defer file.Close()
  }
- println(httpResponse.StatusCode)
+}
+```
+
+- Initialize project go.mod , fetch the dependencies for your project, and run your created application..
+
+```bash
+go mod init main
+go mod tidy
+go run main.go
 ```
 
 ## Aspose.Cells Cloud SDKs in Popular Languages
