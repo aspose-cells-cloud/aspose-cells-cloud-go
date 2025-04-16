@@ -20,12 +20,18 @@ func TestShapesController_GetWorksheetShapes(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetWorksheetShapesRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetShapes(request)
 	if err != nil {
 		t.Error(err)
@@ -49,13 +55,21 @@ func TestShapesController_GetWorksheetShape(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetWorksheetShapeRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Shapeindex =  int64(0)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetShape(request)
 	if err != nil {
 		t.Error(err)
@@ -81,20 +95,42 @@ func TestShapesController_PutWorksheetShape(t *testing.T) {
  
     var shapeDTO = new(Shape)
 
-
     request := new (PutWorksheetShapeRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.ShapeDTO =         shapeDTO    
+
+
     request.DrawingType =         "arc"    
+
+
     request.UpperLeftRow =  int64(1)        
+
+
     request.UpperLeftColumn =  int64(1)        
+
+
     request.Top =  int64(10)        
+
+
     request.Left =  int64(10)        
+
+
     request.Width =  int64(100)        
+
+
     request.Height =  int64(100)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetShape(request)
 	if err != nil {
 		t.Error(err)
@@ -118,12 +154,18 @@ func TestShapesController_DeleteWorksheetShapes(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteWorksheetShapesRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetShapes(request)
 	if err != nil {
 		t.Error(err)
@@ -147,13 +189,21 @@ func TestShapesController_DeleteWorksheetShape(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteWorksheetShapeRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Shapeindex =  int64(0)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetShape(request)
 	if err != nil {
 		t.Error(err)
@@ -179,14 +229,24 @@ func TestShapesController_PostWorksheetShape(t *testing.T) {
  
     var dto = new(Shape)
      dto.LowerRightColumn = int64(10)          
-
     request := new (PostWorksheetShapeRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Shapeindex =  int64(0)        
+
+
     request.Dto =         dto    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetShape(request)
 	if err != nil {
 		t.Error(err)
@@ -212,13 +272,21 @@ func TestShapesController_PostWorksheetGroupShape(t *testing.T) {
  
     var listShape = []int64   {int64(0)        ,
     int64(1)        }    
-
     request := new (PostWorksheetGroupShapeRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet6"    
+
+
     request.ListShape =         listShape    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetGroupShape(request)
 	if err != nil {
 		t.Error(err)
@@ -242,13 +310,21 @@ func TestShapesController_PostWorksheetUngroupShape(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PostWorksheetUngroupShapeRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Shapeindex =  int64(0)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetUngroupShape(request)
 	if err != nil {
 		t.Error(err)

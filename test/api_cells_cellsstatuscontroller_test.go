@@ -20,7 +20,6 @@ func TestCellsStatusController_GetCellsCloudServicesHealthCheck(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetCellsCloudServicesHealthCheckRequest)
     _, httpResponse, err := GetBaseTest().CellsApi.GetCellsCloudServicesHealthCheck(request)
 	if err != nil {
@@ -45,7 +44,6 @@ func TestCellsStatusController_GetCellsCloudServiceStatus(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetCellsCloudServiceStatusRequest)
     _, httpResponse, err := GetBaseTest().CellsApi.GetCellsCloudServiceStatus(request)
 	if err != nil {

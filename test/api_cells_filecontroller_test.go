@@ -20,11 +20,15 @@ func TestFileController_DownloadFile(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DownloadFileRequest)
     request.Path =         remoteFolder + "/" + remoteName    
+
+
     request.StorageName =         ""    
+
+
     request.VersionId =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DownloadFile(request)
 	if err != nil {
 		t.Error(err)
@@ -48,15 +52,16 @@ func TestFileController_UploadFile(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-    var mapFiles map[string]string       
-    mapFiles = make(map[string]string)
-
-     mapFiles[localName]= GetBaseTest().localTestDataFolder + localName 
-
+     
     request := new (UploadFileRequest)
-    request.UploadFiles =         mapFiles    
+    request.UploadFile =  GetBaseTest().localTestDataFolder  +          localName    
+
+
     request.Path =         remoteFolder + "/" + remoteName    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.UploadFile(request)
 	if err != nil {
 		t.Error(err)
@@ -80,13 +85,21 @@ func TestFileController_CopyFile(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (CopyFileRequest)
     request.SrcPath =         remoteFolder + "/" + remoteName    
+
+
     request.DestPath =         "OutResult/" + remoteName    
+
+
     request.SrcStorageName =         ""    
+
+
     request.DestStorageName =         ""    
+
+
     request.VersionId =         ""    
+
     httpResponse, err := GetBaseTest().CellsApi.CopyFile(request)
 	if err != nil {
 		t.Error(err)

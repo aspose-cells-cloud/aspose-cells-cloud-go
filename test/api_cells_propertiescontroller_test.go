@@ -20,12 +20,18 @@ func TestPropertiesController_GetDocumentProperties(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetDocumentPropertiesRequest)
     request.Name =         remoteName    
+
+
     request.Type_ =         "All"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetDocumentProperties(request)
 	if err != nil {
 		t.Error(err)
@@ -49,12 +55,18 @@ func TestPropertiesController_GetDocumentProperty(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetDocumentPropertyRequest)
     request.Name =         remoteName    
+
+
     request.PropertyName =         "Author"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetDocumentProperty(request)
 	if err != nil {
 		t.Error(err)
@@ -81,12 +93,18 @@ func TestPropertiesController_PutDocumentProperty(t *testing.T) {
     var property = new(CellsDocumentProperty)
      property.Name =        "Author"      
      property.Value =        "cells developer"      
-
     request := new (PutDocumentPropertyRequest)
     request.Name =         remoteName    
+
+
     request.Property =         property    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PutDocumentProperty(request)
 	if err != nil {
 		t.Error(err)
@@ -110,13 +128,21 @@ func TestPropertiesController_DeleteDocumentProperty(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteDocumentPropertyRequest)
     request.Name =         remoteName    
+
+
     request.PropertyName =         "Author"    
+
+
     request.Type_ =         "All"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DeleteDocumentProperty(request)
 	if err != nil {
 		t.Error(err)
@@ -140,11 +166,15 @@ func TestPropertiesController_DeleteDocumentProperties(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteDocumentPropertiesRequest)
     request.Name =         remoteName    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DeleteDocumentProperties(request)
 	if err != nil {
 		t.Error(err)

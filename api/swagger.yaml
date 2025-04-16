@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "24.12"
+  version: "25.4"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v3.0"
@@ -5039,6 +5039,13 @@ paths:
         type: "boolean"
         x-nullable: true
         x-exportParamName: "pageTallFitOnPerSheet"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "FontsLocation"
   /cells/convert:
     put:
       tags:
@@ -5056,7 +5063,7 @@ paths:
       - name: "format"
         in: "Query"
         description: "The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)."
-        required: false
+        required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "format"
@@ -5130,6 +5137,13 @@ paths:
         type: "integer"
         x-nullable: true
         x-exportParamName: "pageIndex"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "FontsLocation"
   /cells/{name}/SaveAs:
     post:
       tags:
@@ -5221,6 +5235,13 @@ paths:
         type: "boolean"
         x-nullable: true
         x-exportParamName: "pageTallFitOnPerSheet"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "FontsLocation"
   /cells/convert/pdf:
     post:
       tags:
@@ -5256,6 +5277,13 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "region"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "FontsLocation"
   /cells/convert/png:
     post:
       tags:
@@ -5326,6 +5354,13 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "region"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "FontsLocation"
   /cells/convert/pptx:
     post:
       tags:
@@ -5361,6 +5396,13 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "region"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "FontsLocation"
   /cells/convert/html:
     post:
       tags:
@@ -5396,6 +5438,13 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "region"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "FontsLocation"
   /cells/convert/markdown:
     post:
       tags:
@@ -5431,6 +5480,13 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "region"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "FontsLocation"
   /cells/convert/json:
     post:
       tags:
@@ -5466,6 +5522,13 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "region"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "FontsLocation"
   /cells/convert/sql:
     post:
       tags:
@@ -5536,6 +5599,76 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "region"
+  /cells/convertWorksheetToImage:
+    post:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "PostConvertWorksheetToImage"
+      parameters:
+      - name: "convertworksheetoptions"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:convertworksheetoptions"
+        x-nullable: true
+        x-exportParamName: "convertWorksheetOptions"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "FontsLocation"
+  /cells/convertWorkbook:
+    post:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "PostConvertWorkbook"
+      parameters:
+      - name: "convertworkbookoptions"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:convertworkbookoptions"
+        x-nullable: true
+        x-exportParamName: "convertWorkbookOptions"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "FontsLocation"
+  /cells/checkexternalreference:
+    post:
+      tags:
+      - "Cells"
+      summary: "Export Excel internal elements or the workbook itself to various format files."
+      operationId: "CheckWrokbookExternalReference"
+      parameters:
+      - name: "checkexternalreferenceoptions"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:checkexternalreferenceoptions"
+        x-nullable: true
+        x-exportParamName: "checkExternalReferenceOptions"
+  /cells/checkformulaerrors:
+    post:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "CheckWorkbookFormulaErrors"
+      parameters:
+      - name: "formulaerroroptions"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:checkformulaerroroptions"
+        x-nullable: true
+        x-exportParamName: "formulaErrorOptions"
   /cells/export:
     post:
       tags:
@@ -5585,6 +5718,13 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "region"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "FontsLocation"
   /cells/{name}/exportxml:
     post:
       tags:
@@ -5830,6 +5970,13 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "region"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "FontsLocation"
   /cells/{name}/datacleansing:
     post:
       tags:
@@ -8938,6 +9085,55 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "storageName"
+  /cells/{name}/worksheets/{sheetName}/pictures/addPictureInCell:
+    post:
+      tags:
+      - "Cells"
+      summary: "add new picture in the cells."
+      operationId: "AddPictureInCell"
+      parameters:
+      - name: "name"
+        in: "Path"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "name"
+      - name: "sheetname"
+        in: "Path"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "sheetName"
+      - name: "cellname"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "cellName"
+      - name: "picturepath"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "picturePath"
+      - name: "folder"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "folder"
+      - name: "storagename"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "storageName"
   /cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}:
     post:
       tags:
@@ -11241,6 +11437,48 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "storageName"
+  /cells/{name}/worksheets/{sheetName}/ranges/convertToImage:
+    post:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "PostWorksheetCellsRangeToImage"
+      parameters:
+      - name: "name"
+        in: "Path"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "name"
+      - name: "sheetname"
+        in: "Path"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "sheetName"
+      - name: "rangeconvertrequest"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:rangeconvertrequest"
+        x-nullable: true
+        x-exportParamName: "rangeConvertRequest"
+      - name: "folder"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "folder"
+      - name: "storagename"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "storageName"
   /cells/{name}/worksheets/{sheetName}/ranges:
     put:
       tags:
@@ -11983,6 +12221,48 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "storageName"
+  /cells/charactercount:
+    post:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "PostCharacterCount"
+      parameters:
+      - name: "charactercountoptions"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:charactercountoptions"
+        x-nullable: true
+        x-exportParamName: "characterCountOptions"
+  /cells/wordscount:
+    post:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "PostWordsCount"
+      parameters:
+      - name: "wordscountoptions"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:wordscountoptions"
+        x-nullable: true
+        x-exportParamName: "wordsCountOptions"
+  /cells/specifywordscount:
+    post:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "PostSpecifyWordsCount"
+      parameters:
+      - name: "specifywordscountoptions"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:specifywordscountoptions"
+        x-nullable: true
+        x-exportParamName: "specifyWordsCountOptions"
   /cells/task/runtask:
     post:
       tags:
@@ -12001,7 +12281,7 @@ paths:
     post:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Adds text content to a workbook at specified positions within cells based on provided options using ASP.NET Core Web API."
       operationId: "PostAddTextContent"
       parameters:
       - name: "addtextoptions"
@@ -12095,6 +12375,20 @@ paths:
         type: "class:extracttextoptions"
         x-nullable: true
         x-exportParamName: "extractTextOptions"
+  /cells/splittext:
+    post:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "PostSplitText"
+      parameters:
+      - name: "splittextoptions"
+        in: "Body"
+        description: ""
+        required: true
+        type: "class:splittextoptions"
+        x-nullable: true
+        x-exportParamName: "splitTextOptions"
   /cells/{name}/defaultstyle:
     get:
       tags:
@@ -13033,6 +13327,34 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "storageName"
+  /cells/{name}/allstyles:
+    get:
+      tags:
+      - "Cells"
+      summary: "Get all style in the workbook."
+      operationId: "GetAllStyles"
+      parameters:
+      - name: "name"
+        in: "Path"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "name"
+      - name: "folder"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "folder"
+      - name: "storagename"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "storageName"
   /cells/{name}/worksheets:
     get:
       tags:
@@ -13117,6 +13439,20 @@ paths:
         type: "integer"
         x-nullable: true
         x-exportParamName: "pageIndex"
+      - name: "onepagepersheet"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "onePagePerSheet"
+      - name: "printheadings"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "printHeadings"
       - name: "folder"
         in: "Query"
         description: "The folder where the file is situated."
@@ -15625,7 +15961,7 @@ definitions:
         description: "Gets or sets the  of the border. "
       BorderType:
         type: "string"
-        description: ""
+        description: "This class has a property called "BorderType" of type string that can be both get and set."
       ThemeColor:
         type: "class:themecolor"
         description: "Gets and sets the theme color of the border. "
@@ -15705,7 +16041,7 @@ definitions:
         description: "Gets and sets the html string which contains data and some formats in this cell."
       Style:
         type: "class:linkelement"
-        description: ""
+        description: "This class property represents a style element with the specified XML element name."
       Worksheet:
         type: "string"
         description: "Gets the parent worksheet."
@@ -15740,7 +16076,7 @@ definitions:
         description: "Maximum column index of those cells that have been instantiated in the collection(does not include the column                        where style is defined for the whole column but no cell has been instantiated in it)."
       CellCount:
         type: "integer"
-        description: ""
+        description: "The class has a public property "CellCount" of type integer that can be read and modified."
       Rows:
         type: "class:linkelement"
         description: "Gets the collection of  objects that represents the individual rows in this worksheet."
@@ -15845,7 +16181,7 @@ definitions:
         description: "Whether filter by the cell's fill color.            "
       Pattern:
         type: "string"
-        description: ""
+        description: "A property "Pattern" of type string with a getter and setter is defined."
       Color:
         type: "class:cellscolor"
         description: ""
@@ -15923,7 +16259,7 @@ definitions:
     properties:
       CellName:
         type: "string"
-        description: ""
+        description: "Property: CellName attribute with XmlElement tag in the class."
       Author:
         type: "string"
         description: "Gets and sets Name of the original comment author"
@@ -15964,7 +16300,7 @@ definitions:
     properties:
       CommentList:
         type: "container"
-        description: ""
+        description: "Property Summary: The CommentList property is annotated to be serialized as XML elements under the tag "comment" and holds a collection of LinkElement objects."
       link:
         type: "class:link"
         description: ""
@@ -15975,7 +16311,7 @@ definitions:
     properties:
       sqref:
         type: "string"
-        description: ""
+        description: "A public property called "sqref" of type string with a getter and a setter is defined in the class."
       FormatConditions:
         type: "container"
         description: ""
@@ -16001,7 +16337,7 @@ definitions:
     properties:
       Count:
         type: "integer"
-        description: ""
+        description: "The property "Count" is decorated with [XmlElement("count")] attribute for XML serialization."
       ConditionalFormattingList:
         type: "container"
         description: ""
@@ -16041,6 +16377,9 @@ definitions:
       ReferToSheetWithSameName:
         type: "boolean"
         description: "In ms excel, when copying formulas which refer to other worksheets while copying a worksheet to another one,            the copied formulas should refer to source workbook.            However, for some situations user may need the copied formulas refer to worksheets with the same name            in the same workbook, such as when those worksheets have been copied before this copy operation,            then this property should be kept as true. "
+      CopyTheme:
+        type: "boolean"
+        description: ""
   CriteriaMultipleFilter:
     allOf:
     - type: "object"
@@ -16048,7 +16387,7 @@ definitions:
     properties:
       Criteria:
         type: "string"
-        description: ""
+        description: "A property named "Criteria" of type string, allowing both getting and setting its value."
   CustomFilter:
     type: "object"    
     properties:
@@ -16111,7 +16450,7 @@ definitions:
     properties:
       Ranges:
         type: "container"
-        description: ""
+        description: "A property named "Ranges" of type IList Range with a default value of an empty List of Range objects."
       NeedFillData:
         type: "boolean"
         description: "Represents whether the data needs to be populated."
@@ -16293,7 +16632,7 @@ definitions:
     properties:
       FileSourceType:
         type: "string"
-        description: ""
+        description: "A property named FileSourceType of type FileSourceType that can be accessed and modified."
       FilePath:
         type: "string"
         description: ""
@@ -16308,7 +16647,7 @@ definitions:
     properties:
       Files:
         type: "container"
-        description: ""
+        description: "A property named **Files** of type **IList FileInfo ** containing a collection of file information objects."
   FilterColumn:
     type: "object"    
     properties:
@@ -16320,7 +16659,7 @@ definitions:
         description: "Gets and sets the type fo filtering data. "
       MultipleFilters:
         type: "class:multiplefilters"
-        description: ""
+        description: "This class contains a property named "MultipleFilters" of type "MultipleFilters" that can be both read and written."
       ColorFilter:
         type: "class:colorfilter"
         description: ""
@@ -16556,7 +16895,7 @@ definitions:
     properties:
       Count:
         type: "integer"
-        description: ""
+        description: "Property Summary: An integer property named Count with an XML element name "count.""
       HyperlinkList:
         type: "container"
         description: ""
@@ -16604,7 +16943,7 @@ definitions:
     properties:
       Href:
         type: "string"
-        description: ""
+        description: "Has a property named Href with the attribute ElementName set to "href"."
       Rel:
         type: "string"
         description: ""
@@ -16619,13 +16958,13 @@ definitions:
     properties:
       link:
         type: "class:link"
-        description: ""
+        description: "The class has a property named "link" of type Link, which has a public get and set accessors."
   LoadOptions:
     type: "object"    
     properties:
       ConvertNumericData:
         type: "string"
-        description: ""
+        description: "This class has a public property named "ConvertNumericData" of type string that can be read from and written to."
       InterruptMonitor:
         type: "string"
         description: "Gets and sets the interrupt monitor."
@@ -16663,7 +17002,7 @@ definitions:
     properties:
       EndColumn:
         type: "integer"
-        description: ""
+        description: "An integer property named "EndColumn" with the XML element name "endcolumn"."
       EndRow:
         type: "integer"
         description: ""
@@ -16683,7 +17022,7 @@ definitions:
     properties:
       Count:
         type: "integer"
-        description: ""
+        description: "An integer property labeled as "count" and marked as an XML element in the class."
       MergedCellList:
         type: "container"
         description: ""
@@ -16699,7 +17038,7 @@ definitions:
     properties:
       MatchBlank:
         type: "boolean"
-        description: ""
+        description: "A nullable boolean property that determines if a blank space should be matched."
       MultipleFilterList:
         type: "container"
         description: ""
@@ -16713,7 +17052,7 @@ definitions:
         description: "Gets and sets the comment of the name.                        Only applies for Excel 2007."
       WorksheetIndex:
         type: "integer"
-        description: ""
+        description: "Property Summary: WorksheetIndex is an optional integer property marked with the XmlElement attribute "worksheetindex"."
       IsReferred:
         type: "boolean"
         description: "Indicates whether this name is referred by other formulas."
@@ -16739,7 +17078,7 @@ definitions:
     properties:
       Count:
         type: "integer"
-        description: ""
+        description: "This class property is tagged as an XML element named "count" and stores an integer value."
       NameList:
         type: "container"
         description: ""
@@ -16772,7 +17111,7 @@ definitions:
         description: "page context script            "
       Picture:
         type: "string"
-        description: ""
+        description: "A property named "Picture" with both getter and setter methods of type string is defined."
       FisrtPageContext:
         type: "string"
         description: "fisrt page context script"
@@ -16909,7 +17248,7 @@ definitions:
     properties:
       AnnotationsPermission:
         type: "boolean"
-        description: ""
+        description: "Indicates whether to allow to add or modify text annotations, fill in interactive form fields."
       AssembleDocumentPermission:
         type: "boolean"
         description: ""
@@ -16993,7 +17332,7 @@ definitions:
     properties:
       ProtectionType:
         type: "string"
-        description: ""
+        description: "Property Summary: Defines a public string property for the ProtectionType."
       Password:
         type: "string"
         description: ""
@@ -17074,7 +17413,7 @@ definitions:
     properties:
       RangeList:
         type: "container"
-        description: ""
+        description: "Property Summary: Contains a list of ranges specified by the XmlElement "Range"."
   Row:
     allOf:
     - type: "object"
@@ -17111,7 +17450,7 @@ definitions:
     properties:
       MaxRow:
         type: "integer"
-        description: ""
+        description: "This property allows access to set and retrieve the maximum row value in the class."
       RowsCount:
         type: "integer"
         description: ""
@@ -17176,7 +17515,7 @@ definitions:
         description: "Gets or sets default edit language."
       EmfRenderSetting:
         type: "string"
-        description: ""
+        description: "Setting for rendering Emf metafile."
       MergeAreas:
         type: "boolean"
         description: ""
@@ -17210,6 +17549,12 @@ definitions:
       ValidateMergedAreas:
         type: "boolean"
         description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
+        type: "boolean"
+        description: ""
   SingleValue:
     type: "object"    
     properties:
@@ -17230,7 +17575,7 @@ definitions:
         description: "Represents the order of sorting."
       CustomList:
         type: "array<string>"
-        description: ""
+        description: "This class includes a property named CustomList that is an array of strings with both getter and setter methods."
       Order:
         type: "string"
         description: "Indicates the order of sorting."
@@ -17311,7 +17656,7 @@ definitions:
         description: "Gets or sets the horizontal alignment type of the text in a cell. "
       BorderCollection:
         type: "container"
-        description: ""
+        description: "A public property named `BorderCollection` that is a list of `Border` objects."
       BackgroundThemeColor:
         type: "class:themecolor"
         description: "Gets and sets the background theme color. "
@@ -17375,7 +17720,7 @@ definitions:
     properties:
       StyleList:
         type: "container"
-        description: ""
+        description: "This property contains a list of elements with the tag "style"."
       link:
         type: "class:link"
         description: ""
@@ -17464,7 +17809,7 @@ definitions:
         description: ""
       Name:
         type: "string"
-        description: ""
+        description: "The class has a public property named "Name" with a getter and setter method."
       Size:
         type: "integer"
         description: ""
@@ -17503,7 +17848,7 @@ definitions:
     properties:
       FieldIndex:
         type: "integer"
-        description: ""
+        description: "An integer property named FieldIndex that can be accessed and modified.            "
       Criteria:
         type: "string"
         description: " "
@@ -17579,7 +17924,7 @@ definitions:
     properties:
       Count:
         type: "integer"
-        description: ""
+        description: "Property summary: The property "Count" with an XML element name "count" returns the number of items in the "ValidationList"."
       ValidationList:
         type: "container"
         description: ""
@@ -17614,7 +17959,7 @@ definitions:
         description: "Gets and sets the current file name. "
       Links:
         type: "container"
-        description: ""
+        description: "A property of type List Link  named Links is specified to be serialized as an XmlElement with the tag "link"."
       Worksheets:
         type: "class:linkelement"
         description: "Gets the  collection in the spreadsheet. "
@@ -17836,7 +18181,7 @@ definitions:
     properties:
       Links:
         type: "container"
-        description: ""
+        description: "Property Summary: Contains a list of links represented by the class link."
       DisplayRightToLeft:
         type: "boolean"
         description: "Indicates if the specified worksheet is displayed from right to left instead of from left to right.            Default is false. "
@@ -17937,7 +18282,7 @@ definitions:
     properties:
       WorksheetList:
         type: "container"
-        description: ""
+        description: "A property named "WorksheetList" that contains a list of elements with the XML element name "worksheet"."
       link:
         type: "class:link"
         description: ""
@@ -18097,7 +18442,7 @@ definitions:
     properties:
       SavedFiles:
         type: "container"
-        description: ""
+        description: "This class has a property named SavedFiles of type List Link."
       Description:
         type: "string"
         description: ""
@@ -18525,7 +18870,7 @@ definitions:
     properties:
       ListObjectList:
         type: "container"
-        description: ""
+        description: "A property named ListObjectList that is a list of LinkElement objects."
       link:
         type: "class:link"
         description: ""
@@ -18560,6 +18905,21 @@ definitions:
         type: "boolean"
         description: ""
       ValidateMergedAreas:
+        type: "boolean"
+        description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
         type: "boolean"
         description: ""
   DocxSaveOptions:
@@ -18645,7 +19005,363 @@ definitions:
       ValidateMergedAreas:
         type: "boolean"
         description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
+        type: "boolean"
+        description: ""
   HtmlSaveOptions:
+    allOf:
+    - type: "object"
+    
+    properties:
+      ExportPageHeaders:
+        type: "boolean"
+        description: "Indicates whether exporting page headers."
+      ExportPageFooters:
+        type: "boolean"
+        description: ""
+      ExportRowColumnHeadings:
+        type: "boolean"
+        description: ""
+      ShowAllSheets:
+        type: "boolean"
+        description: ""
+      ImageOptions:
+        type: "class:imageorprintoptions"
+        description: ""
+      SaveAsSingleFile:
+        type: "boolean"
+        description: "Indicates whether save the html as single file. The default value is false."
+      ExportHiddenWorksheet:
+        type: "boolean"
+        description: "Indicates whether save the html as single file. The default value is false."
+      ExportGridLines:
+        type: "boolean"
+        description: "Indicating whether exporting the gridlines.The default value is false."
+      PresentationPreference:
+        type: "boolean"
+        description: "Indicating if html or mht file is presentation preference.The default value is             false.if you want to get more beautiful presentation,please set the value to                true."
+      CellCssPrefix:
+        type: "string"
+        description: "Gets and sets the prefix of the css name,the default value is ""."
+      TableCssId:
+        type: "string"
+        description: "Gets and sets the prefix of the type css name such as tr,col,td and so on, they                are contained in the table element which has the specific TableCssId attribute.                The default value is ""."
+      IsFullPathLink:
+        type: "boolean"
+        description: "Indicating whether using full path link in sheet00x.htm,filelist.xml and tabstrip.htm.                The default value is false."
+      ExportWorksheetCSSSeparately:
+        type: "boolean"
+        description: "Indicating whether export the worksheet css separately.The default value is false."
+      ExportSimilarBorderStyle:
+        type: "boolean"
+        description: ""
+      MergeEmptyTdForcely:
+        type: "boolean"
+        description: "Indicates whether merging empty TD element forcely when exporting file to html.                The size of html file will be reduced significantly after setting value to true.                The default value is false. If you want to import the html file to excel or export                perfect grid lines when saving file to html, please keep the default value."
+      ExportCellCoordinate:
+        type: "boolean"
+        description: "Indicates whether exporting excel coordinate of nonblank cells when saving file                to html. The default value is false. If you want to import the output html to                excel, please keep the default value."
+      ExportExtraHeadings:
+        type: "boolean"
+        description: "Indicates whether exporting extra headings when the length of text is longer                than max display column. The default value is false. If you want to import the                html file to excel, please keep the default value."
+      ExportHeadings:
+        type: "boolean"
+        description: "Indicates whether exporting headings when saving file to html.The default value                is false. If you want to import the html file to excel, please keep the default                value."
+      ExportFormula:
+        type: "boolean"
+        description: "Indicates whether exporting formula when saving file to html. The default value                is true. If you want to import the output html to excel, please keep the default                value"
+      AddTooltipText:
+        type: "boolean"
+        description: "Indicates whether adding tooltip text when the data can't be fully displayed."
+      ExportBogusRowData:
+        type: "boolean"
+        description: "Indicating whether exporting bogus bottom row data. The default value is true.If you want to import the html or mht file to excel, please keep the default value."
+      ExcludeUnusedStyles:
+        type: "boolean"
+        description: "Indicating whether excluding unused styles.The default value is false.If you  want to import the html or mht file to excel, please keep the default value."
+      ExportDocumentProperties:
+        type: "boolean"
+        description: "Indicating whether exporting document properties.The default value is true.If  you want to import the html or mht file to excel, please keep the default value."
+      ExportWorksheetProperties:
+        type: "boolean"
+        description: "Indicating whether exporting worksheet properties.The default value is true.If  you want to import the html or mht file to excel, please keep the default value."
+      ExportWorkbookProperties:
+        type: "boolean"
+        description: "Indicating whether exporting workbook properties.The default value is true.If  you want to import the html or mht file to excel, please keep the default value."
+      ExportFrameScriptsAndProperties:
+        type: "boolean"
+        description: "Indicating whether exporting frame scripts and document properties. The default  value is true.If you want to import the html or mht file to excel, please keep the default value."
+      AttachedFilesDirectory:
+        type: "string"
+        description: "The directory that the attached files will be saved to.  Only for saving to html stream."
+      AttachedFilesUrlPrefix:
+        type: "string"
+        description: "Specify the Url prefix of attached files such as image in the html file. Only for saving to html stream."
+      Encoding:
+        type: "string"
+        description: ""
+      ExportActiveWorksheetOnly:
+        type: "boolean"
+        description: "Indicates if exporting the whole workbook to html file."
+      ExportChartImageFormat:
+        type: "string"
+        description: "Get or set the format of chart image before exporting"
+      ExportImagesAsBase64:
+        type: "boolean"
+        description: ""
+      HiddenColDisplayType:
+        type: "string"
+        description: "Hidden column(the width of this column is 0) in excel,before save this into               html format, if HtmlHiddenColDisplayType is "Remove",the hidden column would               ont been output, if the value is "Hidden", the column would been output,but was hidden,the default value is "Hidden""
+      HiddenRowDisplayType:
+        type: "string"
+        description: "Hidden row(the height of this row is 0) in excel,before save this into html               format, if HtmlHiddenRowDisplayType is "Remove",the hidden row would ont               been output, if the value is "Hidden", the row would been output,but was               hidden,the default value is "Hidden""
+      HtmlCrossStringType:
+        type: "string"
+        description: "Indicates if a cross-cell string will be displayed in the same way as MS               Excel when saving an Excel file in html format.  By default the value is               Default, so, for cross-cell strings, there is little difference between the               html files created by Aspose.Cells and MS Excel. But the performance for               creating large html files,setting the value to Cross would be several times               faster than setting it to Default or Fit2Cell."
+      IsExpImageToTempDir:
+        type: "boolean"
+        description: "Indicates if export image files to temp directory.  Only for saving to html  stream."
+      PageTitle:
+        type: "string"
+        description: "The title of the html page.  Only for saving to html stream."
+      ParseHtmlTagInCell:
+        type: "boolean"
+        description: "Parse html tag in cell,like ,as cell value,or as html tag,default is true"
+      CellNameAttribute:
+        type: "string"
+        description: ""
+      SaveFormat:
+        type: "string"
+        description: ""
+      CachedFileFolder:
+        type: "string"
+        description: ""
+      ClearData:
+        type: "boolean"
+        description: ""
+      CreateDirectory:
+        type: "boolean"
+        description: ""
+      EnableHTTPCompression:
+        type: "boolean"
+        description: ""
+      RefreshChartCache:
+        type: "boolean"
+        description: ""
+      SortNames:
+        type: "boolean"
+        description: ""
+      ValidateMergedAreas:
+        type: "boolean"
+        description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
+        type: "boolean"
+        description: ""
+  ImageSaveOptions:
+    allOf:
+    - type: "object"
+    
+    properties:
+      ChartImageType:
+        type: "string"
+        description: "Indicate the chart imagetype when converting."
+      EmbededImageNameInSvg:
+        type: "string"
+        description: "Indicate the filename of embeded image in svg. This should be full path with directory like "c:\\xpsEmbeded""
+      HorizontalResolution:
+        type: "integer"
+        description: "Gets or sets the horizontal resolution for generated images, in dots per inch.                 Applies generating image method except Emf format images.               The default value is 96."
+      ImageFormat:
+        type: "string"
+        description: "Gets or sets the format of the generated images.  Don't apply the method that returns a Bitmap object.             The default value is ImageFormat.Bmp.  Don't apply the method that returns a Bitmap object."
+      IsCellAutoFit:
+        type: "boolean"
+        description: "Indicates whether the width and height of the cells is automatically fitted by cell value. The default value is false."
+      OnePagePerSheet:
+        type: "boolean"
+        description: "If OnePagePerSheet is true , all content of one sheet will output to only                one page in result. The paper size of pagesetup will be invalid, and the                other settings of pagesetup will still take effect."
+      OnlyArea:
+        type: "boolean"
+        description: "If this property is true , onle Area will be output, and no scale will take effect."
+      PrintingPage:
+        type: "string"
+        description: "Indicates which pages will not be printed."
+      PrintWithStatusDialog:
+        type: "boolean"
+        description: "If PrintWithStatusDialog = true , there will be a dialog that shows current print status.  else no such dialog will show."
+      Quality:
+        type: "integer"
+        description: "Gets or sets a value determining the quality of the generated images to apply only when saving pages to the Jpeg format.            Has effect only when saving to JPEG.  The value must be between 0 and 100. The default value is 100."
+      TiffCompression:
+        type: "string"
+        description: "Gets or sets the type of compression to apply only when saving pages to the Tiff format.            Has effect only when saving to TIFF.  The default value is Lzw."
+      VerticalResolution:
+        type: "integer"
+        description: "Gets or sets the vertical resolution for generated images, in dots per inch.            Applies generating image method except Emf format image.            The default value is 96."
+      SaveFormat:
+        type: "string"
+        description: ""
+      CachedFileFolder:
+        type: "string"
+        description: ""
+      ClearData:
+        type: "boolean"
+        description: ""
+      CreateDirectory:
+        type: "boolean"
+        description: ""
+      EnableHTTPCompression:
+        type: "boolean"
+        description: ""
+      RefreshChartCache:
+        type: "boolean"
+        description: ""
+      SortNames:
+        type: "boolean"
+        description: ""
+      ValidateMergedAreas:
+        type: "boolean"
+        description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
+        type: "boolean"
+        description: ""
+  JsonSaveOptions:
+    allOf:
+    - type: "object"
+    
+    properties:
+      ExportArea:
+        type: "class:cellarea"
+        description: "Gets or sets the exporting range."
+      HasHeaderRow:
+        type: "boolean"
+        description: "Indicates whether the range contains header row."
+      ExportAsString:
+        type: "boolean"
+        description: "Exports the string value of the cells to json."
+      Indent:
+        type: "string"
+        description: "Indicates the indent."
+      SaveFormat:
+        type: "string"
+        description: ""
+      CachedFileFolder:
+        type: "string"
+        description: ""
+      ClearData:
+        type: "boolean"
+        description: ""
+      CreateDirectory:
+        type: "boolean"
+        description: ""
+      EnableHTTPCompression:
+        type: "boolean"
+        description: ""
+      RefreshChartCache:
+        type: "boolean"
+        description: ""
+      SortNames:
+        type: "boolean"
+        description: ""
+      ValidateMergedAreas:
+        type: "boolean"
+        description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
+        type: "boolean"
+        description: ""
+  MarkdownSaveOptions:
+    allOf:
+    - type: "object"
+    
+    properties:
+      Encoding:
+        type: "string"
+        description: "Gets and sets the default encoding."
+      FormatStrategy:
+        type: "string"
+        description: "The Data provider to provide cells data for saving workbook in light mode."
+      LineSeparator:
+        type: "string"
+        description: "Gets and sets the line separator."
+      SaveFormat:
+        type: "string"
+        description: ""
+      CachedFileFolder:
+        type: "string"
+        description: ""
+      ClearData:
+        type: "boolean"
+        description: ""
+      CreateDirectory:
+        type: "boolean"
+        description: ""
+      EnableHTTPCompression:
+        type: "boolean"
+        description: ""
+      RefreshChartCache:
+        type: "boolean"
+        description: ""
+      SortNames:
+        type: "boolean"
+        description: ""
+      ValidateMergedAreas:
+        type: "boolean"
+        description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
+        type: "boolean"
+        description: ""
+  MHtmlSaveOptions:
     allOf:
     - type: "object"
     
@@ -18791,213 +19507,19 @@ definitions:
       ValidateMergedAreas:
         type: "boolean"
         description: ""
-  ImageSaveOptions:
-    allOf:
-    - type: "object"
-    
-    properties:
-      ChartImageType:
-        type: "string"
-        description: "Indicate the chart imagetype when converting."
-      EmbededImageNameInSvg:
-        type: "string"
-        description: "Indicate the filename of embeded image in svg. This should be full path with directory like "c:\\xpsEmbeded""
-      HorizontalResolution:
-        type: "integer"
-        description: "Gets or sets the horizontal resolution for generated images, in dots per inch.                 Applies generating image method except Emf format images.               The default value is 96."
-      ImageFormat:
-        type: "string"
-        description: "Gets or sets the format of the generated images.  Don't apply the method that returns a Bitmap object.             The default value is ImageFormat.Bmp.  Don't apply the method that returns a Bitmap object."
-      IsCellAutoFit:
-        type: "boolean"
-        description: "Indicates whether the width and height of the cells is automatically fitted by cell value. The default value is false."
-      OnePagePerSheet:
-        type: "boolean"
-        description: "If OnePagePerSheet is true , all content of one sheet will output to only                one page in result. The paper size of pagesetup will be invalid, and the                other settings of pagesetup will still take effect."
-      OnlyArea:
-        type: "boolean"
-        description: "If this property is true , onle Area will be output, and no scale will take effect."
-      PrintingPage:
-        type: "string"
-        description: "Indicates which pages will not be printed."
-      PrintWithStatusDialog:
-        type: "boolean"
-        description: "If PrintWithStatusDialog = true , there will be a dialog that shows current print status.  else no such dialog will show."
-      Quality:
-        type: "integer"
-        description: "Gets or sets a value determining the quality of the generated images to apply only when saving pages to the Jpeg format.            Has effect only when saving to JPEG.  The value must be between 0 and 100. The default value is 100."
-      TiffCompression:
-        type: "string"
-        description: "Gets or sets the type of compression to apply only when saving pages to the Tiff format.            Has effect only when saving to TIFF.  The default value is Lzw."
-      VerticalResolution:
-        type: "integer"
-        description: "Gets or sets the vertical resolution for generated images, in dots per inch.            Applies generating image method except Emf format image.            The default value is 96."
-      SaveFormat:
-        type: "string"
-        description: ""
-      CachedFileFolder:
-        type: "string"
-        description: ""
-      ClearData:
+      MergeAreas:
         type: "boolean"
         description: ""
-      CreateDirectory:
+      SortExternalNames:
         type: "boolean"
         description: ""
-      EnableHTTPCompression:
+      CheckExcelRestriction:
         type: "boolean"
         description: ""
-      RefreshChartCache:
+      UpdateSmartArt:
         type: "boolean"
         description: ""
-      SortNames:
-        type: "boolean"
-        description: ""
-      ValidateMergedAreas:
-        type: "boolean"
-        description: ""
-  JsonSaveOptions:
-    allOf:
-    - type: "object"
-    
-    properties:
-      ExportArea:
-        type: "class:cellarea"
-        description: "Gets or sets the exporting range."
-      HasHeaderRow:
-        type: "boolean"
-        description: "Indicates whether the range contains header row."
-      ExportAsString:
-        type: "boolean"
-        description: "Exports the string value of the cells to json."
-      Indent:
-        type: "string"
-        description: "Indicates the indent."
-      SaveFormat:
-        type: "string"
-        description: ""
-      CachedFileFolder:
-        type: "string"
-        description: ""
-      ClearData:
-        type: "boolean"
-        description: ""
-      CreateDirectory:
-        type: "boolean"
-        description: ""
-      EnableHTTPCompression:
-        type: "boolean"
-        description: ""
-      RefreshChartCache:
-        type: "boolean"
-        description: ""
-      SortNames:
-        type: "boolean"
-        description: ""
-      ValidateMergedAreas:
-        type: "boolean"
-        description: ""
-  MarkdownSaveOptions:
-    allOf:
-    - type: "object"
-    
-    properties:
-      Encoding:
-        type: "string"
-        description: "Gets and sets the default encoding."
-      FormatStrategy:
-        type: "string"
-        description: "The Data provider to provide cells data for saving workbook in light mode."
-      LineSeparator:
-        type: "string"
-        description: "Gets and sets the line separator."
-      SaveFormat:
-        type: "string"
-        description: ""
-      CachedFileFolder:
-        type: "string"
-        description: ""
-      ClearData:
-        type: "boolean"
-        description: ""
-      CreateDirectory:
-        type: "boolean"
-        description: ""
-      EnableHTTPCompression:
-        type: "boolean"
-        description: ""
-      RefreshChartCache:
-        type: "boolean"
-        description: ""
-      SortNames:
-        type: "boolean"
-        description: ""
-      ValidateMergedAreas:
-        type: "boolean"
-        description: ""
-  MHtmlSaveOptions:
-    allOf:
-    - type: "object"
-    
-    properties:
-      AttachedFilesDirectory:
-        type: "string"
-        description: "The directory that the attached files will be saved to.  Only for saving to html stream."
-      AttachedFilesUrlPrefix:
-        type: "string"
-        description: "Specify the Url prefix of attached files such as image in the html file. Only for saving to html stream."
-      Encoding:
-        type: "string"
-        description: "If not set,use Encoding.UTF8 as default enconding type."
-      ExportActiveWorksheetOnly:
-        type: "boolean"
-        description: "Indicates if exporting the whole workbook to html file."
-      ExportChartImageFormat:
-        type: "string"
-        description: "Get or set the format of chart image before exporting"
-      ExportImagesAsBase64:
-        type: "boolean"
-        description: "Specifies whether images are saved in Base64 format to HTML, MHTML or EPUB."
-      HiddenColDisplayType:
-        type: "string"
-        description: "Hidden column(the width of this column is 0) in excel,before save this into                html format, if HtmlHiddenColDisplayType is "Remove",the hidden column would               ont been output, if the value is "Hidden", the column would been output,but was hidden,the default value is "Hidden""
-      HiddenRowDisplayType:
-        type: "string"
-        description: "Hidden row(the height of this row is 0) in excel,before save this into html                format, if HtmlHiddenRowDisplayType is "Remove",the hidden row would ont               been output, if the value is "Hidden", the row would been output,but was               hidden,the default value is "Hidden""
-      HtmlCrossStringType:
-        type: "string"
-        description: "Indicates if a cross-cell string will be displayed in the same way as MS               Excel when saving an Excel file in html format.  By default the value is               Default, so, for cross-cell strings, there is little difference between the               html files created by Aspose.Cells and MS Excel. But the performance for               creating large html files,setting the value to Cross would be several times               faster than setting it to Default or Fit2Cell."
-      IsExpImageToTempDir:
-        type: "boolean"
-        description: "Indicates if export image files to temp directory.  Only for saving to html  stream."
-      PageTitle:
-        type: "string"
-        description: "The title of the html page.  Only for saving to html stream."
-      ParseHtmlTagInCell:
-        type: "boolean"
-        description: "Parse html tag in cell,like ,as cell value,or as html tag,default is true"
-      SaveFormat:
-        type: "string"
-        description: ""
-      CachedFileFolder:
-        type: "string"
-        description: ""
-      ClearData:
-        type: "boolean"
-        description: ""
-      CreateDirectory:
-        type: "boolean"
-        description: ""
-      EnableHTTPCompression:
-        type: "boolean"
-        description: ""
-      RefreshChartCache:
-        type: "boolean"
-        description: ""
-      SortNames:
-        type: "boolean"
-        description: ""
-      ValidateMergedAreas:
+      EncryptDocumentProperties:
         type: "boolean"
         description: ""
   OdsSaveOptions:
@@ -19005,6 +19527,15 @@ definitions:
     - type: "object"
     
     properties:
+      GeneratorType:
+        type: "string"
+        description: ""
+      OdfStrictVersion:
+        type: "string"
+        description: ""
+      IgnorePivotTables:
+        type: "boolean"
+        description: ""
       SaveFormat:
         type: "string"
         description: ""
@@ -19027,6 +19558,21 @@ definitions:
         type: "boolean"
         description: ""
       ValidateMergedAreas:
+        type: "boolean"
+        description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
         type: "boolean"
         description: ""
   OoxmlSaveOptions:
@@ -19071,6 +19617,21 @@ definitions:
         type: "boolean"
         description: ""
       ValidateMergedAreas:
+        type: "boolean"
+        description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
         type: "boolean"
         description: ""
   PdfSaveOptions:
@@ -19157,6 +19718,21 @@ definitions:
         type: "boolean"
         description: ""
       ValidateMergedAreas:
+        type: "boolean"
+        description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
         type: "boolean"
         description: ""
   PptxSaveOptions:
@@ -19251,6 +19827,12 @@ definitions:
       ValidateMergedAreas:
         type: "boolean"
         description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
+        type: "boolean"
+        description: ""
   SaveOptions:
     type: "object"    
     properties:
@@ -19278,6 +19860,21 @@ definitions:
       ValidateMergedAreas:
         type: "boolean"
         description: "Indicates whether validate merged areas before saving the file.The default value is false.            "
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
+        type: "boolean"
+        description: ""
   SpreadsheetML2003SaveOptions:
     allOf:
     - type: "object"
@@ -19314,6 +19911,21 @@ definitions:
         type: "boolean"
         description: ""
       ValidateMergedAreas:
+        type: "boolean"
+        description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
         type: "boolean"
         description: ""
   SqlScriptSaveOptions:
@@ -19387,6 +19999,21 @@ definitions:
       ValidateMergedAreas:
         type: "boolean"
         description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
+        type: "boolean"
+        description: ""
   SvgSaveOptions:
     allOf:
     - type: "object"
@@ -19395,6 +20022,42 @@ definitions:
       SheetIndex:
         type: "integer"
         description: "Gets and sets which worksheet should be exported.  If the value is -1, the                active worksheet will be exported."
+      ChartImageType:
+        type: "string"
+        description: "Indicate the chart imagetype when converting."
+      EmbededImageNameInSvg:
+        type: "string"
+        description: "Indicate the filename of embeded image in svg. This should be full path with directory like "c:\\xpsEmbeded""
+      HorizontalResolution:
+        type: "integer"
+        description: "Gets or sets the horizontal resolution for generated images, in dots per inch.                 Applies generating image method except Emf format images.               The default value is 96."
+      ImageFormat:
+        type: "string"
+        description: "Gets or sets the format of the generated images.  Don't apply the method that returns a Bitmap object.             The default value is ImageFormat.Bmp.  Don't apply the method that returns a Bitmap object."
+      IsCellAutoFit:
+        type: "boolean"
+        description: "Indicates whether the width and height of the cells is automatically fitted by cell value. The default value is false."
+      OnePagePerSheet:
+        type: "boolean"
+        description: "If OnePagePerSheet is true , all content of one sheet will output to only                one page in result. The paper size of pagesetup will be invalid, and the                other settings of pagesetup will still take effect."
+      OnlyArea:
+        type: "boolean"
+        description: "If this property is true , onle Area will be output, and no scale will take effect."
+      PrintingPage:
+        type: "string"
+        description: "Indicates which pages will not be printed."
+      PrintWithStatusDialog:
+        type: "boolean"
+        description: "If PrintWithStatusDialog = true , there will be a dialog that shows current print status.  else no such dialog will show."
+      Quality:
+        type: "integer"
+        description: "Gets or sets a value determining the quality of the generated images to apply only when saving pages to the Jpeg format.            Has effect only when saving to JPEG.  The value must be between 0 and 100. The default value is 100."
+      TiffCompression:
+        type: "string"
+        description: "Gets or sets the type of compression to apply only when saving pages to the Tiff format.            Has effect only when saving to TIFF.  The default value is Lzw."
+      VerticalResolution:
+        type: "integer"
+        description: "Gets or sets the vertical resolution for generated images, in dots per inch.            Applies generating image method except Emf format image.            The default value is 96."
       SaveFormat:
         type: "string"
         description: ""
@@ -19417,6 +20080,21 @@ definitions:
         type: "boolean"
         description: ""
       ValidateMergedAreas:
+        type: "boolean"
+        description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
         type: "boolean"
         description: ""
   TxtSaveOptions:
@@ -19460,11 +20138,32 @@ definitions:
       ValidateMergedAreas:
         type: "boolean"
         description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
+        type: "boolean"
+        description: ""
   XlsbSaveOptions:
     allOf:
     - type: "object"
     
     properties:
+      ExportAllColumnIndexes:
+        type: "boolean"
+        description: ""
+      CompressionType:
+        type: "string"
+        description: ""
       SaveFormat:
         type: "string"
         description: ""
@@ -19487,6 +20186,21 @@ definitions:
         type: "boolean"
         description: ""
       ValidateMergedAreas:
+        type: "boolean"
+        description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
         type: "boolean"
         description: ""
   XlsSaveOptions:
@@ -19494,6 +20208,12 @@ definitions:
     - type: "object"
     
     properties:
+      MatchColor:
+        type: "boolean"
+        description: ""
+      WpsCompatibility:
+        type: "boolean"
+        description: ""
       SaveFormat:
         type: "string"
         description: ""
@@ -19516,6 +20236,21 @@ definitions:
         type: "boolean"
         description: ""
       ValidateMergedAreas:
+        type: "boolean"
+        description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
         type: "boolean"
         description: ""
   XpsSaveOptions:
@@ -19601,6 +20336,12 @@ definitions:
       ValidateMergedAreas:
         type: "boolean"
         description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
+        type: "boolean"
+        description: ""
   ArcShapeResponse:
     allOf:
     - type: "object"
@@ -19608,7 +20349,7 @@ definitions:
     properties:
       Shape:
         type: "class:arcshape"
-        description: ""
+        description: "A public property Shape of type ArcShape that can be accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -19622,7 +20363,7 @@ definitions:
     properties:
       AutoFilter:
         type: "class:autofilter"
-        description: ""
+        description: "A property named "AutoFilter" with a type of "AutoFilter" that can be read from and written to."
       Code:
         type: "integer"
         description: ""
@@ -19636,7 +20377,7 @@ definitions:
     properties:
       AutoShape:
         type: "class:autoshape"
-        description: ""
+        description: "A public property named "AutoShape" of type "AutoShape" with both getter and setter methods."
       Code:
         type: "integer"
         description: ""
@@ -19650,7 +20391,7 @@ definitions:
     properties:
       AutoShapes:
         type: "class:autoshapes"
-        description: ""
+        description: "The class has a property named "AutoShapes" decorated with the XmlElement attribute "shapes"."
       Code:
         type: "integer"
         description: ""
@@ -19664,7 +20405,7 @@ definitions:
     properties:
       Axis:
         type: "class:axis"
-        description: ""
+        description: "A property named "Axis" of type "Axis" with both getter and setter methods is present in the class."
       Code:
         type: "integer"
         description: ""
@@ -19678,7 +20419,7 @@ definitions:
     properties:
       Border:
         type: "class:border"
-        description: ""
+        description: "This class has a public property named Border of type Border that can be both read from and written to."
       Code:
         type: "integer"
         description: ""
@@ -19692,7 +20433,7 @@ definitions:
     properties:
       Shape:
         type: "class:button"
-        description: ""
+        description: "The class has a property named "Shape" of type Button that can be both read and written."
       Code:
         type: "integer"
         description: ""
@@ -19706,7 +20447,7 @@ definitions:
     properties:
       Result:
         type: "string"
-        description: ""
+        description: "A public property "Result" that can be accessed and modified with a string data type."
       Code:
         type: "integer"
         description: ""
@@ -19720,7 +20461,7 @@ definitions:
     properties:
       Cell:
         type: "class:cell"
-        description: ""
+        description: "A property named "Cell" of type "Cell" that has both a getter and a setter."
       Code:
         type: "integer"
         description: ""
@@ -19734,7 +20475,7 @@ definitions:
     properties:
       FileInfo:
         type: "class:cellscloudfileinfo"
-        description: ""
+        description: "A property named `FileInfo` of type `CellsCloudFileInfo` is defined for the class."
       Code:
         type: "integer"
         description: ""
@@ -19746,7 +20487,7 @@ definitions:
     properties:
       Code:
         type: "integer"
-        description: ""
+        description: "The property "Code" allows for accessing and modifying the HTTP status code of the response."
       Status:
         type: "string"
         description: ""
@@ -19757,7 +20498,7 @@ definitions:
     properties:
       DocumentProperties:
         type: "class:cellsdocumentproperties"
-        description: ""
+        description: "The class has a property that represents the document properties of cells."
       Code:
         type: "integer"
         description: ""
@@ -19771,7 +20512,7 @@ definitions:
     properties:
       DocumentProperty:
         type: "class:cellsdocumentproperty"
-        description: ""
+        description: "A property named DocumentProperty of type CellsDocumentProperty is defined with get and set accessors."
       Code:
         type: "integer"
         description: ""
@@ -19785,7 +20526,7 @@ definitions:
     properties:
       Shape:
         type: "class:cellsdrawing"
-        description: ""
+        description: "This class has a public property named Shape of type CellsDrawing."
       Code:
         type: "integer"
         description: ""
@@ -19799,7 +20540,7 @@ definitions:
     properties:
       Cells:
         type: "class:cells"
-        description: ""
+        description: "Property Summary: The class has a property called "Cells" which is annotated with the [XmlElement("cells")] attribute."
       Code:
         type: "integer"
         description: ""
@@ -19813,7 +20554,7 @@ definitions:
     properties:
       ChartArea:
         type: "class:chartarea"
-        description: ""
+        description: "This class has a property named "ChartArea" of type ChartArea with a getter and setter."
       Code:
         type: "integer"
         description: ""
@@ -19827,7 +20568,7 @@ definitions:
     properties:
       ChartDataTable:
         type: "class:chartdatatable"
-        description: ""
+        description: "This property allows access to a ChartDataTable object for storing and manipulating data related to a chart."
       Code:
         type: "integer"
         description: ""
@@ -19841,7 +20582,7 @@ definitions:
     properties:
       ChartPoint:
         type: "class:chartpoint"
-        description: ""
+        description: "A public property "ChartPoint" that can store and retrieve instances of the "ChartPoint" data type."
       Code:
         type: "integer"
         description: ""
@@ -19855,7 +20596,7 @@ definitions:
     properties:
       ChartPoints:
         type: "class:chartpoints"
-        description: ""
+        description: "This class has a property named `ChartPoints` of type `ChartPoints` that can be accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -19869,7 +20610,7 @@ definitions:
     properties:
       Chart:
         type: "class:chart"
-        description: ""
+        description: "A property named "Chart" of type Chart is defined with a getter and setter in the class."
       Code:
         type: "integer"
         description: ""
@@ -19883,7 +20624,7 @@ definitions:
     properties:
       Charts:
         type: "class:charts"
-        description: ""
+        description: "Property Summary: Includes an XML element named "charts" that contains a property of type Charts.Charts."
       Code:
         type: "integer"
         description: ""
@@ -19897,6 +20638,43 @@ definitions:
     properties:
       Shape:
         type: "class:checkbox"
+        description: "A public property named Shape of type CheckBox is defined with both get and set accessors."
+      Code:
+        type: "integer"
+        description: ""
+      Status:
+        type: "string"
+        description: ""
+  CheckedExternalReferenceResponse:
+    allOf:
+    - type: "object"
+    
+    properties:
+      ReferenceOtherWorkbook:
+        type: "boolean"
+        description: ""
+      ReferenceOtherWorksheet:
+        type: "boolean"
+        description: ""
+      Formulas:
+        type: "container"
+        description: ""
+      Code:
+        type: "integer"
+        description: ""
+      Status:
+        type: "string"
+        description: ""
+  CheckedFormulaErrorsResponse:
+    allOf:
+    - type: "object"
+    
+    properties:
+      IsFormulasErrors:
+        type: "boolean"
+        description: ""
+      FormulasErrors:
+        type: "container"
         description: ""
       Code:
         type: "integer"
@@ -19911,7 +20689,7 @@ definitions:
     properties:
       Column:
         type: "class:column"
-        description: ""
+        description: "This class has a public property called "Column" of type "Column" with both getter and setter methods."
       Code:
         type: "integer"
         description: ""
@@ -19925,7 +20703,7 @@ definitions:
     properties:
       Columns:
         type: "class:columns"
-        description: ""
+        description: "This property allows access to the columns within the class."
       Code:
         type: "integer"
         description: ""
@@ -19939,7 +20717,7 @@ definitions:
     properties:
       Shape:
         type: "class:combobox"
-        description: ""
+        description: "A public property of type ComboBox named Shape with get and set accessors."
       Code:
         type: "integer"
         description: ""
@@ -19953,7 +20731,7 @@ definitions:
     properties:
       Comment:
         type: "class:comment"
-        description: ""
+        description: "The class has a public property "Comment" of type "Comment" that can be accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -19967,7 +20745,7 @@ definitions:
     properties:
       Comment:
         type: "class:commentshape"
-        description: ""
+        description: "The class has a public property named Comment of type CommentShape that can be accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -19981,7 +20759,7 @@ definitions:
     properties:
       Comments:
         type: "class:comments"
-        description: ""
+        description: "Property Summary: "The Comments property represents an XML element named 'comments' within the class.""
       Code:
         type: "integer"
         description: ""
@@ -19995,7 +20773,7 @@ definitions:
     properties:
       ConditionalFormatting:
         type: "class:conditionalformatting"
-        description: ""
+        description: "This class has a property named ConditionalFormatting of type ConditionalFormatting that can be accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -20009,7 +20787,7 @@ definitions:
     properties:
       ConditionalFormattings:
         type: "class:conditionalformattings"
-        description: ""
+        description: "A property named ConditionalFormattings of type ConditionalFormattings is defined with both getter and setter methods in the class."
       Code:
         type: "integer"
         description: ""
@@ -20023,7 +20801,7 @@ definitions:
     properties:
       DataLabels:
         type: "class:datalabels"
-        description: ""
+        description: "This class has a property named DataLabels of type DataLabels that can be accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -20037,7 +20815,7 @@ definitions:
     properties:
       DisplayUnitLabel:
         type: "class:displayunitlabel"
-        description: ""
+        description: "This property allows access to the display unit label for the class."
       Code:
         type: "integer"
         description: ""
@@ -20051,7 +20829,7 @@ definitions:
     properties:
       DropBars:
         type: "class:dropbars"
-        description: ""
+        description: "The class has a property named `DropBars` of type `DropBars` with both getter and setter methods."
       Code:
         type: "integer"
         description: ""
@@ -20065,7 +20843,7 @@ definitions:
     properties:
       ErrorBar:
         type: "class:errorbar"
-        description: ""
+        description: "The class has a public property named ErrorBar of type ErrorBar with a getter and setter."
       Code:
         type: "integer"
         description: ""
@@ -20079,7 +20857,7 @@ definitions:
     properties:
       FillFormat:
         type: "class:fillformat"
-        description: ""
+        description: "Property Summary: Allows access to the FillFormat property to get or set fill formatting properties for an object."
       Code:
         type: "integer"
         description: ""
@@ -20093,7 +20871,7 @@ definitions:
     properties:
       Count:
         type: "integer"
-        description: ""
+        description: "Property Summary: This property is annotated with the XML element name "count" and represents an integer value."
       TextItems:
         type: "class:textitems"
         description: ""
@@ -20110,7 +20888,7 @@ definitions:
     properties:
       Floor:
         type: "class:floor"
-        description: ""
+        description: "This class has a public property "Floor" of type "Floor" with both a getter and a setter."
       Code:
         type: "integer"
         description: ""
@@ -20124,7 +20902,7 @@ definitions:
     properties:
       Form:
         type: "class:form"
-        description: ""
+        description: "Property summary: A public property named "Form" with both get and set accessors, allowing access to a Form object."
       Code:
         type: "integer"
         description: ""
@@ -20138,7 +20916,7 @@ definitions:
     properties:
       Forms:
         type: "class:forms"
-        description: ""
+        description: "This class has a property named Forms of type Forms that has both a getter and setter."
       Code:
         type: "integer"
         description: ""
@@ -20152,7 +20930,7 @@ definitions:
     properties:
       Shape:
         type: "class:groupbox"
-        description: ""
+        description: "The class has a property named "Shape" of type GroupBox that can be accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -20166,7 +20944,7 @@ definitions:
     properties:
       HorizontalPageBreak:
         type: "class:horizontalpagebreak"
-        description: ""
+        description: "HorizontalPageBreak is a property of the class that represents a horizontal page break."
       Code:
         type: "integer"
         description: ""
@@ -20180,7 +20958,7 @@ definitions:
     properties:
       HorizontalPageBreaks:
         type: "class:horizontalpagebreaks"
-        description: ""
+        description: "The property "HorizontalPageBreaks" allows getting and setting horizontal page breaks for the class."
       Code:
         type: "integer"
         description: ""
@@ -20194,7 +20972,7 @@ definitions:
     properties:
       Hyperlink:
         type: "class:hyperlink"
-        description: ""
+        description: "A public property named "Hyperlink" of type Hyperlink with both getter and setter methods."
       Code:
         type: "integer"
         description: ""
@@ -20208,7 +20986,7 @@ definitions:
     properties:
       Hyperlinks:
         type: "class:hyperlinks"
-        description: ""
+        description: "This class has a property named "Hyperlinks" of type Hyperlinks which can be accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -20222,7 +21000,7 @@ definitions:
     properties:
       Shape:
         type: "class:label"
-        description: ""
+        description: "The property "Shape" is of type Label and has both a getter and a setter."
       Code:
         type: "integer"
         description: ""
@@ -20236,7 +21014,7 @@ definitions:
     properties:
       LegendEntries:
         type: "class:legendentries"
-        description: ""
+        description: "Property Summary: The class includes a property for managing legend entries."
       Code:
         type: "integer"
         description: ""
@@ -20250,7 +21028,7 @@ definitions:
     properties:
       LegendEntry:
         type: "class:legendentry"
-        description: ""
+        description: "A public property called LegendEntry of type LegendEntry with both getter and setter methods."
       Code:
         type: "integer"
         description: ""
@@ -20264,7 +21042,7 @@ definitions:
     properties:
       Legend:
         type: "class:legend"
-        description: ""
+        description: "This class has a public property called "Legend" of type "Legend" which has both a getter and a setter."
       Code:
         type: "integer"
         description: ""
@@ -20278,7 +21056,7 @@ definitions:
     properties:
       Line:
         type: "class:line"
-        description: ""
+        description: "A public property named "Line" of type Line with both getter and setter methods."
       Code:
         type: "integer"
         description: ""
@@ -20292,7 +21070,7 @@ definitions:
     properties:
       Shape:
         type: "class:lineshape"
-        description: ""
+        description: "The class has a public property called Shape of type LineShape that can be both accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -20306,7 +21084,7 @@ definitions:
     properties:
       Shape:
         type: "class:listbox"
-        description: ""
+        description: "A property "Shape" of type ListBox with read and write access is available for the class."
       Code:
         type: "integer"
         description: ""
@@ -20320,7 +21098,7 @@ definitions:
     properties:
       ListObject:
         type: "class:listobject"
-        description: ""
+        description: "A property that represents a list object within the Tables class."
       Code:
         type: "integer"
         description: ""
@@ -20334,7 +21112,7 @@ definitions:
     properties:
       ListObjects:
         type: "class:listobjects"
-        description: ""
+        description: "A property named "ListObjects" of type "Tables.ListObjects" that can be both accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -20348,7 +21126,7 @@ definitions:
     properties:
       MergedCell:
         type: "class:mergedcell"
-        description: ""
+        description: "A property named "MergedCell" of type "MergedCell" which allows getting and setting its value."
       Code:
         type: "integer"
         description: ""
@@ -20362,7 +21140,7 @@ definitions:
     properties:
       MergedCells:
         type: "class:mergedcells"
-        description: ""
+        description: "Property Summary: Contains information about merged cells within a spreadsheet."
       Code:
         type: "integer"
         description: ""
@@ -20376,7 +21154,7 @@ definitions:
     properties:
       Name:
         type: "class:name"
-        description: ""
+        description: "A public property that allows getting and setting a value of type "Name"."
       Code:
         type: "integer"
         description: ""
@@ -20390,7 +21168,7 @@ definitions:
     properties:
       Names:
         type: "class:names"
-        description: ""
+        description: "Property: This property represents an XML element named "names" and holds a Names object."
       Code:
         type: "integer"
         description: ""
@@ -20404,7 +21182,7 @@ definitions:
     properties:
       OleObject:
         type: "class:oleobject"
-        description: ""
+        description: "This class has a property named OleObject of type OleObject with both read and write capabilities."
       Code:
         type: "integer"
         description: ""
@@ -20418,7 +21196,7 @@ definitions:
     properties:
       OleObjects:
         type: "class:oleobjects"
-        description: ""
+        description: "Property `OleObjects` of type `OleObjects` that can be accessed and modified publicly within the class."
       Code:
         type: "integer"
         description: ""
@@ -20432,7 +21210,7 @@ definitions:
     properties:
       Shape:
         type: "class:oval"
-        description: ""
+        description: "The class has a public property called "Shape" of type "Oval" with both get and set accessors."
       Code:
         type: "integer"
         description: ""
@@ -20446,7 +21224,7 @@ definitions:
     properties:
       PageSections:
         type: "container"
-        description: ""
+        description: "A property named PageSections of type List PageSection  to store a collection of PageSection objects."
       Code:
         type: "integer"
         description: ""
@@ -20460,7 +21238,7 @@ definitions:
     properties:
       PageSetup:
         type: "class:pagesetup"
-        description: ""
+        description: "Property Summary: The class has a public property named PageSetup of type PageSetup that can be accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -20474,7 +21252,7 @@ definitions:
     properties:
       Picture:
         type: "class:picture"
-        description: ""
+        description: "Property Summary: This class has a public property named "Picture" of type "Picture" that has both getter and setter methods."
       Code:
         type: "integer"
         description: ""
@@ -20488,7 +21266,7 @@ definitions:
     properties:
       Pictures:
         type: "class:pictures"
-        description: ""
+        description: "This class has a property called "Pictures" with the feature of being serialized as "pictures" in XML elements."
       Code:
         type: "integer"
         description: ""
@@ -20502,7 +21280,7 @@ definitions:
     properties:
       PivotField:
         type: "class:pivotfield"
-        description: ""
+        description: "This class has a property named "PivotField" of type PivotField which can be accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -20516,7 +21294,7 @@ definitions:
     properties:
       PivotFilter:
         type: "class:pivotfilter"
-        description: ""
+        description: "Property Summary: Contains a pivot filter for data manipulation."
       Code:
         type: "integer"
         description: ""
@@ -20530,7 +21308,7 @@ definitions:
     properties:
       PivotFilters:
         type: "container"
-        description: ""
+        description: "Property summary: Contains a list of PivotFilter objects."
       Code:
         type: "integer"
         description: ""
@@ -20544,7 +21322,7 @@ definitions:
     properties:
       PivotTable:
         type: "class:pivottable"
-        description: ""
+        description: "PivotTable property of type PivotTable that can be both read and written."
       Code:
         type: "integer"
         description: ""
@@ -20558,7 +21336,7 @@ definitions:
     properties:
       PivotTables:
         type: "class:pivottables"
-        description: ""
+        description: "This class has a property named PivotTables of type PivotTables that can be both accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -20572,7 +21350,7 @@ definitions:
     properties:
       PlotArea:
         type: "class:plotarea"
-        description: ""
+        description: "A property that allows getting and setting the PlotArea for the class."
       Code:
         type: "integer"
         description: ""
@@ -20586,7 +21364,7 @@ definitions:
     properties:
       Shape:
         type: "class:radiobutton"
-        description: ""
+        description: "This class has a public property named "Shape" of type RadioButton with both getter and setter."
       Code:
         type: "integer"
         description: ""
@@ -20600,7 +21378,7 @@ definitions:
     properties:
       Range:
         type: "class:range"
-        description: ""
+        description: "This class has a property named "Range" of type Range with both getter and setter methods."
       Code:
         type: "integer"
         description: ""
@@ -20614,7 +21392,7 @@ definitions:
     properties:
       Ranges:
         type: "class:ranges"
-        description: ""
+        description: "This class has a property named "Ranges" of type "Ranges" that can be accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -20628,7 +21406,7 @@ definitions:
     properties:
       CellsList:
         type: "container"
-        description: ""
+        description: "Property Summary: Contains a list of elements labeled as "Cell"."
       Code:
         type: "integer"
         description: ""
@@ -20642,7 +21420,7 @@ definitions:
     properties:
       Shape:
         type: "class:rectangleshape"
-        description: ""
+        description: "A public property named "Shape" that is of type RectangleShape and can be both accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -20656,7 +21434,7 @@ definitions:
     properties:
       Row:
         type: "class:row"
-        description: ""
+        description: "This class has a public property named "Row" of type "Row" with both get and set accessors."
       Code:
         type: "integer"
         description: ""
@@ -20670,7 +21448,7 @@ definitions:
     properties:
       Rows:
         type: "class:rows"
-        description: ""
+        description: "A property named "Rows" of type "Rows" which has both getter and setter methods."
       Code:
         type: "integer"
         description: ""
@@ -20684,7 +21462,7 @@ definitions:
     properties:
       SaveFilesToCloudResult:
         type: "class:savefilestocloudresult"
-        description: ""
+        description: "Property: SaveFilesToCloudResult that allows getting and setting an object of type SaveFilesToCloudResult."
       Code:
         type: "integer"
         description: ""
@@ -20698,7 +21476,7 @@ definitions:
     properties:
       SaveResult:
         type: "class:saveresult"
-        description: ""
+        description: "This class property represents a "SaveResult" XML element."
       Code:
         type: "integer"
         description: ""
@@ -20712,7 +21490,7 @@ definitions:
     properties:
       Shape:
         type: "class:scrollbar"
-        description: ""
+        description: "The class has a public property named `Shape` of type `ScrollBar` that can be both read and written."
       Code:
         type: "integer"
         description: ""
@@ -20726,7 +21504,7 @@ definitions:
     properties:
       Serieses:
         type: "class:seriesitems"
-        description: ""
+        description: "A property named "Serieses" of type "SeriesItems" is defined in the class with both getter and setter access."
       Code:
         type: "integer"
         description: ""
@@ -20740,7 +21518,7 @@ definitions:
     properties:
       Series:
         type: "class:series"
-        description: ""
+        description: "A public property named "Series" of type Series with both getter and setter methods."
       Code:
         type: "integer"
         description: ""
@@ -20754,7 +21532,7 @@ definitions:
     properties:
       Shape:
         type: "class:shape"
-        description: ""
+        description: "A public property Shape of type ArcShape that can be accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -20768,7 +21546,7 @@ definitions:
     properties:
       Shapes:
         type: "class:shapes"
-        description: ""
+        description: "The class has a property called "Shapes" with XML serialization attribute "XmlElement" for specifying the element name in the XML representation."
       Code:
         type: "integer"
         description: ""
@@ -20782,7 +21560,7 @@ definitions:
     properties:
       Value:
         type: "class:singlevalue"
-        description: ""
+        description: "A property named "Value" of type "SingleValue" that can be accessed and modified is declared in the class."
       Code:
         type: "integer"
         description: ""
@@ -20796,7 +21574,7 @@ definitions:
     properties:
       SparklineGroup:
         type: "class:sparklinegroup"
-        description: ""
+        description: "A property that allows access to a Sparkline group containing multiple Sparkline objects."
       Code:
         type: "integer"
         description: ""
@@ -20810,7 +21588,7 @@ definitions:
     properties:
       SparklineGroups:
         type: "class:sparklinegroups"
-        description: ""
+        description: "This class has a property named "SparklineGroups" of type "SparklineGroups" for managing sparkline groups."
       Code:
         type: "integer"
         description: ""
@@ -20824,7 +21602,7 @@ definitions:
     properties:
       Shape:
         type: "class:spinner"
-        description: ""
+        description: "A property named Shape of type Spinner, with both get and set accessors."
       Code:
         type: "integer"
         description: ""
@@ -20852,7 +21630,21 @@ definitions:
     properties:
       Style:
         type: "class:style"
+        description: "A property named "Style" of type "Style" is defined with both getter and setter methods."
+      Code:
+        type: "integer"
         description: ""
+      Status:
+        type: "string"
+        description: ""
+  StylesResponse:
+    allOf:
+    - type: "object"
+    
+    properties:
+      Styles:
+        type: "class:styles"
+        description: "collection of styles."
       Code:
         type: "integer"
         description: ""
@@ -20866,7 +21658,7 @@ definitions:
     properties:
       TaskRunResult:
         type: "class:taskrunresult"
-        description: ""
+        description: "This class has a property named "TaskRunResult" of type "TaskRunResult" that can be both accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -20880,7 +21672,7 @@ definitions:
     properties:
       Shape:
         type: "class:textbox"
-        description: ""
+        description: "A public property named "Shape" of type TextBox is defined with both get and set accessors."
       Code:
         type: "integer"
         description: ""
@@ -20894,7 +21686,7 @@ definitions:
     properties:
       TextItem:
         type: "class:textitem"
-        description: ""
+        description: "The class has a property that allows getting and setting a TextItem object."
       Code:
         type: "integer"
         description: ""
@@ -20908,7 +21700,7 @@ definitions:
     properties:
       TextItems:
         type: "class:textitems"
-        description: ""
+        description: "This property allows access to a collection of TextItems."
       Code:
         type: "integer"
         description: ""
@@ -20922,7 +21714,7 @@ definitions:
     properties:
       TickLabels:
         type: "class:ticklabels"
-        description: ""
+        description: "Property that represents tick labels for a class."
       Code:
         type: "integer"
         description: ""
@@ -20936,7 +21728,7 @@ definitions:
     properties:
       Title:
         type: "class:title"
-        description: ""
+        description: "This class has a property called "Title" of type "Title" with both a getter and a setter."
       Code:
         type: "integer"
         description: ""
@@ -20950,7 +21742,7 @@ definitions:
     properties:
       Trendline:
         type: "class:trendline"
-        description: ""
+        description: "The class has a public property called "Trendline" of type "Trendline" that can be accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -20964,7 +21756,7 @@ definitions:
     properties:
       Trendlines:
         type: "class:trendlines"
-        description: ""
+        description: "This property allows access to the Trendlines feature and set new values for it."
       Code:
         type: "integer"
         description: ""
@@ -20978,7 +21770,7 @@ definitions:
     properties:
       Validation:
         type: "class:validation"
-        description: ""
+        description: "The class has a public property for Validation."
       Code:
         type: "integer"
         description: ""
@@ -20992,7 +21784,7 @@ definitions:
     properties:
       Validations:
         type: "class:validations"
-        description: ""
+        description: "This class has a public property named "Validations" of type "Validations" that includes both a getter and a setter."
       Code:
         type: "integer"
         description: ""
@@ -21006,7 +21798,7 @@ definitions:
     properties:
       VerticalPageBreak:
         type: "class:verticalpagebreak"
-        description: ""
+        description: "The class has a property that represents a vertical page break."
       Code:
         type: "integer"
         description: ""
@@ -21020,7 +21812,7 @@ definitions:
     properties:
       VerticalPageBreaks:
         type: "class:verticalpagebreaks"
-        description: ""
+        description: "This class has a property named VerticalPageBreaks of type VerticalPageBreaks that can be both read from and written to."
       Code:
         type: "integer"
         description: ""
@@ -21034,7 +21826,7 @@ definitions:
     properties:
       Walls:
         type: "class:walls"
-        description: ""
+        description: "The class has a public property named `Walls` of type `Walls`."
       Code:
         type: "integer"
         description: ""
@@ -21048,7 +21840,7 @@ definitions:
     properties:
       Matches:
         type: "integer"
-        description: ""
+        description: "Property summary: An integer property named "Matches" with an XmlElement attribute."
       Workbook:
         type: "class:linkelement"
         description: ""
@@ -21065,7 +21857,7 @@ definitions:
     properties:
       Workbook:
         type: "class:workbook"
-        description: ""
+        description: "Workbook property of the class allows access to and modification of a Workbook object."
       Code:
         type: "integer"
         description: ""
@@ -21079,7 +21871,7 @@ definitions:
     properties:
       settings:
         type: "class:workbooksettings"
-        description: ""
+        description: "The class has a public property called "settings" of type WorkbookSettings that can be accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -21093,7 +21885,7 @@ definitions:
     properties:
       Workbooks:
         type: "container"
-        description: ""
+        description: "Property Summary: Contains a list of "Workbook" elements under the "Workbooks" array in XML format."
       Code:
         type: "integer"
         description: ""
@@ -21107,7 +21899,7 @@ definitions:
     properties:
       Matches:
         type: "integer"
-        description: ""
+        description: ""An integer property named Matches decorated with the XmlElement attribute.""
       Worksheet:
         type: "class:linkelement"
         description: ""
@@ -21124,7 +21916,7 @@ definitions:
     properties:
       Worksheet:
         type: "class:worksheet"
-        description: ""
+        description: "The class has a property called "Worksheet" of type "Worksheet" that can be accessed and modified."
       Code:
         type: "integer"
         description: ""
@@ -21138,7 +21930,7 @@ definitions:
     properties:
       Worksheets:
         type: "class:worksheets"
-        description: ""
+        description: "Property `Worksheets` of type `Worksheets` with the XML element name "worksheets" is defined in the class."
       Code:
         type: "integer"
         description: ""
@@ -21150,7 +21942,7 @@ definitions:
     properties:
       Files:
         type: "container"
-        description: ""
+        description: "The class has a property called "Files" that is a list of FileInfo objects with a default value of an empty list."
       NeedThumbnail:
         type: "boolean"
         description: ""
@@ -21183,7 +21975,7 @@ definitions:
         description: "The regional settings for workbook."
       PageWideFitOnPerSheet:
         type: "boolean"
-        description: ""
+        description: "A nullable Boolean property that determines whether the content should be fit to the entire page width on each sheet."
       PageTallFitOnPerSheet:
         type: "boolean"
         description: ""
@@ -21225,7 +22017,7 @@ definitions:
         description: "Indicates the match condition that needs to be processed for the file name."
       ProtectionType:
         type: "string"
-        description: ""
+        description: "This property defines the protection type of an object."
       Password:
         type: "string"
         description: "            "
@@ -21285,7 +22077,7 @@ definitions:
     properties:
       Name:
         type: "string"
-        description: ""
+        description: "A property "Name" of type string with a getter and setter is declared in the class."
       Value:
         type: "string"
         description: ""
@@ -21339,7 +22131,7 @@ definitions:
         description: "Spreadsheet files that require data fulling. "
       DeduplicationRegion:
         type: "class:deduplicationregion"
-        description: ""
+        description: "This class has a property named "DeduplicationRegion" of type "DeduplicationRegion" with a default value of a new instance of the "DeduplicationRegion" class."
       OutFileFormat:
         type: "string"
         description: "finish to data cleansing, outfile`s file format."
@@ -21384,7 +22176,7 @@ definitions:
         description: "Indicates applied step list. "
       Region:
         type: "string"
-        description: ""
+        description: "This class has a property named "Region" of type string with both a getter and a setter."
       OutFormat:
         type: "string"
         description: "Indicates output format "
@@ -21405,7 +22197,7 @@ definitions:
         description: "The regional settings for workbook."
       Ranges:
         type: "container"
-        description: ""
+        description: "A property named "Ranges" of type IList of Range, with a default value of an empty List of Range."
   ImportJsonRequest:
     type: "object"    
     properties:
@@ -21475,6 +22267,21 @@ definitions:
       MarkAsFinal:
         type: "boolean"
         description: "Indicates mark as final."
+  RangeConvertRequest:
+    type: "object"    
+    properties:
+      Source:
+        type: "class:range"
+        description: "Source range. "
+      ImageType:
+        type: "string"
+        description: "Target range."
+      ImageOrPrintOptions:
+        type: "class:imageorprintoptions"
+        description: "Represents the paste special options.            "
+      PageSetup:
+        type: "class:pagesetup"
+        description: ""
   RangeCopyRequest:
     type: "object"    
     properties:
@@ -21487,6 +22294,9 @@ definitions:
       Target:
         type: "class:range"
         description: "Target range."
+      TargetWorkbook:
+        type: "string"
+        description: ""
       PasteOptions:
         type: "class:pasteoptions"
         description: "Represents the paste special options.            "
@@ -21540,7 +22350,7 @@ definitions:
     properties:
       Text:
         type: "string"
-        description: ""
+        description: "A property named Text of type string that can be accessed and modified."
       FontName:
         type: "string"
         description: "Indicates font name."
@@ -21597,7 +22407,7 @@ definitions:
         description: "GridlineType"
       OutputBlankPageWhenNothingToPrint:
         type: "boolean"
-        description: ""
+        description: "Indicates whether to output a blank page when there is nothing to print."
       CheckWorkbookDefaultFont:
         type: "boolean"
         description: ""
@@ -21669,7 +22479,7 @@ definitions:
     properties:
       Name:
         type: "string"
-        description: ""
+        description: "Gets name of the font."
       Size:
         type: "floating"
         description: ""
@@ -21687,7 +22497,7 @@ definitions:
     properties:
       Rotation:
         type: "floating"
-        description: ""
+        description: "Gets or sets roation of the watermark in degrees."
       ScaleToPagePercent:
         type: "integer"
         description: ""
@@ -21723,7 +22533,7 @@ definitions:
     properties:
       AppliedOperateType:
         type: "string"
-        description: ""
+        description: "Property summary: Utilizes a custom JSON converter to serialize and deserialize an enum property."
   AppliedOperateType:
     allOf:
     - type: "object"
@@ -21849,7 +22659,7 @@ definitions:
     properties:
       AutoShowCount:
         type: "integer"
-        description: ""
+        description: "Represent the number of top or bottom items            that are automatically shown in the specified PivotTable field."
       AutoShowField:
         type: "integer"
         description: ""
@@ -21996,13 +22806,13 @@ definitions:
         description: "Gets the string value2 of the label pivot filter.            "
       Top10Filter:
         type: "class:top10filter"
-        description: ""
+        description: "A property that allows for setting and getting a Top10Filter object for filtering data."
   PivotItem:
     type: "object"    
     properties:
       Index:
         type: "integer"
-        description: ""
+        description: "Gets the index of the pivot item in cache field."
       IsHidden:
         type: "boolean"
         description: "Represents whether the specified item visible."
@@ -22019,7 +22829,7 @@ definitions:
     properties:
       AltTextDescription:
         type: "string"
-        description: ""
+        description: "Gets the description of the alt text"
       AltTextTitle:
         type: "string"
         description: ""
@@ -22231,7 +23041,7 @@ definitions:
     properties:
       PivotTableList:
         type: "container"
-        description: ""
+        description: "Xml property "PivotTableList" of the class contains a list of "LinkElement" objects with the element name "PivotTable"."
       link:
         type: "class:link"
         description: ""
@@ -22242,7 +23052,7 @@ definitions:
     properties:
       Name:
         type: "string"
-        description: ""
+        description: "The class has a public property named "Name" with a getter and setter method."
       DataSource:
         type: "class:datasource"
         description: ""
@@ -22272,6 +23082,15 @@ definitions:
     properties:
       Name:
         type: "string"
+        description: "The property "Name" is a virtual string type with a public access modifier and a default value of an empty string."
+  CharacterCountOptions:
+    type: "object"    
+    properties:
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      FileInfo:
+        type: "class:fileinfo"
         description: ""
   CharacterSetsType:
     allOf:
@@ -22279,6 +23098,66 @@ definitions:
     
     properties:
 
+  CheckExternalReferenceOptions:
+    type: "object"    
+    properties:
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
+      Worksheet:
+        type: "string"
+        description: ""
+      Ranged_Table:
+        type: "string"
+        description: ""
+      ChartIndex:
+        type: "integer"
+        description: ""
+  CheckFormulaErrorOptions:
+    type: "object"    
+    properties:
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
+      SheetName:
+        type: "string"
+        description: ""
+      ChartIndex:
+        type: "integer"
+        description: ""
+      Names:
+        type: "container"
+        description: ""
+  CombinationSourceData:
+    type: "object"    
+    properties:
+      Tag:
+        type: "string"
+        description: ""
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
+      Worksheet:
+        type: "string"
+        description: ""
+      TableName:
+        type: "string"
+        description: ""
+      CellArea:
+        type: "string"
+        description: ""
+      HasHeader:
+        type: "boolean"
+        description: ""
   ConvertTextOptions:
     allOf:
     - type: "object"
@@ -22286,7 +23165,7 @@ definitions:
     properties:
       Name:
         type: "string"
-        description: ""
+        description: "The class has a public property called "Name" of type string that can be accessed and modified."
       DataSource:
         type: "class:datasource"
         description: ""
@@ -22314,6 +23193,88 @@ definitions:
     
     properties:
 
+  ConvertWorkbookOptions:
+    allOf:
+    - type: "object"
+    
+    properties:
+      Name:
+        type: "string"
+        description: "The class has a public property named "Name" with a getter and setter method."
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
+      PageSetup:
+        type: "class:pagesetup"
+        description: ""
+      SaveOptions:
+        type: "class:saveoptions"
+        description: ""
+      ConvertFormat:
+        type: "string"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+  ConvertWorksheetOptions:
+    allOf:
+    - type: "object"
+    
+    properties:
+      Name:
+        type: "string"
+        description: "The class has a public property named "Name" with a getter and setter method."
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
+      WorksheetName:
+        type: "string"
+        description: ""
+      PageSetup:
+        type: "class:pagesetup"
+        description: ""
+      ImageOrPrintOptions:
+        type: "class:imageorprintoptions"
+        description: ""
+      ConvertFormat:
+        type: "string"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      Region:
+        type: "string"
+        description: ""
+  DataMergeType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
+  DataOutputLocation:
+    type: "object"    
+    properties:
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
+      Worksheet:
+        type: "string"
+        description: ""
+      BeginRowIndex:
+        type: "integer"
+        description: ""
+      BeginColumnIndex:
+        type: "integer"
+        description: ""
   ExtractTextOptions:
     allOf:
     - type: "object"
@@ -22321,7 +23282,7 @@ definitions:
     properties:
       Name:
         type: "string"
-        description: ""
+        description: "This class has a public property for storing and retrieving a name value."
       DataSource:
         type: "class:datasource"
         description: ""
@@ -22358,12 +23319,33 @@ definitions:
     
     properties:
 
+  MergeTableOptions:
+    type: "object"    
+    properties:
+      MainTable:
+        type: "class:combinationsourcedata"
+        description: ""
+      SecondaryTable:
+        type: "class:combinationsourcedata"
+        description: ""
+      DataMergeType:
+        type: "string"
+        description: ""
+      OverwriteMainTable:
+        type: "boolean"
+        description: ""
+      SyncDataToTargetWorkbook:
+        type: "boolean"
+        description: ""
+      MergedDataToPosition:
+        type: "class:dataoutputlocation"
+        description: ""
   RemoveCharactersByCharacter:
     type: "object"    
     properties:
       RemoveTextMethod:
         type: "string"
-        description: ""
+        description: "Property: "RemoveTextMethod" is serialized using a string representation of the enum value."
       RemoveCharacters:
         type: "container"
         description: ""
@@ -22375,7 +23357,7 @@ definitions:
     properties:
       TheFirstNCharacters:
         type: "integer"
-        description: ""
+        description: "This property allows access to a public integer named "TheFirstNCharacters" for getting and setting its value."
       TheLastNCharacters:
         type: "integer"
         description: ""
@@ -22392,7 +23374,7 @@ definitions:
     properties:
       Name:
         type: "string"
-        description: ""
+        description: "Name property with a getter and setter override that returns a string."
       DataSource:
         type: "class:datasource"
         description: ""
@@ -22424,7 +23406,7 @@ definitions:
     properties:
       Name:
         type: "string"
-        description: ""
+        description: "The class has a public property "Name" of type string that can be both read and written."
       DataSource:
         type: "class:datasource"
         description: ""
@@ -22451,7 +23433,7 @@ definitions:
     properties:
       WorksheetName:
         type: "string"
-        description: ""
+        description: "A property "WorksheetName" of type string with an initial value of an empty string.            "
       Ranges:
         type: "array<string>"
         description: ""
@@ -22460,7 +23442,7 @@ definitions:
     properties:
       Scope:
         type: "string"
-        description: ""
+        description: "Property Summary: The Scope property in the class is decorated with a JsonConverter attribute using StringEnumConverter.            "
       ScopeItems:
         type: "array<class:scopeitem>"
         description: ""
@@ -22476,12 +23458,87 @@ definitions:
     
     properties:
 
-  TrimContentOptions:
+  SpecifyCellsObject:
+    type: "object"    
+    properties:
+      WorksheetName:
+        type: "string"
+        description: ""
+      PageIndex:
+        type: "integer"
+        description: ""
+      Region:
+        type: "string"
+        description: ""
+  SpecifyWordsCountOptions:
     type: "object"    
     properties:
       DataSource:
         type: "class:datasource"
         description: ""
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
+      SearchWord:
+        type: "string"
+        description: ""
+  SplitDelimitersType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
+  SplitTextOptions:
+    allOf:
+    - type: "object"
+    
+    properties:
+      Name:
+        type: "string"
+        description: "The property "Name" is a publicly accessible and overridable property of type string in the class."
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
+      Worksheet:
+        type: "string"
+        description: ""
+      Range:
+        type: "string"
+        description: ""
+      SplitDelimitersType:
+        type: "string"
+        description: ""
+      CustomDelimiter:
+        type: "string"
+        description: ""
+      KeepDelimitersInResultingCells:
+        type: "boolean"
+        description: ""
+      KeepDelimitersPosition:
+        type: "string"
+        description: ""
+      HowToSplit:
+        type: "string"
+        description: ""
+  SplitType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
+  TablePositionInfo:
+    type: "object"    
+    properties:
+
+  TrimContentOptions:
+    type: "object"    
+    properties:
+      DataSource:
+        type: "class:datasource"
+        description: "This class has a public property named DataSource of type DataSource that has both a getter and a setter method.            "
       FileInfo:
         type: "class:fileinfo"
         description: ""
@@ -22514,7 +23571,7 @@ definitions:
     properties:
       DataSource:
         type: "class:datasource"
-        description: ""
+        description: "This class has a public property named "DataSource" of type DataSource that has both a getter and a setter.            "
       FileInfo:
         type: "class:fileinfo"
         description: ""
@@ -22530,12 +23587,21 @@ definitions:
     
     properties:
 
+  WordsCountOptions:
+    type: "object"    
+    properties:
+      DataSource:
+        type: "class:datasource"
+        description: ""
+      FileInfo:
+        type: "class:fileinfo"
+        description: ""
   CellValue:
     type: "object"    
     properties:
       rowIndex:
         type: "integer"
-        description: ""
+        description: "A public integer property called "rowIndex" with both getter and setter."
       columnIndex:
         type: "integer"
         description: ""
@@ -22562,7 +23628,7 @@ definitions:
         description: "data parser method.             ToDateTime            ToString"
       CustomStyle:
         type: "string"
-        description: ""
+        description: "A property that allows storing and retrieving custom styling information for an object."
   Import2DimensionDoubleArrayOption:
     allOf:
     - type: "object"
@@ -22570,7 +23636,7 @@ definitions:
     properties:
       FirstRow:
         type: "integer"
-        description: ""
+        description: "The class has a property named "FirstRow" of type integer with get and set accessors."
       FirstColumn:
         type: "integer"
         description: ""
@@ -22599,7 +23665,7 @@ definitions:
     properties:
       FirstRow:
         type: "integer"
-        description: ""
+        description: "This property allows getting and setting the value of the first row in a class."
       FirstColumn:
         type: "integer"
         description: ""
@@ -22628,7 +23694,7 @@ definitions:
     properties:
       FirstRow:
         type: "integer"
-        description: ""
+        description: "This class has a property called FirstRow of type integer with a public getter and setter."
       FirstColumn:
         type: "integer"
         description: ""
@@ -22657,7 +23723,7 @@ definitions:
     properties:
       BatchData:
         type: "container"
-        description: ""
+        description: "The class has a property named BatchData which is a list of CellValue objects and can be both read and written."
       DestinationWorksheet:
         type: "string"
         description: ""
@@ -22680,7 +23746,7 @@ definitions:
     properties:
       SeparatorString:
         type: "string"
-        description: ""
+        description: "A property named SeparatorString of type string that can be accessed and modified publicly."
       ConvertNumericData:
         type: "boolean"
         description: ""
@@ -22724,7 +23790,7 @@ definitions:
     properties:
       FirstRow:
         type: "integer"
-        description: ""
+        description: "This class has a public property named FirstRow of type integer with both get and set accessors."
       FirstColumn:
         type: "integer"
         description: ""
@@ -22756,7 +23822,7 @@ definitions:
     properties:
       FirstRow:
         type: "integer"
-        description: ""
+        description: "This class has a public property named "FirstRow" of type integer with both get and set accessors."
       FirstColumn:
         type: "integer"
         description: ""
@@ -22789,7 +23855,7 @@ definitions:
         description: "Destination worksheet name.  "
       IsInsert:
         type: "boolean"
-        description: ""
+        description: "A boolean property `IsInsert` that can be both read and written."
       ImportDataType:
         type: "string"
         description: ""
@@ -22806,7 +23872,7 @@ definitions:
     properties:
       UpperLeftRow:
         type: "integer"
-        description: ""
+        description: "A property "UpperLeftRow" of type integer with a public getter and setter is defined."
       UpperLeftColumn:
         type: "integer"
         description: ""
@@ -22842,7 +23908,7 @@ definitions:
     properties:
       SheetName:
         type: "string"
-        description: ""
+        description: ""Property SheetName of type string with a public get and set accessor.""
       RowIndex:
         type: "integer"
         description: ""
@@ -22856,7 +23922,7 @@ definitions:
     properties:
       FirstRow:
         type: "integer"
-        description: ""
+        description: "A property named "FirstRow" of type integer with both a getter and a setter is defined in the class."
       FirstColumn:
         type: "integer"
         description: ""
@@ -23029,7 +24095,7 @@ definitions:
         description: "Gets or sets the foreground . "
       Format:
         type: "string"
-        description: ""
+        description: "This class has a property named "Format" of type string with both getter and setter methods."
       InvertIfNegative:
         type: "boolean"
         description: "If the property is true and the value of chart point is a negative number,            the foreground color and background color will be exchanged. "
@@ -23159,7 +24225,7 @@ definitions:
     properties:
       AutoShapeList:
         type: "container"
-        description: ""
+        description: "Property Summary: Contains a list of LinkElement objects identified by the XML element "autoshape"."
       link:
         type: "class:link"
         description: ""
@@ -23530,7 +24596,7 @@ definitions:
         description: "Gets or sets the number of list lines displayed in the drop-down portion of a combo box."
       InputRange:
         type: "string"
-        description: ""
+        description: "Property Summary: Contains a public string property named "InputRange" with both get and set accessors."
       SelectedCell:
         type: "class:linkelement"
         description: "Gets the selected cell in the input range of the combo box."
@@ -23801,7 +24867,7 @@ definitions:
     properties:
       FormType:
         type: "string"
-        description: ""
+        description: "A property named "FormType" of type string which can be both accessed and modified."
       CheckedValue:
         type: "string"
         description: ""
@@ -23971,7 +25037,7 @@ definitions:
     properties:
       FormList:
         type: "container"
-        description: ""
+        description: "Property: FormList is a list of LinkElements that are serialized as "form" XML elements."
       link:
         type: "class:link"
         description: ""
@@ -23995,7 +25061,7 @@ definitions:
     properties:
       Color:
         type: "class:color"
-        description: ""
+        description: "Color property of type DTO.Color that has a getter and a setter."
       Position:
         type: "floating"
         description: ""
@@ -24610,7 +25676,7 @@ definitions:
     properties:
       InputRange:
         type: "string"
-        description: ""
+        description: "This property stores the input range for the class."
       ItemCount:
         type: "integer"
         description: "Gets the number of items in the list box."
@@ -24884,7 +25950,7 @@ definitions:
     properties:
       OleObjectList:
         type: "container"
-        description: ""
+        description: "Property Summary: Contains a list of elements identified as "oleobject" within XML data."
       link:
         type: "class:link"
         description: ""
@@ -25068,7 +26134,7 @@ definitions:
         description: "Gets the original width of the picture."
       ImageFormat:
         type: "string"
-        description: ""
+        description: "This class has a property called "ImageFormat" that allows getting and setting a string value."
       SourceFullName:
         type: "string"
         description: "Gets or sets the path and name of the source file for the linked image."
@@ -25190,7 +26256,7 @@ definitions:
     properties:
       PictureList:
         type: "container"
-        description: ""
+        description: "Property Summary: Contains a list of elements with the XML element name "picture.""
       link:
         type: "class:link"
         description: ""
@@ -25719,7 +26785,7 @@ definitions:
     properties:
       ShapeList:
         type: "container"
-        description: ""
+        description: "A public property named "ShapeList" of type List LinkElement for storing a collection of link elements."
       link:
         type: "class:link"
         description: ""
@@ -26002,7 +27068,7 @@ definitions:
         description: "Gets or sets picture format option. "
       Image:
         type: "class:linkelement"
-        description: ""
+        description: "The class has a public property named "Image" of type LinkElement that can be accessed and set."
   TilePicOption:
     type: "object"    
     properties:
@@ -26456,7 +27522,7 @@ definitions:
     properties:
       ChartPointList:
         type: "container"
-        description: ""
+        description: "This class has a property named ChartPointList of type List ChartPoint  with an XmlElement attribute "ChartPoint"."
       link:
         type: "class:link"
         description: ""
@@ -26467,7 +27533,7 @@ definitions:
     properties:
       ChartList:
         type: "container"
-        description: ""
+        description: "A property named ChartList of type List LinkElement  that is publicly accessible with both read and write capabilities."
       link:
         type: "class:link"
         description: ""
@@ -26597,7 +27663,7 @@ definitions:
         description: "Indicates the text is auto generated."
       IsDeleted:
         type: "boolean"
-        description: ""
+        description: "A nullable boolean property "IsDeleted" indicating whether an object has been deleted."
       LinkedSource:
         type: "string"
         description: ""
@@ -26692,7 +27758,7 @@ definitions:
     properties:
       LinkedSource:
         type: "string"
-        description: ""
+        description: "A public property named "LinkedSource" with a string data type can be set and accessed."
       RotationAngle:
         type: "integer"
         description: ""
@@ -26762,7 +27828,7 @@ definitions:
     properties:
       Link:
         type: "class:link"
-        description: ""
+        description: "A property named "Link" of type "Link" that can be accessed and modified."
       Amount:
         type: "floating"
         description: "Represents amount of error bar.                         The amount must be greater than or equal to zero."
@@ -26918,7 +27984,7 @@ definitions:
     properties:
       legendEntryList:
         type: "container"
-        description: ""
+        description: "Property: Utilizes XML element "LengendEntry" to represent a list of LinkElement items in the class."
       link:
         type: "class:link"
         description: ""
@@ -27163,7 +28229,7 @@ definitions:
     properties:
       CategoryData:
         type: "string"
-        description: ""
+        description: "This property allows setting and getting data for the category."
       IsColorVaried:
         type: "boolean"
         description: ""
@@ -27329,7 +28395,7 @@ definitions:
         description: "Represents whether the title is visible."
       LinkedSource:
         type: "string"
-        description: ""
+        description: "A property named LinkedSource with both set and get accessors is defined."
       RotationAngle:
         type: "integer"
         description: ""
@@ -27388,7 +28454,7 @@ definitions:
     properties:
       link:
         type: "class:link"
-        description: ""
+        description: "The class has a property named "link" of type "Link" that can be accessed and modified."
       Backward:
         type: "floating"
         description: "Returns or sets the number of periods (or units on a scatter chart) that the trendline extends backward.                         The number of periods must be greater than or equal to zero.                        If the chart type is column ,the number of periods must be between 0 and 0.5"
@@ -27489,7 +28555,7 @@ definitions:
     properties:
       TrendlineList:
         type: "container"
-        description: ""
+        description: "This property allows for a list of Trendline objects to be stored under the XmlElement "TrendLine"."
       link:
         type: "class:link"
         description: ""
@@ -27557,7 +28623,7 @@ definitions:
         description: "The true position index value of the column."
       Title:
         type: "string"
-        description: ""
+        description: "This class has a public property "Title" of type string with a default value of an empty string."
       RepetitionRate:
         type: "floating"
         description: "When the repetition rate is high, can it be viewed as a group display?"

@@ -29,12 +29,18 @@ func TestDataProcessingController_PostWorkbookDataCleansing(t *testing.T) {
     var dataCleansing = new(DataCleansing)
      dataCleansing.NeedFillData =  true      
      dataCleansing.DataFill =        dataCleansingDataFill      
-
     request := new (PostWorkbookDataCleansingRequest)
     request.Name =         remoteName    
+
+
     request.DataCleansing =         dataCleansing    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorkbookDataCleansing(request)
 	if err != nil {
 		t.Error(err)
@@ -61,12 +67,18 @@ func TestDataProcessingController_PostWorkbookDataDeduplication(t *testing.T) {
     var deduplicationRegionRanges = []Range   {}    
     var deduplicationRegion = new(DeduplicationRegion)
      deduplicationRegion.Ranges =        deduplicationRegionRanges      
-
     request := new (PostWorkbookDataDeduplicationRequest)
     request.Name =         remoteName    
+
+
     request.DeduplicationRegion =         deduplicationRegion    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorkbookDataDeduplication(request)
 	if err != nil {
 		t.Error(err)
@@ -96,12 +108,18 @@ func TestDataProcessingController_PostWorkbookDataFill(t *testing.T) {
      dataFillDataFillDefaultValue.DefaultBoolean =  false      
     var dataFill = new(DataFill)
      dataFill.DataFillDefaultValue =        dataFillDataFillDefaultValue      
-
     request := new (PostWorkbookDataFillRequest)
     request.Name =         remoteName    
+
+
     request.DataFill =         dataFill    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorkbookDataFill(request)
 	if err != nil {
 		t.Error(err)
@@ -158,9 +176,9 @@ func TestDataProcessingController_PostDataTransformation(t *testing.T) {
     var dataTransformationRequest = new(DataTransformationRequest)
      dataTransformationRequest.LoadData =        dataTransformationRequestLoadData      
      dataTransformationRequest.AppliedSteps =        dataTransformationRequestAppliedSteps      
-
     request := new (PostDataTransformationRequest)
     request.DataTransformationRequest =         dataTransformationRequest    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostDataTransformation(request)
 	if err != nil {
 		t.Error(err)

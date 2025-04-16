@@ -20,11 +20,15 @@ func TestXmlController_PostWorkbookExportXML(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PostWorkbookExportXMLRequest)
     request.Name =         remoteName    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorkbookExportXML(request)
 	if err != nil {
 		t.Error(err)
@@ -65,12 +69,18 @@ func TestXmlController_PostWorkbookImportXML(t *testing.T) {
     var importXMLRequest = new(ImportXMLRequest)
      importXMLRequest.XMLFileSource =        importXMLRequestXMLFileSource      
      importXMLRequest.ImportPosition =        importXMLRequestImportPosition      
-
     request := new (PostWorkbookImportXMLRequest)
     request.Name =         remoteName    
+
+
     request.ImportXMLRequest =         importXMLRequest    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorkbookImportXML(request)
 	if err != nil {
 		t.Error(err)

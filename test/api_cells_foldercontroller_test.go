@@ -20,10 +20,12 @@ func TestFolderController_GetFilesList(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetFilesListRequest)
     request.Path =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetFilesList(request)
 	if err != nil {
 		t.Error(err)
@@ -47,10 +49,12 @@ func TestFolderController_CreateFolder(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (CreateFolderRequest)
     request.Path =         "OutResult/NewFolder"    
+
+
     request.StorageName =         ""    
+
     httpResponse, err := GetBaseTest().CellsApi.CreateFolder(request)
 	if err != nil {
 		t.Error(err)
@@ -74,12 +78,18 @@ func TestFolderController_CopyFolder(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (CopyFolderRequest)
     request.SrcPath =         remoteFolder    
+
+
     request.DestPath =         "OutResult/Create"    
+
+
     request.SrcStorageName =         ""    
+
+
     request.DestStorageName =         ""    
+
     httpResponse, err := GetBaseTest().CellsApi.CopyFolder(request)
 	if err != nil {
 		t.Error(err)
@@ -103,12 +113,18 @@ func TestFolderController_MoveFolder(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (MoveFolderRequest)
     request.SrcPath =         "OutResult/Create"    
+
+
     request.DestPath =         "OutResult/Move"    
+
+
     request.SrcStorageName =         ""    
+
+
     request.DestStorageName =         ""    
+
     httpResponse, err := GetBaseTest().CellsApi.MoveFolder(request)
 	if err != nil {
 		t.Error(err)
@@ -132,11 +148,15 @@ func TestFolderController_DeleteFolder(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteFolderRequest)
     request.Path =         "OutResult/Create"    
+
+
     request.StorageName =         ""    
+
+
     request.Recursive =   true    
+
     httpResponse, err := GetBaseTest().CellsApi.DeleteFolder(request)
 	if err != nil {
 		t.Error(err)

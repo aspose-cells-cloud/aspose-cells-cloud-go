@@ -20,12 +20,18 @@ func TestWorksheetValidationsController_GetWorksheetValidations(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetWorksheetValidationsRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetValidations(request)
 	if err != nil {
 		t.Error(err)
@@ -49,13 +55,21 @@ func TestWorksheetValidationsController_GetWorksheetValidation(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetWorksheetValidationRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.ValidationIndex =  int64(0)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetValidation(request)
 	if err != nil {
 		t.Error(err)
@@ -79,13 +93,21 @@ func TestWorksheetValidationsController_PutWorksheetValidation(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PutWorksheetValidationRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Range_ =         "A1:C10"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetValidation(request)
 	if err != nil {
 		t.Error(err)
@@ -112,14 +134,24 @@ func TestWorksheetValidationsController_PostWorksheetValidation(t *testing.T) {
     var validation = new(Validation)
      validation.Formula1 =        "=A1"      
      validation.Type_ =        "Custom"      
-
     request := new (PostWorksheetValidationRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.ValidationIndex =  int64(0)        
+
+
     request.Validation =         validation    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetValidation(request)
 	if err != nil {
 		t.Error(err)
@@ -143,13 +175,21 @@ func TestWorksheetValidationsController_DeleteWorksheetValidation(t *testing.T) 
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteWorksheetValidationRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.ValidationIndex =  int64(0)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetValidation(request)
 	if err != nil {
 		t.Error(err)
@@ -173,12 +213,18 @@ func TestWorksheetValidationsController_DeleteWorksheetValidations(t *testing.T)
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteWorksheetValidationsRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetValidations(request)
 	if err != nil {
 		t.Error(err)

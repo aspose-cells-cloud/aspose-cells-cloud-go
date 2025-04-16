@@ -20,12 +20,18 @@ func TestAutoFilterController_GetWorksheetAutoFilter(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetWorksheetAutoFilterRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetAutoFilter(request)
 	if err != nil {
 		t.Error(err)
@@ -49,18 +55,36 @@ func TestAutoFilterController_PutWorksheetDateFilter(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PutWorksheetDateFilterRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Range_ =         "A1:B1"    
+
+
     request.FieldIndex =  int64(0)        
+
+
     request.DateTimeGroupingType =         "Year"    
+
+
     request.Year =  int64(1920)        
+
+
     request.MatchBlanks =   false    
+
+
     request.Refresh =   true    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetDateFilter(request)
 	if err != nil {
 		t.Error(err)
@@ -84,17 +108,33 @@ func TestAutoFilterController_PutWorksheetFilter(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PutWorksheetFilterRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Range_ =         "A1:B1"    
+
+
     request.FieldIndex =  int64(0)        
+
+
     request.Criteria =         "Year"    
+
+
     request.MatchBlanks =   false    
+
+
     request.Refresh =   true    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetFilter(request)
 	if err != nil {
 		t.Error(err)
@@ -118,18 +158,36 @@ func TestAutoFilterController_PutWorksheetIconFilter(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PutWorksheetIconFilterRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Range_ =         "A1:B1"    
+
+
     request.FieldIndex =  int64(0)        
+
+
     request.IconSetType =         "ArrowsGray3"    
+
+
     request.IconId =  int64(1)        
+
+
     request.MatchBlanks =   false    
+
+
     request.Refresh =   true    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetIconFilter(request)
 	if err != nil {
 		t.Error(err)
@@ -153,18 +211,36 @@ func TestAutoFilterController_PutWorksheetCustomFilter(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PutWorksheetCustomFilterRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Range_ =         "A1:B1"    
+
+
     request.FieldIndex =  int64(0)        
+
+
     request.OperatorType1 =         "LessOrEqual"    
+
+
     request.Criteria1 =         "1"    
+
+
     request.MatchBlanks =   false    
+
+
     request.Refresh =   true    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetCustomFilter(request)
 	if err != nil {
 		t.Error(err)
@@ -188,17 +264,33 @@ func TestAutoFilterController_PutWorksheetDynamicFilter(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PutWorksheetDynamicFilterRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Range_ =         "A1:B1"    
+
+
     request.FieldIndex =  int64(0)        
+
+
     request.DynamicFilterType =         "BelowAverage"    
+
+
     request.MatchBlanks =   false    
+
+
     request.Refresh =   true    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetDynamicFilter(request)
 	if err != nil {
 		t.Error(err)
@@ -222,19 +314,39 @@ func TestAutoFilterController_PutWorksheetFilterTop10(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PutWorksheetFilterTop10Request)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Range_ =         "A1:B1"    
+
+
     request.FieldIndex =  int64(0)        
+
+
     request.IsTop =   true    
+
+
     request.IsPercent =   true    
+
+
     request.ItemCount =  int64(1)        
+
+
     request.MatchBlanks =   false    
+
+
     request.Refresh =   true    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetFilterTop10(request)
 	if err != nil {
 		t.Error(err)
@@ -268,17 +380,33 @@ func TestAutoFilterController_PutWorksheetColorFilter(t *testing.T) {
     var colorFilter = new(ColorFilterRequest)
      colorFilter.Pattern =        "Solid"      
      colorFilter.ForegroundColor =        colorFilterForegroundColor      
-
     request := new (PutWorksheetColorFilterRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Range_ =         "A1:B1"    
+
+
     request.FieldIndex =  int64(0)        
+
+
     request.ColorFilter =         colorFilter    
+
+
     request.MatchBlanks =   true    
+
+
     request.Refresh =   true    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetColorFilter(request)
 	if err != nil {
 		t.Error(err)
@@ -302,13 +430,21 @@ func TestAutoFilterController_PostWorksheetMatchBlanks(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PostWorksheetMatchBlanksRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.FieldIndex =  int64(0)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetMatchBlanks(request)
 	if err != nil {
 		t.Error(err)
@@ -332,13 +468,21 @@ func TestAutoFilterController_PostWorksheetMatchNonBlanks(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PostWorksheetMatchNonBlanksRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.FieldIndex =  int64(0)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetMatchNonBlanks(request)
 	if err != nil {
 		t.Error(err)
@@ -362,12 +506,18 @@ func TestAutoFilterController_PostWorksheetAutoFilterRefresh(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PostWorksheetAutoFilterRefreshRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetAutoFilterRefresh(request)
 	if err != nil {
 		t.Error(err)
@@ -391,15 +541,27 @@ func TestAutoFilterController_DeleteWorksheetDateFilter(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteWorksheetDateFilterRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.FieldIndex =  int64(0)        
+
+
     request.DateTimeGroupingType =         "Year"    
+
+
     request.Year =  int64(1920)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetDateFilter(request)
 	if err != nil {
 		t.Error(err)
@@ -423,14 +585,24 @@ func TestAutoFilterController_DeleteWorksheetFilter(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteWorksheetFilterRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.FieldIndex =  int64(0)        
+
+
     request.Criteria =         "year"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetFilter(request)
 	if err != nil {
 		t.Error(err)

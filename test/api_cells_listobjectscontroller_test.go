@@ -20,12 +20,18 @@ func TestListObjectsController_GetWorksheetListObjects(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetWorksheetListObjectsRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet7"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetListObjects(request)
 	if err != nil {
 		t.Error(err)
@@ -49,14 +55,24 @@ func TestListObjectsController_GetWorksheetListObject(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetWorksheetListObjectRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet7"    
+
+
     request.Listobjectindex =  int64(0)        
+
+
     request.Format =         "pdf"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetListObject(request)
 	if err != nil {
 		t.Error(err)
@@ -80,19 +96,39 @@ func TestListObjectsController_PutWorksheetListObject(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PutWorksheetListObjectRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet7"    
+
+
     request.StartRow =  int64(1)        
+
+
     request.StartColumn =  int64(1)        
+
+
     request.EndRow =  int64(6)        
+
+
     request.EndColumn =  int64(6)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.HasHeaders =   true    
+
+
     request.DisplayName =         "true"    
+
+
     request.ShowTotals =   false    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetListObject(request)
 	if err != nil {
 		t.Error(err)
@@ -116,12 +152,18 @@ func TestListObjectsController_DeleteWorksheetListObjects(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteWorksheetListObjectsRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet7"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetListObjects(request)
 	if err != nil {
 		t.Error(err)
@@ -145,13 +187,21 @@ func TestListObjectsController_DeleteWorksheetListObject(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteWorksheetListObjectRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet7"    
+
+
     request.ListObjectIndex =  int64(0)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetListObject(request)
 	if err != nil {
 		t.Error(err)
@@ -177,14 +227,24 @@ func TestListObjectsController_PostWorksheetListObject(t *testing.T) {
  
     var listObject = new(ListObject)
      listObject.ShowHeaderRow =  true      
-
     request := new (PostWorksheetListObjectRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet7"    
+
+
     request.ListObjectIndex =  int64(0)        
+
+
     request.ListObject =         listObject    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetListObject(request)
 	if err != nil {
 		t.Error(err)
@@ -208,13 +268,21 @@ func TestListObjectsController_PostWorksheetListObjectConvertToRange(t *testing.
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PostWorksheetListObjectConvertToRangeRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet7"    
+
+
     request.ListObjectIndex =  int64(0)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetListObjectConvertToRange(request)
 	if err != nil {
 		t.Error(err)
@@ -249,15 +317,27 @@ func TestListObjectsController_PostWorksheetListObjectSummarizeWithPivotTable(t 
      createPivotTableRequest.PivotFieldColumns =        createPivotTableRequestPivotFieldColumns      
      createPivotTableRequest.PivotFieldData =        createPivotTableRequestPivotFieldData      
      createPivotTableRequest.PivotFieldRows =        createPivotTableRequestPivotFieldRows      
-
     request := new (PostWorksheetListObjectSummarizeWithPivotTableRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet7"    
+
+
     request.ListObjectIndex =  int64(0)        
+
+
     request.DestsheetName =         "Sheet2"    
+
+
     request.CreatePivotTableRequest =         createPivotTableRequest    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetListObjectSummarizeWithPivotTable(request)
 	if err != nil {
 		t.Error(err)
@@ -283,14 +363,24 @@ func TestListObjectsController_PostWorksheetListObjectSortTable(t *testing.T) {
  
     var dataSorter = new(DataSorter)
      dataSorter.CaseSensitive =  true      
-
     request := new (PostWorksheetListObjectSortTableRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet7"    
+
+
     request.ListObjectIndex =  int64(0)        
+
+
     request.DataSorter =         dataSorter    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetListObjectSortTable(request)
 	if err != nil {
 		t.Error(err)
@@ -316,15 +406,27 @@ func TestListObjectsController_PostWorksheetListColumn(t *testing.T) {
  
     var listColumn = new(ListColumn)
      listColumn.Name =        "test cloumn"      
-
     request := new (PostWorksheetListColumnRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet7"    
+
+
     request.ListObjectIndex =  int64(0)        
+
+
     request.ColumnIndex =  int64(0)        
+
+
     request.ListColumn =         listColumn    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetListColumn(request)
 	if err != nil {
 		t.Error(err)
@@ -352,14 +454,24 @@ func TestListObjectsController_PostWorksheetListColumnsTotal(t *testing.T) {
      tableTotalRequeststableTotalRequest0.ListColumnIndex = int64(1)          
      tableTotalRequeststableTotalRequest0.TotalsCalculation =        "Average"      
     var tableTotalRequests = []TableTotalRequest   {*       tableTotalRequeststableTotalRequest0    }    
-
     request := new (PostWorksheetListColumnsTotalRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet7"    
+
+
     request.ListObjectIndex =  int64(0)        
+
+
     request.TableTotalRequests =         tableTotalRequests    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetListColumnsTotal(request)
 	if err != nil {
 		t.Error(err)
@@ -383,13 +495,21 @@ func TestListObjectsController_PostWorksheetListObjectRemoveDuplicates(t *testin
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PostWorksheetListObjectRemoveDuplicatesRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet2"    
+
+
     request.ListObjectIndex =  int64(0)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetListObjectRemoveDuplicates(request)
 	if err != nil {
 		t.Error(err)
@@ -413,15 +533,27 @@ func TestListObjectsController_PostWorksheetListObjectInsertSlicer(t *testing.T)
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PostWorksheetListObjectInsertSlicerRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.ListObjectIndex =  int64(0)        
+
+
     request.ColumnIndex =  int64(2)        
+
+
     request.DestCellName =         "j9"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetListObjectInsertSlicer(request)
 	if err != nil {
 		t.Error(err)

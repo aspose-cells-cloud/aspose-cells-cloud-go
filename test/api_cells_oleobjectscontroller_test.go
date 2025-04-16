@@ -20,12 +20,18 @@ func TestOleObjectsController_GetWorksheetOleObjects(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetWorksheetOleObjectsRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet6"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetOleObjects(request)
 	if err != nil {
 		t.Error(err)
@@ -49,14 +55,24 @@ func TestOleObjectsController_GetWorksheetOleObject(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetWorksheetOleObjectRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet6"    
+
+
     request.ObjectNumber =  int64(0)        
+
+
     request.Format =         "png"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetOleObject(request)
 	if err != nil {
 		t.Error(err)
@@ -80,12 +96,18 @@ func TestOleObjectsController_DeleteWorksheetOleObjects(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteWorksheetOleObjectsRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet6"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetOleObjects(request)
 	if err != nil {
 		t.Error(err)
@@ -109,13 +131,21 @@ func TestOleObjectsController_DeleteWorksheetOleObject(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteWorksheetOleObjectRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet6"    
+
+
     request.OleObjectIndex =  int64(0)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetOleObject(request)
 	if err != nil {
 		t.Error(err)
@@ -144,14 +174,24 @@ func TestOleObjectsController_PostUpdateWorksheetOleObject(t *testing.T) {
      ole.Right = int64(10)          
      ole.Height = int64(90)          
      ole.Width = int64(78)          
-
     request := new (PostUpdateWorksheetOleObjectRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet6"    
+
+
     request.OleObjectIndex =  int64(0)        
+
+
     request.Ole =         ole    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostUpdateWorksheetOleObject(request)
 	if err != nil {
 		t.Error(err)
@@ -189,18 +229,36 @@ func TestOleObjectsController_PutWorksheetOleObject(t *testing.T) {
     wordJPGRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(wordJPGRequest )
  
-
     request := new (PutWorksheetOleObjectRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet6"    
+
+
     request.UpperLeftRow =  int64(1)        
+
+
     request.UpperLeftColumn =  int64(1)        
+
+
     request.Height =  int64(100)        
+
+
     request.Width =  int64(80)        
+
+
     request.OleFile =         "OLEDoc.docx"    
+
+
     request.ImageFile =         "word.jpg"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetOleObject(request)
 	if err != nil {
 		t.Error(err)

@@ -20,12 +20,18 @@ func TestPageSetupController_GetPageSetup(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetPageSetupRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetPageSetup(request)
 	if err != nil {
 		t.Error(err)
@@ -53,13 +59,21 @@ func TestPageSetupController_PostPageSetup(t *testing.T) {
      pageSetup.BlackAndWhite =  true      
      pageSetup.CenterHorizontally =  true      
      pageSetup.CenterVertically =  true      
-
     request := new (PostPageSetupRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.PageSetup =         pageSetup    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostPageSetup(request)
 	if err != nil {
 		t.Error(err)
@@ -83,12 +97,18 @@ func TestPageSetupController_DeleteHeaderFooter(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteHeaderFooterRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DeleteHeaderFooter(request)
 	if err != nil {
 		t.Error(err)
@@ -112,12 +132,18 @@ func TestPageSetupController_GetHeader(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetHeaderRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetHeader(request)
 	if err != nil {
 		t.Error(err)
@@ -141,15 +167,27 @@ func TestPageSetupController_PostHeader(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PostHeaderRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Section =  int64(1)        
+
+
     request.Script =         "Update add header"    
+
+
     request.IsFirstPage =   true    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostHeader(request)
 	if err != nil {
 		t.Error(err)
@@ -173,12 +211,18 @@ func TestPageSetupController_GetFooter(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetFooterRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetFooter(request)
 	if err != nil {
 		t.Error(err)
@@ -202,15 +246,27 @@ func TestPageSetupController_PostFooter(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PostFooterRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Section =  int64(1)        
+
+
     request.Script =         "add footer script"    
+
+
     request.IsFirstPage =   true    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostFooter(request)
 	if err != nil {
 		t.Error(err)
@@ -234,12 +290,18 @@ func TestPageSetupController_PostFitWideToPages(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PostFitWideToPagesRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostFitWideToPages(request)
 	if err != nil {
 		t.Error(err)
@@ -263,12 +325,18 @@ func TestPageSetupController_PostFitTallToPages(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PostFitTallToPagesRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostFitTallToPages(request)
 	if err != nil {
 		t.Error(err)

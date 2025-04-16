@@ -20,13 +20,21 @@ func TestChartAreaController_GetChartArea(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetChartAreaRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet4"    
+
+
     request.ChartIndex =  int64(0)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetChartArea(request)
 	if err != nil {
 		t.Error(err)
@@ -50,13 +58,21 @@ func TestChartAreaController_GetChartAreaFillFormat(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetChartAreaFillFormatRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet4"    
+
+
     request.ChartIndex =  int64(0)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetChartAreaFillFormat(request)
 	if err != nil {
 		t.Error(err)
@@ -80,13 +96,21 @@ func TestChartAreaController_GetChartAreaBorder(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetChartAreaBorderRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet4"    
+
+
     request.ChartIndex =  int64(0)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetChartAreaBorder(request)
 	if err != nil {
 		t.Error(err)

@@ -29,9 +29,9 @@ func TestTextProcessingController_PostAddTextContent(t *testing.T) {
      addTextOptions.Worksheet =        "202401"      
      addTextOptions.SelectPoistion =        "AtTheBeginning"      
      addTextOptions.SkipEmptyCells =  true      
-
     request := new (PostAddTextContentRequest)
     request.AddTextOptions =         addTextOptions    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostAddTextContent(request)
 	if err != nil {
 		t.Error(err)
@@ -67,9 +67,9 @@ func TestTextProcessingController_PostTrimContent(t *testing.T) {
      trimContentOptions.TrimSpaceBetweenWordTo1 =  true      
      trimContentOptions.RemoveAllLineBreaks =  true      
      trimContentOptions.ScopeOptions =        trimContentOptionsScopeOptions      
-
     request := new (PostTrimContentRequest)
     request.TrimContentOptions =         trimContentOptions    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostTrimContent(request)
 	if err != nil {
 		t.Error(err)
@@ -102,9 +102,9 @@ func TestTextProcessingController_PostUpdateWordCase(t *testing.T) {
      wordCaseOptions.DataSource =        wordCaseOptionsDataSource      
      wordCaseOptions.WordCaseType =        "None"      
      wordCaseOptions.ScopeOptions =        wordCaseOptionsScopeOptions      
-
     request := new (PostUpdateWordCaseRequest)
     request.WordCaseOptions =         wordCaseOptions    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostUpdateWordCase(request)
 	if err != nil {
 		t.Error(err)

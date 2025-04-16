@@ -20,9 +20,9 @@ func TestStorageController_StorageExists(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (StorageExistsRequest)
     request.StorageName =         "Default"    
+
     _, httpResponse, err := GetBaseTest().CellsApi.StorageExists(request)
 	if err != nil {
 		t.Error(err)
@@ -46,11 +46,15 @@ func TestStorageController_ObjectExists(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (ObjectExistsRequest)
     request.Path =         "TestData/In/Book1.xlsx"    
+
+
     request.StorageName =         ""    
+
+
     request.VersionId =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.ObjectExists(request)
 	if err != nil {
 		t.Error(err)
@@ -74,9 +78,9 @@ func TestStorageController_GetDiscUsage(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetDiscUsageRequest)
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetDiscUsage(request)
 	if err != nil {
 		t.Error(err)
@@ -100,10 +104,12 @@ func TestStorageController_GetFileVersions(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetFileVersionsRequest)
     request.Path =         "TestData/In/Book1.xlsx"    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetFileVersions(request)
 	if err != nil {
 		t.Error(err)

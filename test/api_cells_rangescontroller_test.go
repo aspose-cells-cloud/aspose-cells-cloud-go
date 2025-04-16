@@ -34,13 +34,21 @@ func TestRangesController_PostWorksheetCellsRangesCopy(t *testing.T) {
      rangeOperate.Operate =        "copydata"      
      rangeOperate.Source =        rangeOperateSource      
      rangeOperate.Target =        rangeOperateTarget      
-
     request := new (PostWorksheetCellsRangesCopyRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.RangeOperate =         rangeOperate    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetCellsRangesCopy(request)
 	if err != nil {
 		t.Error(err)
@@ -69,13 +77,21 @@ func TestRangesController_PostWorksheetCellsRangeMerge(t *testing.T) {
      range_.ColumnWidth = 10.0      
      range_.FirstRow = int64(1)          
      range_.RowCount = int64(10)          
-
     request := new (PostWorksheetCellsRangeMergeRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Range_ =         range_    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetCellsRangeMerge(request)
 	if err != nil {
 		t.Error(err)
@@ -104,13 +120,21 @@ func TestRangesController_PostWorksheetCellsRangeUnMerge(t *testing.T) {
      range_.ColumnWidth = 10.0      
      range_.FirstRow = int64(1)          
      range_.RowCount = int64(10)          
-
     request := new (PostWorksheetCellsRangeUnMergeRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Range_ =         range_    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetCellsRangeUnMerge(request)
 	if err != nil {
 		t.Error(err)
@@ -146,13 +170,21 @@ func TestRangesController_PostWorksheetCellsRangeStyle(t *testing.T) {
     var rangeOperate = new(RangeSetStyleRequest)
      rangeOperate.Style =        rangeOperateStyle      
      rangeOperate.Range_ =        rangeOperateRange      
-
     request := new (PostWorksheetCellsRangeStyleRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.RangeOperate =         rangeOperate    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetCellsRangeStyle(request)
 	if err != nil {
 		t.Error(err)
@@ -176,17 +208,33 @@ func TestRangesController_GetWorksheetCellsRangeValue(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetWorksheetCellsRangeValueRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Namerange =         "Name_2"    
+
+
     request.FirstRow =  int64(0)        
+
+
     request.FirstColumn =  int64(0)        
+
+
     request.RowCount =  int64(3)        
+
+
     request.ColumnCount =  int64(2)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetCellsRangeValue(request)
 	if err != nil {
 		t.Error(err)
@@ -215,16 +263,30 @@ func TestRangesController_PostWorksheetCellsRangeValue(t *testing.T) {
      range_.ColumnWidth = 10.0      
      range_.FirstRow = int64(1)          
      range_.RowCount = int64(10)          
-
     request := new (PostWorksheetCellsRangeValueRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Range_ =         range_    
+
+
     request.Value =         "100"    
+
+
     request.IsConverted =   true    
+
+
     request.SetStyle =   true    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetCellsRangeValue(request)
 	if err != nil {
 		t.Error(err)
@@ -253,15 +315,27 @@ func TestRangesController_PostWorksheetCellsRangeMoveTo(t *testing.T) {
      range_.ColumnWidth = 10.0      
      range_.FirstRow = int64(1)          
      range_.RowCount = int64(10)          
-
     request := new (PostWorksheetCellsRangeMoveToRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Range_ =         range_    
+
+
     request.DestRow =  int64(10)        
+
+
     request.DestColumn =  int64(10)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetCellsRangeMoveTo(request)
 	if err != nil {
 		t.Error(err)
@@ -299,13 +373,21 @@ func TestRangesController_PostWorksheetCellsRangeOutlineBorder(t *testing.T) {
      rangeOperate.BorderStyle =        "Dotted"      
      rangeOperate.BorderColor =        rangeOperateborderColor      
      rangeOperate.Range_ =        rangeOperateRange      
-
     request := new (PostWorksheetCellsRangeOutlineBorderRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.RangeOperate =         rangeOperate    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetCellsRangeOutlineBorder(request)
 	if err != nil {
 		t.Error(err)
@@ -334,14 +416,24 @@ func TestRangesController_PostWorksheetCellsRangeColumnWidth(t *testing.T) {
      range_.ColumnWidth = 10.0      
      range_.FirstRow = int64(1)          
      range_.RowCount = int64(10)          
-
     request := new (PostWorksheetCellsRangeColumnWidthRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Range_ =         range_    
+
+
     request.Value =  10.7    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetCellsRangeColumnWidth(request)
 	if err != nil {
 		t.Error(err)
@@ -370,14 +462,24 @@ func TestRangesController_PostWorksheetCellsRangeRowHeight(t *testing.T) {
      range_.ColumnWidth = 10.0      
      range_.FirstRow = int64(1)          
      range_.RowCount = int64(10)          
-
     request := new (PostWorksheetCellsRangeRowHeightRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Range_ =         range_    
+
+
     request.Value =  10.9    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetCellsRangeRowHeight(request)
 	if err != nil {
 		t.Error(err)
@@ -401,14 +503,24 @@ func TestRangesController_PutWorksheetCellsRange(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (PutWorksheetCellsRangeRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Range_ =         "A1:C6"    
+
+
     request.Shift =         "Down"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetCellsRange(request)
 	if err != nil {
 		t.Error(err)
@@ -432,14 +544,24 @@ func TestRangesController_DeleteWorksheetCellsRange(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteWorksheetCellsRangeRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet1"    
+
+
     request.Range_ =         "A1:C6"    
+
+
     request.Shift =         "Up"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetCellsRange(request)
 	if err != nil {
 		t.Error(err)
@@ -473,13 +595,21 @@ func TestRangesController_PostWorksheetCellsRangeSort(t *testing.T) {
     var rangeSortRequest = new(RangeSortRequest)
      rangeSortRequest.DataSorter =        rangeSortRequestDataSorter      
      rangeSortRequest.CellArea =        rangeSortRequestCellArea      
-
     request := new (PostWorksheetCellsRangeSortRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "book1"    
+
+
     request.RangeSortRequest =         rangeSortRequest    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetCellsRangeSort(request)
 	if err != nil {
 		t.Error(err)

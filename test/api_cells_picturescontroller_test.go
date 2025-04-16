@@ -20,12 +20,18 @@ func TestPicturesController_GetWorksheetPictures(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetWorksheetPicturesRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet6"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetPictures(request)
 	if err != nil {
 		t.Error(err)
@@ -49,14 +55,24 @@ func TestPicturesController_GetWorksheetPictureWithFormat(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (GetWorksheetPictureWithFormatRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet6"    
+
+
     request.PictureNumber =  int64(0)        
+
+
     request.Format =         "png"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.GetWorksheetPictureWithFormat(request)
 	if err != nil {
 		t.Error(err)
@@ -87,17 +103,33 @@ func TestPicturesController_PutWorksheetAddPicture(t *testing.T) {
     waterMarkPNGRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(waterMarkPNGRequest )
  
-
     request := new (PutWorksheetAddPictureRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet6"    
+
+
     request.UpperLeftRow =  int64(1)        
+
+
     request.UpperLeftColumn =  int64(1)        
+
+
     request.LowerRightRow =  int64(10)        
+
+
     request.LowerRightColumn =  int64(10)        
+
+
     request.PicturePath =         remoteFolder + "/WaterMark.png"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PutWorksheetAddPicture(request)
 	if err != nil {
 		t.Error(err)
@@ -124,14 +156,24 @@ func TestPicturesController_PostWorksheetPicture(t *testing.T) {
     var picture = new(Picture)
      picture.Left = int64(10)          
      picture.Bottom = int64(10)          
-
     request := new (PostWorksheetPictureRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet6"    
+
+
     request.PictureIndex =  int64(0)        
+
+
     request.Picture =         picture    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.PostWorksheetPicture(request)
 	if err != nil {
 		t.Error(err)
@@ -155,13 +197,21 @@ func TestPicturesController_DeleteWorksheetPicture(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteWorksheetPictureRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet6"    
+
+
     request.PictureIndex =  int64(0)        
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetPicture(request)
 	if err != nil {
 		t.Error(err)
@@ -185,12 +235,18 @@ func TestPicturesController_DeleteWorksheetPictures(t *testing.T) {
     localNameRequest.StorageName =""
     GetBaseTest().CellsApi.UploadFile(localNameRequest )
  
-
     request := new (DeleteWorksheetPicturesRequest)
     request.Name =         remoteName    
+
+
     request.SheetName =         "Sheet6"    
+
+
     request.Folder =         remoteFolder    
+
+
     request.StorageName =         ""    
+
     _, httpResponse, err := GetBaseTest().CellsApi.DeleteWorksheetPictures(request)
 	if err != nil {
 		t.Error(err)
