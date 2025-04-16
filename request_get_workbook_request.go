@@ -46,8 +46,11 @@ type GetWorkbookRequest struct {
 	Region string `json:"region,omitempty" xml:"region"`
 	PageWideFitOnPerSheet bool `json:"page_wide_fit_on_per_sheet,omitempty" xml:"page_wide_fit_on_per_sheet"`
 	PageTallFitOnPerSheet bool `json:"page_tall_fit_on_per_sheet,omitempty" xml:"page_tall_fit_on_per_sheet"`
+	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *GetWorkbookRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -124,6 +127,11 @@ func (data *GetWorkbookRequest) CreateRequestData( client *APIClient) (localVarR
     // query params : pageTallFitOnPerSheet
     if &data.PageTallFitOnPerSheet != nil {
         localVarQueryParams.Add("pageTallFitOnPerSheet", parameterToString(data.PageTallFitOnPerSheet, ""))
+    }
+
+    // query params : fontsLocation
+    if data.FontsLocation != "" {
+        localVarQueryParams.Add("FontsLocation", parameterToString(data.FontsLocation, ""))
     }
 
 	if data.ExtendQueryParameterMap != nil {

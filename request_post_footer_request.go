@@ -40,8 +40,10 @@ type PostFooterRequest struct {
 	IsFirstPage bool `json:"is_first_page,omitempty" xml:"is_first_page"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostFooterRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

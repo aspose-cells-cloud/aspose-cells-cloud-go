@@ -38,8 +38,10 @@ type GetWorksheetPivotTableRequest struct {
     PivottableIndex int64 `json:"pivottable_index,omitempty" xml:"pivottable_index"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *GetWorksheetPivotTableRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

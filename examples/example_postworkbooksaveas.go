@@ -22,7 +22,7 @@ func main() {
      format := "csv"
      newfilename := "OutResult/PostExcelSaveAs.csv"
 
-    var saveOptions = new(PdfSaveOptions)
+    var saveOptions = new(SaveOptions)
      saveOptions.SaveFormat =        format      
 
     request := new (asposecellscloud.PostWorkbookSaveAsRequest)

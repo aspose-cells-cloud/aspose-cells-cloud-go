@@ -40,8 +40,10 @@ type PostUpdateWorksheetRowRequest struct {
 	Count int64 `json:"count,omitempty" xml:"count"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostUpdateWorksheetRowRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

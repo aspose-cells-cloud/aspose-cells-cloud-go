@@ -33,8 +33,10 @@ import (
 
 type PostDataTransformationRequest struct {
 	DataTransformationRequest interface{} `json:"data_transformation_request,omitempty" xml:"data_transformation_request"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostDataTransformationRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

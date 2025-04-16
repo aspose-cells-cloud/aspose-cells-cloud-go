@@ -39,8 +39,10 @@ type PutWorksheetConditionalFormattingRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	Formatcondition interface{} `json:"formatcondition,omitempty" xml:"formatcondition"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PutWorksheetConditionalFormattingRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

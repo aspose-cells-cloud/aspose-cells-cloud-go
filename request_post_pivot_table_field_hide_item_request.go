@@ -43,8 +43,10 @@ type PostPivotTableFieldHideItemRequest struct {
 	NeedReCalculate bool `json:"need_re_calculate,omitempty" xml:"need_re_calculate"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostPivotTableFieldHideItemRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

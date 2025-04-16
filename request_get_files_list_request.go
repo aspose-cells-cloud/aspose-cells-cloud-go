@@ -35,8 +35,10 @@ import (
 type GetFilesListRequest struct {
     Path string `json:"path,omitempty" xml:"path"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *GetFilesListRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

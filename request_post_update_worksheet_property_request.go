@@ -38,8 +38,10 @@ type PostUpdateWorksheetPropertyRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	Sheet interface{} `json:"sheet,omitempty" xml:"sheet"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostUpdateWorksheetPropertyRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

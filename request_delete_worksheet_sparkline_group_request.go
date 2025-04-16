@@ -38,8 +38,10 @@ type DeleteWorksheetSparklineGroupRequest struct {
     SparklineIndex int64 `json:"sparkline_index,omitempty" xml:"sparkline_index"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *DeleteWorksheetSparklineGroupRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

@@ -33,8 +33,10 @@ import (
 
 type PostBatchSplitRequest struct {
 	BatchSplitRequest interface{} `json:"batch_split_request,omitempty" xml:"batch_split_request"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostBatchSplitRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

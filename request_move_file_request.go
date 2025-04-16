@@ -38,8 +38,10 @@ type MoveFileRequest struct {
 	SrcStorageName string `json:"src_storage_name,omitempty" xml:"src_storage_name"`
 	DestStorageName string `json:"dest_storage_name,omitempty" xml:"dest_storage_name"`
 	VersionId string `json:"version_id,omitempty" xml:"version_id"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *MoveFileRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

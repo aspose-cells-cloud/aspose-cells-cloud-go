@@ -39,8 +39,10 @@ type PostWorksheetListObjectRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	ListObject interface{} `json:"list_object,omitempty" xml:"list_object"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWorksheetListObjectRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

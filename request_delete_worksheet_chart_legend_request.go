@@ -38,8 +38,10 @@ type DeleteWorksheetChartLegendRequest struct {
     ChartIndex int64 `json:"chart_index,omitempty" xml:"chart_index"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *DeleteWorksheetChartLegendRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

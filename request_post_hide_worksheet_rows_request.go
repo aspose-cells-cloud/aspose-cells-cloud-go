@@ -39,8 +39,10 @@ type PostHideWorksheetRowsRequest struct {
 	TotalRows int64 `json:"total_rows,omitempty" xml:"total_rows"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostHideWorksheetRowsRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

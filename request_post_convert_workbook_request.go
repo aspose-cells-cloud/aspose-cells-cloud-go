@@ -32,9 +32,12 @@ import (
 )
 
 type PostConvertWorkbookRequest struct {
+	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
 	ConvertWorkbookOptions interface{} `json:"convert_workbook_options,omitempty" xml:"convert_workbook_options"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostConvertWorkbookRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -51,6 +54,11 @@ func (data *PostConvertWorkbookRequest) CreateRequestData( client *APIClient) (l
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+
+    // query params : fontsLocation
+    if data.FontsLocation != "" {
+        localVarQueryParams.Add("FontsLocation", parameterToString(data.FontsLocation, ""))
+    }
 
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {

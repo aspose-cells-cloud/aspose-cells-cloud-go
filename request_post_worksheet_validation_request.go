@@ -39,8 +39,10 @@ type PostWorksheetValidationRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	Validation interface{} `json:"validation,omitempty" xml:"validation"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWorksheetValidationRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

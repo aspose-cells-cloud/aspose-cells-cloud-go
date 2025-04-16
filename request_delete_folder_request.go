@@ -36,8 +36,10 @@ type DeleteFolderRequest struct {
     Path string `json:"path,omitempty" xml:"path"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	Recursive bool `json:"recursive,omitempty" xml:"recursive"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *DeleteFolderRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

@@ -33,8 +33,10 @@ import (
 
 type PostRemoveDuplicatesRequest struct {
 	RemoveDuplicatesOptions interface{} `json:"remove_duplicates_options,omitempty" xml:"remove_duplicates_options"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostRemoveDuplicatesRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

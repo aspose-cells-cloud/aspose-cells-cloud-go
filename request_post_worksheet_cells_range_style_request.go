@@ -38,8 +38,10 @@ type PostWorksheetCellsRangeStyleRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	RangeOperate interface{} `json:"range_operate,omitempty" xml:"range_operate"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWorksheetCellsRangeStyleRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

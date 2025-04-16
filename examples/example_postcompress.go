@@ -7,7 +7,6 @@ import (
 )
 func main() {
 	instance := asposecellscloud.NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"), "https://api.aspose.cloud", "v3.0")
-    assemblyTestXlsx := "assemblytest.xlsx"
     dataSourceXlsx := "datasource.xlsx"
 
  
@@ -15,7 +14,6 @@ func main() {
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
      mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
 
     request := new (asposecellscloud.PostCompressRequest)

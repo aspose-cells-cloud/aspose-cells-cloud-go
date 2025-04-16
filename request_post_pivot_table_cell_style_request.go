@@ -42,8 +42,10 @@ type PostPivotTableCellStyleRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	Style interface{} `json:"style,omitempty" xml:"style"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostPivotTableCellStyleRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

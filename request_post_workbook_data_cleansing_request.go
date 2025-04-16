@@ -40,8 +40,10 @@ type PostWorkbookDataCleansingRequest struct {
 	Region string `json:"region,omitempty" xml:"region"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	DataCleansing interface{} `json:"data_cleansing,omitempty" xml:"data_cleansing"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWorkbookDataCleansingRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

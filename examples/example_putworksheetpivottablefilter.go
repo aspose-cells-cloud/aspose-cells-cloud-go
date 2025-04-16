@@ -20,7 +20,7 @@ func main() {
     instance.UploadFile(localNameRequest )
  
     var filter = new(PivotFilter)
-     filter.FieldIndex = int64(1)          
+     filter.FieldIndex = int64(0)          
      filter.FilterType =        "Count"      
 
     request := new (asposecellscloud.PutWorksheetPivotTableFilterRequest)

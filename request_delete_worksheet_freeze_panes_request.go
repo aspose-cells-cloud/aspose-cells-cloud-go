@@ -41,8 +41,10 @@ type DeleteWorksheetFreezePanesRequest struct {
 	FreezedColumns int64 `json:"freezed_columns,omitempty" xml:"freezed_columns"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *DeleteWorksheetFreezePanesRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

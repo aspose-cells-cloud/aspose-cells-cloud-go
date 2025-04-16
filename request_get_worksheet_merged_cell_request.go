@@ -38,8 +38,10 @@ type GetWorksheetMergedCellRequest struct {
     MergedCellIndex int64 `json:"merged_cell_index,omitempty" xml:"merged_cell_index"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *GetWorksheetMergedCellRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

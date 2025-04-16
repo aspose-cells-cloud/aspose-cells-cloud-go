@@ -33,8 +33,10 @@ import (
 
 type PostAddTextContentRequest struct {
 	AddTextOptions interface{} `json:"add_text_options,omitempty" xml:"add_text_options"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostAddTextContentRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

@@ -33,8 +33,10 @@ import (
 
 type PostWordsCountRequest struct {
 	WordsCountOptions interface{} `json:"words_count_options,omitempty" xml:"words_count_options"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWordsCountRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

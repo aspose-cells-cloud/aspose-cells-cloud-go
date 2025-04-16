@@ -33,8 +33,10 @@ import (
 
 type PostUpdateWordCaseRequest struct {
 	WordCaseOptions interface{} `json:"word_case_options,omitempty" xml:"word_case_options"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostUpdateWordCaseRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

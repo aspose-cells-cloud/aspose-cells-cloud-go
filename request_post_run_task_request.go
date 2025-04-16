@@ -33,8 +33,10 @@ import (
 
 type PostRunTaskRequest struct {
 	TaskData interface{} `json:"task_data,omitempty" xml:"task_data"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostRunTaskRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

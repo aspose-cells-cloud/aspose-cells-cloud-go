@@ -40,8 +40,10 @@ type PostWorkbookDataFillRequest struct {
 	Region string `json:"region,omitempty" xml:"region"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	DataFill interface{} `json:"data_fill,omitempty" xml:"data_fill"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWorkbookDataFillRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

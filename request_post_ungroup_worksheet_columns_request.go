@@ -39,8 +39,10 @@ type PostUngroupWorksheetColumnsRequest struct {
 	LastIndex int64 `json:"last_index,omitempty" xml:"last_index"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostUngroupWorksheetColumnsRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

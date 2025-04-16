@@ -27,6 +27,7 @@ package asposecellscloud
 
 import (
 	"fmt"
+	"path/filepath"
 	"net/url"
 	"net/http"
 	"strings"
@@ -38,8 +39,12 @@ type PutWorkbookBackgroundRequest struct {
 	ImageAdaptOption string `json:"image_adapt_option,omitempty" xml:"image_adapt_option"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-	File map[string]string  `json:"File,omitempty" xml:"File"` 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
+	LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"`  
+	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PutWorkbookBackgroundRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -101,6 +106,9 @@ func (data *PutWorkbookBackgroundRequest) CreateRequestData( client *APIClient) 
 	}
 	for name, path := range data.File {
 		localVarFormParams["@"+name] = []string{path}
+	}
+	if strings.TrimSpace(data.LocalPath) != "" {	
+		localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string{data.LocalPath} 
 	}
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)

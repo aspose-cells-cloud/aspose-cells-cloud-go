@@ -38,8 +38,10 @@ type PostPageSetupRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	PageSetup interface{} `json:"page_setup,omitempty" xml:"page_setup"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostPageSetupRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

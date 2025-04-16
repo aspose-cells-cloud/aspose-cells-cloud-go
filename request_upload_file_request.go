@@ -27,6 +27,7 @@ package asposecellscloud
 
 import (
 	"fmt"
+	"path/filepath"
 	"net/url"
 	"net/http"
 	"strings"
@@ -35,8 +36,12 @@ import (
 type UploadFileRequest struct {
     Path string `json:"path,omitempty" xml:"path"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-	UploadFiles map[string]string  `json:"UploadFiles,omitempty" xml:"UploadFiles"` 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	UploadFiles map[string]string  `json:"UploadFiles,omitempty" xml:"UploadFiles"`// Deprecated: Use UploadFile instead. 
+	UploadFile string  `json:"UploadFile,omitempty" xml:"UploadFile"`  
+	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *UploadFileRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -83,6 +88,9 @@ func (data *UploadFileRequest) CreateRequestData( client *APIClient) (localVarRe
 	}
 	for name, path := range data.UploadFiles {
 		localVarFormParams["@"+name] = []string{path}
+	}
+	if strings.TrimSpace(data.UploadFile) != "" {	
+		localVarFormParams["@"+ filepath.Base(data.UploadFile)] = []string{data.UploadFile} 
 	}
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)

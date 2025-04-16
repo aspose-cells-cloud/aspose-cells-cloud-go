@@ -37,9 +37,12 @@ type PostImportDataRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	Region string `json:"region,omitempty" xml:"region"`
+	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
 	ImportOption interface{} `json:"import_option,omitempty" xml:"import_option"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostImportDataRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -71,6 +74,11 @@ func (data *PostImportDataRequest) CreateRequestData( client *APIClient) (localV
     // query params : region
     if data.Region != "" {
         localVarQueryParams.Add("region", parameterToString(data.Region, ""))
+    }
+
+    // query params : fontsLocation
+    if data.FontsLocation != "" {
+        localVarQueryParams.Add("FontsLocation", parameterToString(data.FontsLocation, ""))
     }
 
 	if data.ExtendQueryParameterMap != nil {

@@ -37,8 +37,10 @@ type PutWorkbookWaterMarkerRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	TextWaterMarkerRequest interface{} `json:"text_water_marker_request,omitempty" xml:"text_water_marker_request"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PutWorkbookWaterMarkerRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

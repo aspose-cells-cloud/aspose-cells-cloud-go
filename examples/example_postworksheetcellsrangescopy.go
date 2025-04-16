@@ -20,15 +20,15 @@ func main() {
     instance.UploadFile(localNameRequest )
  
     var rangeOperateSource = new(Range)
-     rangeOperateSource.ColumnCount = int64(1)          
-     rangeOperateSource.ColumnWidth = 10.0      
-     rangeOperateSource.FirstRow = int64(1)          
-     rangeOperateSource.RowCount = int64(10)          
+     rangeOperateSource.ColumnCount = int64(3)          
+     rangeOperateSource.FirstColumn = int64(8)          
+     rangeOperateSource.FirstRow = int64(3)          
+     rangeOperateSource.RowCount = int64(2)          
     var rangeOperateTarget = new(Range)
-     rangeOperateTarget.ColumnCount = int64(1)          
-     rangeOperateTarget.ColumnWidth = 10.0      
-     rangeOperateTarget.FirstRow = int64(10)          
-     rangeOperateTarget.RowCount = int64(10)          
+     rangeOperateTarget.ColumnCount = int64(3)          
+     rangeOperateTarget.FirstColumn = int64(8)          
+     rangeOperateTarget.FirstRow = int64(13)          
+     rangeOperateTarget.RowCount = int64(2)          
     var rangeOperate = new(RangeCopyRequest)
      rangeOperate.Operate =        "copydata"      
      rangeOperate.Source =        rangeOperateSource      

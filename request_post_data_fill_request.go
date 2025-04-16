@@ -33,8 +33,10 @@ import (
 
 type PostDataFillRequest struct {
 	DataFillRequest interface{} `json:"data_fill_request,omitempty" xml:"data_fill_request"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostDataFillRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

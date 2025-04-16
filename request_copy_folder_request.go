@@ -37,8 +37,10 @@ type CopyFolderRequest struct {
 	DestPath string `json:"dest_path,omitempty" xml:"dest_path"`
 	SrcStorageName string `json:"src_storage_name,omitempty" xml:"src_storage_name"`
 	DestStorageName string `json:"dest_storage_name,omitempty" xml:"dest_storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *CopyFolderRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

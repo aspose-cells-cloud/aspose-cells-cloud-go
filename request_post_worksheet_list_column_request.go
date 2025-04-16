@@ -40,8 +40,10 @@ type PostWorksheetListColumnRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	ListColumn interface{} `json:"list_column,omitempty" xml:"list_column"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWorksheetListColumnRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

@@ -33,8 +33,10 @@ import (
 
 type PostBatchLockRequest struct {
 	BatchLockRequest interface{} `json:"batch_lock_request,omitempty" xml:"batch_lock_request"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostBatchLockRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

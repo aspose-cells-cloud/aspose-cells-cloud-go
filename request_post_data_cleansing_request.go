@@ -33,8 +33,10 @@ import (
 
 type PostDataCleansingRequest struct {
 	DataCleansingRequest interface{} `json:"data_cleansing_request,omitempty" xml:"data_cleansing_request"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostDataCleansingRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

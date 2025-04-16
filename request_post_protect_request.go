@@ -27,6 +27,7 @@ package asposecellscloud
 
 import (
 	"encoding/json"
+	"path/filepath"
 	"net/url"
 	"net/http"
 	"strings"
@@ -35,8 +36,12 @@ import (
 type PostProtectRequest struct {
 	Password string `json:"password,omitempty" xml:"password"`
 	ProtectWorkbookRequest interface{} `json:"protect_workbook_request,omitempty" xml:"protect_workbook_request"` 
-	File map[string]string  `json:"File,omitempty" xml:"File"` 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
+	LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"`  
+	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostProtectRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -82,6 +87,9 @@ func (data *PostProtectRequest) CreateRequestData( client *APIClient) (localVarR
 	}
 	for name, path := range data.File {
 		localVarFormParams["@"+name] = []string{path}
+	}
+	if strings.TrimSpace(data.LocalPath) != "" {	
+		localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string{data.LocalPath} 
 	}
 	b, _ := json.Marshal( &data.ProtectWorkbookRequest)
 	localVarFormParams["ProtectWorkbookRequest"] = []string{string(b)}

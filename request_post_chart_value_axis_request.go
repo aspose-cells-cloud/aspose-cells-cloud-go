@@ -39,8 +39,10 @@ type PostChartValueAxisRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	Axis interface{} `json:"axis,omitempty" xml:"axis"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostChartValueAxisRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

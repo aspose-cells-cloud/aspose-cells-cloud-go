@@ -38,8 +38,10 @@ type DeleteWorksheetOleObjectRequest struct {
     OleObjectIndex int64 `json:"ole_object_index,omitempty" xml:"ole_object_index"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *DeleteWorksheetOleObjectRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

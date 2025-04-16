@@ -38,8 +38,10 @@ type PutProtectWorksheetRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	ProtectParameter interface{} `json:"protect_parameter,omitempty" xml:"protect_parameter"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PutProtectWorksheetRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

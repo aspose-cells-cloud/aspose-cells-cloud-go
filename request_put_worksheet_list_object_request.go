@@ -44,8 +44,10 @@ type PutWorksheetListObjectRequest struct {
 	DisplayName string `json:"display_name,omitempty" xml:"display_name"`
 	ShowTotals bool `json:"show_totals,omitempty" xml:"show_totals"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PutWorksheetListObjectRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

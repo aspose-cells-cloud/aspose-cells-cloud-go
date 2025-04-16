@@ -39,8 +39,10 @@ type AddPictureInCellRequest struct {
 	PicturePath string `json:"picture_path,omitempty" xml:"picture_path"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *AddPictureInCellRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

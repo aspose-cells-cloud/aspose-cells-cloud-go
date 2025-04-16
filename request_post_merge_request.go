@@ -37,8 +37,11 @@ type PostMergeRequest struct {
 	Password string `json:"password,omitempty" xml:"password"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	Region string `json:"region,omitempty" xml:"region"`
-	File map[string]string  `json:"File,omitempty" xml:"File"` 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	File map[string]string  `json:"File,omitempty" xml:"File"` 
+	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostMergeRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

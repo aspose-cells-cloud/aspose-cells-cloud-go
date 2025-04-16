@@ -34,8 +34,10 @@ import (
 
 type StorageExistsRequest struct {
     StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *StorageExistsRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

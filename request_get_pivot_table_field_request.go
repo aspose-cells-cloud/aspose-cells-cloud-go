@@ -40,8 +40,10 @@ type GetPivotTableFieldRequest struct {
 	PivotFieldType string `json:"pivot_field_type,omitempty" xml:"pivot_field_type"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *GetPivotTableFieldRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

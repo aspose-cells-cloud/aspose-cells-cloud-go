@@ -44,8 +44,10 @@ type GetWorksheetWithFormatRequest struct {
 	PrintHeadings bool `json:"print_headings,omitempty" xml:"print_headings"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *GetWorksheetWithFormatRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

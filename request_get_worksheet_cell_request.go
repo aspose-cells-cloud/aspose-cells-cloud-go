@@ -38,8 +38,10 @@ type GetWorksheetCellRequest struct {
     CellOrMethodName string `json:"cell_or_method_name,omitempty" xml:"cell_or_method_name"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *GetWorksheetCellRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

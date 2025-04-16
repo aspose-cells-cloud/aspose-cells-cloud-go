@@ -41,8 +41,10 @@ type PutWorksheetPivotTableRequest struct {
 	TableName string `json:"table_name,omitempty" xml:"table_name"`
 	UseSameSource bool `json:"use_same_source,omitempty" xml:"use_same_source"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PutWorksheetPivotTableRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

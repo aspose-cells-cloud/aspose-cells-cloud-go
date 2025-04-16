@@ -32,9 +32,12 @@ import (
 )
 
 type PostConvertWorksheetToImageRequest struct {
+	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
 	ConvertWorksheetOptions interface{} `json:"convert_worksheet_options,omitempty" xml:"convert_worksheet_options"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostConvertWorksheetToImageRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -51,6 +54,11 @@ func (data *PostConvertWorksheetToImageRequest) CreateRequestData( client *APICl
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+
+    // query params : fontsLocation
+    if data.FontsLocation != "" {
+        localVarQueryParams.Add("FontsLocation", parameterToString(data.FontsLocation, ""))
+    }
 
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {

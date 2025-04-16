@@ -33,8 +33,10 @@ import (
 
 type PostAnalyzeExcelRequest struct {
 	AnalyzeExcelRequest interface{} `json:"analyze_excel_request,omitempty" xml:"analyze_excel_request"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostAnalyzeExcelRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

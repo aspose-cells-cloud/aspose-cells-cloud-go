@@ -38,8 +38,10 @@ type PostWorkbookNameRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	NewName interface{} `json:"new_name,omitempty" xml:"new_name"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWorkbookNameRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

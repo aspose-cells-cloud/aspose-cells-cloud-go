@@ -37,8 +37,10 @@ type PostEncryptWorkbookRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	Encryption interface{} `json:"encryption,omitempty" xml:"encryption"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostEncryptWorkbookRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

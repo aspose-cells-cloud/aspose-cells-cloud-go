@@ -42,8 +42,10 @@ type PutWorksheetHyperlinkRequest struct {
 	Address string `json:"address,omitempty" xml:"address"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PutWorksheetHyperlinkRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

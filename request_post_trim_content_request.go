@@ -33,8 +33,10 @@ import (
 
 type PostTrimContentRequest struct {
 	TrimContentOptions interface{} `json:"trim_content_options,omitempty" xml:"trim_content_options"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostTrimContentRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

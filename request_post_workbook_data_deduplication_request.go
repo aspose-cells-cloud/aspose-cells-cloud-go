@@ -40,8 +40,10 @@ type PostWorkbookDataDeduplicationRequest struct {
 	Region string `json:"region,omitempty" xml:"region"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	DeduplicationRegion interface{} `json:"deduplication_region,omitempty" xml:"deduplication_region"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWorkbookDataDeduplicationRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

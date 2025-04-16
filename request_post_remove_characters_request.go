@@ -33,8 +33,10 @@ import (
 
 type PostRemoveCharactersRequest struct {
 	RemoveCharactersOptions interface{} `json:"remove_characters_options,omitempty" xml:"remove_characters_options"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostRemoveCharactersRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

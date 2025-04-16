@@ -8,7 +8,6 @@ import (
 func main() {
 	instance := asposecellscloud.NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"), "https://api.aspose.cloud", "v3.0")
     assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
 
  
     var mapFiles map[string]string       
@@ -17,7 +16,6 @@ func main() {
      protectWorkbookRequest.AwaysOpenReadOnly =  true      
      protectWorkbookRequest.EncryptWithPassword =        "123456"      
      mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
 
     request := new (asposecellscloud.PostProtectRequest)
     request.File =         mapFiles    

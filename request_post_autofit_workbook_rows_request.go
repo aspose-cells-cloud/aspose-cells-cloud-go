@@ -39,8 +39,10 @@ type PostAutofitWorkbookRowsRequest struct {
 	OnlyAuto bool `json:"only_auto,omitempty" xml:"only_auto"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostAutofitWorkbookRowsRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

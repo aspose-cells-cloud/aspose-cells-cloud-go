@@ -40,8 +40,10 @@ type DeletePivotTableFieldRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	PivotTableFieldRequest interface{} `json:"pivot_table_field_request,omitempty" xml:"pivot_table_field_request"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *DeletePivotTableFieldRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

@@ -20,7 +20,7 @@ Represents the options for pagination.
 |GridlineType|String|true|false |  |Gets or sets gridline type.|
 |TextCrossType|String|true|false |  |Gets or sets displaying text type when the text width is larger than cell width.|
 |DefaultEditLanguage|String|true|false |  |Gets or sets default edit language.|
-|EmfRenderSetting|String|true|false |  ||
+|EmfRenderSetting|String|true|false |  |Setting for rendering Emf metafile.|
 |MergeAreas|Boolean|true|false |  ||
 |SortExternalNames|Boolean|true|false |  ||
 |UpdateSmartArt|Boolean|true|false |  ||
@@ -32,4 +32,6 @@ Represents the options for pagination.
 |RefreshChartCache|Boolean|true|false |  ||
 |SortNames|Boolean|true|false |  ||
 |ValidateMergedAreas|Boolean|true|false |  ||
+|CheckExcelRestriction|Boolean|true|false |  ||
+|EncryptDocumentProperties|Boolean|true|false |  ||
 

@@ -39,8 +39,10 @@ type PostWorkbookGetSmartMarkerResultRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWorkbookGetSmartMarkerResultRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

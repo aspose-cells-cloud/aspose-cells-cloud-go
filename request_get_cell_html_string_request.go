@@ -38,8 +38,10 @@ type GetCellHtmlStringRequest struct {
     CellName string `json:"cell_name,omitempty" xml:"cell_name"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *GetCellHtmlStringRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

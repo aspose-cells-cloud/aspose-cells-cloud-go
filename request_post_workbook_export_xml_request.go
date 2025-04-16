@@ -41,8 +41,10 @@ type PostWorkbookExportXMLRequest struct {
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	Region string `json:"region,omitempty" xml:"region"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWorkbookExportXMLRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

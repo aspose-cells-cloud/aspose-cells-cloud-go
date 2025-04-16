@@ -33,8 +33,10 @@ import (
 
 type PostDeleteIncompleteRowsRequest struct {
 	DeleteIncompleteRowsRequest interface{} `json:"delete_incomplete_rows_request,omitempty" xml:"delete_incomplete_rows_request"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostDeleteIncompleteRowsRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

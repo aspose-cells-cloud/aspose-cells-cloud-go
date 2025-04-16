@@ -33,8 +33,10 @@ import (
 
 type PostBatchConvertRequest struct {
 	BatchConvertRequest interface{} `json:"batch_convert_request,omitempty" xml:"batch_convert_request"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostBatchConvertRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

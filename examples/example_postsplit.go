@@ -7,16 +7,14 @@ import (
 )
 func main() {
 	instance := asposecellscloud.NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"), "https://api.aspose.cloud", "v3.0")
-    assemblyTestXlsx := "assemblytest.xlsx"
-    dataSourceXlsx := "datasource.xlsx"
+    book1Xlsx := "Book1.xlsx"
 
  
      outFormat := "csv"
 
     var mapFiles map[string]string       
     mapFiles = make(map[string]string)
-     mapFiles[assemblyTestXlsx]= GetBaseTest().localTestDataFolder + assemblyTestXlsx 
-     mapFiles[dataSourceXlsx]= GetBaseTest().localTestDataFolder + dataSourceXlsx 
+     mapFiles[book1Xlsx]= GetBaseTest().localTestDataFolder + book1Xlsx 
 
     request := new (asposecellscloud.PostSplitRequest)
     request.File =         mapFiles    

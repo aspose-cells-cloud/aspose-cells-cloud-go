@@ -38,8 +38,10 @@ type GetWorksheetColumnRequest struct {
     ColumnIndex int64 `json:"column_index,omitempty" xml:"column_index"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *GetWorksheetColumnRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

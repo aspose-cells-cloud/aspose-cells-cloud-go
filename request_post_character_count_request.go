@@ -33,8 +33,10 @@ import (
 
 type PostCharacterCountRequest struct {
 	CharacterCountOptions interface{} `json:"character_count_options,omitempty" xml:"character_count_options"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostCharacterCountRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

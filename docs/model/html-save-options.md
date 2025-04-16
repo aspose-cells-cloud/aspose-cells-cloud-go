@@ -6,7 +6,7 @@ Represents options of saving .html file.
 
 | Property Name | Property Type | Nullable |  ReadOnly | DefaultValue | Description | 
 | :- | :- | :- |:- |  :- | :- |
-|ExportPageHeaders|Boolean|true|false |  ||
+|ExportPageHeaders|Boolean|true|false |  |Indicates whether exporting page headers.|
 |ExportPageFooters|Boolean|true|false |  ||
 |ExportRowColumnHeadings|Boolean|true|false |  ||
 |ShowAllSheets|Boolean|true|false |  ||
@@ -53,4 +53,9 @@ Represents options of saving .html file.
 |RefreshChartCache|Boolean|true|false |  ||
 |SortNames|Boolean|true|false |  ||
 |ValidateMergedAreas|Boolean|true|false |  ||
+|MergeAreas|Boolean|true|false |  ||
+|SortExternalNames|Boolean|true|false |  ||
+|CheckExcelRestriction|Boolean|true|false |  ||
+|UpdateSmartArt|Boolean|true|false |  ||
+|EncryptDocumentProperties|Boolean|true|false |  ||
 

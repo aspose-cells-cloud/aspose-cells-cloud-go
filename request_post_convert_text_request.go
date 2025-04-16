@@ -33,8 +33,10 @@ import (
 
 type PostConvertTextRequest struct {
 	ConvertTextOptions interface{} `json:"convert_text_options,omitempty" xml:"convert_text_options"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostConvertTextRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

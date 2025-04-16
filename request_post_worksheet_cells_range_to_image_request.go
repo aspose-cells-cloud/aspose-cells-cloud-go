@@ -38,8 +38,10 @@ type PostWorksheetCellsRangeToImageRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	RangeConvertRequest interface{} `json:"range_convert_request,omitempty" xml:"range_convert_request"` 
+
 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostWorksheetCellsRangeToImageRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {

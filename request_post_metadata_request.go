@@ -27,6 +27,7 @@ package asposecellscloud
 
 import (
 	"encoding/json"
+	"path/filepath"
 	"net/url"
 	"net/http"
 	"strings"
@@ -38,8 +39,12 @@ type PostMetadataRequest struct {
 	OutFormat string `json:"out_format,omitempty" xml:"out_format"`
 	Region string `json:"region,omitempty" xml:"region"`
 	CellsDocuments interface{} `json:"cells_documents,omitempty" xml:"cells_documents"` 
-	File map[string]string  `json:"File,omitempty" xml:"File"` 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+
+	File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
+	LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"`  
+	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PostMetadataRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -100,6 +105,9 @@ func (data *PostMetadataRequest) CreateRequestData( client *APIClient) (localVar
 	}
 	for name, path := range data.File {
 		localVarFormParams["@"+name] = []string{path}
+	}
+	if strings.TrimSpace(data.LocalPath) != "" {	
+		localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string{data.LocalPath} 
 	}
 	b, _ := json.Marshal( &data.CellsDocuments)
 	localVarFormParams["CellsDocuments"] = []string{string(b)}

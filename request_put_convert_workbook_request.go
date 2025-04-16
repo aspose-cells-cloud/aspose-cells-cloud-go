@@ -26,6 +26,7 @@
 package asposecellscloud
 
 import (
+	"path/filepath"
 	"net/url"
 	"net/http"
 	"strings"
@@ -43,8 +44,13 @@ type PutConvertWorkbookRequest struct {
 	PageTallFitOnPerSheet bool `json:"page_tall_fit_on_per_sheet,omitempty" xml:"page_tall_fit_on_per_sheet"`
 	SheetName string `json:"sheet_name,omitempty" xml:"sheet_name"`
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index"`
-	File map[string]string  `json:"File,omitempty" xml:"File"` 	
-	ExtendQueryParameterMap map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
+
+	File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
+	LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"`  
+	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
 func (data *PutConvertWorkbookRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
@@ -117,6 +123,11 @@ func (data *PutConvertWorkbookRequest) CreateRequestData( client *APIClient) (lo
         localVarQueryParams.Add("pageIndex", parameterToString(data.PageIndex, ""))
     }
 
+    // query params : fontsLocation
+    if data.FontsLocation != "" {
+        localVarQueryParams.Add("FontsLocation", parameterToString(data.FontsLocation, ""))
+    }
+
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -140,6 +151,9 @@ func (data *PutConvertWorkbookRequest) CreateRequestData( client *APIClient) (lo
 	}
 	for name, path := range data.File {
 		localVarFormParams["@"+name] = []string{path}
+	}
+	if strings.TrimSpace(data.LocalPath) != "" {	
+		localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string{data.LocalPath} 
 	}
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
