@@ -21,8 +21,15 @@ jobs:
       with:
         go-version: '1.20'
 
-    - name: Build
+    - name: Build Aspose.Cells Cloud SDK Library
       run: go build -v .
 
-    - name: Examples
-      run: go build -v .
+    - name: Run Examples
+      run: |
+        go run Example_QuickStart.go
+        go run Example_BatchProcessing.go
+        go run Example_CloudStorageManagement.go
+        go run Example_ConvertExcel.go
+        go run Example_MergeExcelFiles.go
+        go run Example_SplitExcelFiles.go
+        go run Example_CreateReportFiles.go
