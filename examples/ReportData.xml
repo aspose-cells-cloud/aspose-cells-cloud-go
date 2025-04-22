@@ -1,0 +1,18 @@
+<ReportData>
+    <ProductSaleRecord>
+        <ProductCategory>Accessories</ProductCategory>
+        <Sales>954.75</Sales>
+    </ProductSaleRecord>
+    <ProductSaleRecord>
+        <ProductCategory>Bikes</ProductCategory>
+        <Sales>26695.26</Sales>
+    </ProductSaleRecord>
+    <ProductSaleRecord>
+        <ProductCategory>Clothing</ProductCategory>
+        <Sales>944.196</Sales>
+    </ProductSaleRecord>
+    <ProductSaleRecord>
+        <ProductCategory>Components</ProductCategory>
+        <Sales>2564.082</Sales>
+    </ProductSaleRecord>
+</ReportData>

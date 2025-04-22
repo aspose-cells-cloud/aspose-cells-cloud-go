@@ -8,8 +8,7 @@ import (
 
 func main() {
 	instance := NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"))
-	request := PutConvertWorkbookRequest{LocalPath: "EmployeeSalesSummary.xlsx", Format: "pdf"}
-	data, httpResponse, err := instance.PutConvertWorkbook(&request)
+	data, httpResponse, err := instance.PutConvertWorkbook(&PutConvertWorkbookRequest{LocalPath: "EmployeeSalesSummary.xlsx", Format: "pdf"})
 	if err != nil {
 		fmt.Print(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {

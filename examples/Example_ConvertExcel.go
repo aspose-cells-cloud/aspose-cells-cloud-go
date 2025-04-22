@@ -9,7 +9,7 @@ import (
 
 func main() {
 	employeeSalesSummaryXlsx := "EmployeeSalesSummary.xlsx"
-	remoteFolder := "PythonSDK"
+	remoteFolder := "GoSDK"
 	instance := NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"))
 	// Convert a local Excel file to another format file directly.
 	convertedData, httpResponse, err := instance.PutConvertWorkbook(&PutConvertWorkbookRequest{LocalPath: employeeSalesSummaryXlsx, Format: "pdf"})
