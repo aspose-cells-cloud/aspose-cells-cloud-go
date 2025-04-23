@@ -29,7 +29,6 @@ jobs:
 
     - name: Run Examples
       run: |
-        echo "API Key: ${{ secrets.PRODUCTCLIENTID }}" 
         cd examples
         go run .\Example_QuickStart.go
         go run .\Example_BatchProcessing.go
