@@ -14,8 +14,8 @@ jobs:
   build:
     runs-on: windows-latest
     env:
-      ProductClientId: ${{ secrets.CELLSCLOUDTESTCLIENTID }}
-      ProductClientSecret: ${{ secrets.CELLSCLOUDCLIENTSECRET }}
+      ProductClientId: ${{ secrets.PRODUCTCLIENTID }}
+      ProductClientSecret: ${{ secrets.PRODUCTCLIENTSECRET }}
     steps:
     - uses: actions/checkout@v4
 
