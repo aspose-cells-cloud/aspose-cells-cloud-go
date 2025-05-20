@@ -34,10 +34,9 @@ import (
 
 type PostRepairRequest struct {
 	OutFormat string `json:"out_format,omitempty" xml:"out_format"`
-
-	File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
-	LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"`  
 	
+	 File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
+	LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"`  
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -51,7 +50,7 @@ func (data *PostRepairRequest) CreateRequestData( client *APIClient) (localVarRe
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/repair"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/repair"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -61,7 +60,6 @@ func (data *PostRepairRequest) CreateRequestData( client *APIClient) (localVarRe
     if data.OutFormat != "" {
         localVarQueryParams.Add("outFormat", parameterToString(data.OutFormat, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -83,13 +81,12 @@ func (data *PostRepairRequest) CreateRequestData( client *APIClient) (localVarRe
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	for name, path := range data.File {
-		localVarFormParams["@"+name] = []string{path}
-	}
-	if strings.TrimSpace(data.LocalPath) != "" {	
-		localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string{data.LocalPath} 
-	}
-
+		for name, path := range data.File {
+			localVarFormParams["@"+name] = []string{path}
+		} 
+			if strings.TrimSpace(data.LocalPath) != "" {	
+				localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string{data.LocalPath} 
+			}
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

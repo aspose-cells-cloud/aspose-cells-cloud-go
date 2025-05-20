@@ -1,10 +1,10 @@
 ---
 swagger: "2.0"
 info:
-  version: "25.4"
+  version: "25.5"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
-basePath: "/v3.0"
+basePath: "/v4.0"
 consumes:
 - "application/json"
 produces:
@@ -5039,6 +5039,20 @@ paths:
         type: "boolean"
         x-nullable: true
         x-exportParamName: "pageTallFitOnPerSheet"
+      - name: "onepagepersheet"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "onePagePerSheet"
+      - name: "onlyautofittable"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "onlyAutofitTable"
       - name: "fontslocation"
         in: "Query"
         description: "Use Custom fonts."
@@ -5137,6 +5151,27 @@ paths:
         type: "integer"
         x-nullable: true
         x-exportParamName: "pageIndex"
+      - name: "onepagepersheet"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "onePagePerSheet"
+      - name: "autorowsfit"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "AutoRowsFit"
+      - name: "autocolumnsfit"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "AutoColumnsFit"
       - name: "fontslocation"
         in: "Query"
         description: "Use Custom fonts."
@@ -5235,6 +5270,13 @@ paths:
         type: "boolean"
         x-nullable: true
         x-exportParamName: "pageTallFitOnPerSheet"
+      - name: "onepagepersheet"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "onePagePerSheet"
       - name: "fontslocation"
         in: "Query"
         description: "Use Custom fonts."
@@ -6488,6 +6530,14 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "storageName"
+  /cells/publickey:
+    get:
+      tags:
+      - "Cells"
+      summary: "Get publi key."
+      operationId: "GetPublicKey"
+      parameters:
+
   /cells/assemble:
     post:
       tags:
@@ -13082,6 +13132,20 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "storageName"
+      - name: "firstcolumn"
+        in: "Query"
+        description: ""
+        required: false
+        type: "integer"
+        x-nullable: true
+        x-exportParamName: "firstColumn"
+      - name: "lastcolumn"
+        in: "Query"
+        description: ""
+        required: false
+        type: "integer"
+        x-nullable: true
+        x-exportParamName: "lastColumn"
   /cells/{name}/autofitcolumns:
     post:
       tags:
@@ -14464,14 +14528,14 @@ paths:
       - name: "firstcolumn"
         in: "Query"
         description: "The first column index."
-        required: true
+        required: false
         type: "integer"
         x-nullable: true
         x-exportParamName: "firstColumn"
       - name: "lastcolumn"
         in: "Query"
         description: "The last column index."
-        required: true
+        required: false
         type: "integer"
         x-nullable: true
         x-exportParamName: "lastColumn"
@@ -14489,6 +14553,13 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "storageName"
+      - name: "rowcount"
+        in: "Query"
+        description: ""
+        required: false
+        type: "integer"
+        x-nullable: true
+        x-exportParamName: "rowCount"
   /cells/{name}/worksheets/{sheetName}/autofitrows:
     post:
       tags:
@@ -16104,6 +16175,15 @@ definitions:
       Storage:
         type: "string"
         description: "The storage name."
+  CellsCloudPublicKey:
+    type: "object"    
+    properties:
+      Exponent:
+        type: "string"
+        description: ""
+      Modulus:
+        type: "string"
+        description: ""
   CellsColor:
     type: "object"    
     properties:
@@ -18878,6 +18958,53 @@ definitions:
     type: "object"    
     properties:
 
+  DbfSaveOptions:
+    allOf:
+    - type: "object"
+    
+    properties:
+      ExportAsString:
+        type: "boolean"
+        description: ""
+      SaveFormat:
+        type: "string"
+        description: ""
+      CachedFileFolder:
+        type: "string"
+        description: ""
+      ClearData:
+        type: "boolean"
+        description: ""
+      CreateDirectory:
+        type: "boolean"
+        description: ""
+      EnableHTTPCompression:
+        type: "boolean"
+        description: ""
+      RefreshChartCache:
+        type: "boolean"
+        description: ""
+      SortNames:
+        type: "boolean"
+        description: ""
+      ValidateMergedAreas:
+        type: "boolean"
+        description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
+        type: "boolean"
+        description: ""
   DifSaveOptions:
     allOf:
     - type: "object"
@@ -19634,6 +19761,56 @@ definitions:
       EncryptDocumentProperties:
         type: "boolean"
         description: ""
+  PclSaveOptions:
+    allOf:
+    - type: "object"
+    
+    properties:
+      fontFullName:
+        type: "string"
+        description: ""
+      fontPclName:
+        type: "string"
+        description: ""
+      SaveFormat:
+        type: "string"
+        description: ""
+      CachedFileFolder:
+        type: "string"
+        description: ""
+      ClearData:
+        type: "boolean"
+        description: ""
+      CreateDirectory:
+        type: "boolean"
+        description: ""
+      EnableHTTPCompression:
+        type: "boolean"
+        description: ""
+      RefreshChartCache:
+        type: "boolean"
+        description: ""
+      SortNames:
+        type: "boolean"
+        description: ""
+      ValidateMergedAreas:
+        type: "boolean"
+        description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
+        type: "boolean"
+        description: ""
   PdfSaveOptions:
     allOf:
     - type: "object"
@@ -20253,6 +20430,68 @@ definitions:
       EncryptDocumentProperties:
         type: "boolean"
         description: ""
+  XmlSaveOptions:
+    allOf:
+    - type: "object"
+    
+    properties:
+      SheetIndexes:
+        type: "array<integer>"
+        description: "Represents the indexes of exported sheets."
+      ExportArea:
+        type: "class:cellarea"
+        description: "Gets or sets the exporting range."
+      HasHeaderRow:
+        type: "boolean"
+        description: "Indicates whether the range contains header row."
+      XmlMapName:
+        type: "string"
+        description: "Indicates whether exporting xml map in the file."
+      SheetNameAsElementName:
+        type: "boolean"
+        description: "Indicates whether exporting sheet's name as the name of the element."
+      DataAsAttribute:
+        type: "boolean"
+        description: "Indicates whether exporting data as attributes of element."
+      SaveFormat:
+        type: "string"
+        description: ""
+      CachedFileFolder:
+        type: "string"
+        description: ""
+      ClearData:
+        type: "boolean"
+        description: ""
+      CreateDirectory:
+        type: "boolean"
+        description: ""
+      EnableHTTPCompression:
+        type: "boolean"
+        description: ""
+      RefreshChartCache:
+        type: "boolean"
+        description: ""
+      SortNames:
+        type: "boolean"
+        description: ""
+      ValidateMergedAreas:
+        type: "boolean"
+        description: ""
+      MergeAreas:
+        type: "boolean"
+        description: ""
+      SortExternalNames:
+        type: "boolean"
+        description: ""
+      CheckExcelRestriction:
+        type: "boolean"
+        description: ""
+      UpdateSmartArt:
+        type: "boolean"
+        description: ""
+      EncryptDocumentProperties:
+        type: "boolean"
+        description: ""
   XpsSaveOptions:
     allOf:
     - type: "object"
@@ -20476,6 +20715,20 @@ definitions:
       FileInfo:
         type: "class:cellscloudfileinfo"
         description: "A property named `FileInfo` of type `CellsCloudFileInfo` is defined for the class."
+      Code:
+        type: "integer"
+        description: ""
+      Status:
+        type: "string"
+        description: ""
+  CellsCloudPublicKeyResponse:
+    allOf:
+    - type: "object"
+    
+    properties:
+      CellsCloudPublicKey:
+        type: "class:cellscloudpublickey"
+        description: ""
       Code:
         type: "integer"
         description: ""

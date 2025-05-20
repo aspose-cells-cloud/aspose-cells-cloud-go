@@ -37,9 +37,8 @@ type PostAssembleRequest struct {
 	Password string `json:"password,omitempty" xml:"password"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	Region string `json:"region,omitempty" xml:"region"`
-
-	File map[string]string  `json:"File,omitempty" xml:"File"` 
 	
+	 File map[string]string  `json:"File,omitempty" xml:"File"` 
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -53,7 +52,7 @@ func (data *PostAssembleRequest) CreateRequestData( client *APIClient) (localVar
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/assemble"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/assemble"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -63,27 +62,22 @@ func (data *PostAssembleRequest) CreateRequestData( client *APIClient) (localVar
     if data.Datasource != "" {
         localVarQueryParams.Add("datasource", parameterToString(data.Datasource, ""))
     }
-
     // query params : outFormat
     if data.OutFormat != "" {
         localVarQueryParams.Add("outFormat", parameterToString(data.OutFormat, ""))
     }
-
     // query params : password
     if data.Password != "" {
         localVarQueryParams.Add("password", parameterToString(data.Password, ""))
     }
-
     // query params : checkExcelRestriction
-    if &data.CheckExcelRestriction != nil {
+    if data.CheckExcelRestriction {
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
     }
-
     // query params : region
     if data.Region != "" {
         localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -105,10 +99,9 @@ func (data *PostAssembleRequest) CreateRequestData( client *APIClient) (localVar
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	for name, path := range data.File {
-		localVarFormParams["@"+name] = []string{path}
-	}
-
+		for name, path := range data.File {
+			localVarFormParams["@"+name] = []string{path}
+		}
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

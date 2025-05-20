@@ -45,7 +45,6 @@ type DeleteWorksheetDateFilterRequest struct {
 	Second int64 `json:"second,omitempty" xml:"second"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -60,7 +59,7 @@ func (data *DeleteWorksheetDateFilterRequest) CreateRequestData( client *APIClie
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -72,52 +71,42 @@ func (data *DeleteWorksheetDateFilterRequest) CreateRequestData( client *APIClie
     if &data.FieldIndex != nil {
         localVarQueryParams.Add("fieldIndex", parameterToString(data.FieldIndex, ""))
     }
-
     // query params : dateTimeGroupingType
     if data.DateTimeGroupingType != "" {
         localVarQueryParams.Add("dateTimeGroupingType", parameterToString(data.DateTimeGroupingType, ""))
     }
-
     // query params : year
     if &data.Year != nil {
         localVarQueryParams.Add("year", parameterToString(data.Year, ""))
     }
-
     // query params : month
     if &data.Month != nil {
         localVarQueryParams.Add("month", parameterToString(data.Month, ""))
     }
-
     // query params : day
     if &data.Day != nil {
         localVarQueryParams.Add("day", parameterToString(data.Day, ""))
     }
-
     // query params : hour
     if &data.Hour != nil {
         localVarQueryParams.Add("hour", parameterToString(data.Hour, ""))
     }
-
     // query params : minute
     if &data.Minute != nil {
         localVarQueryParams.Add("minute", parameterToString(data.Minute, ""))
     }
-
     // query params : second
     if &data.Second != nil {
         localVarQueryParams.Add("second", parameterToString(data.Second, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -139,7 +128,6 @@ func (data *DeleteWorksheetDateFilterRequest) CreateRequestData( client *APIClie
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

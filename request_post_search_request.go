@@ -37,10 +37,9 @@ type PostSearchRequest struct {
 	Password string `json:"password,omitempty" xml:"password"`
 	Sheetname string `json:"sheetname,omitempty" xml:"sheetname"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
-
-	File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
-	LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"`  
 	
+	 File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
+	LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"`  
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -54,7 +53,7 @@ func (data *PostSearchRequest) CreateRequestData( client *APIClient) (localVarRe
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/search"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/search"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -64,22 +63,18 @@ func (data *PostSearchRequest) CreateRequestData( client *APIClient) (localVarRe
     if data.Text != "" {
         localVarQueryParams.Add("text", parameterToString(data.Text, ""))
     }
-
     // query params : password
     if data.Password != "" {
         localVarQueryParams.Add("password", parameterToString(data.Password, ""))
     }
-
     // query params : sheetname
     if data.Sheetname != "" {
         localVarQueryParams.Add("sheetname", parameterToString(data.Sheetname, ""))
     }
-
     // query params : checkExcelRestriction
-    if &data.CheckExcelRestriction != nil {
+    if data.CheckExcelRestriction {
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -101,13 +96,12 @@ func (data *PostSearchRequest) CreateRequestData( client *APIClient) (localVarRe
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	for name, path := range data.File {
-		localVarFormParams["@"+name] = []string{path}
-	}
-	if strings.TrimSpace(data.LocalPath) != "" {	
-		localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string{data.LocalPath} 
-	}
-
+		for name, path := range data.File {
+			localVarFormParams["@"+name] = []string{path}
+		} 
+			if strings.TrimSpace(data.LocalPath) != "" {	
+				localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string{data.LocalPath} 
+			}
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

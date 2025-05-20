@@ -32,9 +32,7 @@ import (
 )
 
 type PostRunTaskRequest struct {
-	TaskData interface{} `json:"task_data,omitempty" xml:"task_data"` 
-
-	
+	TaskData interface{} `json:"task_data,omitempty" xml:"task_data"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *PostRunTaskRequest) CreateRequestData( client *APIClient) (localVarR
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/task/runtask"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/task/runtask"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *PostRunTaskRequest) CreateRequestData( client *APIClient) (localVarR
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.TaskData
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

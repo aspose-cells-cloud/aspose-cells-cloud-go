@@ -40,7 +40,6 @@ type PostSetCellRangeValueRequest struct {
 	Type_ string `json:"type,omitempty" xml:"type"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -55,7 +54,7 @@ func (data *PostSetCellRangeValueRequest) CreateRequestData( client *APIClient) 
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/cells"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -67,27 +66,22 @@ func (data *PostSetCellRangeValueRequest) CreateRequestData( client *APIClient) 
     if data.Cellarea != "" {
         localVarQueryParams.Add("cellarea", parameterToString(data.Cellarea, ""))
     }
-
     // query params : value
     if data.Value != "" {
         localVarQueryParams.Add("value", parameterToString(data.Value, ""))
     }
-
     // query params : type
     if data.Type_ != "" {
         localVarQueryParams.Add("type", parameterToString(data.Type_, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -109,7 +103,6 @@ func (data *PostSetCellRangeValueRequest) CreateRequestData( client *APIClient) 
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

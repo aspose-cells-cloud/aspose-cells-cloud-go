@@ -36,9 +36,7 @@ type PostProtectWorkbookRequest struct {
     Name string `json:"name,omitempty" xml:"name"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-	ProtectWorkbookRequest interface{} `json:"protect_workbook_request,omitempty" xml:"protect_workbook_request"` 
-
-	
+	ProtectWorkbookRequest interface{} `json:"protect_workbook_request,omitempty" xml:"protect_workbook_request"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -52,7 +50,7 @@ func (data *PostProtectWorkbookRequest) CreateRequestData( client *APIClient) (l
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/protection"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/protection"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -63,12 +61,10 @@ func (data *PostProtectWorkbookRequest) CreateRequestData( client *APIClient) (l
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -91,7 +87,6 @@ func (data *PostProtectWorkbookRequest) CreateRequestData( client *APIClient) (l
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.ProtectWorkbookRequest
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

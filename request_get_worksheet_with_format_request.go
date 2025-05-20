@@ -44,7 +44,6 @@ type GetWorksheetWithFormatRequest struct {
 	PrintHeadings bool `json:"print_headings,omitempty" xml:"print_headings"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -59,7 +58,7 @@ func (data *GetWorksheetWithFormatRequest) CreateRequestData( client *APIClient)
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -71,47 +70,38 @@ func (data *GetWorksheetWithFormatRequest) CreateRequestData( client *APIClient)
     if data.Format != "" {
         localVarQueryParams.Add("format", parameterToString(data.Format, ""))
     }
-
     // query params : verticalResolution
     if &data.VerticalResolution != nil {
         localVarQueryParams.Add("verticalResolution", parameterToString(data.VerticalResolution, ""))
     }
-
     // query params : horizontalResolution
     if &data.HorizontalResolution != nil {
         localVarQueryParams.Add("horizontalResolution", parameterToString(data.HorizontalResolution, ""))
     }
-
     // query params : area
     if data.Area != "" {
         localVarQueryParams.Add("area", parameterToString(data.Area, ""))
     }
-
     // query params : pageIndex
     if &data.PageIndex != nil {
         localVarQueryParams.Add("pageIndex", parameterToString(data.PageIndex, ""))
     }
-
     // query params : onePagePerSheet
-    if &data.OnePagePerSheet != nil {
+    if data.OnePagePerSheet {
         localVarQueryParams.Add("onePagePerSheet", parameterToString(data.OnePagePerSheet, ""))
     }
-
     // query params : printHeadings
-    if &data.PrintHeadings != nil {
+    if data.PrintHeadings {
         localVarQueryParams.Add("printHeadings", parameterToString(data.PrintHeadings, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -133,7 +123,6 @@ func (data *GetWorksheetWithFormatRequest) CreateRequestData( client *APIClient)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

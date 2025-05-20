@@ -37,7 +37,6 @@ type GetWorksheetConditionalFormattingsRequest struct {
     SheetName string `json:"sheet_name,omitempty" xml:"sheet_name"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -52,7 +51,7 @@ func (data *GetWorksheetConditionalFormattingsRequest) CreateRequestData( client
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -64,12 +63,10 @@ func (data *GetWorksheetConditionalFormattingsRequest) CreateRequestData( client
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -91,7 +88,6 @@ func (data *GetWorksheetConditionalFormattingsRequest) CreateRequestData( client
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

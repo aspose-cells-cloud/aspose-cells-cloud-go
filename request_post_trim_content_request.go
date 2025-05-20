@@ -32,9 +32,7 @@ import (
 )
 
 type PostTrimContentRequest struct {
-	TrimContentOptions interface{} `json:"trim_content_options,omitempty" xml:"trim_content_options"` 
-
-	
+	TrimContentOptions interface{} `json:"trim_content_options,omitempty" xml:"trim_content_options"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *PostTrimContentRequest) CreateRequestData( client *APIClient) (local
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/trimcontent"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/trimcontent"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *PostTrimContentRequest) CreateRequestData( client *APIClient) (local
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.TrimContentOptions
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

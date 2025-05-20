@@ -32,9 +32,7 @@ import (
 )
 
 type PostUpdateWordCaseRequest struct {
-	WordCaseOptions interface{} `json:"word_case_options,omitempty" xml:"word_case_options"` 
-
-	
+	WordCaseOptions interface{} `json:"word_case_options,omitempty" xml:"word_case_options"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *PostUpdateWordCaseRequest) CreateRequestData( client *APIClient) (lo
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/updatewordcase"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/updatewordcase"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *PostUpdateWordCaseRequest) CreateRequestData( client *APIClient) (lo
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.WordCaseOptions
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

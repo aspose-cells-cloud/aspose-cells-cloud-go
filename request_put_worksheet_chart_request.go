@@ -51,7 +51,6 @@ type PutWorksheetChartRequest struct {
 	PivotTableSheet string `json:"pivot_table_sheet,omitempty" xml:"pivot_table_sheet"`
 	PivotTableName string `json:"pivot_table_name,omitempty" xml:"pivot_table_name"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -66,7 +65,7 @@ func (data *PutWorksheetChartRequest) CreateRequestData( client *APIClient) (loc
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/charts"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/charts"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -78,82 +77,66 @@ func (data *PutWorksheetChartRequest) CreateRequestData( client *APIClient) (loc
     if data.ChartType != "" {
         localVarQueryParams.Add("chartType", parameterToString(data.ChartType, ""))
     }
-
     // query params : upperLeftRow
     if &data.UpperLeftRow != nil {
         localVarQueryParams.Add("upperLeftRow", parameterToString(data.UpperLeftRow, ""))
     }
-
     // query params : upperLeftColumn
     if &data.UpperLeftColumn != nil {
         localVarQueryParams.Add("upperLeftColumn", parameterToString(data.UpperLeftColumn, ""))
     }
-
     // query params : lowerRightRow
     if &data.LowerRightRow != nil {
         localVarQueryParams.Add("lowerRightRow", parameterToString(data.LowerRightRow, ""))
     }
-
     // query params : lowerRightColumn
     if &data.LowerRightColumn != nil {
         localVarQueryParams.Add("lowerRightColumn", parameterToString(data.LowerRightColumn, ""))
     }
-
     // query params : area
     if data.Area != "" {
         localVarQueryParams.Add("area", parameterToString(data.Area, ""))
     }
-
     // query params : isVertical
-    if &data.IsVertical != nil {
+    if data.IsVertical {
         localVarQueryParams.Add("isVertical", parameterToString(data.IsVertical, ""))
     }
-
     // query params : categoryData
     if data.CategoryData != "" {
         localVarQueryParams.Add("categoryData", parameterToString(data.CategoryData, ""))
     }
-
     // query params : isAutoGetSerialName
-    if &data.IsAutoGetSerialName != nil {
+    if data.IsAutoGetSerialName {
         localVarQueryParams.Add("isAutoGetSerialName", parameterToString(data.IsAutoGetSerialName, ""))
     }
-
     // query params : title
     if data.Title != "" {
         localVarQueryParams.Add("title", parameterToString(data.Title, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : dataLabels
-    if &data.DataLabels != nil {
+    if data.DataLabels {
         localVarQueryParams.Add("dataLabels", parameterToString(data.DataLabels, ""))
     }
-
     // query params : dataLabelsPosition
     if data.DataLabelsPosition != "" {
         localVarQueryParams.Add("dataLabelsPosition", parameterToString(data.DataLabelsPosition, ""))
     }
-
     // query params : pivotTableSheet
     if data.PivotTableSheet != "" {
         localVarQueryParams.Add("pivotTableSheet", parameterToString(data.PivotTableSheet, ""))
     }
-
     // query params : pivotTableName
     if data.PivotTableName != "" {
         localVarQueryParams.Add("pivotTableName", parameterToString(data.PivotTableName, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -175,7 +158,6 @@ func (data *PutWorksheetChartRequest) CreateRequestData( client *APIClient) (loc
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

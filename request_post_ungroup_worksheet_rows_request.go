@@ -40,7 +40,6 @@ type PostUngroupWorksheetRowsRequest struct {
 	IsAll bool `json:"is_all,omitempty" xml:"is_all"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -55,7 +54,7 @@ func (data *PostUngroupWorksheetRowsRequest) CreateRequestData( client *APIClien
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/rows/ungroup"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/cells/rows/ungroup"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -67,27 +66,22 @@ func (data *PostUngroupWorksheetRowsRequest) CreateRequestData( client *APIClien
     if &data.FirstIndex != nil {
         localVarQueryParams.Add("firstIndex", parameterToString(data.FirstIndex, ""))
     }
-
     // query params : lastIndex
     if &data.LastIndex != nil {
         localVarQueryParams.Add("lastIndex", parameterToString(data.LastIndex, ""))
     }
-
     // query params : isAll
-    if &data.IsAll != nil {
+    if data.IsAll {
         localVarQueryParams.Add("isAll", parameterToString(data.IsAll, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -109,7 +103,6 @@ func (data *PostUngroupWorksheetRowsRequest) CreateRequestData( client *APIClien
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

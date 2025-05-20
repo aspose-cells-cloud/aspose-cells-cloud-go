@@ -42,7 +42,6 @@ type GetWorksheetCellsRangeValueRequest struct {
 	ColumnCount int64 `json:"column_count,omitempty" xml:"column_count"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -57,7 +56,7 @@ func (data *GetWorksheetCellsRangeValueRequest) CreateRequestData( client *APICl
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/ranges/value"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/ranges/value"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -69,37 +68,30 @@ func (data *GetWorksheetCellsRangeValueRequest) CreateRequestData( client *APICl
     if data.Namerange != "" {
         localVarQueryParams.Add("namerange", parameterToString(data.Namerange, ""))
     }
-
     // query params : firstRow
     if &data.FirstRow != nil {
         localVarQueryParams.Add("firstRow", parameterToString(data.FirstRow, ""))
     }
-
     // query params : firstColumn
     if &data.FirstColumn != nil {
         localVarQueryParams.Add("firstColumn", parameterToString(data.FirstColumn, ""))
     }
-
     // query params : rowCount
     if &data.RowCount != nil {
         localVarQueryParams.Add("rowCount", parameterToString(data.RowCount, ""))
     }
-
     // query params : columnCount
     if &data.ColumnCount != nil {
         localVarQueryParams.Add("columnCount", parameterToString(data.ColumnCount, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -121,7 +113,6 @@ func (data *GetWorksheetCellsRangeValueRequest) CreateRequestData( client *APICl
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

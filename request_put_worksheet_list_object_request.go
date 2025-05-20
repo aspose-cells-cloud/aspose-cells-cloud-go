@@ -44,7 +44,6 @@ type PutWorksheetListObjectRequest struct {
 	DisplayName string `json:"display_name,omitempty" xml:"display_name"`
 	ShowTotals bool `json:"show_totals,omitempty" xml:"show_totals"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -59,7 +58,7 @@ func (data *PutWorksheetListObjectRequest) CreateRequestData( client *APIClient)
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/listobjects"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/listobjects"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -71,47 +70,38 @@ func (data *PutWorksheetListObjectRequest) CreateRequestData( client *APIClient)
     if &data.StartRow != nil {
         localVarQueryParams.Add("startRow", parameterToString(data.StartRow, ""))
     }
-
     // query params : startColumn
     if &data.StartColumn != nil {
         localVarQueryParams.Add("startColumn", parameterToString(data.StartColumn, ""))
     }
-
     // query params : endRow
     if &data.EndRow != nil {
         localVarQueryParams.Add("endRow", parameterToString(data.EndRow, ""))
     }
-
     // query params : endColumn
     if &data.EndColumn != nil {
         localVarQueryParams.Add("endColumn", parameterToString(data.EndColumn, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : hasHeaders
-    if &data.HasHeaders != nil {
+    if data.HasHeaders {
         localVarQueryParams.Add("hasHeaders", parameterToString(data.HasHeaders, ""))
     }
-
     // query params : displayName
     if data.DisplayName != "" {
         localVarQueryParams.Add("displayName", parameterToString(data.DisplayName, ""))
     }
-
     // query params : showTotals
-    if &data.ShowTotals != nil {
+    if data.ShowTotals {
         localVarQueryParams.Add("showTotals", parameterToString(data.ShowTotals, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -133,7 +123,6 @@ func (data *PutWorksheetListObjectRequest) CreateRequestData( client *APIClient)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

@@ -34,7 +34,6 @@ import (
 
 type StorageExistsRequest struct {
     StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -49,7 +48,7 @@ func (data *StorageExistsRequest) CreateRequestData( client *APIClient) (localVa
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/storage/{storageName}/exist"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/storage/{storageName}/exist"
 	localVarPath = strings.Replace(localVarPath, "{"+"storageName"+"}", fmt.Sprintf("%v", data.StorageName), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -77,7 +76,6 @@ func (data *StorageExistsRequest) CreateRequestData( client *APIClient) (localVa
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

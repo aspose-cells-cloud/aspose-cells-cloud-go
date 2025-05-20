@@ -46,7 +46,6 @@ type PutWorksheetCustomFilterRequest struct {
 	Refresh bool `json:"refresh,omitempty" xml:"refresh"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -61,7 +60,7 @@ func (data *PutWorksheetCustomFilterRequest) CreateRequestData( client *APIClien
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter/custom"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/autoFilter/custom"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -73,57 +72,46 @@ func (data *PutWorksheetCustomFilterRequest) CreateRequestData( client *APIClien
     if data.Range_ != "" {
         localVarQueryParams.Add("range", parameterToString(data.Range_, ""))
     }
-
     // query params : fieldIndex
     if &data.FieldIndex != nil {
         localVarQueryParams.Add("fieldIndex", parameterToString(data.FieldIndex, ""))
     }
-
     // query params : operatorType1
     if data.OperatorType1 != "" {
         localVarQueryParams.Add("operatorType1", parameterToString(data.OperatorType1, ""))
     }
-
     // query params : criteria1
     if data.Criteria1 != "" {
         localVarQueryParams.Add("criteria1", parameterToString(data.Criteria1, ""))
     }
-
     // query params : isAnd
-    if &data.IsAnd != nil {
+    if data.IsAnd {
         localVarQueryParams.Add("isAnd", parameterToString(data.IsAnd, ""))
     }
-
     // query params : operatorType2
     if data.OperatorType2 != "" {
         localVarQueryParams.Add("operatorType2", parameterToString(data.OperatorType2, ""))
     }
-
     // query params : criteria2
     if data.Criteria2 != "" {
         localVarQueryParams.Add("criteria2", parameterToString(data.Criteria2, ""))
     }
-
     // query params : matchBlanks
-    if &data.MatchBlanks != nil {
+    if data.MatchBlanks {
         localVarQueryParams.Add("matchBlanks", parameterToString(data.MatchBlanks, ""))
     }
-
     // query params : refresh
-    if &data.Refresh != nil {
+    if data.Refresh {
         localVarQueryParams.Add("refresh", parameterToString(data.Refresh, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -145,7 +133,6 @@ func (data *PutWorksheetCustomFilterRequest) CreateRequestData( client *APIClien
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

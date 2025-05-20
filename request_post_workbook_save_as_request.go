@@ -44,10 +44,9 @@ type PostWorkbookSaveAsRequest struct {
 	Region string `json:"region,omitempty" xml:"region"`
 	PageWideFitOnPerSheet bool `json:"page_wide_fit_on_per_sheet,omitempty" xml:"page_wide_fit_on_per_sheet"`
 	PageTallFitOnPerSheet bool `json:"page_tall_fit_on_per_sheet,omitempty" xml:"page_tall_fit_on_per_sheet"`
+	OnePagePerSheet bool `json:"one_page_per_sheet,omitempty" xml:"one_page_per_sheet"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	SaveOptions interface{} `json:"save_options,omitempty" xml:"save_options"` 
-
-	
+	SaveOptions interface{} `json:"save_options,omitempty" xml:"save_options"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -61,7 +60,7 @@ func (data *PostWorkbookSaveAsRequest) CreateRequestData( client *APIClient) (lo
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/SaveAs"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/SaveAs"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -72,57 +71,50 @@ func (data *PostWorkbookSaveAsRequest) CreateRequestData( client *APIClient) (lo
     if data.Newfilename != "" {
         localVarQueryParams.Add("newfilename", parameterToString(data.Newfilename, ""))
     }
-
     // query params : isAutoFitRows
-    if &data.IsAutoFitRows != nil {
+    if data.IsAutoFitRows {
         localVarQueryParams.Add("isAutoFitRows", parameterToString(data.IsAutoFitRows, ""))
     }
-
     // query params : isAutoFitColumns
-    if &data.IsAutoFitColumns != nil {
+    if data.IsAutoFitColumns {
         localVarQueryParams.Add("isAutoFitColumns", parameterToString(data.IsAutoFitColumns, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
     // query params : outStorageName
     if data.OutStorageName != "" {
         localVarQueryParams.Add("outStorageName", parameterToString(data.OutStorageName, ""))
     }
-
     // query params : checkExcelRestriction
-    if &data.CheckExcelRestriction != nil {
+    if data.CheckExcelRestriction {
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
     }
-
     // query params : region
     if data.Region != "" {
         localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
-
     // query params : pageWideFitOnPerSheet
-    if &data.PageWideFitOnPerSheet != nil {
+    if data.PageWideFitOnPerSheet {
         localVarQueryParams.Add("pageWideFitOnPerSheet", parameterToString(data.PageWideFitOnPerSheet, ""))
     }
-
     // query params : pageTallFitOnPerSheet
-    if &data.PageTallFitOnPerSheet != nil {
+    if data.PageTallFitOnPerSheet {
         localVarQueryParams.Add("pageTallFitOnPerSheet", parameterToString(data.PageTallFitOnPerSheet, ""))
     }
-
+    // query params : onePagePerSheet
+    if data.OnePagePerSheet {
+        localVarQueryParams.Add("onePagePerSheet", parameterToString(data.OnePagePerSheet, ""))
+    }
     // query params : fontsLocation
     if data.FontsLocation != "" {
         localVarQueryParams.Add("FontsLocation", parameterToString(data.FontsLocation, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -145,7 +137,6 @@ func (data *PostWorkbookSaveAsRequest) CreateRequestData( client *APIClient) (lo
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.SaveOptions
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

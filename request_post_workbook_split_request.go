@@ -44,7 +44,6 @@ type PostWorkbookSplitRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -59,7 +58,7 @@ func (data *PostWorkbookSplitRequest) CreateRequestData( client *APIClient) (loc
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/split"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/split"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -70,52 +69,42 @@ func (data *PostWorkbookSplitRequest) CreateRequestData( client *APIClient) (loc
     if data.Format != "" {
         localVarQueryParams.Add("format", parameterToString(data.Format, ""))
     }
-
     // query params : outFolder
     if data.OutFolder != "" {
         localVarQueryParams.Add("outFolder", parameterToString(data.OutFolder, ""))
     }
-
     // query params : from
     if &data.From != nil {
         localVarQueryParams.Add("from", parameterToString(data.From, ""))
     }
-
     // query params : to
     if &data.To != nil {
         localVarQueryParams.Add("to", parameterToString(data.To, ""))
     }
-
     // query params : horizontalResolution
     if &data.HorizontalResolution != nil {
         localVarQueryParams.Add("horizontalResolution", parameterToString(data.HorizontalResolution, ""))
     }
-
     // query params : verticalResolution
     if &data.VerticalResolution != nil {
         localVarQueryParams.Add("verticalResolution", parameterToString(data.VerticalResolution, ""))
     }
-
     // query params : splitNameRule
     if data.SplitNameRule != "" {
         localVarQueryParams.Add("splitNameRule", parameterToString(data.SplitNameRule, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
     // query params : outStorageName
     if data.OutStorageName != "" {
         localVarQueryParams.Add("outStorageName", parameterToString(data.OutStorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -137,7 +126,6 @@ func (data *PostWorkbookSplitRequest) CreateRequestData( client *APIClient) (loc
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

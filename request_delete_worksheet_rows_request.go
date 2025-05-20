@@ -40,7 +40,6 @@ type DeleteWorksheetRowsRequest struct {
 	UpdateReference bool `json:"update_reference,omitempty" xml:"update_reference"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -55,7 +54,7 @@ func (data *DeleteWorksheetRowsRequest) CreateRequestData( client *APIClient) (l
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/cells/rows/"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/cells/rows/"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -67,27 +66,22 @@ func (data *DeleteWorksheetRowsRequest) CreateRequestData( client *APIClient) (l
     if &data.Startrow != nil {
         localVarQueryParams.Add("startrow", parameterToString(data.Startrow, ""))
     }
-
     // query params : totalRows
     if &data.TotalRows != nil {
         localVarQueryParams.Add("totalRows", parameterToString(data.TotalRows, ""))
     }
-
     // query params : updateReference
-    if &data.UpdateReference != nil {
+    if data.UpdateReference {
         localVarQueryParams.Add("updateReference", parameterToString(data.UpdateReference, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -109,7 +103,6 @@ func (data *DeleteWorksheetRowsRequest) CreateRequestData( client *APIClient) (l
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

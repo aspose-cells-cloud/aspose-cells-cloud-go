@@ -37,7 +37,6 @@ type GetNamedRangeValueRequest struct {
     Namerange string `json:"namerange,omitempty" xml:"namerange"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -52,7 +51,7 @@ func (data *GetNamedRangeValueRequest) CreateRequestData( client *APIClient) (lo
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/ranges/{namerange}/value"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/ranges/{namerange}/value"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"namerange"+"}", fmt.Sprintf("%v", data.Namerange), -1)
 
@@ -64,12 +63,10 @@ func (data *GetNamedRangeValueRequest) CreateRequestData( client *APIClient) (lo
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -91,7 +88,6 @@ func (data *GetNamedRangeValueRequest) CreateRequestData( client *APIClient) (lo
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

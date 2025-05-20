@@ -38,9 +38,7 @@ type PostImportDataRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	Region string `json:"region,omitempty" xml:"region"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	ImportOption interface{} `json:"import_option,omitempty" xml:"import_option"` 
-
-	
+	ImportOption interface{} `json:"import_option,omitempty" xml:"import_option"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -54,7 +52,7 @@ func (data *PostImportDataRequest) CreateRequestData( client *APIClient) (localV
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/importdata"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/importdata"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -65,22 +63,18 @@ func (data *PostImportDataRequest) CreateRequestData( client *APIClient) (localV
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
     // query params : region
     if data.Region != "" {
         localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
-
     // query params : fontsLocation
     if data.FontsLocation != "" {
         localVarQueryParams.Add("FontsLocation", parameterToString(data.FontsLocation, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -103,7 +97,6 @@ func (data *PostImportDataRequest) CreateRequestData( client *APIClient) (localV
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.ImportOption
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

@@ -46,8 +46,9 @@ type GetWorkbookRequest struct {
 	Region string `json:"region,omitempty" xml:"region"`
 	PageWideFitOnPerSheet bool `json:"page_wide_fit_on_per_sheet,omitempty" xml:"page_wide_fit_on_per_sheet"`
 	PageTallFitOnPerSheet bool `json:"page_tall_fit_on_per_sheet,omitempty" xml:"page_tall_fit_on_per_sheet"`
+	OnePagePerSheet bool `json:"one_page_per_sheet,omitempty" xml:"one_page_per_sheet"`
+	OnlyAutofitTable bool `json:"only_autofit_table,omitempty" xml:"only_autofit_table"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -62,7 +63,7 @@ func (data *GetWorkbookRequest) CreateRequestData( client *APIClient) (localVarR
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -73,67 +74,62 @@ func (data *GetWorkbookRequest) CreateRequestData( client *APIClient) (localVarR
     if data.Format != "" {
         localVarQueryParams.Add("format", parameterToString(data.Format, ""))
     }
-
     // query params : password
     if data.Password != "" {
         localVarQueryParams.Add("password", parameterToString(data.Password, ""))
     }
-
     // query params : isAutoFit
-    if &data.IsAutoFit != nil {
+    if data.IsAutoFit {
         localVarQueryParams.Add("isAutoFit", parameterToString(data.IsAutoFit, ""))
     }
-
     // query params : onlySaveTable
-    if &data.OnlySaveTable != nil {
+    if data.OnlySaveTable {
         localVarQueryParams.Add("onlySaveTable", parameterToString(data.OnlySaveTable, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : outPath
     if data.OutPath != "" {
         localVarQueryParams.Add("outPath", parameterToString(data.OutPath, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
     // query params : outStorageName
     if data.OutStorageName != "" {
         localVarQueryParams.Add("outStorageName", parameterToString(data.OutStorageName, ""))
     }
-
     // query params : checkExcelRestriction
-    if &data.CheckExcelRestriction != nil {
+    if data.CheckExcelRestriction {
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
     }
-
     // query params : region
     if data.Region != "" {
         localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
-
     // query params : pageWideFitOnPerSheet
-    if &data.PageWideFitOnPerSheet != nil {
+    if data.PageWideFitOnPerSheet {
         localVarQueryParams.Add("pageWideFitOnPerSheet", parameterToString(data.PageWideFitOnPerSheet, ""))
     }
-
     // query params : pageTallFitOnPerSheet
-    if &data.PageTallFitOnPerSheet != nil {
+    if data.PageTallFitOnPerSheet {
         localVarQueryParams.Add("pageTallFitOnPerSheet", parameterToString(data.PageTallFitOnPerSheet, ""))
     }
-
+    // query params : onePagePerSheet
+    if data.OnePagePerSheet {
+        localVarQueryParams.Add("onePagePerSheet", parameterToString(data.OnePagePerSheet, ""))
+    }
+    // query params : onlyAutofitTable
+    if data.OnlyAutofitTable {
+        localVarQueryParams.Add("onlyAutofitTable", parameterToString(data.OnlyAutofitTable, ""))
+    }
     // query params : fontsLocation
     if data.FontsLocation != "" {
         localVarQueryParams.Add("FontsLocation", parameterToString(data.FontsLocation, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -155,7 +151,6 @@ func (data *GetWorkbookRequest) CreateRequestData( client *APIClient) (localVarR
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

@@ -32,9 +32,7 @@ import (
 )
 
 type PostAnalyzeExcelRequest struct {
-	AnalyzeExcelRequest interface{} `json:"analyze_excel_request,omitempty" xml:"analyze_excel_request"` 
-
-	
+	AnalyzeExcelRequest interface{} `json:"analyze_excel_request,omitempty" xml:"analyze_excel_request"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *PostAnalyzeExcelRequest) CreateRequestData( client *APIClient) (loca
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/analyze"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/analyze"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *PostAnalyzeExcelRequest) CreateRequestData( client *APIClient) (loca
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.AnalyzeExcelRequest
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

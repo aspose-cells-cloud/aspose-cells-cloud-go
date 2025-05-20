@@ -32,9 +32,7 @@ import (
 )
 
 type CheckWorkbookFormulaErrorsRequest struct {
-	FormulaErrorOptions interface{} `json:"formula_error_options,omitempty" xml:"formula_error_options"` 
-
-	
+	FormulaErrorOptions interface{} `json:"formula_error_options,omitempty" xml:"formula_error_options"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *CheckWorkbookFormulaErrorsRequest) CreateRequestData( client *APICli
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/checkformulaerrors"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/checkformulaerrors"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *CheckWorkbookFormulaErrorsRequest) CreateRequestData( client *APICli
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.FormulaErrorOptions
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

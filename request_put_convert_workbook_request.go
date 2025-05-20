@@ -44,11 +44,13 @@ type PutConvertWorkbookRequest struct {
 	PageTallFitOnPerSheet bool `json:"page_tall_fit_on_per_sheet,omitempty" xml:"page_tall_fit_on_per_sheet"`
 	SheetName string `json:"sheet_name,omitempty" xml:"sheet_name"`
 	PageIndex int64 `json:"page_index,omitempty" xml:"page_index"`
+	OnePagePerSheet bool `json:"one_page_per_sheet,omitempty" xml:"one_page_per_sheet"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-
-	File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
-	LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"`  
 	
+	 File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
+	LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"`  
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -62,7 +64,7 @@ func (data *PutConvertWorkbookRequest) CreateRequestData( client *APIClient) (lo
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/convert"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/convert"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -72,62 +74,62 @@ func (data *PutConvertWorkbookRequest) CreateRequestData( client *APIClient) (lo
     if data.Format != "" {
         localVarQueryParams.Add("format", parameterToString(data.Format, ""))
     }
-
     // query params : password
     if data.Password != "" {
         localVarQueryParams.Add("password", parameterToString(data.Password, ""))
     }
-
     // query params : outPath
     if data.OutPath != "" {
         localVarQueryParams.Add("outPath", parameterToString(data.OutPath, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
     // query params : checkExcelRestriction
-    if &data.CheckExcelRestriction != nil {
+    if data.CheckExcelRestriction {
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
     }
-
     // query params : streamFormat
     if data.StreamFormat != "" {
         localVarQueryParams.Add("streamFormat", parameterToString(data.StreamFormat, ""))
     }
-
     // query params : region
     if data.Region != "" {
         localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
-
     // query params : pageWideFitOnPerSheet
-    if &data.PageWideFitOnPerSheet != nil {
+    if data.PageWideFitOnPerSheet {
         localVarQueryParams.Add("pageWideFitOnPerSheet", parameterToString(data.PageWideFitOnPerSheet, ""))
     }
-
     // query params : pageTallFitOnPerSheet
-    if &data.PageTallFitOnPerSheet != nil {
+    if data.PageTallFitOnPerSheet {
         localVarQueryParams.Add("pageTallFitOnPerSheet", parameterToString(data.PageTallFitOnPerSheet, ""))
     }
-
     // query params : sheetName
     if data.SheetName != "" {
         localVarQueryParams.Add("sheetName", parameterToString(data.SheetName, ""))
     }
-
     // query params : pageIndex
     if &data.PageIndex != nil {
         localVarQueryParams.Add("pageIndex", parameterToString(data.PageIndex, ""))
     }
-
+    // query params : onePagePerSheet
+    if data.OnePagePerSheet {
+        localVarQueryParams.Add("onePagePerSheet", parameterToString(data.OnePagePerSheet, ""))
+    }
+    // query params : autoRowsFit
+    if data.AutoRowsFit {
+        localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
+    }
+    // query params : autoColumnsFit
+    if data.AutoColumnsFit {
+        localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
+    }
     // query params : fontsLocation
     if data.FontsLocation != "" {
         localVarQueryParams.Add("FontsLocation", parameterToString(data.FontsLocation, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -149,13 +151,12 @@ func (data *PutConvertWorkbookRequest) CreateRequestData( client *APIClient) (lo
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	for name, path := range data.File {
-		localVarFormParams["@"+name] = []string{path}
-	}
-	if strings.TrimSpace(data.LocalPath) != "" {	
-		localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string{data.LocalPath} 
-	}
-
+		for name, path := range data.File {
+			localVarFormParams["@"+name] = []string{path}
+		} 
+			if strings.TrimSpace(data.LocalPath) != "" {	
+				localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string{data.LocalPath} 
+			}
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

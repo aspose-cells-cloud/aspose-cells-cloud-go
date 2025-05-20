@@ -43,7 +43,6 @@ type PutWorksheetFormatConditionRequest struct {
 	Formula2 string `json:"formula2,omitempty" xml:"formula2"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -58,7 +57,7 @@ func (data *PutWorksheetFormatConditionRequest) CreateRequestData( client *APICl
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"index"+"}", fmt.Sprintf("%v", data.Index), -1)
@@ -71,37 +70,30 @@ func (data *PutWorksheetFormatConditionRequest) CreateRequestData( client *APICl
     if data.CellArea != "" {
         localVarQueryParams.Add("cellArea", parameterToString(data.CellArea, ""))
     }
-
     // query params : type
     if data.Type_ != "" {
         localVarQueryParams.Add("type", parameterToString(data.Type_, ""))
     }
-
     // query params : operatorType
     if data.OperatorType != "" {
         localVarQueryParams.Add("operatorType", parameterToString(data.OperatorType, ""))
     }
-
     // query params : formula1
     if data.Formula1 != "" {
         localVarQueryParams.Add("formula1", parameterToString(data.Formula1, ""))
     }
-
     // query params : formula2
     if data.Formula2 != "" {
         localVarQueryParams.Add("formula2", parameterToString(data.Formula2, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -123,7 +115,6 @@ func (data *PutWorksheetFormatConditionRequest) CreateRequestData( client *APICl
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

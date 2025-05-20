@@ -39,10 +39,9 @@ type PostExportRequest struct {
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	Region string `json:"region,omitempty" xml:"region"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-
-	File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
-	LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"`  
 	
+	 File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
+	LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"`  
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -56,7 +55,7 @@ func (data *PostExportRequest) CreateRequestData( client *APIClient) (localVarRe
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/export"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/export"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -66,32 +65,26 @@ func (data *PostExportRequest) CreateRequestData( client *APIClient) (localVarRe
     if data.ObjectType != "" {
         localVarQueryParams.Add("objectType", parameterToString(data.ObjectType, ""))
     }
-
     // query params : format
     if data.Format != "" {
         localVarQueryParams.Add("format", parameterToString(data.Format, ""))
     }
-
     // query params : password
     if data.Password != "" {
         localVarQueryParams.Add("password", parameterToString(data.Password, ""))
     }
-
     // query params : checkExcelRestriction
-    if &data.CheckExcelRestriction != nil {
+    if data.CheckExcelRestriction {
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
     }
-
     // query params : region
     if data.Region != "" {
         localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
-
     // query params : fontsLocation
     if data.FontsLocation != "" {
         localVarQueryParams.Add("FontsLocation", parameterToString(data.FontsLocation, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -113,13 +106,12 @@ func (data *PostExportRequest) CreateRequestData( client *APIClient) (localVarRe
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	for name, path := range data.File {
-		localVarFormParams["@"+name] = []string{path}
-	}
-	if strings.TrimSpace(data.LocalPath) != "" {	
-		localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string{data.LocalPath} 
-	}
-
+		for name, path := range data.File {
+			localVarFormParams["@"+name] = []string{path}
+		} 
+			if strings.TrimSpace(data.LocalPath) != "" {	
+				localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string{data.LocalPath} 
+			}
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

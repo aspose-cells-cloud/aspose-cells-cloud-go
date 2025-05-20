@@ -39,9 +39,7 @@ type PutWorksheetPivotTableFilterRequest struct {
 	NeedReCalculate bool `json:"need_re_calculate,omitempty" xml:"need_re_calculate"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-	Filter interface{} `json:"filter,omitempty" xml:"filter"` 
-
-	
+	Filter interface{} `json:"filter,omitempty" xml:"filter"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -55,7 +53,7 @@ func (data *PutWorksheetPivotTableFilterRequest) CreateRequestData( client *APIC
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", data.PivotTableIndex), -1)
@@ -65,20 +63,17 @@ func (data *PutWorksheetPivotTableFilterRequest) CreateRequestData( client *APIC
 	localVarFormParams := url.Values{}
 
     // query params : needReCalculate
-    if &data.NeedReCalculate != nil {
+    if data.NeedReCalculate {
         localVarQueryParams.Add("needReCalculate", parameterToString(data.NeedReCalculate, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -101,7 +96,6 @@ func (data *PutWorksheetPivotTableFilterRequest) CreateRequestData( client *APIC
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.Filter
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

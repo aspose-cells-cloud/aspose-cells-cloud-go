@@ -25,6 +25,8 @@ GET http://api.aspose.cloud/v3.0//cells/{name}
 |region|String|Query|The regional settings for workbook.|
 |pageWideFitOnPerSheet|Boolean|Query|The page wide fit on worksheet.|
 |pageTallFitOnPerSheet|Boolean|Query|The page tall fit on worksheet.|
+|onePagePerSheet|Boolean|Query||
+|onlyAutofitTable|Boolean|Query||
 |FontsLocation|String|Query|Use Custom fonts.|
 
 

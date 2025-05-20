@@ -38,7 +38,6 @@ type PostAutofitWorkbookColumnsRequest struct {
 	EndColumn int64 `json:"end_column,omitempty" xml:"end_column"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -53,7 +52,7 @@ func (data *PostAutofitWorkbookColumnsRequest) CreateRequestData( client *APICli
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/autofitcolumns"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/autofitcolumns"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -64,22 +63,18 @@ func (data *PostAutofitWorkbookColumnsRequest) CreateRequestData( client *APICli
     if &data.StartColumn != nil {
         localVarQueryParams.Add("startColumn", parameterToString(data.StartColumn, ""))
     }
-
     // query params : endColumn
     if &data.EndColumn != nil {
         localVarQueryParams.Add("endColumn", parameterToString(data.EndColumn, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -101,7 +96,6 @@ func (data *PostAutofitWorkbookColumnsRequest) CreateRequestData( client *APICli
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

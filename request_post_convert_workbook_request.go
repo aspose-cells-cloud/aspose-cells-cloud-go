@@ -33,9 +33,7 @@ import (
 
 type PostConvertWorkbookRequest struct {
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	ConvertWorkbookOptions interface{} `json:"convert_workbook_options,omitempty" xml:"convert_workbook_options"` 
-
-	
+	ConvertWorkbookOptions interface{} `json:"convert_workbook_options,omitempty" xml:"convert_workbook_options"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -49,7 +47,7 @@ func (data *PostConvertWorkbookRequest) CreateRequestData( client *APIClient) (l
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/convertWorkbook"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/convertWorkbook"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -59,7 +57,6 @@ func (data *PostConvertWorkbookRequest) CreateRequestData( client *APIClient) (l
     if data.FontsLocation != "" {
         localVarQueryParams.Add("FontsLocation", parameterToString(data.FontsLocation, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -82,7 +79,6 @@ func (data *PostConvertWorkbookRequest) CreateRequestData( client *APIClient) (l
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.ConvertWorkbookOptions
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

@@ -32,7 +32,6 @@ import (
 )
 
 type PostAccessTokenRequest struct {
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -47,7 +46,7 @@ func (data *PostAccessTokenRequest) CreateRequestData( client *APIClient) (local
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/connect/token"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/connect/token"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -74,7 +73,6 @@ func (data *PostAccessTokenRequest) CreateRequestData( client *APIClient) (local
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

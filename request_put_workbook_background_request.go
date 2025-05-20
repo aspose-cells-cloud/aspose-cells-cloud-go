@@ -39,10 +39,9 @@ type PutWorkbookBackgroundRequest struct {
 	ImageAdaptOption string `json:"image_adapt_option,omitempty" xml:"image_adapt_option"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
-	File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
-	LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"`  
 	
+	 File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
+	LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"`  
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -56,7 +55,7 @@ func (data *PutWorkbookBackgroundRequest) CreateRequestData( client *APIClient) 
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/background"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/background"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -67,22 +66,18 @@ func (data *PutWorkbookBackgroundRequest) CreateRequestData( client *APIClient) 
     if data.PicPath != "" {
         localVarQueryParams.Add("picPath", parameterToString(data.PicPath, ""))
     }
-
     // query params : imageAdaptOption
     if data.ImageAdaptOption != "" {
         localVarQueryParams.Add("imageAdaptOption", parameterToString(data.ImageAdaptOption, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -104,13 +99,12 @@ func (data *PutWorkbookBackgroundRequest) CreateRequestData( client *APIClient) 
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	for name, path := range data.File {
-		localVarFormParams["@"+name] = []string{path}
-	}
-	if strings.TrimSpace(data.LocalPath) != "" {	
-		localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string{data.LocalPath} 
-	}
-
+		for name, path := range data.File {
+			localVarFormParams["@"+name] = []string{path}
+		} 
+			if strings.TrimSpace(data.LocalPath) != "" {	
+				localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string{data.LocalPath} 
+			}
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

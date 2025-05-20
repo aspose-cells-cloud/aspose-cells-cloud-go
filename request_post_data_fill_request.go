@@ -32,9 +32,7 @@ import (
 )
 
 type PostDataFillRequest struct {
-	DataFillRequest interface{} `json:"data_fill_request,omitempty" xml:"data_fill_request"` 
-
-	
+	DataFillRequest interface{} `json:"data_fill_request,omitempty" xml:"data_fill_request"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *PostDataFillRequest) CreateRequestData( client *APIClient) (localVar
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/datafill"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/datafill"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *PostDataFillRequest) CreateRequestData( client *APIClient) (localVar
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.DataFillRequest
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

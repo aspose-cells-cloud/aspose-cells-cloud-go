@@ -38,7 +38,6 @@ type CopyFileRequest struct {
 	SrcStorageName string `json:"src_storage_name,omitempty" xml:"src_storage_name"`
 	DestStorageName string `json:"dest_storage_name,omitempty" xml:"dest_storage_name"`
 	VersionId string `json:"version_id,omitempty" xml:"version_id"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -53,7 +52,7 @@ func (data *CopyFileRequest) CreateRequestData( client *APIClient) (localVarRequ
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/storage/file/copy/{srcPath}"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/storage/file/copy/{srcPath}"
 	localVarPath = strings.Replace(localVarPath, "{"+"srcPath"+"}", fmt.Sprintf("%v", data.SrcPath), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -64,22 +63,18 @@ func (data *CopyFileRequest) CreateRequestData( client *APIClient) (localVarRequ
     if data.DestPath != "" {
         localVarQueryParams.Add("destPath", parameterToString(data.DestPath, ""))
     }
-
     // query params : srcStorageName
     if data.SrcStorageName != "" {
         localVarQueryParams.Add("srcStorageName", parameterToString(data.SrcStorageName, ""))
     }
-
     // query params : destStorageName
     if data.DestStorageName != "" {
         localVarQueryParams.Add("destStorageName", parameterToString(data.DestStorageName, ""))
     }
-
     // query params : versionId
     if data.VersionId != "" {
         localVarQueryParams.Add("versionId", parameterToString(data.VersionId, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -101,7 +96,6 @@ func (data *CopyFileRequest) CreateRequestData( client *APIClient) (localVarRequ
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

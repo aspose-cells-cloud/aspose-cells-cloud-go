@@ -32,9 +32,7 @@ import (
 )
 
 type PostRemoveDuplicatesRequest struct {
-	RemoveDuplicatesOptions interface{} `json:"remove_duplicates_options,omitempty" xml:"remove_duplicates_options"` 
-
-	
+	RemoveDuplicatesOptions interface{} `json:"remove_duplicates_options,omitempty" xml:"remove_duplicates_options"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *PostRemoveDuplicatesRequest) CreateRequestData( client *APIClient) (
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/removeduplicates"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/removeduplicates"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *PostRemoveDuplicatesRequest) CreateRequestData( client *APIClient) (
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.RemoveDuplicatesOptions
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

@@ -32,9 +32,7 @@ import (
 )
 
 type PostBatchLockRequest struct {
-	BatchLockRequest interface{} `json:"batch_lock_request,omitempty" xml:"batch_lock_request"` 
-
-	
+	BatchLockRequest interface{} `json:"batch_lock_request,omitempty" xml:"batch_lock_request"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *PostBatchLockRequest) CreateRequestData( client *APIClient) (localVa
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/batch/lock"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/batch/lock"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *PostBatchLockRequest) CreateRequestData( client *APIClient) (localVa
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.BatchLockRequest
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

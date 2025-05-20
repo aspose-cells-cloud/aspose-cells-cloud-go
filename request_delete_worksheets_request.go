@@ -36,9 +36,7 @@ type DeleteWorksheetsRequest struct {
     Name string `json:"name,omitempty" xml:"name"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-	MatchCondition interface{} `json:"match_condition,omitempty" xml:"match_condition"` 
-
-	
+	MatchCondition interface{} `json:"match_condition,omitempty" xml:"match_condition"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -52,7 +50,7 @@ func (data *DeleteWorksheetsRequest) CreateRequestData( client *APIClient) (loca
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -63,12 +61,10 @@ func (data *DeleteWorksheetsRequest) CreateRequestData( client *APIClient) (loca
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -91,7 +87,6 @@ func (data *DeleteWorksheetsRequest) CreateRequestData( client *APIClient) (loca
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.MatchCondition
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

@@ -42,9 +42,7 @@ type PutWorksheetAddPictureRequest struct {
 	PicturePath string `json:"picture_path,omitempty" xml:"picture_path"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-	Picture interface{} `json:"picture,omitempty" xml:"picture"` 
-
-	
+	Picture interface{} `json:"picture,omitempty" xml:"picture"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -58,7 +56,7 @@ func (data *PutWorksheetAddPictureRequest) CreateRequestData( client *APIClient)
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pictures"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/pictures"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -70,37 +68,30 @@ func (data *PutWorksheetAddPictureRequest) CreateRequestData( client *APIClient)
     if &data.UpperLeftRow != nil {
         localVarQueryParams.Add("upperLeftRow", parameterToString(data.UpperLeftRow, ""))
     }
-
     // query params : upperLeftColumn
     if &data.UpperLeftColumn != nil {
         localVarQueryParams.Add("upperLeftColumn", parameterToString(data.UpperLeftColumn, ""))
     }
-
     // query params : lowerRightRow
     if &data.LowerRightRow != nil {
         localVarQueryParams.Add("lowerRightRow", parameterToString(data.LowerRightRow, ""))
     }
-
     // query params : lowerRightColumn
     if &data.LowerRightColumn != nil {
         localVarQueryParams.Add("lowerRightColumn", parameterToString(data.LowerRightColumn, ""))
     }
-
     // query params : picturePath
     if data.PicturePath != "" {
         localVarQueryParams.Add("picturePath", parameterToString(data.PicturePath, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -123,7 +114,6 @@ func (data *PutWorksheetAddPictureRequest) CreateRequestData( client *APIClient)
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.Picture
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

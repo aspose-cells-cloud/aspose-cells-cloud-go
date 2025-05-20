@@ -32,9 +32,7 @@ import (
 )
 
 type CheckWrokbookExternalReferenceRequest struct {
-	CheckExternalReferenceOptions interface{} `json:"check_external_reference_options,omitempty" xml:"check_external_reference_options"` 
-
-	
+	CheckExternalReferenceOptions interface{} `json:"check_external_reference_options,omitempty" xml:"check_external_reference_options"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *CheckWrokbookExternalReferenceRequest) CreateRequestData( client *AP
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/checkexternalreference"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/checkexternalreference"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *CheckWrokbookExternalReferenceRequest) CreateRequestData( client *AP
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.CheckExternalReferenceOptions
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

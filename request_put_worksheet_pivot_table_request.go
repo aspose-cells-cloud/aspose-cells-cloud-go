@@ -41,7 +41,6 @@ type PutWorksheetPivotTableRequest struct {
 	TableName string `json:"table_name,omitempty" xml:"table_name"`
 	UseSameSource bool `json:"use_same_source,omitempty" xml:"use_same_source"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -56,7 +55,7 @@ func (data *PutWorksheetPivotTableRequest) CreateRequestData( client *APIClient)
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/pivottables"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -68,32 +67,26 @@ func (data *PutWorksheetPivotTableRequest) CreateRequestData( client *APIClient)
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : sourceData
     if data.SourceData != "" {
         localVarQueryParams.Add("sourceData", parameterToString(data.SourceData, ""))
     }
-
     // query params : destCellName
     if data.DestCellName != "" {
         localVarQueryParams.Add("destCellName", parameterToString(data.DestCellName, ""))
     }
-
     // query params : tableName
     if data.TableName != "" {
         localVarQueryParams.Add("tableName", parameterToString(data.TableName, ""))
     }
-
     // query params : useSameSource
-    if &data.UseSameSource != nil {
+    if data.UseSameSource {
         localVarQueryParams.Add("useSameSource", parameterToString(data.UseSameSource, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -115,7 +108,6 @@ func (data *PutWorksheetPivotTableRequest) CreateRequestData( client *APIClient)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

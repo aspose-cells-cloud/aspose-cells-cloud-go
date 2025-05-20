@@ -43,7 +43,6 @@ type PutWorksheetOleObjectRequest struct {
 	ImageFile string `json:"image_file,omitempty" xml:"image_file"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -58,7 +57,7 @@ func (data *PutWorksheetOleObjectRequest) CreateRequestData( client *APIClient) 
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/oleobjects"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/oleobjects"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -70,42 +69,34 @@ func (data *PutWorksheetOleObjectRequest) CreateRequestData( client *APIClient) 
     if &data.UpperLeftRow != nil {
         localVarQueryParams.Add("upperLeftRow", parameterToString(data.UpperLeftRow, ""))
     }
-
     // query params : upperLeftColumn
     if &data.UpperLeftColumn != nil {
         localVarQueryParams.Add("upperLeftColumn", parameterToString(data.UpperLeftColumn, ""))
     }
-
     // query params : height
     if &data.Height != nil {
         localVarQueryParams.Add("height", parameterToString(data.Height, ""))
     }
-
     // query params : width
     if &data.Width != nil {
         localVarQueryParams.Add("width", parameterToString(data.Width, ""))
     }
-
     // query params : oleFile
     if data.OleFile != "" {
         localVarQueryParams.Add("oleFile", parameterToString(data.OleFile, ""))
     }
-
     // query params : imageFile
     if data.ImageFile != "" {
         localVarQueryParams.Add("imageFile", parameterToString(data.ImageFile, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -127,7 +118,6 @@ func (data *PutWorksheetOleObjectRequest) CreateRequestData( client *APIClient) 
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

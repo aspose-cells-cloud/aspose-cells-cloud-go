@@ -38,9 +38,7 @@ type PutWorksheetConditionalFormattingRequest struct {
 	CellArea string `json:"cell_area,omitempty" xml:"cell_area"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-	Formatcondition interface{} `json:"formatcondition,omitempty" xml:"formatcondition"` 
-
-	
+	Formatcondition interface{} `json:"formatcondition,omitempty" xml:"formatcondition"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -54,7 +52,7 @@ func (data *PutWorksheetConditionalFormattingRequest) CreateRequestData( client 
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -66,17 +64,14 @@ func (data *PutWorksheetConditionalFormattingRequest) CreateRequestData( client 
     if data.CellArea != "" {
         localVarQueryParams.Add("cellArea", parameterToString(data.CellArea, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -99,7 +94,6 @@ func (data *PutWorksheetConditionalFormattingRequest) CreateRequestData( client 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.Formatcondition
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

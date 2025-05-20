@@ -39,9 +39,7 @@ type PostWorkbookDataCleansingRequest struct {
 	Password string `json:"password,omitempty" xml:"password"`
 	Region string `json:"region,omitempty" xml:"region"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
-	DataCleansing interface{} `json:"data_cleansing,omitempty" xml:"data_cleansing"` 
-
-	
+	DataCleansing interface{} `json:"data_cleansing,omitempty" xml:"data_cleansing"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -55,7 +53,7 @@ func (data *PostWorkbookDataCleansingRequest) CreateRequestData( client *APIClie
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/datacleansing"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/datacleansing"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -66,27 +64,22 @@ func (data *PostWorkbookDataCleansingRequest) CreateRequestData( client *APIClie
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
     // query params : password
     if data.Password != "" {
         localVarQueryParams.Add("password", parameterToString(data.Password, ""))
     }
-
     // query params : region
     if data.Region != "" {
         localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
-
     // query params : checkExcelRestriction
-    if &data.CheckExcelRestriction != nil {
+    if data.CheckExcelRestriction {
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -109,7 +102,6 @@ func (data *PostWorkbookDataCleansingRequest) CreateRequestData( client *APIClie
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.DataCleansing
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

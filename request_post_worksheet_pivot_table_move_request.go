@@ -41,7 +41,6 @@ type PostWorksheetPivotTableMoveRequest struct {
 	DestCellName string `json:"dest_cell_name,omitempty" xml:"dest_cell_name"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -56,7 +55,7 @@ func (data *PostWorksheetPivotTableMoveRequest) CreateRequestData( client *APICl
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Move"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Move"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"pivotTableIndex"+"}", fmt.Sprintf("%v", data.PivotTableIndex), -1)
@@ -69,27 +68,22 @@ func (data *PostWorksheetPivotTableMoveRequest) CreateRequestData( client *APICl
     if &data.Row != nil {
         localVarQueryParams.Add("row", parameterToString(data.Row, ""))
     }
-
     // query params : column
     if &data.Column != nil {
         localVarQueryParams.Add("column", parameterToString(data.Column, ""))
     }
-
     // query params : destCellName
     if data.DestCellName != "" {
         localVarQueryParams.Add("destCellName", parameterToString(data.DestCellName, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -111,7 +105,6 @@ func (data *PostWorksheetPivotTableMoveRequest) CreateRequestData( client *APICl
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

@@ -40,9 +40,7 @@ type PostWorksheetCellsRangeValueRequest struct {
 	SetStyle bool `json:"set_style,omitempty" xml:"set_style"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-	Range_ interface{} `json:"range,omitempty" xml:"range"` 
-
-	
+	Range_ interface{} `json:"range,omitempty" xml:"range"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -56,7 +54,7 @@ func (data *PostWorksheetCellsRangeValueRequest) CreateRequestData( client *APIC
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/ranges/value"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/ranges/value"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -68,27 +66,22 @@ func (data *PostWorksheetCellsRangeValueRequest) CreateRequestData( client *APIC
     if data.Value != "" {
         localVarQueryParams.Add("Value", parameterToString(data.Value, ""))
     }
-
     // query params : isConverted
-    if &data.IsConverted != nil {
+    if data.IsConverted {
         localVarQueryParams.Add("isConverted", parameterToString(data.IsConverted, ""))
     }
-
     // query params : setStyle
-    if &data.SetStyle != nil {
+    if data.SetStyle {
         localVarQueryParams.Add("setStyle", parameterToString(data.SetStyle, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -111,7 +104,6 @@ func (data *PostWorksheetCellsRangeValueRequest) CreateRequestData( client *APIC
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.Range_
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

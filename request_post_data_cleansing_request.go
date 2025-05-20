@@ -32,9 +32,7 @@ import (
 )
 
 type PostDataCleansingRequest struct {
-	DataCleansingRequest interface{} `json:"data_cleansing_request,omitempty" xml:"data_cleansing_request"` 
-
-	
+	DataCleansingRequest interface{} `json:"data_cleansing_request,omitempty" xml:"data_cleansing_request"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *PostDataCleansingRequest) CreateRequestData( client *APIClient) (loc
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/datacleansing"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/datacleansing"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *PostDataCleansingRequest) CreateRequestData( client *APIClient) (loc
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.DataCleansingRequest
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

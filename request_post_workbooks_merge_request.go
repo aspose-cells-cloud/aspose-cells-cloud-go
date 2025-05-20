@@ -38,7 +38,6 @@ type PostWorkbooksMergeRequest struct {
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	MergedStorageName string `json:"merged_storage_name,omitempty" xml:"merged_storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -53,7 +52,7 @@ func (data *PostWorkbooksMergeRequest) CreateRequestData( client *APIClient) (lo
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/merge"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/merge"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -64,22 +63,18 @@ func (data *PostWorkbooksMergeRequest) CreateRequestData( client *APIClient) (lo
     if data.MergeWith != "" {
         localVarQueryParams.Add("mergeWith", parameterToString(data.MergeWith, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
     // query params : mergedStorageName
     if data.MergedStorageName != "" {
         localVarQueryParams.Add("mergedStorageName", parameterToString(data.MergedStorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -101,7 +96,6 @@ func (data *PostWorkbooksMergeRequest) CreateRequestData( client *APIClient) (lo
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

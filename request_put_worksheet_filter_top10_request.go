@@ -44,7 +44,6 @@ type PutWorksheetFilterTop10Request struct {
 	Refresh bool `json:"refresh,omitempty" xml:"refresh"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -59,7 +58,7 @@ func (data *PutWorksheetFilterTop10Request) CreateRequestData( client *APIClient
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter/filterTop10"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/autoFilter/filterTop10"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -71,47 +70,38 @@ func (data *PutWorksheetFilterTop10Request) CreateRequestData( client *APIClient
     if data.Range_ != "" {
         localVarQueryParams.Add("range", parameterToString(data.Range_, ""))
     }
-
     // query params : fieldIndex
     if &data.FieldIndex != nil {
         localVarQueryParams.Add("fieldIndex", parameterToString(data.FieldIndex, ""))
     }
-
     // query params : isTop
-    if &data.IsTop != nil {
+    if data.IsTop {
         localVarQueryParams.Add("isTop", parameterToString(data.IsTop, ""))
     }
-
     // query params : isPercent
-    if &data.IsPercent != nil {
+    if data.IsPercent {
         localVarQueryParams.Add("isPercent", parameterToString(data.IsPercent, ""))
     }
-
     // query params : itemCount
     if &data.ItemCount != nil {
         localVarQueryParams.Add("itemCount", parameterToString(data.ItemCount, ""))
     }
-
     // query params : matchBlanks
-    if &data.MatchBlanks != nil {
+    if data.MatchBlanks {
         localVarQueryParams.Add("matchBlanks", parameterToString(data.MatchBlanks, ""))
     }
-
     // query params : refresh
-    if &data.Refresh != nil {
+    if data.Refresh {
         localVarQueryParams.Add("refresh", parameterToString(data.Refresh, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -133,7 +123,6 @@ func (data *PutWorksheetFilterTop10Request) CreateRequestData( client *APIClient
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

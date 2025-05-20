@@ -32,9 +32,7 @@ import (
 )
 
 type PostDataDeduplicationRequest struct {
-	DataDeduplicationRequest interface{} `json:"data_deduplication_request,omitempty" xml:"data_deduplication_request"` 
-
-	
+	DataDeduplicationRequest interface{} `json:"data_deduplication_request,omitempty" xml:"data_deduplication_request"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *PostDataDeduplicationRequest) CreateRequestData( client *APIClient) 
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/datadeduplication"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/datadeduplication"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *PostDataDeduplicationRequest) CreateRequestData( client *APIClient) 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.DataDeduplicationRequest
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

@@ -37,7 +37,6 @@ type CopyFolderRequest struct {
 	DestPath string `json:"dest_path,omitempty" xml:"dest_path"`
 	SrcStorageName string `json:"src_storage_name,omitempty" xml:"src_storage_name"`
 	DestStorageName string `json:"dest_storage_name,omitempty" xml:"dest_storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -52,7 +51,7 @@ func (data *CopyFolderRequest) CreateRequestData( client *APIClient) (localVarRe
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/storage/folder/copy/{srcPath}"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/storage/folder/copy/{srcPath}"
 	localVarPath = strings.Replace(localVarPath, "{"+"srcPath"+"}", fmt.Sprintf("%v", data.SrcPath), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -63,17 +62,14 @@ func (data *CopyFolderRequest) CreateRequestData( client *APIClient) (localVarRe
     if data.DestPath != "" {
         localVarQueryParams.Add("destPath", parameterToString(data.DestPath, ""))
     }
-
     // query params : srcStorageName
     if data.SrcStorageName != "" {
         localVarQueryParams.Add("srcStorageName", parameterToString(data.SrcStorageName, ""))
     }
-
     // query params : destStorageName
     if data.DestStorageName != "" {
         localVarQueryParams.Add("destStorageName", parameterToString(data.DestStorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -95,7 +91,6 @@ func (data *CopyFolderRequest) CreateRequestData( client *APIClient) (localVarRe
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

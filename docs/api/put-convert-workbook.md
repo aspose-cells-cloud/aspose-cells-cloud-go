@@ -24,6 +24,9 @@ PUT http://api.aspose.cloud/v3.0//cells/convert
 |pageTallFitOnPerSheet|Boolean|Query|The page tall fit on worksheet.|
 |sheetName|String|Query||
 |pageIndex|Integer|Query||
+|onePagePerSheet|Boolean|Query||
+|AutoRowsFit|Boolean|Query||
+|AutoColumnsFit|Boolean|Query||
 |FontsLocation|String|Query|Use Custom fonts.|
 
 

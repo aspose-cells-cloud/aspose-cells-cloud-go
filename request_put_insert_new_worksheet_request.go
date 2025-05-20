@@ -40,7 +40,6 @@ type PutInsertNewWorksheetRequest struct {
 	Newsheetname string `json:"newsheetname,omitempty" xml:"newsheetname"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -55,7 +54,7 @@ func (data *PutInsertNewWorksheetRequest) CreateRequestData( client *APIClient) 
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/insert"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/insert"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -66,32 +65,26 @@ func (data *PutInsertNewWorksheetRequest) CreateRequestData( client *APIClient) 
     if data.SheetName != "" {
         localVarQueryParams.Add("sheetName", parameterToString(data.SheetName, ""))
     }
-
     // query params : index
     if &data.Index != nil {
         localVarQueryParams.Add("index", parameterToString(data.Index, ""))
     }
-
     // query params : sheettype
     if data.Sheettype != "" {
         localVarQueryParams.Add("sheettype", parameterToString(data.Sheettype, ""))
     }
-
     // query params : newsheetname
     if data.Newsheetname != "" {
         localVarQueryParams.Add("newsheetname", parameterToString(data.Newsheetname, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -113,7 +106,6 @@ func (data *PutInsertNewWorksheetRequest) CreateRequestData( client *APIClient) 
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

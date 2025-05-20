@@ -32,9 +32,7 @@ import (
 )
 
 type PostConvertTextRequest struct {
-	ConvertTextOptions interface{} `json:"convert_text_options,omitempty" xml:"convert_text_options"` 
-
-	
+	ConvertTextOptions interface{} `json:"convert_text_options,omitempty" xml:"convert_text_options"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *PostConvertTextRequest) CreateRequestData( client *APIClient) (local
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/converttext"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/converttext"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *PostConvertTextRequest) CreateRequestData( client *APIClient) (local
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.ConvertTextOptions
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

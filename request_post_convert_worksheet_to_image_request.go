@@ -33,9 +33,7 @@ import (
 
 type PostConvertWorksheetToImageRequest struct {
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	ConvertWorksheetOptions interface{} `json:"convert_worksheet_options,omitempty" xml:"convert_worksheet_options"` 
-
-	
+	ConvertWorksheetOptions interface{} `json:"convert_worksheet_options,omitempty" xml:"convert_worksheet_options"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -49,7 +47,7 @@ func (data *PostConvertWorksheetToImageRequest) CreateRequestData( client *APICl
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/convertWorksheetToImage"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/convertWorksheetToImage"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -59,7 +57,6 @@ func (data *PostConvertWorksheetToImageRequest) CreateRequestData( client *APICl
     if data.FontsLocation != "" {
         localVarQueryParams.Add("FontsLocation", parameterToString(data.FontsLocation, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -82,7 +79,6 @@ func (data *PostConvertWorksheetToImageRequest) CreateRequestData( client *APICl
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.ConvertWorksheetOptions
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

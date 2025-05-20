@@ -32,9 +32,7 @@ import (
 )
 
 type PostWordsCountRequest struct {
-	WordsCountOptions interface{} `json:"words_count_options,omitempty" xml:"words_count_options"` 
-
-	
+	WordsCountOptions interface{} `json:"words_count_options,omitempty" xml:"words_count_options"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *PostWordsCountRequest) CreateRequestData( client *APIClient) (localV
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/wordscount"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/wordscount"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *PostWordsCountRequest) CreateRequestData( client *APIClient) (localV
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.WordsCountOptions
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

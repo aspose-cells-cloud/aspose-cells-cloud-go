@@ -32,9 +32,7 @@ import (
 )
 
 type PostDeleteIncompleteRowsRequest struct {
-	DeleteIncompleteRowsRequest interface{} `json:"delete_incomplete_rows_request,omitempty" xml:"delete_incomplete_rows_request"` 
-
-	
+	DeleteIncompleteRowsRequest interface{} `json:"delete_incomplete_rows_request,omitempty" xml:"delete_incomplete_rows_request"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *PostDeleteIncompleteRowsRequest) CreateRequestData( client *APIClien
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/deleteincompleterows"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/deleteincompleterows"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *PostDeleteIncompleteRowsRequest) CreateRequestData( client *APIClien
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.DeleteIncompleteRowsRequest
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

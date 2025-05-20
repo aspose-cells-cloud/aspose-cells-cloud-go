@@ -36,10 +36,9 @@ import (
 type UploadFileRequest struct {
     Path string `json:"path,omitempty" xml:"path"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
-	UploadFiles map[string]string  `json:"UploadFiles,omitempty" xml:"UploadFiles"`// Deprecated: Use UploadFile instead. 
-	UploadFile string  `json:"UploadFile,omitempty" xml:"UploadFile"`  
 	
+	 UploadFiles map[string]string  `json:"UploadFiles,omitempty" xml:"UploadFiles"`// Deprecated: Use UploadFile instead. 
+	UploadFile string  `json:"UploadFile,omitempty" xml:"UploadFile"`  
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -53,7 +52,7 @@ func (data *UploadFileRequest) CreateRequestData( client *APIClient) (localVarRe
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/storage/file/{path}"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/storage/file/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", fmt.Sprintf("%v", data.Path), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -64,7 +63,6 @@ func (data *UploadFileRequest) CreateRequestData( client *APIClient) (localVarRe
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -86,13 +84,12 @@ func (data *UploadFileRequest) CreateRequestData( client *APIClient) (localVarRe
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	for name, path := range data.UploadFiles {
-		localVarFormParams["@"+name] = []string{path}
-	}
-	if strings.TrimSpace(data.UploadFile) != "" {	
-		localVarFormParams["@"+ filepath.Base(data.UploadFile)] = []string{data.UploadFile} 
-	}
-
+		for name, path := range data.UploadFiles {
+			localVarFormParams["@"+name] = []string{path}
+		} 
+			if strings.TrimSpace(data.UploadFile) != "" {	
+				localVarFormParams["@"+ filepath.Base(data.UploadFile)] = []string{data.UploadFile} 
+			}
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

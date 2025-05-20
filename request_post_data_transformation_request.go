@@ -32,9 +32,7 @@ import (
 )
 
 type PostDataTransformationRequest struct {
-	DataTransformationRequest interface{} `json:"data_transformation_request,omitempty" xml:"data_transformation_request"` 
-
-	
+	DataTransformationRequest interface{} `json:"data_transformation_request,omitempty" xml:"data_transformation_request"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *PostDataTransformationRequest) CreateRequestData( client *APIClient)
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/datatransformation"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/datatransformation"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *PostDataTransformationRequest) CreateRequestData( client *APIClient)
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.DataTransformationRequest
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

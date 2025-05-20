@@ -32,9 +32,7 @@ import (
 )
 
 type PostBatchSplitRequest struct {
-	BatchSplitRequest interface{} `json:"batch_split_request,omitempty" xml:"batch_split_request"` 
-
-	
+	BatchSplitRequest interface{} `json:"batch_split_request,omitempty" xml:"batch_split_request"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *PostBatchSplitRequest) CreateRequestData( client *APIClient) (localV
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/batch/split"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/batch/split"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *PostBatchSplitRequest) CreateRequestData( client *APIClient) (localV
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.BatchSplitRequest
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

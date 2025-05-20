@@ -44,9 +44,7 @@ type PutWorksheetShapeRequest struct {
 	Height int64 `json:"height,omitempty" xml:"height"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-	ShapeDTO interface{} `json:"shape_dto,omitempty" xml:"shape_dto"` 
-
-	
+	ShapeDTO interface{} `json:"shape_dto,omitempty" xml:"shape_dto"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -60,7 +58,7 @@ func (data *PutWorksheetShapeRequest) CreateRequestData( client *APIClient) (loc
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/shapes"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/shapes"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -72,47 +70,38 @@ func (data *PutWorksheetShapeRequest) CreateRequestData( client *APIClient) (loc
     if data.DrawingType != "" {
         localVarQueryParams.Add("DrawingType", parameterToString(data.DrawingType, ""))
     }
-
     // query params : upperLeftRow
     if &data.UpperLeftRow != nil {
         localVarQueryParams.Add("upperLeftRow", parameterToString(data.UpperLeftRow, ""))
     }
-
     // query params : upperLeftColumn
     if &data.UpperLeftColumn != nil {
         localVarQueryParams.Add("upperLeftColumn", parameterToString(data.UpperLeftColumn, ""))
     }
-
     // query params : top
     if &data.Top != nil {
         localVarQueryParams.Add("top", parameterToString(data.Top, ""))
     }
-
     // query params : left
     if &data.Left != nil {
         localVarQueryParams.Add("left", parameterToString(data.Left, ""))
     }
-
     // query params : width
     if &data.Width != nil {
         localVarQueryParams.Add("width", parameterToString(data.Width, ""))
     }
-
     // query params : height
     if &data.Height != nil {
         localVarQueryParams.Add("height", parameterToString(data.Height, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -135,7 +124,6 @@ func (data *PutWorksheetShapeRequest) CreateRequestData( client *APIClient) (loc
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.ShapeDTO
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

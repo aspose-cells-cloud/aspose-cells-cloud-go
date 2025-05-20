@@ -32,9 +32,7 @@ import (
 )
 
 type PostExtractTextRequest struct {
-	ExtractTextOptions interface{} `json:"extract_text_options,omitempty" xml:"extract_text_options"` 
-
-	
+	ExtractTextOptions interface{} `json:"extract_text_options,omitempty" xml:"extract_text_options"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *PostExtractTextRequest) CreateRequestData( client *APIClient) (local
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/extracttext"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/extracttext"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *PostExtractTextRequest) CreateRequestData( client *APIClient) (local
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.ExtractTextOptions
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err

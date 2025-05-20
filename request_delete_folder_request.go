@@ -36,7 +36,6 @@ type DeleteFolderRequest struct {
     Path string `json:"path,omitempty" xml:"path"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	Recursive bool `json:"recursive,omitempty" xml:"recursive"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -51,7 +50,7 @@ func (data *DeleteFolderRequest) CreateRequestData( client *APIClient) (localVar
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/storage/folder/{path}"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/storage/folder/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", fmt.Sprintf("%v", data.Path), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -62,12 +61,10 @@ func (data *DeleteFolderRequest) CreateRequestData( client *APIClient) (localVar
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
     // query params : recursive
-    if &data.Recursive != nil {
+    if data.Recursive {
         localVarQueryParams.Add("recursive", parameterToString(data.Recursive, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -89,7 +86,6 @@ func (data *DeleteFolderRequest) CreateRequestData( client *APIClient) (localVar
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

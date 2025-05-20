@@ -35,7 +35,6 @@ import (
 type GetFileVersionsRequest struct {
     Path string `json:"path,omitempty" xml:"path"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -50,7 +49,7 @@ func (data *GetFileVersionsRequest) CreateRequestData( client *APIClient) (local
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/storage/version/{path}"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/storage/version/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", fmt.Sprintf("%v", data.Path), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -61,7 +60,6 @@ func (data *GetFileVersionsRequest) CreateRequestData( client *APIClient) (local
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -83,7 +81,6 @@ func (data *GetFileVersionsRequest) CreateRequestData( client *APIClient) (local
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

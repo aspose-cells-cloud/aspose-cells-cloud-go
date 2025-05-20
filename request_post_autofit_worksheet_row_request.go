@@ -40,7 +40,7 @@ type PostAutofitWorksheetRowRequest struct {
 	LastColumn int64 `json:"last_column,omitempty" xml:"last_column"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
+	RowCount int64 `json:"row_count,omitempty" xml:"row_count"`
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -55,7 +55,7 @@ func (data *PostAutofitWorksheetRowRequest) CreateRequestData( client *APIClient
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autofitrow"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/autofitrow"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -67,27 +67,26 @@ func (data *PostAutofitWorksheetRowRequest) CreateRequestData( client *APIClient
     if &data.RowIndex != nil {
         localVarQueryParams.Add("rowIndex", parameterToString(data.RowIndex, ""))
     }
-
     // query params : firstColumn
     if &data.FirstColumn != nil {
         localVarQueryParams.Add("firstColumn", parameterToString(data.FirstColumn, ""))
     }
-
     // query params : lastColumn
     if &data.LastColumn != nil {
         localVarQueryParams.Add("lastColumn", parameterToString(data.LastColumn, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
+    // query params : rowCount
+    if &data.RowCount != nil {
+        localVarQueryParams.Add("rowCount", parameterToString(data.RowCount, ""))
+    }
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -109,7 +108,6 @@ func (data *PostAutofitWorksheetRowRequest) CreateRequestData( client *APIClient
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

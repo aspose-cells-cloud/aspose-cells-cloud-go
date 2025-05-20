@@ -33,7 +33,6 @@ import (
 
 type GetDiscUsageRequest struct {
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -48,7 +47,7 @@ func (data *GetDiscUsageRequest) CreateRequestData( client *APIClient) (localVar
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/storage/disc"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/storage/disc"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -58,7 +57,6 @@ func (data *GetDiscUsageRequest) CreateRequestData( client *APIClient) (localVar
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -80,7 +78,6 @@ func (data *GetDiscUsageRequest) CreateRequestData( client *APIClient) (localVar
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

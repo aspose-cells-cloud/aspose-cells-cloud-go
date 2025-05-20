@@ -48,7 +48,6 @@ type PutWorksheetDateFilterRequest struct {
 	Refresh bool `json:"refresh,omitempty" xml:"refresh"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -63,7 +62,7 @@ func (data *PutWorksheetDateFilterRequest) CreateRequestData( client *APIClient)
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", data.SheetName), -1)
 
@@ -75,67 +74,54 @@ func (data *PutWorksheetDateFilterRequest) CreateRequestData( client *APIClient)
     if data.Range_ != "" {
         localVarQueryParams.Add("range", parameterToString(data.Range_, ""))
     }
-
     // query params : fieldIndex
     if &data.FieldIndex != nil {
         localVarQueryParams.Add("fieldIndex", parameterToString(data.FieldIndex, ""))
     }
-
     // query params : dateTimeGroupingType
     if data.DateTimeGroupingType != "" {
         localVarQueryParams.Add("dateTimeGroupingType", parameterToString(data.DateTimeGroupingType, ""))
     }
-
     // query params : year
     if &data.Year != nil {
         localVarQueryParams.Add("year", parameterToString(data.Year, ""))
     }
-
     // query params : month
     if &data.Month != nil {
         localVarQueryParams.Add("month", parameterToString(data.Month, ""))
     }
-
     // query params : day
     if &data.Day != nil {
         localVarQueryParams.Add("day", parameterToString(data.Day, ""))
     }
-
     // query params : hour
     if &data.Hour != nil {
         localVarQueryParams.Add("hour", parameterToString(data.Hour, ""))
     }
-
     // query params : minute
     if &data.Minute != nil {
         localVarQueryParams.Add("minute", parameterToString(data.Minute, ""))
     }
-
     // query params : second
     if &data.Second != nil {
         localVarQueryParams.Add("second", parameterToString(data.Second, ""))
     }
-
     // query params : matchBlanks
-    if &data.MatchBlanks != nil {
+    if data.MatchBlanks {
         localVarQueryParams.Add("matchBlanks", parameterToString(data.MatchBlanks, ""))
     }
-
     // query params : refresh
-    if &data.Refresh != nil {
+    if data.Refresh {
         localVarQueryParams.Add("refresh", parameterToString(data.Refresh, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -157,7 +143,6 @@ func (data *PutWorksheetDateFilterRequest) CreateRequestData( client *APIClient)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

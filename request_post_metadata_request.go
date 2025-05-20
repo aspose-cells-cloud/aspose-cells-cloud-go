@@ -38,11 +38,9 @@ type PostMetadataRequest struct {
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	OutFormat string `json:"out_format,omitempty" xml:"out_format"`
 	Region string `json:"region,omitempty" xml:"region"`
-	CellsDocuments interface{} `json:"cells_documents,omitempty" xml:"cells_documents"` 
-
-	File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
+	CellsDocuments interface{} `json:"cells_documents,omitempty" xml:"cells_documents"` 	
+	 File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
 	LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"`  
-	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -56,7 +54,7 @@ func (data *PostMetadataRequest) CreateRequestData( client *APIClient) (localVar
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/metadata/update"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/metadata/update"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -66,22 +64,18 @@ func (data *PostMetadataRequest) CreateRequestData( client *APIClient) (localVar
     if data.Password != "" {
         localVarQueryParams.Add("password", parameterToString(data.Password, ""))
     }
-
     // query params : checkExcelRestriction
-    if &data.CheckExcelRestriction != nil {
+    if data.CheckExcelRestriction {
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
     }
-
     // query params : outFormat
     if data.OutFormat != "" {
         localVarQueryParams.Add("outFormat", parameterToString(data.OutFormat, ""))
     }
-
     // query params : region
     if data.Region != "" {
         localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -111,7 +105,6 @@ func (data *PostMetadataRequest) CreateRequestData( client *APIClient) (localVar
 	}
 	b, _ := json.Marshal( &data.CellsDocuments)
 	localVarFormParams["CellsDocuments"] = []string{string(b)}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

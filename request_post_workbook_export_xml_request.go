@@ -41,7 +41,6 @@ type PostWorkbookExportXMLRequest struct {
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	Region string `json:"region,omitempty" xml:"region"`
-
 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -56,7 +55,7 @@ func (data *PostWorkbookExportXMLRequest) CreateRequestData( client *APIClient) 
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/{name}/exportxml"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/{name}/exportxml"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -67,37 +66,30 @@ func (data *PostWorkbookExportXMLRequest) CreateRequestData( client *APIClient) 
     if data.Password != "" {
         localVarQueryParams.Add("password", parameterToString(data.Password, ""))
     }
-
     // query params : folder
     if data.Folder != "" {
         localVarQueryParams.Add("folder", parameterToString(data.Folder, ""))
     }
-
     // query params : storageName
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-
     // query params : outPath
     if data.OutPath != "" {
         localVarQueryParams.Add("outPath", parameterToString(data.OutPath, ""))
     }
-
     // query params : outStorageName
     if data.OutStorageName != "" {
         localVarQueryParams.Add("outStorageName", parameterToString(data.OutStorageName, ""))
     }
-
     // query params : checkExcelRestriction
-    if &data.CheckExcelRestriction != nil {
+    if data.CheckExcelRestriction {
         localVarQueryParams.Add("checkExcelRestriction", parameterToString(data.CheckExcelRestriction, ""))
     }
-
     // query params : region
     if data.Region != "" {
         localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
-
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {
 			localVarQueryParams.Add(key, parameterToString(value, ""))
@@ -119,7 +111,6 @@ func (data *PostWorkbookExportXMLRequest) CreateRequestData( client *APIClient) 
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

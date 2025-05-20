@@ -32,9 +32,7 @@ import (
 )
 
 type PostBatchConvertRequest struct {
-	BatchConvertRequest interface{} `json:"batch_convert_request,omitempty" xml:"batch_convert_request"` 
-
-	
+	BatchConvertRequest interface{} `json:"batch_convert_request,omitempty" xml:"batch_convert_request"` 	
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
@@ -48,7 +46,7 @@ func (data *PostBatchConvertRequest) CreateRequestData( client *APIClient) (loca
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/batch/convert"
+	localVarPath := client.cfg.BasePath + "/v3.0/cells/batch/convert"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -76,7 +74,6 @@ func (data *PostBatchConvertRequest) CreateRequestData( client *APIClient) (loca
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	localVarPostBody = &data.BatchConvertRequest
-
 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
