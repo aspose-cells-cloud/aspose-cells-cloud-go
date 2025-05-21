@@ -90,6 +90,18 @@ go run main.go
 |[FODS](https://docs.fileformat.com/spreadsheet/fods/)|This is an Open Document format stored as flat XML.|&radic;|&radic;|
 |[DOCX](https://docs.fileformat.com/word-processing/docx/)|A well-known format for Microsoft Word documents that is a combination of XML and binary files.||&radic;|
 |[PPTX](https://docs.fileformat.com/presentation/pptx/)|The PPTX format is based on the Microsoft PowerPoint open XML presentation file format.||&radic;|
+|[OTS](https://docs.fileformat.com/spreadsheet/ots/)|OTS (OpenDocument Spreadsheet).|&radic;|&radic;|
+|[XML](https://docs.fileformat.com/web/xml/)|XML file.|&radic;|&radic;|
+|[HTM](https://docs.fileformat.com/web/htm/)|HTM file.|&radic;|&radic;|
+|[TIF](https://docs.fileformat.com/image/tiff/)|Tagged Image File Format| |&radic;|
+|[WMF](https://docs.fileformat.com/image/wmf/)|WMF Image Format| |&radic;|
+|[PCL](https://docs.fileformat.com/page-description-language/pcl/)|Printer Command Language Format| |&radic;|
+|[AZW3](https://docs.fileformat.com/ebook/azw3/)|AZ3/KF8 File Format| |&radic;|
+|[EPUB](https://docs.fileformat.com/ebook/epub/)|EPUB File Format| |&radic;|
+|[DBF](https://docs.fileformat.com/ebook/epub/)|DBF File Format| |&radic;|
+|[EPUB](https://docs.fileformat.com/database/dbf/)|database file| |&radic;|
+|[XHTML](https://docs.fileformat.com/web/xhtml/)|XHTML File Format| |&radic;|
+
 
 ## Feature & Enhancements in Version v25.5.0
 
