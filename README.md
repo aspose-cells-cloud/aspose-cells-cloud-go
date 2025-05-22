@@ -42,19 +42,6 @@ go mod tidy
 go run main.go
 ```
 
-## Manipulate Excel and other spreadsheet files in the Cloud
-
-- File Manipulation: Users can upload, download, delete, and manage Excel files stored in the cloud.
-- Formatting: Supports formatting of cells, fonts, colors, and alignment modes in Excel files to cater to users' specific requirements.
-- Data Processing: Powerful functions for data processing including reading, writing, modifying cell data, performing formula calculations, and formatting data.
-- Formula Calculation: Built-in formula engine handles complex formula calculations in Excel and returns accurate results.
-- Chart Manipulation: Users can create, edit, and delete charts from Excel files for data analysis and visualization needs.
-- Table Processing: Offers robust processing capabilities for various form operations such as creation, editing, formatting, and conversion, meeting diverse form processing needs.
-- Data Verification: Includes data verification function to set cell data type, range, uniqueness, ensuring data accuracy and integrity.
-- Batch Processing: Supports batch processing of multiple Excel documents, such as batch format conversion, data extraction, and style application..
-- Import/Export: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
-- Security Management: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
-
 ## Support file format
 
 |**Format**|**Description**|**Load**|**Save**|
@@ -102,6 +89,18 @@ go run main.go
 |[EPUB](https://docs.fileformat.com/database/dbf/)|database file| |&radic;|
 |[XHTML](https://docs.fileformat.com/web/xhtml/)|XHTML File Format| |&radic;|
 
+## Manipulate Excel and other spreadsheet files in the Cloud
+
+- File Manipulation: Users can upload, download, delete, and manage Excel files stored in the cloud.
+- Formatting: Supports formatting of cells, fonts, colors, and alignment modes in Excel files to cater to users' specific requirements.
+- Data Processing: Powerful functions for data processing including reading, writing, modifying cell data, performing formula calculations, and formatting data.
+- Formula Calculation: Built-in formula engine handles complex formula calculations in Excel and returns accurate results.
+- Chart Manipulation: Users can create, edit, and delete charts from Excel files for data analysis and visualization needs.
+- Table Processing: Offers robust processing capabilities for various form operations such as creation, editing, formatting, and conversion, meeting diverse form processing needs.
+- Data Verification: Includes data verification function to set cell data type, range, uniqueness, ensuring data accuracy and integrity.
+- Batch Processing: Supports batch processing of multiple Excel documents, such as batch format conversion, data extraction, and style application..
+- Import/Export: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
+- Security Management: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
 
 ## Feature & Enhancements in Version v25.5.0
 
