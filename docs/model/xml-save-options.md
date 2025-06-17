@@ -1,17 +1,17 @@
 # **xmlSaveOptions**
 
-Represents the options of saving dbf file. 
+ 
 
 ## **Properties**
 
 | Property Name | Property Type | Nullable |  ReadOnly | DefaultValue | Description | 
 | :- | :- | :- |:- |  :- | :- |
-|SheetIndexes|Array|true|false |  |Represents the indexes of exported sheets.|
-|ExportArea|Class|true|false |  |Gets or sets the exporting range.|
-|HasHeaderRow|Boolean|true|false |  |Indicates whether the range contains header row.|
-|XmlMapName|String|true|false |  |Indicates whether exporting xml map in the file.|
-|SheetNameAsElementName|Boolean|true|false |  |Indicates whether exporting sheet's name as the name of the element.|
-|DataAsAttribute|Boolean|true|false |  |Indicates whether exporting data as attributes of element.|
+|SheetIndexes|Array|true|false |  ||
+|ExportArea|Class|true|false |  ||
+|HasHeaderRow|Boolean|true|false |  ||
+|XmlMapName|String|true|false |  ||
+|SheetNameAsElementName|Boolean|true|false |  ||
+|DataAsAttribute|Boolean|true|false |  ||
 |SaveFormat|String|true|false |  ||
 |CachedFileFolder|String|true|false |  ||
 |ClearData|Boolean|true|false |  ||

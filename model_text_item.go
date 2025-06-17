@@ -26,8 +26,9 @@
 package asposecellscloud
 
 type TextItem struct {
-     
-        Link *Link `json:"link,omitempty" xml:"link"`
  
-    Text string `json:"Text,omitempty" xml:"Text"`
+    Filename string `json:"Filename,omitempty" xml:"Filename"`
+    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
+    Position string `json:"Position,omitempty" xml:"Position"`
+    Content string `json:"Content,omitempty" xml:"Content"`
 }

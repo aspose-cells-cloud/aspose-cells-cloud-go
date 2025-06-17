@@ -39,7 +39,7 @@ type CellsCloudOption struct {
 }
 
 func Version() {
-	fmt.Println("---Version: 25.5---")
+	fmt.Println("---Version: 25.6.1---")
 }
 
 func NewCellsApiService(appSid string, appKey string, opts ...string) *CellsApiService {
@@ -59,6 +59,1519 @@ func NewCellsApiService(appSid string, appKey string, opts ...string) *CellsApiS
 }
 
 type CellsApiService service
+
+func (a *CellsApiService) PostAccessToken(data *PostAccessTokenRequest  ) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) GetAsposeCellsCloudStatus(data *GetAsposeCellsCloudStatusRequest  ) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) CheckCloudServiceHealth(data *CheckCloudServiceHealthRequest  ) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) ExportSpreadsheetAsFormat(data *ExportSpreadsheetAsFormatRequest   , options ...CellsCloudOption) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	if len(options) > 0 {
+		for _, option := range options {
+			if strings.EqualFold(option.OptionName, "LocalOutPath") {
+				file, err := os.OpenFile(option.OptionValue, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+				if err != nil {
+					panic(err)
+				}
+				defer file.Close()
+
+				if _, err := file.Write(localVarReturnValue); err != nil {
+					panic(err)
+				}
+			}
+		}
+	}
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) ExportChartAsFormat(data *ExportChartAsFormatRequest   , options ...CellsCloudOption) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	if len(options) > 0 {
+		for _, option := range options {
+			if strings.EqualFold(option.OptionName, "LocalOutPath") {
+				file, err := os.OpenFile(option.OptionValue, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+				if err != nil {
+					panic(err)
+				}
+				defer file.Close()
+
+				if _, err := file.Write(localVarReturnValue); err != nil {
+					panic(err)
+				}
+			}
+		}
+	}
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) ConvertSpreadsheet(data *ConvertSpreadsheetRequest   , options ...CellsCloudOption) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	if len(options) > 0 {
+		for _, option := range options {
+			if strings.EqualFold(option.OptionName, "LocalOutPath") {
+				file, err := os.OpenFile(option.OptionValue, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+				if err != nil {
+					panic(err)
+				}
+				defer file.Close()
+
+				if _, err := file.Write(localVarReturnValue); err != nil {
+					panic(err)
+				}
+			}
+		}
+	}
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) ConvertChartToImage(data *ConvertChartToImageRequest   , options ...CellsCloudOption) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	if len(options) > 0 {
+		for _, option := range options {
+			if strings.EqualFold(option.OptionName, "LocalOutPath") {
+				file, err := os.OpenFile(option.OptionValue, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+				if err != nil {
+					panic(err)
+				}
+				defer file.Close()
+
+				if _, err := file.Write(localVarReturnValue); err != nil {
+					panic(err)
+				}
+			}
+		}
+	}
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) ConvertChartToPdf(data *ConvertChartToPdfRequest   , options ...CellsCloudOption) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	if len(options) > 0 {
+		for _, option := range options {
+			if strings.EqualFold(option.OptionName, "LocalOutPath") {
+				file, err := os.OpenFile(option.OptionValue, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+				if err != nil {
+					panic(err)
+				}
+				defer file.Close()
+
+				if _, err := file.Write(localVarReturnValue); err != nil {
+					panic(err)
+				}
+			}
+		}
+	}
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) SaveSpreadsheetAs(data *SaveSpreadsheetAsRequest  ) (  CellsCloudResponse,  *http.Response, error) {
+	var (
+	localVarReturnValue CellsCloudResponse 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) MergeSpreadsheets(data *MergeSpreadsheetsRequest   , options ...CellsCloudOption) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	if len(options) > 0 {
+		for _, option := range options {
+			if strings.EqualFold(option.OptionName, "LocalOutPath") {
+				file, err := os.OpenFile(option.OptionValue, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+				if err != nil {
+					panic(err)
+				}
+				defer file.Close()
+
+				if _, err := file.Write(localVarReturnValue); err != nil {
+					panic(err)
+				}
+			}
+		}
+	}
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) MergeSpreadsheetsInRemoteFolder(data *MergeSpreadsheetsInRemoteFolderRequest   , options ...CellsCloudOption) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	if len(options) > 0 {
+		for _, option := range options {
+			if strings.EqualFold(option.OptionName, "LocalOutPath") {
+				file, err := os.OpenFile(option.OptionValue, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+				if err != nil {
+					panic(err)
+				}
+				defer file.Close()
+
+				if _, err := file.Write(localVarReturnValue); err != nil {
+					panic(err)
+				}
+			}
+		}
+	}
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) MergeRemoteSpreadsheet(data *MergeRemoteSpreadsheetRequest   , options ...CellsCloudOption) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	if len(options) > 0 {
+		for _, option := range options {
+			if strings.EqualFold(option.OptionName, "LocalOutPath") {
+				file, err := os.OpenFile(option.OptionValue, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+				if err != nil {
+					panic(err)
+				}
+				defer file.Close()
+
+				if _, err := file.Write(localVarReturnValue); err != nil {
+					panic(err)
+				}
+			}
+		}
+	}
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) SplitSpreadsheet(data *SplitSpreadsheetRequest   , options ...CellsCloudOption) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	if len(options) > 0 {
+		for _, option := range options {
+			if strings.EqualFold(option.OptionName, "LocalOutPath") {
+				file, err := os.OpenFile(option.OptionValue, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+				if err != nil {
+					panic(err)
+				}
+				defer file.Close()
+
+				if _, err := file.Write(localVarReturnValue); err != nil {
+					panic(err)
+				}
+			}
+		}
+	}
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) SplitRemoteSpreadsheet(data *SplitRemoteSpreadsheetRequest   , options ...CellsCloudOption) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	if len(options) > 0 {
+		for _, option := range options {
+			if strings.EqualFold(option.OptionName, "LocalOutPath") {
+				file, err := os.OpenFile(option.OptionValue, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+				if err != nil {
+					panic(err)
+				}
+				defer file.Close()
+
+				if _, err := file.Write(localVarReturnValue); err != nil {
+					panic(err)
+				}
+			}
+		}
+	}
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) GetPublicKey(data *GetPublicKeyRequest  ) (  CellsCloudPublicKeyResponse,  *http.Response, error) {
+	var (
+	localVarReturnValue CellsCloudPublicKeyResponse 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) SearchSpreadsheetContent(data *SearchSpreadsheetContentRequest  ) (  SearchResponse,  *http.Response, error) {
+	var (
+	localVarReturnValue SearchResponse 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) SearchContentInRemoteSpreadsheet(data *SearchContentInRemoteSpreadsheetRequest  ) (  SearchResponse,  *http.Response, error) {
+	var (
+	localVarReturnValue SearchResponse 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) SearchContentInRemoteWorksheet(data *SearchContentInRemoteWorksheetRequest  ) (  SearchResponse,  *http.Response, error) {
+	var (
+	localVarReturnValue SearchResponse 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) SearchContentInRemoteRange(data *SearchContentInRemoteRangeRequest  ) (  SearchResponse,  *http.Response, error) {
+	var (
+	localVarReturnValue SearchResponse 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) ReplaceSpreadsheetContent(data *ReplaceSpreadsheetContentRequest   , options ...CellsCloudOption) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	if len(options) > 0 {
+		for _, option := range options {
+			if strings.EqualFold(option.OptionName, "LocalOutPath") {
+				file, err := os.OpenFile(option.OptionValue, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+				if err != nil {
+					panic(err)
+				}
+				defer file.Close()
+
+				if _, err := file.Write(localVarReturnValue); err != nil {
+					panic(err)
+				}
+			}
+		}
+	}
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) ReplaceContentInRemoteSpreadsheet(data *ReplaceContentInRemoteSpreadsheetRequest  ) (  CellsCloudResponse,  *http.Response, error) {
+	var (
+	localVarReturnValue CellsCloudResponse 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) ReplaceContentInRemoteWorksheet(data *ReplaceContentInRemoteWorksheetRequest  ) (  CellsCloudResponse,  *http.Response, error) {
+	var (
+	localVarReturnValue CellsCloudResponse 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) ReplaceContentInRemoteRange(data *ReplaceContentInRemoteRangeRequest  ) (  CellsCloudResponse,  *http.Response, error) {
+	var (
+	localVarReturnValue CellsCloudResponse 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) SearchSpreadsheetBrokenLinks(data *SearchSpreadsheetBrokenLinksRequest  ) (  BrokenLinksReponse,  *http.Response, error) {
+	var (
+	localVarReturnValue BrokenLinksReponse 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) SearchBrokenLinksInRemoteSpreadsheet(data *SearchBrokenLinksInRemoteSpreadsheetRequest  ) (  BrokenLinksReponse,  *http.Response, error) {
+	var (
+	localVarReturnValue BrokenLinksReponse 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) SearchBrokenLinksInRemoteWorksheet(data *SearchBrokenLinksInRemoteWorksheetRequest  ) (  BrokenLinksReponse,  *http.Response, error) {
+	var (
+	localVarReturnValue BrokenLinksReponse 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) SearchBrokenLinksInRemoteRange(data *SearchBrokenLinksInRemoteRangeRequest  ) (  BrokenLinksReponse,  *http.Response, error) {
+	var (
+	localVarReturnValue BrokenLinksReponse 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) Spec(data *SpecRequest  ) (   *http.Response, error) {
+	var (
+	 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return    nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return   localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return    localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+ 
+	return   localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) CodegenSpec(data *CodegenSpecRequest  ) (   *http.Response, error) {
+	var (
+	 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return    nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return   localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return    localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+ 
+	return   localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) DeleteSpreadsheetBlankRows(data *DeleteSpreadsheetBlankRowsRequest   , options ...CellsCloudOption) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	if len(options) > 0 {
+		for _, option := range options {
+			if strings.EqualFold(option.OptionName, "LocalOutPath") {
+				file, err := os.OpenFile(option.OptionValue, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+				if err != nil {
+					panic(err)
+				}
+				defer file.Close()
+
+				if _, err := file.Write(localVarReturnValue); err != nil {
+					panic(err)
+				}
+			}
+		}
+	}
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) DeleteSpreadsheetBlankColumns(data *DeleteSpreadsheetBlankColumnsRequest   , options ...CellsCloudOption) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	if len(options) > 0 {
+		for _, option := range options {
+			if strings.EqualFold(option.OptionName, "LocalOutPath") {
+				file, err := os.OpenFile(option.OptionValue, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+				if err != nil {
+					panic(err)
+				}
+				defer file.Close()
+
+				if _, err := file.Write(localVarReturnValue); err != nil {
+					panic(err)
+				}
+			}
+		}
+	}
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) DeleteSpreadsheetBlankWorksheets(data *DeleteSpreadsheetBlankWorksheetsRequest   , options ...CellsCloudOption) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	if len(options) > 0 {
+		for _, option := range options {
+			if strings.EqualFold(option.OptionName, "LocalOutPath") {
+				file, err := os.OpenFile(option.OptionValue, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+				if err != nil {
+					panic(err)
+				}
+				defer file.Close()
+
+				if _, err := file.Write(localVarReturnValue); err != nil {
+					panic(err)
+				}
+			}
+		}
+	}
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) DownloadFile(data *DownloadFileRequest   , options ...CellsCloudOption) (  []byte,  *http.Response, error) {
+	var (
+	localVarReturnValue []byte 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	if len(options) > 0 {
+		for _, option := range options {
+			if strings.EqualFold(option.OptionName, "LocalOutPath") {
+				file, err := os.OpenFile(option.OptionValue, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+				if err != nil {
+					panic(err)
+				}
+				defer file.Close()
+
+				if _, err := file.Write(localVarReturnValue); err != nil {
+					panic(err)
+				}
+			}
+		}
+	}
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) UploadFile(data *UploadFileRequest  ) (  FilesUploadResult,  *http.Response, error) {
+	var (
+	localVarReturnValue FilesUploadResult 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) CopyFile(data *CopyFileRequest  ) (   *http.Response, error) {
+	var (
+	 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return    nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return   localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return    localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+ 
+	return   localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) MoveFile(data *MoveFileRequest  ) (   *http.Response, error) {
+	var (
+	 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return    nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return   localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return    localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+ 
+	return   localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) DeleteFile(data *DeleteFileRequest  ) (   *http.Response, error) {
+	var (
+	 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return    nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return   localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return    localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+ 
+	return   localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) GetFilesList(data *GetFilesListRequest  ) (  FilesList,  *http.Response, error) {
+	var (
+	localVarReturnValue FilesList 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) CreateFolder(data *CreateFolderRequest  ) (   *http.Response, error) {
+	var (
+	 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return    nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return   localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return    localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+ 
+	return   localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) CopyFolder(data *CopyFolderRequest  ) (   *http.Response, error) {
+	var (
+	 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return    nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return   localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return    localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+ 
+	return   localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) MoveFolder(data *MoveFolderRequest  ) (   *http.Response, error) {
+	var (
+	 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return    nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return   localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return    localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+ 
+	return   localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) DeleteFolder(data *DeleteFolderRequest  ) (   *http.Response, error) {
+	var (
+	 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return    nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return   localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return    localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+	 
+ 
+	return   localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) StorageExists(data *StorageExistsRequest  ) (  StorageExist,  *http.Response, error) {
+	var (
+	localVarReturnValue StorageExist 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) ObjectExists(data *ObjectExistsRequest  ) (  ObjectExist,  *http.Response, error) {
+	var (
+	localVarReturnValue ObjectExist 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) GetDiscUsage(data *GetDiscUsageRequest  ) (  DiscUsage,  *http.Response, error) {
+	var (
+	localVarReturnValue DiscUsage 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
+
+func (a *CellsApiService) GetFileVersions(data *GetFileVersionsRequest  ) (  FileVersions,  *http.Response, error) {
+	var (
+	localVarReturnValue FileVersions 
+
+	)
+
+    r, err := data.CreateRequestData(a.client);
+    if err != nil {
+        return  localVarReturnValue,  nil, err
+    }
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue,  localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+ 
+	return localVarReturnValue,  localVarHttpResponse, err
+}
+
 
 func (a *CellsApiService) PostAnalyzeExcel(data *PostAnalyzeExcelRequest  ) (  []AnalyzedResult,  *http.Response, error) {
 	var (
@@ -740,35 +2253,6 @@ func (a *CellsApiService) PostBatchSplit(data *PostBatchSplitRequest   , options
 			}
 		}
 	}
-	return localVarReturnValue,  localVarHttpResponse, err
-}
-
-
-func (a *CellsApiService) PostAccessToken(data *PostAccessTokenRequest  ) (  []byte,  *http.Response, error) {
-	var (
-	localVarReturnValue []byte 
-
-	)
-
-    r, err := data.CreateRequestData(a.client);
-    if err != nil {
-        return  localVarReturnValue,  nil, err
-    }
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue,  localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-	 
-		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
-			return localVarReturnValue, localVarHttpResponse, err
-		}
- 
 	return localVarReturnValue,  localVarHttpResponse, err
 }
 
@@ -4012,34 +5496,6 @@ func (a *CellsApiService) PutWorksheetHyperlink(data *PutWorksheetHyperlinkReque
 func (a *CellsApiService) DeleteWorksheetHyperlinks(data *DeleteWorksheetHyperlinksRequest  ) (  CellsCloudResponse,  *http.Response, error) {
 	var (
 	localVarReturnValue CellsCloudResponse 
-
-	)
-
-    r, err := data.CreateRequestData(a.client);
-    if err != nil {
-        return  localVarReturnValue,  nil, err
-    }
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue,  localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
-			return localVarReturnValue, localVarHttpResponse, err
-		}
- 
-	return localVarReturnValue,  localVarHttpResponse, err
-}
-
-
-func (a *CellsApiService) GetPublicKey(data *GetPublicKeyRequest  ) (  CellsCloudPublicKeyResponse,  *http.Response, error) {
-	var (
-	localVarReturnValue CellsCloudPublicKeyResponse 
 
 	)
 
@@ -9923,400 +11379,6 @@ func (a *CellsApiService) DeleteWorksheetValidation(data *DeleteWorksheetValidat
 func (a *CellsApiService) DeleteWorksheetValidations(data *DeleteWorksheetValidationsRequest  ) (  CellsCloudResponse,  *http.Response, error) {
 	var (
 	localVarReturnValue CellsCloudResponse 
-
-	)
-
-    r, err := data.CreateRequestData(a.client);
-    if err != nil {
-        return  localVarReturnValue,  nil, err
-    }
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue,  localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
-			return localVarReturnValue, localVarHttpResponse, err
-		}
- 
-	return localVarReturnValue,  localVarHttpResponse, err
-}
-
-
-func (a *CellsApiService) DownloadFile(data *DownloadFileRequest   , options ...CellsCloudOption) (  []byte,  *http.Response, error) {
-	var (
-	localVarReturnValue []byte 
-
-	)
-
-    r, err := data.CreateRequestData(a.client);
-    if err != nil {
-        return  localVarReturnValue,  nil, err
-    }
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue,  localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-	 
-		if localVarReturnValue, err = ioutil.ReadAll(localVarHttpResponse.Body); err != nil {
-			return localVarReturnValue, localVarHttpResponse, err
-		}
- 
-	if len(options) > 0 {
-		for _, option := range options {
-			if strings.EqualFold(option.OptionName, "LocalOutPath") {
-				file, err := os.OpenFile(option.OptionValue, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-				if err != nil {
-					panic(err)
-				}
-				defer file.Close()
-
-				if _, err := file.Write(localVarReturnValue); err != nil {
-					panic(err)
-				}
-			}
-		}
-	}
-	return localVarReturnValue,  localVarHttpResponse, err
-}
-
-
-func (a *CellsApiService) UploadFile(data *UploadFileRequest  ) (  FilesUploadResult,  *http.Response, error) {
-	var (
-	localVarReturnValue FilesUploadResult 
-
-	)
-
-    r, err := data.CreateRequestData(a.client);
-    if err != nil {
-        return  localVarReturnValue,  nil, err
-    }
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue,  localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
-			return localVarReturnValue, localVarHttpResponse, err
-		}
- 
-	return localVarReturnValue,  localVarHttpResponse, err
-}
-
-
-func (a *CellsApiService) CopyFile(data *CopyFileRequest  ) (   *http.Response, error) {
-	var (
-	 
-
-	)
-
-    r, err := data.CreateRequestData(a.client);
-    if err != nil {
-        return    nil, err
-    }
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return   localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return    localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-	 
- 
-	return   localVarHttpResponse, err
-}
-
-
-func (a *CellsApiService) MoveFile(data *MoveFileRequest  ) (   *http.Response, error) {
-	var (
-	 
-
-	)
-
-    r, err := data.CreateRequestData(a.client);
-    if err != nil {
-        return    nil, err
-    }
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return   localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return    localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-	 
- 
-	return   localVarHttpResponse, err
-}
-
-
-func (a *CellsApiService) DeleteFile(data *DeleteFileRequest  ) (   *http.Response, error) {
-	var (
-	 
-
-	)
-
-    r, err := data.CreateRequestData(a.client);
-    if err != nil {
-        return    nil, err
-    }
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return   localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return    localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-	 
- 
-	return   localVarHttpResponse, err
-}
-
-
-func (a *CellsApiService) GetFilesList(data *GetFilesListRequest  ) (  FilesList,  *http.Response, error) {
-	var (
-	localVarReturnValue FilesList 
-
-	)
-
-    r, err := data.CreateRequestData(a.client);
-    if err != nil {
-        return  localVarReturnValue,  nil, err
-    }
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue,  localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
-			return localVarReturnValue, localVarHttpResponse, err
-		}
- 
-	return localVarReturnValue,  localVarHttpResponse, err
-}
-
-
-func (a *CellsApiService) CreateFolder(data *CreateFolderRequest  ) (   *http.Response, error) {
-	var (
-	 
-
-	)
-
-    r, err := data.CreateRequestData(a.client);
-    if err != nil {
-        return    nil, err
-    }
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return   localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return    localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-	 
- 
-	return   localVarHttpResponse, err
-}
-
-
-func (a *CellsApiService) CopyFolder(data *CopyFolderRequest  ) (   *http.Response, error) {
-	var (
-	 
-
-	)
-
-    r, err := data.CreateRequestData(a.client);
-    if err != nil {
-        return    nil, err
-    }
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return   localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return    localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-	 
- 
-	return   localVarHttpResponse, err
-}
-
-
-func (a *CellsApiService) MoveFolder(data *MoveFolderRequest  ) (   *http.Response, error) {
-	var (
-	 
-
-	)
-
-    r, err := data.CreateRequestData(a.client);
-    if err != nil {
-        return    nil, err
-    }
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return   localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return    localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-	 
- 
-	return   localVarHttpResponse, err
-}
-
-
-func (a *CellsApiService) DeleteFolder(data *DeleteFolderRequest  ) (   *http.Response, error) {
-	var (
-	 
-
-	)
-
-    r, err := data.CreateRequestData(a.client);
-    if err != nil {
-        return    nil, err
-    }
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return   localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return    localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-	 
- 
-	return   localVarHttpResponse, err
-}
-
-
-func (a *CellsApiService) StorageExists(data *StorageExistsRequest  ) (  StorageExist,  *http.Response, error) {
-	var (
-	localVarReturnValue StorageExist 
-
-	)
-
-    r, err := data.CreateRequestData(a.client);
-    if err != nil {
-        return  localVarReturnValue,  nil, err
-    }
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue,  localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
-			return localVarReturnValue, localVarHttpResponse, err
-		}
- 
-	return localVarReturnValue,  localVarHttpResponse, err
-}
-
-
-func (a *CellsApiService) ObjectExists(data *ObjectExistsRequest  ) (  ObjectExist,  *http.Response, error) {
-	var (
-	localVarReturnValue ObjectExist 
-
-	)
-
-    r, err := data.CreateRequestData(a.client);
-    if err != nil {
-        return  localVarReturnValue,  nil, err
-    }
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue,  localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
-			return localVarReturnValue, localVarHttpResponse, err
-		}
- 
-	return localVarReturnValue,  localVarHttpResponse, err
-}
-
-
-func (a *CellsApiService) GetDiscUsage(data *GetDiscUsageRequest  ) (  DiscUsage,  *http.Response, error) {
-	var (
-	localVarReturnValue DiscUsage 
-
-	)
-
-    r, err := data.CreateRequestData(a.client);
-    if err != nil {
-        return  localVarReturnValue,  nil, err
-    }
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue,  localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return localVarReturnValue,   localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-		if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&localVarReturnValue); err != nil {
-			return localVarReturnValue, localVarHttpResponse, err
-		}
- 
-	return localVarReturnValue,  localVarHttpResponse, err
-}
-
-
-func (a *CellsApiService) GetFileVersions(data *GetFileVersionsRequest  ) (  FileVersions,  *http.Response, error) {
-	var (
-	localVarReturnValue FileVersions 
 
 	)
 

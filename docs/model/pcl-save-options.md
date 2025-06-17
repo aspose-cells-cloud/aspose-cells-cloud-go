@@ -1,6 +1,6 @@
 # **pclSaveOptions**
 
-Represents the options of saving dbf file. 
+ 
 
 ## **Properties**
 

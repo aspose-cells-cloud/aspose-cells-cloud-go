@@ -1,14 +1,25 @@
-# **postWorkbookExportXML API**
+# **Spreadsheet Cloud API: postWorkbookExportXML**
 
 Export XML data from an Excel file.When there are XML Maps in an Excel file, export XML data. When there is no XML map in the Excel file, convert the Excel file to an XML file. 
 
-```bash
 
-POST http://api.aspose.cloud/v3.0//cells/{name}/exportxml
+## **Quick Start**
+
+- **Base URL**: `http://api.aspose.cloud/v3.0`
+- **Authentication Method**: `JWT (OAuth2, application)`  **Token URL**: `https://api.aspose.cloud/connect/token`
+- **Example** 
+
+## **Interface Details**
+
+### **Endpoint** 
 
 ```
+POST http://api.aspose.cloud/v3.0/cells/{name}/exportxml
+```
+### **Function Description**
+PageTitle: Export XML data from an Excel file.PageDescription: Aspose.Cells Cloud provides robust support for exporting XML data from an Excel file, a process known for its intricacy. When there are XML Maps in an Excel file, export XML data. When there is no XML map in the Excel file, convert the Excel file to an XML file.HeadTitle: Export XML data from an Excel file.HeadSummary: Aspose.Cells Cloud provides robust support for exporting XML data from an Excel file, a process known for its intricacy.When there are XML Maps in an Excel file, export XML data. When there is no XML map in the Excel file, convert the Excel file to an XML file.HeadContent: Aspose.Cells Cloud provides REST API which supports exporting XML data from an Excel file and offers SDKs for multiple programming languages. These programming languages are include of Net, Java, Go, NodeJS, Python, and so on.
 
-## The request parameters of **postWorkbookExportXML** API are: 
+### The request parameters of **postWorkbookExportXML** API are: 
 
 | Parameter Name | Type | Path/Query String/HTTPBody | Description | 
 | :- | :- | :- |:- | 
@@ -21,5 +32,15 @@ POST http://api.aspose.cloud/v3.0//cells/{name}/exportxml
 |checkExcelRestriction|Boolean|Query|Whether check restriction of excel file when user modify cells related objects.|
 |region|String|Query|The regional settings for workbook.|
 
+### **Response Description**
+```json
+{
+File
+}
+```
+
+
+## OpenAPI Specification
 
 The [OpenAPI Specification](https://reference.aspose.cloud/cells/#/DataProcessingController/PostWorkbookExportXML) defines a publicly accessible programming interface and lets you carry out REST interactions directly from a web browser.
+

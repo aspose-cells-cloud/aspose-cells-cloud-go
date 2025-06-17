@@ -1,5 +1,10 @@
 # Release History Version
 
+## Feature & Enhancements in Version 25.4
+
+- New API for Comprehensive Formula Error Checks in Excel Workbooks.
+- New API for External Reference Checks in Excel Workbooks.
+
 ## Feature & Enhancements in Version 25.3
 
 - Optimized the properties of `SaveOptions` to enhance performance and flexibility.

@@ -1,14 +1,22 @@
-# **deleteFile API**
+# **Spreadsheet Cloud API: deleteFile**
 
  
 
-```bash
 
-DELETE http://api.aspose.cloud/v3.0//cells/storage/file/{path}
+## **Quick Start**
+
+- **Base URL**: `http://api.aspose.cloud/v4.0`
+- **Authentication Method**: `JWT (OAuth2, application)`  **Token URL**: `https://api.aspose.cloud/connect/token`
+## **Interface Details**
+
+### **Endpoint** 
 
 ```
+DELETE http://api.aspose.cloud/v4.0/cells/storage/file/{path}
+```
+### **Function Description**
 
-## The request parameters of **deleteFile** API are: 
+### The request parameters of **deleteFile** API are: 
 
 | Parameter Name | Type | Path/Query String/HTTPBody | Description | 
 | :- | :- | :- |:- | 
@@ -16,5 +24,15 @@ DELETE http://api.aspose.cloud/v3.0//cells/storage/file/{path}
 |storageName|String|Query||
 |versionId|String|Query||
 
+### **Response Description**
+```json
+{
+Void
+}
+```
+
+
+## OpenAPI Specification
 
 The [OpenAPI Specification](https://reference.aspose.cloud/cells/#/FileController/DeleteFile) defines a publicly accessible programming interface and lets you carry out REST interactions directly from a web browser.
+

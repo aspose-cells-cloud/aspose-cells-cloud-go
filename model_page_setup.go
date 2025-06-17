@@ -26,8 +26,6 @@
 package asposecellscloud
 
 type PageSetup struct {
-     
-        Link *Link `json:"link,omitempty" xml:"link"`
  
     BlackAndWhite bool `json:"BlackAndWhite,omitempty" xml:"BlackAndWhite"`
     BottomMargin float64 `json:"BottomMargin,omitempty" xml:"BottomMargin"`
