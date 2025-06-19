@@ -9,10 +9,10 @@
 *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 *  copies of the Software, and to permit persons to whom the Software is
 *  furnished to do so, subject to the following conditions:
-* 
+*
 *  The above copyright notice and this permission notice shall be included in all
 *  copies or substantial portions of the Software.
-* 
+*
 *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -20,7 +20,7 @@
 *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 *  SOFTWARE.
-* </summary> 
+* </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
 package asposecellscloud
@@ -50,14 +50,14 @@ var (
 	xmlCheck  = regexp.MustCompile("(?i:[application|text]/xml)")
 )
 
-// APIClient manages communication with the Aspose.Cells Cloud SDK APIs. 
+// APIClient manages communication with the Aspose.Cells Cloud SDK APIs.
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
 	common service // Reuse a single struct instead of allocating one for each service on the heap.
 
 	// API Services
-	CellsApi      *CellsApiService
+	CellsApi *CellsApiService
 }
 
 type service struct {
@@ -258,7 +258,7 @@ func (c *APIClient) prepareRequest(
 
 	// add header parameters, if any
 	headerParams["x-aspose-client"] = "go sdk"
-	headerParams["x-aspose-client-version"] = "25.6.1"
+	headerParams["x-aspose-client-version"] = "25.6.0"
 	if len(headerParams) > 0 {
 		headers := http.Header{}
 		for h, v := range headerParams {

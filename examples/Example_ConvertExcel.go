@@ -3,8 +3,9 @@ package main
 import (
 	"encoding/base64"
 	"fmt"
-	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
 	"os"
+
+	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
 )
 
 func main() {
@@ -24,7 +25,7 @@ func main() {
 	}
 
 	// Upload a local Excel file to Cells Cloud Storage.
-	_, httpResponse, err = instance.UploadFile(&UploadFileRequest{UploadFile: employeeSalesSummaryXlsx, Path: remoteFolder + "/" + employeeSalesSummaryXlsx})
+	_, httpResponse, err = instance.UploadFile(&UploadFileRequest{UploadFiles: employeeSalesSummaryXlsx, Path: remoteFolder + "/" + employeeSalesSummaryXlsx})
 	// Convert an Excel file of Cells Cloud to another format file.
 	convertedData, httpResponse, err = instance.GetWorkbook(&GetWorkbookRequest{Name: employeeSalesSummaryXlsx, Format: "pdf", Folder: remoteFolder})
 	if err != nil {

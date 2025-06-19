@@ -3,8 +3,9 @@ package main
 import (
 	"encoding/base64"
 	"fmt"
-	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
 	"os"
+
+	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
 )
 
 func main() {
@@ -14,8 +15,8 @@ func main() {
 
 	instance := NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"))
 	//Merge an Excel or other spreadsheet file into an existing Excel file online.
-	_, httpResponse, err := instance.UploadFile(&UploadFileRequest{UploadFile: CompanySalesXlsx, Path: RemoteFolder + "/" + CompanySalesXlsx})
-	_, httpResponse, err = instance.UploadFile(&UploadFileRequest{UploadFile: EmployeeSalesSummaryXlsx, Path: RemoteFolder + "/" + EmployeeSalesSummaryXlsx})
+	_, httpResponse, err := instance.UploadFile(&UploadFileRequest{UploadFiles: CompanySalesXlsx, Path: RemoteFolder + "/" + CompanySalesXlsx})
+	_, httpResponse, err = instance.UploadFile(&UploadFileRequest{UploadFiles: EmployeeSalesSummaryXlsx, Path: RemoteFolder + "/" + EmployeeSalesSummaryXlsx})
 	_, httpResponse, err = instance.PostWorkbooksMerge(&PostWorkbooksMergeRequest{Name: CompanySalesXlsx, Folder: RemoteFolder, MergeWith: RemoteFolder + "/" + EmployeeSalesSummaryXlsx})
 	if err != nil {
 		fmt.Print(err)

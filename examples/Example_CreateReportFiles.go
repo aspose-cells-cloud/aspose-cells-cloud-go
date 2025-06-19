@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
 	"os"
+
+	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
 )
 
 func main() {
@@ -31,7 +32,7 @@ func main() {
 	} else {
 		print("Add Sheet1.\n")
 	}
-	_, httpResponse, err = instance.UploadFile(&UploadFileRequest{UploadFile: reportDataFile, Path: remoteFolder + "/" + reportDataFile})
+	_, httpResponse, err = instance.UploadFile(&UploadFileRequest{UploadFiles: reportDataFile, Path: remoteFolder + "/" + reportDataFile})
 	if err != nil {
 		fmt.Print(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {

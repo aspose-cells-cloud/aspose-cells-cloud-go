@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
 	"os"
+
+	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
 )
 
 func main() {
@@ -18,4 +19,5 @@ func main() {
 		file.Write(data)
 		defer file.Close()
 	}
+	Version()
 }

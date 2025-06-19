@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
 	"os"
+
+	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
 )
 
 func main() {
@@ -12,8 +13,8 @@ func main() {
 	RemoteFolder := "GoSDK"
 	RemoteOutputFolder := "GoSDK/Output"
 	instance := NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"))
-	_, httpResponse, err := instance.UploadFile(&UploadFileRequest{UploadFile: CompanySalesXlsx, Path: RemoteFolder + "/" + CompanySalesXlsx})
-	_, httpResponse, err = instance.UploadFile(&UploadFileRequest{UploadFile: EmployeeSalesSummaryXlsx, Path: RemoteFolder + "/" + EmployeeSalesSummaryXlsx})
+	_, httpResponse, err := instance.UploadFile(&UploadFileRequest{UploadFiles: CompanySalesXlsx, Path: RemoteFolder + "/" + CompanySalesXlsx})
+	_, httpResponse, err = instance.UploadFile(&UploadFileRequest{UploadFiles: EmployeeSalesSummaryXlsx, Path: RemoteFolder + "/" + EmployeeSalesSummaryXlsx})
 	// Batch convert Excel files.
 	_, httpResponse, err = instance.PostBatchConvert(&PostBatchConvertRequest{BatchConvertRequest: &BatchConvertRequest{SourceFolder: RemoteFolder, Format: "Pdf", OutFolder: RemoteOutputFolder, MatchCondition: &MatchConditionRequest{RegexPattern: "xlsx"}}})
 	if err != nil {

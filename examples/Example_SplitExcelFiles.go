@@ -3,8 +3,9 @@ package main
 import (
 	"encoding/base64"
 	"fmt"
-	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
 	"os"
+
+	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
 )
 
 func main() {
@@ -15,7 +16,7 @@ func main() {
 	instance := NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"))
 
 	//Splitting an Excel or other spreadsheet file to another format files online.
-	_, httpResponse, err := instance.UploadFile(&UploadFileRequest{UploadFile: EmployeeSalesSummaryXlsx, Path: RemoteFolder + "/" + EmployeeSalesSummaryXlsx})
+	_, httpResponse, err := instance.UploadFile(&UploadFileRequest{UploadFiles: EmployeeSalesSummaryXlsx, Path: RemoteFolder + "/" + EmployeeSalesSummaryXlsx})
 	httpResponse, err = instance.CreateFolder(&CreateFolderRequest{Path: RemoteFolder + "/Output"})
 	_, httpResponse, err = instance.PostWorkbookSplit(&PostWorkbookSplitRequest{Name: EmployeeSalesSummaryXlsx, Folder: RemoteFolder, OutFolder: RemoteFolder + "/Output", Format: "pdf", To: 3})
 	if err != nil {
