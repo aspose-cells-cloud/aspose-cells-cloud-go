@@ -27,6 +27,6 @@ package asposecellscloud
 
 type ScopeItem struct {
  
-    WorksheetName string `json:"WorksheetName,omitempty" xml:"WorksheetName"`
+    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
     Ranges []string `json:"Ranges,omitempty" xml:"Ranges"`
 }

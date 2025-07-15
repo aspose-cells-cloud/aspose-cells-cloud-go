@@ -56,7 +56,7 @@ func (data *ReplaceContentInRemoteRangeRequest) CreateRequestData( client *APICl
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/v4.0/cells/{name}/worksheets/{worksheet}/ranges/{cellarea}/replace/content"
+	localVarPath := client.cfg.BasePath + "/v4.0/cells/{name}/worksheets/{worksheet}/ranges/{cellArea}/replace/content"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", data.Name), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"worksheet"+"}", fmt.Sprintf("%v", data.Worksheet), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"cellArea"+"}", fmt.Sprintf("%v", data.CellArea), -1)

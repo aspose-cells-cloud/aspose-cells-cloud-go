@@ -31,7 +31,5 @@ type RemoveDuplicatesOptions struct {
  
     DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
     FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
-    RemoveDuplicatesArea string `json:"RemoveDuplicatesArea,omitempty" xml:"RemoveDuplicatesArea"`
-    RemoveDuplicatesAreaValue string `json:"RemoveDuplicatesAreaValue,omitempty" xml:"RemoveDuplicatesAreaValue"`
+    ScopeOptions *ScopeOptions `json:"ScopeOptions,omitempty" xml:"ScopeOptions"`
 }

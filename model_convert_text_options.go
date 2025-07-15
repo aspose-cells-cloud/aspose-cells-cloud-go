@@ -31,8 +31,7 @@ type ConvertTextOptions struct {
  
     DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
     FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
-    Range_ string `json:"Range,omitempty" xml:"Range"`
+    ScopeOptions *ScopeOptions `json:"ScopeOptions,omitempty" xml:"ScopeOptions"`
     ConvertTextType string `json:"ConvertTextType,omitempty" xml:"ConvertTextType"`
     SourceCharacters string `json:"SourceCharacters,omitempty" xml:"SourceCharacters"`
     TargetCharacters string `json:"TargetCharacters,omitempty" xml:"TargetCharacters"`

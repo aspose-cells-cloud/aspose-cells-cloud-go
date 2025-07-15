@@ -31,9 +31,8 @@ type AddTextOptions struct {
  
     DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
     FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
+    ScopeOptions *ScopeOptions `json:"ScopeOptions,omitempty" xml:"ScopeOptions"`
     Text string `json:"Text,omitempty" xml:"Text"`
-    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
-    Range_ string `json:"Range,omitempty" xml:"Range"`
     SelectPoistion string `json:"SelectPoistion,omitempty" xml:"SelectPoistion"`
     SelectText string `json:"SelectText,omitempty" xml:"SelectText"`
     SkipEmptyCells bool `json:"SkipEmptyCells,omitempty" xml:"SkipEmptyCells"`
