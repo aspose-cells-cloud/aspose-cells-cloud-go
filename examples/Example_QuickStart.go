@@ -9,7 +9,7 @@ import (
 
 func main() {
 	instance := NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"))
-	data, httpResponse, err := instance.PutConvertWorkbook(&PutConvertWorkbookRequest{LocalPath: "EmployeeSalesSummary.xlsx", Format: "pdf"})
+	data, httpResponse, err := instance.ConvertSpreadsheet(&ConvertSpreadsheetRequest{Spreadsheet: "EmployeeSalesSummary.xlsx", Format: "pdf"}, &CellsCloudOptio{OptionName: "LocalOutPath", OptionValue: "EmployeeSalesSummary.pdf"})
 	if err != nil {
 		fmt.Print(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
