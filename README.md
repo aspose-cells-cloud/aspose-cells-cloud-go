@@ -23,14 +23,17 @@ import (
 
 func main() {
  instance := NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"))
- request := PutConvertWorkbookRequest{File: map[string]string{"Book1.xlsx": "TestData/Book1.xlsx"}, Format: "pdf"}
- data, _, err := instance.PutConvertWorkbook(&request)
- if err == nil {
-  file, _ := os.OpenFile("Book1.pdf", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
-  file.Write(data)
-  defer file.Close()
+ _, httpResponse, err := instance.ConvertSpreadsheet(&ConvertSpreadsheetRequest{Spreadsheet: "EmployeeSalesSummary.xlsx", Format: "pdf"}, []CellsCloudOption{{OptionName: "LocalOutPath", OptionValue: "EmployeeSalesSummary.pdf"}}...)
+ if err != nil {
+  fmt.Print(err)
+ } else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
+  fmt.Print("E")
+ } else {
+  fmt.Print("T")
  }
+ Version()
 }
+
 ```
 
 - Initialize project go.mod , fetch the dependencies for your project, and run your created application..
