@@ -12,8 +12,11 @@ func main() {
 	employeeSalesSummaryXlsx := "EmployeeSalesSummary.xlsx"
 	remoteFolder := "GoSDK"
 	instance := NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"))
-	// Convert a local Excel file to another format file directly.
-	convertedData, httpResponse, err := instance.PutConvertWorkbook(&PutConvertWorkbookRequest{LocalPath: employeeSalesSummaryXlsx, Format: "pdf"})
+	// Convert a local Excel file to another format file directly, save to local file.
+	// Complete in one step.
+	_, httpResponse, err := instance.ConvertSpreadsheet(&ConvertSpreadsheetRequest{Spreadsheet: "EmployeeSalesSummary.xlsx", Format: "pdf"}, []CellsCloudOption{{OptionName: "LocalOutPath", OptionValue: "EmployeeSalesSummary.pdf"}}...)
+	// Completed in two steps
+	convertedData, httpResponse, err := instance.ConvertSpreadsheet(&ConvertSpreadsheetRequest{Spreadsheet: employeeSalesSummaryXlsx, Format: "pdf"})
 	if err != nil {
 		fmt.Print(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -38,7 +41,7 @@ func main() {
 		defer file.Close()
 	}
 	//Save an Excel file of Cells Cloud as another format file of Cells Cloud.
-	_, httpResponse, err = instance.PostWorkbookSaveAs(&PostWorkbookSaveAsRequest{Name: employeeSalesSummaryXlsx, Newfilename: "EmployeeSalesSummary.pdf", Folder: remoteFolder, SaveOptions: &SaveOptions{SaveFormat: "pdf"}})
+	_, httpResponse, err = instance.SaveSpreadsheetAs(&SaveSpreadsheetAsRequest{Name: employeeSalesSummaryXlsx, Format: "pdf", Folder: remoteFolder})
 	if err != nil {
 		println("Save as")
 		fmt.Print(err)
@@ -83,7 +86,7 @@ func main() {
 	file.Write(decodedData)
 	defer file.Close()
 	// Convert a worksheet of a local Excel file to another format file directly. Set query parameters : print_headings, one_page_per_sheet
-	convertedData, httpResponse, err = instance.GetWorksheetWithFormat(&GetWorksheetWithFormatRequest{Name: employeeSalesSummaryXlsx, SheetName: "Sales", Folder: remoteFolder, Format: "png", PrintHeadings: true, OnePagePerSheet: false})
+	convertedData, httpResponse, err = instance.ExportWorksheetAsFormat(&ExportWorksheetAsFormatRequest{Name: employeeSalesSummaryXlsx, Worksheet: "Sales", Folder: remoteFolder, Format: "pdf"}, []CellsCloudOption{{OptionName: "LocalOutPath", OptionValue: "EmployeeSalesSummary_Sales.pdf"}}...)
 	if err != nil {
 		fmt.Print(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
@@ -94,12 +97,12 @@ func main() {
 		defer file.Close()
 	}
 	// Convert a local Excel file's specified worksheet page index directly to another format file. Set query parameters : print_headings, one_page_per_sheet
-	convertedData, _, _ = instance.GetWorksheetWithFormat(&GetWorksheetWithFormatRequest{Name: employeeSalesSummaryXlsx, SheetName: "Sales", Folder: remoteFolder, Format: "png", PageIndex: 0, PrintHeadings: true, OnePagePerSheet: false})
-	file, _ = os.OpenFile("EmployeeSalesSummary_Sale_PageIndex0.png", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
+	convertedData, _, _ = instance.ExportWorksheetAsFormat(&ExportWorksheetAsFormatRequest{Name: employeeSalesSummaryXlsx, Worksheet: "Sales", Folder: remoteFolder, Format: "png"})
+	file, _ = os.OpenFile("EmployeeSalesSummary_Sale_1.png", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	file.Write(convertedData)
 	defer file.Close()
 	//Convert a local Excel file's specified worksheet cells area directly to another format file. Set query parameters : print_headings, one_page_per_sheet
-	convertedData, _, _ = instance.GetWorksheetWithFormat(&GetWorksheetWithFormatRequest{Name: employeeSalesSummaryXlsx, SheetName: "Sales", Folder: remoteFolder, Format: "png", Area: "B5:L36", PrintHeadings: true, OnePagePerSheet: false})
+	convertedData, _, _ = instance.ExportRangeAsFormat(&ExportRangeAsFormatRequest{Name: employeeSalesSummaryXlsx, Worksheet: "Sales", Folder: remoteFolder, Format: "png", Range_: "B5:L36"})
 	file, _ = os.OpenFile("EmployeeSalesSummary_Sale_Area.png", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	file.Write(convertedData)
 	defer file.Close()
