@@ -73,8 +73,7 @@ func (data *PostBatchSplitRequest) CreateRequestData( client *APIClient) (localV
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.BatchSplitRequest
-
+		localVarPostBody = &data.BatchSplitRequest
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

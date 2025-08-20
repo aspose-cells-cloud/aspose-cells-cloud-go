@@ -40,7 +40,7 @@ type MergeSpreadsheetsRequest struct {
 	Regoin string `json:"regoin,omitempty" xml:"regoin"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
-		Spreadsheet map[string]string  `json:"Spreadsheet,omitempty" xml:"Spreadsheet"`
+	Spreadsheet map[string]string  `json:"Spreadsheet,omitempty" xml:"Spreadsheet"`
 	 
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -110,9 +110,10 @@ func (data *MergeSpreadsheetsRequest) CreateRequestData( client *APIClient) (loc
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	for name, path := range data.Spreadsheet {
-		localVarFormParams["@"+name] = []string{path}
-	}  
+			
+		for name, path := range data.Spreadsheet {
+			localVarFormParams["@"+name] = []string{path}
+		}
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

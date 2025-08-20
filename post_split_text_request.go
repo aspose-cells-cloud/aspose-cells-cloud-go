@@ -73,8 +73,7 @@ func (data *PostSplitTextRequest) CreateRequestData( client *APIClient) (localVa
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.SplitTextOptions
-
+		localVarPostBody = &data.SplitTextOptions
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

@@ -90,8 +90,7 @@ func (data *PostWorksheetListObjectSortTableRequest) CreateRequestData( client *
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.DataSorter
-
+		localVarPostBody = &data.DataSorter
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

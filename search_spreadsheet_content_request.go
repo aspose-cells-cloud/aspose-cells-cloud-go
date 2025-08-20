@@ -40,8 +40,7 @@ type SearchSpreadsheetContentRequest struct {
 	Regoin string `json:"regoin,omitempty" xml:"regoin"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
-	 
-		Spreadsheet string  `json:"Spreadsheet,omitempty" xml:"Spreadsheet"`
+	Spreadsheet string  `json:"spreadsheet,omitempty" xml:"spreadsheet"`
 	 
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -107,7 +106,8 @@ func (data *SearchSpreadsheetContentRequest) CreateRequestData( client *APIClien
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-		localVarFormParams["@"+ filepath.Base(data.Spreadsheet)] = []string{data.Spreadsheet} 
+			
+		if strings.TrimSpace(data.Spreadsheet) != "" { localVarFormParams["@"+ filepath.Base(data.Spreadsheet)] = []string {data.Spreadsheet}} 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

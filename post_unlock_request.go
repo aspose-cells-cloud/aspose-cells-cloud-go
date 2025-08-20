@@ -35,8 +35,7 @@ import (
 type PostUnlockRequest struct {
 	Password string `json:"password,omitempty" xml:"password"`
 	
-		File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
-		LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"` 
+	LocalPath string  `json:"local_path,omitempty" xml:"local_path"`
 	 
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -82,12 +81,8 @@ func (data *PostUnlockRequest) CreateRequestData( client *APIClient) (localVarRe
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	for name, path := range data.File {
-		localVarFormParams["@"+name] = []string{path}
-	}  
-	if strings.TrimSpace(data.LocalPath) != "" {	
-		localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string{data.LocalPath} 
-	}
+			
+		if strings.TrimSpace(data.LocalPath) != "" { localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string {data.LocalPath}} 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

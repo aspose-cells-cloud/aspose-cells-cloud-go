@@ -73,8 +73,7 @@ func (data *PostDataCleansingRequest) CreateRequestData( client *APIClient) (loc
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.DataCleansingRequest
-
+		localVarPostBody = &data.DataCleansingRequest
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

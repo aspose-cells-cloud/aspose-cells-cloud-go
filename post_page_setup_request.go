@@ -88,8 +88,7 @@ func (data *PostPageSetupRequest) CreateRequestData( client *APIClient) (localVa
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.PageSetup
-
+		localVarPostBody = &data.PageSetup
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

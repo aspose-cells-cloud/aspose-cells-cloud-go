@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "25.7"
+  version: "25.8"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v4.0"
@@ -10,6 +10,118 @@ consumes:
 produces:
 - "application/json"
 paths:
+  /cells/calculate/aggergate/color:
+    put:
+      tags:
+      - "Cells"
+      summary: "The Aggregate by Color API provides a convenient way to perform calculations on cells that share the same fill or font color. This API supports a range of aggregate operations, including count, sum, maximum value, minimum value, and average value, enabling you to analyze and summarize data based on color distinctions."
+      operationId: "AggregateCellsByColor"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "range"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "range"
+      - name: "operation"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "operation"
+      - name: "colorposition"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "colorPosition"
+      - name: "regoin"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "regoin"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/calculate/math:
+    put:
+      tags:
+      - "Cells"
+      summary: "The Math Calculate API enables you to perform a variety of mathematical operations on a selected range of cells. You can add or subtract a specific number from all selected cells, as well as multiply or divide individual cells and entire columns. This API simplifies complex calculations and enhances data manipulation capabilities."
+      operationId: "MathCalculate"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "operation"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "operation"
+      - name: "value"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "value"
+      - name: "worksheet"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "range"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "range"
+      - name: "regoin"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "regoin"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
   /cells/connect/token:
     post:
       tags:
@@ -1847,6 +1959,97 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "password"
+  /cells/import/data:
+    put:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "ImportDataIntoSpreadsheet"
+      parameters:
+      - name: "datafile"
+        in: "FormData"
+        description: "Upload data file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "datafile"
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "startcell"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "startcell"
+      - name: "insert"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "insert"
+      - name: "convertnumericdata"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "convertNumericData"
+      - name: "splitter"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "splitter"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "fontsLocation"
+      - name: "regoin"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "regoin"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
   /cells/publickey:
     get:
       tags:
@@ -1855,6 +2058,328 @@ paths:
       operationId: "GetPublicKey"
       parameters:
 
+  /cells/spreadsheet/create:
+    put:
+      tags:
+      - "Cells"
+      summary: "The Web API allows users to create a new spreadsheet with a specified name. Optionally, a template can be provided to initialize the spreadsheet with predefined content or formatting."
+      operationId: "CreateSpreadsheet"
+      parameters:
+      - name: "format"
+        in: "Query"
+        description: "Specifies the name of the new spreadsheet. This name will be used to identify the spreadsheet in the system."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "format"
+      - name: "template"
+        in: "Query"
+        description: "template: Optional.If provided, the new spreadsheet will be created based on the specified template.This can be useful for applying predefined layouts and styles."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "template"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "regoin"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "regoin"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/spreadsheet/add/worksheet:
+    put:
+      tags:
+      - "Cells"
+      summary: "The Web API enables users to add a new worksheet to a workbook, specifying the worksheet's type, position, and name. This function provides flexibility in managing workbook structure by allowing detailed control over worksheet addition."
+      operationId: "AddWorksheetToSpreadsheet"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "sheettype"
+        in: "Query"
+        description: "Specifies the name of the new worksheet.If not provided, a default name will be assigned."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "sheetType"
+      - name: "position"
+        in: "Query"
+        description: "Specifies the position at which the new worksheet should be inserted.If not provided, the worksheet will be added at the end of the workbook."
+        required: false
+        type: "integer"
+        x-nullable: true
+        x-exportParamName: "position"
+      - name: "sheetname"
+        in: "Query"
+        description: "Specifies the type of worksheet to be added.If not provided, a default worksheet type will be used."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "sheetName"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "regoin"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "regoin"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/spreadsheet/delete/worksheet:
+    put:
+      tags:
+      - "Cells"
+      summary: "The Web API endpoint allows users to delete a specified worksheet from a workbook. This function provides a straightforward way to manage workbook structure by removing unnecessary or redundant worksheets."
+      operationId: "DeleteWorksheetFromSpreadsheet"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "sheetname"
+        in: "Query"
+        description: "Specifies the name or identifier of the worksheet to be deleted. This parameter is required and must match the name of an existing worksheet in the workbook."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "sheetName"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "regoin"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "regoin"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/spreadsheet/rename/worksheet:
+    put:
+      tags:
+      - "Cells"
+      summary: "The Web API endpoint allows users to rename a specified worksheet within a workbook. This function provides a straightforward way to update worksheet names, enhancing workbook organization and readability."
+      operationId: "RenameWorksheetInSpreadsheet"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "sourcename"
+        in: "Query"
+        description: "The current name of the worksheet to be renamed."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "sourceName"
+      - name: "targetname"
+        in: "Query"
+        description: "The new name for the worksheet."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "targetName"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "regoin"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "regoin"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/spreadsheet/move/worksheet:
+    put:
+      tags:
+      - "Cells"
+      summary: "The Web API endpoint allows users to move a specified worksheet within a workbook. This function provides a straightforward way to move a worksheet, enhancing workbook organization."
+      operationId: "MoveWorksheetInSpreadsheet"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: "The current name of the worksheet to be moved."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "position"
+        in: "Query"
+        description: "Move the worksheet to the position"
+        required: true
+        type: "integer"
+        x-nullable: true
+        x-exportParamName: "position"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "regoin"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "regoin"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/spreadsheet/compress:
+    put:
+      tags:
+      - "Cells"
+      summary: "The Web API endpoint allows users to compress a spreadsheet to reduce its file size. This function provides a straightforward way to optimize the storage and performance of spreadsheets by applying a specified compression level."
+      operationId: "CompressSpreadsheet"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "level"
+        in: "Query"
+        description: "Specifies the compression level to be applied to the spreadsheet. The level should be within a valid range (e.g., 0-9 for most compression algorithms, where 0 is no compression and 9 is maximum compression)."
+        required: true
+        type: "integer"
+        x-nullable: true
+        x-exportParamName: "level"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "regoin"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "regoin"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
   /cells/protection/spreadsheet:
     put:
       tags:
@@ -2793,6 +3318,76 @@ paths:
         type: "file"
         x-nullable: false
         x-exportParamName: "Spreadsheet"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "regoin"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "regoin"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/swap/range:
+    put:
+      tags:
+      - "Cells"
+      summary: "The Swap Ranges for Excel API provides a powerful tool to move any two columns, rows, ranges, or individual cells within an Excel file. This API allows users to re-arrange their tables quickly and efficiently, ensuring that the original data formatting is preserved and all existing formulas continue to function correctly. By leveraging this API, users can streamline their data manipulation tasks and maintain the integrity of their spreadsheets."
+      operationId: "SawpRange"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet1"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet1"
+      - name: "range1"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "range1"
+      - name: "worksheet2"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet2"
+      - name: "range2"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "range2"
       - name: "outpath"
         in: "Query"
         description: "(Optional) The folder path where the workbook is stored. The default is null."
@@ -18733,6 +19328,39 @@ definitions:
       Path:
         type: "string"
         description: ""
+  AggregateOperation:
+    allOf:
+    - type: "object"
+    
+    properties:
+
+  AggregateResultByColor:
+    type: "object"    
+    properties:
+      AggregateOperation:
+        type: "string"
+        description: ""
+      ColorName:
+        type: "string"
+        description: ""
+      Count:
+        type: "integer"
+        description: ""
+      Sum:
+        type: "floating"
+        description: ""
+      MaxValue:
+        type: "floating"
+        description: ""
+      MinValue:
+        type: "floating"
+        description: ""
+      AverageValue:
+        type: "floating"
+        description: ""
+      Value:
+        type: "floating"
+        description: ""
   BrokenLink:
     type: "object"    
     properties:
@@ -18748,6 +19376,12 @@ definitions:
       LinkAddress:
         type: "string"
         description: ""
+  CalculateOperation:
+    allOf:
+    - type: "object"
+    
+    properties:
+
   CellArea:
     type: "object"    
     properties:
@@ -18787,6 +19421,12 @@ definitions:
       Modulus:
         type: "string"
         description: ""
+  CellSourceType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
   Color:
     type: "object"    
     properties:
@@ -18802,6 +19442,12 @@ definitions:
       B:
         type: "byte"
         description: ""
+  ColorPositionType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
   PdfSecurityOptions:
     type: "object"    
     properties:
@@ -18957,6 +19603,10 @@ definitions:
       EncryptDocumentProperties:
         type: "boolean"
         description: ""
+  SpreadsheetTemplate:
+    type: "object"    
+    properties:
+
   TextItem:
     type: "object"    
     properties:
@@ -20606,6 +21256,20 @@ definitions:
         description: ""
       EncryptDocumentProperties:
         type: "boolean"
+        description: ""
+  AggregateResultByColorResponse:
+    allOf:
+    - type: "object"
+    
+    properties:
+      AggregateResults:
+        type: "container"
+        description: ""
+      Code:
+        type: "integer"
+        description: ""
+      Status:
+        type: "string"
         description: ""
   BrokenLinksReponse:
     allOf:

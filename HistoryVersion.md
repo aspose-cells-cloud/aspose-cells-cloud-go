@@ -1,5 +1,13 @@
 # Release History Version
 
+## Feature & Enhancements in Version 25.7
+
+|**Summary**| **Category** |
+| :- |:-------------|
+| Optimize operate scope options for extProcessingController.| Improvement  |
+| Add protect/unprotect spreadsheet APIs.| New Feature  |
+| Add convert worksheet/table/range to other formats.      | New Feature  |
+
 ## Feature & Enhancements in Version 25.6
 
 |**Summary**| **Category** |

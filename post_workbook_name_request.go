@@ -88,8 +88,7 @@ func (data *PostWorkbookNameRequest) CreateRequestData( client *APIClient) (loca
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.NewName
-
+		localVarPostBody = &data.NewName
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

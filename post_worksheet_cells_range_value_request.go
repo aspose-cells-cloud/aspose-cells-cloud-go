@@ -103,8 +103,7 @@ func (data *PostWorksheetCellsRangeValueRequest) CreateRequestData( client *APIC
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.Range_
-
+		localVarPostBody = &data.Range_
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }
