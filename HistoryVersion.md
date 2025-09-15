@@ -1,5 +1,21 @@
 # Release History Version
 
+## Feature & Enhancements in Version 25.8
+
+Full list of issues covering all changes in this release:
+
+|**Summary**|**Category**|
+| :- | :- |
+| Support of Authorization in Aspose.Cells Cloud Docker Container | New Feature  |
+| New Feature: Aggregate cells by color in CalculateController. | New Feature  |
+| New Feature: Math Calculations in CalculateController. | New Feature  |
+| New Feature: Adding/Deleting/Renaming worksheet in ManagementController. | New Feature  |
+| New Feature: Adding/Deleting worksheet in ManagementController. | New Feature  |
+| New Feature: create spreadsheet in ManagementController. | New Feature  |
+| New feature: Redesign the data import into the Spreadsheet. | New Feature  |
+| New feature: Swap data ranges in the spreadsheet. | New Feature  |
+| Fix the code generator of the cells cloud SDK specification for the enum query parameter. | Bug  |
+
 ## Feature & Enhancements in Version 25.7
 
 |**Summary**| **Category** |

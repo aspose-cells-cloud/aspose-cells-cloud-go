@@ -37,7 +37,7 @@ type AggregateCellsByColorRequest struct {
 	Range_ string `json:"range,omitempty" xml:"range"`
 	Operation string `json:"operation,omitempty" xml:"operation"`
 	ColorPosition string `json:"color_position,omitempty" xml:"color_position"`
-	Regoin string `json:"regoin,omitempty" xml:"regoin"`
+	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
 	Spreadsheet string  `json:"spreadsheet,omitempty" xml:"spreadsheet"`
@@ -77,9 +77,9 @@ func (data *AggregateCellsByColorRequest) CreateRequestData( client *APIClient) 
     if data.ColorPosition != "" {
         localVarQueryParams.Add("colorPosition", parameterToString(data.ColorPosition, ""))
     }
-    // query params : regoin
-    if data.Regoin != "" {
-        localVarQueryParams.Add("regoin", parameterToString(data.Regoin, ""))
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
     // query params : password
     if data.Password != "" {

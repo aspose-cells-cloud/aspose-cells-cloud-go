@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "25.8"
+  version: "25.9"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v4.0"
@@ -26,39 +26,39 @@ paths:
         x-exportParamName: "Spreadsheet"
       - name: "worksheet"
         in: "Query"
-        description: ""
+        description: "Specified worksheet."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "worksheet"
       - name: "range"
         in: "Query"
-        description: ""
+        description: "Specified range."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "range"
       - name: "operation"
         in: "Query"
-        description: ""
+        description: "Specify calculation operation methods, including Sum, Count, Average, Min, and Max."
         required: false
         type: "string"
         x-nullable: false
         x-exportParamName: "operation"
       - name: "colorposition"
         in: "Query"
-        description: ""
+        description: "Indicates the content to sum and count based on background color and/or font color."
         required: false
         type: "string"
         x-nullable: false
         x-exportParamName: "colorPosition"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -70,7 +70,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "The Math Calculate API enables you to perform a variety of mathematical operations on a selected range of cells. You can add or subtract a specific number from all selected cells, as well as multiply or divide individual cells and entire columns. This API simplifies complex calculations and enhances data manipulation capabilities."
+      summary: ""
       operationId: "MathCalculate"
       parameters:
       - name: "spreadsheet"
@@ -108,13 +108,13 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "range"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -202,13 +202,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -279,13 +279,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -363,13 +363,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -447,13 +447,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -531,13 +531,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -587,13 +587,111 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/convert/spreadsheet/pdf:
+    put:
+      tags:
+      - "Cells"
+      summary: "Converts a spreadsheet on a local drive to the pdf file."
+      operationId: "ConvertSpreadsheetToPdf"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "fontsLocation"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/convert/spreadsheet/csv:
+    put:
+      tags:
+      - "Cells"
+      summary: "Converts a spreadsheet on a local drive to the csv file."
+      operationId: "ConvertSpreadsheetToCsv"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "fontsLocation"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -650,13 +748,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -706,13 +804,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -776,13 +874,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -839,13 +937,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -902,13 +1000,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -965,13 +1063,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -1028,13 +1126,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -1105,13 +1203,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -1168,13 +1266,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -1231,13 +1329,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -1294,13 +1392,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -1357,13 +1455,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -1427,13 +1525,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -1490,13 +1588,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -1567,13 +1665,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -1630,13 +1728,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -1707,13 +1805,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -1791,13 +1889,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -1861,13 +1959,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -1945,13 +2043,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -1963,7 +2061,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Import data into a spreadsheet from a supported data file format."
       operationId: "ImportDataIntoSpreadsheet"
       parameters:
       - name: "datafile"
@@ -1982,35 +2080,35 @@ paths:
         x-exportParamName: "Spreadsheet"
       - name: "worksheet"
         in: "Query"
-        description: ""
+        description: "Specify the worksheet for importing data"
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "worksheet"
       - name: "startcell"
         in: "Query"
-        description: ""
+        description: "Specify the starting position for importing data"
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "startcell"
       - name: "insert"
         in: "Query"
-        description: ""
+        description: "The specified import data is for insertion and overwrite."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "insert"
       - name: "convertnumericdata"
         in: "Query"
-        description: ""
+        description: "Specify whether to convert numerical data"
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "convertNumericData"
       - name: "splitter"
         in: "Query"
-        description: ""
+        description: "Specify the delimiter for the CSV format."
         required: false
         type: "string"
         x-nullable: false
@@ -2036,13 +2134,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -2093,13 +2191,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "outStorageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -2156,13 +2254,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "outStorageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -2205,13 +2303,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "outStorageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -2261,13 +2359,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "outStorageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -2317,13 +2415,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "outStorageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -2366,13 +2464,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "outStorageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -2422,13 +2520,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "outStorageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
   /cells/unprotection/spreadsheet:
     put:
       tags:
@@ -2471,13 +2569,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "outStorageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
   /cells/search/content:
     put:
       tags:
@@ -2520,13 +2618,13 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "cellArea"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -2576,13 +2674,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "storageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -2599,21 +2697,21 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: "The name of the workbook file to be search."
+        description: "Specify the search workbook file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "worksheet"
         in: "Path"
-        description: "The name of worksheet"
+        description: "Specify the search worksheet name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "worksheet"
       - name: "searchtext"
         in: "Query"
-        description: "The searched text."
+        description: "Specify the search content."
         required: true
         type: "string"
         x-nullable: true
@@ -2639,13 +2737,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "storageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -2662,42 +2760,42 @@ paths:
       parameters:
       - name: "name"
         in: "Path"
-        description: ""
+        description: "Specify the search workbook file name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "name"
       - name: "worksheet"
         in: "Path"
-        description: ""
+        description: "Specify the search worksheet name."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "worksheet"
       - name: "cellarea"
         in: "Path"
-        description: ""
+        description: "Specify the search cell area."
         required: true
         type: "string"
         x-nullable: false
         x-exportParamName: "cellArea"
       - name: "searchtext"
         in: "Query"
-        description: ""
+        description: "Specify the search content."
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "searchText"
       - name: "ignoringcase"
         in: "Query"
-        description: ""
+        description: "Ignore the text of the search."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "ignoringCase"
       - name: "folder"
         in: "Query"
-        description: ""
+        description: "The folder path where the workbook is stored."
         required: false
         type: "string"
         x-nullable: true
@@ -2709,13 +2807,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "storageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -2739,14 +2837,14 @@ paths:
         x-exportParamName: "Spreadsheet"
       - name: "searchtext"
         in: "Query"
-        description: "The searched text."
+        description: "Specify the search content."
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "searchText"
       - name: "replacetext"
         in: "Query"
-        description: "The replaced text."
+        description: "Specify the replace content."
         required: true
         type: "string"
         x-nullable: true
@@ -2765,13 +2863,13 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "cellArea"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -2795,14 +2893,14 @@ paths:
         x-exportParamName: "name"
       - name: "searchtext"
         in: "Query"
-        description: "The searched text."
+        description: "Specify the search content."
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "searchText"
       - name: "replacetext"
         in: "Query"
-        description: "The replaced text."
+        description: "Specify the replace content."
         required: true
         type: "string"
         x-nullable: true
@@ -2821,13 +2919,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "storageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -2884,13 +2982,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "storageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -2954,13 +3052,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "storageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -2996,13 +3094,13 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "cellArea"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -3052,13 +3150,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "storageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -3101,13 +3199,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "storageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -3157,13 +3255,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "storageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -3185,13 +3283,13 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "version"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -3206,13 +3304,209 @@ paths:
       summary: ""
       operationId: "CodegenSpec"
       parameters:
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/content/trim:
+    put:
+      tags:
+      - "Cells"
+      summary: "The TrimSpreadsheetContent API is designed to process and trim content within a spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting"
+      operationId: "TrimSpreadsheetContent"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "trimcontent"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "trimContent"
+      - name: "trimleading"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "trimLeading"
+      - name: "trimtrailing"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "trimTrailing"
+      - name: "trimspacebetweenwordto1"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "trimSpaceBetweenWordTo1"
+      - name: "trimnonbreakingspaces"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "trimNonBreakingSpaces"
+      - name: "removeextralinebreaks"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "removeExtraLineBreaks"
+      - name: "removealllinebreaks"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "removeAllLineBreaks"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/content/trim/worksheet:
+    put:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "TrimWorksheetRange"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "range"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "range"
+      - name: "trimcontent"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "trimContent"
+      - name: "trimleading"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "trimLeading"
+      - name: "trimtrailing"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "trimTrailing"
+      - name: "trimspacebetweenwordto1"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "trimSpaceBetweenWordTo1"
+      - name: "trimnonbreakingspaces"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "trimNonBreakingSpaces"
+      - name: "removeextralinebreaks"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "removeExtraLineBreaks"
+      - name: "removealllinebreaks"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "removeAllLineBreaks"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -3224,7 +3518,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "Delete all blank rows which do not contain any data or other object."
+      summary: "Delete all blank rows that do not contain any data or other objects."
       operationId: "DeleteSpreadsheetBlankRows"
       parameters:
       - name: "spreadsheet"
@@ -3248,13 +3542,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "outStorageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -3266,7 +3560,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "Delete all blank columns which do not contain any data."
+      summary: "Delete all blank rows that do not contain any data or other objects."
       operationId: "DeleteSpreadsheetBlankColumns"
       parameters:
       - name: "spreadsheet"
@@ -3290,13 +3584,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "outStorageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -3308,7 +3602,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "Delete all blank worksheets which do not contain any data or other object."
+      summary: "Delete all blank rows that do not contain any data or other objects."
       operationId: "DeleteSpreadsheetBlankWorksheets"
       parameters:
       - name: "spreadsheet"
@@ -3332,13 +3626,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "outStorageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -3351,7 +3645,7 @@ paths:
       tags:
       - "Cells"
       summary: "The Swap Ranges for Excel API provides a powerful tool to move any two columns, rows, ranges, or individual cells within an Excel file. This API allows users to re-arrange their tables quickly and efficiently, ensuring that the original data formatting is preserved and all existing formulas continue to function correctly. By leveraging this API, users can streamline their data manipulation tasks and maintain the integrity of their spreadsheets."
-      operationId: "SawpRange"
+      operationId: "SwapRange"
       parameters:
       - name: "spreadsheet"
         in: "FormData"
@@ -3362,28 +3656,28 @@ paths:
         x-exportParamName: "Spreadsheet"
       - name: "worksheet1"
         in: "Query"
-        description: ""
+        description: "Specify the worksheet that is the source of the exchange data area."
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "worksheet1"
       - name: "range1"
         in: "Query"
-        description: ""
+        description: "Specify exchange data source."
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "range1"
       - name: "worksheet2"
         in: "Query"
-        description: ""
+        description: "Specify the worksheet that is the target of the exchange data area."
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "worksheet2"
       - name: "range2"
         in: "Query"
-        description: ""
+        description: "Specify exchange data target."
         required: true
         type: "string"
         x-nullable: true
@@ -3402,13 +3696,13 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "outStorageName"
-      - name: "regoin"
+      - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
         required: false
         type: "string"
         x-nullable: false
-        x-exportParamName: "regoin"
+        x-exportParamName: "region"
       - name: "password"
         in: "Query"
         description: "The password for opening spreadsheet file."
@@ -19358,9 +19652,6 @@ definitions:
       AverageValue:
         type: "floating"
         description: ""
-      Value:
-        type: "floating"
-        description: ""
   BrokenLink:
     type: "object"    
     properties:
@@ -21271,7 +21562,7 @@ definitions:
       Status:
         type: "string"
         description: ""
-  BrokenLinksReponse:
+  BrokenLinksResponse:
     allOf:
     - type: "object"
     

@@ -34,5 +34,4 @@ type AggregateResultByColor struct {
     MaxValue float64 `json:"MaxValue,omitempty" xml:"MaxValue"`
     MinValue float64 `json:"MinValue,omitempty" xml:"MinValue"`
     AverageValue float64 `json:"AverageValue,omitempty" xml:"AverageValue"`
-    Value float64 `json:"Value,omitempty" xml:"Value"`
 }

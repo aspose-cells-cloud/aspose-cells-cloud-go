@@ -37,7 +37,7 @@ type ProtectSpreadsheetRequest struct {
 	ModifyPassword string `json:"modify_password,omitempty" xml:"modify_password"`
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
-	Regoin string `json:"regoin,omitempty" xml:"regoin"`
+	Region string `json:"region,omitempty" xml:"region"`
 	
 	Spreadsheet string  `json:"spreadsheet,omitempty" xml:"spreadsheet"`
 	 
@@ -76,9 +76,9 @@ func (data *ProtectSpreadsheetRequest) CreateRequestData( client *APIClient) (lo
     if data.OutStorageName != "" {
         localVarQueryParams.Add("outStorageName", parameterToString(data.OutStorageName, ""))
     }
-    // query params : regoin
-    if data.Regoin != "" {
-        localVarQueryParams.Add("regoin", parameterToString(data.Regoin, ""))
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
 	if data.ExtendQueryParameterMap != nil {
 		for key, value := range data.ExtendQueryParameterMap {

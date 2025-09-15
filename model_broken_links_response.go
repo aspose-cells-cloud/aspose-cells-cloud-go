@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="BrokenLinksReponse.go">
+* <copyright company="Aspose" file="BrokenLinksResponse.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,7 +25,7 @@
 
 package asposecellscloud
 
-type BrokenLinksReponse struct {
+type BrokenLinksResponse struct {
      
         Code int64 `json:"Code,omitempty" xml:"Code"`
         Status string `json:"Status,omitempty" xml:"Status"`

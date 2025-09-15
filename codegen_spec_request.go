@@ -32,7 +32,7 @@ import (
 )
 
 type CodegenSpecRequest struct {
-	Regoin string `json:"regoin,omitempty" xml:"regoin"`
+	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
 
@@ -54,9 +54,9 @@ func (data *CodegenSpecRequest) CreateRequestData( client *APIClient) (localVarR
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-    // query params : regoin
-    if data.Regoin != "" {
-        localVarQueryParams.Add("regoin", parameterToString(data.Regoin, ""))
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
     // query params : password
     if data.Password != "" {

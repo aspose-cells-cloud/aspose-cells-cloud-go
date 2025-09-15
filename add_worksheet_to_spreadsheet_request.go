@@ -38,7 +38,7 @@ type AddWorksheetToSpreadsheetRequest struct {
 	SheetName string `json:"sheet_name,omitempty" xml:"sheet_name"`
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
-	Regoin string `json:"regoin,omitempty" xml:"regoin"`
+	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
 	Spreadsheet string  `json:"spreadsheet,omitempty" xml:"spreadsheet"`
@@ -82,9 +82,9 @@ func (data *AddWorksheetToSpreadsheetRequest) CreateRequestData( client *APIClie
     if data.OutStorageName != "" {
         localVarQueryParams.Add("outStorageName", parameterToString(data.OutStorageName, ""))
     }
-    // query params : regoin
-    if data.Regoin != "" {
-        localVarQueryParams.Add("regoin", parameterToString(data.Regoin, ""))
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
     // query params : password
     if data.Password != "" {

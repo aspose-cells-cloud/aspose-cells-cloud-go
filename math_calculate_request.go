@@ -37,7 +37,7 @@ type MathCalculateRequest struct {
 	Value string `json:"value,omitempty" xml:"value"`
 	Worksheet string `json:"worksheet,omitempty" xml:"worksheet"`
 	Range_ string `json:"range,omitempty" xml:"range"`
-	Regoin string `json:"regoin,omitempty" xml:"regoin"`
+	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
 	Spreadsheet string  `json:"spreadsheet,omitempty" xml:"spreadsheet"`
@@ -77,9 +77,9 @@ func (data *MathCalculateRequest) CreateRequestData( client *APIClient) (localVa
     if data.Range_ != "" {
         localVarQueryParams.Add("range", parameterToString(data.Range_, ""))
     }
-    // query params : regoin
-    if data.Regoin != "" {
-        localVarQueryParams.Add("regoin", parameterToString(data.Regoin, ""))
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
     // query params : password
     if data.Password != "" {

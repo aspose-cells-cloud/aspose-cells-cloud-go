@@ -40,7 +40,7 @@ type ReplaceContentInRemoteRangeRequest struct {
 	ReplaceText string `json:"replace_text,omitempty" xml:"replace_text"`
 	Folder string `json:"folder,omitempty" xml:"folder"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
-	Regoin string `json:"regoin,omitempty" xml:"regoin"`
+	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
 
@@ -81,9 +81,9 @@ func (data *ReplaceContentInRemoteRangeRequest) CreateRequestData( client *APICl
     if data.StorageName != "" {
         localVarQueryParams.Add("storageName", parameterToString(data.StorageName, ""))
     }
-    // query params : regoin
-    if data.Regoin != "" {
-        localVarQueryParams.Add("regoin", parameterToString(data.Regoin, ""))
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
     // query params : password
     if data.Password != "" {

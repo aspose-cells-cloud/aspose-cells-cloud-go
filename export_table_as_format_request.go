@@ -42,7 +42,7 @@ type ExportTableAsFormatRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	Regoin string `json:"regoin,omitempty" xml:"regoin"`
+	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
 
@@ -91,9 +91,9 @@ func (data *ExportTableAsFormatRequest) CreateRequestData( client *APIClient) (l
     if data.FontsLocation != "" {
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
-    // query params : regoin
-    if data.Regoin != "" {
-        localVarQueryParams.Add("regoin", parameterToString(data.Regoin, ""))
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
     // query params : password
     if data.Password != "" {

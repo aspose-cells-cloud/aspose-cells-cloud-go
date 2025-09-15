@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="sawp_range_request.go">
+* <copyright company="Aspose" file="convert_spreadsheet_to_pdf_request.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -32,14 +32,11 @@ import (
 	"strings"
 )
 
-type SawpRangeRequest struct {
-	Worksheet1 string `json:"worksheet1,omitempty" xml:"worksheet1"`
-	Range1 string `json:"range1,omitempty" xml:"range1"`
-	Worksheet2 string `json:"worksheet2,omitempty" xml:"worksheet2"`
-	Range2 string `json:"range2,omitempty" xml:"range2"`
+type ConvertSpreadsheetToPdfRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
-	Regoin string `json:"regoin,omitempty" xml:"regoin"`
+	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
+	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
 	Spreadsheet string  `json:"spreadsheet,omitempty" xml:"spreadsheet"`
@@ -48,7 +45,7 @@ type SawpRangeRequest struct {
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
-func (data *SawpRangeRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+func (data *ConvertSpreadsheetToPdfRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("PUT")
 		localVarPostBody    interface{}
@@ -57,28 +54,12 @@ func (data *SawpRangeRequest) CreateRequestData( client *APIClient) (localVarReq
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/v4.0/cells/swap/range"
+	localVarPath := client.cfg.BasePath + "/v4.0/cells/convert/spreadsheet/pdf"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-    // query params : worksheet1
-    if data.Worksheet1 != "" {
-        localVarQueryParams.Add("worksheet1", parameterToString(data.Worksheet1, ""))
-    }
-    // query params : range1
-    if data.Range1 != "" {
-        localVarQueryParams.Add("range1", parameterToString(data.Range1, ""))
-    }
-    // query params : worksheet2
-    if data.Worksheet2 != "" {
-        localVarQueryParams.Add("worksheet2", parameterToString(data.Worksheet2, ""))
-    }
-    // query params : range2
-    if data.Range2 != "" {
-        localVarQueryParams.Add("range2", parameterToString(data.Range2, ""))
-    }
     // query params : outPath
     if data.OutPath != "" {
         localVarQueryParams.Add("outPath", parameterToString(data.OutPath, ""))
@@ -87,9 +68,13 @@ func (data *SawpRangeRequest) CreateRequestData( client *APIClient) (localVarReq
     if data.OutStorageName != "" {
         localVarQueryParams.Add("outStorageName", parameterToString(data.OutStorageName, ""))
     }
-    // query params : regoin
-    if data.Regoin != "" {
-        localVarQueryParams.Add("regoin", parameterToString(data.Regoin, ""))
+    // query params : fontsLocation
+    if data.FontsLocation != "" {
+        localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
+    }
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
     // query params : password
     if data.Password != "" {
