@@ -37,3 +37,4 @@ jobs:
         go run .\Example_MergeExcelFiles.go
         go run .\Example_SplitExcelFiles.go
         go run .\Example_CreateReportFiles.go
+        go run .\Example_Management.go

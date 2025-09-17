@@ -8,8 +8,9 @@ import (
 )
 
 func main() {
+	// If no environment variables are configured, please obtain the ClientId and ClientSecret from https://dashboard.aspose.cloud/#/applications and replace the following values:
+	// instance  := NewCellsApiService('YourClientId','YourClientSecret')
 	instance := NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"))
-	//instance = NewCellsApiService(os.Getenv("CellsCloudTestClientId"), os.Getenv("CellsCloudTestClientSecret"), "http://localhost:47987", "v3.0")
 	reportTemplate := "ProductSalteReportTemplate.xlsx"
 	reportName := "ProductSaleReport.xlsx"
 	sheetName := "SalesData"

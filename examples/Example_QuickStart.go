@@ -8,6 +8,8 @@ import (
 )
 
 func main() {
+	// If no environment variables are configured, please obtain the ClientId and ClientSecret from https://dashboard.aspose.cloud/#/applications and replace the following values:
+	// instance  := NewCellsApiService('YourClientId','YourClientSecret')
 	instance := NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"))
 	_, httpResponse, err := instance.ConvertSpreadsheet(&ConvertSpreadsheetRequest{Spreadsheet: "EmployeeSalesSummary.xlsx", Format: "pdf"}, []CellsCloudOption{{OptionName: "LocalOutPath", OptionValue: "EmployeeSalesSummary.pdf"}}...)
 	if err != nil {
