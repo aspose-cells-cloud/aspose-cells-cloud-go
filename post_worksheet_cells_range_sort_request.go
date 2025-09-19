@@ -88,8 +88,7 @@ func (data *PostWorksheetCellsRangeSortRequest) CreateRequestData( client *APICl
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.RangeSortRequest
-
+		localVarPostBody = &data.RangeSortRequest
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

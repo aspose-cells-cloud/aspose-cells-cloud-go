@@ -88,8 +88,7 @@ func (data *DeleteUnprotectWorksheetRequest) CreateRequestData( client *APIClien
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.ProtectParameter
-
+		localVarPostBody = &data.ProtectParameter
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

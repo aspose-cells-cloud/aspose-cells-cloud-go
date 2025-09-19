@@ -38,7 +38,7 @@ type PostMergeRequest struct {
 	CheckExcelRestriction bool `json:"check_excel_restriction,omitempty" xml:"check_excel_restriction"`
 	Region string `json:"region,omitempty" xml:"region"`
 	
-		File map[string]string  `json:"File,omitempty" xml:"File"`
+	File map[string]string  `json:"File,omitempty" xml:"File"`
 	 
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -100,9 +100,10 @@ func (data *PostMergeRequest) CreateRequestData( client *APIClient) (localVarReq
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	for name, path := range data.File {
-		localVarFormParams["@"+name] = []string{path}
-	}  
+			
+		for name, path := range data.File {
+			localVarFormParams["@"+name] = []string{path}
+		}
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

@@ -36,8 +36,7 @@ import (
 type PostProtectRequest struct {
 	Password string `json:"password,omitempty" xml:"password"`
 	ProtectWorkbookRequest interface{} `json:"protect_workbook_request,omitempty" xml:"protect_workbook_request"` 	
-		File map[string]string  `json:"File,omitempty" xml:"File"`// Deprecated: Use LocalPath instead. 
-		LocalPath string  `json:"LocalPath,omitempty" xml:"LocalPath"` 
+	LocalPath string  `json:"local_path,omitempty" xml:"local_path"`
 	 
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -83,14 +82,11 @@ func (data *PostProtectRequest) CreateRequestData( client *APIClient) (localVarR
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	for name, path := range data.File {
-		localVarFormParams["@"+name] = []string{path}
-	}
-	if strings.TrimSpace(data.LocalPath) != "" {	
-		localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string{data.LocalPath} 
-	}
-	b, _ := json.Marshal( &data.ProtectWorkbookRequest)
-	localVarFormParams["ProtectWorkbookRequest"] = []string{string(b)}
+			
+		if strings.TrimSpace(data.LocalPath) != "" { localVarFormParams["@"+ filepath.Base(data.LocalPath)] = []string {data.LocalPath}} 
+			
+		b, _ := json.Marshal( &data.ProtectWorkbookRequest)
+		localVarFormParams["ProtectWorkbookRequest"] = []string{string(b)}
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

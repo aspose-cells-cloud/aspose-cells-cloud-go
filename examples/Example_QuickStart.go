@@ -8,16 +8,16 @@ import (
 )
 
 func main() {
+	// If no environment variables are configured, please obtain the ClientId and ClientSecret from https://dashboard.aspose.cloud/#/applications and replace the following values:
+	// instance  := NewCellsApiService('YourClientId','YourClientSecret')
 	instance := NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"))
-	data, httpResponse, err := instance.PutConvertWorkbook(&PutConvertWorkbookRequest{LocalPath: "EmployeeSalesSummary.xlsx", Format: "pdf"})
+	_, httpResponse, err := instance.ConvertSpreadsheet(&ConvertSpreadsheetRequest{Spreadsheet: "EmployeeSalesSummary.xlsx", Format: "pdf"}, []CellsCloudOption{{OptionName: "LocalOutPath", OptionValue: "EmployeeSalesSummary.pdf"}}...)
 	if err != nil {
 		fmt.Print(err)
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		fmt.Print("E")
 	} else {
-		file, _ := os.OpenFile("EmployeeSalesSummary.pdf", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
-		file.Write(data)
-		defer file.Close()
+		fmt.Print("T")
 	}
 	Version()
 }

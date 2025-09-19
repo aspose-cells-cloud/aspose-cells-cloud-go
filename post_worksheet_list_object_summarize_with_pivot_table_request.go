@@ -95,8 +95,7 @@ func (data *PostWorksheetListObjectSummarizeWithPivotTableRequest) CreateRequest
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.CreatePivotTableRequest
-
+		localVarPostBody = &data.CreatePivotTableRequest
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

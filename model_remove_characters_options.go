@@ -31,8 +31,7 @@ type RemoveCharactersOptions struct {
  
     DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
     FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
-    Range_ string `json:"Range,omitempty" xml:"Range"`
+    ScopeOptions *ScopeOptions `json:"ScopeOptions,omitempty" xml:"ScopeOptions"`
     RemoveCharactersByCharacter *RemoveCharactersByCharacter `json:"RemoveCharactersByCharacter,omitempty" xml:"RemoveCharactersByCharacter"`
     RemoveCharactersByPosition *RemoveCharactersByPosition `json:"RemoveCharactersByPosition,omitempty" xml:"RemoveCharactersByPosition"`
 }

@@ -12,6 +12,8 @@ func main() {
 	CompanySalesXlsx := "CompanySales.xlsx"
 	RemoteFolder := "GoSDK"
 	RemoteOutputFolder := "GoSDK/Output"
+	// If no environment variables are configured, please obtain the ClientId and ClientSecret from https://dashboard.aspose.cloud/#/applications and replace the following values:
+	// instance  := NewCellsApiService('YourClientId','YourClientSecret')
 	instance := NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"))
 	_, httpResponse, err := instance.UploadFile(&UploadFileRequest{UploadFiles: CompanySalesXlsx, Path: RemoteFolder + "/" + CompanySalesXlsx})
 	_, httpResponse, err = instance.UploadFile(&UploadFileRequest{UploadFiles: EmployeeSalesSummaryXlsx, Path: RemoteFolder + "/" + EmployeeSalesSummaryXlsx})
@@ -33,6 +35,7 @@ func main() {
 	} else {
 		println("Successful batch lock of Excel files.")
 	}
+
 	// Batch unlock Excel files.
 	_, httpResponse, err = instance.PostBatchUnlock(&PostBatchUnlockRequest{BatchLockRequest: &BatchLockRequest{SourceFolder: RemoteFolder, Password: "123456", OutFolder: RemoteOutputFolder, MatchCondition: &MatchConditionRequest{RegexPattern: "xlsx"}}})
 	if err != nil {

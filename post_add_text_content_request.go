@@ -73,8 +73,7 @@ func (data *PostAddTextContentRequest) CreateRequestData( client *APIClient) (lo
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.AddTextOptions
-
+		localVarPostBody = &data.AddTextOptions
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

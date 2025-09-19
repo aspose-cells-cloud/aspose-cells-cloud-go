@@ -90,8 +90,7 @@ func (data *PostUpdateWorksheetOleObjectRequest) CreateRequestData( client *APIC
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.Ole
-
+		localVarPostBody = &data.Ole
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

@@ -35,11 +35,10 @@ import (
 type SearchSpreadsheetBrokenLinksRequest struct {
 	Worksheet string `json:"worksheet,omitempty" xml:"worksheet"`
 	CellArea string `json:"cell_area,omitempty" xml:"cell_area"`
-	Regoin string `json:"regoin,omitempty" xml:"regoin"`
+	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
-	 
-		Spreadsheet string  `json:"Spreadsheet,omitempty" xml:"Spreadsheet"`
+	Spreadsheet string  `json:"spreadsheet,omitempty" xml:"spreadsheet"`
 	 
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -68,9 +67,9 @@ func (data *SearchSpreadsheetBrokenLinksRequest) CreateRequestData( client *APIC
     if data.CellArea != "" {
         localVarQueryParams.Add("cellArea", parameterToString(data.CellArea, ""))
     }
-    // query params : regoin
-    if data.Regoin != "" {
-        localVarQueryParams.Add("regoin", parameterToString(data.Regoin, ""))
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
     // query params : password
     if data.Password != "" {
@@ -97,7 +96,8 @@ func (data *SearchSpreadsheetBrokenLinksRequest) CreateRequestData( client *APIC
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-		localVarFormParams["@"+ filepath.Base(data.Spreadsheet)] = []string{data.Spreadsheet} 
+			
+		if strings.TrimSpace(data.Spreadsheet) != "" { localVarFormParams["@"+ filepath.Base(data.Spreadsheet)] = []string {data.Spreadsheet}} 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

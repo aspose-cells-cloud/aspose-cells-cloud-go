@@ -90,8 +90,7 @@ func (data *PostChartSecondValueAxisRequest) CreateRequestData( client *APIClien
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.Axis
-
+		localVarPostBody = &data.Axis
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

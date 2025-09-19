@@ -73,8 +73,7 @@ func (data *PostCharacterCountRequest) CreateRequestData( client *APIClient) (lo
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.CharacterCountOptions
-
+		localVarPostBody = &data.CharacterCountOptions
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

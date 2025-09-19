@@ -73,8 +73,7 @@ func (data *PostDeleteIncompleteRowsRequest) CreateRequestData( client *APIClien
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.DeleteIncompleteRowsRequest
-
+		localVarPostBody = &data.DeleteIncompleteRowsRequest
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

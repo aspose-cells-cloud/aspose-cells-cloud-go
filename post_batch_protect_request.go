@@ -73,8 +73,7 @@ func (data *PostBatchProtectRequest) CreateRequestData( client *APIClient) (loca
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.BatchProtectRequest
-
+		localVarPostBody = &data.BatchProtectRequest
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

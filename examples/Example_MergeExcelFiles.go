@@ -12,7 +12,8 @@ func main() {
 	EmployeeSalesSummaryXlsx := "EmployeeSalesSummary.xlsx"
 	CompanySalesXlsx := "CompanySales.xlsx"
 	RemoteFolder := "GoSDK"
-
+	// If no environment variables are configured, please obtain the ClientId and ClientSecret from https://dashboard.aspose.cloud/#/applications and replace the following values:
+	// instance  := NewCellsApiService('YourClientId','YourClientSecret')
 	instance := NewCellsApiService(os.Getenv("ProductClientId"), os.Getenv("ProductClientSecret"))
 	//Merge an Excel or other spreadsheet file into an existing Excel file online.
 	_, httpResponse, err := instance.UploadFile(&UploadFileRequest{UploadFiles: CompanySalesXlsx, Path: RemoteFolder + "/" + CompanySalesXlsx})

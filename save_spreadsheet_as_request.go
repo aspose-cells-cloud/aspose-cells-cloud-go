@@ -40,7 +40,7 @@ type SaveSpreadsheetAsRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	Regoin string `json:"regoin,omitempty" xml:"regoin"`
+	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	SaveOptionsData interface{} `json:"save_options_data,omitempty" xml:"save_options_data"` 	
 
@@ -87,9 +87,9 @@ func (data *SaveSpreadsheetAsRequest) CreateRequestData( client *APIClient) (loc
     if data.FontsLocation != "" {
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
-    // query params : regoin
-    if data.Regoin != "" {
-        localVarQueryParams.Add("regoin", parameterToString(data.Regoin, ""))
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
     }
     // query params : password
     if data.Password != "" {
@@ -116,8 +116,7 @@ func (data *SaveSpreadsheetAsRequest) CreateRequestData( client *APIClient) (loc
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.SaveOptionsData
-
+		localVarPostBody = &data.SaveOptionsData
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

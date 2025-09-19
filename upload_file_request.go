@@ -37,8 +37,7 @@ type UploadFileRequest struct {
     Path string `json:"path,omitempty" xml:"path"`
 	StorageName string `json:"storage_name,omitempty" xml:"storage_name"`
 	
-	 
-		UploadFiles string  `json:"UploadFiles,omitempty" xml:"UploadFiles"`
+	UploadFiles string  `json:"upload_files,omitempty" xml:"upload_files"`
 	 
 
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
@@ -85,7 +84,8 @@ func (data *UploadFileRequest) CreateRequestData( client *APIClient) (localVarRe
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-		localVarFormParams["@"+ filepath.Base(data.UploadFiles)] = []string{data.UploadFiles} 
+			
+		if strings.TrimSpace(data.UploadFiles) != "" { localVarFormParams["@"+ filepath.Base(data.UploadFiles)] = []string {data.UploadFiles}} 
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

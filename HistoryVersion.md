@@ -1,5 +1,39 @@
 # Release History Version
 
+## Feature & Enhancements in Version 25.8
+
+Full list of issues covering all changes in this release:
+
+|**Summary**|**Category**|
+| :- | :- |
+| Support of Authorization in Aspose.Cells Cloud Docker Container | New Feature  |
+| New Feature: Aggregate cells by color in CalculateController. | New Feature  |
+| New Feature: Math Calculations in CalculateController. | New Feature  |
+| New Feature: Adding/Deleting/Renaming worksheet in ManagementController. | New Feature  |
+| New Feature: Adding/Deleting worksheet in ManagementController. | New Feature  |
+| New Feature: create spreadsheet in ManagementController. | New Feature  |
+| New feature: Redesign the data import into the Spreadsheet. | New Feature  |
+| New feature: Swap data ranges in the spreadsheet. | New Feature  |
+| Fix the code generator of the cells cloud SDK specification for the enum query parameter. | Bug  |
+
+## Feature & Enhancements in Version 25.7
+
+|**Summary**| **Category** |
+| :- |:-------------|
+| Optimize operate scope options for extProcessingController.| Improvement  |
+| Add protect/unprotect spreadsheet APIs.| New Feature  |
+| Add convert worksheet/table/range to other formats.      | New Feature  |
+
+## Feature & Enhancements in Version 25.6
+
+|**Summary**| **Category** |
+| :- |:-------------|
+| Optimize the upload file API  | Improvement |
+| Support delete blank rows, columns, and worksheets. | New Feature |
+| Optimize search context for remote spreadsheet features by splitting them into independent APIs, each dedicated to a specific operational area. | New Feature |
+| Optimize search broken links for remote spreadsheet features by splitting them into independent APIs, each dedicated to a specific operational area. | New Feature |
+| Optimize replace context for remote spreadsheet features by splitting them into independent APIs, each dedicated to a specific operational area. | New Feature |
+
 ## Feature & Enhancements in Version 25.5
 
 - Add the new API for getting the public key for encrypting the password.

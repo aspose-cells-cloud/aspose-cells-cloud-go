@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="BrokenLinksReponse.go">
+* <copyright company="Aspose" file="AggregateResultByColor.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -25,10 +25,13 @@
 
 package asposecellscloud
 
-type BrokenLinksReponse struct {
-     
-        Code int64 `json:"Code,omitempty" xml:"Code"`
-        Status string `json:"Status,omitempty" xml:"Status"`
+type AggregateResultByColor struct {
  
-    BrokenLinks []BrokenLink `json:"BrokenLinks,omitempty" xml:"BrokenLinks"`
+    AggregateOperation string `json:"AggregateOperation,omitempty" xml:"AggregateOperation"`
+    ColorName string `json:"ColorName,omitempty" xml:"ColorName"`
+    Count int64 `json:"Count,omitempty" xml:"Count"`
+    Sum float64 `json:"Sum,omitempty" xml:"Sum"`
+    MaxValue float64 `json:"MaxValue,omitempty" xml:"MaxValue"`
+    MinValue float64 `json:"MinValue,omitempty" xml:"MinValue"`
+    AverageValue float64 `json:"AverageValue,omitempty" xml:"AverageValue"`
 }

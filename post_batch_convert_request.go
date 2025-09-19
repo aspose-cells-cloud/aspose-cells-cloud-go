@@ -73,8 +73,7 @@ func (data *PostBatchConvertRequest) CreateRequestData( client *APIClient) (loca
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.BatchConvertRequest
-
+		localVarPostBody = &data.BatchConvertRequest
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

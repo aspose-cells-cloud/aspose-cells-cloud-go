@@ -73,8 +73,7 @@ func (data *PostConvertTextRequest) CreateRequestData( client *APIClient) (local
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.ConvertTextOptions
-
+		localVarPostBody = &data.ConvertTextOptions
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

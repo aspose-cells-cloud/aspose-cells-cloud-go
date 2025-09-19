@@ -100,8 +100,7 @@ func (data *PostPivotTableUpdatePivotFieldsRequest) CreateRequestData( client *A
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.PivotField
-
+		localVarPostBody = &data.PivotField
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

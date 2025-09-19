@@ -73,8 +73,7 @@ func (data *PostWordsCountRequest) CreateRequestData( client *APIClient) (localV
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.WordsCountOptions
-
+		localVarPostBody = &data.WordsCountOptions
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

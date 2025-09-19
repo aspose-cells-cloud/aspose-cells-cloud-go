@@ -101,8 +101,7 @@ func (data *PostWorkbookDataDeduplicationRequest) CreateRequestData( client *API
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.DeduplicationRegion
-
+		localVarPostBody = &data.DeduplicationRegion
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

@@ -73,8 +73,7 @@ func (data *PostDataFillRequest) CreateRequestData( client *APIClient) (localVar
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarPostBody = &data.DataFillRequest
-
+		localVarPostBody = &data.DataFillRequest
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }
