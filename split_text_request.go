@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="delete_spreadsheet_blank_rows_request.go">
+* <copyright company="Aspose" file="split_text_request.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -32,7 +32,14 @@ import (
 	"strings"
 )
 
-type DeleteSpreadsheetBlankRowsRequest struct {
+type SplitTextRequest struct {
+	SplitDelimitersType string `json:"split_delimiters_type,omitempty" xml:"split_delimiters_type"`
+	CustomDelimiter string `json:"custom_delimiter,omitempty" xml:"custom_delimiter"`
+	KeepDelimitersInResultingCells bool `json:"keep_delimiters_in_resulting_cells,omitempty" xml:"keep_delimiters_in_resulting_cells"`
+	KeepDelimitersPosition string `json:"keep_delimiters_position,omitempty" xml:"keep_delimiters_position"`
+	HowToSplit string `json:"how_to_split,omitempty" xml:"how_to_split"`
+	Worksheet string `json:"worksheet,omitempty" xml:"worksheet"`
+	Range_ string `json:"range,omitempty" xml:"range"`
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	Region string `json:"region,omitempty" xml:"region"`
@@ -44,7 +51,7 @@ type DeleteSpreadsheetBlankRowsRequest struct {
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
-func (data *DeleteSpreadsheetBlankRowsRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+func (data *SplitTextRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("PUT")
 		localVarPostBody    interface{}
@@ -53,12 +60,40 @@ func (data *DeleteSpreadsheetBlankRowsRequest) CreateRequestData( client *APICli
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/v4.0/cells/delete/blank-rows"
+	localVarPath := client.cfg.BasePath + "/v4.0/cells/content/split/text"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+    // query params : splitDelimitersType
+    if data.SplitDelimitersType != "" {
+        localVarQueryParams.Add("splitDelimitersType", parameterToString(data.SplitDelimitersType, ""))
+    }
+    // query params : customDelimiter
+    if data.CustomDelimiter != "" {
+        localVarQueryParams.Add("customDelimiter", parameterToString(data.CustomDelimiter, ""))
+    }
+    // query params : keepDelimitersInResultingCells
+    if data.KeepDelimitersInResultingCells {
+        localVarQueryParams.Add("keepDelimitersInResultingCells", parameterToString(data.KeepDelimitersInResultingCells, ""))
+    }
+    // query params : keepDelimitersPosition
+    if data.KeepDelimitersPosition != "" {
+        localVarQueryParams.Add("keepDelimitersPosition", parameterToString(data.KeepDelimitersPosition, ""))
+    }
+    // query params : howToSplit
+    if data.HowToSplit != "" {
+        localVarQueryParams.Add("HowToSplit", parameterToString(data.HowToSplit, ""))
+    }
+    // query params : worksheet
+    if data.Worksheet != "" {
+        localVarQueryParams.Add("worksheet", parameterToString(data.Worksheet, ""))
+    }
+    // query params : range
+    if data.Range_ != "" {
+        localVarQueryParams.Add("range", parameterToString(data.Range_, ""))
+    }
     // query params : outPath
     if data.OutPath != "" {
         localVarQueryParams.Add("outPath", parameterToString(data.OutPath, ""))

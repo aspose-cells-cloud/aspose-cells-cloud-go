@@ -1,4 +1,4 @@
-# **Spreadsheet Cloud API: trimWorksheetRange**
+# **Spreadsheet Cloud API: repairSpreadsheet**
 
  
 
@@ -7,31 +7,20 @@
 
 - **Base URL**: `http://api.aspose.cloud/v4.0`
 - **Authentication Method**: `JWT (OAuth2, application)`  **Token URL**: `https://api.aspose.cloud/connect/token`
-- **Example** 
-
 ## **Interface Details**
 
 ### **Endpoint** 
 
 ```
-PUT http://api.aspose.cloud/v4.0/cells/content/trim/worksheet
+PUT http://api.aspose.cloud/v4.0/cells/spreadsheet/repair
 ```
 ### **Function Description**
 
-### The request parameters of **trimWorksheetRange** API are: 
+### The request parameters of **repairSpreadsheet** API are: 
 
 | Parameter Name | Type | Path/Query String/HTTPBody | Description | 
 | :- | :- | :- |:- | 
 |Spreadsheet|File|FormData|Upload spreadsheet file.|
-|worksheet|String|Query||
-|range|String|Query||
-|trimContent|String|Query||
-|trimLeading|Boolean|Query||
-|trimTrailing|Boolean|Query||
-|trimSpaceBetweenWordTo1|Boolean|Query||
-|trimNonBreakingSpaces|Boolean|Query||
-|removeExtraLineBreaks|Boolean|Query||
-|removeAllLineBreaks|Boolean|Query||
 |outPath|String|Query|(Optional) The folder path where the workbook is stored. The default is null.|
 |outStorageName|String|Query|Output file Storage Name.|
 |region|String|Query|The spreadsheet region setting.|
@@ -47,5 +36,5 @@ File
 
 ## OpenAPI Specification
 
-The [OpenAPI Specification](https://reference.aspose.cloud/cells/#/TextProcessingController/TrimWorksheetRange) defines a publicly accessible programming interface and lets you carry out REST interactions directly from a web browser.
+The [OpenAPI Specification](https://reference.aspose.cloud/cells/#/ManagementController/RepairSpreadsheet) defines a publicly accessible programming interface and lets you carry out REST interactions directly from a web browser.
 

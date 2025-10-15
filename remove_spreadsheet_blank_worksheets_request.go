@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="delete_spreadsheet_blank_worksheets_request.go">
+* <copyright company="Aspose" file="remove_spreadsheet_blank_worksheets_request.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -32,7 +32,7 @@ import (
 	"strings"
 )
 
-type DeleteSpreadsheetBlankWorksheetsRequest struct {
+type RemoveSpreadsheetBlankWorksheetsRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	Region string `json:"region,omitempty" xml:"region"`
@@ -44,7 +44,7 @@ type DeleteSpreadsheetBlankWorksheetsRequest struct {
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
-func (data *DeleteSpreadsheetBlankWorksheetsRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+func (data *RemoveSpreadsheetBlankWorksheetsRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("PUT")
 		localVarPostBody    interface{}
@@ -53,7 +53,7 @@ func (data *DeleteSpreadsheetBlankWorksheetsRequest) CreateRequestData( client *
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/v4.0/cells/delete/blank-worksheets"
+	localVarPath := client.cfg.BasePath + "/v4.0/cells/remove/blank-worksheets"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

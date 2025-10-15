@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="trim_worksheet_range_request.go">
+* <copyright company="Aspose" file="add_text_request.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -32,16 +32,13 @@ import (
 	"strings"
 )
 
-type TrimWorksheetRangeRequest struct {
+type AddTextRequest struct {
+	Text string `json:"text,omitempty" xml:"text"`
+	Position string `json:"position,omitempty" xml:"position"`
+	SelectText string `json:"select_text,omitempty" xml:"select_text"`
+	SkipEmptyCells bool `json:"skip_empty_cells,omitempty" xml:"skip_empty_cells"`
 	Worksheet string `json:"worksheet,omitempty" xml:"worksheet"`
 	Range_ string `json:"range,omitempty" xml:"range"`
-	TrimContent string `json:"trim_content,omitempty" xml:"trim_content"`
-	TrimLeading bool `json:"trim_leading,omitempty" xml:"trim_leading"`
-	TrimTrailing bool `json:"trim_trailing,omitempty" xml:"trim_trailing"`
-	TrimSpaceBetweenWordTo1 bool `json:"trim_space_between_word_to1,omitempty" xml:"trim_space_between_word_to1"`
-	TrimNonBreakingSpaces bool `json:"trim_non_breaking_spaces,omitempty" xml:"trim_non_breaking_spaces"`
-	RemoveExtraLineBreaks bool `json:"remove_extra_line_breaks,omitempty" xml:"remove_extra_line_breaks"`
-	RemoveAllLineBreaks bool `json:"remove_all_line_breaks,omitempty" xml:"remove_all_line_breaks"`
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	Region string `json:"region,omitempty" xml:"region"`
@@ -53,7 +50,7 @@ type TrimWorksheetRangeRequest struct {
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
-func (data *TrimWorksheetRangeRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+func (data *AddTextRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("PUT")
 		localVarPostBody    interface{}
@@ -62,12 +59,28 @@ func (data *TrimWorksheetRangeRequest) CreateRequestData( client *APIClient) (lo
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/v4.0/cells/content/trim/worksheet"
+	localVarPath := client.cfg.BasePath + "/v4.0/cells/content/add/text"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+    // query params : text
+    if data.Text != "" {
+        localVarQueryParams.Add("text", parameterToString(data.Text, ""))
+    }
+    // query params : position
+    if data.Position != "" {
+        localVarQueryParams.Add("position", parameterToString(data.Position, ""))
+    }
+    // query params : selectText
+    if data.SelectText != "" {
+        localVarQueryParams.Add("selectText", parameterToString(data.SelectText, ""))
+    }
+    // query params : skipEmptyCells
+    if data.SkipEmptyCells {
+        localVarQueryParams.Add("skipEmptyCells", parameterToString(data.SkipEmptyCells, ""))
+    }
     // query params : worksheet
     if data.Worksheet != "" {
         localVarQueryParams.Add("worksheet", parameterToString(data.Worksheet, ""))
@@ -75,34 +88,6 @@ func (data *TrimWorksheetRangeRequest) CreateRequestData( client *APIClient) (lo
     // query params : range
     if data.Range_ != "" {
         localVarQueryParams.Add("range", parameterToString(data.Range_, ""))
-    }
-    // query params : trimContent
-    if data.TrimContent != "" {
-        localVarQueryParams.Add("trimContent", parameterToString(data.TrimContent, ""))
-    }
-    // query params : trimLeading
-    if data.TrimLeading {
-        localVarQueryParams.Add("trimLeading", parameterToString(data.TrimLeading, ""))
-    }
-    // query params : trimTrailing
-    if data.TrimTrailing {
-        localVarQueryParams.Add("trimTrailing", parameterToString(data.TrimTrailing, ""))
-    }
-    // query params : trimSpaceBetweenWordTo1
-    if data.TrimSpaceBetweenWordTo1 {
-        localVarQueryParams.Add("trimSpaceBetweenWordTo1", parameterToString(data.TrimSpaceBetweenWordTo1, ""))
-    }
-    // query params : trimNonBreakingSpaces
-    if data.TrimNonBreakingSpaces {
-        localVarQueryParams.Add("trimNonBreakingSpaces", parameterToString(data.TrimNonBreakingSpaces, ""))
-    }
-    // query params : removeExtraLineBreaks
-    if data.RemoveExtraLineBreaks {
-        localVarQueryParams.Add("removeExtraLineBreaks", parameterToString(data.RemoveExtraLineBreaks, ""))
-    }
-    // query params : removeAllLineBreaks
-    if data.RemoveAllLineBreaks {
-        localVarQueryParams.Add("removeAllLineBreaks", parameterToString(data.RemoveAllLineBreaks, ""))
     }
     // query params : outPath
     if data.OutPath != "" {

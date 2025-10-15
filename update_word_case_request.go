@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="trim_spreadsheet_content_request.go">
+* <copyright company="Aspose" file="update_word_case_request.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -32,14 +32,10 @@ import (
 	"strings"
 )
 
-type TrimSpreadsheetContentRequest struct {
-	TrimContent string `json:"trim_content,omitempty" xml:"trim_content"`
-	TrimLeading bool `json:"trim_leading,omitempty" xml:"trim_leading"`
-	TrimTrailing bool `json:"trim_trailing,omitempty" xml:"trim_trailing"`
-	TrimSpaceBetweenWordTo1 bool `json:"trim_space_between_word_to1,omitempty" xml:"trim_space_between_word_to1"`
-	TrimNonBreakingSpaces bool `json:"trim_non_breaking_spaces,omitempty" xml:"trim_non_breaking_spaces"`
-	RemoveExtraLineBreaks bool `json:"remove_extra_line_breaks,omitempty" xml:"remove_extra_line_breaks"`
-	RemoveAllLineBreaks bool `json:"remove_all_line_breaks,omitempty" xml:"remove_all_line_breaks"`
+type UpdateWordCaseRequest struct {
+	WordCaseType string `json:"word_case_type,omitempty" xml:"word_case_type"`
+	Worksheet string `json:"worksheet,omitempty" xml:"worksheet"`
+	Range_ string `json:"range,omitempty" xml:"range"`
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	Region string `json:"region,omitempty" xml:"region"`
@@ -51,7 +47,7 @@ type TrimSpreadsheetContentRequest struct {
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
-func (data *TrimSpreadsheetContentRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+func (data *UpdateWordCaseRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("PUT")
 		localVarPostBody    interface{}
@@ -60,39 +56,23 @@ func (data *TrimSpreadsheetContentRequest) CreateRequestData( client *APIClient)
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/v4.0/cells/content/trim"
+	localVarPath := client.cfg.BasePath + "/v4.0/cells/content/wordcase"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-    // query params : trimContent
-    if data.TrimContent != "" {
-        localVarQueryParams.Add("trimContent", parameterToString(data.TrimContent, ""))
+    // query params : wordCaseType
+    if data.WordCaseType != "" {
+        localVarQueryParams.Add("wordCaseType", parameterToString(data.WordCaseType, ""))
     }
-    // query params : trimLeading
-    if data.TrimLeading {
-        localVarQueryParams.Add("trimLeading", parameterToString(data.TrimLeading, ""))
+    // query params : worksheet
+    if data.Worksheet != "" {
+        localVarQueryParams.Add("worksheet", parameterToString(data.Worksheet, ""))
     }
-    // query params : trimTrailing
-    if data.TrimTrailing {
-        localVarQueryParams.Add("trimTrailing", parameterToString(data.TrimTrailing, ""))
-    }
-    // query params : trimSpaceBetweenWordTo1
-    if data.TrimSpaceBetweenWordTo1 {
-        localVarQueryParams.Add("trimSpaceBetweenWordTo1", parameterToString(data.TrimSpaceBetweenWordTo1, ""))
-    }
-    // query params : trimNonBreakingSpaces
-    if data.TrimNonBreakingSpaces {
-        localVarQueryParams.Add("trimNonBreakingSpaces", parameterToString(data.TrimNonBreakingSpaces, ""))
-    }
-    // query params : removeExtraLineBreaks
-    if data.RemoveExtraLineBreaks {
-        localVarQueryParams.Add("removeExtraLineBreaks", parameterToString(data.RemoveExtraLineBreaks, ""))
-    }
-    // query params : removeAllLineBreaks
-    if data.RemoveAllLineBreaks {
-        localVarQueryParams.Add("removeAllLineBreaks", parameterToString(data.RemoveAllLineBreaks, ""))
+    // query params : range
+    if data.Range_ != "" {
+        localVarQueryParams.Add("range", parameterToString(data.Range_, ""))
     }
     // query params : outPath
     if data.OutPath != "" {

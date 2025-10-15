@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="delete_spreadsheet_blank_columns_request.go">
+* <copyright company="Aspose" file="remove_duplicates_request.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -32,7 +32,10 @@ import (
 	"strings"
 )
 
-type DeleteSpreadsheetBlankColumnsRequest struct {
+type RemoveDuplicatesRequest struct {
+	Worksheet string `json:"worksheet,omitempty" xml:"worksheet"`
+	Range_ string `json:"range,omitempty" xml:"range"`
+	Table string `json:"table,omitempty" xml:"table"`
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	Region string `json:"region,omitempty" xml:"region"`
@@ -44,7 +47,7 @@ type DeleteSpreadsheetBlankColumnsRequest struct {
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
-func (data *DeleteSpreadsheetBlankColumnsRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+func (data *RemoveDuplicatesRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("PUT")
 		localVarPostBody    interface{}
@@ -53,12 +56,24 @@ func (data *DeleteSpreadsheetBlankColumnsRequest) CreateRequestData( client *API
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/v4.0/cells/delete/blank-columns"
+	localVarPath := client.cfg.BasePath + "/v4.0/cells/remove/duplicates"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+    // query params : worksheet
+    if data.Worksheet != "" {
+        localVarQueryParams.Add("worksheet", parameterToString(data.Worksheet, ""))
+    }
+    // query params : range
+    if data.Range_ != "" {
+        localVarQueryParams.Add("range", parameterToString(data.Range_, ""))
+    }
+    // query params : table
+    if data.Table != "" {
+        localVarQueryParams.Add("table", parameterToString(data.Table, ""))
+    }
     // query params : outPath
     if data.OutPath != "" {
         localVarQueryParams.Add("outPath", parameterToString(data.OutPath, ""))
