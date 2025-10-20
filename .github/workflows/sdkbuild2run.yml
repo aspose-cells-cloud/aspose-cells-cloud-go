@@ -38,3 +38,5 @@ jobs:
         go run .\Example_SplitExcelFiles.go
         go run .\Example_CreateReportFiles.go
         go run .\Example_Management.go
+        go run .\Example_ExcelSplit.go
+        go run .\Example_TextProcessing.go
