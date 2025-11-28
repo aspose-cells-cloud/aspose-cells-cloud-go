@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="extract_text_request.go">
+* <copyright company="Aspose" file="translate_text_file_request.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -32,17 +32,8 @@ import (
 	"strings"
 )
 
-type ExtractTextRequest struct {
-	ExtractTextType string `json:"extract_text_type,omitempty" xml:"extract_text_type"`
-	OutPositionRange string `json:"out_position_range,omitempty" xml:"out_position_range"`
-	BeforeText string `json:"before_text,omitempty" xml:"before_text"`
-	AfterText string `json:"after_text,omitempty" xml:"after_text"`
-	BeforePosition int64 `json:"before_position,omitempty" xml:"before_position"`
-	AfterPosition int64 `json:"after_position,omitempty" xml:"after_position"`
-	Worksheet string `json:"worksheet,omitempty" xml:"worksheet"`
-	Range_ string `json:"range,omitempty" xml:"range"`
-	OutPath string `json:"out_path,omitempty" xml:"out_path"`
-	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
+type TranslateTextFileRequest struct {
+	TargetLanguage string `json:"target_language,omitempty" xml:"target_language"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -52,7 +43,7 @@ type ExtractTextRequest struct {
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
-func (data *ExtractTextRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+func (data *TranslateTextFileRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("PUT")
 		localVarPostBody    interface{}
@@ -61,51 +52,15 @@ func (data *ExtractTextRequest) CreateRequestData( client *APIClient) (localVarR
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/v4.0/cells/content/extract/text"
+	localVarPath := client.cfg.BasePath + "/v4.0/cells/translate/text"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-    // query params : extractTextType
-    if data.ExtractTextType != "" {
-        localVarQueryParams.Add("extractTextType", parameterToString(data.ExtractTextType, ""))
-    }
-    // query params : outPositionRange
-    if data.OutPositionRange != "" {
-        localVarQueryParams.Add("outPositionRange", parameterToString(data.OutPositionRange, ""))
-    }
-    // query params : beforeText
-    if data.BeforeText != "" {
-        localVarQueryParams.Add("beforeText", parameterToString(data.BeforeText, ""))
-    }
-    // query params : afterText
-    if data.AfterText != "" {
-        localVarQueryParams.Add("afterText", parameterToString(data.AfterText, ""))
-    }
-    // query params : beforePosition
-    if &data.BeforePosition != nil {
-        localVarQueryParams.Add("beforePosition", parameterToString(data.BeforePosition, ""))
-    }
-    // query params : afterPosition
-    if &data.AfterPosition != nil {
-        localVarQueryParams.Add("afterPosition", parameterToString(data.AfterPosition, ""))
-    }
-    // query params : worksheet
-    if data.Worksheet != "" {
-        localVarQueryParams.Add("worksheet", parameterToString(data.Worksheet, ""))
-    }
-    // query params : range
-    if data.Range_ != "" {
-        localVarQueryParams.Add("range", parameterToString(data.Range_, ""))
-    }
-    // query params : outPath
-    if data.OutPath != "" {
-        localVarQueryParams.Add("outPath", parameterToString(data.OutPath, ""))
-    }
-    // query params : outStorageName
-    if data.OutStorageName != "" {
-        localVarQueryParams.Add("outStorageName", parameterToString(data.OutStorageName, ""))
+    // query params : targetLanguage
+    if data.TargetLanguage != "" {
+        localVarQueryParams.Add("targetLanguage", parameterToString(data.TargetLanguage, ""))
     }
     // query params : region
     if data.Region != "" {

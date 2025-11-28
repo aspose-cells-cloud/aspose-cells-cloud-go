@@ -1,5 +1,5 @@
 /** --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="extract_text_request.go">
+* <copyright company="Aspose" file="remove_characters_by_position_request.go">
 *   Copyright (c) 2025 Aspose.Cells Cloud
 * </copyright>
 * <summary>
@@ -32,13 +32,12 @@ import (
 	"strings"
 )
 
-type ExtractTextRequest struct {
-	ExtractTextType string `json:"extract_text_type,omitempty" xml:"extract_text_type"`
-	OutPositionRange string `json:"out_position_range,omitempty" xml:"out_position_range"`
-	BeforeText string `json:"before_text,omitempty" xml:"before_text"`
-	AfterText string `json:"after_text,omitempty" xml:"after_text"`
-	BeforePosition int64 `json:"before_position,omitempty" xml:"before_position"`
-	AfterPosition int64 `json:"after_position,omitempty" xml:"after_position"`
+type RemoveCharactersByPositionRequest struct {
+	TheFirstNCharacters int64 `json:"the_first_n_characters,omitempty" xml:"the_first_n_characters"`
+	TheLastNCharacters int64 `json:"the_last_n_characters,omitempty" xml:"the_last_n_characters"`
+	AllCharactersBeforeText string `json:"all_characters_before_text,omitempty" xml:"all_characters_before_text"`
+	AllCharactersAfterText string `json:"all_characters_after_text,omitempty" xml:"all_characters_after_text"`
+	CaseSensitive bool `json:"case_sensitive,omitempty" xml:"case_sensitive"`
 	Worksheet string `json:"worksheet,omitempty" xml:"worksheet"`
 	Range_ string `json:"range,omitempty" xml:"range"`
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
@@ -52,7 +51,7 @@ type ExtractTextRequest struct {
 	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
 }
 
-func (data *ExtractTextRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+func (data *RemoveCharactersByPositionRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("PUT")
 		localVarPostBody    interface{}
@@ -61,35 +60,31 @@ func (data *ExtractTextRequest) CreateRequestData( client *APIClient) (localVarR
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/v4.0/cells/content/extract/text"
+	localVarPath := client.cfg.BasePath + "/v4.0/cells/content/remove/characters-by-position"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-    // query params : extractTextType
-    if data.ExtractTextType != "" {
-        localVarQueryParams.Add("extractTextType", parameterToString(data.ExtractTextType, ""))
+    // query params : theFirstNCharacters
+    if &data.TheFirstNCharacters != nil {
+        localVarQueryParams.Add("theFirstNCharacters", parameterToString(data.TheFirstNCharacters, ""))
     }
-    // query params : outPositionRange
-    if data.OutPositionRange != "" {
-        localVarQueryParams.Add("outPositionRange", parameterToString(data.OutPositionRange, ""))
+    // query params : theLastNCharacters
+    if &data.TheLastNCharacters != nil {
+        localVarQueryParams.Add("theLastNCharacters", parameterToString(data.TheLastNCharacters, ""))
     }
-    // query params : beforeText
-    if data.BeforeText != "" {
-        localVarQueryParams.Add("beforeText", parameterToString(data.BeforeText, ""))
+    // query params : allCharactersBeforeText
+    if data.AllCharactersBeforeText != "" {
+        localVarQueryParams.Add("allCharactersBeforeText", parameterToString(data.AllCharactersBeforeText, ""))
     }
-    // query params : afterText
-    if data.AfterText != "" {
-        localVarQueryParams.Add("afterText", parameterToString(data.AfterText, ""))
+    // query params : allCharactersAfterText
+    if data.AllCharactersAfterText != "" {
+        localVarQueryParams.Add("allCharactersAfterText", parameterToString(data.AllCharactersAfterText, ""))
     }
-    // query params : beforePosition
-    if &data.BeforePosition != nil {
-        localVarQueryParams.Add("beforePosition", parameterToString(data.BeforePosition, ""))
-    }
-    // query params : afterPosition
-    if &data.AfterPosition != nil {
-        localVarQueryParams.Add("afterPosition", parameterToString(data.AfterPosition, ""))
+    // query params : caseSensitive
+    if data.CaseSensitive {
+        localVarQueryParams.Add("caseSensitive", parameterToString(data.CaseSensitive, ""))
     }
     // query params : worksheet
     if data.Worksheet != "" {

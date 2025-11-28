@@ -33,11 +33,11 @@ import (
 )
 
 type SplitTextRequest struct {
-	SplitDelimitersType string `json:"split_delimiters_type,omitempty" xml:"split_delimiters_type"`
-	CustomDelimiter string `json:"custom_delimiter,omitempty" xml:"custom_delimiter"`
+	Delimiters string `json:"delimiters,omitempty" xml:"delimiters"`
 	KeepDelimitersInResultingCells bool `json:"keep_delimiters_in_resulting_cells,omitempty" xml:"keep_delimiters_in_resulting_cells"`
 	KeepDelimitersPosition string `json:"keep_delimiters_position,omitempty" xml:"keep_delimiters_position"`
 	HowToSplit string `json:"how_to_split,omitempty" xml:"how_to_split"`
+	OutPositionRange string `json:"out_position_range,omitempty" xml:"out_position_range"`
 	Worksheet string `json:"worksheet,omitempty" xml:"worksheet"`
 	Range_ string `json:"range,omitempty" xml:"range"`
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
@@ -66,13 +66,9 @@ func (data *SplitTextRequest) CreateRequestData( client *APIClient) (localVarReq
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-    // query params : splitDelimitersType
-    if data.SplitDelimitersType != "" {
-        localVarQueryParams.Add("splitDelimitersType", parameterToString(data.SplitDelimitersType, ""))
-    }
-    // query params : customDelimiter
-    if data.CustomDelimiter != "" {
-        localVarQueryParams.Add("customDelimiter", parameterToString(data.CustomDelimiter, ""))
+    // query params : delimiters
+    if data.Delimiters != "" {
+        localVarQueryParams.Add("delimiters", parameterToString(data.Delimiters, ""))
     }
     // query params : keepDelimitersInResultingCells
     if data.KeepDelimitersInResultingCells {
@@ -85,6 +81,10 @@ func (data *SplitTextRequest) CreateRequestData( client *APIClient) (localVarReq
     // query params : howToSplit
     if data.HowToSplit != "" {
         localVarQueryParams.Add("HowToSplit", parameterToString(data.HowToSplit, ""))
+    }
+    // query params : outPositionRange
+    if data.OutPositionRange != "" {
+        localVarQueryParams.Add("outPositionRange", parameterToString(data.OutPositionRange, ""))
     }
     // query params : worksheet
     if data.Worksheet != "" {

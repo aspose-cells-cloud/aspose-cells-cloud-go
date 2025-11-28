@@ -33,13 +33,10 @@ import (
 )
 
 type RemoveCharactersRequest struct {
-	TheFirstNCharacters int64 `json:"the_first_n_characters,omitempty" xml:"the_first_n_characters"`
-	TheLastNCharacters int64 `json:"the_last_n_characters,omitempty" xml:"the_last_n_characters"`
-	AllCharactersBeforeText string `json:"all_characters_before_text,omitempty" xml:"all_characters_before_text"`
-	AllCharactersAfterText string `json:"all_characters_after_text,omitempty" xml:"all_characters_after_text"`
 	RemoveTextMethod string `json:"remove_text_method,omitempty" xml:"remove_text_method"`
 	CharacterSets string `json:"character_sets,omitempty" xml:"character_sets"`
 	RemoveCustomValue string `json:"remove_custom_value,omitempty" xml:"remove_custom_value"`
+	CaseSensitive bool `json:"case_sensitive,omitempty" xml:"case_sensitive"`
 	Worksheet string `json:"worksheet,omitempty" xml:"worksheet"`
 	Range_ string `json:"range,omitempty" xml:"range"`
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
@@ -68,22 +65,6 @@ func (data *RemoveCharactersRequest) CreateRequestData( client *APIClient) (loca
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-    // query params : theFirstNCharacters
-    if &data.TheFirstNCharacters != nil {
-        localVarQueryParams.Add("theFirstNCharacters", parameterToString(data.TheFirstNCharacters, ""))
-    }
-    // query params : theLastNCharacters
-    if &data.TheLastNCharacters != nil {
-        localVarQueryParams.Add("theLastNCharacters", parameterToString(data.TheLastNCharacters, ""))
-    }
-    // query params : allCharactersBeforeText
-    if data.AllCharactersBeforeText != "" {
-        localVarQueryParams.Add("allCharactersBeforeText", parameterToString(data.AllCharactersBeforeText, ""))
-    }
-    // query params : allCharactersAfterText
-    if data.AllCharactersAfterText != "" {
-        localVarQueryParams.Add("allCharactersAfterText", parameterToString(data.AllCharactersAfterText, ""))
-    }
     // query params : removeTextMethod
     if data.RemoveTextMethod != "" {
         localVarQueryParams.Add("removeTextMethod", parameterToString(data.RemoveTextMethod, ""))
@@ -95,6 +76,10 @@ func (data *RemoveCharactersRequest) CreateRequestData( client *APIClient) (loca
     // query params : removeCustomValue
     if data.RemoveCustomValue != "" {
         localVarQueryParams.Add("removeCustomValue", parameterToString(data.RemoveCustomValue, ""))
+    }
+    // query params : caseSensitive
+    if data.CaseSensitive {
+        localVarQueryParams.Add("caseSensitive", parameterToString(data.CaseSensitive, ""))
     }
     // query params : worksheet
     if data.Worksheet != "" {

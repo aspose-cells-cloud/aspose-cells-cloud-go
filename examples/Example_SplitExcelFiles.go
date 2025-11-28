@@ -28,7 +28,7 @@ func main() {
 		println("Successful split Excel files.")
 	}
 	// Split two local Excel files to another format files.
-	filesResult, mergedHttpResponse, mergedError := instance.PostSplit(&PostSplitRequest{File: map[string]string{CompanySalesXlsx: CompanySalesXlsx, EmployeeSalesSummaryXlsx: EmployeeSalesSummaryXlsx}, OutFormat: "png", To: 3})
+	filesResult, mergedHttpResponse, mergedError := instance.PostSplit(&PostSplitRequest{LocalPath: CompanySalesXlsx, OutFormat: "png", To: 3})
 	if mergedError != nil {
 		fmt.Print(mergedError)
 	} else if mergedHttpResponse.StatusCode < 200 || mergedHttpResponse.StatusCode > 299 {

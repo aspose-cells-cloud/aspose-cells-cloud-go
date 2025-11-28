@@ -39,10 +39,12 @@ func main() {
 	_, httpResponse, err = instance.UploadFile(&UploadFileRequest{UploadFiles: employeeSalesSummaryXlsx, Path: remoteFolder + "/" + employeeSalesSummaryXlsx})
 	// 2. Convert an Excel file of Cells Cloud to another format file.
 	// 2.1 Save an Excel file of Cells Cloud as another format file of Cells Cloud.
-	_, httpResponse, err = instance.SaveSpreadsheetAs(&SaveSpreadsheetAsRequest{Name: employeeSalesSummaryXlsx, Format: "pdf", Folder: remoteFolder})
+	_, httpResponse, err = instance.SaveSpreadsheetAs(&SaveSpreadsheetAsRequest{Name: employeeSalesSummaryXlsx, Format: "pdf", Folder: remoteFolder,
+		SaveOptionsData: &SaveOptionsData{Filename: "EmployeeSalesSummaryXlsx.pdf"}})
 	if err != nil {
-		println("Save as")
+		println("Save as 1")
 		fmt.Print(err)
+		println("Save as 2")
 	} else if httpResponse.StatusCode < 200 || httpResponse.StatusCode > 299 {
 		fmt.Print(httpResponse.StatusCode)
 	}
