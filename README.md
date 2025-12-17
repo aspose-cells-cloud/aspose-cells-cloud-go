@@ -113,7 +113,7 @@ Full list of issues covering all changes in this release:
 
 |**Summary**|**Category**|
 | :- | :- |
-| Support split table of spreashseet. | New Feature  |
+| Support split table of spreadsheet. | New Feature  |
 
 ## Available SDKs
 
