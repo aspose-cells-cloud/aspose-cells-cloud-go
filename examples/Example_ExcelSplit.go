@@ -6,7 +6,7 @@ import (
 	"io"
 	"os"
 
-	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v25"
+	. "github.com/aspose-cells-cloud/aspose-cells-cloud-go/v26"
 )
 
 func main() {
