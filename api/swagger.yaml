@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "25.10"
+  version: "26.1"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v4.0"
@@ -10,6 +10,104 @@ consumes:
 produces:
 - "application/json"
 paths:
+  /cells/ai/task/decompose:
+    put:
+      tags:
+      - "Cells"
+      summary: "Translates the entire spreadsheet to the specified target language."
+      operationId: "DecomposeUserTask"
+      parameters:
+      - name: "taskdescription"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "TaskDescription"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/ai/translate/spreadsheet:
+    put:
+      tags:
+      - "Cells"
+      summary: "Translates the entire spreadsheet to the specified target language."
+      operationId: "TranslationSpreadsheet"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "targetlanguage"
+        in: "Query"
+        description: "The target language code for translation (e.g., "es", "fr", "de")."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "targetLanguage"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/ai/translate/text:
+    put:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "TranslateTextFile"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "targetlanguage"
+        in: "Query"
+        description: "The target language code for translation (e.g., "es", "fr", "de")."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "targetLanguage"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
   /cells/calculate/aggergate/color:
     put:
       tags:
@@ -650,6 +748,55 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "password"
+  /cells/convert/spreadsheet/json:
+    put:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "ConvertSpreadsheetToJson"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "fontsLocation"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
   /cells/convert/spreadsheet/csv:
     put:
       tags:
@@ -804,6 +951,97 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "fontsLocation"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/convert/worksheet/html:
+    put:
+      tags:
+      - "Cells"
+      summary: "Converts a worksheet of spreadsheet on a local drive to the html file."
+      operationId: "ConvertWorksheetToHtml"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: "worksheet name of spreadsheet."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "fontsLocation"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/convert/worksheet/html-table:
+    put:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "ConvertWorksheetToHtmlTable"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
       - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
@@ -1973,6 +2211,97 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "password"
+  /cells/split/table:
+    put:
+      tags:
+      - "Cells"
+      summary: "Split an Excel worksheet into multiple sheets by column value."
+      operationId: "SplitTable"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: "Worksheet containing the table."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "tablename"
+        in: "Query"
+        description: "Data table that needs to be split."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "tableName"
+      - name: "splitcolumnname"
+        in: "Query"
+        description: "Column name to split by."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "splitColumnName"
+      - name: "savesplitcolumn"
+        in: "Query"
+        description: "Whether to keep the data in the split column."
+        required: true
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "saveSplitColumn"
+      - name: "tonewworkbook"
+        in: "Query"
+        description: "Export destination control: true - Creates new workbook files containing the split data; false - Adds a new worksheet to the current workbook."
+        required: true
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "toNewWorkbook"
+      - name: "tomultiplefiles"
+        in: "Query"
+        description: "true - Exports table data as **multiple separate files** (returned as ZIP archive);false - Stores all data in a **single file** with multiple sheets. Default: false."
+        required: true
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "toMultipleFiles"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "fontsLocation"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
   /cells/{name}/split/spreadsheet:
     put:
       tags:
@@ -2109,6 +2438,251 @@ paths:
       - name: "splitter"
         in: "Query"
         description: "Specify the delimiter for the CSV format."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "splitter"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "fontsLocation"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/import/data/json:
+    put:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "ImportJSONDataIntoSpreadsheet"
+      parameters:
+      - name: "datafile"
+        in: "FormData"
+        description: "Upload data file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "datafile"
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "startcell"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "startcell"
+      - name: "insert"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "insert"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "fontsLocation"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/import/data/xml:
+    put:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "ImportXMLDataIntoSpreadsheet"
+      parameters:
+      - name: "datafile"
+        in: "FormData"
+        description: "Upload data file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "datafile"
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "startcell"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "startcell"
+      - name: "insert"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "insert"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "fontsLocation"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/import/data/csv:
+    put:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "ImportCSVDataIntoSpreadsheet"
+      parameters:
+      - name: "datafile"
+        in: "FormData"
+        description: "Upload data file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "datafile"
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "startcell"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "startcell"
+      - name: "insert"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "insert"
+      - name: "convertnumericdata"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "convertNumericData"
+      - name: "splitter"
+        in: "Query"
+        description: ""
         required: false
         type: "string"
         x-nullable: false
@@ -3297,7 +3871,7 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "password"
-  /cells/{name}/worksheets/{worksheet}/ranges/{cellArea}search/broken-links:
+  /cells/{name}/worksheets/{worksheet}/ranges/{cellArea}/search/broken-links:
     put:
       tags:
       - "Cells"
@@ -3574,8 +4148,92 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "Perform operations or delete any custom characters, character sets, and substrings within a selected range for a specific position."
+      summary: "Deletes user-defined characters, predefined symbol sets, or any substring from every cell in the chosen range while preserving formulas, formatting and data-validation."
       operationId: "RemoveCharacters"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "removetextmethod"
+        in: "Query"
+        description: "Specify the removal of text method type."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "removeTextMethod"
+      - name: "charactersets"
+        in: "Query"
+        description: "Specify the character sets."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "characterSets"
+      - name: "removecustomvalue"
+        in: "Query"
+        description: "Specify the remove custom value."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "removeCustomValue"
+      - name: "casesensitive"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "caseSensitive"
+      - name: "worksheet"
+        in: "Query"
+        description: "Specify the worksheet of spreadsheet."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "range"
+        in: "Query"
+        description: "Specify the worksheet range of spreadsheet."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "range"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/content/remove/characters-by-position:
+    put:
+      tags:
+      - "Cells"
+      summary: "Deletes characters from every cell in the target range by position (first/last N, before/after a substring, or between two delimiters) while preserving formulas, formatting and data-validation."
+      operationId: "RemoveCharactersByPosition"
       parameters:
       - name: "spreadsheet"
         in: "FormData"
@@ -3587,63 +4245,126 @@ paths:
       - name: "thefirstncharacters"
         in: "Query"
         description: "Specify removing the first n characters from selected cells."
-        required: true
+        required: false
         type: "integer"
         x-nullable: true
         x-exportParamName: "theFirstNCharacters"
       - name: "thelastncharacters"
         in: "Query"
         description: "Specify removing the last n characters from selected cells."
-        required: true
+        required: false
         type: "integer"
         x-nullable: true
         x-exportParamName: "theLastNCharacters"
       - name: "allcharactersbeforetext"
         in: "Query"
         description: "Specify using targeted removal options to delete text that is located before certain characters."
-        required: true
+        required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "allCharactersBeforeText"
       - name: "allcharactersaftertext"
         in: "Query"
         description: "Specify using targeted removal options to delete text that is located after certain characters."
-        required: true
+        required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "allCharactersAfterText"
-      - name: "removetextmethod"
+      - name: "casesensitive"
         in: "Query"
-        description: "Specify the removal of text method type."
-        required: true
-        type: "string"
+        description: ""
+        required: false
+        type: "boolean"
         x-nullable: true
-        x-exportParamName: "removeTextMethod"
-      - name: "charactersets"
-        in: "Query"
-        description: "Specify the character sets."
-        required: true
-        type: "string"
-        x-nullable: true
-        x-exportParamName: "characterSets"
-      - name: "removecustomvalue"
-        in: "Query"
-        description: "Specify the remove custom value."
-        required: true
-        type: "string"
-        x-nullable: true
-        x-exportParamName: "removeCustomValue"
+        x-exportParamName: "caseSensitive"
       - name: "worksheet"
         in: "Query"
         description: "Specify the worksheet of spreadsheet."
-        required: true
+        required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "worksheet"
       - name: "range"
         in: "Query"
         description: "Specify the worksheet range of spreadsheet."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "range"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/content/remove/duplicate-substrings:
+    put:
+      tags:
+      - "Cells"
+      summary: "Finds and removes repeated substrings inside every cell of the chosen range, using user-defined or preset delimiters, while preserving formulas, formatting and data-validation."
+      operationId: "RemoveDuplicateSubstrings"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
         required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "delimiters"
+        in: "Query"
+        description: "comma, semicolon, space, tab, line-break "
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "delimiters"
+      - name: "treatconsecutivedelimitersasone"
+        in: "Query"
+        description: "collapse adjacent delimiters into a single separator."
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "treatConsecutiveDelimitersAsOne"
+      - name: "casesensitive"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: true
+        x-exportParamName: "caseSensitive"
+      - name: "worksheet"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "range"
+        in: "Query"
+        description: ""
+        required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "range"
@@ -3698,7 +4419,7 @@ paths:
         x-exportParamName: "text"
       - name: "position"
         in: "Query"
-        description: "Indicates the specific location for adding text content.None, AtTheBeginning, AtTheEnd, BeforeText, AfterText.  "
+        description: "Indicates the specific location for adding text content.None, AtTheBeginning, AtTheEnd, BeforeText, AfterText."
         required: true
         type: "string"
         x-nullable: true
@@ -3706,7 +4427,7 @@ paths:
       - name: "selecttext"
         in: "Query"
         description: "Indicates selecting the specific position to add text based on the content of the text."
-        required: true
+        required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "selectText"
@@ -3783,14 +4504,14 @@ paths:
       - name: "sourcecharacters"
         in: "Query"
         description: "Indicates the source characters."
-        required: true
+        required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "sourceCharacters"
       - name: "targetcharacters"
         in: "Query"
         description: "Indicates the target characters."
-        required: true
+        required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "targetCharacters"
@@ -3857,34 +4578,6 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "extractTextType"
-      - name: "beforetext"
-        in: "Query"
-        description: "Indicates extracting the text before the specified characters or substrings."
-        required: true
-        type: "string"
-        x-nullable: true
-        x-exportParamName: "beforeText"
-      - name: "aftertext"
-        in: "Query"
-        description: "Indicates extracting the text after the specified characters or substrings."
-        required: true
-        type: "string"
-        x-nullable: true
-        x-exportParamName: "afterText"
-      - name: "beforeposition"
-        in: "Query"
-        description: "Indicates retrieving the first character or a specified number of characters from the left side of the selected cell."
-        required: true
-        type: "integer"
-        x-nullable: true
-        x-exportParamName: "beforePosition"
-      - name: "afterposition"
-        in: "Query"
-        description: "Indicates retrieving the first character or a specified number of characters from the right side of the selected cell."
-        required: true
-        type: "integer"
-        x-nullable: true
-        x-exportParamName: "afterPosition"
       - name: "outpositionrange"
         in: "Query"
         description: "Indicates the output location for the extracted text."
@@ -3892,6 +4585,34 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "outPositionRange"
+      - name: "beforetext"
+        in: "Query"
+        description: "Indicates extracting the text before the specified characters or substrings."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "beforeText"
+      - name: "aftertext"
+        in: "Query"
+        description: "Indicates extracting the text after the specified characters or substrings."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "afterText"
+      - name: "beforeposition"
+        in: "Query"
+        description: "Indicates retrieving the first character or a specified number of characters from the left side of the selected cell."
+        required: false
+        type: "integer"
+        x-nullable: true
+        x-exportParamName: "beforePosition"
+      - name: "afterposition"
+        in: "Query"
+        description: "Indicates retrieving the first character or a specified number of characters from the right side of the selected cell."
+        required: false
+        type: "integer"
+        x-nullable: true
+        x-exportParamName: "afterPosition"
       - name: "worksheet"
         in: "Query"
         description: "Specify the worksheet of spreadsheet."
@@ -3948,41 +4669,41 @@ paths:
         type: "file"
         x-nullable: false
         x-exportParamName: "Spreadsheet"
-      - name: "splitdelimiterstype"
-        in: "Query"
-        description: "Indicates split delimiters type."
-        required: true
-        type: "string"
-        x-nullable: true
-        x-exportParamName: "splitDelimitersType"
-      - name: "customdelimiter"
+      - name: "delimiters"
         in: "Query"
         description: "Indicates the custom delimiter."
         required: true
         type: "string"
         x-nullable: true
-        x-exportParamName: "customDelimiter"
+        x-exportParamName: "delimiters"
       - name: "keepdelimitersinresultingcells"
         in: "Query"
         description: "Indicates keep delimiters in resulting cells."
-        required: true
+        required: false
         type: "boolean"
-        x-nullable: true
+        x-nullable: false
         x-exportParamName: "keepDelimitersInResultingCells"
       - name: "keepdelimitersposition"
         in: "Query"
         description: "Indicates keep delimiters position."
-        required: true
+        required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "keepDelimitersPosition"
       - name: "howtosplit"
         in: "Query"
         description: "Indicates"
-        required: true
+        required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "HowToSplit"
+      - name: "outpositionrange"
+        in: "Query"
+        description: "Indicates split delimiters type."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "outPositionRange"
       - name: "worksheet"
         in: "Query"
         description: "Specify the worksheet of spreadsheet."
@@ -4256,6 +4977,69 @@ paths:
         type: "string"
         x-nullable: true
         x-exportParamName: "range2"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/flip:
+    put:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "FlipData"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "cellarea"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "cellArea"
+      - name: "horizontal"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "Horizontal"
       - name: "outpath"
         in: "Query"
         description: "(Optional) The folder path where the workbook is stored. The default is null."
@@ -20325,6 +21109,12 @@ definitions:
     
     properties:
 
+  DelimitersType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
   ExtractTextType:
     allOf:
     - type: "object"
@@ -20513,12 +21303,6 @@ definitions:
       EncryptDocumentProperties:
         type: "boolean"
         description: ""
-  SplitDelimitersType:
-    allOf:
-    - type: "object"
-    
-    properties:
-
   SplitType:
     allOf:
     - type: "object"
@@ -28130,6 +28914,12 @@ definitions:
       SearchWord:
         type: "string"
         description: ""
+  SplitDelimitersType:
+    allOf:
+    - type: "object"
+    
+    properties:
+
   SplitTextOptions:
     allOf:
     - type: "object"

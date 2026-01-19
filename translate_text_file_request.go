@@ -1,6 +1,6 @@
 /** --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="translate_text_file_request.go">
-*   Copyright (c) 2025 Aspose.Cells Cloud
+*   Copyright (c) 2026 Aspose.Cells Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,7 +52,7 @@ func (data *TranslateTextFileRequest) CreateRequestData( client *APIClient) (loc
 	)
 
 	// create path and map variables
-	localVarPath := client.cfg.BasePath + "/v4.0/cells/translate/text"
+	localVarPath := client.cfg.BasePath + "/v4.0/cells/ai/translate/text"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
