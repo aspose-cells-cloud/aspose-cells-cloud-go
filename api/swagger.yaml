@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "26.1"
+  version: "26.2"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v4.0"
@@ -14,12 +14,12 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "Translates the entire spreadsheet to the specified target language."
+      summary: "AI task decomposition: Convert user objectives to sequential action plans with formatted file export."
       operationId: "DecomposeUserTask"
       parameters:
       - name: "taskdescription"
-        in: "Query"
-        description: ""
+        in: "Body"
+        description: "Decompose user task description."
         required: true
         type: "string"
         x-nullable: true
@@ -43,7 +43,7 @@ paths:
       tags:
       - "Cells"
       summary: "Translates the entire spreadsheet to the specified target language."
-      operationId: "TranslationSpreadsheet"
+      operationId: "TranslateSpreadsheet"
       parameters:
       - name: "spreadsheet"
         in: "FormData"
@@ -73,11 +73,11 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "password"
-  /cells/ai/translate/text:
+  /cells/ai/translate/text-file:
     put:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Translates text file content to the specified target language."
       operationId: "TranslateTextFile"
       parameters:
       - name: "spreadsheet"
@@ -752,7 +752,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Converts a spreadsheet on a local drive to the JSON file."
       operationId: "ConvertSpreadsheetToJson"
       parameters:
       - name: "spreadsheet"
@@ -965,6 +965,118 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "password"
+  /cells/convert/worksheet/json:
+    put:
+      tags:
+      - "Cells"
+      summary: "Converts a worksheet of spreadsheet on a local drive to the JSON file."
+      operationId: "ConvertWorksheetToJson"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: "worksheet name of spreadsheet."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "fontsLocation"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/convert/worksheet/csv:
+    put:
+      tags:
+      - "Cells"
+      summary: "Converts a worksheet of spreadsheet on a local drive to the CSV file."
+      operationId: "ConvertWorksheetToCsv"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: "worksheet name of spreadsheet."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "fontsLocation"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
   /cells/convert/worksheet/html:
     put:
       tags:
@@ -1025,7 +1137,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Converts a worksheet of spreadsheet on a local drive to the HTML table file."
       operationId: "ConvertWorksheetToHtmlTable"
       parameters:
       - name: "spreadsheet"
@@ -1037,7 +1149,7 @@ paths:
         x-exportParamName: "Spreadsheet"
       - name: "worksheet"
         in: "Query"
-        description: ""
+        description: "worksheet name of spreadsheet."
         required: true
         type: "string"
         x-nullable: true
@@ -1723,14 +1835,14 @@ paths:
         x-exportParamName: "Spreadsheet"
       - name: "worksheet"
         in: "Query"
-        description: ""
+        description: "worksheet name of spreadsheet."
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "worksheet"
       - name: "chartindex"
         in: "Query"
-        description: ""
+        description: "chart index of worksheet."
         required: true
         type: "integer"
         x-nullable: true
@@ -1793,14 +1905,14 @@ paths:
         x-exportParamName: "Spreadsheet"
       - name: "worksheet"
         in: "Query"
-        description: ""
+        description: "worksheet name of spreadsheet."
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "worksheet"
       - name: "chartindex"
         in: "Query"
-        description: ""
+        description: "chart index of worksheet."
         required: true
         type: "integer"
         x-nullable: true
@@ -2215,7 +2327,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: "Split an Excel worksheet into multiple sheets by column value."
+      summary: "Split an Excel worksheet tale into multiple sheets by column value."
       operationId: "SplitTable"
       parameters:
       - name: "spreadsheet"
@@ -2481,7 +2593,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Import JSON data file into the local spreadsheet."
       operationId: "ImportJSONDataIntoSpreadsheet"
       parameters:
       - name: "datafile"
@@ -2500,21 +2612,21 @@ paths:
         x-exportParamName: "Spreadsheet"
       - name: "worksheet"
         in: "Query"
-        description: ""
+        description: "Need to import JSON data into the worksheet."
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "worksheet"
       - name: "startcell"
         in: "Query"
-        description: ""
+        description: "Starting position for data import"
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "startcell"
       - name: "insert"
         in: "Query"
-        description: ""
+        description: "Controls the insertion behavior. true: inserts data; false: overwrites existing data."
         required: false
         type: "boolean"
         x-nullable: false
@@ -2558,7 +2670,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Import XML data file into the local spreadsheet."
       operationId: "ImportXMLDataIntoSpreadsheet"
       parameters:
       - name: "datafile"
@@ -2577,21 +2689,21 @@ paths:
         x-exportParamName: "Spreadsheet"
       - name: "worksheet"
         in: "Query"
-        description: ""
+        description: "Need to import XML data into the worksheet."
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "worksheet"
       - name: "startcell"
         in: "Query"
-        description: ""
+        description: "Starting position for data import"
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "startcell"
       - name: "insert"
         in: "Query"
-        description: ""
+        description: "Controls the insertion behavior. true: inserts data; false: overwrites existing data."
         required: false
         type: "boolean"
         x-nullable: false
@@ -2635,7 +2747,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Import CSV data file into the local spreadsheet."
       operationId: "ImportCSVDataIntoSpreadsheet"
       parameters:
       - name: "datafile"
@@ -2654,28 +2766,28 @@ paths:
         x-exportParamName: "Spreadsheet"
       - name: "worksheet"
         in: "Query"
-        description: ""
+        description: "Need to import CSV data into the worksheet."
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "worksheet"
       - name: "startcell"
         in: "Query"
-        description: ""
+        description: "Starting position for data import"
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "startcell"
       - name: "insert"
         in: "Query"
-        description: ""
+        description: "Controls the insertion behavior. true: inserts data; false: overwrites existing data."
         required: false
         type: "boolean"
         x-nullable: false
         x-exportParamName: "insert"
       - name: "convertnumericdata"
         in: "Query"
-        description: ""
+        description: "Whether the string in text file is converted to numeric data."
         required: false
         type: "boolean"
         x-nullable: false
@@ -2765,6 +2877,34 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "outStorageName"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/spreadsheet/worksheets:
+    put:
+      tags:
+      - "Cells"
+      summary: "Fetches a complete list of worksheets from the currently active local spreadsheet."
+      operationId: "GetWorksheetsWithLocalSpreadsheet"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
       - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
@@ -3056,7 +3196,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: ""
+      summary: "The Web API endpoint allows users to repair a spreadsheet."
       operationId: "RepairSpreadsheet"
       parameters:
       - name: "spreadsheet"
@@ -3080,6 +3220,90 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "outStorageName"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/{name}/worksheets/{worksheet}/mergedcells:
+    get:
+      tags:
+      - "Cells"
+      summary: "Get all merged cell area form a remote spreadsheet worksheet."
+      operationId: "GetMergedCellsInRemotedWorksheet"
+      parameters:
+      - name: "name"
+        in: "Path"
+        description: "spreadsheet name"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "name"
+      - name: "worksheet"
+        in: "Path"
+        description: "worksheet name"
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "worksheet"
+      - name: "folder"
+        in: "Query"
+        description: "The cloud storage path of the spreadsheet."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "folder"
+      - name: "storagename"
+        in: "Query"
+        description: "(Optional) The name of the storage if using custom cloud storage. Use default storage if omitted."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "storageName"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/spreadsheet/mergedcells:
+    put:
+      tags:
+      - "Cells"
+      summary: "Get all merged cell area form a local spreadsheet worksheet."
+      operationId: "GetMergedCellsInWorksheet"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
       - name: "region"
         in: "Query"
         description: "The spreadsheet region setting."
@@ -3234,6 +3458,76 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "region"
+  /cells/{name}/search/content/all-textitems:
+    put:
+      tags:
+      - "Cells"
+      summary: "Get all text items in the remote spreadsheet."
+      operationId: "SearchAllTextItemsInRemoteSpreadsheet"
+      parameters:
+      - name: "name"
+        in: "Path"
+        description: "The name of the workbook file."
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "name"
+      - name: "folder"
+        in: "Query"
+        description: "The folder path where the workbook is stored."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "folder"
+      - name: "storagename"
+        in: "Query"
+        description: "(Optional) The name of the storage if using custom cloud storage. Use default storage if omitted."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "storageName"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/search/content/all-textitems:
+    put:
+      tags:
+      - "Cells"
+      summary: "Get all text items in the remote spreadsheet."
+      operationId: "SearchSpreadsheetAllTextItems"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "region"
+        in: "Query"
+        description: "The spreadsheet region setting."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
   /cells/search/content:
     put:
       tags:
@@ -4876,7 +5170,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Removes duplicate values in the worksheet/range/table."
       operationId: "RemoveDuplicates"
       parameters:
       - name: "spreadsheet"
@@ -4888,21 +5182,21 @@ paths:
         x-exportParamName: "Spreadsheet"
       - name: "worksheet"
         in: "Query"
-        description: ""
+        description: "The worksheet name."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "worksheet"
       - name: "range"
         in: "Query"
-        description: ""
+        description: "Range name that need deduplication."
         required: false
         type: "string"
         x-nullable: true
         x-exportParamName: "range"
       - name: "table"
         in: "Query"
-        description: ""
+        description: "Table name that need deduplication."
         required: false
         type: "string"
         x-nullable: true
@@ -5009,7 +5303,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Transposes a specified data range (rows become columns, columns become rows)."
       operationId: "FlipData"
       parameters:
       - name: "spreadsheet"
@@ -5021,21 +5315,21 @@ paths:
         x-exportParamName: "Spreadsheet"
       - name: "worksheet"
         in: "Query"
-        description: ""
+        description: "The worksheet name."
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "worksheet"
       - name: "cellarea"
         in: "Query"
-        description: ""
+        description: "A specified data range"
         required: true
         type: "string"
         x-nullable: true
         x-exportParamName: "cellArea"
       - name: "horizontal"
         in: "Query"
-        description: ""
+        description: "Horizontal/Vertical Flip."
         required: false
         type: "boolean"
         x-nullable: false
