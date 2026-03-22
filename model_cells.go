@@ -106,7 +106,7 @@ type GoogleDriveStorageFile struct {
 
 type AggregateResultByColor struct {
  
-    AggregateOperation string `json:"AggregateOperation,omitempty" xml:"AggregateOperation"`
+    AggregateOperation int `json:"AggregateOperation,omitempty" xml:"AggregateOperation"`
     ColorName string `json:"ColorName,omitempty" xml:"ColorName"`
     Count int64 `json:"Count,omitempty" xml:"Count"`
     Sum float64 `json:"Sum,omitempty" xml:"Sum"`

@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK-v26.2.0-green?style=for-the-badge&logo=go)[![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/go/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/tree/master/examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE)
+![](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK-v26.3.1-green?style=for-the-badge&logo=go)[![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/go/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/tree/master/examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE)
 
 [Aspose.Cells Cloud SDK for Go](https://products.aspose.cloud/cells/go) is a cloud-native REST API that enables Go developers to **create**, **read**, **edit**, **convert**, and **repair** spreadsheet files—including **Excel** (**XLS**, **XLSX**, **XLSB**, **XLSM**), **OpenDocument Spreadsheet (ODS**), **CSV**, **TSV**, **JSON**, **HTML**, **PDF**, and **more—without requiring Microsoft Excel or Office to be installed**.
 
@@ -10,7 +10,7 @@ Built on the **Aspose.Cells Cloud Web API**, this MIT-licensed SDK supports adva
 - Worksheet merging, splitting, and protection
 - Batch processing and background removal
 
-It seamlessly integrates with **AWS**, **Microsoft Azure**, and **Google Cloud**, ensuring **high availability**, **scalability**, and **data integrity**. Ideal for serverless apps, microservices, and cloud automation workflows.
+It seamlessly integrates with **AWS**, **Microsoft Azure**, and **Google Cloud**, ensuring **high availability**, **scalability**, **and data integrity**. Ideal for serverless apps, microservices, and cloud automation workflows.
 
 ## Quick Start Guide
 
@@ -114,24 +114,15 @@ go run main.go
 - Import/Export: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
 - Security Management: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
 
-## Feature & Enhancements in Version v26.2.0
+## Feature & Enhancements in Version v26.3.1
 
 Full list of issues covering all changes in this release:
 
 | **Summary**                                                                                                   | **Category** |
 | :------------------------------------------------------------------------------------------------------------ | :----------- |
-| Aspose.Cells Cloud python plugin for marker.                                                                  | New Feature  |
-| Support converting Worksheet to JSON format file                                                              | New Feature  |
-| Support converting Worksheet to CSV format file                                                               | New Feature  |
-| Support getting worksheets with the spreadsheet                                                               | New Feature  |
-| Support getting all text items from the spreadsheet.                                                          | New Feature  |
-| Support getting all merged cell areas from the spreadsheet.                                                   | New Feature  |
-| The TranslationSpreadsheet API has been modified to support multiple input and output formats.                | New Feature  |
-| The TranslateTextFile API has been updated to support the translation of plain text content other than files. | New Feature  |
-| Enhancing the Get Workbook function when only a data stream is available.                                     | New Feature  |
-| Enhance MaxResponseBufferSize for Aspose.Cells Cloud                                                          | Improvement  |
-| Format exception about converting table to html API                                                           | Bug          |
-| Build error in the From Body parameter description in the code generation specification.                      | Bug          |
+| Enhancing the DecomposeUserTask API of Aspose Cells Cloud.                                                    | Task |
+| Optimize the APIs related to document splitting                                                               | Improvement |
+| Support the accept all revisions feature for share Excel file.                                                | New Feature |
 
 ## Available SDKs
 
@@ -141,7 +132,7 @@ The Aspose.Cells Cloud SDK is available in multiple popular programming language
 
 [![Java](https://img.shields.io/badge/Java-red?logo=openjdk&style=for-the-badge&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java) [![Java](https://img.shields.io/badge/Maven-Aspose.Cells.Cloud.pom.xml-red?logo=apache-maven&style=for-the-badge)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/Aspose.Cells.Cloud.pom.xml)
 
-[![C#](https://img.shields.io/badge/.NET-%23512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-dotnet) [![.NET](https://img.shields.io/badge/NuGet-Aspose.Cells--Cloud-%23512BD4?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/Aspose.cells-Cloud/#readme-body-tab)
+[![.NET](https://img.shields.io/badge/.NET-%23512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-dotnet) [![.NET](https://img.shields.io/badge/NuGet-Aspose.Cells--Cloud-%23512BD4?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/Aspose.cells-Cloud/#readme-body-tab)
 
 [![Node.js](https://img.shields.io/badge/Node.js-43853D.svg?style=for-the-badge&logo=node.js&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-node) [![Node.js](https://img.shields.io/badge/npm-asposecellscloud-orange?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/asposecellscloud)
 

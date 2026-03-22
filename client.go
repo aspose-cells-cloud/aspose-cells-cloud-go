@@ -258,7 +258,7 @@ func (c *APIClient) prepareRequest(
 
 	// add header parameters, if any
 	headerParams["x-aspose-client"] = "go sdk"
-	headerParams["x-aspose-client-version"] = "26.2"
+	headerParams["x-aspose-client-version"] = "26.3.1"
 	if len(headerParams) > 0 {
 		headers := http.Header{}
 		for h, v := range headerParams {
