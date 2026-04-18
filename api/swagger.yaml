@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "26.2"
+  version: "26.4"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v4.0"
@@ -26,7 +26,7 @@ paths:
         x-exportParamName: "TaskDescription"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -61,7 +61,7 @@ paths:
         x-exportParamName: "targetLanguage"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -96,7 +96,7 @@ paths:
         x-exportParamName: "targetLanguage"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -152,7 +152,7 @@ paths:
         x-exportParamName: "colorPosition"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -208,7 +208,7 @@ paths:
         x-exportParamName: "range"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -302,7 +302,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -379,7 +379,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -463,7 +463,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -547,7 +547,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -631,7 +631,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -687,7 +687,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -736,7 +736,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -785,7 +785,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -834,7 +834,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -897,7 +897,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -953,7 +953,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -1009,7 +1009,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -1065,7 +1065,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -1121,7 +1121,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -1156,7 +1156,7 @@ paths:
         x-exportParamName: "worksheet"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -1226,7 +1226,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -1289,7 +1289,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -1352,7 +1352,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -1415,7 +1415,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -1478,7 +1478,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -1555,7 +1555,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -1618,7 +1618,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -1681,7 +1681,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -1744,7 +1744,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -1807,7 +1807,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -1877,7 +1877,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -1940,7 +1940,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -2017,7 +2017,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -2080,7 +2080,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -2157,7 +2157,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -2241,7 +2241,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -2311,7 +2311,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -2365,6 +2365,13 @@ paths:
         type: "boolean"
         x-nullable: true
         x-exportParamName: "saveSplitColumn"
+      - name: "splitrownumber"
+        in: "Query"
+        description: ""
+        required: true
+        type: "integer"
+        x-nullable: true
+        x-exportParamName: "splitRowNumber"
       - name: "tonewworkbook"
         in: "Query"
         description: "Export destination control: true - Creates new workbook files containing the split data; false - Adds a new worksheet to the current workbook."
@@ -2402,7 +2409,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -2486,7 +2493,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -2577,7 +2584,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -2654,7 +2661,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -2731,7 +2738,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -2822,7 +2829,7 @@ paths:
         x-exportParamName: "fontsLocation"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -2879,7 +2886,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -2907,7 +2914,7 @@ paths:
         x-exportParamName: "Spreadsheet"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -2970,7 +2977,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3019,7 +3026,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3075,7 +3082,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3131,7 +3138,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3180,7 +3187,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3222,7 +3229,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3271,7 +3278,7 @@ paths:
         x-exportParamName: "storageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3306,7 +3313,119 @@ paths:
         x-exportParamName: "worksheet"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/spreadsheet/accept-all-revisions:
+    put:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "AcceptAllRevisions"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "fontsLocation"
+      - name: "region"
+        in: "Query"
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/{name}/accept-all-revisions:
+    put:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "AcceptAllRevisionsInRemoteSpreadsheet"
+      parameters:
+      - name: "name"
+        in: "Path"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "name"
+      - name: "folder"
+        in: "Query"
+        description: ""
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "folder"
+      - name: "storagename"
+        in: "Query"
+        description: "(Optional) The name of the storage if using custom cloud storage. Use default storage if omitted."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "storageName"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "fontslocation"
+        in: "Query"
+        description: "Use Custom fonts."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "fontsLocation"
+      - name: "region"
+        in: "Query"
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3362,7 +3481,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3411,7 +3530,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3453,7 +3572,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3488,7 +3607,7 @@ paths:
         x-exportParamName: "storageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3516,7 +3635,7 @@ paths:
         x-exportParamName: "Spreadsheet"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3572,7 +3691,7 @@ paths:
         x-exportParamName: "cellArea"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3628,7 +3747,7 @@ paths:
         x-exportParamName: "storageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3691,7 +3810,7 @@ paths:
         x-exportParamName: "storageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3761,7 +3880,7 @@ paths:
         x-exportParamName: "storageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3817,7 +3936,7 @@ paths:
         x-exportParamName: "cellArea"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3873,7 +3992,7 @@ paths:
         x-exportParamName: "storageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -3936,7 +4055,7 @@ paths:
         x-exportParamName: "storageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -4006,7 +4125,7 @@ paths:
         x-exportParamName: "storageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -4048,7 +4167,7 @@ paths:
         x-exportParamName: "cellArea"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -4104,7 +4223,7 @@ paths:
         x-exportParamName: "storageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -4153,7 +4272,7 @@ paths:
         x-exportParamName: "storageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -4209,7 +4328,7 @@ paths:
         x-exportParamName: "storageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -4237,7 +4356,7 @@ paths:
         x-exportParamName: "version"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -4258,7 +4377,7 @@ paths:
       parameters:
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -4363,7 +4482,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -4426,7 +4545,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -4510,7 +4629,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -4601,7 +4720,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -4678,7 +4797,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -4762,7 +4881,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -4839,7 +4958,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -4937,7 +5056,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -5028,7 +5147,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -5070,7 +5189,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -5112,7 +5231,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -5154,7 +5273,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -5217,7 +5336,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -5287,7 +5406,7 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false
@@ -5350,7 +5469,189 @@ paths:
         x-exportParamName: "outStorageName"
       - name: "region"
         in: "Query"
-        description: "The spreadsheet region setting."
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/transpose:
+    put:
+      tags:
+      - "Cells"
+      summary: "Switch rows and columns in the spreadsheet."
+      operationId: "TransposeData"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: "The worksheet name."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "cellarea"
+        in: "Query"
+        description: "A specified data range"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "cellArea"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "region"
+        in: "Query"
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/unpivot/range:
+    put:
+      tags:
+      - "Cells"
+      summary: "Switch rows and columns in the spreadsheet."
+      operationId: "UnpivotRange"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: "The worksheet name."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "cellarea"
+        in: "Query"
+        description: "A specified data range"
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "cellArea"
+      - name: "skipemptyvalue"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "skipEmptyValue"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "region"
+        in: "Query"
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/unpivot/table:
+    put:
+      tags:
+      - "Cells"
+      summary: "Switch rows and columns in the spreadsheet."
+      operationId: "UnpivotTable"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: "The worksheet name."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "index"
+        in: "Query"
+        description: "A specified data range"
+        required: true
+        type: "integer"
+        x-nullable: true
+        x-exportParamName: "index"
+      - name: "skipemptyvalue"
+        in: "Query"
+        description: ""
+        required: false
+        type: "boolean"
+        x-nullable: false
+        x-exportParamName: "skipEmptyValue"
+      - name: "outpath"
+        in: "Query"
+        description: "(Optional) The folder path where the workbook is stored. The default is null."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outPath"
+      - name: "outstoragename"
+        in: "Query"
+        description: "Output file Storage Name."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "outStorageName"
+      - name: "region"
+        in: "Query"
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
         required: false
         type: "string"
         x-nullable: false

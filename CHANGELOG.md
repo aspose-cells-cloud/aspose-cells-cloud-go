@@ -1,5 +1,15 @@
 # Release History Version
 
+## Feature & Enhancements in Version v26.3.1
+
+Full list of issues covering all changes in this release:
+
+| **Summary**                                                                                                   | **Category** |
+| :------------------------------------------------------------------------------------------------------------ | :----------- |
+| Enhancing the DecomposeUserTask API of Aspose Cells Cloud.                                                    | Task |
+| Optimize the APIs related to document splitting                                                               | Improvement |
+| Support the accept all revisions feature for share Excel file.                                                | New Feature |
+
 ## Feature & Enhancements in Version v26.2.0
 
 Full list of issues covering all changes in this release:
