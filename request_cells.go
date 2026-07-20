@@ -501,6 +501,76 @@ func (data *MathCalculateRequest) CreateRequestData( client *APIClient) (localVa
 	return r,err
 }
 
+type CalculationFormulaRequest struct {
+	Worksheet string `json:"worksheet,omitempty" xml:"worksheet"`
+	Formula string `json:"formula,omitempty" xml:"formula"`
+	Region string `json:"region,omitempty" xml:"region"`
+	Password string `json:"password,omitempty" xml:"password"`
+	
+	Spreadsheet string  `json:"spreadsheet,omitempty" xml:"spreadsheet"`
+	 
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+}
+
+func (data *CalculationFormulaRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("PUT")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+	)
+
+	// create path and map variables
+	localVarPath := client.cfg.BasePath + "/v4.0/cells/calculate/formula"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+    // query params : worksheet
+    if data.Worksheet != "" {
+        localVarQueryParams.Add("worksheet", parameterToString(data.Worksheet, ""))
+    }
+    // query params : formula
+    if data.Formula != "" {
+        localVarQueryParams.Add("formula", parameterToString(data.Formula, ""))
+    }
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
+    }
+    // query params : password
+    if data.Password != "" {
+        localVarQueryParams.Add("password", parameterToString(data.Password, ""))
+    }
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
+	localVarHttpContentTypes := []string{"multipart/form-data"} 
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+			
+		if strings.TrimSpace(data.Spreadsheet) != "" { localVarFormParams["@"+ filepath.Base(data.Spreadsheet)] = []string {data.Spreadsheet}} 
+	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	return r,err
+}
+
 type PostAccessTokenRequest struct {
 	
 
@@ -647,8 +717,8 @@ type ExportSpreadsheetAsFormatRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -697,11 +767,11 @@ func (data *ExportSpreadsheetAsFormatRequest) CreateRequestData( client *APIClie
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -746,8 +816,8 @@ type ExportWorksheetAsFormatRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -797,11 +867,11 @@ func (data *ExportWorksheetAsFormatRequest) CreateRequestData( client *APIClient
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -939,8 +1009,8 @@ type ExportTableAsFormatRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -991,11 +1061,11 @@ func (data *ExportTableAsFormatRequest) CreateRequestData( client *APIClient) (l
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -1041,8 +1111,8 @@ type ExportRangeAsFormatRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -1093,11 +1163,11 @@ func (data *ExportRangeAsFormatRequest) CreateRequestData( client *APIClient) (l
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -1138,8 +1208,8 @@ type ConvertSpreadsheetRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -1181,11 +1251,11 @@ func (data *ConvertSpreadsheetRequest) CreateRequestData( client *APIClient) (lo
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -1227,8 +1297,8 @@ type ConvertSpreadsheetToPdfRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -1266,11 +1336,11 @@ func (data *ConvertSpreadsheetToPdfRequest) CreateRequestData( client *APIClient
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -1312,8 +1382,8 @@ type ConvertSpreadsheetToJsonRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -1351,11 +1421,11 @@ func (data *ConvertSpreadsheetToJsonRequest) CreateRequestData( client *APIClien
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -1397,8 +1467,8 @@ type ConvertSpreadsheetToCsvRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -1436,11 +1506,11 @@ func (data *ConvertSpreadsheetToCsvRequest) CreateRequestData( client *APIClient
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -1484,8 +1554,8 @@ type ConvertWorksheetToImageRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -1531,11 +1601,11 @@ func (data *ConvertWorksheetToImageRequest) CreateRequestData( client *APIClient
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -1578,8 +1648,8 @@ type ConvertWorksheetToPdfRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -1621,11 +1691,11 @@ func (data *ConvertWorksheetToPdfRequest) CreateRequestData( client *APIClient) 
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -1668,8 +1738,8 @@ type ConvertWorksheetToJsonRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -1711,11 +1781,11 @@ func (data *ConvertWorksheetToJsonRequest) CreateRequestData( client *APIClient)
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -1758,8 +1828,8 @@ type ConvertWorksheetToCsvRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -1801,11 +1871,11 @@ func (data *ConvertWorksheetToCsvRequest) CreateRequestData( client *APIClient) 
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -1848,8 +1918,8 @@ type ConvertWorksheetToHtmlRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -1891,11 +1961,11 @@ func (data *ConvertWorksheetToHtmlRequest) CreateRequestData( client *APIClient)
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -2005,8 +2075,8 @@ type ConvertTableToImageRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -2056,11 +2126,11 @@ func (data *ConvertTableToImageRequest) CreateRequestData( client *APIClient) (l
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -2104,8 +2174,8 @@ type ConvertTableToPdfRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -2151,11 +2221,11 @@ func (data *ConvertTableToPdfRequest) CreateRequestData( client *APIClient) (loc
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -2199,8 +2269,8 @@ type ConvertTableToCsvRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -2246,11 +2316,11 @@ func (data *ConvertTableToCsvRequest) CreateRequestData( client *APIClient) (loc
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -2294,8 +2364,8 @@ type ConvertTableToHtmlRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -2341,11 +2411,11 @@ func (data *ConvertTableToHtmlRequest) CreateRequestData( client *APIClient) (lo
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -2389,8 +2459,8 @@ type ConvertTableToJsonRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -2436,11 +2506,11 @@ func (data *ConvertTableToJsonRequest) CreateRequestData( client *APIClient) (lo
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -2486,8 +2556,8 @@ type ConvertRangeToImageRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -2541,11 +2611,11 @@ func (data *ConvertRangeToImageRequest) CreateRequestData( client *APIClient) (l
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -2589,8 +2659,8 @@ type ConvertRangeToPdfRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -2636,11 +2706,11 @@ func (data *ConvertRangeToPdfRequest) CreateRequestData( client *APIClient) (loc
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -2684,8 +2754,8 @@ type ConvertRangeToCsvRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -2731,11 +2801,11 @@ func (data *ConvertRangeToCsvRequest) CreateRequestData( client *APIClient) (loc
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -2779,8 +2849,8 @@ type ConvertRangeToHtmlRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -2826,11 +2896,11 @@ func (data *ConvertRangeToHtmlRequest) CreateRequestData( client *APIClient) (lo
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -2874,8 +2944,8 @@ type ConvertRangeToJsonRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	
@@ -2921,11 +2991,11 @@ func (data *ConvertRangeToJsonRequest) CreateRequestData( client *APIClient) (lo
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -3146,8 +3216,8 @@ type SaveSpreadsheetAsRequest struct {
 	OutPath string `json:"out_path,omitempty" xml:"out_path"`
 	OutStorageName string `json:"out_storage_name,omitempty" xml:"out_storage_name"`
 	FontsLocation string `json:"fonts_location,omitempty" xml:"fonts_location"`
-	AutoRowsFit string `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
-	AutoColumnsFit string `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
+	AutoRowsFit bool `json:"auto_rows_fit,omitempty" xml:"auto_rows_fit"`
+	AutoColumnsFit bool `json:"auto_columns_fit,omitempty" xml:"auto_columns_fit"`
 	Region string `json:"region,omitempty" xml:"region"`
 	Password string `json:"password,omitempty" xml:"password"`
 	SaveOptionsData interface{} `json:"save_options_data,omitempty" xml:"save_options_data"` 	
@@ -3196,11 +3266,11 @@ func (data *SaveSpreadsheetAsRequest) CreateRequestData( client *APIClient) (loc
         localVarQueryParams.Add("fontsLocation", parameterToString(data.FontsLocation, ""))
     }
     // query params : autoRowsFit
-    if data.AutoRowsFit != "" {
+    if data.AutoRowsFit {
         localVarQueryParams.Add("AutoRowsFit", parameterToString(data.AutoRowsFit, ""))
     }
     // query params : autoColumnsFit
-    if data.AutoColumnsFit != "" {
+    if data.AutoColumnsFit {
         localVarQueryParams.Add("AutoColumnsFit", parameterToString(data.AutoColumnsFit, ""))
     }
     // query params : region
@@ -5488,6 +5558,62 @@ func (data *SpreadsheetDigitalsignatureRequest) CreateRequestData( client *APICl
 	}
 			
 		if strings.TrimSpace(data.Spreadsheet) != "" { localVarFormParams["@"+ filepath.Base(data.Spreadsheet)] = []string {data.Spreadsheet}} 
+	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	return r,err
+}
+
+type SmartMarkerTemplateRequest struct {
+	Region string `json:"region,omitempty" xml:"region"`
+	Password string `json:"password,omitempty" xml:"password"`
+	
+
+	ExtendQueryParameterMap	map[string]string `json:"ExtendQueryParameterMap,omitempty" xml:"ExtendQueryParameterMap"`	
+}
+
+func (data *SmartMarkerTemplateRequest) CreateRequestData( client *APIClient) (localVarRequest *http.Request, err error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("PUT")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+	)
+
+	// create path and map variables
+	localVarPath := client.cfg.BasePath + "/v4.0/cells/report/smart/template"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+    // query params : region
+    if data.Region != "" {
+        localVarQueryParams.Add("region", parameterToString(data.Region, ""))
+    }
+    // query params : password
+    if data.Password != "" {
+        localVarQueryParams.Add("password", parameterToString(data.Password, ""))
+    }
+	if data.ExtendQueryParameterMap != nil {
+		for key, value := range data.ExtendQueryParameterMap {
+			localVarQueryParams.Add(key, parameterToString(value, ""))
+		}
+	}
+	localVarHttpContentTypes := []string{"application/json"} 
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
 	r, err := client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	return r,err
 }

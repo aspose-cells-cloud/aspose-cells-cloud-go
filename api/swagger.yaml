@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "26.6.4"
+  version: "26.7"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v4.0"
@@ -112,7 +112,7 @@ paths:
     put:
       tags:
       - "Cells"
-      summary: ""
+      summary: "Intelligently analyzes spreadsheet data, identifies business scenarios, and generates professional data analysis reports."
       operationId: "ReportAIAnalysis"
       parameters:
       - name: "spreadsheet"
@@ -276,6 +276,48 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "password"
+  /cells/calculate/formula:
+    put:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "CalculationFormula"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "worksheet"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "worksheet"
+      - name: "formula"
+        in: "Query"
+        description: ""
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "formula"
+      - name: "region"
+        in: "Query"
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
   /cells/connect/token:
     post:
       tags:
@@ -360,14 +402,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -451,14 +493,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -633,14 +675,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -731,14 +773,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -801,14 +843,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -864,14 +906,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -927,14 +969,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -990,14 +1032,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -1067,14 +1109,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -1137,14 +1179,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -1207,14 +1249,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -1277,14 +1319,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -1347,14 +1389,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -1466,14 +1508,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -1543,14 +1585,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -1620,14 +1662,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -1697,14 +1739,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -1774,14 +1816,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -1865,14 +1907,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -1942,14 +1984,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -2019,14 +2061,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -2096,14 +2138,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -2173,14 +2215,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -2397,14 +2439,14 @@ paths:
         in: "Query"
         description: "(Optional) Autofits all rows in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoRowsFit"
       - name: "autocolumnsfit"
         in: "Query"
         description: "(Optional) Autofits all columns in worksheets."
         required: false
-        type: "string"
+        type: "boolean"
         x-nullable: false
         x-exportParamName: "AutoColumnsFit"
       - name: "region"
@@ -4039,6 +4081,27 @@ paths:
         type: "string"
         x-nullable: false
         x-exportParamName: "region"
+  /cells/report/smart/template:
+    put:
+      tags:
+      - "Cells"
+      summary: ""
+      operationId: "SmartMarkerTemplate"
+      parameters:
+      - name: "region"
+        in: "Query"
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
   /cells/{name}/search/content/all-textitems:
     put:
       tags:
@@ -24827,6 +24890,26 @@ definitions:
   CellsCloudResponse:
     type: "object"    
     properties:
+      Code:
+        type: "integer"
+        description: ""
+      Status:
+        type: "string"
+        description: ""
+  FormulaCalculateResultResponse:
+    allOf:
+    - type: "object"
+    
+    properties:
+      Worksheet:
+        type: "string"
+        description: ""
+      Formula:
+        type: "string"
+        description: ""
+      Result:
+        type: "class:object"
+        description: ""
       Code:
         type: "integer"
         description: ""
