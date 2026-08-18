@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "26.7"
+  version: "26.8"
   title: "Aspose.Cells Cloud APIs."
 host: "api.aspose.cloud"
 basePath: "/v4.0"
@@ -150,6 +150,55 @@ paths:
         type: "file"
         x-nullable: false
         x-exportParamName: "Spreadsheet"
+      - name: "region"
+        in: "Query"
+        description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "region"
+      - name: "password"
+        in: "Query"
+        description: "The password for opening spreadsheet file."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "password"
+  /cells/ai/categorize/spreadsheet:
+    put:
+      tags:
+      - "Cells"
+      summary: "AI-powered data categorization: Automatically classifies spreadsheet column data into logical groups."
+      operationId: "CategorizeSpreadsheet"
+      parameters:
+      - name: "spreadsheet"
+        in: "FormData"
+        description: "Upload spreadsheet file."
+        required: true
+        type: "file"
+        x-nullable: false
+        x-exportParamName: "Spreadsheet"
+      - name: "targetcolumn"
+        in: "Query"
+        description: "The column name to categorize (e.g., "Expense Item", "Product Name"). Required."
+        required: true
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "targetColumn"
+      - name: "sheetname"
+        in: "Query"
+        description: "Optional: The worksheet name to process. If not specified, all worksheets will be processed."
+        required: false
+        type: "string"
+        x-nullable: true
+        x-exportParamName: "sheetName"
+      - name: "newcolumnname"
+        in: "Query"
+        description: "Optional: Name for the new categorization column (default: "AI Category")."
+        required: false
+        type: "string"
+        x-nullable: false
+        x-exportParamName: "newColumnName"
       - name: "region"
         in: "Query"
         description: "Spreadsheet region/language setting (e.g., `en-US`, `fr-FR`). Influences number formatting, date parsing, and locale‑specific behavior."
