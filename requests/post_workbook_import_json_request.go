@@ -1,0 +1,121 @@
+package requests
+
+import (
+    "fmt"
+    "net/url"
+    "strings"
+
+    "asposecellscloud/models"
+)
+
+type PostWorkbookImportJsonRequest struct {
+    importJsonRequest *models.ImportJsonRequest
+    name string
+
+    checkExcelRestriction *bool
+    folder string
+    outPath string
+    outStorageName string
+    password string
+    region string
+    storageName string
+}
+
+func NewPostWorkbookImportJsonRequest(importJsonRequest *models.ImportJsonRequest, name string, opts ...RequestOption) *PostWorkbookImportJsonRequest {
+    req := &PostWorkbookImportJsonRequest{
+        importJsonRequest: importJsonRequest,
+        name: name,
+    }
+    if req.importJsonRequest == nil {
+        return nil
+    }
+    if req.name == "" {
+        return nil
+    }
+
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if val, ok := cfg.Params["checkExcelRestriction"].(*bool); ok {
+        req.checkExcelRestriction = val
+    }
+    if val, ok := cfg.Params["folder"].(string); ok {
+        req.folder = val
+    }
+    if val, ok := cfg.Params["outPath"].(string); ok {
+        req.outPath = val
+    }
+    if val, ok := cfg.Params["outStorageName"].(string); ok {
+        req.outStorageName = val
+    }
+    if val, ok := cfg.Params["password"].(string); ok {
+        req.password = val
+    }
+    if val, ok := cfg.Params["region"].(string); ok {
+        req.region = val
+    }
+    if val, ok := cfg.Params["storageName"].(string); ok {
+        req.storageName = val
+    }
+
+    return req
+}
+
+func (request *PostWorkbookImportJsonRequest) GetMethod() string {
+    return "POST"
+}
+
+func (request *PostWorkbookImportJsonRequest) GetHeaderParameters() map[string]string {
+    localVarHeaderParams := make(map[string]string)
+    localVarHeaderParams["Content-Type"] = "application/json"
+    return localVarHeaderParams
+}
+
+func (request *PostWorkbookImportJsonRequest) GetPath() string {
+    localVarPath := "/cells/{name}/importjson"
+    localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", request.name), -1)
+    return localVarPath
+}
+
+func (request *PostWorkbookImportJsonRequest) GetQueryParameters() url.Values {
+    localVarQueryParams := url.Values{}
+    if request.password != "" {
+        localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    if request.folder != "" {
+        localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
+    }
+    if request.storageName != "" {
+        localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    if request.outPath != "" {
+        localVarQueryParams.Add("outPath", fmt.Sprintf("%v", request.outPath))
+    }
+    if request.outStorageName != "" {
+        localVarQueryParams.Add("outStorageName", fmt.Sprintf("%v", request.outStorageName))
+    }
+    if request.checkExcelRestriction != nil {
+        localVarQueryParams.Add("checkExcelRestriction", fmt.Sprintf("%v", *request.checkExcelRestriction))
+    }
+    if request.region != "" {
+        localVarQueryParams.Add("region", fmt.Sprintf("%v", request.region))
+    }
+    return localVarQueryParams
+}
+
+func (request *PostWorkbookImportJsonRequest) GetJSONBody() interface{} {
+    return &request.importJsonRequest
+}
+
+func (request *PostWorkbookImportJsonRequest) GetMultipartForm() map[string]interface{} {
+    localVarFormParams := make(map[string]interface{})
+    return localVarFormParams
+}
+
+func (request *PostWorkbookImportJsonRequest) Description() {
+    fmt.Println(strings.Trim("Import a JSON data file into the workbook. The JSON data file can either be a cloud file or data from an HTTP URI.", " "))
+}

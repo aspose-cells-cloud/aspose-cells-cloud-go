@@ -1,0 +1,86 @@
+package requests
+
+import (
+    "fmt"
+    "net/url"
+    "strings"
+
+    "asposecellscloud/models"
+)
+
+type PostProtectWorkbookRequest struct {
+    name string
+    protectWorkbookRequest *models.ProtectWorkbookRequest
+
+    folder string
+    storageName string
+}
+
+func NewPostProtectWorkbookRequest(name string, protectWorkbookRequest *models.ProtectWorkbookRequest, opts ...RequestOption) *PostProtectWorkbookRequest {
+    req := &PostProtectWorkbookRequest{
+        name: name,
+        protectWorkbookRequest: protectWorkbookRequest,
+    }
+    if req.name == "" {
+        return nil
+    }
+    if req.protectWorkbookRequest == nil {
+        return nil
+    }
+
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if val, ok := cfg.Params["folder"].(string); ok {
+        req.folder = val
+    }
+    if val, ok := cfg.Params["storageName"].(string); ok {
+        req.storageName = val
+    }
+
+    return req
+}
+
+func (request *PostProtectWorkbookRequest) GetMethod() string {
+    return "POST"
+}
+
+func (request *PostProtectWorkbookRequest) GetHeaderParameters() map[string]string {
+    localVarHeaderParams := make(map[string]string)
+    localVarHeaderParams["Content-Type"] = "application/json"
+    return localVarHeaderParams
+}
+
+func (request *PostProtectWorkbookRequest) GetPath() string {
+    localVarPath := "/cells/{name}/protection"
+    localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", request.name), -1)
+    return localVarPath
+}
+
+func (request *PostProtectWorkbookRequest) GetQueryParameters() url.Values {
+    localVarQueryParams := url.Values{}
+    if request.folder != "" {
+        localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
+    }
+    if request.storageName != "" {
+        localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    return localVarQueryParams
+}
+
+func (request *PostProtectWorkbookRequest) GetJSONBody() interface{} {
+    return &request.protectWorkbookRequest
+}
+
+func (request *PostProtectWorkbookRequest) GetMultipartForm() map[string]interface{} {
+    localVarFormParams := make(map[string]interface{})
+    return localVarFormParams
+}
+
+func (request *PostProtectWorkbookRequest) Description() {
+    fmt.Println(strings.Trim("Excel protection.", " "))
+}

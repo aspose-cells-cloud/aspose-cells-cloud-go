@@ -1,0 +1,73 @@
+package requests
+
+import (
+    "fmt"
+    "net/url"
+    "strings"
+
+    "asposecellscloud/models"
+)
+
+type PostConvertWorksheetToImageRequest struct {
+    convertWorksheetOptions *models.ConvertWorksheetOptions
+
+    FontsLocation string
+}
+
+func NewPostConvertWorksheetToImageRequest(convertWorksheetOptions *models.ConvertWorksheetOptions, opts ...RequestOption) *PostConvertWorksheetToImageRequest {
+    req := &PostConvertWorksheetToImageRequest{
+        convertWorksheetOptions: convertWorksheetOptions,
+    }
+    if req.convertWorksheetOptions == nil {
+        return nil
+    }
+
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if val, ok := cfg.Params["FontsLocation"].(string); ok {
+        req.FontsLocation = val
+    }
+
+    return req
+}
+
+func (request *PostConvertWorksheetToImageRequest) GetMethod() string {
+    return "POST"
+}
+
+func (request *PostConvertWorksheetToImageRequest) GetHeaderParameters() map[string]string {
+    localVarHeaderParams := make(map[string]string)
+    localVarHeaderParams["Content-Type"] = "application/json"
+    return localVarHeaderParams
+}
+
+func (request *PostConvertWorksheetToImageRequest) GetPath() string {
+    localVarPath := "/cells/convertWorksheetToImage"
+    return localVarPath
+}
+
+func (request *PostConvertWorksheetToImageRequest) GetQueryParameters() url.Values {
+    localVarQueryParams := url.Values{}
+    if request.FontsLocation != "" {
+        localVarQueryParams.Add("FontsLocation", fmt.Sprintf("%v", request.FontsLocation))
+    }
+    return localVarQueryParams
+}
+
+func (request *PostConvertWorksheetToImageRequest) GetJSONBody() interface{} {
+    return &request.convertWorksheetOptions
+}
+
+func (request *PostConvertWorksheetToImageRequest) GetMultipartForm() map[string]interface{} {
+    localVarFormParams := make(map[string]interface{})
+    return localVarFormParams
+}
+
+func (request *PostConvertWorksheetToImageRequest) Description() {
+    fmt.Println(strings.Trim("PostConvertWorksheetToImage", " "))
+}

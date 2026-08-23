@@ -1,0 +1,93 @@
+package requests
+
+import (
+    "fmt"
+    "net/url"
+    "strings"
+)
+
+type GetStructureInRemoteSpreadsheetRequest struct {
+    name string
+
+    folder string
+    password string
+    region string
+    storageName string
+}
+
+func NewGetStructureInRemoteSpreadsheetRequest(name string, opts ...RequestOption) *GetStructureInRemoteSpreadsheetRequest {
+    req := &GetStructureInRemoteSpreadsheetRequest{
+        name: name,
+    }
+    if req.name == "" {
+        return nil
+    }
+
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if val, ok := cfg.Params["folder"].(string); ok {
+        req.folder = val
+    }
+    if val, ok := cfg.Params["password"].(string); ok {
+        req.password = val
+    }
+    if val, ok := cfg.Params["region"].(string); ok {
+        req.region = val
+    }
+    if val, ok := cfg.Params["storageName"].(string); ok {
+        req.storageName = val
+    }
+
+    return req
+}
+
+func (request *GetStructureInRemoteSpreadsheetRequest) GetMethod() string {
+    return "GET"
+}
+
+func (request *GetStructureInRemoteSpreadsheetRequest) GetHeaderParameters() map[string]string {
+    localVarHeaderParams := make(map[string]string)
+    localVarHeaderParams["Content-Type"] = "application/json"
+    return localVarHeaderParams
+}
+
+func (request *GetStructureInRemoteSpreadsheetRequest) GetPath() string {
+    localVarPath := "/cells/{name}/structure"
+    localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", request.name), -1)
+    return localVarPath
+}
+
+func (request *GetStructureInRemoteSpreadsheetRequest) GetQueryParameters() url.Values {
+    localVarQueryParams := url.Values{}
+    if request.folder != "" {
+        localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
+    }
+    if request.storageName != "" {
+        localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    if request.region != "" {
+        localVarQueryParams.Add("region", fmt.Sprintf("%v", request.region))
+    }
+    if request.password != "" {
+        localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    return localVarQueryParams
+}
+
+func (request *GetStructureInRemoteSpreadsheetRequest) GetJSONBody() interface{} {
+    return nil
+}
+
+func (request *GetStructureInRemoteSpreadsheetRequest) GetMultipartForm() map[string]interface{} {
+    localVarFormParams := make(map[string]interface{})
+    return localVarFormParams
+}
+
+func (request *GetStructureInRemoteSpreadsheetRequest) Description() {
+    fmt.Println(strings.Trim("Structurally convert the core metadata, worksheets, tables, pivot tables, charts, shapes, and other information of an Excel workbook into a JObject type JSON object, for scenarios such as data export, API responses, and log recording.", " "))
+}

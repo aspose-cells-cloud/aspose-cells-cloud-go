@@ -1,0 +1,98 @@
+package requests
+
+import (
+    "fmt"
+    "net/url"
+    "strings"
+)
+
+type PostUnhideWorksheetRowsRequest struct {
+    name string
+    sheetName string
+    startrow int
+    totalRows int
+
+    folder string
+    height *float64
+    storageName string
+}
+
+func NewPostUnhideWorksheetRowsRequest(name string, sheetName string, startrow int, totalRows int, opts ...RequestOption) *PostUnhideWorksheetRowsRequest {
+    req := &PostUnhideWorksheetRowsRequest{
+        name: name,
+        sheetName: sheetName,
+        startrow: startrow,
+        totalRows: totalRows,
+    }
+    if req.name == "" {
+        return nil
+    }
+    if req.sheetName == "" {
+        return nil
+    }
+
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if val, ok := cfg.Params["folder"].(string); ok {
+        req.folder = val
+    }
+    if val, ok := cfg.Params["height"].(*float64); ok {
+        req.height = val
+    }
+    if val, ok := cfg.Params["storageName"].(string); ok {
+        req.storageName = val
+    }
+
+    return req
+}
+
+func (request *PostUnhideWorksheetRowsRequest) GetMethod() string {
+    return "POST"
+}
+
+func (request *PostUnhideWorksheetRowsRequest) GetHeaderParameters() map[string]string {
+    localVarHeaderParams := make(map[string]string)
+    localVarHeaderParams["Content-Type"] = "application/json"
+    return localVarHeaderParams
+}
+
+func (request *PostUnhideWorksheetRowsRequest) GetPath() string {
+    localVarPath := "/cells/{name}/worksheets/{sheetName}/cells/rows/unhide"
+    localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", request.name), -1)
+    localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", request.sheetName), -1)
+    return localVarPath
+}
+
+func (request *PostUnhideWorksheetRowsRequest) GetQueryParameters() url.Values {
+    localVarQueryParams := url.Values{}
+    localVarQueryParams.Add("startrow", fmt.Sprintf("%v", request.startrow))
+    localVarQueryParams.Add("totalRows", fmt.Sprintf("%v", request.totalRows))
+    if request.height != nil {
+        localVarQueryParams.Add("height", fmt.Sprintf("%v", *request.height))
+    }
+    if request.folder != "" {
+        localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
+    }
+    if request.storageName != "" {
+        localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    return localVarQueryParams
+}
+
+func (request *PostUnhideWorksheetRowsRequest) GetJSONBody() interface{} {
+    return nil
+}
+
+func (request *PostUnhideWorksheetRowsRequest) GetMultipartForm() map[string]interface{} {
+    localVarFormParams := make(map[string]interface{})
+    return localVarFormParams
+}
+
+func (request *PostUnhideWorksheetRowsRequest) Description() {
+    fmt.Println(strings.Trim("Unhide rows in the worksheet.", " "))
+}

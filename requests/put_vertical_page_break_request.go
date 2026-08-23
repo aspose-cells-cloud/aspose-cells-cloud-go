@@ -1,0 +1,120 @@
+package requests
+
+import (
+    "fmt"
+    "net/url"
+    "strings"
+)
+
+type PutVerticalPageBreakRequest struct {
+    name string
+    sheetName string
+
+    cellname string
+    column *int
+    endRow *int
+    folder string
+    row *int
+    startRow *int
+    storageName string
+}
+
+func NewPutVerticalPageBreakRequest(name string, sheetName string, opts ...RequestOption) *PutVerticalPageBreakRequest {
+    req := &PutVerticalPageBreakRequest{
+        name: name,
+        sheetName: sheetName,
+    }
+    if req.name == "" {
+        return nil
+    }
+    if req.sheetName == "" {
+        return nil
+    }
+
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if val, ok := cfg.Params["cellname"].(string); ok {
+        req.cellname = val
+    }
+    if val, ok := cfg.Params["column"].(*int); ok {
+        req.column = val
+    }
+    if val, ok := cfg.Params["endRow"].(*int); ok {
+        req.endRow = val
+    }
+    if val, ok := cfg.Params["folder"].(string); ok {
+        req.folder = val
+    }
+    if val, ok := cfg.Params["row"].(*int); ok {
+        req.row = val
+    }
+    if val, ok := cfg.Params["startRow"].(*int); ok {
+        req.startRow = val
+    }
+    if val, ok := cfg.Params["storageName"].(string); ok {
+        req.storageName = val
+    }
+
+    return req
+}
+
+func (request *PutVerticalPageBreakRequest) GetMethod() string {
+    return "PUT"
+}
+
+func (request *PutVerticalPageBreakRequest) GetHeaderParameters() map[string]string {
+    localVarHeaderParams := make(map[string]string)
+    localVarHeaderParams["Content-Type"] = "application/json"
+    return localVarHeaderParams
+}
+
+func (request *PutVerticalPageBreakRequest) GetPath() string {
+    localVarPath := "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks"
+    localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", request.name), -1)
+    localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", request.sheetName), -1)
+    return localVarPath
+}
+
+func (request *PutVerticalPageBreakRequest) GetQueryParameters() url.Values {
+    localVarQueryParams := url.Values{}
+    if request.cellname != "" {
+        localVarQueryParams.Add("cellname", fmt.Sprintf("%v", request.cellname))
+    }
+    if request.column != nil {
+        localVarQueryParams.Add("column", fmt.Sprintf("%v", *request.column))
+    }
+    if request.row != nil {
+        localVarQueryParams.Add("row", fmt.Sprintf("%v", *request.row))
+    }
+    if request.startRow != nil {
+        localVarQueryParams.Add("startRow", fmt.Sprintf("%v", *request.startRow))
+    }
+    if request.endRow != nil {
+        localVarQueryParams.Add("endRow", fmt.Sprintf("%v", *request.endRow))
+    }
+    if request.folder != "" {
+        localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
+    }
+    if request.storageName != "" {
+        localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    return localVarQueryParams
+}
+
+func (request *PutVerticalPageBreakRequest) GetJSONBody() interface{} {
+    return nil
+}
+
+func (request *PutVerticalPageBreakRequest) GetMultipartForm() map[string]interface{} {
+    localVarFormParams := make(map[string]interface{})
+    return localVarFormParams
+}
+
+func (request *PutVerticalPageBreakRequest) Description() {
+    fmt.Println(strings.Trim("Add a vertical page break in the worksheet.", " "))
+}

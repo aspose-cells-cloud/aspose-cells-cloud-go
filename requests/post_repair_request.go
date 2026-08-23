@@ -1,0 +1,83 @@
+package requests
+
+import (
+    "fmt"
+    "net/url"
+    "path/filepath"
+    "strings"
+)
+
+type PostRepairRequest struct {
+    File string
+    FileData []byte
+    FileName string
+
+    outFormat string
+}
+
+func NewPostRepairRequest(File string, opts ...RequestOption) *PostRepairRequest {
+    req := &PostRepairRequest{
+        File: File,
+    }
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if val, ok := cfg.Params["outFormat"].(string); ok {
+        req.outFormat = val
+    }
+
+    return req
+}
+
+func (request *PostRepairRequest) SetFileBytes(data []byte, name string) {
+    if name == "" {
+        name = "File"
+    }
+    request.FileData = data
+    request.FileName = name
+}
+
+func (request *PostRepairRequest) GetMethod() string {
+    return "POST"
+}
+
+func (request *PostRepairRequest) GetHeaderParameters() map[string]string {
+    localVarHeaderParams := make(map[string]string)
+    localVarHeaderParams["Content-Type"] = "multipart/form-data"
+    return localVarHeaderParams
+}
+
+func (request *PostRepairRequest) GetPath() string {
+    localVarPath := "/cells/repair"
+    return localVarPath
+}
+
+func (request *PostRepairRequest) GetQueryParameters() url.Values {
+    localVarQueryParams := url.Values{}
+    if request.outFormat != "" {
+        localVarQueryParams.Add("outFormat", fmt.Sprintf("%v", request.outFormat))
+    }
+    return localVarQueryParams
+}
+
+func (request *PostRepairRequest) GetJSONBody() interface{} {
+    return nil
+}
+
+func (request *PostRepairRequest) GetMultipartForm() map[string]interface{} {
+    localVarFormParams := make(map[string]interface{})
+    if request.FileData != nil {
+        localVarFormParams[request.FileName] = request.FileData
+    } else if request.File != "" {
+        localVarFormParams["@"+filepath.Base(request.File)] = request.File
+    }
+    return localVarFormParams
+}
+
+func (request *PostRepairRequest) Description() {
+    fmt.Println(strings.Trim("Repair abnormal files and generate files in various formats.", " "))
+}

@@ -1,0 +1,117 @@
+package requests
+
+import (
+    "fmt"
+    "net/url"
+    "path/filepath"
+    "strings"
+)
+
+type TransposeDataRequest struct {
+    cellArea string
+    Spreadsheet string
+    SpreadsheetData []byte
+    SpreadsheetName string
+    worksheet string
+
+    outPath string
+    outStorageName string
+    password string
+    region string
+}
+
+func NewTransposeDataRequest(cellArea string, Spreadsheet string, worksheet string, opts ...RequestOption) *TransposeDataRequest {
+    req := &TransposeDataRequest{
+        cellArea: cellArea,
+        Spreadsheet: Spreadsheet,
+        worksheet: worksheet,
+    }
+    if req.cellArea == "" {
+        return nil
+    }
+    if req.worksheet == "" {
+        return nil
+    }
+
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if val, ok := cfg.Params["outPath"].(string); ok {
+        req.outPath = val
+    }
+    if val, ok := cfg.Params["outStorageName"].(string); ok {
+        req.outStorageName = val
+    }
+    if val, ok := cfg.Params["password"].(string); ok {
+        req.password = val
+    }
+    if val, ok := cfg.Params["region"].(string); ok {
+        req.region = val
+    }
+
+    return req
+}
+
+func (request *TransposeDataRequest) SetSpreadsheetBytes(data []byte, name string) {
+    if name == "" {
+        name = "Spreadsheet"
+    }
+    request.SpreadsheetData = data
+    request.SpreadsheetName = name
+}
+
+func (request *TransposeDataRequest) GetMethod() string {
+    return "PUT"
+}
+
+func (request *TransposeDataRequest) GetHeaderParameters() map[string]string {
+    localVarHeaderParams := make(map[string]string)
+    localVarHeaderParams["Content-Type"] = "multipart/form-data"
+    return localVarHeaderParams
+}
+
+func (request *TransposeDataRequest) GetPath() string {
+    localVarPath := "/cells/transpose"
+    return localVarPath
+}
+
+func (request *TransposeDataRequest) GetQueryParameters() url.Values {
+    localVarQueryParams := url.Values{}
+    localVarQueryParams.Add("worksheet", fmt.Sprintf("%v", request.worksheet))
+    localVarQueryParams.Add("cellArea", fmt.Sprintf("%v", request.cellArea))
+    if request.outPath != "" {
+        localVarQueryParams.Add("outPath", fmt.Sprintf("%v", request.outPath))
+    }
+    if request.outStorageName != "" {
+        localVarQueryParams.Add("outStorageName", fmt.Sprintf("%v", request.outStorageName))
+    }
+    if request.region != "" {
+        localVarQueryParams.Add("region", fmt.Sprintf("%v", request.region))
+    }
+    if request.password != "" {
+        localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    return localVarQueryParams
+}
+
+func (request *TransposeDataRequest) GetJSONBody() interface{} {
+    return nil
+}
+
+func (request *TransposeDataRequest) GetMultipartForm() map[string]interface{} {
+    localVarFormParams := make(map[string]interface{})
+    if request.SpreadsheetData != nil {
+        localVarFormParams[request.SpreadsheetName] = request.SpreadsheetData
+    } else if request.Spreadsheet != "" {
+        localVarFormParams["@"+filepath.Base(request.Spreadsheet)] = request.Spreadsheet
+    }
+    return localVarFormParams
+}
+
+func (request *TransposeDataRequest) Description() {
+    fmt.Println(strings.Trim("Switch rows and columns in the spreadsheet.", " "))
+}

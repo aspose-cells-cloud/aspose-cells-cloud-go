@@ -1,0 +1,100 @@
+package requests
+
+import (
+    "fmt"
+    "net/url"
+    "strings"
+)
+
+type PostWorkbookGetSmartMarkerResultRequest struct {
+    name string
+
+    folder string
+    outPath string
+    outStorageName string
+    storageName string
+    xmlFile string
+}
+
+func NewPostWorkbookGetSmartMarkerResultRequest(name string, opts ...RequestOption) *PostWorkbookGetSmartMarkerResultRequest {
+    req := &PostWorkbookGetSmartMarkerResultRequest{
+        name: name,
+    }
+    if req.name == "" {
+        return nil
+    }
+
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if val, ok := cfg.Params["folder"].(string); ok {
+        req.folder = val
+    }
+    if val, ok := cfg.Params["outPath"].(string); ok {
+        req.outPath = val
+    }
+    if val, ok := cfg.Params["outStorageName"].(string); ok {
+        req.outStorageName = val
+    }
+    if val, ok := cfg.Params["storageName"].(string); ok {
+        req.storageName = val
+    }
+    if val, ok := cfg.Params["xmlFile"].(string); ok {
+        req.xmlFile = val
+    }
+
+    return req
+}
+
+func (request *PostWorkbookGetSmartMarkerResultRequest) GetMethod() string {
+    return "POST"
+}
+
+func (request *PostWorkbookGetSmartMarkerResultRequest) GetHeaderParameters() map[string]string {
+    localVarHeaderParams := make(map[string]string)
+    localVarHeaderParams["Content-Type"] = "application/json"
+    return localVarHeaderParams
+}
+
+func (request *PostWorkbookGetSmartMarkerResultRequest) GetPath() string {
+    localVarPath := "/cells/{name}/smartmarker"
+    localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", request.name), -1)
+    return localVarPath
+}
+
+func (request *PostWorkbookGetSmartMarkerResultRequest) GetQueryParameters() url.Values {
+    localVarQueryParams := url.Values{}
+    if request.xmlFile != "" {
+        localVarQueryParams.Add("xmlFile", fmt.Sprintf("%v", request.xmlFile))
+    }
+    if request.folder != "" {
+        localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
+    }
+    if request.outPath != "" {
+        localVarQueryParams.Add("outPath", fmt.Sprintf("%v", request.outPath))
+    }
+    if request.storageName != "" {
+        localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    if request.outStorageName != "" {
+        localVarQueryParams.Add("outStorageName", fmt.Sprintf("%v", request.outStorageName))
+    }
+    return localVarQueryParams
+}
+
+func (request *PostWorkbookGetSmartMarkerResultRequest) GetJSONBody() interface{} {
+    return nil
+}
+
+func (request *PostWorkbookGetSmartMarkerResultRequest) GetMultipartForm() map[string]interface{} {
+    localVarFormParams := make(map[string]interface{})
+    return localVarFormParams
+}
+
+func (request *PostWorkbookGetSmartMarkerResultRequest) Description() {
+    fmt.Println(strings.Trim("Smart marker processing.", " "))
+}

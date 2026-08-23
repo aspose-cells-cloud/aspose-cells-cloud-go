@@ -1,0 +1,120 @@
+package requests
+
+import (
+    "fmt"
+    "net/url"
+    "strings"
+)
+
+type GetWorksheetCellsRangeValueRequest struct {
+    name string
+    sheetName string
+
+    columnCount *int
+    firstColumn *int
+    firstRow *int
+    folder string
+    namerange string
+    rowCount *int
+    storageName string
+}
+
+func NewGetWorksheetCellsRangeValueRequest(name string, sheetName string, opts ...RequestOption) *GetWorksheetCellsRangeValueRequest {
+    req := &GetWorksheetCellsRangeValueRequest{
+        name: name,
+        sheetName: sheetName,
+    }
+    if req.name == "" {
+        return nil
+    }
+    if req.sheetName == "" {
+        return nil
+    }
+
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if val, ok := cfg.Params["columnCount"].(*int); ok {
+        req.columnCount = val
+    }
+    if val, ok := cfg.Params["firstColumn"].(*int); ok {
+        req.firstColumn = val
+    }
+    if val, ok := cfg.Params["firstRow"].(*int); ok {
+        req.firstRow = val
+    }
+    if val, ok := cfg.Params["folder"].(string); ok {
+        req.folder = val
+    }
+    if val, ok := cfg.Params["namerange"].(string); ok {
+        req.namerange = val
+    }
+    if val, ok := cfg.Params["rowCount"].(*int); ok {
+        req.rowCount = val
+    }
+    if val, ok := cfg.Params["storageName"].(string); ok {
+        req.storageName = val
+    }
+
+    return req
+}
+
+func (request *GetWorksheetCellsRangeValueRequest) GetMethod() string {
+    return "GET"
+}
+
+func (request *GetWorksheetCellsRangeValueRequest) GetHeaderParameters() map[string]string {
+    localVarHeaderParams := make(map[string]string)
+    localVarHeaderParams["Content-Type"] = "application/json"
+    return localVarHeaderParams
+}
+
+func (request *GetWorksheetCellsRangeValueRequest) GetPath() string {
+    localVarPath := "/cells/{name}/worksheets/{sheetName}/ranges/value"
+    localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", request.name), -1)
+    localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", request.sheetName), -1)
+    return localVarPath
+}
+
+func (request *GetWorksheetCellsRangeValueRequest) GetQueryParameters() url.Values {
+    localVarQueryParams := url.Values{}
+    if request.namerange != "" {
+        localVarQueryParams.Add("namerange", fmt.Sprintf("%v", request.namerange))
+    }
+    if request.firstRow != nil {
+        localVarQueryParams.Add("firstRow", fmt.Sprintf("%v", *request.firstRow))
+    }
+    if request.firstColumn != nil {
+        localVarQueryParams.Add("firstColumn", fmt.Sprintf("%v", *request.firstColumn))
+    }
+    if request.rowCount != nil {
+        localVarQueryParams.Add("rowCount", fmt.Sprintf("%v", *request.rowCount))
+    }
+    if request.columnCount != nil {
+        localVarQueryParams.Add("columnCount", fmt.Sprintf("%v", *request.columnCount))
+    }
+    if request.folder != "" {
+        localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
+    }
+    if request.storageName != "" {
+        localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    return localVarQueryParams
+}
+
+func (request *GetWorksheetCellsRangeValueRequest) GetJSONBody() interface{} {
+    return nil
+}
+
+func (request *GetWorksheetCellsRangeValueRequest) GetMultipartForm() map[string]interface{} {
+    localVarFormParams := make(map[string]interface{})
+    return localVarFormParams
+}
+
+func (request *GetWorksheetCellsRangeValueRequest) Description() {
+    fmt.Println(strings.Trim("Retrieve the values of cells within the specified range.", " "))
+}
