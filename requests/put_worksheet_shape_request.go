@@ -22,6 +22,8 @@ type PutWorksheetShapeRequest struct {
     upperLeftColumn *int
     upperLeftRow *int
     width *int
+
+    extraQueryParameters map[string]string
 }
 
 func NewPutWorksheetShapeRequest(name string, sheetName string, opts ...RequestOption) *PutWorksheetShapeRequest {
@@ -73,8 +75,32 @@ func NewPutWorksheetShapeRequest(name string, sheetName string, opts ...RequestO
     if val, ok := cfg.Params["width"].(*int); ok {
         req.width = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PutWorksheetShapeRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PutWorksheetShapeRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PutWorksheetShapeRequest) GetMethod() string {
@@ -122,6 +148,9 @@ func (request *PutWorksheetShapeRequest) GetQueryParameters() url.Values {
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

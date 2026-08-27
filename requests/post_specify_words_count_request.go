@@ -10,9 +10,11 @@ import (
 
 type PostSpecifyWordsCountRequest struct {
     specifyWordsCountOptions *models.SpecifyWordsCountOptions
+
+    extraQueryParameters map[string]string
 }
 
-func NewPostSpecifyWordsCountRequest(specifyWordsCountOptions *models.SpecifyWordsCountOptions) *PostSpecifyWordsCountRequest {
+func NewPostSpecifyWordsCountRequest(specifyWordsCountOptions *models.SpecifyWordsCountOptions, opts ...RequestOption) *PostSpecifyWordsCountRequest {
     req := &PostSpecifyWordsCountRequest{
         specifyWordsCountOptions: specifyWordsCountOptions,
     }
@@ -20,7 +22,39 @@ func NewPostSpecifyWordsCountRequest(specifyWordsCountOptions *models.SpecifyWor
         return nil
     }
 
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
+
     return req
+}
+
+func (request *PostSpecifyWordsCountRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostSpecifyWordsCountRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostSpecifyWordsCountRequest) GetMethod() string {
@@ -40,6 +74,9 @@ func (request *PostSpecifyWordsCountRequest) GetPath() string {
 
 func (request *PostSpecifyWordsCountRequest) GetQueryParameters() url.Values {
     localVarQueryParams := url.Values{}
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
+    }
     return localVarQueryParams
 }
 

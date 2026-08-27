@@ -18,6 +18,8 @@ type RemoveDuplicateSubstringsInRemoteSpreadsheetRequest struct {
     region string
     storageName string
     treatConsecutiveDelimitersAsOne *bool
+
+    extraQueryParameters map[string]string
 }
 
 func NewRemoveDuplicateSubstringsInRemoteSpreadsheetRequest(delimiters string, name string, _range string, worksheet string, opts ...RequestOption) *RemoveDuplicateSubstringsInRemoteSpreadsheetRequest {
@@ -65,8 +67,32 @@ func NewRemoveDuplicateSubstringsInRemoteSpreadsheetRequest(delimiters string, n
     if val, ok := cfg.Params["treatConsecutiveDelimitersAsOne"].(*bool); ok {
         req.treatConsecutiveDelimitersAsOne = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *RemoveDuplicateSubstringsInRemoteSpreadsheetRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *RemoveDuplicateSubstringsInRemoteSpreadsheetRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *RemoveDuplicateSubstringsInRemoteSpreadsheetRequest) GetMethod() string {
@@ -107,6 +133,9 @@ func (request *RemoveDuplicateSubstringsInRemoteSpreadsheetRequest) GetQueryPara
     }
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

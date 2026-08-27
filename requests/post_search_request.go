@@ -16,6 +16,8 @@ type PostSearchRequest struct {
     checkExcelRestriction *bool
     password string
     sheetname string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostSearchRequest(File string, text string, opts ...RequestOption) *PostSearchRequest {
@@ -43,6 +45,14 @@ func NewPostSearchRequest(File string, text string, opts ...RequestOption) *Post
     if val, ok := cfg.Params["sheetname"].(string); ok {
         req.sheetname = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -53,6 +63,22 @@ func (request *PostSearchRequest) SetFileBytes(data []byte, name string) {
     }
     request.FileData = data
     request.FileName = name
+}
+
+func (request *PostSearchRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostSearchRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostSearchRequest) GetMethod() string {
@@ -81,6 +107,9 @@ func (request *PostSearchRequest) GetQueryParameters() url.Values {
     }
     if request.checkExcelRestriction != nil {
         localVarQueryParams.Add("checkExcelRestriction", fmt.Sprintf("%v", *request.checkExcelRestriction))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

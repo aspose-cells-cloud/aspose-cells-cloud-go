@@ -16,6 +16,8 @@ type PostAutofitWorkbookRowsRequest struct {
     onlyAuto *bool
     startRow *int
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostAutofitWorkbookRowsRequest(name string, opts ...RequestOption) *PostAutofitWorkbookRowsRequest {
@@ -54,8 +56,32 @@ func NewPostAutofitWorkbookRowsRequest(name string, opts ...RequestOption) *Post
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostAutofitWorkbookRowsRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostAutofitWorkbookRowsRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostAutofitWorkbookRowsRequest) GetMethod() string {
@@ -96,6 +122,9 @@ func (request *PostAutofitWorkbookRowsRequest) GetQueryParameters() url.Values {
     }
     if request.lastColumn != nil {
         localVarQueryParams.Add("lastColumn", fmt.Sprintf("%v", *request.lastColumn))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

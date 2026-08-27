@@ -12,6 +12,8 @@ type CopyFolderRequest struct {
 
     destStorageName string
     srcStorageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewCopyFolderRequest(destPath string, srcPath string, opts ...RequestOption) *CopyFolderRequest {
@@ -39,8 +41,32 @@ func NewCopyFolderRequest(destPath string, srcPath string, opts ...RequestOption
     if val, ok := cfg.Params["srcStorageName"].(string); ok {
         req.srcStorageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *CopyFolderRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *CopyFolderRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *CopyFolderRequest) GetMethod() string {
@@ -67,6 +93,9 @@ func (request *CopyFolderRequest) GetQueryParameters() url.Values {
     }
     if request.destStorageName != "" {
         localVarQueryParams.Add("destStorageName", fmt.Sprintf("%v", request.destStorageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

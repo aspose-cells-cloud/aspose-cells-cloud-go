@@ -22,6 +22,8 @@ type TrimCharacterInRemoteSpreadsheetRequest struct {
     trimNonBreakingSpaces *bool
     trimSpaceBetweenWordTo1 *bool
     trimTrailing *bool
+
+    extraQueryParameters map[string]string
 }
 
 func NewTrimCharacterInRemoteSpreadsheetRequest(name string, _range string, worksheet string, opts ...RequestOption) *TrimCharacterInRemoteSpreadsheetRequest {
@@ -80,8 +82,32 @@ func NewTrimCharacterInRemoteSpreadsheetRequest(name string, _range string, work
     if val, ok := cfg.Params["trimTrailing"].(*bool); ok {
         req.trimTrailing = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *TrimCharacterInRemoteSpreadsheetRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *TrimCharacterInRemoteSpreadsheetRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *TrimCharacterInRemoteSpreadsheetRequest) GetMethod() string {
@@ -136,6 +162,9 @@ func (request *TrimCharacterInRemoteSpreadsheetRequest) GetQueryParameters() url
     }
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

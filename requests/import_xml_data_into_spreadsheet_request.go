@@ -23,6 +23,8 @@ type ImportXMLDataIntoSpreadsheetRequest struct {
     outStorageName string
     password string
     region string
+
+    extraQueryParameters map[string]string
 }
 
 func NewImportXMLDataIntoSpreadsheetRequest(datafile string, Spreadsheet string, startcell string, worksheet string, opts ...RequestOption) *ImportXMLDataIntoSpreadsheetRequest {
@@ -64,6 +66,14 @@ func NewImportXMLDataIntoSpreadsheetRequest(datafile string, Spreadsheet string,
     if val, ok := cfg.Params["region"].(string); ok {
         req.region = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -82,6 +92,22 @@ func (request *ImportXMLDataIntoSpreadsheetRequest) SetSpreadsheetBytes(data []b
     }
     request.SpreadsheetData = data
     request.SpreadsheetName = name
+}
+
+func (request *ImportXMLDataIntoSpreadsheetRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *ImportXMLDataIntoSpreadsheetRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *ImportXMLDataIntoSpreadsheetRequest) GetMethod() string {
@@ -120,6 +146,9 @@ func (request *ImportXMLDataIntoSpreadsheetRequest) GetQueryParameters() url.Val
     }
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

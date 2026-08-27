@@ -19,6 +19,8 @@ type PostWorkbookSplitRequest struct {
     storageName string
     to *int
     verticalResolution *int
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostWorkbookSplitRequest(name string, opts ...RequestOption) *PostWorkbookSplitRequest {
@@ -66,8 +68,32 @@ func NewPostWorkbookSplitRequest(name string, opts ...RequestOption) *PostWorkbo
     if val, ok := cfg.Params["verticalResolution"].(*int); ok {
         req.verticalResolution = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostWorkbookSplitRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostWorkbookSplitRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostWorkbookSplitRequest) GetMethod() string {
@@ -117,6 +143,9 @@ func (request *PostWorkbookSplitRequest) GetQueryParameters() url.Values {
     }
     if request.outStorageName != "" {
         localVarQueryParams.Add("outStorageName", fmt.Sprintf("%v", request.outStorageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

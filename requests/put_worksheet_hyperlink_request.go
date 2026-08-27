@@ -17,6 +17,8 @@ type PutWorksheetHyperlinkRequest struct {
 
     folder string
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPutWorksheetHyperlinkRequest(address string, firstColumn int, firstRow int, name string, sheetName string, totalColumns int, totalRows int, opts ...RequestOption) *PutWorksheetHyperlinkRequest {
@@ -52,8 +54,32 @@ func NewPutWorksheetHyperlinkRequest(address string, firstColumn int, firstRow i
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PutWorksheetHyperlinkRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PutWorksheetHyperlinkRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PutWorksheetHyperlinkRequest) GetMethod() string {
@@ -85,6 +111,9 @@ func (request *PutWorksheetHyperlinkRequest) GetQueryParameters() url.Values {
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

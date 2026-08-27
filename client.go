@@ -16,7 +16,7 @@ import (
 )
 
 // Client SDK Core client
-type CellsCloudClient struct {
+type AsposeCellsCloudClient struct {
 	cfg        *Configuration
 	httpClient *http.Client
 	timeout    time.Duration
@@ -24,11 +24,11 @@ type CellsCloudClient struct {
 }
 
 // Client configuration Option function type
-type CellsCloudClientOption func(*CellsCloudClient)
+type AsposeCellsCloudClientOption func(*AsposeCellsCloudClient)
 
 // NewClient Create a new Client instance
-func NewCellsCloudClient(clientId string, clientSecret string, baseURL string, opts ...CellsCloudClientOption) *CellsCloudClient {
-	client := &CellsCloudClient{
+func NewAsposeCellsCloudClient(clientId string, clientSecret string, baseURL string, opts ...AsposeCellsCloudClientOption) *AsposeCellsCloudClient {
+	client := &AsposeCellsCloudClient{
 		cfg:        NewConfiguration(clientId, clientSecret, baseURL, "v4.0"),
 		httpClient: &http.Client{},
 		timeout:    30 * time.Second,
@@ -47,28 +47,28 @@ func NewCellsCloudClient(clientId string, clientSecret string, baseURL string, o
 }
 
 // WithTimeout Set request timeout
-func WithTimeout(timeout time.Duration) CellsCloudClientOption {
-	return func(c *CellsCloudClient) {
+func WithTimeout(timeout time.Duration) AsposeCellsCloudClientOption {
+	return func(c *AsposeCellsCloudClient) {
 		c.timeout = timeout
 		c.httpClient.Timeout = timeout
 	}
 }
 
 // WithRetries Set the number of retries
-func WithRetries(retries int) CellsCloudClientOption {
-	return func(c *CellsCloudClient) {
+func WithRetries(retries int) AsposeCellsCloudClientOption {
+	return func(c *AsposeCellsCloudClient) {
 		c.retries = retries
 	}
 }
 
 // WithHeader Set global request headers
-func WithHeader(key, value string) CellsCloudClientOption {
-	return func(c *CellsCloudClient) {
+func WithHeader(key, value string) AsposeCellsCloudClientOption {
+	return func(c *AsposeCellsCloudClient) {
 		c.cfg.DefaultHeader[key] = value
 	}
 }
 
-func (client *CellsCloudClient) addAuth(request *http.Request) (err error) {
+func (client *AsposeCellsCloudClient) addAuth(request *http.Request) (err error) {
 	if err := client.RequestOauthToken(); err != nil {
 		if err := client.RequestOauthToken(); err != nil {
 			return err
@@ -80,8 +80,11 @@ func (client *CellsCloudClient) addAuth(request *http.Request) (err error) {
 }
 
 // RequestOauthToken function for requests OAuth token
-func (client *CellsCloudClient) RequestOauthToken() error {
-	var getAccessTokeUri = client.cfg.BasePath + "/v3.0/cells/connect/token"
+func (client *AsposeCellsCloudClient) RequestOauthToken() error {
+	// The OAuth token endpoint lives under the active API version prefix (v4.0
+	// by default, see NewConfiguration). The v1.1 API uses the legacy oauth2
+	// endpoint instead.
+	var getAccessTokeUri = client.cfg.BasePath + "/" + client.cfg.Version + "/cells/connect/token"
 	if client.cfg.Version == "v1.1" {
 		getAccessTokeUri = client.cfg.BasePath + "/oauth2/token"
 	}
@@ -105,7 +108,7 @@ func (client *CellsCloudClient) RequestOauthToken() error {
 }
 
 // Do Execute one or more requests (core scheduling method)
-func (client *CellsCloudClient) Do(ctx context.Context, requests ...RequestOption) ([]*RichResponse, error) {
+func (client *AsposeCellsCloudClient) Do(ctx context.Context, requests ...RequestOption) ([]*RichResponse, error) {
 	var responses []*RichResponse
 
 	for _, req := range requests {
@@ -127,7 +130,7 @@ func (client *CellsCloudClient) Do(ctx context.Context, requests ...RequestOptio
 }
 
 // executeWithRetry Execution logic with retries
-func (client *CellsCloudClient) executeWithRetry(ctx context.Context, req RequestOption) (*RichResponse, error) {
+func (client *AsposeCellsCloudClient) executeWithRetry(ctx context.Context, req RequestOption) (*RichResponse, error) {
 	var lastErr error
 
 	for attempt := 0; attempt <= client.retries; attempt++ {
@@ -148,9 +151,17 @@ func (client *CellsCloudClient) executeWithRetry(ctx context.Context, req Reques
 }
 
 // executeOnce Single execution logic
-func (client *CellsCloudClient) executeOnce(ctx context.Context, req RequestOption) (*RichResponse, error) {
+func (client *AsposeCellsCloudClient) executeOnce(ctx context.Context, req RequestOption) (*RichResponse, error) {
 	// 1. Build URL
-	u, err := url.Parse(client.cfg.BasePath + req.GetPath())
+	// Generated request paths are versionless (e.g. "/cells/convert/spreadsheet"),
+	// while the live API is versioned under the active version prefix ("v4.0" by
+	// default, same prefix the OAuth token endpoint uses). The v1.1 API is served
+	// without a version prefix.
+	reqPath := req.GetPath()
+	if !strings.HasPrefix(reqPath, "/v") && client.cfg.Version != "v1.1" {
+		reqPath = "/" + client.cfg.Version + reqPath
+	}
+	u, err := url.Parse(client.cfg.BasePath + reqPath)
 	if err != nil {
 		return nil, err
 	}
@@ -240,7 +251,7 @@ func (client *CellsCloudClient) executeOnce(ctx context.Context, req RequestOpti
 }
 
 // buildMultipartForm Building a multipart/form-data request body
-func (client *CellsCloudClient) buildMultipartForm(form map[string]interface{}) (io.Reader, string, error) {
+func (client *AsposeCellsCloudClient) buildMultipartForm(form map[string]interface{}) (io.Reader, string, error) {
 	var buf bytes.Buffer
 	writer := multipart.NewWriter(&buf)
 
@@ -260,9 +271,13 @@ func (client *CellsCloudClient) buildMultipartForm(form map[string]interface{}) 
 				}
 			}
 		case []byte:
-			// Binary file field
+			// Binary file field. The generated requests expose only a field name
+			// for byte payloads, so append ".bin" to the part filename: the v4.0
+			// server keys off the multipart filename extension to detect the file
+			// type, and a bare name (e.g. "datafile") makes import endpoints fail
+			// with HTTP 500 "Object reference not set".
 			println("[]byte")
-			part, err := writer.CreateFormFile(key, key)
+			part, err := writer.CreateFormFile(key, key+".bin")
 			if err != nil {
 				return nil, "", err
 			}

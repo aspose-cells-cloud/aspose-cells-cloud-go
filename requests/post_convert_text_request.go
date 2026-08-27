@@ -10,9 +10,11 @@ import (
 
 type PostConvertTextRequest struct {
     convertTextOptions *models.ConvertTextOptions
+
+    extraQueryParameters map[string]string
 }
 
-func NewPostConvertTextRequest(convertTextOptions *models.ConvertTextOptions) *PostConvertTextRequest {
+func NewPostConvertTextRequest(convertTextOptions *models.ConvertTextOptions, opts ...RequestOption) *PostConvertTextRequest {
     req := &PostConvertTextRequest{
         convertTextOptions: convertTextOptions,
     }
@@ -20,7 +22,39 @@ func NewPostConvertTextRequest(convertTextOptions *models.ConvertTextOptions) *P
         return nil
     }
 
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
+
     return req
+}
+
+func (request *PostConvertTextRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostConvertTextRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostConvertTextRequest) GetMethod() string {
@@ -40,6 +74,9 @@ func (request *PostConvertTextRequest) GetPath() string {
 
 func (request *PostConvertTextRequest) GetQueryParameters() url.Values {
     localVarQueryParams := url.Values{}
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
+    }
     return localVarQueryParams
 }
 

@@ -10,9 +10,11 @@ import (
 
 type PostSplitTextRequest struct {
     splitTextOptions *models.SplitTextOptions
+
+    extraQueryParameters map[string]string
 }
 
-func NewPostSplitTextRequest(splitTextOptions *models.SplitTextOptions) *PostSplitTextRequest {
+func NewPostSplitTextRequest(splitTextOptions *models.SplitTextOptions, opts ...RequestOption) *PostSplitTextRequest {
     req := &PostSplitTextRequest{
         splitTextOptions: splitTextOptions,
     }
@@ -20,7 +22,39 @@ func NewPostSplitTextRequest(splitTextOptions *models.SplitTextOptions) *PostSpl
         return nil
     }
 
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
+
     return req
+}
+
+func (request *PostSplitTextRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostSplitTextRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostSplitTextRequest) GetMethod() string {
@@ -40,6 +74,9 @@ func (request *PostSplitTextRequest) GetPath() string {
 
 func (request *PostSplitTextRequest) GetQueryParameters() url.Values {
     localVarQueryParams := url.Values{}
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
+    }
     return localVarQueryParams
 }
 

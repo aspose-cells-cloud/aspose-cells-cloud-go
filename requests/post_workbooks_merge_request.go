@@ -13,6 +13,8 @@ type PostWorkbooksMergeRequest struct {
     folder string
     mergedStorageName string
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostWorkbooksMergeRequest(mergeWith string, name string, opts ...RequestOption) *PostWorkbooksMergeRequest {
@@ -43,8 +45,32 @@ func NewPostWorkbooksMergeRequest(mergeWith string, name string, opts ...Request
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostWorkbooksMergeRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostWorkbooksMergeRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostWorkbooksMergeRequest) GetMethod() string {
@@ -74,6 +100,9 @@ func (request *PostWorkbooksMergeRequest) GetQueryParameters() url.Values {
     }
     if request.mergedStorageName != "" {
         localVarQueryParams.Add("mergedStorageName", fmt.Sprintf("%v", request.mergedStorageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

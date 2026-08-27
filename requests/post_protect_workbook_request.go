@@ -14,6 +14,8 @@ type PostProtectWorkbookRequest struct {
 
     folder string
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostProtectWorkbookRequest(name string, protectWorkbookRequest *models.ProtectWorkbookRequest, opts ...RequestOption) *PostProtectWorkbookRequest {
@@ -41,8 +43,32 @@ func NewPostProtectWorkbookRequest(name string, protectWorkbookRequest *models.P
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostProtectWorkbookRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostProtectWorkbookRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostProtectWorkbookRequest) GetMethod() string {
@@ -68,6 +94,9 @@ func (request *PostProtectWorkbookRequest) GetQueryParameters() url.Values {
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

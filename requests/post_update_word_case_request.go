@@ -10,9 +10,11 @@ import (
 
 type PostUpdateWordCaseRequest struct {
     wordCaseOptions *models.WordCaseOptions
+
+    extraQueryParameters map[string]string
 }
 
-func NewPostUpdateWordCaseRequest(wordCaseOptions *models.WordCaseOptions) *PostUpdateWordCaseRequest {
+func NewPostUpdateWordCaseRequest(wordCaseOptions *models.WordCaseOptions, opts ...RequestOption) *PostUpdateWordCaseRequest {
     req := &PostUpdateWordCaseRequest{
         wordCaseOptions: wordCaseOptions,
     }
@@ -20,7 +22,39 @@ func NewPostUpdateWordCaseRequest(wordCaseOptions *models.WordCaseOptions) *Post
         return nil
     }
 
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
+
     return req
+}
+
+func (request *PostUpdateWordCaseRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostUpdateWordCaseRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostUpdateWordCaseRequest) GetMethod() string {
@@ -40,6 +74,9 @@ func (request *PostUpdateWordCaseRequest) GetPath() string {
 
 func (request *PostUpdateWordCaseRequest) GetQueryParameters() url.Values {
     localVarQueryParams := url.Values{}
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
+    }
     return localVarQueryParams
 }
 

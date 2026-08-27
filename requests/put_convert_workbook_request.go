@@ -27,6 +27,8 @@ type PutConvertWorkbookRequest struct {
     sheetName string
     storageName string
     streamFormat string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPutConvertWorkbookRequest(File string, format string, opts ...RequestOption) *PutConvertWorkbookRequest {
@@ -87,6 +89,14 @@ func NewPutConvertWorkbookRequest(File string, format string, opts ...RequestOpt
     if val, ok := cfg.Params["streamFormat"].(string); ok {
         req.streamFormat = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -97,6 +107,22 @@ func (request *PutConvertWorkbookRequest) SetFileBytes(data []byte, name string)
     }
     request.FileData = data
     request.FileName = name
+}
+
+func (request *PutConvertWorkbookRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PutConvertWorkbookRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PutConvertWorkbookRequest) GetMethod() string {
@@ -158,6 +184,9 @@ func (request *PutConvertWorkbookRequest) GetQueryParameters() url.Values {
     }
     if request.FontsLocation != "" {
         localVarQueryParams.Add("FontsLocation", fmt.Sprintf("%v", request.FontsLocation))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

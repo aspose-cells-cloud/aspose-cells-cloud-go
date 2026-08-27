@@ -18,6 +18,8 @@ type PostExportRequest struct {
     objectType string
     password string
     region string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostExportRequest(File string, opts ...RequestOption) *PostExportRequest {
@@ -49,6 +51,14 @@ func NewPostExportRequest(File string, opts ...RequestOption) *PostExportRequest
     if val, ok := cfg.Params["region"].(string); ok {
         req.region = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -59,6 +69,22 @@ func (request *PostExportRequest) SetFileBytes(data []byte, name string) {
     }
     request.FileData = data
     request.FileName = name
+}
+
+func (request *PostExportRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostExportRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostExportRequest) GetMethod() string {
@@ -95,6 +121,9 @@ func (request *PostExportRequest) GetQueryParameters() url.Values {
     }
     if request.FontsLocation != "" {
         localVarQueryParams.Add("FontsLocation", fmt.Sprintf("%v", request.FontsLocation))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

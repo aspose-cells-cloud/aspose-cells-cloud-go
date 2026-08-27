@@ -16,6 +16,8 @@ type PostCopyWorksheetColumnsRequest struct {
     folder string
     storageName string
     worksheet string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostCopyWorksheetColumnsRequest(columnNumber int, destinationColumnIndex int, name string, sheetName string, sourceColumnIndex int, opts ...RequestOption) *PostCopyWorksheetColumnsRequest {
@@ -49,8 +51,32 @@ func NewPostCopyWorksheetColumnsRequest(columnNumber int, destinationColumnIndex
     if val, ok := cfg.Params["worksheet"].(string); ok {
         req.worksheet = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostCopyWorksheetColumnsRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostCopyWorksheetColumnsRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostCopyWorksheetColumnsRequest) GetMethod() string {
@@ -83,6 +109,9 @@ func (request *PostCopyWorksheetColumnsRequest) GetQueryParameters() url.Values 
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

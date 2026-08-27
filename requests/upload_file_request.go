@@ -14,6 +14,8 @@ type UploadFileRequest struct {
     UploadFilesName string
 
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewUploadFileRequest(path string, UploadFiles string, opts ...RequestOption) *UploadFileRequest {
@@ -35,6 +37,14 @@ func NewUploadFileRequest(path string, UploadFiles string, opts ...RequestOption
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -45,6 +55,22 @@ func (request *UploadFileRequest) SetUploadFilesBytes(data []byte, name string) 
     }
     request.UploadFilesData = data
     request.UploadFilesName = name
+}
+
+func (request *UploadFileRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *UploadFileRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *UploadFileRequest) GetMethod() string {
@@ -67,6 +93,9 @@ func (request *UploadFileRequest) GetQueryParameters() url.Values {
     localVarQueryParams := url.Values{}
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

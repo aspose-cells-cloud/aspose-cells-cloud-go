@@ -16,6 +16,8 @@ type PostCopyWorksheetRowsRequest struct {
     folder string
     storageName string
     worksheet string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostCopyWorksheetRowsRequest(destinationRowIndex int, name string, rowNumber int, sheetName string, sourceRowIndex int, opts ...RequestOption) *PostCopyWorksheetRowsRequest {
@@ -49,8 +51,32 @@ func NewPostCopyWorksheetRowsRequest(destinationRowIndex int, name string, rowNu
     if val, ok := cfg.Params["worksheet"].(string); ok {
         req.worksheet = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostCopyWorksheetRowsRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostCopyWorksheetRowsRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostCopyWorksheetRowsRequest) GetMethod() string {
@@ -83,6 +109,9 @@ func (request *PostCopyWorksheetRowsRequest) GetQueryParameters() url.Values {
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

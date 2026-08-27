@@ -19,6 +19,8 @@ type PostPivotTableCellStyleRequest struct {
     folder string
     needReCalculate *bool
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostPivotTableCellStyleRequest(column int, name string, pivotTableIndex int, row int, sheetName string, style *models.Style, opts ...RequestOption) *PostPivotTableCellStyleRequest {
@@ -56,8 +58,32 @@ func NewPostPivotTableCellStyleRequest(column int, name string, pivotTableIndex 
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostPivotTableCellStyleRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostPivotTableCellStyleRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostPivotTableCellStyleRequest) GetMethod() string {
@@ -90,6 +116,9 @@ func (request *PostPivotTableCellStyleRequest) GetQueryParameters() url.Values {
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

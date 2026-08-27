@@ -14,6 +14,8 @@ type PostHideWorksheetRowsRequest struct {
 
     folder string
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostHideWorksheetRowsRequest(name string, sheetName string, startrow int, totalRows int, opts ...RequestOption) *PostHideWorksheetRowsRequest {
@@ -43,8 +45,32 @@ func NewPostHideWorksheetRowsRequest(name string, sheetName string, startrow int
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostHideWorksheetRowsRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostHideWorksheetRowsRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostHideWorksheetRowsRequest) GetMethod() string {
@@ -73,6 +99,9 @@ func (request *PostHideWorksheetRowsRequest) GetQueryParameters() url.Values {
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

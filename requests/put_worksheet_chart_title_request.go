@@ -16,6 +16,8 @@ type PutWorksheetChartTitleRequest struct {
     folder string
     storageName string
     title *models.Title
+
+    extraQueryParameters map[string]string
 }
 
 func NewPutWorksheetChartTitleRequest(chartIndex int, name string, sheetName string, opts ...RequestOption) *PutWorksheetChartTitleRequest {
@@ -47,8 +49,32 @@ func NewPutWorksheetChartTitleRequest(chartIndex int, name string, sheetName str
     if val, ok := cfg.Params["title"].(*models.Title); ok {
         req.title = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PutWorksheetChartTitleRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PutWorksheetChartTitleRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PutWorksheetChartTitleRequest) GetMethod() string {
@@ -76,6 +102,9 @@ func (request *PutWorksheetChartTitleRequest) GetQueryParameters() url.Values {
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

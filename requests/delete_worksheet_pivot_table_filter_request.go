@@ -15,6 +15,8 @@ type DeleteWorksheetPivotTableFilterRequest struct {
     folder string
     needReCalculate *bool
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewDeleteWorksheetPivotTableFilterRequest(fieldIndex int, name string, pivotTableIndex int, sheetName string, opts ...RequestOption) *DeleteWorksheetPivotTableFilterRequest {
@@ -47,8 +49,32 @@ func NewDeleteWorksheetPivotTableFilterRequest(fieldIndex int, name string, pivo
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *DeleteWorksheetPivotTableFilterRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *DeleteWorksheetPivotTableFilterRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *DeleteWorksheetPivotTableFilterRequest) GetMethod() string {
@@ -80,6 +106,9 @@ func (request *DeleteWorksheetPivotTableFilterRequest) GetQueryParameters() url.
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

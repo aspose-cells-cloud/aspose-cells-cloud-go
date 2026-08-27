@@ -1,0 +1,129 @@
+// Package reporting provides AI-based report analysis and calculation
+// helpers on top of the Cells Cloud v4.0 API.
+//
+// The v4.0 AI endpoints used here are live:
+//
+//   - PUT /v4.0/cells/ai/report/analysis        (ReportAnalysis)
+//   - PUT /v4.0/cells/ai/summarize/spreadsheet  (Summarize)
+//   - PUT /v4.0/cells/calculate/aggergate/color (AggregateByColor)
+//   - PUT /v4.0/cells/calculate/math            (MathCalculate)
+//
+// ReportAnalysis and Summarize return a markdown text body; AggregateByColor
+// returns a JSON body. Decode them with (*RichResponse).ToBytes / .GetJSON.
+package reporting
+
+import (
+	"context"
+	"fmt"
+
+	"asposecellscloud"
+	"asposecellscloud/datasource"
+	"asposecellscloud/requests"
+)
+
+// ReportAnalysis performs an AI report analysis on a spreadsheet and returns
+// the raw response body (markdown text describing the workbook).
+func ReportAnalysis(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClient,
+	src datasource.DataSource, opts ...Option) (*asposecellscloud.RichResponse, error) {
+
+	if src == nil {
+		return nil, fmt.Errorf("%w: source is required", asposecellscloud.ErrInvalidParam)
+	}
+	cfg := &config{}
+	apply(cfg, opts)
+
+	data, err := src.ByteData()
+	if err != nil {
+		return nil, err
+	}
+
+	req := requests.NewReportAIAnalysisRequest("", cfg.reqOpts...)
+	if req == nil {
+		return nil, fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
+	}
+	req.SetSpreadsheetBytes(data, "Spreadsheet")
+
+	return runOne(ctx, client, req)
+}
+
+// Summarize generates an AI summary of a spreadsheet and writes the result
+// (markdown text) to sink.
+func Summarize(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClient,
+	src datasource.DataSource, sink datasource.DataSink, opts ...Option) error {
+
+	if src == nil || sink == nil {
+		return fmt.Errorf("%w: source and sink are required", asposecellscloud.ErrInvalidParam)
+	}
+	cfg := &config{}
+	apply(cfg, opts)
+
+	data, err := src.ByteData()
+	if err != nil {
+		return err
+	}
+
+	req := requests.NewSummarizeSpreadsheetRequest("", cfg.reqOpts...)
+	if req == nil {
+		return fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
+	}
+	req.SetSpreadsheetBytes(data, "Spreadsheet")
+
+	resp, err := runOne(ctx, client, req)
+	if err != nil {
+		return err
+	}
+	return writeToSink(sink, resp.Body)
+}
+
+// AggregateByColor aggregates cells by color in a spreadsheet and returns the
+// raw response body. Use WithWorksheet/WithRange/WithOperation/
+// WithColorPosition to scope the aggregation.
+func AggregateByColor(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClient,
+	src datasource.DataSource, opts ...Option) (*asposecellscloud.RichResponse, error) {
+
+	if src == nil {
+		return nil, fmt.Errorf("%w: source is required", asposecellscloud.ErrInvalidParam)
+	}
+	cfg := &config{}
+	apply(cfg, opts)
+
+	data, err := src.ByteData()
+	if err != nil {
+		return nil, err
+	}
+
+	req := requests.NewAggregateCellsByColorRequest("", cfg.reqOpts...)
+	if req == nil {
+		return nil, fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
+	}
+	req.SetSpreadsheetBytes(data, "Spreadsheet")
+
+	return runOne(ctx, client, req)
+}
+
+// MathCalculate runs a math calculation over value (e.g. a cell range) in a
+// spreadsheet and returns the raw response body. operation is one of "Add",
+// "Minus", "Multiply", "Divide" or "Percentage". Use WithWorksheet /
+// WithRange to scope the calculation.
+func MathCalculate(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClient,
+	src datasource.DataSource, operation, value string, opts ...Option) (*asposecellscloud.RichResponse, error) {
+
+	if src == nil {
+		return nil, fmt.Errorf("%w: source is required", asposecellscloud.ErrInvalidParam)
+	}
+	cfg := &config{}
+	apply(cfg, opts)
+
+	data, err := src.ByteData()
+	if err != nil {
+		return nil, err
+	}
+
+	req := requests.NewMathCalculateRequest(operation, "", value, cfg.reqOpts...)
+	if req == nil {
+		return nil, fmt.Errorf("%w: operation and value are required", asposecellscloud.ErrInvalidParam)
+	}
+	req.SetSpreadsheetBytes(data, "Spreadsheet")
+
+	return runOne(ctx, client, req)
+}

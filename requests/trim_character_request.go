@@ -25,6 +25,8 @@ type TrimCharacterRequest struct {
     trimSpaceBetweenWordTo1 *bool
     trimTrailing *bool
     worksheet string
+
+    extraQueryParameters map[string]string
 }
 
 func NewTrimCharacterRequest(Spreadsheet string, opts ...RequestOption) *TrimCharacterRequest {
@@ -77,6 +79,14 @@ func NewTrimCharacterRequest(Spreadsheet string, opts ...RequestOption) *TrimCha
     if val, ok := cfg.Params["worksheet"].(string); ok {
         req.worksheet = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -87,6 +97,22 @@ func (request *TrimCharacterRequest) SetSpreadsheetBytes(data []byte, name strin
     }
     request.SpreadsheetData = data
     request.SpreadsheetName = name
+}
+
+func (request *TrimCharacterRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *TrimCharacterRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *TrimCharacterRequest) GetMethod() string {
@@ -144,6 +170,9 @@ func (request *TrimCharacterRequest) GetQueryParameters() url.Values {
     }
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

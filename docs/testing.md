@@ -114,7 +114,7 @@ Each test function follows this structure:
 ```go
 func TestPostClearContents(t *testing.T) {
     // 1. Initialize client
-    client := asposecellscloud.NewCellsCloudClient(
+    client := asposecellscloud.NewAsposeCellsCloudClient(
         os.Getenv("CellsCloudClientId"),
         os.Getenv("CellsCloudClientSecret"),
         os.Getenv("CellsCloudApiBaseUrl"),

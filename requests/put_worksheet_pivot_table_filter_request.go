@@ -17,6 +17,8 @@ type PutWorksheetPivotTableFilterRequest struct {
     folder string
     needReCalculate *bool
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPutWorksheetPivotTableFilterRequest(filter *models.PivotFilter, name string, pivotTableIndex int, sheetName string, opts ...RequestOption) *PutWorksheetPivotTableFilterRequest {
@@ -52,8 +54,32 @@ func NewPutWorksheetPivotTableFilterRequest(filter *models.PivotFilter, name str
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PutWorksheetPivotTableFilterRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PutWorksheetPivotTableFilterRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PutWorksheetPivotTableFilterRequest) GetMethod() string {
@@ -84,6 +110,9 @@ func (request *PutWorksheetPivotTableFilterRequest) GetQueryParameters() url.Val
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

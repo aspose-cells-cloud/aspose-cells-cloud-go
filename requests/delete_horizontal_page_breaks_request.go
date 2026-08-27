@@ -13,6 +13,8 @@ type DeleteHorizontalPageBreaksRequest struct {
     folder string
     row *int
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewDeleteHorizontalPageBreaksRequest(name string, sheetName string, opts ...RequestOption) *DeleteHorizontalPageBreaksRequest {
@@ -43,8 +45,32 @@ func NewDeleteHorizontalPageBreaksRequest(name string, sheetName string, opts ..
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *DeleteHorizontalPageBreaksRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *DeleteHorizontalPageBreaksRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *DeleteHorizontalPageBreaksRequest) GetMethod() string {
@@ -74,6 +100,9 @@ func (request *DeleteHorizontalPageBreaksRequest) GetQueryParameters() url.Value
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

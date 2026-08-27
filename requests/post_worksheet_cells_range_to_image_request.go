@@ -15,6 +15,8 @@ type PostWorksheetCellsRangeToImageRequest struct {
 
     folder string
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostWorksheetCellsRangeToImageRequest(name string, rangeConvertRequest *models.RangeConvertRequest, sheetName string, opts ...RequestOption) *PostWorksheetCellsRangeToImageRequest {
@@ -46,8 +48,32 @@ func NewPostWorksheetCellsRangeToImageRequest(name string, rangeConvertRequest *
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostWorksheetCellsRangeToImageRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostWorksheetCellsRangeToImageRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostWorksheetCellsRangeToImageRequest) GetMethod() string {
@@ -74,6 +100,9 @@ func (request *PostWorksheetCellsRangeToImageRequest) GetQueryParameters() url.V
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

@@ -13,6 +13,8 @@ type GetWorksheetCalculateFormulaRequest struct {
 
     folder string
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewGetWorksheetCalculateFormulaRequest(formula string, name string, sheetName string, opts ...RequestOption) *GetWorksheetCalculateFormulaRequest {
@@ -44,8 +46,32 @@ func NewGetWorksheetCalculateFormulaRequest(formula string, name string, sheetNa
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *GetWorksheetCalculateFormulaRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *GetWorksheetCalculateFormulaRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *GetWorksheetCalculateFormulaRequest) GetMethod() string {
@@ -73,6 +99,9 @@ func (request *GetWorksheetCalculateFormulaRequest) GetQueryParameters() url.Val
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

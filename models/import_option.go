@@ -23,16 +23,21 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ImportOption Class Summary: This class covers the features of artificial intelligence, machine learning, deep learning, and natural language processing.
 type ImportOption struct {
-    // Destination worksheet name.  
-    DestinationWorksheet string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
-    // A boolean property `IsInsert` that can be both read and written.
-    IsInsert *bool `json:"IsInsert,omitempty" xml:"IsInsert"`
-    ImportDataType string `json:"ImportDataType,omitempty" xml:"ImportDataType"`
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    Source *FileSource `json:"Source,omitempty" xml:"Source"`
+	// Destination worksheet name.
+	DestinationWorksheet string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
+	// A boolean property `IsInsert` that can be both read and written.
+	IsInsert       *bool       `json:"IsInsert,omitempty" xml:"IsInsert"`
+	ImportDataType string      `json:"ImportDataType,omitempty" xml:"ImportDataType"`
+	DataSource     *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	Source         *FileSource `json:"Source,omitempty" xml:"Source"`
+	// SeparatorString is the column delimiter for CSV imports. The live
+	// importdata endpoint requires it for ImportDataType "CSVData".
+	SeparatorString string `json:"SeparatorString,omitempty" xml:"SeparatorString"`
+	// ConvertNumericData converts the imported data to numeric types when
+	// applicable.
+	ConvertNumericData *bool `json:"ConvertNumericData,omitempty" xml:"ConvertNumericData"`
 }

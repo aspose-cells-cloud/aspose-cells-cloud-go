@@ -15,6 +15,8 @@ type PostSetWorksheetColumnWidthRequest struct {
     count *int
     folder string
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostSetWorksheetColumnWidthRequest(columnIndex int, name string, sheetName string, width float64, opts ...RequestOption) *PostSetWorksheetColumnWidthRequest {
@@ -47,8 +49,32 @@ func NewPostSetWorksheetColumnWidthRequest(columnIndex int, name string, sheetNa
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostSetWorksheetColumnWidthRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostSetWorksheetColumnWidthRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostSetWorksheetColumnWidthRequest) GetMethod() string {
@@ -80,6 +106,9 @@ func (request *PostSetWorksheetColumnWidthRequest) GetQueryParameters() url.Valu
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

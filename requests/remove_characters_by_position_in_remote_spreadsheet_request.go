@@ -20,6 +20,8 @@ type RemoveCharactersByPositionInRemoteSpreadsheetRequest struct {
     storageName string
     theFirstNCharacters *int
     theLastNCharacters *int
+
+    extraQueryParameters map[string]string
 }
 
 func NewRemoveCharactersByPositionInRemoteSpreadsheetRequest(name string, _range string, worksheet string, opts ...RequestOption) *RemoveCharactersByPositionInRemoteSpreadsheetRequest {
@@ -72,8 +74,32 @@ func NewRemoveCharactersByPositionInRemoteSpreadsheetRequest(name string, _range
     if val, ok := cfg.Params["theLastNCharacters"].(*int); ok {
         req.theLastNCharacters = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *RemoveCharactersByPositionInRemoteSpreadsheetRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *RemoveCharactersByPositionInRemoteSpreadsheetRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *RemoveCharactersByPositionInRemoteSpreadsheetRequest) GetMethod() string {
@@ -122,6 +148,9 @@ func (request *RemoveCharactersByPositionInRemoteSpreadsheetRequest) GetQueryPar
     }
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

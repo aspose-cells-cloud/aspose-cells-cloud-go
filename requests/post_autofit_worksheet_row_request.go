@@ -16,6 +16,8 @@ type PostAutofitWorksheetRowRequest struct {
     lastColumn *int
     rowCount *int
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostAutofitWorksheetRowRequest(name string, rowIndex int, sheetName string, opts ...RequestOption) *PostAutofitWorksheetRowRequest {
@@ -53,8 +55,32 @@ func NewPostAutofitWorksheetRowRequest(name string, rowIndex int, sheetName stri
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostAutofitWorksheetRowRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostAutofitWorksheetRowRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostAutofitWorksheetRowRequest) GetMethod() string {
@@ -91,6 +117,9 @@ func (request *PostAutofitWorksheetRowRequest) GetQueryParameters() url.Values {
     }
     if request.rowCount != nil {
         localVarQueryParams.Add("rowCount", fmt.Sprintf("%v", *request.rowCount))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

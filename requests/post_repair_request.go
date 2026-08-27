@@ -13,6 +13,8 @@ type PostRepairRequest struct {
     FileName string
 
     outFormat string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostRepairRequest(File string, opts ...RequestOption) *PostRepairRequest {
@@ -29,6 +31,14 @@ func NewPostRepairRequest(File string, opts ...RequestOption) *PostRepairRequest
     if val, ok := cfg.Params["outFormat"].(string); ok {
         req.outFormat = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -39,6 +49,22 @@ func (request *PostRepairRequest) SetFileBytes(data []byte, name string) {
     }
     request.FileData = data
     request.FileName = name
+}
+
+func (request *PostRepairRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostRepairRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostRepairRequest) GetMethod() string {
@@ -60,6 +86,9 @@ func (request *PostRepairRequest) GetQueryParameters() url.Values {
     localVarQueryParams := url.Values{}
     if request.outFormat != "" {
         localVarQueryParams.Add("outFormat", fmt.Sprintf("%v", request.outFormat))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

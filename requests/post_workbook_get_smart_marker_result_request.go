@@ -14,6 +14,8 @@ type PostWorkbookGetSmartMarkerResultRequest struct {
     outStorageName string
     storageName string
     xmlFile string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostWorkbookGetSmartMarkerResultRequest(name string, opts ...RequestOption) *PostWorkbookGetSmartMarkerResultRequest {
@@ -46,8 +48,32 @@ func NewPostWorkbookGetSmartMarkerResultRequest(name string, opts ...RequestOpti
     if val, ok := cfg.Params["xmlFile"].(string); ok {
         req.xmlFile = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostWorkbookGetSmartMarkerResultRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostWorkbookGetSmartMarkerResultRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostWorkbookGetSmartMarkerResultRequest) GetMethod() string {
@@ -82,6 +108,9 @@ func (request *PostWorkbookGetSmartMarkerResultRequest) GetQueryParameters() url
     }
     if request.outStorageName != "" {
         localVarQueryParams.Add("outStorageName", fmt.Sprintf("%v", request.outStorageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

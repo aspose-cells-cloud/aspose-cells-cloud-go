@@ -1,0 +1,120 @@
+package converter
+
+import (
+	"encoding/json"
+
+	"asposecellscloud"
+	"asposecellscloud/models"
+	"asposecellscloud/requests"
+)
+
+// Option configures a high-level convert/export operation.
+type Option func(*config)
+
+type config struct {
+	reqOpts []requests.RequestOption
+}
+
+func apply(cfg *config, opts []Option) {
+	for _, o := range opts {
+		if o != nil {
+			o(cfg)
+		}
+	}
+}
+
+// WithCommonParameter passes an optional parameter to the underlying generated
+// request. The name must match the operation parameter name in the spec.
+func WithCommonParameter(name string, value interface{}) Option {
+	return func(c *config) {
+		c.reqOpts = append(c.reqOpts, requests.WithCommonParameter(name, value))
+	}
+}
+
+// WithQueryParameter appends an implicit query parameter to the request URL.
+func WithQueryParameter(name, value string) Option {
+	return func(c *config) {
+		c.reqOpts = append(c.reqOpts, requests.WithQueryParameter(name, value))
+	}
+}
+
+// WithQueryParameters appends multiple implicit query parameters.
+func WithQueryParameters(m map[string]string) Option {
+	return func(c *config) {
+		c.reqOpts = append(c.reqOpts, requests.WithQueryParameters(m))
+	}
+}
+
+// WithRaw passes any requests-level Option straight through to the generated
+// request constructor. Use it to reach parameters not covered above.
+func WithRaw(opts ...requests.RequestOption) Option {
+	return func(c *config) {
+		c.reqOpts = append(c.reqOpts, opts...)
+	}
+}
+
+// --- Conversion / export parameter group ---
+
+// WithPassword sets the workbook open password.
+func WithPassword(p string) Option {
+	return WithCommonParameter("password", p)
+}
+
+// WithRegion sets the region.
+func WithRegion(r string) Option {
+	return WithCommonParameter("region", r)
+}
+
+// WithFontsLocation sets the location of fonts used for conversion.
+func WithFontsLocation(l string) Option {
+	return WithCommonParameter("FontsLocation", l)
+}
+
+// WithOutPath writes the converted/exported file to this cloud path instead of
+// returning it in the response body.
+func WithOutPath(p string) Option {
+	return WithCommonParameter("outPath", p)
+}
+
+// WithStorageName sets the cloud storage name.
+func WithStorageName(s string) Option {
+	return WithCommonParameter("storageName", s)
+}
+
+// WithFolder sets the cloud folder that contains the workbook (cloud Workbook /
+// Worksheet export).
+func WithFolder(f string) Option {
+	return WithCommonParameter("folder", f)
+}
+
+// WithAutoRowsFit fits rows automatically before conversion.
+func WithAutoRowsFit(v bool) Option {
+	return WithCommonParameter("AutoRowsFit", asposecellscloud.BoolPtr(v))
+}
+
+// WithAutoColumnsFit fits columns automatically before conversion.
+func WithAutoColumnsFit(v bool) Option {
+	return WithCommonParameter("AutoColumnsFit", asposecellscloud.BoolPtr(v))
+}
+
+// WithCheckExcelRestriction checks the Excel restriction before conversion.
+func WithCheckExcelRestriction(v bool) Option {
+	return WithCommonParameter("checkExcelRestriction", asposecellscloud.BoolPtr(v))
+}
+
+// WithOnePagePerSheet fits each worksheet onto one page for PDF output.
+func WithOnePagePerSheet(v bool) Option {
+	return WithCommonParameter("onePagePerSheet", asposecellscloud.BoolPtr(v))
+}
+
+// WithSaveOptions attaches a SaveOptions model (serialized to the implicit
+// "SaveOptions" query parameter) for fine-grained save control.
+func WithSaveOptions(so *models.SaveOptions) Option {
+	return func(c *config) {
+		b, err := json.Marshal(so)
+		if err != nil {
+			return
+		}
+		c.reqOpts = append(c.reqOpts, requests.WithQueryParameter("SaveOptions", string(b)))
+	}
+}

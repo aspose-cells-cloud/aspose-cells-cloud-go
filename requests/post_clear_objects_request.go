@@ -18,6 +18,8 @@ type PostClearObjectsRequest struct {
     password string
     region string
     sheetname string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostClearObjectsRequest(File string, objecttype string, opts ...RequestOption) *PostClearObjectsRequest {
@@ -51,6 +53,14 @@ func NewPostClearObjectsRequest(File string, objecttype string, opts ...RequestO
     if val, ok := cfg.Params["sheetname"].(string); ok {
         req.sheetname = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -61,6 +71,22 @@ func (request *PostClearObjectsRequest) SetFileBytes(data []byte, name string) {
     }
     request.FileData = data
     request.FileName = name
+}
+
+func (request *PostClearObjectsRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostClearObjectsRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostClearObjectsRequest) GetMethod() string {
@@ -95,6 +121,9 @@ func (request *PostClearObjectsRequest) GetQueryParameters() url.Values {
     }
     if request.region != "" {
         localVarQueryParams.Add("region", fmt.Sprintf("%v", request.region))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

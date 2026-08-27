@@ -16,6 +16,8 @@ type PostUpdateWorksheetCellStyleRequest struct {
 
     folder string
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostUpdateWorksheetCellStyleRequest(cellName string, name string, sheetName string, style *models.Style, opts ...RequestOption) *PostUpdateWorksheetCellStyleRequest {
@@ -51,8 +53,32 @@ func NewPostUpdateWorksheetCellStyleRequest(cellName string, name string, sheetN
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostUpdateWorksheetCellStyleRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostUpdateWorksheetCellStyleRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostUpdateWorksheetCellStyleRequest) GetMethod() string {
@@ -80,6 +106,9 @@ func (request *PostUpdateWorksheetCellStyleRequest) GetQueryParameters() url.Val
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

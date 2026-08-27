@@ -11,6 +11,8 @@ type ObjectExistsRequest struct {
 
     storageName string
     versionId string
+
+    extraQueryParameters map[string]string
 }
 
 func NewObjectExistsRequest(path string, opts ...RequestOption) *ObjectExistsRequest {
@@ -34,8 +36,32 @@ func NewObjectExistsRequest(path string, opts ...RequestOption) *ObjectExistsReq
     if val, ok := cfg.Params["versionId"].(string); ok {
         req.versionId = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *ObjectExistsRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *ObjectExistsRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *ObjectExistsRequest) GetMethod() string {
@@ -61,6 +87,9 @@ func (request *ObjectExistsRequest) GetQueryParameters() url.Values {
     }
     if request.versionId != "" {
         localVarQueryParams.Add("versionId", fmt.Sprintf("%v", request.versionId))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

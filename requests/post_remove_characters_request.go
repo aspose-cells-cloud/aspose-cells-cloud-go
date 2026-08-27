@@ -10,9 +10,11 @@ import (
 
 type PostRemoveCharactersRequest struct {
     removeCharactersOptions *models.RemoveCharactersOptions
+
+    extraQueryParameters map[string]string
 }
 
-func NewPostRemoveCharactersRequest(removeCharactersOptions *models.RemoveCharactersOptions) *PostRemoveCharactersRequest {
+func NewPostRemoveCharactersRequest(removeCharactersOptions *models.RemoveCharactersOptions, opts ...RequestOption) *PostRemoveCharactersRequest {
     req := &PostRemoveCharactersRequest{
         removeCharactersOptions: removeCharactersOptions,
     }
@@ -20,7 +22,39 @@ func NewPostRemoveCharactersRequest(removeCharactersOptions *models.RemoveCharac
         return nil
     }
 
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
+
     return req
+}
+
+func (request *PostRemoveCharactersRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostRemoveCharactersRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostRemoveCharactersRequest) GetMethod() string {
@@ -40,6 +74,9 @@ func (request *PostRemoveCharactersRequest) GetPath() string {
 
 func (request *PostRemoveCharactersRequest) GetQueryParameters() url.Values {
     localVarQueryParams := url.Values{}
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
+    }
     return localVarQueryParams
 }
 

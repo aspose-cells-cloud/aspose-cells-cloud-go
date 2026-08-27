@@ -14,6 +14,8 @@ type DeleteWorksheetFilterRequest struct {
     criteria string
     folder string
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewDeleteWorksheetFilterRequest(fieldIndex int, name string, sheetName string, opts ...RequestOption) *DeleteWorksheetFilterRequest {
@@ -45,8 +47,32 @@ func NewDeleteWorksheetFilterRequest(fieldIndex int, name string, sheetName stri
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *DeleteWorksheetFilterRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *DeleteWorksheetFilterRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *DeleteWorksheetFilterRequest) GetMethod() string {
@@ -77,6 +103,9 @@ func (request *DeleteWorksheetFilterRequest) GetQueryParameters() url.Values {
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

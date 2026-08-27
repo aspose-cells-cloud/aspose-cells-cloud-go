@@ -13,7 +13,7 @@ import (
 
 func main() {
 
-	client := asposecellscloud.NewCellsCloudClient(os.Getenv("CellsCloudClientId"), os.Getenv("CellsCloudClientSecret"), os.Getenv("CellsCloudApiBaseUrl"))
+	client := asposecellscloud.NewAsposeCellsCloudClient(os.Getenv("AsposeCellsCloudClientId"), os.Getenv("AsposeCellsCloudClientSecret"), os.Getenv("CellsCloudApiBaseUrl"))
 	fontSetting := models.FontSetting{
 		StartIndex: asposecellscloud.Int32Ptr(0),
 		Length:     asposecellscloud.Int32Ptr(3),

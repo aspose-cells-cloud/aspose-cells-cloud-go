@@ -20,6 +20,8 @@ type PutWorksheetAddPictureRequest struct {
     storageName string
     upperLeftColumn *int
     upperLeftRow *int
+
+    extraQueryParameters map[string]string
 }
 
 func NewPutWorksheetAddPictureRequest(name string, sheetName string, opts ...RequestOption) *PutWorksheetAddPictureRequest {
@@ -65,8 +67,32 @@ func NewPutWorksheetAddPictureRequest(name string, sheetName string, opts ...Req
     if val, ok := cfg.Params["upperLeftRow"].(*int); ok {
         req.upperLeftRow = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PutWorksheetAddPictureRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PutWorksheetAddPictureRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PutWorksheetAddPictureRequest) GetMethod() string {
@@ -108,6 +134,9 @@ func (request *PutWorksheetAddPictureRequest) GetQueryParameters() url.Values {
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

@@ -11,6 +11,8 @@ type DeleteFolderRequest struct {
 
     recursive *bool
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewDeleteFolderRequest(path string, opts ...RequestOption) *DeleteFolderRequest {
@@ -34,8 +36,32 @@ func NewDeleteFolderRequest(path string, opts ...RequestOption) *DeleteFolderReq
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *DeleteFolderRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *DeleteFolderRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *DeleteFolderRequest) GetMethod() string {
@@ -61,6 +87,9 @@ func (request *DeleteFolderRequest) GetQueryParameters() url.Values {
     }
     if request.recursive != nil {
         localVarQueryParams.Add("recursive", fmt.Sprintf("%v", *request.recursive))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

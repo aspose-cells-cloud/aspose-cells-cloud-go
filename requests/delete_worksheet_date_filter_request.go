@@ -20,6 +20,8 @@ type DeleteWorksheetDateFilterRequest struct {
     second *int
     storageName string
     year *int
+
+    extraQueryParameters map[string]string
 }
 
 func NewDeleteWorksheetDateFilterRequest(dateTimeGroupingType string, fieldIndex int, name string, sheetName string, opts ...RequestOption) *DeleteWorksheetDateFilterRequest {
@@ -70,8 +72,32 @@ func NewDeleteWorksheetDateFilterRequest(dateTimeGroupingType string, fieldIndex
     if val, ok := cfg.Params["year"].(*int); ok {
         req.year = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *DeleteWorksheetDateFilterRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *DeleteWorksheetDateFilterRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *DeleteWorksheetDateFilterRequest) GetMethod() string {
@@ -118,6 +144,9 @@ func (request *DeleteWorksheetDateFilterRequest) GetQueryParameters() url.Values
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

@@ -22,6 +22,8 @@ type RemoveCharactersRequest struct {
     removeCustomValue string
     removeTextMethod string
     worksheet string
+
+    extraQueryParameters map[string]string
 }
 
 func NewRemoveCharactersRequest(Spreadsheet string, opts ...RequestOption) *RemoveCharactersRequest {
@@ -65,6 +67,14 @@ func NewRemoveCharactersRequest(Spreadsheet string, opts ...RequestOption) *Remo
     if val, ok := cfg.Params["worksheet"].(string); ok {
         req.worksheet = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -75,6 +85,22 @@ func (request *RemoveCharactersRequest) SetSpreadsheetBytes(data []byte, name st
     }
     request.SpreadsheetData = data
     request.SpreadsheetName = name
+}
+
+func (request *RemoveCharactersRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *RemoveCharactersRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *RemoveCharactersRequest) GetMethod() string {
@@ -123,6 +149,9 @@ func (request *RemoveCharactersRequest) GetQueryParameters() url.Values {
     }
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

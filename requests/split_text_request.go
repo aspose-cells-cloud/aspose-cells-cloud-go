@@ -23,6 +23,8 @@ type SplitTextRequest struct {
     _range string
     region string
     worksheet string
+
+    extraQueryParameters map[string]string
 }
 
 func NewSplitTextRequest(delimiters string, Spreadsheet string, opts ...RequestOption) *SplitTextRequest {
@@ -71,6 +73,14 @@ func NewSplitTextRequest(delimiters string, Spreadsheet string, opts ...RequestO
     if val, ok := cfg.Params["worksheet"].(string); ok {
         req.worksheet = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -81,6 +91,22 @@ func (request *SplitTextRequest) SetSpreadsheetBytes(data []byte, name string) {
     }
     request.SpreadsheetData = data
     request.SpreadsheetName = name
+}
+
+func (request *SplitTextRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *SplitTextRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *SplitTextRequest) GetMethod() string {
@@ -130,6 +156,9 @@ func (request *SplitTextRequest) GetQueryParameters() url.Values {
     }
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

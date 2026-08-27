@@ -21,6 +21,8 @@ type ConvertTextRequest struct {
     sourceCharacters string
     targetCharacters string
     worksheet string
+
+    extraQueryParameters map[string]string
 }
 
 func NewConvertTextRequest(convertTextType string, Spreadsheet string, opts ...RequestOption) *ConvertTextRequest {
@@ -63,6 +65,14 @@ func NewConvertTextRequest(convertTextType string, Spreadsheet string, opts ...R
     if val, ok := cfg.Params["worksheet"].(string); ok {
         req.worksheet = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -73,6 +83,22 @@ func (request *ConvertTextRequest) SetSpreadsheetBytes(data []byte, name string)
     }
     request.SpreadsheetData = data
     request.SpreadsheetName = name
+}
+
+func (request *ConvertTextRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *ConvertTextRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *ConvertTextRequest) GetMethod() string {
@@ -116,6 +142,9 @@ func (request *ConvertTextRequest) GetQueryParameters() url.Values {
     }
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

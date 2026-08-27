@@ -15,6 +15,8 @@ type SearchBrokenLinksInRemoteSpreadsheetRequest struct {
     region string
     storageName string
     worksheet string
+
+    extraQueryParameters map[string]string
 }
 
 func NewSearchBrokenLinksInRemoteSpreadsheetRequest(name string, opts ...RequestOption) *SearchBrokenLinksInRemoteSpreadsheetRequest {
@@ -50,8 +52,32 @@ func NewSearchBrokenLinksInRemoteSpreadsheetRequest(name string, opts ...Request
     if val, ok := cfg.Params["worksheet"].(string); ok {
         req.worksheet = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *SearchBrokenLinksInRemoteSpreadsheetRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *SearchBrokenLinksInRemoteSpreadsheetRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *SearchBrokenLinksInRemoteSpreadsheetRequest) GetMethod() string {
@@ -89,6 +115,9 @@ func (request *SearchBrokenLinksInRemoteSpreadsheetRequest) GetQueryParameters()
     }
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

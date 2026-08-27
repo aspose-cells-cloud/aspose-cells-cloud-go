@@ -123,6 +123,29 @@ func WithCommonParameter(key string, value interface{}) RequestOption {
 }
 ```
 
+### Extra Query Parameters (Implicit Extension)
+
+Every request supports custom query parameters on top of the operation's declared query parameters — an implicit special feature for passing extra attributes such as save options.
+
+Set at construction time:
+
+```go
+requests.NewConvertSpreadsheetRequest("pdf", "../testdata/Book1.xlsx",
+    requests.WithQueryParameter("SaveOptions", `{"CalcMode":"Manual"}`),
+    requests.WithQueryParameters(map[string]string{"CheckExcelRestriction": "false"}),
+)
+```
+
+Or after construction via instance methods:
+
+```go
+req := requests.NewConvertSpreadsheetRequest("pdf", "../testdata/Book1.xlsx")
+req.AddQueryParameter("CustomAttr", "abc")
+req.AddQueryParameters(map[string]string{"CustomAttr2": "def"})
+```
+
+These are appended last in `GetQueryParameters()` and merge into the final request URL.
+
 ### Parameter Type Rules
 
 | Parameter Type | Required | Optional |

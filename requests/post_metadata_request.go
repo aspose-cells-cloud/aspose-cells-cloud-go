@@ -19,6 +19,8 @@ type PostMetadataRequest struct {
     outFormat string
     password string
     region string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostMetadataRequest(cellsDocuments []models.CellsDocumentProperty, File string, opts ...RequestOption) *PostMetadataRequest {
@@ -45,6 +47,14 @@ func NewPostMetadataRequest(cellsDocuments []models.CellsDocumentProperty, File 
     if val, ok := cfg.Params["region"].(string); ok {
         req.region = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -55,6 +65,22 @@ func (request *PostMetadataRequest) SetFileBytes(data []byte, name string) {
     }
     request.FileData = data
     request.FileName = name
+}
+
+func (request *PostMetadataRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostMetadataRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostMetadataRequest) GetMethod() string {
@@ -85,6 +111,9 @@ func (request *PostMetadataRequest) GetQueryParameters() url.Values {
     }
     if request.region != "" {
         localVarQueryParams.Add("region", fmt.Sprintf("%v", request.region))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

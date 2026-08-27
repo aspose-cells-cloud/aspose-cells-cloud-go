@@ -22,6 +22,8 @@ type AddTextRequest struct {
     selectText string
     skipEmptyCells *bool
     worksheet string
+
+    extraQueryParameters map[string]string
 }
 
 func NewAddTextRequest(position string, Spreadsheet string, text string, opts ...RequestOption) *AddTextRequest {
@@ -68,6 +70,14 @@ func NewAddTextRequest(position string, Spreadsheet string, text string, opts ..
     if val, ok := cfg.Params["worksheet"].(string); ok {
         req.worksheet = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -78,6 +88,22 @@ func (request *AddTextRequest) SetSpreadsheetBytes(data []byte, name string) {
     }
     request.SpreadsheetData = data
     request.SpreadsheetName = name
+}
+
+func (request *AddTextRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *AddTextRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *AddTextRequest) GetMethod() string {
@@ -122,6 +148,9 @@ func (request *AddTextRequest) GetQueryParameters() url.Values {
     }
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

@@ -24,6 +24,8 @@ type ExtractTextRequest struct {
     _range string
     region string
     worksheet string
+
+    extraQueryParameters map[string]string
 }
 
 func NewExtractTextRequest(extractTextType string, outPositionRange string, Spreadsheet string, opts ...RequestOption) *ExtractTextRequest {
@@ -76,6 +78,14 @@ func NewExtractTextRequest(extractTextType string, outPositionRange string, Spre
     if val, ok := cfg.Params["worksheet"].(string); ok {
         req.worksheet = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -86,6 +96,22 @@ func (request *ExtractTextRequest) SetSpreadsheetBytes(data []byte, name string)
     }
     request.SpreadsheetData = data
     request.SpreadsheetName = name
+}
+
+func (request *ExtractTextRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *ExtractTextRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *ExtractTextRequest) GetMethod() string {
@@ -136,6 +162,9 @@ func (request *ExtractTextRequest) GetQueryParameters() url.Values {
     }
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

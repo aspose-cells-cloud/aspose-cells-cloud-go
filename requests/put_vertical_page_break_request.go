@@ -17,6 +17,8 @@ type PutVerticalPageBreakRequest struct {
     row *int
     startRow *int
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPutVerticalPageBreakRequest(name string, sheetName string, opts ...RequestOption) *PutVerticalPageBreakRequest {
@@ -59,8 +61,32 @@ func NewPutVerticalPageBreakRequest(name string, sheetName string, opts ...Reque
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PutVerticalPageBreakRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PutVerticalPageBreakRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PutVerticalPageBreakRequest) GetMethod() string {
@@ -102,6 +128,9 @@ func (request *PutVerticalPageBreakRequest) GetQueryParameters() url.Values {
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

@@ -9,11 +9,11 @@ The Aspose.Cells Cloud SDK for Go provides 461 API operations across 41 controll
 ### Initialization
 
 ```go
-client := asposecellscloud.NewCellsCloudClient(
+client := asposecellscloud.NewAsposeCellsCloudClient(
     clientId,      // string: Aspose Cloud Client ID
     clientSecret,  // string: Aspose Cloud Client Secret
     baseURL,       // string: API base URL (e.g., "https://api.aspose.cloud")
-    opts...,       // ...CellsCloudClientOption: optional configuration
+    opts...,       // ...AsposeCellsCloudClientOption: optional configuration
 )
 ```
 

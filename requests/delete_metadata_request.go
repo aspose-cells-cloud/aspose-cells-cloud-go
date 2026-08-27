@@ -16,6 +16,8 @@ type DeleteMetadataRequest struct {
     outFormat string
     password string
     _type string
+
+    extraQueryParameters map[string]string
 }
 
 func NewDeleteMetadataRequest(File string, opts ...RequestOption) *DeleteMetadataRequest {
@@ -41,6 +43,14 @@ func NewDeleteMetadataRequest(File string, opts ...RequestOption) *DeleteMetadat
     if val, ok := cfg.Params["type"].(string); ok {
         req._type = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -51,6 +61,22 @@ func (request *DeleteMetadataRequest) SetFileBytes(data []byte, name string) {
     }
     request.FileData = data
     request.FileName = name
+}
+
+func (request *DeleteMetadataRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *DeleteMetadataRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *DeleteMetadataRequest) GetMethod() string {
@@ -81,6 +107,9 @@ func (request *DeleteMetadataRequest) GetQueryParameters() url.Values {
     }
     if request.checkExcelRestriction != nil {
         localVarQueryParams.Add("checkExcelRestriction", fmt.Sprintf("%v", *request.checkExcelRestriction))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

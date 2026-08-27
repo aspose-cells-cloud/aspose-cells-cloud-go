@@ -16,6 +16,8 @@ type PostProtectRequest struct {
     protectWorkbookRequest *models.ProtectWorkbookRequest
 
     password string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostProtectRequest(File string, protectWorkbookRequest *models.ProtectWorkbookRequest, opts ...RequestOption) *PostProtectRequest {
@@ -37,6 +39,14 @@ func NewPostProtectRequest(File string, protectWorkbookRequest *models.ProtectWo
     if val, ok := cfg.Params["password"].(string); ok {
         req.password = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -47,6 +57,22 @@ func (request *PostProtectRequest) SetFileBytes(data []byte, name string) {
     }
     request.FileData = data
     request.FileName = name
+}
+
+func (request *PostProtectRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostProtectRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostProtectRequest) GetMethod() string {
@@ -68,6 +94,9 @@ func (request *PostProtectRequest) GetQueryParameters() url.Values {
     localVarQueryParams := url.Values{}
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

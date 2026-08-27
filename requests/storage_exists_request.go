@@ -8,9 +8,11 @@ import (
 
 type StorageExistsRequest struct {
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
-func NewStorageExistsRequest(storageName string) *StorageExistsRequest {
+func NewStorageExistsRequest(storageName string, opts ...RequestOption) *StorageExistsRequest {
     req := &StorageExistsRequest{
         storageName: storageName,
     }
@@ -18,7 +20,39 @@ func NewStorageExistsRequest(storageName string) *StorageExistsRequest {
         return nil
     }
 
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
+
     return req
+}
+
+func (request *StorageExistsRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *StorageExistsRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *StorageExistsRequest) GetMethod() string {
@@ -39,6 +73,9 @@ func (request *StorageExistsRequest) GetPath() string {
 
 func (request *StorageExistsRequest) GetQueryParameters() url.Values {
     localVarQueryParams := url.Values{}
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
+    }
     return localVarQueryParams
 }
 

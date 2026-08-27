@@ -10,9 +10,11 @@ import (
 
 type PostAddTextContentRequest struct {
     addTextOptions *models.AddTextOptions
+
+    extraQueryParameters map[string]string
 }
 
-func NewPostAddTextContentRequest(addTextOptions *models.AddTextOptions) *PostAddTextContentRequest {
+func NewPostAddTextContentRequest(addTextOptions *models.AddTextOptions, opts ...RequestOption) *PostAddTextContentRequest {
     req := &PostAddTextContentRequest{
         addTextOptions: addTextOptions,
     }
@@ -20,7 +22,39 @@ func NewPostAddTextContentRequest(addTextOptions *models.AddTextOptions) *PostAd
         return nil
     }
 
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
+
     return req
+}
+
+func (request *PostAddTextContentRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostAddTextContentRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostAddTextContentRequest) GetMethod() string {
@@ -40,6 +74,9 @@ func (request *PostAddTextContentRequest) GetPath() string {
 
 func (request *PostAddTextContentRequest) GetQueryParameters() url.Values {
     localVarQueryParams := url.Values{}
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
+    }
     return localVarQueryParams
 }
 

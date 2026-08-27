@@ -13,6 +13,8 @@ type PostWorksheetListObjectRemoveDuplicatesRequest struct {
 
     folder string
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostWorksheetListObjectRemoveDuplicatesRequest(listObjectIndex int, name string, sheetName string, opts ...RequestOption) *PostWorksheetListObjectRemoveDuplicatesRequest {
@@ -41,8 +43,32 @@ func NewPostWorksheetListObjectRemoveDuplicatesRequest(listObjectIndex int, name
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostWorksheetListObjectRemoveDuplicatesRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostWorksheetListObjectRemoveDuplicatesRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostWorksheetListObjectRemoveDuplicatesRequest) GetMethod() string {
@@ -70,6 +96,9 @@ func (request *PostWorksheetListObjectRemoveDuplicatesRequest) GetQueryParameter
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

@@ -15,6 +15,8 @@ type PutWorkbookCreateRequest struct {
     isWriteOver *bool
     storageName string
     templateFile string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPutWorkbookCreateRequest(name string, opts ...RequestOption) *PutWorkbookCreateRequest {
@@ -50,8 +52,32 @@ func NewPutWorkbookCreateRequest(name string, opts ...RequestOption) *PutWorkboo
     if val, ok := cfg.Params["templateFile"].(string); ok {
         req.templateFile = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PutWorkbookCreateRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PutWorkbookCreateRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PutWorkbookCreateRequest) GetMethod() string {
@@ -89,6 +115,9 @@ func (request *PutWorkbookCreateRequest) GetQueryParameters() url.Values {
     }
     if request.checkExcelRestriction != nil {
         localVarQueryParams.Add("checkExcelRestriction", fmt.Sprintf("%v", *request.checkExcelRestriction))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

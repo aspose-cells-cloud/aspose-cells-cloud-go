@@ -17,6 +17,8 @@ type PostWorkbookDataDeduplicationRequest struct {
     password string
     region string
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostWorkbookDataDeduplicationRequest(deduplicationRegion *models.DeduplicationRegion, name string, opts ...RequestOption) *PostWorkbookDataDeduplicationRequest {
@@ -53,8 +55,32 @@ func NewPostWorkbookDataDeduplicationRequest(deduplicationRegion *models.Dedupli
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostWorkbookDataDeduplicationRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostWorkbookDataDeduplicationRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostWorkbookDataDeduplicationRequest) GetMethod() string {
@@ -89,6 +115,9 @@ func (request *PostWorkbookDataDeduplicationRequest) GetQueryParameters() url.Va
     }
     if request.checkExcelRestriction != nil {
         localVarQueryParams.Add("checkExcelRestriction", fmt.Sprintf("%v", *request.checkExcelRestriction))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

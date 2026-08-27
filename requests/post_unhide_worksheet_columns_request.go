@@ -15,6 +15,8 @@ type PostUnhideWorksheetColumnsRequest struct {
     folder string
     storageName string
     width *float64
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostUnhideWorksheetColumnsRequest(name string, sheetName string, startColumn int, totalColumns int, opts ...RequestOption) *PostUnhideWorksheetColumnsRequest {
@@ -47,8 +49,32 @@ func NewPostUnhideWorksheetColumnsRequest(name string, sheetName string, startCo
     if val, ok := cfg.Params["width"].(*float64); ok {
         req.width = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostUnhideWorksheetColumnsRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostUnhideWorksheetColumnsRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostUnhideWorksheetColumnsRequest) GetMethod() string {
@@ -80,6 +106,9 @@ func (request *PostUnhideWorksheetColumnsRequest) GetQueryParameters() url.Value
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

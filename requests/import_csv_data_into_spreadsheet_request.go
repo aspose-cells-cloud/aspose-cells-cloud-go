@@ -25,6 +25,8 @@ type ImportCSVDataIntoSpreadsheetRequest struct {
     password string
     region string
     splitter string
+
+    extraQueryParameters map[string]string
 }
 
 func NewImportCSVDataIntoSpreadsheetRequest(datafile string, Spreadsheet string, startcell string, worksheet string, opts ...RequestOption) *ImportCSVDataIntoSpreadsheetRequest {
@@ -72,6 +74,14 @@ func NewImportCSVDataIntoSpreadsheetRequest(datafile string, Spreadsheet string,
     if val, ok := cfg.Params["splitter"].(string); ok {
         req.splitter = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -90,6 +100,22 @@ func (request *ImportCSVDataIntoSpreadsheetRequest) SetSpreadsheetBytes(data []b
     }
     request.SpreadsheetData = data
     request.SpreadsheetName = name
+}
+
+func (request *ImportCSVDataIntoSpreadsheetRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *ImportCSVDataIntoSpreadsheetRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *ImportCSVDataIntoSpreadsheetRequest) GetMethod() string {
@@ -134,6 +160,9 @@ func (request *ImportCSVDataIntoSpreadsheetRequest) GetQueryParameters() url.Val
     }
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

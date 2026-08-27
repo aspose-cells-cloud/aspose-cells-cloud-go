@@ -16,6 +16,8 @@ type PostWorksheetCellSetValueRequest struct {
     storageName string
     _type string
     value string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostWorksheetCellSetValueRequest(cellName string, name string, sheetName string, opts ...RequestOption) *PostWorksheetCellSetValueRequest {
@@ -56,8 +58,32 @@ func NewPostWorksheetCellSetValueRequest(cellName string, name string, sheetName
     if val, ok := cfg.Params["value"].(string); ok {
         req.value = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *PostWorksheetCellSetValueRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostWorksheetCellSetValueRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostWorksheetCellSetValueRequest) GetMethod() string {
@@ -94,6 +120,9 @@ func (request *PostWorksheetCellSetValueRequest) GetQueryParameters() url.Values
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

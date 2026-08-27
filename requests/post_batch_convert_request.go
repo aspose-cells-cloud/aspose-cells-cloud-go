@@ -10,9 +10,11 @@ import (
 
 type PostBatchConvertRequest struct {
     batchConvertRequest *models.BatchConvertRequest
+
+    extraQueryParameters map[string]string
 }
 
-func NewPostBatchConvertRequest(batchConvertRequest *models.BatchConvertRequest) *PostBatchConvertRequest {
+func NewPostBatchConvertRequest(batchConvertRequest *models.BatchConvertRequest, opts ...RequestOption) *PostBatchConvertRequest {
     req := &PostBatchConvertRequest{
         batchConvertRequest: batchConvertRequest,
     }
@@ -20,7 +22,39 @@ func NewPostBatchConvertRequest(batchConvertRequest *models.BatchConvertRequest)
         return nil
     }
 
+    cfg := &requestConfig{
+        Params: make(map[string]interface{}),
+    }
+    for _, opt := range opts {
+        opt.apply(cfg)
+    }
+
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
+
     return req
+}
+
+func (request *PostBatchConvertRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostBatchConvertRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostBatchConvertRequest) GetMethod() string {
@@ -40,6 +74,9 @@ func (request *PostBatchConvertRequest) GetPath() string {
 
 func (request *PostBatchConvertRequest) GetQueryParameters() url.Values {
     localVarQueryParams := url.Values{}
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
+    }
     return localVarQueryParams
 }
 

@@ -17,6 +17,8 @@ type PostAssembleRequest struct {
     outFormat string
     password string
     region string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostAssembleRequest(datasource string, File string, opts ...RequestOption) *PostAssembleRequest {
@@ -47,6 +49,14 @@ func NewPostAssembleRequest(datasource string, File string, opts ...RequestOptio
     if val, ok := cfg.Params["region"].(string); ok {
         req.region = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -57,6 +67,22 @@ func (request *PostAssembleRequest) SetFileBytes(data []byte, name string) {
     }
     request.FileData = data
     request.FileName = name
+}
+
+func (request *PostAssembleRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostAssembleRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostAssembleRequest) GetMethod() string {
@@ -88,6 +114,9 @@ func (request *PostAssembleRequest) GetQueryParameters() url.Values {
     }
     if request.region != "" {
         localVarQueryParams.Add("region", fmt.Sprintf("%v", request.region))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

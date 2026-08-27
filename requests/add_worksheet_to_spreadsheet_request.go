@@ -19,6 +19,8 @@ type AddWorksheetToSpreadsheetRequest struct {
     region string
     sheetName string
     sheetType string
+
+    extraQueryParameters map[string]string
 }
 
 func NewAddWorksheetToSpreadsheetRequest(Spreadsheet string, opts ...RequestOption) *AddWorksheetToSpreadsheetRequest {
@@ -53,6 +55,14 @@ func NewAddWorksheetToSpreadsheetRequest(Spreadsheet string, opts ...RequestOpti
     if val, ok := cfg.Params["sheetType"].(string); ok {
         req.sheetType = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -63,6 +73,22 @@ func (request *AddWorksheetToSpreadsheetRequest) SetSpreadsheetBytes(data []byte
     }
     request.SpreadsheetData = data
     request.SpreadsheetName = name
+}
+
+func (request *AddWorksheetToSpreadsheetRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *AddWorksheetToSpreadsheetRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *AddWorksheetToSpreadsheetRequest) GetMethod() string {
@@ -102,6 +128,9 @@ func (request *AddWorksheetToSpreadsheetRequest) GetQueryParameters() url.Values
     }
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

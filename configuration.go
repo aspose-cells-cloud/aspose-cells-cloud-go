@@ -97,12 +97,14 @@ func NewConfiguration(clientId string, clientSecret string, basePath string, ver
 		cfg.BasePath = cfg.BasePath[0 : len(cfg.BasePath)-1]
 	}
 
-	if strings.HasSuffix(cfg.BasePath, "v3.0") {
+	switch {
+	case strings.HasSuffix(cfg.BasePath, "v4.0"):
+		cfg.BasePath = cfg.BasePath[0 : len(cfg.BasePath)-5]
+		cfg.Version = "v4.0"
+	case strings.HasSuffix(cfg.BasePath, "v3.0"):
 		cfg.BasePath = cfg.BasePath[0 : len(cfg.BasePath)-5]
 		cfg.Version = "v3.0"
-	}
-
-	if strings.HasSuffix(cfg.BasePath, "v1.1") {
+	case strings.HasSuffix(cfg.BasePath, "v1.1"):
 		cfg.BasePath = cfg.BasePath[0 : len(cfg.BasePath)-5]
 		cfg.Version = "v1.1"
 	}

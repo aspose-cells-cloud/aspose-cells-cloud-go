@@ -18,6 +18,8 @@ type RenameWorksheetInSpreadsheetRequest struct {
     outStorageName string
     password string
     region string
+
+    extraQueryParameters map[string]string
 }
 
 func NewRenameWorksheetInSpreadsheetRequest(sourceName string, Spreadsheet string, targetName string, opts ...RequestOption) *RenameWorksheetInSpreadsheetRequest {
@@ -52,6 +54,14 @@ func NewRenameWorksheetInSpreadsheetRequest(sourceName string, Spreadsheet strin
     if val, ok := cfg.Params["region"].(string); ok {
         req.region = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -62,6 +72,22 @@ func (request *RenameWorksheetInSpreadsheetRequest) SetSpreadsheetBytes(data []b
     }
     request.SpreadsheetData = data
     request.SpreadsheetName = name
+}
+
+func (request *RenameWorksheetInSpreadsheetRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *RenameWorksheetInSpreadsheetRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *RenameWorksheetInSpreadsheetRequest) GetMethod() string {
@@ -94,6 +120,9 @@ func (request *RenameWorksheetInSpreadsheetRequest) GetQueryParameters() url.Val
     }
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

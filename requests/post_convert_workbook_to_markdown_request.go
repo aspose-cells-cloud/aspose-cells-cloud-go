@@ -16,6 +16,8 @@ type PostConvertWorkbookToMarkdownRequest struct {
     FontsLocation string
     password string
     region string
+
+    extraQueryParameters map[string]string
 }
 
 func NewPostConvertWorkbookToMarkdownRequest(File string, opts ...RequestOption) *PostConvertWorkbookToMarkdownRequest {
@@ -41,6 +43,14 @@ func NewPostConvertWorkbookToMarkdownRequest(File string, opts ...RequestOption)
     if val, ok := cfg.Params["region"].(string); ok {
         req.region = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -51,6 +61,22 @@ func (request *PostConvertWorkbookToMarkdownRequest) SetFileBytes(data []byte, n
     }
     request.FileData = data
     request.FileName = name
+}
+
+func (request *PostConvertWorkbookToMarkdownRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *PostConvertWorkbookToMarkdownRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *PostConvertWorkbookToMarkdownRequest) GetMethod() string {
@@ -81,6 +107,9 @@ func (request *PostConvertWorkbookToMarkdownRequest) GetQueryParameters() url.Va
     }
     if request.FontsLocation != "" {
         localVarQueryParams.Add("FontsLocation", fmt.Sprintf("%v", request.FontsLocation))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

@@ -18,6 +18,8 @@ type AggregateCellsByColorRequest struct {
     _range string
     region string
     worksheet string
+
+    extraQueryParameters map[string]string
 }
 
 func NewAggregateCellsByColorRequest(Spreadsheet string, opts ...RequestOption) *AggregateCellsByColorRequest {
@@ -49,6 +51,14 @@ func NewAggregateCellsByColorRequest(Spreadsheet string, opts ...RequestOption) 
     if val, ok := cfg.Params["worksheet"].(string); ok {
         req.worksheet = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -59,6 +69,22 @@ func (request *AggregateCellsByColorRequest) SetSpreadsheetBytes(data []byte, na
     }
     request.SpreadsheetData = data
     request.SpreadsheetName = name
+}
+
+func (request *AggregateCellsByColorRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *AggregateCellsByColorRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *AggregateCellsByColorRequest) GetMethod() string {
@@ -95,6 +121,9 @@ func (request *AggregateCellsByColorRequest) GetQueryParameters() url.Values {
     }
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

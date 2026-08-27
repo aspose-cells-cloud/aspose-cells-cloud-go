@@ -18,6 +18,8 @@ type SearchSpreadsheetContentRequest struct {
     password string
     region string
     worksheet string
+
+    extraQueryParameters map[string]string
 }
 
 func NewSearchSpreadsheetContentRequest(searchText string, Spreadsheet string, opts ...RequestOption) *SearchSpreadsheetContentRequest {
@@ -51,6 +53,14 @@ func NewSearchSpreadsheetContentRequest(searchText string, Spreadsheet string, o
     if val, ok := cfg.Params["worksheet"].(string); ok {
         req.worksheet = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
 }
@@ -61,6 +71,22 @@ func (request *SearchSpreadsheetContentRequest) SetSpreadsheetBytes(data []byte,
     }
     request.SpreadsheetData = data
     request.SpreadsheetName = name
+}
+
+func (request *SearchSpreadsheetContentRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *SearchSpreadsheetContentRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *SearchSpreadsheetContentRequest) GetMethod() string {
@@ -95,6 +121,9 @@ func (request *SearchSpreadsheetContentRequest) GetQueryParameters() url.Values 
     }
     if request.password != "" {
         localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }

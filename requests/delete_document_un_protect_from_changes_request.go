@@ -11,6 +11,8 @@ type DeleteDocumentUnProtectFromChangesRequest struct {
 
     folder string
     storageName string
+
+    extraQueryParameters map[string]string
 }
 
 func NewDeleteDocumentUnProtectFromChangesRequest(name string, opts ...RequestOption) *DeleteDocumentUnProtectFromChangesRequest {
@@ -34,8 +36,32 @@ func NewDeleteDocumentUnProtectFromChangesRequest(name string, opts ...RequestOp
     if val, ok := cfg.Params["storageName"].(string); ok {
         req.storageName = val
     }
+    if len(cfg.extraQueryParams) > 0 {
+        if req.extraQueryParameters == nil {
+            req.extraQueryParameters = make(map[string]string)
+        }
+        for k, v := range cfg.extraQueryParams {
+            req.extraQueryParameters[k] = v
+        }
+    }
 
     return req
+}
+
+func (request *DeleteDocumentUnProtectFromChangesRequest) AddQueryParameter(key, value string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    request.extraQueryParameters[key] = value
+}
+
+func (request *DeleteDocumentUnProtectFromChangesRequest) AddQueryParameters(params map[string]string) {
+    if request.extraQueryParameters == nil {
+        request.extraQueryParameters = make(map[string]string)
+    }
+    for k, v := range params {
+        request.extraQueryParameters[k] = v
+    }
 }
 
 func (request *DeleteDocumentUnProtectFromChangesRequest) GetMethod() string {
@@ -61,6 +87,9 @@ func (request *DeleteDocumentUnProtectFromChangesRequest) GetQueryParameters() u
     }
     if request.storageName != "" {
         localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+    }
+    for k, v := range request.extraQueryParameters {
+        localVarQueryParams.Add(k, v)
     }
     return localVarQueryParams
 }
