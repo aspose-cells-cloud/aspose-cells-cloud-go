@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostAddTextContentRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostAddTextContentRequest(addTextOptions *models.AddTextOptions, opts ...RequestOption) *PostAddTextContentRequest {
+func NewPostAddTextContentRequest(addTextOptions *models.AddTextOptions, opts ...Option) *PostAddTextContentRequest {
     req := &PostAddTextContentRequest{
         addTextOptions: addTextOptions,
     }
@@ -89,6 +88,6 @@ func (request *PostAddTextContentRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *PostAddTextContentRequest) Description() {
-    fmt.Println(strings.Trim("Adds text content to a specified location within a document. It requires an object that defines the text to be added and the insertion location.", " "))
+func (request *PostAddTextContentRequest) Description() string {
+    return strings.Trim("Adds text content to a specified location within a document. It requires an object that defines the text to be added and the insertion location.", " ")
 }

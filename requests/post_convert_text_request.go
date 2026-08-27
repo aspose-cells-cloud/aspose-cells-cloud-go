@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostConvertTextRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostConvertTextRequest(convertTextOptions *models.ConvertTextOptions, opts ...RequestOption) *PostConvertTextRequest {
+func NewPostConvertTextRequest(convertTextOptions *models.ConvertTextOptions, opts ...Option) *PostConvertTextRequest {
     req := &PostConvertTextRequest{
         convertTextOptions: convertTextOptions,
     }
@@ -89,6 +88,6 @@ func (request *PostConvertTextRequest) GetMultipartForm() map[string]interface{}
     return localVarFormParams
 }
 
-func (request *PostConvertTextRequest) Description() {
-    fmt.Println(strings.Trim("Enhance Excel data through essential text conversions: convert text to numbers, replace characters and line breaks, and remove accents.", " "))
+func (request *PostConvertTextRequest) Description() string {
+    return strings.Trim("Enhance Excel data through essential text conversions: convert text to numbers, replace characters and line breaks, and remove accents.", " ")
 }

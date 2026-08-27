@@ -22,7 +22,7 @@ type PostCopyWorksheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostCopyWorksheetRequest(name string, options *models.CopyOptions, sheetName string, sourceSheet string, opts ...RequestOption) *PostCopyWorksheetRequest {
+func NewPostCopyWorksheetRequest(name string, options *models.CopyOptions, sheetName string, sourceSheet string, opts ...Option) *PostCopyWorksheetRequest {
     req := &PostCopyWorksheetRequest{
         name: name,
         options: options,
@@ -136,6 +136,6 @@ func (request *PostCopyWorksheetRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *PostCopyWorksheetRequest) Description() {
-    fmt.Println(strings.Trim("Copy contents and formats from another worksheet.", " "))
+func (request *PostCopyWorksheetRequest) Description() string {
+    return strings.Trim("Copy contents and formats from another worksheet.", " ")
 }

@@ -22,7 +22,7 @@ type PutWorksheetOleObjectRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetOleObjectRequest(name string, sheetName string, opts ...RequestOption) *PutWorksheetOleObjectRequest {
+func NewPutWorksheetOleObjectRequest(name string, sheetName string, opts ...Option) *PutWorksheetOleObjectRequest {
     req := &PutWorksheetOleObjectRequest{
         name: name,
         sheetName: sheetName,
@@ -151,6 +151,6 @@ func (request *PutWorksheetOleObjectRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *PutWorksheetOleObjectRequest) Description() {
-    fmt.Println(strings.Trim("Add an OLE object in the worksheet.", " "))
+func (request *PutWorksheetOleObjectRequest) Description() string {
+    return strings.Trim("Add an OLE object in the worksheet.", " ")
 }

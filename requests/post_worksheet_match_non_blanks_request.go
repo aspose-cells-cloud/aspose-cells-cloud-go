@@ -17,7 +17,7 @@ type PostWorksheetMatchNonBlanksRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetMatchNonBlanksRequest(fieldIndex int, name string, sheetName string, opts ...RequestOption) *PostWorksheetMatchNonBlanksRequest {
+func NewPostWorksheetMatchNonBlanksRequest(fieldIndex int, name string, sheetName string, opts ...Option) *PostWorksheetMatchNonBlanksRequest {
     req := &PostWorksheetMatchNonBlanksRequest{
         fieldIndex: fieldIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *PostWorksheetMatchNonBlanksRequest) GetMultipartForm() map[string
     return localVarFormParams
 }
 
-func (request *PostWorksheetMatchNonBlanksRequest) Description() {
-    fmt.Println(strings.Trim("Match all not blank cells in the list.", " "))
+func (request *PostWorksheetMatchNonBlanksRequest) Description() string {
+    return strings.Trim("Match all not blank cells in the list.", " ")
 }

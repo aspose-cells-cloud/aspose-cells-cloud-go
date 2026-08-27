@@ -27,7 +27,7 @@ type ImportJSONDataIntoSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewImportJSONDataIntoSpreadsheetRequest(datafile string, Spreadsheet string, startcell string, worksheet string, opts ...RequestOption) *ImportJSONDataIntoSpreadsheetRequest {
+func NewImportJSONDataIntoSpreadsheetRequest(datafile string, Spreadsheet string, startcell string, worksheet string, opts ...Option) *ImportJSONDataIntoSpreadsheetRequest {
     req := &ImportJSONDataIntoSpreadsheetRequest{
         datafile: datafile,
         Spreadsheet: Spreadsheet,
@@ -172,6 +172,6 @@ func (request *ImportJSONDataIntoSpreadsheetRequest) GetMultipartForm() map[stri
     return localVarFormParams
 }
 
-func (request *ImportJSONDataIntoSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Import JSON data file into the local spreadsheet.", " "))
+func (request *ImportJSONDataIntoSpreadsheetRequest) Description() string {
+    return strings.Trim("Import JSON data file into the local spreadsheet.", " ")
 }

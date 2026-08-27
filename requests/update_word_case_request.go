@@ -23,7 +23,7 @@ type UpdateWordCaseRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewUpdateWordCaseRequest(Spreadsheet string, wordCaseType string, opts ...RequestOption) *UpdateWordCaseRequest {
+func NewUpdateWordCaseRequest(Spreadsheet string, wordCaseType string, opts ...Option) *UpdateWordCaseRequest {
     req := &UpdateWordCaseRequest{
         Spreadsheet: Spreadsheet,
         wordCaseType: wordCaseType,
@@ -149,6 +149,6 @@ func (request *UpdateWordCaseRequest) GetMultipartForm() map[string]interface{} 
     return localVarFormParams
 }
 
-func (request *UpdateWordCaseRequest) Description() {
-    fmt.Println(strings.Trim("Specify changing the text case in a spreadsheet to switch between uppercase, lowercase, capitalizing the first letter of each word, or capitalizing the first letter of a sentence, and adjust the text according to specific needs.", " "))
+func (request *UpdateWordCaseRequest) Description() string {
+    return strings.Trim("Specify changing the text case in a spreadsheet to switch between uppercase, lowercase, capitalizing the first letter of each word, or capitalizing the first letter of a sentence, and adjust the text according to specific needs.", " ")
 }

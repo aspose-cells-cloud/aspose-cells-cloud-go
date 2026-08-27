@@ -17,7 +17,7 @@ type DeleteWorksheetChartLegendRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetChartLegendRequest(chartIndex int, name string, sheetName string, opts ...RequestOption) *DeleteWorksheetChartLegendRequest {
+func NewDeleteWorksheetChartLegendRequest(chartIndex int, name string, sheetName string, opts ...Option) *DeleteWorksheetChartLegendRequest {
     req := &DeleteWorksheetChartLegendRequest{
         chartIndex: chartIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *DeleteWorksheetChartLegendRequest) GetMultipartForm() map[string]
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetChartLegendRequest) Description() {
-    fmt.Println(strings.Trim("Hides chart legend in the worksheet.", " "))
+func (request *DeleteWorksheetChartLegendRequest) Description() string {
+    return strings.Trim("Hides chart legend in the worksheet.", " ")
 }

@@ -17,7 +17,7 @@ type DeleteWorksheetOleObjectRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetOleObjectRequest(name string, oleObjectIndex int, sheetName string, opts ...RequestOption) *DeleteWorksheetOleObjectRequest {
+func NewDeleteWorksheetOleObjectRequest(name string, oleObjectIndex int, sheetName string, opts ...Option) *DeleteWorksheetOleObjectRequest {
     req := &DeleteWorksheetOleObjectRequest{
         name: name,
         oleObjectIndex: oleObjectIndex,
@@ -112,6 +112,6 @@ func (request *DeleteWorksheetOleObjectRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetOleObjectRequest) Description() {
-    fmt.Println(strings.Trim("Delete an OLE object in the worksheet.", " "))
+func (request *DeleteWorksheetOleObjectRequest) Description() string {
+    return strings.Trim("Delete an OLE object in the worksheet.", " ")
 }

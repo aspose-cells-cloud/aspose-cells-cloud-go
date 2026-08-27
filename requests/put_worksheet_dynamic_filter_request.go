@@ -21,7 +21,7 @@ type PutWorksheetDynamicFilterRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetDynamicFilterRequest(dynamicFilterType string, fieldIndex int, name string, _range string, sheetName string, opts ...RequestOption) *PutWorksheetDynamicFilterRequest {
+func NewPutWorksheetDynamicFilterRequest(dynamicFilterType string, fieldIndex int, name string, _range string, sheetName string, opts ...Option) *PutWorksheetDynamicFilterRequest {
     req := &PutWorksheetDynamicFilterRequest{
         dynamicFilterType: dynamicFilterType,
         fieldIndex: fieldIndex,
@@ -138,6 +138,6 @@ func (request *PutWorksheetDynamicFilterRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *PutWorksheetDynamicFilterRequest) Description() {
-    fmt.Println(strings.Trim("Add a dynamic filter in the worksheet.", " "))
+func (request *PutWorksheetDynamicFilterRequest) Description() string {
+    return strings.Trim("Add a dynamic filter in the worksheet.", " ")
 }

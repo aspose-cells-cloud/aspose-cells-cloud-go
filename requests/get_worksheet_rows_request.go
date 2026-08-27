@@ -18,7 +18,7 @@ type GetWorksheetRowsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetRowsRequest(name string, sheetName string, opts ...RequestOption) *GetWorksheetRowsRequest {
+func NewGetWorksheetRowsRequest(name string, sheetName string, opts ...Option) *GetWorksheetRowsRequest {
     req := &GetWorksheetRowsRequest{
         name: name,
         sheetName: sheetName,
@@ -123,6 +123,6 @@ func (request *GetWorksheetRowsRequest) GetMultipartForm() map[string]interface{
     return localVarFormParams
 }
 
-func (request *GetWorksheetRowsRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve descriptions of rows in the worksheet.", " "))
+func (request *GetWorksheetRowsRequest) Description() string {
+    return strings.Trim("Retrieve descriptions of rows in the worksheet.", " ")
 }

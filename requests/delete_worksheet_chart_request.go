@@ -17,7 +17,7 @@ type DeleteWorksheetChartRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetChartRequest(chartIndex int, name string, sheetName string, opts ...RequestOption) *DeleteWorksheetChartRequest {
+func NewDeleteWorksheetChartRequest(chartIndex int, name string, sheetName string, opts ...Option) *DeleteWorksheetChartRequest {
     req := &DeleteWorksheetChartRequest{
         chartIndex: chartIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *DeleteWorksheetChartRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetChartRequest) Description() {
-    fmt.Println(strings.Trim("Delete a chart by index in the worksheet.", " "))
+func (request *DeleteWorksheetChartRequest) Description() string {
+    return strings.Trim("Delete a chart by index in the worksheet.", " ")
 }

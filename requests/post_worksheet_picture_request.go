@@ -20,7 +20,7 @@ type PostWorksheetPictureRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetPictureRequest(name string, picture *models.Picture, pictureIndex int, sheetName string, opts ...RequestOption) *PostWorksheetPictureRequest {
+func NewPostWorksheetPictureRequest(name string, picture *models.Picture, pictureIndex int, sheetName string, opts ...Option) *PostWorksheetPictureRequest {
     req := &PostWorksheetPictureRequest{
         name: name,
         picture: picture,
@@ -119,6 +119,6 @@ func (request *PostWorksheetPictureRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *PostWorksheetPictureRequest) Description() {
-    fmt.Println(strings.Trim("Update a picture by index in the worksheet.", " "))
+func (request *PostWorksheetPictureRequest) Description() string {
+    return strings.Trim("Update a picture by index in the worksheet.", " ")
 }

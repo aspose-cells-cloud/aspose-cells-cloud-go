@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostRemoveDuplicatesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostRemoveDuplicatesRequest(removeDuplicatesOptions *models.RemoveDuplicatesOptions, opts ...RequestOption) *PostRemoveDuplicatesRequest {
+func NewPostRemoveDuplicatesRequest(removeDuplicatesOptions *models.RemoveDuplicatesOptions, opts ...Option) *PostRemoveDuplicatesRequest {
     req := &PostRemoveDuplicatesRequest{
         removeDuplicatesOptions: removeDuplicatesOptions,
     }
@@ -89,6 +88,6 @@ func (request *PostRemoveDuplicatesRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *PostRemoveDuplicatesRequest) Description() {
-    fmt.Println(strings.Trim("Efficiently remove duplicate substrings from Excel cells. Select a range, specify delimiters, and apply options to eliminate repeated text segments.", " "))
+func (request *PostRemoveDuplicatesRequest) Description() string {
+    return strings.Trim("Efficiently remove duplicate substrings from Excel cells. Select a range, specify delimiters, and apply options to eliminate repeated text segments.", " ")
 }

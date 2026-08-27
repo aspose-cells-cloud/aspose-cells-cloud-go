@@ -21,7 +21,7 @@ type PutWorksheetHyperlinkRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetHyperlinkRequest(address string, firstColumn int, firstRow int, name string, sheetName string, totalColumns int, totalRows int, opts ...RequestOption) *PutWorksheetHyperlinkRequest {
+func NewPutWorksheetHyperlinkRequest(address string, firstColumn int, firstRow int, name string, sheetName string, totalColumns int, totalRows int, opts ...Option) *PutWorksheetHyperlinkRequest {
     req := &PutWorksheetHyperlinkRequest{
         address: address,
         firstColumn: firstColumn,
@@ -127,6 +127,6 @@ func (request *PutWorksheetHyperlinkRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *PutWorksheetHyperlinkRequest) Description() {
-    fmt.Println(strings.Trim("Add hyperlink in the worksheet.", " "))
+func (request *PutWorksheetHyperlinkRequest) Description() string {
+    return strings.Trim("Add hyperlink in the worksheet.", " ")
 }

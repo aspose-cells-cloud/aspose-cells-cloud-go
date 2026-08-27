@@ -17,7 +17,7 @@ type PostWorkbooksMergeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorkbooksMergeRequest(mergeWith string, name string, opts ...RequestOption) *PostWorkbooksMergeRequest {
+func NewPostWorkbooksMergeRequest(mergeWith string, name string, opts ...Option) *PostWorkbooksMergeRequest {
     req := &PostWorkbooksMergeRequest{
         mergeWith: mergeWith,
         name: name,
@@ -116,6 +116,6 @@ func (request *PostWorkbooksMergeRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *PostWorkbooksMergeRequest) Description() {
-    fmt.Println(strings.Trim("Merge a workbook into the existing workbook.", " "))
+func (request *PostWorkbooksMergeRequest) Description() string {
+    return strings.Trim("Merge a workbook into the existing workbook.", " ")
 }

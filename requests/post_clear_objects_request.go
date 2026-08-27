@@ -22,7 +22,7 @@ type PostClearObjectsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostClearObjectsRequest(File string, objecttype string, opts ...RequestOption) *PostClearObjectsRequest {
+func NewPostClearObjectsRequest(File string, objecttype string, opts ...Option) *PostClearObjectsRequest {
     req := &PostClearObjectsRequest{
         File: File,
         objecttype: objecttype,
@@ -142,6 +142,6 @@ func (request *PostClearObjectsRequest) GetMultipartForm() map[string]interface{
     return localVarFormParams
 }
 
-func (request *PostClearObjectsRequest) Description() {
-    fmt.Println(strings.Trim("Clear internal elements in Excel files and generate output files in various formats.", " "))
+func (request *PostClearObjectsRequest) Description() string {
+    return strings.Trim("Clear internal elements in Excel files and generate output files in various formats.", " ")
 }

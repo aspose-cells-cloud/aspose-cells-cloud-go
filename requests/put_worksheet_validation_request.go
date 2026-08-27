@@ -17,7 +17,7 @@ type PutWorksheetValidationRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetValidationRequest(name string, sheetName string, opts ...RequestOption) *PutWorksheetValidationRequest {
+func NewPutWorksheetValidationRequest(name string, sheetName string, opts ...Option) *PutWorksheetValidationRequest {
     req := &PutWorksheetValidationRequest{
         name: name,
         sheetName: sheetName,
@@ -116,6 +116,6 @@ func (request *PutWorksheetValidationRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *PutWorksheetValidationRequest) Description() {
-    fmt.Println(strings.Trim("Add a validation at index in the worksheet.", " "))
+func (request *PutWorksheetValidationRequest) Description() string {
+    return strings.Trim("Add a validation at index in the worksheet.", " ")
 }

@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostDataFillRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostDataFillRequest(dataFillRequest *models.DataFillRequest, opts ...RequestOption) *PostDataFillRequest {
+func NewPostDataFillRequest(dataFillRequest *models.DataFillRequest, opts ...Option) *PostDataFillRequest {
     req := &PostDataFillRequest{
         dataFillRequest: dataFillRequest,
     }
@@ -89,6 +88,6 @@ func (request *PostDataFillRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostDataFillRequest) Description() {
-    fmt.Println(strings.Trim("Data filling for spreadsheet files is primarily used to fill empty data in tables and ranges.", " "))
+func (request *PostDataFillRequest) Description() string {
+    return strings.Trim("Data filling for spreadsheet files is primarily used to fill empty data in tables and ranges.", " ")
 }

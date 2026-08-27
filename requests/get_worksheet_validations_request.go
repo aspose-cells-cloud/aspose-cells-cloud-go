@@ -16,7 +16,7 @@ type GetWorksheetValidationsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetValidationsRequest(name string, sheetName string, opts ...RequestOption) *GetWorksheetValidationsRequest {
+func NewGetWorksheetValidationsRequest(name string, sheetName string, opts ...Option) *GetWorksheetValidationsRequest {
     req := &GetWorksheetValidationsRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *GetWorksheetValidationsRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *GetWorksheetValidationsRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve descriptions of validations in the worksheet.", " "))
+func (request *GetWorksheetValidationsRequest) Description() string {
+    return strings.Trim("Retrieve descriptions of validations in the worksheet.", " ")
 }

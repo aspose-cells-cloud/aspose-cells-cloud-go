@@ -29,7 +29,7 @@ type ImportDataIntoSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewImportDataIntoSpreadsheetRequest(datafile string, Spreadsheet string, startcell string, worksheet string, opts ...RequestOption) *ImportDataIntoSpreadsheetRequest {
+func NewImportDataIntoSpreadsheetRequest(datafile string, Spreadsheet string, startcell string, worksheet string, opts ...Option) *ImportDataIntoSpreadsheetRequest {
     req := &ImportDataIntoSpreadsheetRequest{
         datafile: datafile,
         Spreadsheet: Spreadsheet,
@@ -186,6 +186,6 @@ func (request *ImportDataIntoSpreadsheetRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *ImportDataIntoSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Import data into a spreadsheet from a supported data file format.", " "))
+func (request *ImportDataIntoSpreadsheetRequest) Description() string {
+    return strings.Trim("Import data into a spreadsheet from a supported data file format.", " ")
 }

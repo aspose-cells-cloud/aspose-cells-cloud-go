@@ -11,6 +11,7 @@ import (
 	"fmt"
 
 	"asposecellscloud"
+	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/datasource"
 	"asposecellscloud/requests"
 )
@@ -22,7 +23,7 @@ import (
 func RemoveBlankRows(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClient,
 	src datasource.DataSource, sink datasource.DataSink, opts ...Option) error {
 	return clean(ctx, client, src, sink,
-		func(opts ...requests.RequestOption) asposecellscloud.RequestOption {
+		func(opts ...requests.Option) asposecellscloud.RequestOption {
 			return requests.NewRemoveSpreadsheetBlankRowsRequest("", opts...)
 		}, opts...)
 }
@@ -34,7 +35,7 @@ func RemoveBlankRows(ctx context.Context, client *asposecellscloud.AsposeCellsCl
 func RemoveBlankColumns(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClient,
 	src datasource.DataSource, sink datasource.DataSink, opts ...Option) error {
 	return clean(ctx, client, src, sink,
-		func(opts ...requests.RequestOption) asposecellscloud.RequestOption {
+		func(opts ...requests.Option) asposecellscloud.RequestOption {
 			return requests.NewRemoveSpreadsheetBlankColumnsRequest("", opts...)
 		}, opts...)
 }
@@ -46,7 +47,7 @@ func RemoveBlankColumns(ctx context.Context, client *asposecellscloud.AsposeCell
 func RemoveBlankWorksheets(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClient,
 	src datasource.DataSource, sink datasource.DataSink, opts ...Option) error {
 	return clean(ctx, client, src, sink,
-		func(opts ...requests.RequestOption) asposecellscloud.RequestOption {
+		func(opts ...requests.Option) asposecellscloud.RequestOption {
 			return requests.NewRemoveSpreadsheetBlankWorksheetsRequest("", opts...)
 		}, opts...)
 }
@@ -59,7 +60,7 @@ func RemoveBlankWorksheets(ctx context.Context, client *asposecellscloud.AsposeC
 func RemoveDuplicates(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClient,
 	src datasource.DataSource, sink datasource.DataSink, opts ...Option) error {
 	return clean(ctx, client, src, sink,
-		func(opts ...requests.RequestOption) asposecellscloud.RequestOption {
+		func(opts ...requests.Option) asposecellscloud.RequestOption {
 			return requests.NewRemoveDuplicatesRequest("", opts...)
 		}, opts...)
 }
@@ -68,34 +69,27 @@ func RemoveDuplicates(ctx context.Context, client *asposecellscloud.AsposeCellsC
 // cleaned workbook to sink.
 func clean(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClient,
 	src datasource.DataSource, sink datasource.DataSink,
-	builder func(...requests.RequestOption) asposecellscloud.RequestOption, opts ...Option) error {
+	builder func(...requests.Option) asposecellscloud.RequestOption, opts ...Option) error {
 
 	if src == nil || sink == nil {
 		return fmt.Errorf("%w: source and sink are required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
 	data, err := src.ByteData()
 	if err != nil {
 		return err
 	}
 
-	req := builder(cfg.reqOpts...)
+	req := builder(cfg.ReqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: failed to build cleansing request", asposecellscloud.ErrInvalidParam)
 	}
 
 	// Attach the spreadsheet to the multipart "Spreadsheet" field.
-	switch r := req.(type) {
-	case *requests.RemoveSpreadsheetBlankRowsRequest:
-		r.SetSpreadsheetBytes(data, "Spreadsheet")
-	case *requests.RemoveSpreadsheetBlankColumnsRequest:
-		r.SetSpreadsheetBytes(data, "Spreadsheet")
-	case *requests.RemoveSpreadsheetBlankWorksheetsRequest:
-		r.SetSpreadsheetBytes(data, "Spreadsheet")
-	case *requests.RemoveDuplicatesRequest:
-		r.SetSpreadsheetBytes(data, "Spreadsheet")
+	if setter, ok := req.(sdkutil.SpreadsheetSetter); ok {
+		setter.SetSpreadsheetBytes(data, "Spreadsheet")
 	}
 
 	resp, err := asposecellscloud.DoChecked(ctx, client, req)

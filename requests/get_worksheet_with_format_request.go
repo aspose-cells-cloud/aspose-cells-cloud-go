@@ -23,7 +23,7 @@ type GetWorksheetWithFormatRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetWithFormatRequest(name string, sheetName string, opts ...RequestOption) *GetWorksheetWithFormatRequest {
+func NewGetWorksheetWithFormatRequest(name string, sheetName string, opts ...Option) *GetWorksheetWithFormatRequest {
     req := &GetWorksheetWithFormatRequest{
         name: name,
         sheetName: sheetName,
@@ -158,6 +158,6 @@ func (request *GetWorksheetWithFormatRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *GetWorksheetWithFormatRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve the worksheet in a specified format from the workbook.", " "))
+func (request *GetWorksheetWithFormatRequest) Description() string {
+    return strings.Trim("Retrieve the worksheet in a specified format from the workbook.", " ")
 }

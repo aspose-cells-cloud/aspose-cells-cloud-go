@@ -17,7 +17,7 @@ type PostRenameWorksheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostRenameWorksheetRequest(name string, newname string, sheetName string, opts ...RequestOption) *PostRenameWorksheetRequest {
+func NewPostRenameWorksheetRequest(name string, newname string, sheetName string, opts ...Option) *PostRenameWorksheetRequest {
     req := &PostRenameWorksheetRequest{
         name: name,
         newname: newname,
@@ -115,6 +115,6 @@ func (request *PostRenameWorksheetRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *PostRenameWorksheetRequest) Description() {
-    fmt.Println(strings.Trim("Rename worksheet in the workbook.", " "))
+func (request *PostRenameWorksheetRequest) Description() string {
+    return strings.Trim("Rename worksheet in the workbook.", " ")
 }

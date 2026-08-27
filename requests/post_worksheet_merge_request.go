@@ -20,7 +20,7 @@ type PostWorksheetMergeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetMergeRequest(name string, sheetName string, startColumn int, startRow int, totalColumns int, totalRows int, opts ...RequestOption) *PostWorksheetMergeRequest {
+func NewPostWorksheetMergeRequest(name string, sheetName string, startColumn int, startRow int, totalColumns int, totalRows int, opts ...Option) *PostWorksheetMergeRequest {
     req := &PostWorksheetMergeRequest{
         name: name,
         sheetName: sheetName,
@@ -121,6 +121,6 @@ func (request *PostWorksheetMergeRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *PostWorksheetMergeRequest) Description() {
-    fmt.Println(strings.Trim("Merge cells in the worksheet.", " "))
+func (request *PostWorksheetMergeRequest) Description() string {
+    return strings.Trim("Merge cells in the worksheet.", " ")
 }

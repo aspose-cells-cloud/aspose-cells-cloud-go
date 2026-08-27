@@ -15,7 +15,7 @@ type GetAllStylesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetAllStylesRequest(name string, opts ...RequestOption) *GetAllStylesRequest {
+func NewGetAllStylesRequest(name string, opts ...Option) *GetAllStylesRequest {
     req := &GetAllStylesRequest{
         name: name,
     }
@@ -103,6 +103,6 @@ func (request *GetAllStylesRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *GetAllStylesRequest) Description() {
-    fmt.Println(strings.Trim("Get all style in the workbook.", " "))
+func (request *GetAllStylesRequest) Description() string {
+    return strings.Trim("Get all style in the workbook.", " ")
 }

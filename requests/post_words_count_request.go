@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostWordsCountRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWordsCountRequest(wordsCountOptions *models.WordsCountOptions, opts ...RequestOption) *PostWordsCountRequest {
+func NewPostWordsCountRequest(wordsCountOptions *models.WordsCountOptions, opts ...Option) *PostWordsCountRequest {
     req := &PostWordsCountRequest{
         wordsCountOptions: wordsCountOptions,
     }
@@ -89,6 +88,6 @@ func (request *PostWordsCountRequest) GetMultipartForm() map[string]interface{} 
     return localVarFormParams
 }
 
-func (request *PostWordsCountRequest) Description() {
-    fmt.Println(strings.Trim("PostWordsCount", " "))
+func (request *PostWordsCountRequest) Description() string {
+    return strings.Trim("PostWordsCount", " ")
 }

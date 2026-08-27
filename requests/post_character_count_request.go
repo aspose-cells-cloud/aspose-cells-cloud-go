@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostCharacterCountRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostCharacterCountRequest(characterCountOptions *models.CharacterCountOptions, opts ...RequestOption) *PostCharacterCountRequest {
+func NewPostCharacterCountRequest(characterCountOptions *models.CharacterCountOptions, opts ...Option) *PostCharacterCountRequest {
     req := &PostCharacterCountRequest{
         characterCountOptions: characterCountOptions,
     }
@@ -89,6 +88,6 @@ func (request *PostCharacterCountRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *PostCharacterCountRequest) Description() {
-    fmt.Println(strings.Trim("PostCharacterCount", " "))
+func (request *PostCharacterCountRequest) Description() string {
+    return strings.Trim("PostCharacterCount", " ")
 }

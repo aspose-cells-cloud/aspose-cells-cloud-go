@@ -16,7 +16,7 @@ type GetWorksheetHyperlinksRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetHyperlinksRequest(name string, sheetName string, opts ...RequestOption) *GetWorksheetHyperlinksRequest {
+func NewGetWorksheetHyperlinksRequest(name string, sheetName string, opts ...Option) *GetWorksheetHyperlinksRequest {
     req := &GetWorksheetHyperlinksRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *GetWorksheetHyperlinksRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *GetWorksheetHyperlinksRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve descriptions of hyperlinks in the worksheet.", " "))
+func (request *GetWorksheetHyperlinksRequest) Description() string {
+    return strings.Trim("Retrieve descriptions of hyperlinks in the worksheet.", " ")
 }

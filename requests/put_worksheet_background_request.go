@@ -22,7 +22,7 @@ type PutWorksheetBackgroundRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetBackgroundRequest(name string, sheetName string, opts ...RequestOption) *PutWorksheetBackgroundRequest {
+func NewPutWorksheetBackgroundRequest(name string, sheetName string, opts ...Option) *PutWorksheetBackgroundRequest {
     req := &PutWorksheetBackgroundRequest{
         name: name,
         sheetName: sheetName,
@@ -143,6 +143,6 @@ func (request *PutWorksheetBackgroundRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *PutWorksheetBackgroundRequest) Description() {
-    fmt.Println(strings.Trim("Set background image in the worksheet.", " "))
+func (request *PutWorksheetBackgroundRequest) Description() string {
+    return strings.Trim("Set background image in the worksheet.", " ")
 }

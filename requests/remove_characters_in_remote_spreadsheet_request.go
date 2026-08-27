@@ -23,7 +23,7 @@ type RemoveCharactersInRemoteSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewRemoveCharactersInRemoteSpreadsheetRequest(name string, _range string, worksheet string, opts ...RequestOption) *RemoveCharactersInRemoteSpreadsheetRequest {
+func NewRemoveCharactersInRemoteSpreadsheetRequest(name string, _range string, worksheet string, opts ...Option) *RemoveCharactersInRemoteSpreadsheetRequest {
     req := &RemoveCharactersInRemoteSpreadsheetRequest{
         name: name,
         _range: _range,
@@ -157,6 +157,6 @@ func (request *RemoveCharactersInRemoteSpreadsheetRequest) GetMultipartForm() ma
     return localVarFormParams
 }
 
-func (request *RemoveCharactersInRemoteSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Deletes user-defined characters, predefined symbol sets, or any substring from every cell in the chosen range while preserving formulas, formatting and data-validation for a remote spreadsheet.", " "))
+func (request *RemoveCharactersInRemoteSpreadsheetRequest) Description() string {
+    return strings.Trim("Deletes user-defined characters, predefined symbol sets, or any substring from every cell in the chosen range while preserving formulas, formatting and data-validation for a remote spreadsheet.", " ")
 }

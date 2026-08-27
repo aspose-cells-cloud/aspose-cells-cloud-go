@@ -16,7 +16,7 @@ type DeleteWorksheetListObjectsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetListObjectsRequest(name string, sheetName string, opts ...RequestOption) *DeleteWorksheetListObjectsRequest {
+func NewDeleteWorksheetListObjectsRequest(name string, sheetName string, opts ...Option) *DeleteWorksheetListObjectsRequest {
     req := &DeleteWorksheetListObjectsRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *DeleteWorksheetListObjectsRequest) GetMultipartForm() map[string]
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetListObjectsRequest) Description() {
-    fmt.Println(strings.Trim("Delete ListObjects in the worksheet.", " "))
+func (request *DeleteWorksheetListObjectsRequest) Description() string {
+    return strings.Trim("Delete ListObjects in the worksheet.", " ")
 }

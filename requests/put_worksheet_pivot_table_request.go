@@ -20,7 +20,7 @@ type PutWorksheetPivotTableRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetPivotTableRequest(name string, sheetName string, opts ...RequestOption) *PutWorksheetPivotTableRequest {
+func NewPutWorksheetPivotTableRequest(name string, sheetName string, opts ...Option) *PutWorksheetPivotTableRequest {
     req := &PutWorksheetPivotTableRequest{
         name: name,
         sheetName: sheetName,
@@ -137,6 +137,6 @@ func (request *PutWorksheetPivotTableRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *PutWorksheetPivotTableRequest) Description() {
-    fmt.Println(strings.Trim("Add a PivotTable in the worksheet.", " "))
+func (request *PutWorksheetPivotTableRequest) Description() string {
+    return strings.Trim("Add a PivotTable in the worksheet.", " ")
 }

@@ -20,7 +20,7 @@ type PostUpdateWorksheetRangeStyleRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostUpdateWorksheetRangeStyleRequest(name string, _range string, sheetName string, style *models.Style, opts ...RequestOption) *PostUpdateWorksheetRangeStyleRequest {
+func NewPostUpdateWorksheetRangeStyleRequest(name string, _range string, sheetName string, style *models.Style, opts ...Option) *PostUpdateWorksheetRangeStyleRequest {
     req := &PostUpdateWorksheetRangeStyleRequest{
         name: name,
         _range: _range,
@@ -122,6 +122,6 @@ func (request *PostUpdateWorksheetRangeStyleRequest) GetMultipartForm() map[stri
     return localVarFormParams
 }
 
-func (request *PostUpdateWorksheetRangeStyleRequest) Description() {
-    fmt.Println(strings.Trim("Update cell range styles in the worksheet.", " "))
+func (request *PostUpdateWorksheetRangeStyleRequest) Description() string {
+    return strings.Trim("Update cell range styles in the worksheet.", " ")
 }

@@ -17,7 +17,7 @@ type GetWorksheetRowRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetRowRequest(name string, rowIndex int, sheetName string, opts ...RequestOption) *GetWorksheetRowRequest {
+func NewGetWorksheetRowRequest(name string, rowIndex int, sheetName string, opts ...Option) *GetWorksheetRowRequest {
     req := &GetWorksheetRowRequest{
         name: name,
         rowIndex: rowIndex,
@@ -112,6 +112,6 @@ func (request *GetWorksheetRowRequest) GetMultipartForm() map[string]interface{}
     return localVarFormParams
 }
 
-func (request *GetWorksheetRowRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve row data by the row's index in the worksheet.", " "))
+func (request *GetWorksheetRowRequest) Description() string {
+    return strings.Trim("Retrieve row data by the row's index in the worksheet.", " ")
 }

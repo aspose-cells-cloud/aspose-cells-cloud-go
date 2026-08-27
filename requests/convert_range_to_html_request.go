@@ -25,7 +25,7 @@ type ConvertRangeToHtmlRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertRangeToHtmlRequest(_range string, Spreadsheet string, worksheet string, opts ...RequestOption) *ConvertRangeToHtmlRequest {
+func NewConvertRangeToHtmlRequest(_range string, Spreadsheet string, worksheet string, opts ...Option) *ConvertRangeToHtmlRequest {
     req := &ConvertRangeToHtmlRequest{
         _range: _range,
         Spreadsheet: Spreadsheet,
@@ -162,6 +162,6 @@ func (request *ConvertRangeToHtmlRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *ConvertRangeToHtmlRequest) Description() {
-    fmt.Println(strings.Trim("Converts a range of spreadsheet on a local drive to the html file.", " "))
+func (request *ConvertRangeToHtmlRequest) Description() string {
+    return strings.Trim("Converts a range of spreadsheet on a local drive to the html file.", " ")
 }

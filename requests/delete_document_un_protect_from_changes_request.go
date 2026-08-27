@@ -15,7 +15,7 @@ type DeleteDocumentUnProtectFromChangesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteDocumentUnProtectFromChangesRequest(name string, opts ...RequestOption) *DeleteDocumentUnProtectFromChangesRequest {
+func NewDeleteDocumentUnProtectFromChangesRequest(name string, opts ...Option) *DeleteDocumentUnProtectFromChangesRequest {
     req := &DeleteDocumentUnProtectFromChangesRequest{
         name: name,
     }
@@ -103,6 +103,6 @@ func (request *DeleteDocumentUnProtectFromChangesRequest) GetMultipartForm() map
     return localVarFormParams
 }
 
-func (request *DeleteDocumentUnProtectFromChangesRequest) Description() {
-    fmt.Println(strings.Trim("Excel file cancel write protection.", " "))
+func (request *DeleteDocumentUnProtectFromChangesRequest) Description() string {
+    return strings.Trim("Excel file cancel write protection.", " ")
 }

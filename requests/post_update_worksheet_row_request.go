@@ -19,7 +19,7 @@ type PostUpdateWorksheetRowRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostUpdateWorksheetRowRequest(name string, rowIndex int, sheetName string, opts ...RequestOption) *PostUpdateWorksheetRowRequest {
+func NewPostUpdateWorksheetRowRequest(name string, rowIndex int, sheetName string, opts ...Option) *PostUpdateWorksheetRowRequest {
     req := &PostUpdateWorksheetRowRequest{
         name: name,
         rowIndex: rowIndex,
@@ -126,6 +126,6 @@ func (request *PostUpdateWorksheetRowRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *PostUpdateWorksheetRowRequest) Description() {
-    fmt.Println(strings.Trim("Update height of rows in the worksheet.", " "))
+func (request *PostUpdateWorksheetRowRequest) Description() string {
+    return strings.Trim("Update height of rows in the worksheet.", " ")
 }

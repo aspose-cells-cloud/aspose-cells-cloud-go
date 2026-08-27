@@ -21,7 +21,7 @@ type PostClearContentsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostClearContentsRequest(name string, sheetName string, opts ...RequestOption) *PostClearContentsRequest {
+func NewPostClearContentsRequest(name string, sheetName string, opts ...Option) *PostClearContentsRequest {
     req := &PostClearContentsRequest{
         name: name,
         sheetName: sheetName,
@@ -144,6 +144,6 @@ func (request *PostClearContentsRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *PostClearContentsRequest) Description() {
-    fmt.Println(strings.Trim("Clear cell area contents in the worksheet.", " "))
+func (request *PostClearContentsRequest) Description() string {
+    return strings.Trim("Clear cell area contents in the worksheet.", " ")
 }

@@ -17,7 +17,7 @@ type CopyFileRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewCopyFileRequest(destPath string, srcPath string, opts ...RequestOption) *CopyFileRequest {
+func NewCopyFileRequest(destPath string, srcPath string, opts ...Option) *CopyFileRequest {
     req := &CopyFileRequest{
         destPath: destPath,
         srcPath: srcPath,
@@ -116,6 +116,6 @@ func (request *CopyFileRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *CopyFileRequest) Description() {
-    fmt.Println(strings.Trim("CopyFile", " "))
+func (request *CopyFileRequest) Description() string {
+    return strings.Trim("CopyFile", " ")
 }

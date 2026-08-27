@@ -6,6 +6,7 @@ import (
 
 	"asposecellscloud"
 	"asposecellscloud/datasource"
+	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/requests"
 )
 
@@ -24,15 +25,15 @@ func Convert(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClien
 	if src == nil || sink == nil {
 		return fmt.Errorf("%w: src and sink must not be nil", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
 	data, err := src.ByteData()
 	if err != nil {
 		return err
 	}
 
-	req := requests.NewConvertSpreadsheetRequest(format, "", cfg.reqOpts...)
+	req := requests.NewConvertSpreadsheetRequest(format, "", cfg.ReqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: format is required", asposecellscloud.ErrInvalidParam)
 	}
@@ -106,10 +107,10 @@ func Workbook(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClie
 	if wf == nil || wf.Name == "" || sink == nil {
 		return fmt.Errorf("%w: workbook name and sink are required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
-	reqOpts := append(workbookParams(wf), cfg.reqOpts...)
+	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewExportSpreadsheetAsFormatRequest(format, wf.Name, reqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: format is required", asposecellscloud.ErrInvalidParam)
@@ -130,10 +131,10 @@ func Worksheet(ctx context.Context, client *asposecellscloud.AsposeCellsCloudCli
 	if wf == nil || wf.Name == "" || worksheet == "" || sink == nil {
 		return fmt.Errorf("%w: workbook name, worksheet and sink are required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
-	reqOpts := append(workbookParams(wf), cfg.reqOpts...)
+	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewExportWorksheetAsFormatRequest(format, wf.Name, worksheet, reqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: format is required", asposecellscloud.ErrInvalidParam)

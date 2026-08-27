@@ -20,7 +20,7 @@ type DeleteWorksheetFreezePanesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetFreezePanesRequest(column int, freezedColumns int, freezedRows int, name string, row int, sheetName string, opts ...RequestOption) *DeleteWorksheetFreezePanesRequest {
+func NewDeleteWorksheetFreezePanesRequest(column int, freezedColumns int, freezedRows int, name string, row int, sheetName string, opts ...Option) *DeleteWorksheetFreezePanesRequest {
     req := &DeleteWorksheetFreezePanesRequest{
         column: column,
         freezedColumns: freezedColumns,
@@ -121,6 +121,6 @@ func (request *DeleteWorksheetFreezePanesRequest) GetMultipartForm() map[string]
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetFreezePanesRequest) Description() {
-    fmt.Println(strings.Trim("Unfreeze panes in worksheet.", " "))
+func (request *DeleteWorksheetFreezePanesRequest) Description() string {
+    return strings.Trim("Unfreeze panes in worksheet.", " ")
 }

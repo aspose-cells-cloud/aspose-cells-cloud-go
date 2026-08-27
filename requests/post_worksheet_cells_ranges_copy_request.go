@@ -19,7 +19,7 @@ type PostWorksheetCellsRangesCopyRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetCellsRangesCopyRequest(name string, rangeOperate *models.RangeCopyRequest, sheetName string, opts ...RequestOption) *PostWorksheetCellsRangesCopyRequest {
+func NewPostWorksheetCellsRangesCopyRequest(name string, rangeOperate *models.RangeCopyRequest, sheetName string, opts ...Option) *PostWorksheetCellsRangesCopyRequest {
     req := &PostWorksheetCellsRangesCopyRequest{
         name: name,
         rangeOperate: rangeOperate,
@@ -116,6 +116,6 @@ func (request *PostWorksheetCellsRangesCopyRequest) GetMultipartForm() map[strin
     return localVarFormParams
 }
 
-func (request *PostWorksheetCellsRangesCopyRequest) Description() {
-    fmt.Println(strings.Trim("Copy content from the source range to the destination range in the worksheet.", " "))
+func (request *PostWorksheetCellsRangesCopyRequest) Description() string {
+    return strings.Trim("Copy content from the source range to the destination range in the worksheet.", " ")
 }

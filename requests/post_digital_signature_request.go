@@ -17,7 +17,7 @@ type PostDigitalSignatureRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostDigitalSignatureRequest(digitalsignaturefile string, name string, password string, opts ...RequestOption) *PostDigitalSignatureRequest {
+func NewPostDigitalSignatureRequest(digitalsignaturefile string, name string, password string, opts ...Option) *PostDigitalSignatureRequest {
     req := &PostDigitalSignatureRequest{
         digitalsignaturefile: digitalsignaturefile,
         name: name,
@@ -115,6 +115,6 @@ func (request *PostDigitalSignatureRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *PostDigitalSignatureRequest) Description() {
-    fmt.Println(strings.Trim("Excel file digital signature.", " "))
+func (request *PostDigitalSignatureRequest) Description() string {
+    return strings.Trim("Excel file digital signature.", " ")
 }

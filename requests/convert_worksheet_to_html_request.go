@@ -24,7 +24,7 @@ type ConvertWorksheetToHtmlRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertWorksheetToHtmlRequest(Spreadsheet string, worksheet string, opts ...RequestOption) *ConvertWorksheetToHtmlRequest {
+func NewConvertWorksheetToHtmlRequest(Spreadsheet string, worksheet string, opts ...Option) *ConvertWorksheetToHtmlRequest {
     req := &ConvertWorksheetToHtmlRequest{
         Spreadsheet: Spreadsheet,
         worksheet: worksheet,
@@ -156,6 +156,6 @@ func (request *ConvertWorksheetToHtmlRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *ConvertWorksheetToHtmlRequest) Description() {
-    fmt.Println(strings.Trim("Converts a worksheet of spreadsheet on a local drive to the html file.", " "))
+func (request *ConvertWorksheetToHtmlRequest) Description() string {
+    return strings.Trim("Converts a worksheet of spreadsheet on a local drive to the html file.", " ")
 }

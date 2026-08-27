@@ -17,7 +17,7 @@ type GetChartAreaFillFormatRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetChartAreaFillFormatRequest(chartIndex int, name string, sheetName string, opts ...RequestOption) *GetChartAreaFillFormatRequest {
+func NewGetChartAreaFillFormatRequest(chartIndex int, name string, sheetName string, opts ...Option) *GetChartAreaFillFormatRequest {
     req := &GetChartAreaFillFormatRequest{
         chartIndex: chartIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *GetChartAreaFillFormatRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *GetChartAreaFillFormatRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve chart area fill format description in the worksheet.", " "))
+func (request *GetChartAreaFillFormatRequest) Description() string {
+    return strings.Trim("Retrieve chart area fill format description in the worksheet.", " ")
 }

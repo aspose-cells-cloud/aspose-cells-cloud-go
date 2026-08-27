@@ -18,7 +18,7 @@ type GetSpreadsheetStructureRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetSpreadsheetStructureRequest(Spreadsheet string, opts ...RequestOption) *GetSpreadsheetStructureRequest {
+func NewGetSpreadsheetStructureRequest(Spreadsheet string, opts ...Option) *GetSpreadsheetStructureRequest {
     req := &GetSpreadsheetStructureRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -114,6 +114,6 @@ func (request *GetSpreadsheetStructureRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *GetSpreadsheetStructureRequest) Description() {
-    fmt.Println(strings.Trim("Structurally convert the core metadata, worksheets, tables, pivot tables, charts, shapes, and other information of an Excel workbook into a JObject type JSON object, for scenarios such as data export, API responses, and log recording.", " "))
+func (request *GetSpreadsheetStructureRequest) Description() string {
+    return strings.Trim("Structurally convert the core metadata, worksheets, tables, pivot tables, charts, shapes, and other information of an Excel workbook into a JObject type JSON object, for scenarios such as data export, API responses, and log recording.", " ")
 }

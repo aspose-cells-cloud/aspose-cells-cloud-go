@@ -20,7 +20,7 @@ type PostUpdateWorksheetCellStyleRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostUpdateWorksheetCellStyleRequest(cellName string, name string, sheetName string, style *models.Style, opts ...RequestOption) *PostUpdateWorksheetCellStyleRequest {
+func NewPostUpdateWorksheetCellStyleRequest(cellName string, name string, sheetName string, style *models.Style, opts ...Option) *PostUpdateWorksheetCellStyleRequest {
     req := &PostUpdateWorksheetCellStyleRequest{
         cellName: cellName,
         name: name,
@@ -122,6 +122,6 @@ func (request *PostUpdateWorksheetCellStyleRequest) GetMultipartForm() map[strin
     return localVarFormParams
 }
 
-func (request *PostUpdateWorksheetCellStyleRequest) Description() {
-    fmt.Println(strings.Trim("Set cell style using cell name in the worksheet.", " "))
+func (request *PostUpdateWorksheetCellStyleRequest) Description() string {
+    return strings.Trim("Set cell style using cell name in the worksheet.", " ")
 }

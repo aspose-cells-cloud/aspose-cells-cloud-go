@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 )
@@ -10,7 +9,7 @@ type GetAsposeCellsCloudStatusRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetAsposeCellsCloudStatusRequest(opts ...RequestOption) *GetAsposeCellsCloudStatusRequest {
+func NewGetAsposeCellsCloudStatusRequest(opts ...Option) *GetAsposeCellsCloudStatusRequest {
     req := &GetAsposeCellsCloudStatusRequest{
     }
     cfg := &requestConfig{
@@ -80,6 +79,6 @@ func (request *GetAsposeCellsCloudStatusRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *GetAsposeCellsCloudStatusRequest) Description() {
-    fmt.Println(strings.Trim("Check the Health Status of Aspose.Cells Cloud Service.", " "))
+func (request *GetAsposeCellsCloudStatusRequest) Description() string {
+    return strings.Trim("Check the Health Status of Aspose.Cells Cloud Service.", " ")
 }

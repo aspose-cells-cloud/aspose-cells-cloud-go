@@ -19,7 +19,7 @@ type PostWorksheetCellsRangeMergeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetCellsRangeMergeRequest(name string, _range *models.Range, sheetName string, opts ...RequestOption) *PostWorksheetCellsRangeMergeRequest {
+func NewPostWorksheetCellsRangeMergeRequest(name string, _range *models.Range, sheetName string, opts ...Option) *PostWorksheetCellsRangeMergeRequest {
     req := &PostWorksheetCellsRangeMergeRequest{
         name: name,
         _range: _range,
@@ -116,6 +116,6 @@ func (request *PostWorksheetCellsRangeMergeRequest) GetMultipartForm() map[strin
     return localVarFormParams
 }
 
-func (request *PostWorksheetCellsRangeMergeRequest) Description() {
-    fmt.Println(strings.Trim("Merge a range of cells into a single cell.", " "))
+func (request *PostWorksheetCellsRangeMergeRequest) Description() string {
+    return strings.Trim("Merge a range of cells into a single cell.", " ")
 }

@@ -15,7 +15,7 @@ type DeleteFileRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteFileRequest(path string, opts ...RequestOption) *DeleteFileRequest {
+func NewDeleteFileRequest(path string, opts ...Option) *DeleteFileRequest {
     req := &DeleteFileRequest{
         path: path,
     }
@@ -103,6 +103,6 @@ func (request *DeleteFileRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *DeleteFileRequest) Description() {
-    fmt.Println(strings.Trim("DeleteFile", " "))
+func (request *DeleteFileRequest) Description() string {
+    return strings.Trim("DeleteFile", " ")
 }

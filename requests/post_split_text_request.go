@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostSplitTextRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostSplitTextRequest(splitTextOptions *models.SplitTextOptions, opts ...RequestOption) *PostSplitTextRequest {
+func NewPostSplitTextRequest(splitTextOptions *models.SplitTextOptions, opts ...Option) *PostSplitTextRequest {
     req := &PostSplitTextRequest{
         splitTextOptions: splitTextOptions,
     }
@@ -89,6 +88,6 @@ func (request *PostSplitTextRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostSplitTextRequest) Description() {
-    fmt.Println(strings.Trim("Efficiently divides Excel cell content into columns or rows based on specified delimiters or patterns. Supports Character-based splitting, Custom string splitting, Mask and wildcard splitting for pattern-based division, Line break division, Column or row splitting, Delimiter removal or retention.", " "))
+func (request *PostSplitTextRequest) Description() string {
+    return strings.Trim("Efficiently divides Excel cell content into columns or rows based on specified delimiters or patterns. Supports Character-based splitting, Custom string splitting, Mask and wildcard splitting for pattern-based division, Line break division, Column or row splitting, Delimiter removal or retention.", " ")
 }

@@ -20,7 +20,7 @@ type PostWorksheetSparklineGroupRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetSparklineGroupRequest(name string, sheetName string, sparklineGroup *models.SparklineGroup, sparklineGroupIndex int, opts ...RequestOption) *PostWorksheetSparklineGroupRequest {
+func NewPostWorksheetSparklineGroupRequest(name string, sheetName string, sparklineGroup *models.SparklineGroup, sparklineGroupIndex int, opts ...Option) *PostWorksheetSparklineGroupRequest {
     req := &PostWorksheetSparklineGroupRequest{
         name: name,
         sheetName: sheetName,
@@ -119,6 +119,6 @@ func (request *PostWorksheetSparklineGroupRequest) GetMultipartForm() map[string
     return localVarFormParams
 }
 
-func (request *PostWorksheetSparklineGroupRequest) Description() {
-    fmt.Println(strings.Trim("Update a sparkline group in the worksheet.", " "))
+func (request *PostWorksheetSparklineGroupRequest) Description() string {
+    return strings.Trim("Update a sparkline group in the worksheet.", " ")
 }

@@ -20,7 +20,7 @@ type PostWorksheetListObjectSortTableRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetListObjectSortTableRequest(dataSorter *models.DataSorter, listObjectIndex int, name string, sheetName string, opts ...RequestOption) *PostWorksheetListObjectSortTableRequest {
+func NewPostWorksheetListObjectSortTableRequest(dataSorter *models.DataSorter, listObjectIndex int, name string, sheetName string, opts ...Option) *PostWorksheetListObjectSortTableRequest {
     req := &PostWorksheetListObjectSortTableRequest{
         dataSorter: dataSorter,
         listObjectIndex: listObjectIndex,
@@ -119,6 +119,6 @@ func (request *PostWorksheetListObjectSortTableRequest) GetMultipartForm() map[s
     return localVarFormParams
 }
 
-func (request *PostWorksheetListObjectSortTableRequest) Description() {
-    fmt.Println(strings.Trim("Sort list object in the worksheet.", " "))
+func (request *PostWorksheetListObjectSortTableRequest) Description() string {
+    return strings.Trim("Sort list object in the worksheet.", " ")
 }

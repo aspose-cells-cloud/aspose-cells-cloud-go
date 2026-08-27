@@ -21,7 +21,7 @@ type AcceptAllRevisionsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewAcceptAllRevisionsRequest(Spreadsheet string, opts ...RequestOption) *AcceptAllRevisionsRequest {
+func NewAcceptAllRevisionsRequest(Spreadsheet string, opts ...Option) *AcceptAllRevisionsRequest {
     req := &AcceptAllRevisionsRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -135,6 +135,6 @@ func (request *AcceptAllRevisionsRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *AcceptAllRevisionsRequest) Description() {
-    fmt.Println(strings.Trim("AcceptAllRevisions", " "))
+func (request *AcceptAllRevisionsRequest) Description() string {
+    return strings.Trim("AcceptAllRevisions", " ")
 }

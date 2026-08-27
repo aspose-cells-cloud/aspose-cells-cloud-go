@@ -13,7 +13,7 @@ type GetDiscUsageRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetDiscUsageRequest(opts ...RequestOption) *GetDiscUsageRequest {
+func NewGetDiscUsageRequest(opts ...Option) *GetDiscUsageRequest {
     req := &GetDiscUsageRequest{
     }
     cfg := &requestConfig{
@@ -89,6 +89,6 @@ func (request *GetDiscUsageRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *GetDiscUsageRequest) Description() {
-    fmt.Println(strings.Trim("GetDiscUsage", " "))
+func (request *GetDiscUsageRequest) Description() string {
+    return strings.Trim("GetDiscUsage", " ")
 }

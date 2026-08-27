@@ -19,7 +19,7 @@ type PostFooterRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostFooterRequest(isFirstPage bool, name string, script string, section int, sheetName string, opts ...RequestOption) *PostFooterRequest {
+func NewPostFooterRequest(isFirstPage bool, name string, script string, section int, sheetName string, opts ...Option) *PostFooterRequest {
     req := &PostFooterRequest{
         isFirstPage: isFirstPage,
         name: name,
@@ -121,6 +121,6 @@ func (request *PostFooterRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostFooterRequest) Description() {
-    fmt.Println(strings.Trim("Update page footer in the worksheet.", " "))
+func (request *PostFooterRequest) Description() string {
+    return strings.Trim("Update page footer in the worksheet.", " ")
 }

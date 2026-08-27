@@ -20,7 +20,7 @@ type PostCopyWorksheetRowsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostCopyWorksheetRowsRequest(destinationRowIndex int, name string, rowNumber int, sheetName string, sourceRowIndex int, opts ...RequestOption) *PostCopyWorksheetRowsRequest {
+func NewPostCopyWorksheetRowsRequest(destinationRowIndex int, name string, rowNumber int, sheetName string, sourceRowIndex int, opts ...Option) *PostCopyWorksheetRowsRequest {
     req := &PostCopyWorksheetRowsRequest{
         destinationRowIndex: destinationRowIndex,
         name: name,
@@ -125,6 +125,6 @@ func (request *PostCopyWorksheetRowsRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *PostCopyWorksheetRowsRequest) Description() {
-    fmt.Println(strings.Trim("Copy data and formats from specific entire rows in the worksheet.", " "))
+func (request *PostCopyWorksheetRowsRequest) Description() string {
+    return strings.Trim("Copy data and formats from specific entire rows in the worksheet.", " ")
 }

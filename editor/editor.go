@@ -13,6 +13,7 @@ import (
 	"fmt"
 
 	"asposecellscloud"
+	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/datasource"
 	"asposecellscloud/requests"
 )
@@ -42,15 +43,15 @@ func AddWorksheet(ctx context.Context, client *asposecellscloud.AsposeCellsCloud
 	if sheetName == "" {
 		return fmt.Errorf("%w: sheet name is required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
 	data, err := src.ByteData()
 	if err != nil {
 		return err
 	}
 
-	reqOpts := append([]requests.RequestOption{requests.WithCommonParameter("sheetName", sheetName)}, cfg.reqOpts...)
+	reqOpts := append([]requests.Option{requests.WithCommonParameter("sheetName", sheetName)}, cfg.ReqOpts...)
 	req := requests.NewAddWorksheetToSpreadsheetRequest("", reqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
@@ -75,15 +76,15 @@ func DeleteWorksheet(ctx context.Context, client *asposecellscloud.AsposeCellsCl
 	if sheetName == "" {
 		return fmt.Errorf("%w: sheet name is required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
 	data, err := src.ByteData()
 	if err != nil {
 		return err
 	}
 
-	req := requests.NewDeleteWorksheetFromSpreadsheetRequest(sheetName, "", cfg.reqOpts...)
+	req := requests.NewDeleteWorksheetFromSpreadsheetRequest(sheetName, "", cfg.ReqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
 	}
@@ -107,15 +108,15 @@ func RenameWorksheet(ctx context.Context, client *asposecellscloud.AsposeCellsCl
 	if oldName == "" || newName == "" {
 		return fmt.Errorf("%w: old and new sheet names are required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
 	data, err := src.ByteData()
 	if err != nil {
 		return err
 	}
 
-	req := requests.NewRenameWorksheetInSpreadsheetRequest(oldName, "", newName, cfg.reqOpts...)
+	req := requests.NewRenameWorksheetInSpreadsheetRequest(oldName, "", newName, cfg.ReqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
 	}
@@ -139,15 +140,15 @@ func MoveWorksheet(ctx context.Context, client *asposecellscloud.AsposeCellsClou
 	if worksheet == "" {
 		return fmt.Errorf("%w: worksheet name is required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
 	data, err := src.ByteData()
 	if err != nil {
 		return err
 	}
 
-	req := requests.NewMoveWorksheetInSpreadsheetRequest(position, "", worksheet, cfg.reqOpts...)
+	req := requests.NewMoveWorksheetInSpreadsheetRequest(position, "", worksheet, cfg.ReqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
 	}
@@ -167,15 +168,15 @@ func ListWorksheets(ctx context.Context, client *asposecellscloud.AsposeCellsClo
 	if src == nil {
 		return nil, fmt.Errorf("%w: source is required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
 	data, err := src.ByteData()
 	if err != nil {
 		return nil, err
 	}
 
-	req := requests.NewGetWorksheetsWithLocalSpreadsheetRequest("", cfg.reqOpts...)
+	req := requests.NewGetWorksheetsWithLocalSpreadsheetRequest("", cfg.ReqOpts...)
 	if req == nil {
 		return nil, fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
 	}
@@ -204,10 +205,10 @@ func CreateSpreadsheet(ctx context.Context, client *asposecellscloud.AsposeCells
 	if sink == nil {
 		return fmt.Errorf("%w: sink is required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
-	req := requests.NewCreateSpreadsheetRequest(cfg.reqOpts...)
+	req := requests.NewCreateSpreadsheetRequest(cfg.ReqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
 	}

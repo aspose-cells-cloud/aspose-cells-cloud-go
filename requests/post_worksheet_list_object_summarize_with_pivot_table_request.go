@@ -21,7 +21,7 @@ type PostWorksheetListObjectSummarizeWithPivotTableRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetListObjectSummarizeWithPivotTableRequest(createPivotTableRequest *models.CreatePivotTableRequest, destsheetName string, listObjectIndex int, name string, sheetName string, opts ...RequestOption) *PostWorksheetListObjectSummarizeWithPivotTableRequest {
+func NewPostWorksheetListObjectSummarizeWithPivotTableRequest(createPivotTableRequest *models.CreatePivotTableRequest, destsheetName string, listObjectIndex int, name string, sheetName string, opts ...Option) *PostWorksheetListObjectSummarizeWithPivotTableRequest {
     req := &PostWorksheetListObjectSummarizeWithPivotTableRequest{
         createPivotTableRequest: createPivotTableRequest,
         destsheetName: destsheetName,
@@ -125,6 +125,6 @@ func (request *PostWorksheetListObjectSummarizeWithPivotTableRequest) GetMultipa
     return localVarFormParams
 }
 
-func (request *PostWorksheetListObjectSummarizeWithPivotTableRequest) Description() {
-    fmt.Println(strings.Trim("Create a pivot table with a list object in the worksheet.", " "))
+func (request *PostWorksheetListObjectSummarizeWithPivotTableRequest) Description() string {
+    return strings.Trim("Create a pivot table with a list object in the worksheet.", " ")
 }

@@ -16,7 +16,7 @@ type DeleteWorksheetValidationsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetValidationsRequest(name string, sheetName string, opts ...RequestOption) *DeleteWorksheetValidationsRequest {
+func NewDeleteWorksheetValidationsRequest(name string, sheetName string, opts ...Option) *DeleteWorksheetValidationsRequest {
     req := &DeleteWorksheetValidationsRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *DeleteWorksheetValidationsRequest) GetMultipartForm() map[string]
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetValidationsRequest) Description() {
-    fmt.Println(strings.Trim("Delete all validations in the worksheet.", " "))
+func (request *DeleteWorksheetValidationsRequest) Description() string {
+    return strings.Trim("Delete all validations in the worksheet.", " ")
 }

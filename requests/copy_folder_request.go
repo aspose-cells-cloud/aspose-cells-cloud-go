@@ -16,7 +16,7 @@ type CopyFolderRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewCopyFolderRequest(destPath string, srcPath string, opts ...RequestOption) *CopyFolderRequest {
+func NewCopyFolderRequest(destPath string, srcPath string, opts ...Option) *CopyFolderRequest {
     req := &CopyFolderRequest{
         destPath: destPath,
         srcPath: srcPath,
@@ -109,6 +109,6 @@ func (request *CopyFolderRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *CopyFolderRequest) Description() {
-    fmt.Println(strings.Trim("CopyFolder", " "))
+func (request *CopyFolderRequest) Description() string {
+    return strings.Trim("CopyFolder", " ")
 }

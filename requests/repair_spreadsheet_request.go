@@ -20,7 +20,7 @@ type RepairSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewRepairSpreadsheetRequest(Spreadsheet string, opts ...RequestOption) *RepairSpreadsheetRequest {
+func NewRepairSpreadsheetRequest(Spreadsheet string, opts ...Option) *RepairSpreadsheetRequest {
     req := &RepairSpreadsheetRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -128,6 +128,6 @@ func (request *RepairSpreadsheetRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *RepairSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("The Web API endpoint allows users to repair a spreadsheet.", " "))
+func (request *RepairSpreadsheetRequest) Description() string {
+    return strings.Trim("The Web API endpoint allows users to repair a spreadsheet.", " ")
 }

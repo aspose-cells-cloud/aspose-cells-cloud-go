@@ -20,7 +20,7 @@ type PostChartCategoryAxisRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostChartCategoryAxisRequest(axis *models.Axis, chartIndex int, name string, sheetName string, opts ...RequestOption) *PostChartCategoryAxisRequest {
+func NewPostChartCategoryAxisRequest(axis *models.Axis, chartIndex int, name string, sheetName string, opts ...Option) *PostChartCategoryAxisRequest {
     req := &PostChartCategoryAxisRequest{
         axis: axis,
         chartIndex: chartIndex,
@@ -119,6 +119,6 @@ func (request *PostChartCategoryAxisRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *PostChartCategoryAxisRequest) Description() {
-    fmt.Println(strings.Trim("Update chart category axis in the chart.", " "))
+func (request *PostChartCategoryAxisRequest) Description() string {
+    return strings.Trim("Update chart category axis in the chart.", " ")
 }

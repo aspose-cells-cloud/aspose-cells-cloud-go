@@ -17,7 +17,7 @@ type DeleteWorksheetHyperlinkRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetHyperlinkRequest(hyperlinkIndex int, name string, sheetName string, opts ...RequestOption) *DeleteWorksheetHyperlinkRequest {
+func NewDeleteWorksheetHyperlinkRequest(hyperlinkIndex int, name string, sheetName string, opts ...Option) *DeleteWorksheetHyperlinkRequest {
     req := &DeleteWorksheetHyperlinkRequest{
         hyperlinkIndex: hyperlinkIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *DeleteWorksheetHyperlinkRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetHyperlinkRequest) Description() {
-    fmt.Println(strings.Trim("Delete hyperlink by index in the worksheet.", " "))
+func (request *DeleteWorksheetHyperlinkRequest) Description() string {
+    return strings.Trim("Delete hyperlink by index in the worksheet.", " ")
 }

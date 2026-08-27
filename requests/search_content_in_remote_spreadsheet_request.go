@@ -19,7 +19,7 @@ type SearchContentInRemoteSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewSearchContentInRemoteSpreadsheetRequest(name string, searchText string, opts ...RequestOption) *SearchContentInRemoteSpreadsheetRequest {
+func NewSearchContentInRemoteSpreadsheetRequest(name string, searchText string, opts ...Option) *SearchContentInRemoteSpreadsheetRequest {
     req := &SearchContentInRemoteSpreadsheetRequest{
         name: name,
         searchText: searchText,
@@ -130,6 +130,6 @@ func (request *SearchContentInRemoteSpreadsheetRequest) GetMultipartForm() map[s
     return localVarFormParams
 }
 
-func (request *SearchContentInRemoteSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Search text in the remoted spreadsheet.", " "))
+func (request *SearchContentInRemoteSpreadsheetRequest) Description() string {
+    return strings.Trim("Search text in the remoted spreadsheet.", " ")
 }

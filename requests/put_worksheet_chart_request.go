@@ -30,7 +30,7 @@ type PutWorksheetChartRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetChartRequest(chartType string, name string, sheetName string, opts ...RequestOption) *PutWorksheetChartRequest {
+func NewPutWorksheetChartRequest(chartType string, name string, sheetName string, opts ...Option) *PutWorksheetChartRequest {
     req := &PutWorksheetChartRequest{
         chartType: chartType,
         name: name,
@@ -206,6 +206,6 @@ func (request *PutWorksheetChartRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *PutWorksheetChartRequest) Description() {
-    fmt.Println(strings.Trim("Add a new chart in the worksheet.", " "))
+func (request *PutWorksheetChartRequest) Description() string {
+    return strings.Trim("Add a new chart in the worksheet.", " ")
 }

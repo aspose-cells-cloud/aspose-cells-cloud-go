@@ -27,7 +27,7 @@ type SplitTextRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewSplitTextRequest(delimiters string, Spreadsheet string, opts ...RequestOption) *SplitTextRequest {
+func NewSplitTextRequest(delimiters string, Spreadsheet string, opts ...Option) *SplitTextRequest {
     req := &SplitTextRequest{
         delimiters: delimiters,
         Spreadsheet: Spreadsheet,
@@ -177,6 +177,6 @@ func (request *SplitTextRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *SplitTextRequest) Description() {
-    fmt.Println(strings.Trim("Indicates performing text segmentation on the specified area according to the segmentation method, and outputting to the designated interval.", " "))
+func (request *SplitTextRequest) Description() string {
+    return strings.Trim("Indicates performing text segmentation on the specified area according to the segmentation method, and outputting to the designated interval.", " ")
 }

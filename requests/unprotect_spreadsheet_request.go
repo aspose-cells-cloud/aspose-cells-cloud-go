@@ -21,7 +21,7 @@ type UnprotectSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewUnprotectSpreadsheetRequest(modifyPassword string, password string, Spreadsheet string, opts ...RequestOption) *UnprotectSpreadsheetRequest {
+func NewUnprotectSpreadsheetRequest(modifyPassword string, password string, Spreadsheet string, opts ...Option) *UnprotectSpreadsheetRequest {
     req := &UnprotectSpreadsheetRequest{
         modifyPassword: modifyPassword,
         password: password,
@@ -134,6 +134,6 @@ func (request *UnprotectSpreadsheetRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *UnprotectSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Removes dual-layer password protection from Excel spreadsheets, supporting both open and modify passwords with encryption.", " "))
+func (request *UnprotectSpreadsheetRequest) Description() string {
+    return strings.Trim("Removes dual-layer password protection from Excel spreadsheets, supporting both open and modify passwords with encryption.", " ")
 }

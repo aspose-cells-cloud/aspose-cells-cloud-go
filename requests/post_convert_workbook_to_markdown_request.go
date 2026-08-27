@@ -20,7 +20,7 @@ type PostConvertWorkbookToMarkdownRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostConvertWorkbookToMarkdownRequest(File string, opts ...RequestOption) *PostConvertWorkbookToMarkdownRequest {
+func NewPostConvertWorkbookToMarkdownRequest(File string, opts ...Option) *PostConvertWorkbookToMarkdownRequest {
     req := &PostConvertWorkbookToMarkdownRequest{
         File: File,
     }
@@ -128,6 +128,6 @@ func (request *PostConvertWorkbookToMarkdownRequest) GetMultipartForm() map[stri
     return localVarFormParams
 }
 
-func (request *PostConvertWorkbookToMarkdownRequest) Description() {
-    fmt.Println(strings.Trim("Convert Excel file to Markdown files.", " "))
+func (request *PostConvertWorkbookToMarkdownRequest) Description() string {
+    return strings.Trim("Convert Excel file to Markdown files.", " ")
 }

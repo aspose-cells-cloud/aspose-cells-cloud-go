@@ -17,7 +17,7 @@ type PostWorksheetListObjectConvertToRangeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetListObjectConvertToRangeRequest(listObjectIndex int, name string, sheetName string, opts ...RequestOption) *PostWorksheetListObjectConvertToRangeRequest {
+func NewPostWorksheetListObjectConvertToRangeRequest(listObjectIndex int, name string, sheetName string, opts ...Option) *PostWorksheetListObjectConvertToRangeRequest {
     req := &PostWorksheetListObjectConvertToRangeRequest{
         listObjectIndex: listObjectIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *PostWorksheetListObjectConvertToRangeRequest) GetMultipartForm() 
     return localVarFormParams
 }
 
-func (request *PostWorksheetListObjectConvertToRangeRequest) Description() {
-    fmt.Println(strings.Trim("Convert list object to range in the worksheet.", " "))
+func (request *PostWorksheetListObjectConvertToRangeRequest) Description() string {
+    return strings.Trim("Convert list object to range in the worksheet.", " ")
 }

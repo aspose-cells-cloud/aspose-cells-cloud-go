@@ -19,7 +19,7 @@ type PostSetWorksheetColumnWidthRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostSetWorksheetColumnWidthRequest(columnIndex int, name string, sheetName string, width float64, opts ...RequestOption) *PostSetWorksheetColumnWidthRequest {
+func NewPostSetWorksheetColumnWidthRequest(columnIndex int, name string, sheetName string, width float64, opts ...Option) *PostSetWorksheetColumnWidthRequest {
     req := &PostSetWorksheetColumnWidthRequest{
         columnIndex: columnIndex,
         name: name,
@@ -122,6 +122,6 @@ func (request *PostSetWorksheetColumnWidthRequest) GetMultipartForm() map[string
     return localVarFormParams
 }
 
-func (request *PostSetWorksheetColumnWidthRequest) Description() {
-    fmt.Println(strings.Trim("Set worksheet column width.", " "))
+func (request *PostSetWorksheetColumnWidthRequest) Description() string {
+    return strings.Trim("Set worksheet column width.", " ")
 }

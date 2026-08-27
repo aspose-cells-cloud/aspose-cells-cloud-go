@@ -20,7 +20,7 @@ type DeleteWorksheetConditionalFormattingAreaRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetConditionalFormattingAreaRequest(name string, sheetName string, startColumn int, startRow int, totalColumns int, totalRows int, opts ...RequestOption) *DeleteWorksheetConditionalFormattingAreaRequest {
+func NewDeleteWorksheetConditionalFormattingAreaRequest(name string, sheetName string, startColumn int, startRow int, totalColumns int, totalRows int, opts ...Option) *DeleteWorksheetConditionalFormattingAreaRequest {
     req := &DeleteWorksheetConditionalFormattingAreaRequest{
         name: name,
         sheetName: sheetName,
@@ -121,6 +121,6 @@ func (request *DeleteWorksheetConditionalFormattingAreaRequest) GetMultipartForm
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetConditionalFormattingAreaRequest) Description() {
-    fmt.Println(strings.Trim("Remove cell area from conditional formatting.", " "))
+func (request *DeleteWorksheetConditionalFormattingAreaRequest) Description() string {
+    return strings.Trim("Remove cell area from conditional formatting.", " ")
 }

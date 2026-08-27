@@ -19,7 +19,7 @@ type PostWorksheetCellsRangeUnMergeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetCellsRangeUnMergeRequest(name string, _range *models.Range, sheetName string, opts ...RequestOption) *PostWorksheetCellsRangeUnMergeRequest {
+func NewPostWorksheetCellsRangeUnMergeRequest(name string, _range *models.Range, sheetName string, opts ...Option) *PostWorksheetCellsRangeUnMergeRequest {
     req := &PostWorksheetCellsRangeUnMergeRequest{
         name: name,
         _range: _range,
@@ -116,6 +116,6 @@ func (request *PostWorksheetCellsRangeUnMergeRequest) GetMultipartForm() map[str
     return localVarFormParams
 }
 
-func (request *PostWorksheetCellsRangeUnMergeRequest) Description() {
-    fmt.Println(strings.Trim("Unmerge merged cells within this range.", " "))
+func (request *PostWorksheetCellsRangeUnMergeRequest) Description() string {
+    return strings.Trim("Unmerge merged cells within this range.", " ")
 }

@@ -16,7 +16,7 @@ type PostFitWideToPagesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostFitWideToPagesRequest(name string, sheetName string, opts ...RequestOption) *PostFitWideToPagesRequest {
+func NewPostFitWideToPagesRequest(name string, sheetName string, opts ...Option) *PostFitWideToPagesRequest {
     req := &PostFitWideToPagesRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *PostFitWideToPagesRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *PostFitWideToPagesRequest) Description() {
-    fmt.Println(strings.Trim("Set the scale at which the page will fit wide when printed on the sheet.", " "))
+func (request *PostFitWideToPagesRequest) Description() string {
+    return strings.Trim("Set the scale at which the page will fit wide when printed on the sheet.", " ")
 }

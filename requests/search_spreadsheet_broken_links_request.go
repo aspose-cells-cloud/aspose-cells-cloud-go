@@ -20,7 +20,7 @@ type SearchSpreadsheetBrokenLinksRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewSearchSpreadsheetBrokenLinksRequest(Spreadsheet string, opts ...RequestOption) *SearchSpreadsheetBrokenLinksRequest {
+func NewSearchSpreadsheetBrokenLinksRequest(Spreadsheet string, opts ...Option) *SearchSpreadsheetBrokenLinksRequest {
     req := &SearchSpreadsheetBrokenLinksRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -128,6 +128,6 @@ func (request *SearchSpreadsheetBrokenLinksRequest) GetMultipartForm() map[strin
     return localVarFormParams
 }
 
-func (request *SearchSpreadsheetBrokenLinksRequest) Description() {
-    fmt.Println(strings.Trim("Search broken links in the local spreadsheet.", " "))
+func (request *SearchSpreadsheetBrokenLinksRequest) Description() string {
+    return strings.Trim("Search broken links in the local spreadsheet.", " ")
 }

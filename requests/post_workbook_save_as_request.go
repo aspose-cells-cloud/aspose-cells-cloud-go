@@ -28,7 +28,7 @@ type PostWorkbookSaveAsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorkbookSaveAsRequest(name string, newfilename string, opts ...RequestOption) *PostWorkbookSaveAsRequest {
+func NewPostWorkbookSaveAsRequest(name string, newfilename string, opts ...Option) *PostWorkbookSaveAsRequest {
     req := &PostWorkbookSaveAsRequest{
         name: name,
         newfilename: newfilename,
@@ -178,6 +178,6 @@ func (request *PostWorkbookSaveAsRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *PostWorkbookSaveAsRequest) Description() {
-    fmt.Println(strings.Trim("Save an Excel file in various formats.", " "))
+func (request *PostWorkbookSaveAsRequest) Description() string {
+    return strings.Trim("Save an Excel file in various formats.", " ")
 }

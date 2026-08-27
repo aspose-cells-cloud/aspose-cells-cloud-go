@@ -17,7 +17,7 @@ type PostWorksheetTextSearchRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetTextSearchRequest(name string, sheetName string, text string, opts ...RequestOption) *PostWorksheetTextSearchRequest {
+func NewPostWorksheetTextSearchRequest(name string, sheetName string, text string, opts ...Option) *PostWorksheetTextSearchRequest {
     req := &PostWorksheetTextSearchRequest{
         name: name,
         sheetName: sheetName,
@@ -115,6 +115,6 @@ func (request *PostWorksheetTextSearchRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *PostWorksheetTextSearchRequest) Description() {
-    fmt.Println(strings.Trim("Search for text in the worksheet.", " "))
+func (request *PostWorksheetTextSearchRequest) Description() string {
+    return strings.Trim("Search for text in the worksheet.", " ")
 }

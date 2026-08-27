@@ -21,7 +21,7 @@ type PostWorkbookDataDeduplicationRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorkbookDataDeduplicationRequest(deduplicationRegion *models.DeduplicationRegion, name string, opts ...RequestOption) *PostWorkbookDataDeduplicationRequest {
+func NewPostWorkbookDataDeduplicationRequest(deduplicationRegion *models.DeduplicationRegion, name string, opts ...Option) *PostWorkbookDataDeduplicationRequest {
     req := &PostWorkbookDataDeduplicationRequest{
         deduplicationRegion: deduplicationRegion,
         name: name,
@@ -131,6 +131,6 @@ func (request *PostWorkbookDataDeduplicationRequest) GetMultipartForm() map[stri
     return localVarFormParams
 }
 
-func (request *PostWorkbookDataDeduplicationRequest) Description() {
-    fmt.Println(strings.Trim("Data deduplication of spreadsheet files is mainly used to eliminate duplicate data in tables and ranges.", " "))
+func (request *PostWorkbookDataDeduplicationRequest) Description() string {
+    return strings.Trim("Data deduplication of spreadsheet files is mainly used to eliminate duplicate data in tables and ranges.", " ")
 }

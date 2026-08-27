@@ -17,7 +17,7 @@ type DeleteDocumentPropertyRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteDocumentPropertyRequest(name string, propertyName string, opts ...RequestOption) *DeleteDocumentPropertyRequest {
+func NewDeleteDocumentPropertyRequest(name string, propertyName string, opts ...Option) *DeleteDocumentPropertyRequest {
     req := &DeleteDocumentPropertyRequest{
         name: name,
         propertyName: propertyName,
@@ -116,6 +116,6 @@ func (request *DeleteDocumentPropertyRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *DeleteDocumentPropertyRequest) Description() {
-    fmt.Println(strings.Trim("Delete an Excel property.", " "))
+func (request *DeleteDocumentPropertyRequest) Description() string {
+    return strings.Trim("Delete an Excel property.", " ")
 }

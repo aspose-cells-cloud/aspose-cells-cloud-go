@@ -16,7 +16,7 @@ type DeleteWorksheetShapesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetShapesRequest(name string, sheetName string, opts ...RequestOption) *DeleteWorksheetShapesRequest {
+func NewDeleteWorksheetShapesRequest(name string, sheetName string, opts ...Option) *DeleteWorksheetShapesRequest {
     req := &DeleteWorksheetShapesRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *DeleteWorksheetShapesRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetShapesRequest) Description() {
-    fmt.Println(strings.Trim("Delete all shapes in the worksheet.", " "))
+func (request *DeleteWorksheetShapesRequest) Description() string {
+    return strings.Trim("Delete all shapes in the worksheet.", " ")
 }

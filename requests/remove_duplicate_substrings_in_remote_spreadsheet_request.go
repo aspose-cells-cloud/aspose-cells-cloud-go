@@ -22,7 +22,7 @@ type RemoveDuplicateSubstringsInRemoteSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewRemoveDuplicateSubstringsInRemoteSpreadsheetRequest(delimiters string, name string, _range string, worksheet string, opts ...RequestOption) *RemoveDuplicateSubstringsInRemoteSpreadsheetRequest {
+func NewRemoveDuplicateSubstringsInRemoteSpreadsheetRequest(delimiters string, name string, _range string, worksheet string, opts ...Option) *RemoveDuplicateSubstringsInRemoteSpreadsheetRequest {
     req := &RemoveDuplicateSubstringsInRemoteSpreadsheetRequest{
         delimiters: delimiters,
         name: name,
@@ -149,6 +149,6 @@ func (request *RemoveDuplicateSubstringsInRemoteSpreadsheetRequest) GetMultipart
     return localVarFormParams
 }
 
-func (request *RemoveDuplicateSubstringsInRemoteSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Finds and removes repeated substrings inside every cell of the chosen range, using user-defined or preset delimiters, while preserving formulas, formatting and data-validation.", " "))
+func (request *RemoveDuplicateSubstringsInRemoteSpreadsheetRequest) Description() string {
+    return strings.Trim("Finds and removes repeated substrings inside every cell of the chosen range, using user-defined or preset delimiters, while preserving formulas, formatting and data-validation.", " ")
 }

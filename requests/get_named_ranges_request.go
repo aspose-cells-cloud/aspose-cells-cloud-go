@@ -15,7 +15,7 @@ type GetNamedRangesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetNamedRangesRequest(name string, opts ...RequestOption) *GetNamedRangesRequest {
+func NewGetNamedRangesRequest(name string, opts ...Option) *GetNamedRangesRequest {
     req := &GetNamedRangesRequest{
         name: name,
     }
@@ -103,6 +103,6 @@ func (request *GetNamedRangesRequest) GetMultipartForm() map[string]interface{} 
     return localVarFormParams
 }
 
-func (request *GetNamedRangesRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve descriptions of ranges in the worksheets.", " "))
+func (request *GetNamedRangesRequest) Description() string {
+    return strings.Trim("Retrieve descriptions of ranges in the worksheets.", " ")
 }

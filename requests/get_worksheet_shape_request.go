@@ -17,7 +17,7 @@ type GetWorksheetShapeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetShapeRequest(name string, shapeindex int, sheetName string, opts ...RequestOption) *GetWorksheetShapeRequest {
+func NewGetWorksheetShapeRequest(name string, shapeindex int, sheetName string, opts ...Option) *GetWorksheetShapeRequest {
     req := &GetWorksheetShapeRequest{
         name: name,
         shapeindex: shapeindex,
@@ -112,6 +112,6 @@ func (request *GetWorksheetShapeRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *GetWorksheetShapeRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve description of shape in the worksheet.", " "))
+func (request *GetWorksheetShapeRequest) Description() string {
+    return strings.Trim("Retrieve description of shape in the worksheet.", " ")
 }

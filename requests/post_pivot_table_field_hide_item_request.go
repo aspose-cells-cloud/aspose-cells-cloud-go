@@ -22,7 +22,7 @@ type PostPivotTableFieldHideItemRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostPivotTableFieldHideItemRequest(fieldIndex int, isHide bool, itemIndex int, name string, pivotFieldType string, pivotTableIndex int, sheetName string, opts ...RequestOption) *PostPivotTableFieldHideItemRequest {
+func NewPostPivotTableFieldHideItemRequest(fieldIndex int, isHide bool, itemIndex int, name string, pivotFieldType string, pivotTableIndex int, sheetName string, opts ...Option) *PostPivotTableFieldHideItemRequest {
     req := &PostPivotTableFieldHideItemRequest{
         fieldIndex: fieldIndex,
         isHide: isHide,
@@ -134,6 +134,6 @@ func (request *PostPivotTableFieldHideItemRequest) GetMultipartForm() map[string
     return localVarFormParams
 }
 
-func (request *PostPivotTableFieldHideItemRequest) Description() {
-    fmt.Println(strings.Trim("Hide a pivot field item in the PivotTable.", " "))
+func (request *PostPivotTableFieldHideItemRequest) Description() string {
+    return strings.Trim("Hide a pivot field item in the PivotTable.", " ")
 }

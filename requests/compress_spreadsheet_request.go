@@ -21,7 +21,7 @@ type CompressSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewCompressSpreadsheetRequest(level int, Spreadsheet string, opts ...RequestOption) *CompressSpreadsheetRequest {
+func NewCompressSpreadsheetRequest(level int, Spreadsheet string, opts ...Option) *CompressSpreadsheetRequest {
     req := &CompressSpreadsheetRequest{
         level: level,
         Spreadsheet: Spreadsheet,
@@ -131,6 +131,6 @@ func (request *CompressSpreadsheetRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *CompressSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("The Web API endpoint allows users to compress a spreadsheet to reduce its file size. This function provides a straightforward way to optimize the storage and performance of spreadsheets by applying a specified compression level.", " "))
+func (request *CompressSpreadsheetRequest) Description() string {
+    return strings.Trim("The Web API endpoint allows users to compress a spreadsheet to reduce its file size. This function provides a straightforward way to optimize the storage and performance of spreadsheets by applying a specified compression level.", " ")
 }

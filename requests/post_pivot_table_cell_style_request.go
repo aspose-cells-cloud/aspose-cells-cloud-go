@@ -23,7 +23,7 @@ type PostPivotTableCellStyleRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostPivotTableCellStyleRequest(column int, name string, pivotTableIndex int, row int, sheetName string, style *models.Style, opts ...RequestOption) *PostPivotTableCellStyleRequest {
+func NewPostPivotTableCellStyleRequest(column int, name string, pivotTableIndex int, row int, sheetName string, style *models.Style, opts ...Option) *PostPivotTableCellStyleRequest {
     req := &PostPivotTableCellStyleRequest{
         column: column,
         name: name,
@@ -132,6 +132,6 @@ func (request *PostPivotTableCellStyleRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *PostPivotTableCellStyleRequest) Description() {
-    fmt.Println(strings.Trim("Update cell style in the PivotTable.", " "))
+func (request *PostPivotTableCellStyleRequest) Description() string {
+    return strings.Trim("Update cell style in the PivotTable.", " ")
 }

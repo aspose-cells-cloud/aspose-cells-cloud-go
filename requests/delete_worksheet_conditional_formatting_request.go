@@ -17,7 +17,7 @@ type DeleteWorksheetConditionalFormattingRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetConditionalFormattingRequest(index int, name string, sheetName string, opts ...RequestOption) *DeleteWorksheetConditionalFormattingRequest {
+func NewDeleteWorksheetConditionalFormattingRequest(index int, name string, sheetName string, opts ...Option) *DeleteWorksheetConditionalFormattingRequest {
     req := &DeleteWorksheetConditionalFormattingRequest{
         index: index,
         name: name,
@@ -112,6 +112,6 @@ func (request *DeleteWorksheetConditionalFormattingRequest) GetMultipartForm() m
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetConditionalFormattingRequest) Description() {
-    fmt.Println(strings.Trim("Remove a conditional formatting.", " "))
+func (request *DeleteWorksheetConditionalFormattingRequest) Description() string {
+    return strings.Trim("Remove a conditional formatting.", " ")
 }

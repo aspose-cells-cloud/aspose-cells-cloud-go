@@ -16,7 +16,7 @@ type GetWorksheetChartsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetChartsRequest(name string, sheetName string, opts ...RequestOption) *GetWorksheetChartsRequest {
+func NewGetWorksheetChartsRequest(name string, sheetName string, opts ...Option) *GetWorksheetChartsRequest {
     req := &GetWorksheetChartsRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *GetWorksheetChartsRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *GetWorksheetChartsRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve descriptions of charts in the worksheet.", " "))
+func (request *GetWorksheetChartsRequest) Description() string {
+    return strings.Trim("Retrieve descriptions of charts in the worksheet.", " ")
 }

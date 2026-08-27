@@ -23,7 +23,7 @@ type ConvertChartToPdfRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertChartToPdfRequest(chartIndex int, Spreadsheet string, worksheet string, opts ...RequestOption) *ConvertChartToPdfRequest {
+func NewConvertChartToPdfRequest(chartIndex int, Spreadsheet string, worksheet string, opts ...Option) *ConvertChartToPdfRequest {
     req := &ConvertChartToPdfRequest{
         chartIndex: chartIndex,
         Spreadsheet: Spreadsheet,
@@ -145,6 +145,6 @@ func (request *ConvertChartToPdfRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *ConvertChartToPdfRequest) Description() {
-    fmt.Println(strings.Trim("Converts a chart of spreadsheet on a local drive to pdf.", " "))
+func (request *ConvertChartToPdfRequest) Description() string {
+    return strings.Trim("Converts a chart of spreadsheet on a local drive to pdf.", " ")
 }

@@ -18,7 +18,7 @@ type AddPictureInCellRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewAddPictureInCellRequest(cellName string, name string, picturePath string, sheetName string, opts ...RequestOption) *AddPictureInCellRequest {
+func NewAddPictureInCellRequest(cellName string, name string, picturePath string, sheetName string, opts ...Option) *AddPictureInCellRequest {
     req := &AddPictureInCellRequest{
         cellName: cellName,
         name: name,
@@ -121,6 +121,6 @@ func (request *AddPictureInCellRequest) GetMultipartForm() map[string]interface{
     return localVarFormParams
 }
 
-func (request *AddPictureInCellRequest) Description() {
-    fmt.Println(strings.Trim("add new picture in the cells.", " "))
+func (request *AddPictureInCellRequest) Description() string {
+    return strings.Trim("add new picture in the cells.", " ")
 }

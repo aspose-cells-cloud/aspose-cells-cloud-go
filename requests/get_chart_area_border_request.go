@@ -17,7 +17,7 @@ type GetChartAreaBorderRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetChartAreaBorderRequest(chartIndex int, name string, sheetName string, opts ...RequestOption) *GetChartAreaBorderRequest {
+func NewGetChartAreaBorderRequest(chartIndex int, name string, sheetName string, opts ...Option) *GetChartAreaBorderRequest {
     req := &GetChartAreaBorderRequest{
         chartIndex: chartIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *GetChartAreaBorderRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *GetChartAreaBorderRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve chart area border description.", " "))
+func (request *GetChartAreaBorderRequest) Description() string {
+    return strings.Trim("Retrieve chart area border description.", " ")
 }

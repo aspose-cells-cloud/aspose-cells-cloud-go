@@ -17,7 +17,7 @@ type GetWorksheetCellRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetCellRequest(cellOrMethodName string, name string, sheetName string, opts ...RequestOption) *GetWorksheetCellRequest {
+func NewGetWorksheetCellRequest(cellOrMethodName string, name string, sheetName string, opts ...Option) *GetWorksheetCellRequest {
     req := &GetWorksheetCellRequest{
         cellOrMethodName: cellOrMethodName,
         name: name,
@@ -115,6 +115,6 @@ func (request *GetWorksheetCellRequest) GetMultipartForm() map[string]interface{
     return localVarFormParams
 }
 
-func (request *GetWorksheetCellRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve cell data using either cell reference or method name in the worksheet.", " "))
+func (request *GetWorksheetCellRequest) Description() string {
+    return strings.Trim("Retrieve cell data using either cell reference or method name in the worksheet.", " ")
 }

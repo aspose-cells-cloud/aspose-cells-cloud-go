@@ -17,7 +17,7 @@ type PostSetCellHtmlStringRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostSetCellHtmlStringRequest(cellName string, name string, sheetName string, opts ...RequestOption) *PostSetCellHtmlStringRequest {
+func NewPostSetCellHtmlStringRequest(cellName string, name string, sheetName string, opts ...Option) *PostSetCellHtmlStringRequest {
     req := &PostSetCellHtmlStringRequest{
         cellName: cellName,
         name: name,
@@ -115,6 +115,6 @@ func (request *PostSetCellHtmlStringRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *PostSetCellHtmlStringRequest) Description() {
-    fmt.Println(strings.Trim("Set the HTML string containing data and specific formats in this cell.", " "))
+func (request *PostSetCellHtmlStringRequest) Description() string {
+    return strings.Trim("Set the HTML string containing data and specific formats in this cell.", " ")
 }

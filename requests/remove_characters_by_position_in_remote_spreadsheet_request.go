@@ -24,7 +24,7 @@ type RemoveCharactersByPositionInRemoteSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewRemoveCharactersByPositionInRemoteSpreadsheetRequest(name string, _range string, worksheet string, opts ...RequestOption) *RemoveCharactersByPositionInRemoteSpreadsheetRequest {
+func NewRemoveCharactersByPositionInRemoteSpreadsheetRequest(name string, _range string, worksheet string, opts ...Option) *RemoveCharactersByPositionInRemoteSpreadsheetRequest {
     req := &RemoveCharactersByPositionInRemoteSpreadsheetRequest{
         name: name,
         _range: _range,
@@ -164,6 +164,6 @@ func (request *RemoveCharactersByPositionInRemoteSpreadsheetRequest) GetMultipar
     return localVarFormParams
 }
 
-func (request *RemoveCharactersByPositionInRemoteSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Deletes characters from every cell in the target range by position (first/last N, before/after a substring, or between two delimiters) while preserving formulas, formatting and data-validation.", " "))
+func (request *RemoveCharactersByPositionInRemoteSpreadsheetRequest) Description() string {
+    return strings.Trim("Deletes characters from every cell in the target range by position (first/last N, before/after a substring, or between two delimiters) while preserving formulas, formatting and data-validation.", " ")
 }

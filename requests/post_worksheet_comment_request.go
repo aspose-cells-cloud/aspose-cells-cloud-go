@@ -20,7 +20,7 @@ type PostWorksheetCommentRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetCommentRequest(cellName string, comment *models.Comment, name string, sheetName string, opts ...RequestOption) *PostWorksheetCommentRequest {
+func NewPostWorksheetCommentRequest(cellName string, comment *models.Comment, name string, sheetName string, opts ...Option) *PostWorksheetCommentRequest {
     req := &PostWorksheetCommentRequest{
         cellName: cellName,
         comment: comment,
@@ -122,6 +122,6 @@ func (request *PostWorksheetCommentRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *PostWorksheetCommentRequest) Description() {
-    fmt.Println(strings.Trim("Update cell comment in the worksheet.", " "))
+func (request *PostWorksheetCommentRequest) Description() string {
+    return strings.Trim("Update cell comment in the worksheet.", " ")
 }

@@ -19,7 +19,7 @@ type PostUnhideWorksheetRowsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostUnhideWorksheetRowsRequest(name string, sheetName string, startrow int, totalRows int, opts ...RequestOption) *PostUnhideWorksheetRowsRequest {
+func NewPostUnhideWorksheetRowsRequest(name string, sheetName string, startrow int, totalRows int, opts ...Option) *PostUnhideWorksheetRowsRequest {
     req := &PostUnhideWorksheetRowsRequest{
         name: name,
         sheetName: sheetName,
@@ -122,6 +122,6 @@ func (request *PostUnhideWorksheetRowsRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *PostUnhideWorksheetRowsRequest) Description() {
-    fmt.Println(strings.Trim("Unhide rows in the worksheet.", " "))
+func (request *PostUnhideWorksheetRowsRequest) Description() string {
+    return strings.Trim("Unhide rows in the worksheet.", " ")
 }

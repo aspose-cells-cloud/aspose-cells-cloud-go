@@ -16,7 +16,7 @@ type GetWorksheetTextItemsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetTextItemsRequest(name string, sheetName string, opts ...RequestOption) *GetWorksheetTextItemsRequest {
+func NewGetWorksheetTextItemsRequest(name string, sheetName string, opts ...Option) *GetWorksheetTextItemsRequest {
     req := &GetWorksheetTextItemsRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *GetWorksheetTextItemsRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *GetWorksheetTextItemsRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve text items in the worksheet.", " "))
+func (request *GetWorksheetTextItemsRequest) Description() string {
+    return strings.Trim("Retrieve text items in the worksheet.", " ")
 }

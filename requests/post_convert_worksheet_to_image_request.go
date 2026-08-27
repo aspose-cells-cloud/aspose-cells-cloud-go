@@ -16,7 +16,7 @@ type PostConvertWorksheetToImageRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostConvertWorksheetToImageRequest(convertWorksheetOptions *models.ConvertWorksheetOptions, opts ...RequestOption) *PostConvertWorksheetToImageRequest {
+func NewPostConvertWorksheetToImageRequest(convertWorksheetOptions *models.ConvertWorksheetOptions, opts ...Option) *PostConvertWorksheetToImageRequest {
     req := &PostConvertWorksheetToImageRequest{
         convertWorksheetOptions: convertWorksheetOptions,
     }
@@ -97,6 +97,6 @@ func (request *PostConvertWorksheetToImageRequest) GetMultipartForm() map[string
     return localVarFormParams
 }
 
-func (request *PostConvertWorksheetToImageRequest) Description() {
-    fmt.Println(strings.Trim("PostConvertWorksheetToImage", " "))
+func (request *PostConvertWorksheetToImageRequest) Description() string {
+    return strings.Trim("PostConvertWorksheetToImage", " ")
 }

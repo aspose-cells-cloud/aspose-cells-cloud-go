@@ -17,7 +17,7 @@ type PostWorksheetPivotTableCalculateRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetPivotTableCalculateRequest(name string, pivotTableIndex int, sheetName string, opts ...RequestOption) *PostWorksheetPivotTableCalculateRequest {
+func NewPostWorksheetPivotTableCalculateRequest(name string, pivotTableIndex int, sheetName string, opts ...Option) *PostWorksheetPivotTableCalculateRequest {
     req := &PostWorksheetPivotTableCalculateRequest{
         name: name,
         pivotTableIndex: pivotTableIndex,
@@ -112,6 +112,6 @@ func (request *PostWorksheetPivotTableCalculateRequest) GetMultipartForm() map[s
     return localVarFormParams
 }
 
-func (request *PostWorksheetPivotTableCalculateRequest) Description() {
-    fmt.Println(strings.Trim("Calculate pivottable's data to cells.", " "))
+func (request *PostWorksheetPivotTableCalculateRequest) Description() string {
+    return strings.Trim("Calculate pivottable's data to cells.", " ")
 }

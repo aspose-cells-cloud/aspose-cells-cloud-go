@@ -20,7 +20,7 @@ type DeleteMetadataRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteMetadataRequest(File string, opts ...RequestOption) *DeleteMetadataRequest {
+func NewDeleteMetadataRequest(File string, opts ...Option) *DeleteMetadataRequest {
     req := &DeleteMetadataRequest{
         File: File,
     }
@@ -128,6 +128,6 @@ func (request *DeleteMetadataRequest) GetMultipartForm() map[string]interface{} 
     return localVarFormParams
 }
 
-func (request *DeleteMetadataRequest) Description() {
-    fmt.Println(strings.Trim("Delete cells document properties in Excel file, and save them is various formats.", " "))
+func (request *DeleteMetadataRequest) Description() string {
+    return strings.Trim("Delete cells document properties in Excel file, and save them is various formats.", " ")
 }

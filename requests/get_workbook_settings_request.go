@@ -15,7 +15,7 @@ type GetWorkbookSettingsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorkbookSettingsRequest(name string, opts ...RequestOption) *GetWorkbookSettingsRequest {
+func NewGetWorkbookSettingsRequest(name string, opts ...Option) *GetWorkbookSettingsRequest {
     req := &GetWorkbookSettingsRequest{
         name: name,
     }
@@ -103,6 +103,6 @@ func (request *GetWorkbookSettingsRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *GetWorkbookSettingsRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve descriptions of workbook settings.", " "))
+func (request *GetWorkbookSettingsRequest) Description() string {
+    return strings.Trim("Retrieve descriptions of workbook settings.", " ")
 }

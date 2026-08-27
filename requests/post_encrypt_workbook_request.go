@@ -18,7 +18,7 @@ type PostEncryptWorkbookRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostEncryptWorkbookRequest(encryption *models.WorkbookEncryptionRequest, name string, opts ...RequestOption) *PostEncryptWorkbookRequest {
+func NewPostEncryptWorkbookRequest(encryption *models.WorkbookEncryptionRequest, name string, opts ...Option) *PostEncryptWorkbookRequest {
     req := &PostEncryptWorkbookRequest{
         encryption: encryption,
         name: name,
@@ -110,6 +110,6 @@ func (request *PostEncryptWorkbookRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *PostEncryptWorkbookRequest) Description() {
-    fmt.Println(strings.Trim("Excel Encryption.", " "))
+func (request *PostEncryptWorkbookRequest) Description() string {
+    return strings.Trim("Excel Encryption.", " ")
 }

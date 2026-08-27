@@ -22,7 +22,7 @@ type RenameWorksheetInSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewRenameWorksheetInSpreadsheetRequest(sourceName string, Spreadsheet string, targetName string, opts ...RequestOption) *RenameWorksheetInSpreadsheetRequest {
+func NewRenameWorksheetInSpreadsheetRequest(sourceName string, Spreadsheet string, targetName string, opts ...Option) *RenameWorksheetInSpreadsheetRequest {
     req := &RenameWorksheetInSpreadsheetRequest{
         sourceName: sourceName,
         Spreadsheet: Spreadsheet,
@@ -141,6 +141,6 @@ func (request *RenameWorksheetInSpreadsheetRequest) GetMultipartForm() map[strin
     return localVarFormParams
 }
 
-func (request *RenameWorksheetInSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("The Web API endpoint allows users to rename a specified worksheet within a workbook. This function provides a straightforward way to update worksheet names, enhancing workbook organization and readability.", " "))
+func (request *RenameWorksheetInSpreadsheetRequest) Description() string {
+    return strings.Trim("The Web API endpoint allows users to rename a specified worksheet within a workbook. This function provides a straightforward way to update worksheet names, enhancing workbook organization and readability.", " ")
 }

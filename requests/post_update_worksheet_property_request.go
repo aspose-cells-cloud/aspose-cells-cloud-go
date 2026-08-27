@@ -19,7 +19,7 @@ type PostUpdateWorksheetPropertyRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostUpdateWorksheetPropertyRequest(name string, sheet *models.Worksheet, sheetName string, opts ...RequestOption) *PostUpdateWorksheetPropertyRequest {
+func NewPostUpdateWorksheetPropertyRequest(name string, sheet *models.Worksheet, sheetName string, opts ...Option) *PostUpdateWorksheetPropertyRequest {
     req := &PostUpdateWorksheetPropertyRequest{
         name: name,
         sheet: sheet,
@@ -116,6 +116,6 @@ func (request *PostUpdateWorksheetPropertyRequest) GetMultipartForm() map[string
     return localVarFormParams
 }
 
-func (request *PostUpdateWorksheetPropertyRequest) Description() {
-    fmt.Println(strings.Trim("Update worksheet properties in the workbook.", " "))
+func (request *PostUpdateWorksheetPropertyRequest) Description() string {
+    return strings.Trim("Update worksheet properties in the workbook.", " ")
 }

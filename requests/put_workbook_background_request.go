@@ -21,7 +21,7 @@ type PutWorkbookBackgroundRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorkbookBackgroundRequest(name string, opts ...RequestOption) *PutWorkbookBackgroundRequest {
+func NewPutWorkbookBackgroundRequest(name string, opts ...Option) *PutWorkbookBackgroundRequest {
     req := &PutWorkbookBackgroundRequest{
         name: name,
     }
@@ -137,6 +137,6 @@ func (request *PutWorkbookBackgroundRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *PutWorkbookBackgroundRequest) Description() {
-    fmt.Println(strings.Trim("Set background in the workbook.", " "))
+func (request *PutWorkbookBackgroundRequest) Description() string {
+    return strings.Trim("Set background in the workbook.", " ")
 }

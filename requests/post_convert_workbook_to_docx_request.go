@@ -20,7 +20,7 @@ type PostConvertWorkbookToDocxRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostConvertWorkbookToDocxRequest(File string, opts ...RequestOption) *PostConvertWorkbookToDocxRequest {
+func NewPostConvertWorkbookToDocxRequest(File string, opts ...Option) *PostConvertWorkbookToDocxRequest {
     req := &PostConvertWorkbookToDocxRequest{
         File: File,
     }
@@ -128,6 +128,6 @@ func (request *PostConvertWorkbookToDocxRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *PostConvertWorkbookToDocxRequest) Description() {
-    fmt.Println(strings.Trim("Convert Excel file to Docx files.", " "))
+func (request *PostConvertWorkbookToDocxRequest) Description() string {
+    return strings.Trim("Convert Excel file to Docx files.", " ")
 }

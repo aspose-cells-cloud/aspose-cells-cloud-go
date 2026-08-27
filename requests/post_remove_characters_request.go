@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostRemoveCharactersRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostRemoveCharactersRequest(removeCharactersOptions *models.RemoveCharactersOptions, opts ...RequestOption) *PostRemoveCharactersRequest {
+func NewPostRemoveCharactersRequest(removeCharactersOptions *models.RemoveCharactersOptions, opts ...Option) *PostRemoveCharactersRequest {
     req := &PostRemoveCharactersRequest{
         removeCharactersOptions: removeCharactersOptions,
     }
@@ -89,6 +88,6 @@ func (request *PostRemoveCharactersRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *PostRemoveCharactersRequest) Description() {
-    fmt.Println(strings.Trim("A comprehensive set of tools for cleaning text content within selected cells. It allows users to remove specific characters, character sets, and substrings, ensuring that the text is standardized and free from unwanted symbols or sequences.", " "))
+func (request *PostRemoveCharactersRequest) Description() string {
+    return strings.Trim("A comprehensive set of tools for cleaning text content within selected cells. It allows users to remove specific characters, character sets, and substrings, ensuring that the text is standardized and free from unwanted symbols or sequences.", " ")
 }

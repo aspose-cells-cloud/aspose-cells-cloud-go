@@ -19,7 +19,7 @@ type ReplaceContentInRemoteSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewReplaceContentInRemoteSpreadsheetRequest(name string, replaceText string, searchText string, opts ...RequestOption) *ReplaceContentInRemoteSpreadsheetRequest {
+func NewReplaceContentInRemoteSpreadsheetRequest(name string, replaceText string, searchText string, opts ...Option) *ReplaceContentInRemoteSpreadsheetRequest {
     req := &ReplaceContentInRemoteSpreadsheetRequest{
         name: name,
         replaceText: replaceText,
@@ -129,6 +129,6 @@ func (request *ReplaceContentInRemoteSpreadsheetRequest) GetMultipartForm() map[
     return localVarFormParams
 }
 
-func (request *ReplaceContentInRemoteSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Replace text in the remoted spreadsheet.", " "))
+func (request *ReplaceContentInRemoteSpreadsheetRequest) Description() string {
+    return strings.Trim("Replace text in the remoted spreadsheet.", " ")
 }

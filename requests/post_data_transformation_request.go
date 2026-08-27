@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostDataTransformationRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostDataTransformationRequest(dataTransformationRequest *models.DataTransformationRequest, opts ...RequestOption) *PostDataTransformationRequest {
+func NewPostDataTransformationRequest(dataTransformationRequest *models.DataTransformationRequest, opts ...Option) *PostDataTransformationRequest {
     req := &PostDataTransformationRequest{
         dataTransformationRequest: dataTransformationRequest,
     }
@@ -89,6 +88,6 @@ func (request *PostDataTransformationRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *PostDataTransformationRequest) Description() {
-    fmt.Println(strings.Trim("Transform spreadsheet data is mainly used to pivot columns, unpivot columns.", " "))
+func (request *PostDataTransformationRequest) Description() string {
+    return strings.Trim("Transform spreadsheet data is mainly used to pivot columns, unpivot columns.", " ")
 }

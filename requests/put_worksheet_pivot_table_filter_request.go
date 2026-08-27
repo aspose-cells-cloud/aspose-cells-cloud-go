@@ -21,7 +21,7 @@ type PutWorksheetPivotTableFilterRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetPivotTableFilterRequest(filter *models.PivotFilter, name string, pivotTableIndex int, sheetName string, opts ...RequestOption) *PutWorksheetPivotTableFilterRequest {
+func NewPutWorksheetPivotTableFilterRequest(filter *models.PivotFilter, name string, pivotTableIndex int, sheetName string, opts ...Option) *PutWorksheetPivotTableFilterRequest {
     req := &PutWorksheetPivotTableFilterRequest{
         filter: filter,
         name: name,
@@ -126,6 +126,6 @@ func (request *PutWorksheetPivotTableFilterRequest) GetMultipartForm() map[strin
     return localVarFormParams
 }
 
-func (request *PutWorksheetPivotTableFilterRequest) Description() {
-    fmt.Println(strings.Trim("Add a pivot filter to the PivotTable.", " "))
+func (request *PutWorksheetPivotTableFilterRequest) Description() string {
+    return strings.Trim("Add a pivot filter to the PivotTable.", " ")
 }

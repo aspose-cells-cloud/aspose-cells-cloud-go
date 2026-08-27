@@ -19,7 +19,7 @@ type DeleteUnprotectWorksheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteUnprotectWorksheetRequest(name string, protectParameter *models.ProtectSheetParameter, sheetName string, opts ...RequestOption) *DeleteUnprotectWorksheetRequest {
+func NewDeleteUnprotectWorksheetRequest(name string, protectParameter *models.ProtectSheetParameter, sheetName string, opts ...Option) *DeleteUnprotectWorksheetRequest {
     req := &DeleteUnprotectWorksheetRequest{
         name: name,
         protectParameter: protectParameter,
@@ -116,6 +116,6 @@ func (request *DeleteUnprotectWorksheetRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *DeleteUnprotectWorksheetRequest) Description() {
-    fmt.Println(strings.Trim("Unprotect worksheet.", " "))
+func (request *DeleteUnprotectWorksheetRequest) Description() string {
+    return strings.Trim("Unprotect worksheet.", " ")
 }

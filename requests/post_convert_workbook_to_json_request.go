@@ -20,7 +20,7 @@ type PostConvertWorkbookToJsonRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostConvertWorkbookToJsonRequest(File string, opts ...RequestOption) *PostConvertWorkbookToJsonRequest {
+func NewPostConvertWorkbookToJsonRequest(File string, opts ...Option) *PostConvertWorkbookToJsonRequest {
     req := &PostConvertWorkbookToJsonRequest{
         File: File,
     }
@@ -128,6 +128,6 @@ func (request *PostConvertWorkbookToJsonRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *PostConvertWorkbookToJsonRequest) Description() {
-    fmt.Println(strings.Trim("Convert Excel file to Json files.", " "))
+func (request *PostConvertWorkbookToJsonRequest) Description() string {
+    return strings.Trim("Convert Excel file to Json files.", " ")
 }

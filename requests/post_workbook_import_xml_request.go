@@ -23,7 +23,7 @@ type PostWorkbookImportXMLRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorkbookImportXMLRequest(importXMLRequest *models.ImportXMLRequest, name string, opts ...RequestOption) *PostWorkbookImportXMLRequest {
+func NewPostWorkbookImportXMLRequest(importXMLRequest *models.ImportXMLRequest, name string, opts ...Option) *PostWorkbookImportXMLRequest {
     req := &PostWorkbookImportXMLRequest{
         importXMLRequest: importXMLRequest,
         name: name,
@@ -145,6 +145,6 @@ func (request *PostWorkbookImportXMLRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *PostWorkbookImportXMLRequest) Description() {
-    fmt.Println(strings.Trim("Import an XML data file into an Excel file. The XML data file can either be a cloud file or data from an HTTP URI.", " "))
+func (request *PostWorkbookImportXMLRequest) Description() string {
+    return strings.Trim("Import an XML data file into an Excel file. The XML data file can either be a cloud file or data from an HTTP URI.", " ")
 }

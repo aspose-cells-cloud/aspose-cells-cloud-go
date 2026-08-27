@@ -25,7 +25,7 @@ type PutWorksheetCustomFilterRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetCustomFilterRequest(criteria1 string, fieldIndex int, name string, operatorType1 string, _range string, sheetName string, opts ...RequestOption) *PutWorksheetCustomFilterRequest {
+func NewPutWorksheetCustomFilterRequest(criteria1 string, fieldIndex int, name string, operatorType1 string, _range string, sheetName string, opts ...Option) *PutWorksheetCustomFilterRequest {
     req := &PutWorksheetCustomFilterRequest{
         criteria1: criteria1,
         fieldIndex: fieldIndex,
@@ -165,6 +165,6 @@ func (request *PutWorksheetCustomFilterRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *PutWorksheetCustomFilterRequest) Description() {
-    fmt.Println(strings.Trim("Filter a list with custom criteria in the worksheet.", " "))
+func (request *PutWorksheetCustomFilterRequest) Description() string {
+    return strings.Trim("Filter a list with custom criteria in the worksheet.", " ")
 }

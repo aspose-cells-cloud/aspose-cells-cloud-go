@@ -17,6 +17,7 @@ import (
 	"fmt"
 
 	"asposecellscloud"
+	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/datasource"
 	"asposecellscloud/requests"
 )
@@ -29,15 +30,15 @@ func ReportAnalysis(ctx context.Context, client *asposecellscloud.AsposeCellsClo
 	if src == nil {
 		return nil, fmt.Errorf("%w: source is required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
 	data, err := src.ByteData()
 	if err != nil {
 		return nil, err
 	}
 
-	req := requests.NewReportAIAnalysisRequest("", cfg.reqOpts...)
+	req := requests.NewReportAIAnalysisRequest("", cfg.ReqOpts...)
 	if req == nil {
 		return nil, fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
 	}
@@ -54,15 +55,15 @@ func Summarize(ctx context.Context, client *asposecellscloud.AsposeCellsCloudCli
 	if src == nil || sink == nil {
 		return fmt.Errorf("%w: source and sink are required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
 	data, err := src.ByteData()
 	if err != nil {
 		return err
 	}
 
-	req := requests.NewSummarizeSpreadsheetRequest("", cfg.reqOpts...)
+	req := requests.NewSummarizeSpreadsheetRequest("", cfg.ReqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
 	}
@@ -84,15 +85,15 @@ func AggregateByColor(ctx context.Context, client *asposecellscloud.AsposeCellsC
 	if src == nil {
 		return nil, fmt.Errorf("%w: source is required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
 	data, err := src.ByteData()
 	if err != nil {
 		return nil, err
 	}
 
-	req := requests.NewAggregateCellsByColorRequest("", cfg.reqOpts...)
+	req := requests.NewAggregateCellsByColorRequest("", cfg.ReqOpts...)
 	if req == nil {
 		return nil, fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
 	}
@@ -111,15 +112,15 @@ func MathCalculate(ctx context.Context, client *asposecellscloud.AsposeCellsClou
 	if src == nil {
 		return nil, fmt.Errorf("%w: source is required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
 	data, err := src.ByteData()
 	if err != nil {
 		return nil, err
 	}
 
-	req := requests.NewMathCalculateRequest(operation, "", value, cfg.reqOpts...)
+	req := requests.NewMathCalculateRequest(operation, "", value, cfg.ReqOpts...)
 	if req == nil {
 		return nil, fmt.Errorf("%w: operation and value are required", asposecellscloud.ErrInvalidParam)
 	}

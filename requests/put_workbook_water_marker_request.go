@@ -18,7 +18,7 @@ type PutWorkbookWaterMarkerRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorkbookWaterMarkerRequest(name string, textWaterMarkerRequest *models.TextWaterMarkerRequest, opts ...RequestOption) *PutWorkbookWaterMarkerRequest {
+func NewPutWorkbookWaterMarkerRequest(name string, textWaterMarkerRequest *models.TextWaterMarkerRequest, opts ...Option) *PutWorkbookWaterMarkerRequest {
     req := &PutWorkbookWaterMarkerRequest{
         name: name,
         textWaterMarkerRequest: textWaterMarkerRequest,
@@ -110,6 +110,6 @@ func (request *PutWorkbookWaterMarkerRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *PutWorkbookWaterMarkerRequest) Description() {
-    fmt.Println(strings.Trim("Set water marker in the workbook.", " "))
+func (request *PutWorkbookWaterMarkerRequest) Description() string {
+    return strings.Trim("Set water marker in the workbook.", " ")
 }

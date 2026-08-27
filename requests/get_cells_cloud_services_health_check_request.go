@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 )
@@ -10,7 +9,7 @@ type GetCellsCloudServicesHealthCheckRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetCellsCloudServicesHealthCheckRequest(opts ...RequestOption) *GetCellsCloudServicesHealthCheckRequest {
+func NewGetCellsCloudServicesHealthCheckRequest(opts ...Option) *GetCellsCloudServicesHealthCheckRequest {
     req := &GetCellsCloudServicesHealthCheckRequest{
     }
     cfg := &requestConfig{
@@ -80,6 +79,6 @@ func (request *GetCellsCloudServicesHealthCheckRequest) GetMultipartForm() map[s
     return localVarFormParams
 }
 
-func (request *GetCellsCloudServicesHealthCheckRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve cell descriptions in a specified format.", " "))
+func (request *GetCellsCloudServicesHealthCheckRequest) Description() string {
+    return strings.Trim("Retrieve cell descriptions in a specified format.", " ")
 }

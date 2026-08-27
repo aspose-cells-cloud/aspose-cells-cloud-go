@@ -20,7 +20,7 @@ type PostConvertWorkbookToPptxRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostConvertWorkbookToPptxRequest(File string, opts ...RequestOption) *PostConvertWorkbookToPptxRequest {
+func NewPostConvertWorkbookToPptxRequest(File string, opts ...Option) *PostConvertWorkbookToPptxRequest {
     req := &PostConvertWorkbookToPptxRequest{
         File: File,
     }
@@ -128,6 +128,6 @@ func (request *PostConvertWorkbookToPptxRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *PostConvertWorkbookToPptxRequest) Description() {
-    fmt.Println(strings.Trim("Convert Excel file to Pptx files.", " "))
+func (request *PostConvertWorkbookToPptxRequest) Description() string {
+    return strings.Trim("Convert Excel file to Pptx files.", " ")
 }

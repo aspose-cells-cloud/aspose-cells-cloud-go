@@ -18,7 +18,7 @@ type PostProtectWorkbookRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostProtectWorkbookRequest(name string, protectWorkbookRequest *models.ProtectWorkbookRequest, opts ...RequestOption) *PostProtectWorkbookRequest {
+func NewPostProtectWorkbookRequest(name string, protectWorkbookRequest *models.ProtectWorkbookRequest, opts ...Option) *PostProtectWorkbookRequest {
     req := &PostProtectWorkbookRequest{
         name: name,
         protectWorkbookRequest: protectWorkbookRequest,
@@ -110,6 +110,6 @@ func (request *PostProtectWorkbookRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *PostProtectWorkbookRequest) Description() {
-    fmt.Println(strings.Trim("Excel protection.", " "))
+func (request *PostProtectWorkbookRequest) Description() string {
+    return strings.Trim("Excel protection.", " ")
 }

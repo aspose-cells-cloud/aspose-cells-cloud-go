@@ -23,7 +23,7 @@ type FlipDataRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewFlipDataRequest(cellArea string, Spreadsheet string, worksheet string, opts ...RequestOption) *FlipDataRequest {
+func NewFlipDataRequest(cellArea string, Spreadsheet string, worksheet string, opts ...Option) *FlipDataRequest {
     req := &FlipDataRequest{
         cellArea: cellArea,
         Spreadsheet: Spreadsheet,
@@ -148,6 +148,6 @@ func (request *FlipDataRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *FlipDataRequest) Description() {
-    fmt.Println(strings.Trim("Transposes a specified data range (rows become columns, columns become rows).", " "))
+func (request *FlipDataRequest) Description() string {
+    return strings.Trim("Transposes a specified data range (rows become columns, columns become rows).", " ")
 }

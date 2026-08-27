@@ -15,7 +15,7 @@ type ObjectExistsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewObjectExistsRequest(path string, opts ...RequestOption) *ObjectExistsRequest {
+func NewObjectExistsRequest(path string, opts ...Option) *ObjectExistsRequest {
     req := &ObjectExistsRequest{
         path: path,
     }
@@ -103,6 +103,6 @@ func (request *ObjectExistsRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *ObjectExistsRequest) Description() {
-    fmt.Println(strings.Trim("ObjectExists", " "))
+func (request *ObjectExistsRequest) Description() string {
+    return strings.Trim("ObjectExists", " ")
 }

@@ -14,7 +14,7 @@ type CreateFolderRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewCreateFolderRequest(path string, opts ...RequestOption) *CreateFolderRequest {
+func NewCreateFolderRequest(path string, opts ...Option) *CreateFolderRequest {
     req := &CreateFolderRequest{
         path: path,
     }
@@ -96,6 +96,6 @@ func (request *CreateFolderRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *CreateFolderRequest) Description() {
-    fmt.Println(strings.Trim("CreateFolder", " "))
+func (request *CreateFolderRequest) Description() string {
+    return strings.Trim("CreateFolder", " ")
 }

@@ -18,7 +18,7 @@ type PostWorkbookSettingsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorkbookSettingsRequest(name string, settings *models.WorkbookSettings, opts ...RequestOption) *PostWorkbookSettingsRequest {
+func NewPostWorkbookSettingsRequest(name string, settings *models.WorkbookSettings, opts ...Option) *PostWorkbookSettingsRequest {
     req := &PostWorkbookSettingsRequest{
         name: name,
         settings: settings,
@@ -110,6 +110,6 @@ func (request *PostWorkbookSettingsRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *PostWorkbookSettingsRequest) Description() {
-    fmt.Println(strings.Trim("Update setting in the workbook.", " "))
+func (request *PostWorkbookSettingsRequest) Description() string {
+    return strings.Trim("Update setting in the workbook.", " ")
 }

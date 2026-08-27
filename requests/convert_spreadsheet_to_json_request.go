@@ -23,7 +23,7 @@ type ConvertSpreadsheetToJsonRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertSpreadsheetToJsonRequest(Spreadsheet string, opts ...RequestOption) *ConvertSpreadsheetToJsonRequest {
+func NewConvertSpreadsheetToJsonRequest(Spreadsheet string, opts ...Option) *ConvertSpreadsheetToJsonRequest {
     req := &ConvertSpreadsheetToJsonRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -149,6 +149,6 @@ func (request *ConvertSpreadsheetToJsonRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *ConvertSpreadsheetToJsonRequest) Description() {
-    fmt.Println(strings.Trim("Converts a spreadsheet on a local drive to the JSON file.", " "))
+func (request *ConvertSpreadsheetToJsonRequest) Description() string {
+    return strings.Trim("Converts a spreadsheet on a local drive to the JSON file.", " ")
 }

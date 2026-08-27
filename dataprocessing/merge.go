@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"asposecellscloud"
+	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/datasource"
 	"asposecellscloud/requests"
 )
@@ -21,15 +22,15 @@ func MergeSpreadsheet(ctx context.Context, client *asposecellscloud.AsposeCellsC
 	if src == nil || sink == nil {
 		return fmt.Errorf("%w: source and sink are required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
 	data, err := src.ByteData()
 	if err != nil {
 		return err
 	}
 
-	req := requests.NewMergeSpreadsheetsRequest("", cfg.reqOpts...)
+	req := requests.NewMergeSpreadsheetsRequest("", cfg.ReqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: failed to build merge request", asposecellscloud.ErrInvalidParam)
 	}
@@ -54,10 +55,10 @@ func MergeRemoteSpreadsheet(ctx context.Context, client *asposecellscloud.Aspose
 	if wf == nil || wf.Name == "" || mergedSpreadsheet == "" || sink == nil {
 		return fmt.Errorf("%w: workbook names and sink are required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
-	reqOpts := append(workbookParams(wf), cfg.reqOpts...)
+	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewMergeRemoteSpreadsheetRequest(mergedSpreadsheet, wf.Name, reqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: failed to build merge request", asposecellscloud.ErrInvalidParam)

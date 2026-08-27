@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostUpdateWordCaseRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostUpdateWordCaseRequest(wordCaseOptions *models.WordCaseOptions, opts ...RequestOption) *PostUpdateWordCaseRequest {
+func NewPostUpdateWordCaseRequest(wordCaseOptions *models.WordCaseOptions, opts ...Option) *PostUpdateWordCaseRequest {
     req := &PostUpdateWordCaseRequest{
         wordCaseOptions: wordCaseOptions,
     }
@@ -89,6 +88,6 @@ func (request *PostUpdateWordCaseRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *PostUpdateWordCaseRequest) Description() {
-    fmt.Println(strings.Trim("Managing inconsistent text case in spreadsheets (Excel, Google Sheets, CSV) can be frustrating, especially with large datasets. The PostUpdateWordCase WEB API solves this by automating text case conversions, ensuring clean and standardized data.", " "))
+func (request *PostUpdateWordCaseRequest) Description() string {
+    return strings.Trim("Managing inconsistent text case in spreadsheets (Excel, Google Sheets, CSV) can be frustrating, especially with large datasets. The PostUpdateWordCase WEB API solves this by automating text case conversions, ensuring clean and standardized data.", " ")
 }

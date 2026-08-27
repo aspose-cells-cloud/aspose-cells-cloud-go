@@ -17,7 +17,7 @@ type PostWorkbookTextReplaceRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorkbookTextReplaceRequest(name string, newValue string, oldValue string, opts ...RequestOption) *PostWorkbookTextReplaceRequest {
+func NewPostWorkbookTextReplaceRequest(name string, newValue string, oldValue string, opts ...Option) *PostWorkbookTextReplaceRequest {
     req := &PostWorkbookTextReplaceRequest{
         name: name,
         newValue: newValue,
@@ -115,6 +115,6 @@ func (request *PostWorkbookTextReplaceRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *PostWorkbookTextReplaceRequest) Description() {
-    fmt.Println(strings.Trim("Replace text in the workbook.", " "))
+func (request *PostWorkbookTextReplaceRequest) Description() string {
+    return strings.Trim("Replace text in the workbook.", " ")
 }

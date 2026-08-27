@@ -24,7 +24,7 @@ type PutWorksheetAddPictureRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetAddPictureRequest(name string, sheetName string, opts ...RequestOption) *PutWorksheetAddPictureRequest {
+func NewPutWorksheetAddPictureRequest(name string, sheetName string, opts ...Option) *PutWorksheetAddPictureRequest {
     req := &PutWorksheetAddPictureRequest{
         name: name,
         sheetName: sheetName,
@@ -150,6 +150,6 @@ func (request *PutWorksheetAddPictureRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *PutWorksheetAddPictureRequest) Description() {
-    fmt.Println(strings.Trim("Add a new picture in the worksheet.", " "))
+func (request *PutWorksheetAddPictureRequest) Description() string {
+    return strings.Trim("Add a new picture in the worksheet.", " ")
 }

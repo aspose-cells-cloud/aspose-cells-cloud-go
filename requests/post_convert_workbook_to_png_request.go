@@ -19,7 +19,7 @@ type PostConvertWorkbookToPNGRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostConvertWorkbookToPNGRequest(File string, opts ...RequestOption) *PostConvertWorkbookToPNGRequest {
+func NewPostConvertWorkbookToPNGRequest(File string, opts ...Option) *PostConvertWorkbookToPNGRequest {
     req := &PostConvertWorkbookToPNGRequest{
         File: File,
     }
@@ -121,6 +121,6 @@ func (request *PostConvertWorkbookToPNGRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *PostConvertWorkbookToPNGRequest) Description() {
-    fmt.Println(strings.Trim("Convert Excel file to PNG files.", " "))
+func (request *PostConvertWorkbookToPNGRequest) Description() string {
+    return strings.Trim("Convert Excel file to PNG files.", " ")
 }

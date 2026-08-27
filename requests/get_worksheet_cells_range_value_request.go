@@ -21,7 +21,7 @@ type GetWorksheetCellsRangeValueRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetCellsRangeValueRequest(name string, sheetName string, opts ...RequestOption) *GetWorksheetCellsRangeValueRequest {
+func NewGetWorksheetCellsRangeValueRequest(name string, sheetName string, opts ...Option) *GetWorksheetCellsRangeValueRequest {
     req := &GetWorksheetCellsRangeValueRequest{
         name: name,
         sheetName: sheetName,
@@ -144,6 +144,6 @@ func (request *GetWorksheetCellsRangeValueRequest) GetMultipartForm() map[string
     return localVarFormParams
 }
 
-func (request *GetWorksheetCellsRangeValueRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve the values of cells within the specified range.", " "))
+func (request *GetWorksheetCellsRangeValueRequest) Description() string {
+    return strings.Trim("Retrieve the values of cells within the specified range.", " ")
 }

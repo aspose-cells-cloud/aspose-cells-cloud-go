@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostBatchConvertRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostBatchConvertRequest(batchConvertRequest *models.BatchConvertRequest, opts ...RequestOption) *PostBatchConvertRequest {
+func NewPostBatchConvertRequest(batchConvertRequest *models.BatchConvertRequest, opts ...Option) *PostBatchConvertRequest {
     req := &PostBatchConvertRequest{
         batchConvertRequest: batchConvertRequest,
     }
@@ -89,6 +88,6 @@ func (request *PostBatchConvertRequest) GetMultipartForm() map[string]interface{
     return localVarFormParams
 }
 
-func (request *PostBatchConvertRequest) Description() {
-    fmt.Println(strings.Trim("Batch converting files that meet specific matching conditions.", " "))
+func (request *PostBatchConvertRequest) Description() string {
+    return strings.Trim("Batch converting files that meet specific matching conditions.", " ")
 }

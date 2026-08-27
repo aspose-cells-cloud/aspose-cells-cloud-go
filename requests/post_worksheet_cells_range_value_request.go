@@ -22,7 +22,7 @@ type PostWorksheetCellsRangeValueRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetCellsRangeValueRequest(name string, _range *models.Range, sheetName string, Value string, opts ...RequestOption) *PostWorksheetCellsRangeValueRequest {
+func NewPostWorksheetCellsRangeValueRequest(name string, _range *models.Range, sheetName string, Value string, opts ...Option) *PostWorksheetCellsRangeValueRequest {
     req := &PostWorksheetCellsRangeValueRequest{
         name: name,
         _range: _range,
@@ -136,6 +136,6 @@ func (request *PostWorksheetCellsRangeValueRequest) GetMultipartForm() map[strin
     return localVarFormParams
 }
 
-func (request *PostWorksheetCellsRangeValueRequest) Description() {
-    fmt.Println(strings.Trim("Assign a value to the range; if necessary, the value will be converted to another data type, and the cell's number format will be reset.", " "))
+func (request *PostWorksheetCellsRangeValueRequest) Description() string {
+    return strings.Trim("Assign a value to the range; if necessary, the value will be converted to another data type, and the cell's number format will be reset.", " ")
 }

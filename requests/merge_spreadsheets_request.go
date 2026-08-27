@@ -23,7 +23,7 @@ type MergeSpreadsheetsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewMergeSpreadsheetsRequest(Spreadsheet string, opts ...RequestOption) *MergeSpreadsheetsRequest {
+func NewMergeSpreadsheetsRequest(Spreadsheet string, opts ...Option) *MergeSpreadsheetsRequest {
     req := &MergeSpreadsheetsRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -149,6 +149,6 @@ func (request *MergeSpreadsheetsRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *MergeSpreadsheetsRequest) Description() {
-    fmt.Println(strings.Trim("Merge local spreadsheet files into a specified format file.", " "))
+func (request *MergeSpreadsheetsRequest) Description() string {
+    return strings.Trim("Merge local spreadsheet files into a specified format file.", " ")
 }

@@ -18,7 +18,7 @@ type PutWorksheetCellsRangeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetCellsRangeRequest(name string, _range string, sheetName string, shift string, opts ...RequestOption) *PutWorksheetCellsRangeRequest {
+func NewPutWorksheetCellsRangeRequest(name string, _range string, sheetName string, shift string, opts ...Option) *PutWorksheetCellsRangeRequest {
     req := &PutWorksheetCellsRangeRequest{
         name: name,
         _range: _range,
@@ -121,6 +121,6 @@ func (request *PutWorksheetCellsRangeRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *PutWorksheetCellsRangeRequest) Description() {
-    fmt.Println(strings.Trim("Insert a range of cells and shift existing cells based on the specified shift option.", " "))
+func (request *PutWorksheetCellsRangeRequest) Description() string {
+    return strings.Trim("Insert a range of cells and shift existing cells based on the specified shift option.", " ")
 }

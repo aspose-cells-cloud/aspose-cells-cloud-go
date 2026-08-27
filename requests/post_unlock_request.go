@@ -16,7 +16,7 @@ type PostUnlockRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostUnlockRequest(File string, password string, opts ...RequestOption) *PostUnlockRequest {
+func NewPostUnlockRequest(File string, password string, opts ...Option) *PostUnlockRequest {
     req := &PostUnlockRequest{
         File: File,
         password: password,
@@ -106,6 +106,6 @@ func (request *PostUnlockRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostUnlockRequest) Description() {
-    fmt.Println(strings.Trim("Unlock Excel files.", " "))
+func (request *PostUnlockRequest) Description() string {
+    return strings.Trim("Unlock Excel files.", " ")
 }

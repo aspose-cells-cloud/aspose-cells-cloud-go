@@ -21,7 +21,7 @@ type PutWorksheetFilterRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetFilterRequest(criteria string, fieldIndex int, name string, _range string, sheetName string, opts ...RequestOption) *PutWorksheetFilterRequest {
+func NewPutWorksheetFilterRequest(criteria string, fieldIndex int, name string, _range string, sheetName string, opts ...Option) *PutWorksheetFilterRequest {
     req := &PutWorksheetFilterRequest{
         criteria: criteria,
         fieldIndex: fieldIndex,
@@ -138,6 +138,6 @@ func (request *PutWorksheetFilterRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *PutWorksheetFilterRequest) Description() {
-    fmt.Println(strings.Trim("Add a filter for a column in the worksheet.", " "))
+func (request *PutWorksheetFilterRequest) Description() string {
+    return strings.Trim("Add a filter for a column in the worksheet.", " ")
 }

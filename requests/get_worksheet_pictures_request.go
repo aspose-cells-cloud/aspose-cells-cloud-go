@@ -16,7 +16,7 @@ type GetWorksheetPicturesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetPicturesRequest(name string, sheetName string, opts ...RequestOption) *GetWorksheetPicturesRequest {
+func NewGetWorksheetPicturesRequest(name string, sheetName string, opts ...Option) *GetWorksheetPicturesRequest {
     req := &GetWorksheetPicturesRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *GetWorksheetPicturesRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *GetWorksheetPicturesRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve descriptions of pictures in the worksheet.", " "))
+func (request *GetWorksheetPicturesRequest) Description() string {
+    return strings.Trim("Retrieve descriptions of pictures in the worksheet.", " ")
 }

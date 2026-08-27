@@ -17,7 +17,7 @@ type PostWorksheetGroupShapeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetGroupShapeRequest(listShape []interface{}, name string, sheetName string, opts ...RequestOption) *PostWorksheetGroupShapeRequest {
+func NewPostWorksheetGroupShapeRequest(listShape []interface{}, name string, sheetName string, opts ...Option) *PostWorksheetGroupShapeRequest {
     req := &PostWorksheetGroupShapeRequest{
         listShape: listShape,
         name: name,
@@ -111,6 +111,6 @@ func (request *PostWorksheetGroupShapeRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *PostWorksheetGroupShapeRequest) Description() {
-    fmt.Println(strings.Trim("Group shapes in the worksheet.", " "))
+func (request *PostWorksheetGroupShapeRequest) Description() string {
+    return strings.Trim("Group shapes in the worksheet.", " ")
 }

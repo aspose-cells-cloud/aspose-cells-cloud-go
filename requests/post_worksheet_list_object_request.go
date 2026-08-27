@@ -20,7 +20,7 @@ type PostWorksheetListObjectRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetListObjectRequest(listObject *models.ListObject, listObjectIndex int, name string, sheetName string, opts ...RequestOption) *PostWorksheetListObjectRequest {
+func NewPostWorksheetListObjectRequest(listObject *models.ListObject, listObjectIndex int, name string, sheetName string, opts ...Option) *PostWorksheetListObjectRequest {
     req := &PostWorksheetListObjectRequest{
         listObject: listObject,
         listObjectIndex: listObjectIndex,
@@ -119,6 +119,6 @@ func (request *PostWorksheetListObjectRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *PostWorksheetListObjectRequest) Description() {
-    fmt.Println(strings.Trim("Update list object by index in the worksheet.", " "))
+func (request *PostWorksheetListObjectRequest) Description() string {
+    return strings.Trim("Update list object by index in the worksheet.", " ")
 }

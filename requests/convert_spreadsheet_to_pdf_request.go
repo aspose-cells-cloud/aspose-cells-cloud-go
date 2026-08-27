@@ -23,7 +23,7 @@ type ConvertSpreadsheetToPdfRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertSpreadsheetToPdfRequest(Spreadsheet string, opts ...RequestOption) *ConvertSpreadsheetToPdfRequest {
+func NewConvertSpreadsheetToPdfRequest(Spreadsheet string, opts ...Option) *ConvertSpreadsheetToPdfRequest {
     req := &ConvertSpreadsheetToPdfRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -149,6 +149,6 @@ func (request *ConvertSpreadsheetToPdfRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *ConvertSpreadsheetToPdfRequest) Description() {
-    fmt.Println(strings.Trim("Converts a spreadsheet on a local drive to the pdf file.", " "))
+func (request *ConvertSpreadsheetToPdfRequest) Description() string {
+    return strings.Trim("Converts a spreadsheet on a local drive to the pdf file.", " ")
 }

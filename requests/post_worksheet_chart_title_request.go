@@ -20,7 +20,7 @@ type PostWorksheetChartTitleRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetChartTitleRequest(chartIndex int, name string, sheetName string, title *models.Title, opts ...RequestOption) *PostWorksheetChartTitleRequest {
+func NewPostWorksheetChartTitleRequest(chartIndex int, name string, sheetName string, title *models.Title, opts ...Option) *PostWorksheetChartTitleRequest {
     req := &PostWorksheetChartTitleRequest{
         chartIndex: chartIndex,
         name: name,
@@ -119,6 +119,6 @@ func (request *PostWorksheetChartTitleRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *PostWorksheetChartTitleRequest) Description() {
-    fmt.Println(strings.Trim("Update chart title in the worksheet.", " "))
+func (request *PostWorksheetChartTitleRequest) Description() string {
+    return strings.Trim("Update chart title in the worksheet.", " ")
 }

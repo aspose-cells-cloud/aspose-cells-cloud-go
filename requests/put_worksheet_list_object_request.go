@@ -23,7 +23,7 @@ type PutWorksheetListObjectRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetListObjectRequest(name string, sheetName string, opts ...RequestOption) *PutWorksheetListObjectRequest {
+func NewPutWorksheetListObjectRequest(name string, sheetName string, opts ...Option) *PutWorksheetListObjectRequest {
     req := &PutWorksheetListObjectRequest{
         name: name,
         sheetName: sheetName,
@@ -158,6 +158,6 @@ func (request *PutWorksheetListObjectRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *PutWorksheetListObjectRequest) Description() {
-    fmt.Println(strings.Trim("Add a ListObject in the worksheet.", " "))
+func (request *PutWorksheetListObjectRequest) Description() string {
+    return strings.Trim("Add a ListObject in the worksheet.", " ")
 }

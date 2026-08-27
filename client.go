@@ -1,10 +1,10 @@
 package asposecellscloud
 
-import "C"
 import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"fmt"
 	"io"
 	"mime/multipart"
 	"net/http"
@@ -68,27 +68,46 @@ func WithHeader(key, value string) AsposeCellsCloudClientOption {
 	}
 }
 
-func (client *AsposeCellsCloudClient) addAuth(request *http.Request) (err error) {
-	if err := client.RequestOauthToken(); err != nil {
-		if err := client.RequestOauthToken(); err != nil {
-			return err
-		}
+// tokenSafetyMargin is subtracted from the token lifetime so we refresh
+// before the server-side expiration. 60 seconds is a reasonable buffer.
+const tokenSafetyMargin = 60 * time.Second
+
+// addAuth attaches a valid Bearer token to the request. It reuses the cached
+// token when it has not expired yet and fetches a new one otherwise.
+func (client *AsposeCellsCloudClient) addAuth(request *http.Request) error {
+	client.cfg.tokenMu.RLock()
+	token := client.cfg.AccessToken
+	expiresAt := client.cfg.TokenExpiresAt
+	client.cfg.tokenMu.RUnlock()
+
+	// If the cached token is still valid (with safety margin), reuse it.
+	if token != "" && time.Now().Before(expiresAt.Add(-tokenSafetyMargin)) {
+		request.Header.Set("Authorization", "Bearer "+token)
+		return nil
 	}
 
-	request.Header.Add("Authorization", "Bearer "+client.cfg.AccessToken)
+	// Token is missing or about to expire — fetch a new one.
+	if err := client.RequestOauthToken(); err != nil {
+		return fmt.Errorf("oauth token request failed: %w", err)
+	}
+
+	client.cfg.tokenMu.RLock()
+	token = client.cfg.AccessToken
+	client.cfg.tokenMu.RUnlock()
+
+	request.Header.Set("Authorization", "Bearer "+token)
 	return nil
 }
 
-// RequestOauthToken function for requests OAuth token
+// RequestOauthToken fetches a new OAuth2 access token from the Cells Cloud
+// token endpoint and caches it together with its expiration time.
 func (client *AsposeCellsCloudClient) RequestOauthToken() error {
 	// The OAuth token endpoint lives under the active API version prefix (v4.0
 	// by default, see NewConfiguration). The v1.1 API uses the legacy oauth2
 	// endpoint instead.
-	var getAccessTokeUri = client.cfg.BasePath + "/" + client.cfg.Version + "/cells/connect/token"
-	if client.cfg.Version == "v1.1" {
-		getAccessTokeUri = client.cfg.BasePath + "/oauth2/token"
-	}
-	resp, err := http.PostForm(getAccessTokeUri, url.Values{
+	getAccessTokenURI := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/connect/token"
+
+	resp, err := http.PostForm(getAccessTokenURI, url.Values{
 		"grant_type":    {"client_credentials"},
 		"client_id":     {client.cfg.ClientId},
 		"client_secret": {client.cfg.ClientSecret}})
@@ -98,12 +117,27 @@ func (client *AsposeCellsCloudClient) RequestOauthToken() error {
 	}
 	defer resp.Body.Close()
 
+	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+		body, _ := io.ReadAll(resp.Body)
+		return fmt.Errorf("oauth token endpoint returned HTTP %d: %s", resp.StatusCode, string(body))
+	}
+
 	var tr TokenResponse
 	if err = json.NewDecoder(resp.Body).Decode(&tr); err != nil {
 		return err
 	}
-	client.cfg.GetAccessTokenTime = time.Now()
+
+	now := time.Now()
+	client.cfg.tokenMu.Lock()
+	client.cfg.GetAccessTokenTime = now
 	client.cfg.AccessToken = tr.AccessToken
+	if tr.ExpiresIn > 0 {
+		client.cfg.TokenExpiresAt = now.Add(time.Duration(tr.ExpiresIn) * time.Second)
+	} else {
+		// Default to 1 hour if the server does not report expiration.
+		client.cfg.TokenExpiresAt = now.Add(1 * time.Hour)
+	}
+	client.cfg.tokenMu.Unlock()
 	return nil
 }
 
@@ -114,18 +148,14 @@ func (client *AsposeCellsCloudClient) Do(ctx context.Context, requests ...Reques
 	for _, req := range requests {
 		resp, err := client.executeWithRetry(ctx, req)
 		if err != nil {
-			println(err.Error())
 			return responses, &SDKError{
 				Code:    -1,
 				Message: "request execution failed",
 				Err:     err,
 			}
 		}
-		println(resp.StatusCode)
-		println(resp.Body)
 		responses = append(responses, resp)
 	}
-	println(len(responses))
 	return responses, nil
 }
 
@@ -141,8 +171,6 @@ func (client *AsposeCellsCloudClient) executeWithRetry(ctx context.Context, req 
 		lastErr = err
 		// Simple exponential backoff (can be enhanced as needed)
 		if attempt < client.retries {
-			println(lastErr.Error())
-			println("Sleep time.....")
 			time.Sleep(time.Duration(1<<attempt) * time.Second)
 		}
 	}
@@ -181,8 +209,6 @@ func (client *AsposeCellsCloudClient) executeOnce(ctx context.Context, req Reque
 	multipartForm := req.GetMultipartForm()
 	hasJSON := jsonBody != nil
 	hasMultipart := multipartForm != nil && len(multipartForm) > 0
-	println(u.Path)
-	println(u.String())
 	var bodyReader io.Reader
 	var contentType string
 
@@ -227,7 +253,9 @@ func (client *AsposeCellsCloudClient) executeOnce(ctx context.Context, req Reque
 	httpReq.Header.Set("x-aspose-client", "go sdk")
 	httpReq.Header.Set("x-aspose-client-version", globalCellsCloudSDKVersion)
 
-	client.addAuth(httpReq)
+	if err := client.addAuth(httpReq); err != nil {
+		return nil, err
+	}
 
 	// 5. Execute request
 	resp, err := client.httpClient.Do(httpReq)
@@ -261,7 +289,6 @@ func (client *AsposeCellsCloudClient) buildMultipartForm(form map[string]interfa
 			if strings.HasPrefix(key, "@") { // file
 				err := addFile(writer, key[1:], v)
 				if err != nil {
-					println("Add file exception.")
 					return nil, "", err
 				}
 			} else { // form value
@@ -276,7 +303,6 @@ func (client *AsposeCellsCloudClient) buildMultipartForm(form map[string]interfa
 			// server keys off the multipart filename extension to detect the file
 			// type, and a bare name (e.g. "datafile") makes import endpoints fail
 			// with HTTP 500 "Object reference not set".
-			println("[]byte")
 			part, err := writer.CreateFormFile(key, key+".bin")
 			if err != nil {
 				return nil, "", err
@@ -285,9 +311,7 @@ func (client *AsposeCellsCloudClient) buildMultipartForm(form map[string]interfa
 				return nil, "", err
 			}
 		default:
-			println("==================")
-			println(v)
-			println("==================")
+			// Unsupported multipart form value type; skip silently.
 		}
 	}
 

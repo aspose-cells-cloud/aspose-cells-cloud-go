@@ -17,7 +17,7 @@ type PostWorksheetCalculateFormulaRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetCalculateFormulaRequest(formula string, name string, sheetName string, opts ...RequestOption) *PostWorksheetCalculateFormulaRequest {
+func NewPostWorksheetCalculateFormulaRequest(formula string, name string, sheetName string, opts ...Option) *PostWorksheetCalculateFormulaRequest {
     req := &PostWorksheetCalculateFormulaRequest{
         formula: formula,
         name: name,
@@ -115,6 +115,6 @@ func (request *PostWorksheetCalculateFormulaRequest) GetMultipartForm() map[stri
     return localVarFormParams
 }
 
-func (request *PostWorksheetCalculateFormulaRequest) Description() {
-    fmt.Println(strings.Trim("Calculate formula in the worksheet.", " "))
+func (request *PostWorksheetCalculateFormulaRequest) Description() string {
+    return strings.Trim("Calculate formula in the worksheet.", " ")
 }

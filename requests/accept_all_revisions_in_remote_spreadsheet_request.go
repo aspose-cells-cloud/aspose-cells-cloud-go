@@ -20,7 +20,7 @@ type AcceptAllRevisionsInRemoteSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewAcceptAllRevisionsInRemoteSpreadsheetRequest(name string, opts ...RequestOption) *AcceptAllRevisionsInRemoteSpreadsheetRequest {
+func NewAcceptAllRevisionsInRemoteSpreadsheetRequest(name string, opts ...Option) *AcceptAllRevisionsInRemoteSpreadsheetRequest {
     req := &AcceptAllRevisionsInRemoteSpreadsheetRequest{
         name: name,
     }
@@ -138,6 +138,6 @@ func (request *AcceptAllRevisionsInRemoteSpreadsheetRequest) GetMultipartForm() 
     return localVarFormParams
 }
 
-func (request *AcceptAllRevisionsInRemoteSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("AcceptAllRevisionsInRemoteSpreadsheet", " "))
+func (request *AcceptAllRevisionsInRemoteSpreadsheetRequest) Description() string {
+    return strings.Trim("AcceptAllRevisionsInRemoteSpreadsheet", " ")
 }

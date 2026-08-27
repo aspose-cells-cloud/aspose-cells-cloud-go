@@ -17,7 +17,7 @@ type SearchAllTextItemsInRemoteSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewSearchAllTextItemsInRemoteSpreadsheetRequest(folder string, name string, opts ...RequestOption) *SearchAllTextItemsInRemoteSpreadsheetRequest {
+func NewSearchAllTextItemsInRemoteSpreadsheetRequest(folder string, name string, opts ...Option) *SearchAllTextItemsInRemoteSpreadsheetRequest {
     req := &SearchAllTextItemsInRemoteSpreadsheetRequest{
         folder: folder,
         name: name,
@@ -116,6 +116,6 @@ func (request *SearchAllTextItemsInRemoteSpreadsheetRequest) GetMultipartForm() 
     return localVarFormParams
 }
 
-func (request *SearchAllTextItemsInRemoteSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Get all text items in the remote spreadsheet.", " "))
+func (request *SearchAllTextItemsInRemoteSpreadsheetRequest) Description() string {
+    return strings.Trim("Get all text items in the remote spreadsheet.", " ")
 }

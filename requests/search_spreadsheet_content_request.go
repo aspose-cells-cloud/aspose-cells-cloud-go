@@ -22,7 +22,7 @@ type SearchSpreadsheetContentRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewSearchSpreadsheetContentRequest(searchText string, Spreadsheet string, opts ...RequestOption) *SearchSpreadsheetContentRequest {
+func NewSearchSpreadsheetContentRequest(searchText string, Spreadsheet string, opts ...Option) *SearchSpreadsheetContentRequest {
     req := &SearchSpreadsheetContentRequest{
         searchText: searchText,
         Spreadsheet: Spreadsheet,
@@ -142,6 +142,6 @@ func (request *SearchSpreadsheetContentRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *SearchSpreadsheetContentRequest) Description() {
-    fmt.Println(strings.Trim("Search text in the local spreadsheet.", " "))
+func (request *SearchSpreadsheetContentRequest) Description() string {
+    return strings.Trim("Search text in the local spreadsheet.", " ")
 }

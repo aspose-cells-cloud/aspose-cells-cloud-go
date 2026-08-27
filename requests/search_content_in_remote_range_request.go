@@ -21,7 +21,7 @@ type SearchContentInRemoteRangeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewSearchContentInRemoteRangeRequest(cellArea string, name string, searchText string, worksheet string, opts ...RequestOption) *SearchContentInRemoteRangeRequest {
+func NewSearchContentInRemoteRangeRequest(cellArea string, name string, searchText string, worksheet string, opts ...Option) *SearchContentInRemoteRangeRequest {
     req := &SearchContentInRemoteRangeRequest{
         cellArea: cellArea,
         name: name,
@@ -142,6 +142,6 @@ func (request *SearchContentInRemoteRangeRequest) GetMultipartForm() map[string]
     return localVarFormParams
 }
 
-func (request *SearchContentInRemoteRangeRequest) Description() {
-    fmt.Println(strings.Trim("Search text in the range of remoted spreadsheet.", " "))
+func (request *SearchContentInRemoteRangeRequest) Description() string {
+    return strings.Trim("Search text in the range of remoted spreadsheet.", " ")
 }

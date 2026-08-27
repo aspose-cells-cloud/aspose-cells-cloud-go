@@ -26,7 +26,7 @@ type AddTextRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewAddTextRequest(position string, Spreadsheet string, text string, opts ...RequestOption) *AddTextRequest {
+func NewAddTextRequest(position string, Spreadsheet string, text string, opts ...Option) *AddTextRequest {
     req := &AddTextRequest{
         position: position,
         Spreadsheet: Spreadsheet,
@@ -169,6 +169,6 @@ func (request *AddTextRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *AddTextRequest) Description() {
-    fmt.Println(strings.Trim("Specify appending text to multiple cells at once, allowing you to add prefixes, suffixes, labels, or any specific characters. You can choose the exact position of the text—in the beginning, at the end, or before or after certain characters in the cell.", " "))
+func (request *AddTextRequest) Description() string {
+    return strings.Trim("Specify appending text to multiple cells at once, allowing you to add prefixes, suffixes, labels, or any specific characters. You can choose the exact position of the text—in the beginning, at the end, or before or after certain characters in the cell.", " ")
 }

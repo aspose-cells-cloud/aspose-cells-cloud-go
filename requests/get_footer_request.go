@@ -16,7 +16,7 @@ type GetFooterRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetFooterRequest(name string, sheetName string, opts ...RequestOption) *GetFooterRequest {
+func NewGetFooterRequest(name string, sheetName string, opts ...Option) *GetFooterRequest {
     req := &GetFooterRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *GetFooterRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *GetFooterRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve page footer description in the worksheet.", " "))
+func (request *GetFooterRequest) Description() string {
+    return strings.Trim("Retrieve page footer description in the worksheet.", " ")
 }

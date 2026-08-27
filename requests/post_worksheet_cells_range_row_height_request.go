@@ -20,7 +20,7 @@ type PostWorksheetCellsRangeRowHeightRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetCellsRangeRowHeightRequest(name string, _range *models.Range, sheetName string, value float64, opts ...RequestOption) *PostWorksheetCellsRangeRowHeightRequest {
+func NewPostWorksheetCellsRangeRowHeightRequest(name string, _range *models.Range, sheetName string, value float64, opts ...Option) *PostWorksheetCellsRangeRowHeightRequest {
     req := &PostWorksheetCellsRangeRowHeightRequest{
         name: name,
         _range: _range,
@@ -119,6 +119,6 @@ func (request *PostWorksheetCellsRangeRowHeightRequest) GetMultipartForm() map[s
     return localVarFormParams
 }
 
-func (request *PostWorksheetCellsRangeRowHeightRequest) Description() {
-    fmt.Println(strings.Trim("Sets row height of range.", " "))
+func (request *PostWorksheetCellsRangeRowHeightRequest) Description() string {
+    return strings.Trim("Sets row height of range.", " ")
 }

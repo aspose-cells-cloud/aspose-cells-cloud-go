@@ -21,7 +21,7 @@ type PostCopyCellIntoCellRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostCopyCellIntoCellRequest(destCellName string, name string, sheetName string, worksheet string, opts ...RequestOption) *PostCopyCellIntoCellRequest {
+func NewPostCopyCellIntoCellRequest(destCellName string, name string, sheetName string, worksheet string, opts ...Option) *PostCopyCellIntoCellRequest {
     req := &PostCopyCellIntoCellRequest{
         destCellName: destCellName,
         name: name,
@@ -142,6 +142,6 @@ func (request *PostCopyCellIntoCellRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *PostCopyCellIntoCellRequest) Description() {
-    fmt.Println(strings.Trim("Copy data from a source cell to a destination cell in the worksheet.", " "))
+func (request *PostCopyCellIntoCellRequest) Description() string {
+    return strings.Trim("Copy data from a source cell to a destination cell in the worksheet.", " ")
 }

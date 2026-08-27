@@ -18,7 +18,7 @@ type PutDocumentPropertyRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutDocumentPropertyRequest(name string, property *models.CellsDocumentProperty, opts ...RequestOption) *PutDocumentPropertyRequest {
+func NewPutDocumentPropertyRequest(name string, property *models.CellsDocumentProperty, opts ...Option) *PutDocumentPropertyRequest {
     req := &PutDocumentPropertyRequest{
         name: name,
         property: property,
@@ -110,6 +110,6 @@ func (request *PutDocumentPropertyRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *PutDocumentPropertyRequest) Description() {
-    fmt.Println(strings.Trim("Set or add an Excel property.", " "))
+func (request *PutDocumentPropertyRequest) Description() string {
+    return strings.Trim("Set or add an Excel property.", " ")
 }

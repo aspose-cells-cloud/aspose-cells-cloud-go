@@ -17,7 +17,7 @@ type PutChangeVisibilityWorksheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutChangeVisibilityWorksheetRequest(isVisible bool, name string, sheetName string, opts ...RequestOption) *PutChangeVisibilityWorksheetRequest {
+func NewPutChangeVisibilityWorksheetRequest(isVisible bool, name string, sheetName string, opts ...Option) *PutChangeVisibilityWorksheetRequest {
     req := &PutChangeVisibilityWorksheetRequest{
         isVisible: isVisible,
         name: name,
@@ -112,6 +112,6 @@ func (request *PutChangeVisibilityWorksheetRequest) GetMultipartForm() map[strin
     return localVarFormParams
 }
 
-func (request *PutChangeVisibilityWorksheetRequest) Description() {
-    fmt.Println(strings.Trim("Change worksheet visibility in the workbook.", " "))
+func (request *PutChangeVisibilityWorksheetRequest) Description() string {
+    return strings.Trim("Change worksheet visibility in the workbook.", " ")
 }

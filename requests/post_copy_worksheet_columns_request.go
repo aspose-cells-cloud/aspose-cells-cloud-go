@@ -20,7 +20,7 @@ type PostCopyWorksheetColumnsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostCopyWorksheetColumnsRequest(columnNumber int, destinationColumnIndex int, name string, sheetName string, sourceColumnIndex int, opts ...RequestOption) *PostCopyWorksheetColumnsRequest {
+func NewPostCopyWorksheetColumnsRequest(columnNumber int, destinationColumnIndex int, name string, sheetName string, sourceColumnIndex int, opts ...Option) *PostCopyWorksheetColumnsRequest {
     req := &PostCopyWorksheetColumnsRequest{
         columnNumber: columnNumber,
         destinationColumnIndex: destinationColumnIndex,
@@ -125,6 +125,6 @@ func (request *PostCopyWorksheetColumnsRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *PostCopyWorksheetColumnsRequest) Description() {
-    fmt.Println(strings.Trim("Copy data from source columns to destination columns in the worksheet.", " "))
+func (request *PostCopyWorksheetColumnsRequest) Description() string {
+    return strings.Trim("Copy data from source columns to destination columns in the worksheet.", " ")
 }

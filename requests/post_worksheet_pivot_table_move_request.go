@@ -20,7 +20,7 @@ type PostWorksheetPivotTableMoveRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetPivotTableMoveRequest(name string, pivotTableIndex int, sheetName string, opts ...RequestOption) *PostWorksheetPivotTableMoveRequest {
+func NewPostWorksheetPivotTableMoveRequest(name string, pivotTableIndex int, sheetName string, opts ...Option) *PostWorksheetPivotTableMoveRequest {
     req := &PostWorksheetPivotTableMoveRequest{
         name: name,
         pivotTableIndex: pivotTableIndex,
@@ -133,6 +133,6 @@ func (request *PostWorksheetPivotTableMoveRequest) GetMultipartForm() map[string
     return localVarFormParams
 }
 
-func (request *PostWorksheetPivotTableMoveRequest) Description() {
-    fmt.Println(strings.Trim("Move PivotTable in the worksheet.", " "))
+func (request *PostWorksheetPivotTableMoveRequest) Description() string {
+    return strings.Trim("Move PivotTable in the worksheet.", " ")
 }

@@ -17,7 +17,7 @@ type GetCellHtmlStringRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetCellHtmlStringRequest(cellName string, name string, sheetName string, opts ...RequestOption) *GetCellHtmlStringRequest {
+func NewGetCellHtmlStringRequest(cellName string, name string, sheetName string, opts ...Option) *GetCellHtmlStringRequest {
     req := &GetCellHtmlStringRequest{
         cellName: cellName,
         name: name,
@@ -115,6 +115,6 @@ func (request *GetCellHtmlStringRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *GetCellHtmlStringRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve the HTML string containing data and specific formats in this cell.", " "))
+func (request *GetCellHtmlStringRequest) Description() string {
+    return strings.Trim("Retrieve the HTML string containing data and specific formats in this cell.", " ")
 }

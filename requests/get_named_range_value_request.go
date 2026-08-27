@@ -16,7 +16,7 @@ type GetNamedRangeValueRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetNamedRangeValueRequest(name string, namerange string, opts ...RequestOption) *GetNamedRangeValueRequest {
+func NewGetNamedRangeValueRequest(name string, namerange string, opts ...Option) *GetNamedRangeValueRequest {
     req := &GetNamedRangeValueRequest{
         name: name,
         namerange: namerange,
@@ -109,6 +109,6 @@ func (request *GetNamedRangeValueRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *GetNamedRangeValueRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve values in range.", " "))
+func (request *GetNamedRangeValueRequest) Description() string {
+    return strings.Trim("Retrieve values in range.", " ")
 }

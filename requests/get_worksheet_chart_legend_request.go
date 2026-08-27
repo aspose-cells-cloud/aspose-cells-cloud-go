@@ -17,7 +17,7 @@ type GetWorksheetChartLegendRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetChartLegendRequest(chartIndex int, name string, sheetName string, opts ...RequestOption) *GetWorksheetChartLegendRequest {
+func NewGetWorksheetChartLegendRequest(chartIndex int, name string, sheetName string, opts ...Option) *GetWorksheetChartLegendRequest {
     req := &GetWorksheetChartLegendRequest{
         chartIndex: chartIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *GetWorksheetChartLegendRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *GetWorksheetChartLegendRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve chart legend description in the worksheet.", " "))
+func (request *GetWorksheetChartLegendRequest) Description() string {
+    return strings.Trim("Retrieve chart legend description in the worksheet.", " ")
 }

@@ -17,7 +17,7 @@ type GetVerticalPageBreakRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetVerticalPageBreakRequest(index int, name string, sheetName string, opts ...RequestOption) *GetVerticalPageBreakRequest {
+func NewGetVerticalPageBreakRequest(index int, name string, sheetName string, opts ...Option) *GetVerticalPageBreakRequest {
     req := &GetVerticalPageBreakRequest{
         index: index,
         name: name,
@@ -112,6 +112,6 @@ func (request *GetVerticalPageBreakRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *GetVerticalPageBreakRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve a vertical page break description in the worksheet.", " "))
+func (request *GetVerticalPageBreakRequest) Description() string {
+    return strings.Trim("Retrieve a vertical page break description in the worksheet.", " ")
 }

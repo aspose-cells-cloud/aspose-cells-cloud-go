@@ -21,7 +21,7 @@ type PostWorksheetListColumnRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetListColumnRequest(columnIndex int, listColumn *models.ListColumn, listObjectIndex int, name string, sheetName string, opts ...RequestOption) *PostWorksheetListColumnRequest {
+func NewPostWorksheetListColumnRequest(columnIndex int, listColumn *models.ListColumn, listObjectIndex int, name string, sheetName string, opts ...Option) *PostWorksheetListColumnRequest {
     req := &PostWorksheetListColumnRequest{
         columnIndex: columnIndex,
         listColumn: listColumn,
@@ -122,6 +122,6 @@ func (request *PostWorksheetListColumnRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *PostWorksheetListColumnRequest) Description() {
-    fmt.Println(strings.Trim("Update list column in list object.", " "))
+func (request *PostWorksheetListColumnRequest) Description() string {
+    return strings.Trim("Update list column in list object.", " ")
 }

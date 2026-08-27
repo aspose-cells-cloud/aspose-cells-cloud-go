@@ -17,7 +17,7 @@ type DeleteWorksheetPivotTableRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetPivotTableRequest(name string, pivotTableIndex int, sheetName string, opts ...RequestOption) *DeleteWorksheetPivotTableRequest {
+func NewDeleteWorksheetPivotTableRequest(name string, pivotTableIndex int, sheetName string, opts ...Option) *DeleteWorksheetPivotTableRequest {
     req := &DeleteWorksheetPivotTableRequest{
         name: name,
         pivotTableIndex: pivotTableIndex,
@@ -112,6 +112,6 @@ func (request *DeleteWorksheetPivotTableRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetPivotTableRequest) Description() {
-    fmt.Println(strings.Trim("Delete PivotTable by index in the worksheet.", " "))
+func (request *DeleteWorksheetPivotTableRequest) Description() string {
+    return strings.Trim("Delete PivotTable by index in the worksheet.", " ")
 }

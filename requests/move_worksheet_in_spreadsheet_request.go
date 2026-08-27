@@ -22,7 +22,7 @@ type MoveWorksheetInSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewMoveWorksheetInSpreadsheetRequest(position int, Spreadsheet string, worksheet string, opts ...RequestOption) *MoveWorksheetInSpreadsheetRequest {
+func NewMoveWorksheetInSpreadsheetRequest(position int, Spreadsheet string, worksheet string, opts ...Option) *MoveWorksheetInSpreadsheetRequest {
     req := &MoveWorksheetInSpreadsheetRequest{
         position: position,
         Spreadsheet: Spreadsheet,
@@ -138,6 +138,6 @@ func (request *MoveWorksheetInSpreadsheetRequest) GetMultipartForm() map[string]
     return localVarFormParams
 }
 
-func (request *MoveWorksheetInSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("The Web API endpoint allows users to move a specified worksheet within a workbook. This function provides a straightforward way to move a worksheet, enhancing workbook organization.", " "))
+func (request *MoveWorksheetInSpreadsheetRequest) Description() string {
+    return strings.Trim("The Web API endpoint allows users to move a specified worksheet within a workbook. This function provides a straightforward way to move a worksheet, enhancing workbook organization.", " ")
 }

@@ -22,7 +22,7 @@ type ReplaceSpreadsheetContentRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewReplaceSpreadsheetContentRequest(replaceText string, searchText string, Spreadsheet string, opts ...RequestOption) *ReplaceSpreadsheetContentRequest {
+func NewReplaceSpreadsheetContentRequest(replaceText string, searchText string, Spreadsheet string, opts ...Option) *ReplaceSpreadsheetContentRequest {
     req := &ReplaceSpreadsheetContentRequest{
         replaceText: replaceText,
         searchText: searchText,
@@ -141,6 +141,6 @@ func (request *ReplaceSpreadsheetContentRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *ReplaceSpreadsheetContentRequest) Description() {
-    fmt.Println(strings.Trim("Replace text in the local spreadsheet.", " "))
+func (request *ReplaceSpreadsheetContentRequest) Description() string {
+    return strings.Trim("Replace text in the local spreadsheet.", " ")
 }

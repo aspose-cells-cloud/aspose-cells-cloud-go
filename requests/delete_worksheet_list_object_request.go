@@ -17,7 +17,7 @@ type DeleteWorksheetListObjectRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetListObjectRequest(listObjectIndex int, name string, sheetName string, opts ...RequestOption) *DeleteWorksheetListObjectRequest {
+func NewDeleteWorksheetListObjectRequest(listObjectIndex int, name string, sheetName string, opts ...Option) *DeleteWorksheetListObjectRequest {
     req := &DeleteWorksheetListObjectRequest{
         listObjectIndex: listObjectIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *DeleteWorksheetListObjectRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetListObjectRequest) Description() {
-    fmt.Println(strings.Trim("Delete list object by index in the worksheet.", " "))
+func (request *DeleteWorksheetListObjectRequest) Description() string {
+    return strings.Trim("Delete list object by index in the worksheet.", " ")
 }

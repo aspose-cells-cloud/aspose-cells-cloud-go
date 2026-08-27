@@ -17,7 +17,7 @@ type GetChartSecondCategoryAxisRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetChartSecondCategoryAxisRequest(chartIndex int, name string, sheetName string, opts ...RequestOption) *GetChartSecondCategoryAxisRequest {
+func NewGetChartSecondCategoryAxisRequest(chartIndex int, name string, sheetName string, opts ...Option) *GetChartSecondCategoryAxisRequest {
     req := &GetChartSecondCategoryAxisRequest{
         chartIndex: chartIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *GetChartSecondCategoryAxisRequest) GetMultipartForm() map[string]
     return localVarFormParams
 }
 
-func (request *GetChartSecondCategoryAxisRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve chart second category axis in the chart", " "))
+func (request *GetChartSecondCategoryAxisRequest) Description() string {
+    return strings.Trim("Retrieve chart second category axis in the chart", " ")
 }

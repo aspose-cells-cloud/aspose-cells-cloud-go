@@ -15,7 +15,7 @@ type GetWorkbookDefaultStyleRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorkbookDefaultStyleRequest(name string, opts ...RequestOption) *GetWorkbookDefaultStyleRequest {
+func NewGetWorkbookDefaultStyleRequest(name string, opts ...Option) *GetWorkbookDefaultStyleRequest {
     req := &GetWorkbookDefaultStyleRequest{
         name: name,
     }
@@ -103,6 +103,6 @@ func (request *GetWorkbookDefaultStyleRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *GetWorkbookDefaultStyleRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve the description of the default style for the workbook .", " "))
+func (request *GetWorkbookDefaultStyleRequest) Description() string {
+    return strings.Trim("Retrieve the description of the default style for the workbook .", " ")
 }

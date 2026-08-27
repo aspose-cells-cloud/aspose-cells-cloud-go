@@ -19,7 +19,7 @@ type SearchBrokenLinksInRemoteSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewSearchBrokenLinksInRemoteSpreadsheetRequest(name string, opts ...RequestOption) *SearchBrokenLinksInRemoteSpreadsheetRequest {
+func NewSearchBrokenLinksInRemoteSpreadsheetRequest(name string, opts ...Option) *SearchBrokenLinksInRemoteSpreadsheetRequest {
     req := &SearchBrokenLinksInRemoteSpreadsheetRequest{
         name: name,
     }
@@ -131,6 +131,6 @@ func (request *SearchBrokenLinksInRemoteSpreadsheetRequest) GetMultipartForm() m
     return localVarFormParams
 }
 
-func (request *SearchBrokenLinksInRemoteSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Search broken links in the remoted spreadsheet.", " "))
+func (request *SearchBrokenLinksInRemoteSpreadsheetRequest) Description() string {
+    return strings.Trim("Search broken links in the remoted spreadsheet.", " ")
 }

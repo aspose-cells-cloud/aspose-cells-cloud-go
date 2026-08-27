@@ -16,7 +16,7 @@ type DeleteUnProtectWorkbookRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteUnProtectWorkbookRequest(name string, password string, opts ...RequestOption) *DeleteUnProtectWorkbookRequest {
+func NewDeleteUnProtectWorkbookRequest(name string, password string, opts ...Option) *DeleteUnProtectWorkbookRequest {
     req := &DeleteUnProtectWorkbookRequest{
         name: name,
         password: password,
@@ -109,6 +109,6 @@ func (request *DeleteUnProtectWorkbookRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *DeleteUnProtectWorkbookRequest) Description() {
-    fmt.Println(strings.Trim("Excel unprotection.", " "))
+func (request *DeleteUnProtectWorkbookRequest) Description() string {
+    return strings.Trim("Excel unprotection.", " ")
 }

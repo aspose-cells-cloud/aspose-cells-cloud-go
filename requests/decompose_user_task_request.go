@@ -15,7 +15,7 @@ type DecomposeUserTaskRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDecomposeUserTaskRequest(TaskDescription string, opts ...RequestOption) *DecomposeUserTaskRequest {
+func NewDecomposeUserTaskRequest(TaskDescription string, opts ...Option) *DecomposeUserTaskRequest {
     req := &DecomposeUserTaskRequest{
         TaskDescription: TaskDescription,
     }
@@ -102,6 +102,6 @@ func (request *DecomposeUserTaskRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *DecomposeUserTaskRequest) Description() {
-    fmt.Println(strings.Trim("AI task decomposition: Convert user objectives to sequential action plans with formatted file export.", " "))
+func (request *DecomposeUserTaskRequest) Description() string {
+    return strings.Trim("AI task decomposition: Convert user objectives to sequential action plans with formatted file export.", " ")
 }

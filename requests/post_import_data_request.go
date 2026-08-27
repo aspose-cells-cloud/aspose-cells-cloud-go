@@ -20,7 +20,7 @@ type PostImportDataRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostImportDataRequest(name string, opts ...RequestOption) *PostImportDataRequest {
+func NewPostImportDataRequest(name string, opts ...Option) *PostImportDataRequest {
     req := &PostImportDataRequest{
         name: name,
     }
@@ -123,6 +123,6 @@ func (request *PostImportDataRequest) GetMultipartForm() map[string]interface{} 
     return localVarFormParams
 }
 
-func (request *PostImportDataRequest) Description() {
-    fmt.Println(strings.Trim("Import data into the Excel file.", " "))
+func (request *PostImportDataRequest) Description() string {
+    return strings.Trim("Import data into the Excel file.", " ")
 }

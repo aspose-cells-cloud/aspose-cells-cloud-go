@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostBatchLockRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostBatchLockRequest(batchLockRequest *models.BatchLockRequest, opts ...RequestOption) *PostBatchLockRequest {
+func NewPostBatchLockRequest(batchLockRequest *models.BatchLockRequest, opts ...Option) *PostBatchLockRequest {
     req := &PostBatchLockRequest{
         batchLockRequest: batchLockRequest,
     }
@@ -89,6 +88,6 @@ func (request *PostBatchLockRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostBatchLockRequest) Description() {
-    fmt.Println(strings.Trim("Batch locking files that meet specific matching conditions.", " "))
+func (request *PostBatchLockRequest) Description() string {
+    return strings.Trim("Batch locking files that meet specific matching conditions.", " ")
 }

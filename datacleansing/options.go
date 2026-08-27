@@ -1,53 +1,34 @@
 package datacleansing
 
 import (
+	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/requests"
 )
 
 // Option configures a high-level data cleansing operation.
-type Option func(*config)
-
-type config struct {
-	reqOpts []requests.RequestOption
-}
-
-func apply(cfg *config, opts []Option) {
-	for _, o := range opts {
-		if o != nil {
-			o(cfg)
-		}
-	}
-}
+type Option = sdkutil.ConfigOption
 
 // WithCommonParameter passes an optional parameter to the underlying generated
 // request. The name must match the operation parameter name in the spec.
 func WithCommonParameter(name string, value interface{}) Option {
-	return func(c *config) {
-		c.reqOpts = append(c.reqOpts, requests.WithCommonParameter(name, value))
-	}
+	return sdkutil.WithCommonParameter(name, value)
 }
 
 // WithQueryParameter appends an implicit query parameter to the request URL.
 func WithQueryParameter(name, value string) Option {
-	return func(c *config) {
-		c.reqOpts = append(c.reqOpts, requests.WithQueryParameter(name, value))
-	}
+	return sdkutil.WithQueryParameter(name, value)
 }
 
 // WithQueryParameters appends multiple implicit query parameters to the request
 // URL.
 func WithQueryParameters(params map[string]string) Option {
-	return func(c *config) {
-		c.reqOpts = append(c.reqOpts, requests.WithQueryParameters(params))
-	}
+	return sdkutil.WithQueryParameters(params)
 }
 
 // WithRaw passes any requests-level Option straight through to the generated
 // request constructor.
-func WithRaw(opts ...requests.RequestOption) Option {
-	return func(c *config) {
-		c.reqOpts = append(c.reqOpts, opts...)
-	}
+func WithRaw(opts ...requests.Option) Option {
+	return sdkutil.WithRaw(opts...)
 }
 
 // --- Cleansing scoping ---

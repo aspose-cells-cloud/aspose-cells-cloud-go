@@ -19,7 +19,7 @@ type ConvertWorksheetToHtmlTableRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertWorksheetToHtmlTableRequest(Spreadsheet string, worksheet string, opts ...RequestOption) *ConvertWorksheetToHtmlTableRequest {
+func NewConvertWorksheetToHtmlTableRequest(Spreadsheet string, worksheet string, opts ...Option) *ConvertWorksheetToHtmlTableRequest {
     req := &ConvertWorksheetToHtmlTableRequest{
         Spreadsheet: Spreadsheet,
         worksheet: worksheet,
@@ -121,6 +121,6 @@ func (request *ConvertWorksheetToHtmlTableRequest) GetMultipartForm() map[string
     return localVarFormParams
 }
 
-func (request *ConvertWorksheetToHtmlTableRequest) Description() {
-    fmt.Println(strings.Trim("Converts a worksheet of spreadsheet on a local drive to the HTML table file.", " "))
+func (request *ConvertWorksheetToHtmlTableRequest) Description() string {
+    return strings.Trim("Converts a worksheet of spreadsheet on a local drive to the HTML table file.", " ")
 }

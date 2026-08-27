@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostDataDeduplicationRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostDataDeduplicationRequest(dataDeduplicationRequest *models.DataDeduplicationRequest, opts ...RequestOption) *PostDataDeduplicationRequest {
+func NewPostDataDeduplicationRequest(dataDeduplicationRequest *models.DataDeduplicationRequest, opts ...Option) *PostDataDeduplicationRequest {
     req := &PostDataDeduplicationRequest{
         dataDeduplicationRequest: dataDeduplicationRequest,
     }
@@ -89,6 +88,6 @@ func (request *PostDataDeduplicationRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *PostDataDeduplicationRequest) Description() {
-    fmt.Println(strings.Trim("Data deduplication of spreadsheet files is mainly used to eliminate duplicate data in tables and ranges.", " "))
+func (request *PostDataDeduplicationRequest) Description() string {
+    return strings.Trim("Data deduplication of spreadsheet files is mainly used to eliminate duplicate data in tables and ranges.", " ")
 }

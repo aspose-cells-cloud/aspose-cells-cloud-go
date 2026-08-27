@@ -25,7 +25,7 @@ type ConvertRangeToPdfRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertRangeToPdfRequest(_range string, Spreadsheet string, worksheet string, opts ...RequestOption) *ConvertRangeToPdfRequest {
+func NewConvertRangeToPdfRequest(_range string, Spreadsheet string, worksheet string, opts ...Option) *ConvertRangeToPdfRequest {
     req := &ConvertRangeToPdfRequest{
         _range: _range,
         Spreadsheet: Spreadsheet,
@@ -162,6 +162,6 @@ func (request *ConvertRangeToPdfRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *ConvertRangeToPdfRequest) Description() {
-    fmt.Println(strings.Trim("Converts a range of spreadsheet on a local drive to the pdf file.", " "))
+func (request *ConvertRangeToPdfRequest) Description() string {
+    return strings.Trim("Converts a range of spreadsheet on a local drive to the pdf file.", " ")
 }

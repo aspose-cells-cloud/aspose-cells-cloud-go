@@ -25,7 +25,7 @@ type ConvertRangeToCsvRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertRangeToCsvRequest(_range string, Spreadsheet string, worksheet string, opts ...RequestOption) *ConvertRangeToCsvRequest {
+func NewConvertRangeToCsvRequest(_range string, Spreadsheet string, worksheet string, opts ...Option) *ConvertRangeToCsvRequest {
     req := &ConvertRangeToCsvRequest{
         _range: _range,
         Spreadsheet: Spreadsheet,
@@ -162,6 +162,6 @@ func (request *ConvertRangeToCsvRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *ConvertRangeToCsvRequest) Description() {
-    fmt.Println(strings.Trim("Converts a range of spreadsheet on a local drive to the csv file.", " "))
+func (request *ConvertRangeToCsvRequest) Description() string {
+    return strings.Trim("Converts a range of spreadsheet on a local drive to the csv file.", " ")
 }

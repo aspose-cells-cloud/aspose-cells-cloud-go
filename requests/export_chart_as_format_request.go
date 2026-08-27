@@ -23,7 +23,7 @@ type ExportChartAsFormatRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewExportChartAsFormatRequest(chartIndex int, format string, name string, worksheet string, opts ...RequestOption) *ExportChartAsFormatRequest {
+func NewExportChartAsFormatRequest(chartIndex int, format string, name string, worksheet string, opts ...Option) *ExportChartAsFormatRequest {
     req := &ExportChartAsFormatRequest{
         chartIndex: chartIndex,
         format: format,
@@ -153,6 +153,6 @@ func (request *ExportChartAsFormatRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *ExportChartAsFormatRequest) Description() {
-    fmt.Println(strings.Trim("Converts a chart of spreadsheet in cloud storage to the specified format.", " "))
+func (request *ExportChartAsFormatRequest) Description() string {
+    return strings.Trim("Converts a chart of spreadsheet in cloud storage to the specified format.", " ")
 }

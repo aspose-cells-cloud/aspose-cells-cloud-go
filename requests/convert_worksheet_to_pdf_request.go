@@ -24,7 +24,7 @@ type ConvertWorksheetToPdfRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertWorksheetToPdfRequest(Spreadsheet string, worksheet string, opts ...RequestOption) *ConvertWorksheetToPdfRequest {
+func NewConvertWorksheetToPdfRequest(Spreadsheet string, worksheet string, opts ...Option) *ConvertWorksheetToPdfRequest {
     req := &ConvertWorksheetToPdfRequest{
         Spreadsheet: Spreadsheet,
         worksheet: worksheet,
@@ -156,6 +156,6 @@ func (request *ConvertWorksheetToPdfRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *ConvertWorksheetToPdfRequest) Description() {
-    fmt.Println(strings.Trim("Converts a worksheet of spreadsheet on a local drive to the pdf file.", " "))
+func (request *ConvertWorksheetToPdfRequest) Description() string {
+    return strings.Trim("Converts a worksheet of spreadsheet on a local drive to the pdf file.", " ")
 }

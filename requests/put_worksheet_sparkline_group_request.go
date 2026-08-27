@@ -20,7 +20,7 @@ type PutWorksheetSparklineGroupRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetSparklineGroupRequest(dataRange string, isVertical bool, locationRange string, name string, sheetName string, _type string, opts ...RequestOption) *PutWorksheetSparklineGroupRequest {
+func NewPutWorksheetSparklineGroupRequest(dataRange string, isVertical bool, locationRange string, name string, sheetName string, _type string, opts ...Option) *PutWorksheetSparklineGroupRequest {
     req := &PutWorksheetSparklineGroupRequest{
         dataRange: dataRange,
         isVertical: isVertical,
@@ -130,6 +130,6 @@ func (request *PutWorksheetSparklineGroupRequest) GetMultipartForm() map[string]
     return localVarFormParams
 }
 
-func (request *PutWorksheetSparklineGroupRequest) Description() {
-    fmt.Println(strings.Trim("Add a sparkline group in the worksheet.", " "))
+func (request *PutWorksheetSparklineGroupRequest) Description() string {
+    return strings.Trim("Add a sparkline group in the worksheet.", " ")
 }

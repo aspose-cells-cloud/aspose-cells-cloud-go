@@ -23,7 +23,7 @@ type MergeRemoteSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewMergeRemoteSpreadsheetRequest(mergedSpreadsheet string, name string, opts ...RequestOption) *MergeRemoteSpreadsheetRequest {
+func NewMergeRemoteSpreadsheetRequest(mergedSpreadsheet string, name string, opts ...Option) *MergeRemoteSpreadsheetRequest {
     req := &MergeRemoteSpreadsheetRequest{
         mergedSpreadsheet: mergedSpreadsheet,
         name: name,
@@ -158,6 +158,6 @@ func (request *MergeRemoteSpreadsheetRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *MergeRemoteSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Merge a spreadsheet file into other spreadsheet in cloud storage, and output a specified format file.", " "))
+func (request *MergeRemoteSpreadsheetRequest) Description() string {
+    return strings.Trim("Merge a spreadsheet file into other spreadsheet in cloud storage, and output a specified format file.", " ")
 }

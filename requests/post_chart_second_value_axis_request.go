@@ -20,7 +20,7 @@ type PostChartSecondValueAxisRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostChartSecondValueAxisRequest(axis *models.Axis, chartIndex int, name string, sheetName string, opts ...RequestOption) *PostChartSecondValueAxisRequest {
+func NewPostChartSecondValueAxisRequest(axis *models.Axis, chartIndex int, name string, sheetName string, opts ...Option) *PostChartSecondValueAxisRequest {
     req := &PostChartSecondValueAxisRequest{
         axis: axis,
         chartIndex: chartIndex,
@@ -119,6 +119,6 @@ func (request *PostChartSecondValueAxisRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *PostChartSecondValueAxisRequest) Description() {
-    fmt.Println(strings.Trim("Update chart sencond value axis in the chart.", " "))
+func (request *PostChartSecondValueAxisRequest) Description() string {
+    return strings.Trim("Update chart sencond value axis in the chart.", " ")
 }

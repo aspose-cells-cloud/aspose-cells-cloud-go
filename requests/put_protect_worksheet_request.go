@@ -19,7 +19,7 @@ type PutProtectWorksheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutProtectWorksheetRequest(name string, protectParameter *models.ProtectSheetParameter, sheetName string, opts ...RequestOption) *PutProtectWorksheetRequest {
+func NewPutProtectWorksheetRequest(name string, protectParameter *models.ProtectSheetParameter, sheetName string, opts ...Option) *PutProtectWorksheetRequest {
     req := &PutProtectWorksheetRequest{
         name: name,
         protectParameter: protectParameter,
@@ -116,6 +116,6 @@ func (request *PutProtectWorksheetRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *PutProtectWorksheetRequest) Description() {
-    fmt.Println(strings.Trim("Protect worksheet.", " "))
+func (request *PutProtectWorksheetRequest) Description() string {
+    return strings.Trim("Protect worksheet.", " ")
 }

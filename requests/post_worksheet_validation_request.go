@@ -20,7 +20,7 @@ type PostWorksheetValidationRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetValidationRequest(name string, sheetName string, validation *models.Validation, validationIndex int, opts ...RequestOption) *PostWorksheetValidationRequest {
+func NewPostWorksheetValidationRequest(name string, sheetName string, validation *models.Validation, validationIndex int, opts ...Option) *PostWorksheetValidationRequest {
     req := &PostWorksheetValidationRequest{
         name: name,
         sheetName: sheetName,
@@ -119,6 +119,6 @@ func (request *PostWorksheetValidationRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *PostWorksheetValidationRequest) Description() {
-    fmt.Println(strings.Trim("Update a validation by index in the worksheet.", " "))
+func (request *PostWorksheetValidationRequest) Description() string {
+    return strings.Trim("Update a validation by index in the worksheet.", " ")
 }

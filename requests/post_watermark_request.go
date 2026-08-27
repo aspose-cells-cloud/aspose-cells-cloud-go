@@ -22,7 +22,7 @@ type PostWatermarkRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWatermarkRequest(color string, File string, text string, opts ...RequestOption) *PostWatermarkRequest {
+func NewPostWatermarkRequest(color string, File string, text string, opts ...Option) *PostWatermarkRequest {
     req := &PostWatermarkRequest{
         color: color,
         File: File,
@@ -141,6 +141,6 @@ func (request *PostWatermarkRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostWatermarkRequest) Description() {
-    fmt.Println(strings.Trim("Add Text Watermark to Excel files and generate output files in various formats.", " "))
+func (request *PostWatermarkRequest) Description() string {
+    return strings.Trim("Add Text Watermark to Excel files and generate output files in various formats.", " ")
 }

@@ -19,7 +19,7 @@ type PostUnhideWorksheetColumnsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostUnhideWorksheetColumnsRequest(name string, sheetName string, startColumn int, totalColumns int, opts ...RequestOption) *PostUnhideWorksheetColumnsRequest {
+func NewPostUnhideWorksheetColumnsRequest(name string, sheetName string, startColumn int, totalColumns int, opts ...Option) *PostUnhideWorksheetColumnsRequest {
     req := &PostUnhideWorksheetColumnsRequest{
         name: name,
         sheetName: sheetName,
@@ -122,6 +122,6 @@ func (request *PostUnhideWorksheetColumnsRequest) GetMultipartForm() map[string]
     return localVarFormParams
 }
 
-func (request *PostUnhideWorksheetColumnsRequest) Description() {
-    fmt.Println(strings.Trim("Unhide worksheet columns in the worksheet.", " "))
+func (request *PostUnhideWorksheetColumnsRequest) Description() string {
+    return strings.Trim("Unhide worksheet columns in the worksheet.", " ")
 }

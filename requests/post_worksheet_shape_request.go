@@ -20,7 +20,7 @@ type PostWorksheetShapeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetShapeRequest(dto *models.Shape, name string, shapeindex int, sheetName string, opts ...RequestOption) *PostWorksheetShapeRequest {
+func NewPostWorksheetShapeRequest(dto *models.Shape, name string, shapeindex int, sheetName string, opts ...Option) *PostWorksheetShapeRequest {
     req := &PostWorksheetShapeRequest{
         dto: dto,
         name: name,
@@ -119,6 +119,6 @@ func (request *PostWorksheetShapeRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *PostWorksheetShapeRequest) Description() {
-    fmt.Println(strings.Trim("Update a shape in the worksheet.", " "))
+func (request *PostWorksheetShapeRequest) Description() string {
+    return strings.Trim("Update a shape in the worksheet.", " ")
 }

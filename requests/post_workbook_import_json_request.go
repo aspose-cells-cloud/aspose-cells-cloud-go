@@ -23,7 +23,7 @@ type PostWorkbookImportJsonRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorkbookImportJsonRequest(importJsonRequest *models.ImportJsonRequest, name string, opts ...RequestOption) *PostWorkbookImportJsonRequest {
+func NewPostWorkbookImportJsonRequest(importJsonRequest *models.ImportJsonRequest, name string, opts ...Option) *PostWorkbookImportJsonRequest {
     req := &PostWorkbookImportJsonRequest{
         importJsonRequest: importJsonRequest,
         name: name,
@@ -145,6 +145,6 @@ func (request *PostWorkbookImportJsonRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *PostWorkbookImportJsonRequest) Description() {
-    fmt.Println(strings.Trim("Import a JSON data file into the workbook. The JSON data file can either be a cloud file or data from an HTTP URI.", " "))
+func (request *PostWorkbookImportJsonRequest) Description() string {
+    return strings.Trim("Import a JSON data file into the workbook. The JSON data file can either be a cloud file or data from an HTTP URI.", " ")
 }

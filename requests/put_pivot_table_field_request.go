@@ -22,7 +22,7 @@ type PutPivotTableFieldRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutPivotTableFieldRequest(name string, pivotFieldType string, pivotTableFieldRequest *models.PivotTableFieldRequest, pivotTableIndex int, sheetName string, opts ...RequestOption) *PutPivotTableFieldRequest {
+func NewPutPivotTableFieldRequest(name string, pivotFieldType string, pivotTableFieldRequest *models.PivotTableFieldRequest, pivotTableIndex int, sheetName string, opts ...Option) *PutPivotTableFieldRequest {
     req := &PutPivotTableFieldRequest{
         name: name,
         pivotFieldType: pivotFieldType,
@@ -132,6 +132,6 @@ func (request *PutPivotTableFieldRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *PutPivotTableFieldRequest) Description() {
-    fmt.Println(strings.Trim("Add a pivot field in the PivotTable.", " "))
+func (request *PutPivotTableFieldRequest) Description() string {
+    return strings.Trim("Add a pivot field in the PivotTable.", " ")
 }

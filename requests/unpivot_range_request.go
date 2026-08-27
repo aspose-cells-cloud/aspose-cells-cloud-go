@@ -23,7 +23,7 @@ type UnpivotRangeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewUnpivotRangeRequest(cellArea string, Spreadsheet string, worksheet string, opts ...RequestOption) *UnpivotRangeRequest {
+func NewUnpivotRangeRequest(cellArea string, Spreadsheet string, worksheet string, opts ...Option) *UnpivotRangeRequest {
     req := &UnpivotRangeRequest{
         cellArea: cellArea,
         Spreadsheet: Spreadsheet,
@@ -148,6 +148,6 @@ func (request *UnpivotRangeRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *UnpivotRangeRequest) Description() {
-    fmt.Println(strings.Trim("Switch rows and columns in the spreadsheet.", " "))
+func (request *UnpivotRangeRequest) Description() string {
+    return strings.Trim("Switch rows and columns in the spreadsheet.", " ")
 }

@@ -17,7 +17,7 @@ type PostAutofitWorkbookColumnsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostAutofitWorkbookColumnsRequest(name string, opts ...RequestOption) *PostAutofitWorkbookColumnsRequest {
+func NewPostAutofitWorkbookColumnsRequest(name string, opts ...Option) *PostAutofitWorkbookColumnsRequest {
     req := &PostAutofitWorkbookColumnsRequest{
         name: name,
     }
@@ -117,6 +117,6 @@ func (request *PostAutofitWorkbookColumnsRequest) GetMultipartForm() map[string]
     return localVarFormParams
 }
 
-func (request *PostAutofitWorkbookColumnsRequest) Description() {
-    fmt.Println(strings.Trim("Autofit columns in the workbook.", " "))
+func (request *PostAutofitWorkbookColumnsRequest) Description() string {
+    return strings.Trim("Autofit columns in the workbook.", " ")
 }

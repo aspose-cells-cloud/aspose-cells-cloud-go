@@ -20,7 +20,7 @@ type PostProtectRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostProtectRequest(File string, protectWorkbookRequest *models.ProtectWorkbookRequest, opts ...RequestOption) *PostProtectRequest {
+func NewPostProtectRequest(File string, protectWorkbookRequest *models.ProtectWorkbookRequest, opts ...Option) *PostProtectRequest {
     req := &PostProtectRequest{
         File: File,
         protectWorkbookRequest: protectWorkbookRequest,
@@ -115,6 +115,6 @@ func (request *PostProtectRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostProtectRequest) Description() {
-    fmt.Println(strings.Trim("Excel files encryption.", " "))
+func (request *PostProtectRequest) Description() string {
+    return strings.Trim("Excel files encryption.", " ")
 }

@@ -19,7 +19,7 @@ type GetPivotTableFieldRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetPivotTableFieldRequest(name string, pivotFieldIndex int, pivotFieldType string, pivotTableIndex int, sheetName string, opts ...RequestOption) *GetPivotTableFieldRequest {
+func NewGetPivotTableFieldRequest(name string, pivotFieldIndex int, pivotFieldType string, pivotTableIndex int, sheetName string, opts ...Option) *GetPivotTableFieldRequest {
     req := &GetPivotTableFieldRequest{
         name: name,
         pivotFieldIndex: pivotFieldIndex,
@@ -121,6 +121,6 @@ func (request *GetPivotTableFieldRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *GetPivotTableFieldRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve descriptions of pivot fields in the PivotTable.", " "))
+func (request *GetPivotTableFieldRequest) Description() string {
+    return strings.Trim("Retrieve descriptions of pivot fields in the PivotTable.", " ")
 }

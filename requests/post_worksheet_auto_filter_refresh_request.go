@@ -16,7 +16,7 @@ type PostWorksheetAutoFilterRefreshRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetAutoFilterRefreshRequest(name string, sheetName string, opts ...RequestOption) *PostWorksheetAutoFilterRefreshRequest {
+func NewPostWorksheetAutoFilterRefreshRequest(name string, sheetName string, opts ...Option) *PostWorksheetAutoFilterRefreshRequest {
     req := &PostWorksheetAutoFilterRefreshRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *PostWorksheetAutoFilterRefreshRequest) GetMultipartForm() map[str
     return localVarFormParams
 }
 
-func (request *PostWorksheetAutoFilterRefreshRequest) Description() {
-    fmt.Println(strings.Trim("Refresh auto filters in the worksheet.", " "))
+func (request *PostWorksheetAutoFilterRefreshRequest) Description() string {
+    return strings.Trim("Refresh auto filters in the worksheet.", " ")
 }

@@ -23,7 +23,7 @@ type PostMetadataRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostMetadataRequest(cellsDocuments []models.CellsDocumentProperty, File string, opts ...RequestOption) *PostMetadataRequest {
+func NewPostMetadataRequest(cellsDocuments []models.CellsDocumentProperty, File string, opts ...Option) *PostMetadataRequest {
     req := &PostMetadataRequest{
         cellsDocuments: cellsDocuments,
         File: File,
@@ -132,6 +132,6 @@ func (request *PostMetadataRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostMetadataRequest) Description() {
-    fmt.Println(strings.Trim("Update document properties in Excel file, and save them is various formats.", " "))
+func (request *PostMetadataRequest) Description() string {
+    return strings.Trim("Update document properties in Excel file, and save them is various formats.", " ")
 }

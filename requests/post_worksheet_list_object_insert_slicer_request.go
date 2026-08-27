@@ -19,7 +19,7 @@ type PostWorksheetListObjectInsertSlicerRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetListObjectInsertSlicerRequest(columnIndex int, destCellName string, listObjectIndex int, name string, sheetName string, opts ...RequestOption) *PostWorksheetListObjectInsertSlicerRequest {
+func NewPostWorksheetListObjectInsertSlicerRequest(columnIndex int, destCellName string, listObjectIndex int, name string, sheetName string, opts ...Option) *PostWorksheetListObjectInsertSlicerRequest {
     req := &PostWorksheetListObjectInsertSlicerRequest{
         columnIndex: columnIndex,
         destCellName: destCellName,
@@ -121,6 +121,6 @@ func (request *PostWorksheetListObjectInsertSlicerRequest) GetMultipartForm() ma
     return localVarFormParams
 }
 
-func (request *PostWorksheetListObjectInsertSlicerRequest) Description() {
-    fmt.Println(strings.Trim("Insert slicer for list object.", " "))
+func (request *PostWorksheetListObjectInsertSlicerRequest) Description() string {
+    return strings.Trim("Insert slicer for list object.", " ")
 }

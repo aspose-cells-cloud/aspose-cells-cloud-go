@@ -17,7 +17,7 @@ type GetWorksheetCellStyleRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetCellStyleRequest(cellName string, name string, sheetName string, opts ...RequestOption) *GetWorksheetCellStyleRequest {
+func NewGetWorksheetCellStyleRequest(cellName string, name string, sheetName string, opts ...Option) *GetWorksheetCellStyleRequest {
     req := &GetWorksheetCellStyleRequest{
         cellName: cellName,
         name: name,
@@ -115,6 +115,6 @@ func (request *GetWorksheetCellStyleRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *GetWorksheetCellStyleRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve cell style descriptions in the worksheet.", " "))
+func (request *GetWorksheetCellStyleRequest) Description() string {
+    return strings.Trim("Retrieve cell style descriptions in the worksheet.", " ")
 }

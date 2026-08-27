@@ -19,7 +19,7 @@ type PostWorksheetCellsRangeSortRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetCellsRangeSortRequest(name string, rangeSortRequest *models.RangeSortRequest, sheetName string, opts ...RequestOption) *PostWorksheetCellsRangeSortRequest {
+func NewPostWorksheetCellsRangeSortRequest(name string, rangeSortRequest *models.RangeSortRequest, sheetName string, opts ...Option) *PostWorksheetCellsRangeSortRequest {
     req := &PostWorksheetCellsRangeSortRequest{
         name: name,
         rangeSortRequest: rangeSortRequest,
@@ -116,6 +116,6 @@ func (request *PostWorksheetCellsRangeSortRequest) GetMultipartForm() map[string
     return localVarFormParams
 }
 
-func (request *PostWorksheetCellsRangeSortRequest) Description() {
-    fmt.Println(strings.Trim("Perform data sorting around a range of cells.", " "))
+func (request *PostWorksheetCellsRangeSortRequest) Description() string {
+    return strings.Trim("Perform data sorting around a range of cells.", " ")
 }

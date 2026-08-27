@@ -18,7 +18,7 @@ type PostWorkbookGetSmartMarkerResultRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorkbookGetSmartMarkerResultRequest(name string, opts ...RequestOption) *PostWorkbookGetSmartMarkerResultRequest {
+func NewPostWorkbookGetSmartMarkerResultRequest(name string, opts ...Option) *PostWorkbookGetSmartMarkerResultRequest {
     req := &PostWorkbookGetSmartMarkerResultRequest{
         name: name,
     }
@@ -124,6 +124,6 @@ func (request *PostWorkbookGetSmartMarkerResultRequest) GetMultipartForm() map[s
     return localVarFormParams
 }
 
-func (request *PostWorkbookGetSmartMarkerResultRequest) Description() {
-    fmt.Println(strings.Trim("Smart marker processing.", " "))
+func (request *PostWorkbookGetSmartMarkerResultRequest) Description() string {
+    return strings.Trim("Smart marker processing.", " ")
 }

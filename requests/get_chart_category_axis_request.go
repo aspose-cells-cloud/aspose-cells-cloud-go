@@ -17,7 +17,7 @@ type GetChartCategoryAxisRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetChartCategoryAxisRequest(chartIndex int, name string, sheetName string, opts ...RequestOption) *GetChartCategoryAxisRequest {
+func NewGetChartCategoryAxisRequest(chartIndex int, name string, sheetName string, opts ...Option) *GetChartCategoryAxisRequest {
     req := &GetChartCategoryAxisRequest{
         chartIndex: chartIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *GetChartCategoryAxisRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *GetChartCategoryAxisRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve descriptions of chart series axis in the chart.", " "))
+func (request *GetChartCategoryAxisRequest) Description() string {
+    return strings.Trim("Retrieve descriptions of chart series axis in the chart.", " ")
 }

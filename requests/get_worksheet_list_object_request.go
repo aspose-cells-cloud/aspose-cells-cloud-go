@@ -18,7 +18,7 @@ type GetWorksheetListObjectRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetListObjectRequest(listobjectindex int, name string, sheetName string, opts ...RequestOption) *GetWorksheetListObjectRequest {
+func NewGetWorksheetListObjectRequest(listobjectindex int, name string, sheetName string, opts ...Option) *GetWorksheetListObjectRequest {
     req := &GetWorksheetListObjectRequest{
         listobjectindex: listobjectindex,
         name: name,
@@ -119,6 +119,6 @@ func (request *GetWorksheetListObjectRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *GetWorksheetListObjectRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve list object description by index in the worksheet.", " "))
+func (request *GetWorksheetListObjectRequest) Description() string {
+    return strings.Trim("Retrieve list object description by index in the worksheet.", " ")
 }

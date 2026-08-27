@@ -19,7 +19,7 @@ type DeleteWorksheetColumnsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetColumnsRequest(columnIndex int, columns int, name string, sheetName string, updateReference bool, opts ...RequestOption) *DeleteWorksheetColumnsRequest {
+func NewDeleteWorksheetColumnsRequest(columnIndex int, columns int, name string, sheetName string, updateReference bool, opts ...Option) *DeleteWorksheetColumnsRequest {
     req := &DeleteWorksheetColumnsRequest{
         columnIndex: columnIndex,
         columns: columns,
@@ -118,6 +118,6 @@ func (request *DeleteWorksheetColumnsRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetColumnsRequest) Description() {
-    fmt.Println(strings.Trim("Delete worksheet columns in the worksheet.", " "))
+func (request *DeleteWorksheetColumnsRequest) Description() string {
+    return strings.Trim("Delete worksheet columns in the worksheet.", " ")
 }

@@ -17,7 +17,7 @@ type GetWorksheetSparklineGroupRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetSparklineGroupRequest(name string, sheetName string, sparklineIndex int, opts ...RequestOption) *GetWorksheetSparklineGroupRequest {
+func NewGetWorksheetSparklineGroupRequest(name string, sheetName string, sparklineIndex int, opts ...Option) *GetWorksheetSparklineGroupRequest {
     req := &GetWorksheetSparklineGroupRequest{
         name: name,
         sheetName: sheetName,
@@ -112,6 +112,6 @@ func (request *GetWorksheetSparklineGroupRequest) GetMultipartForm() map[string]
     return localVarFormParams
 }
 
-func (request *GetWorksheetSparklineGroupRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve description of a sparkline group in the worksheet.", " "))
+func (request *GetWorksheetSparklineGroupRequest) Description() string {
+    return strings.Trim("Retrieve description of a sparkline group in the worksheet.", " ")
 }

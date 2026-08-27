@@ -25,7 +25,7 @@ type RemoveDuplicateSubstringsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewRemoveDuplicateSubstringsRequest(delimiters string, Spreadsheet string, opts ...RequestOption) *RemoveDuplicateSubstringsRequest {
+func NewRemoveDuplicateSubstringsRequest(delimiters string, Spreadsheet string, opts ...Option) *RemoveDuplicateSubstringsRequest {
     req := &RemoveDuplicateSubstringsRequest{
         delimiters: delimiters,
         Spreadsheet: Spreadsheet,
@@ -163,6 +163,6 @@ func (request *RemoveDuplicateSubstringsRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *RemoveDuplicateSubstringsRequest) Description() {
-    fmt.Println(strings.Trim("Finds and removes repeated substrings inside every cell of the chosen range, using user-defined or preset delimiters, while preserving formulas, formatting and data-validation.", " "))
+func (request *RemoveDuplicateSubstringsRequest) Description() string {
+    return strings.Trim("Finds and removes repeated substrings inside every cell of the chosen range, using user-defined or preset delimiters, while preserving formulas, formatting and data-validation.", " ")
 }

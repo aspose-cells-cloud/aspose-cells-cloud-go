@@ -20,7 +20,7 @@ type PostUpdateWorksheetOleObjectRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostUpdateWorksheetOleObjectRequest(name string, ole *models.OleObject, oleObjectIndex int, sheetName string, opts ...RequestOption) *PostUpdateWorksheetOleObjectRequest {
+func NewPostUpdateWorksheetOleObjectRequest(name string, ole *models.OleObject, oleObjectIndex int, sheetName string, opts ...Option) *PostUpdateWorksheetOleObjectRequest {
     req := &PostUpdateWorksheetOleObjectRequest{
         name: name,
         ole: ole,
@@ -119,6 +119,6 @@ func (request *PostUpdateWorksheetOleObjectRequest) GetMultipartForm() map[strin
     return localVarFormParams
 }
 
-func (request *PostUpdateWorksheetOleObjectRequest) Description() {
-    fmt.Println(strings.Trim("Update an OLE object in worksheet.", " "))
+func (request *PostUpdateWorksheetOleObjectRequest) Description() string {
+    return strings.Trim("Update an OLE object in worksheet.", " ")
 }

@@ -16,7 +16,7 @@ type MoveFolderRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewMoveFolderRequest(destPath string, srcPath string, opts ...RequestOption) *MoveFolderRequest {
+func NewMoveFolderRequest(destPath string, srcPath string, opts ...Option) *MoveFolderRequest {
     req := &MoveFolderRequest{
         destPath: destPath,
         srcPath: srcPath,
@@ -109,6 +109,6 @@ func (request *MoveFolderRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *MoveFolderRequest) Description() {
-    fmt.Println(strings.Trim("MoveFolder", " "))
+func (request *MoveFolderRequest) Description() string {
+    return strings.Trim("MoveFolder", " ")
 }

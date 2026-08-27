@@ -19,7 +19,7 @@ type PostWorkbookNameRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorkbookNameRequest(name string, nameName string, newName *models.Name, opts ...RequestOption) *PostWorkbookNameRequest {
+func NewPostWorkbookNameRequest(name string, nameName string, newName *models.Name, opts ...Option) *PostWorkbookNameRequest {
     req := &PostWorkbookNameRequest{
         name: name,
         nameName: nameName,
@@ -116,6 +116,6 @@ func (request *PostWorkbookNameRequest) GetMultipartForm() map[string]interface{
     return localVarFormParams
 }
 
-func (request *PostWorkbookNameRequest) Description() {
-    fmt.Println(strings.Trim("Update a named range in the workbook.", " "))
+func (request *PostWorkbookNameRequest) Description() string {
+    return strings.Trim("Update a named range in the workbook.", " ")
 }

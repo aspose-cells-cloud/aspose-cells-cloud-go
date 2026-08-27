@@ -19,7 +19,7 @@ type GetMetadataRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetMetadataRequest(File string, opts ...RequestOption) *GetMetadataRequest {
+func NewGetMetadataRequest(File string, opts ...Option) *GetMetadataRequest {
     req := &GetMetadataRequest{
         File: File,
     }
@@ -121,6 +121,6 @@ func (request *GetMetadataRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *GetMetadataRequest) Description() {
-    fmt.Println(strings.Trim("Get cells document properties.", " "))
+func (request *GetMetadataRequest) Description() string {
+    return strings.Trim("Get cells document properties.", " ")
 }

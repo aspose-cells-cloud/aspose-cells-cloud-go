@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostRunTaskRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostRunTaskRequest(TaskData *models.TaskData, opts ...RequestOption) *PostRunTaskRequest {
+func NewPostRunTaskRequest(TaskData *models.TaskData, opts ...Option) *PostRunTaskRequest {
     req := &PostRunTaskRequest{
         TaskData: TaskData,
     }
@@ -89,6 +88,6 @@ func (request *PostRunTaskRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostRunTaskRequest) Description() {
-    fmt.Println(strings.Trim("Run tasks.", " "))
+func (request *PostRunTaskRequest) Description() string {
+    return strings.Trim("Run tasks.", " ")
 }

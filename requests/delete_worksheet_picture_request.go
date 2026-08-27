@@ -17,7 +17,7 @@ type DeleteWorksheetPictureRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetPictureRequest(name string, pictureIndex int, sheetName string, opts ...RequestOption) *DeleteWorksheetPictureRequest {
+func NewDeleteWorksheetPictureRequest(name string, pictureIndex int, sheetName string, opts ...Option) *DeleteWorksheetPictureRequest {
     req := &DeleteWorksheetPictureRequest{
         name: name,
         pictureIndex: pictureIndex,
@@ -112,6 +112,6 @@ func (request *DeleteWorksheetPictureRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetPictureRequest) Description() {
-    fmt.Println(strings.Trim("Delete a picture object by index in the worksheet.", " "))
+func (request *DeleteWorksheetPictureRequest) Description() string {
+    return strings.Trim("Delete a picture object by index in the worksheet.", " ")
 }

@@ -26,7 +26,7 @@ type SaveSpreadsheetAsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewSaveSpreadsheetAsRequest(format string, name string, opts ...RequestOption) *SaveSpreadsheetAsRequest {
+func NewSaveSpreadsheetAsRequest(format string, name string, opts ...Option) *SaveSpreadsheetAsRequest {
     req := &SaveSpreadsheetAsRequest{
         format: format,
         name: name,
@@ -164,6 +164,6 @@ func (request *SaveSpreadsheetAsRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *SaveSpreadsheetAsRequest) Description() {
-    fmt.Println(strings.Trim("Converts a spreadsheet in cloud storage to the specified format.", " "))
+func (request *SaveSpreadsheetAsRequest) Description() string {
+    return strings.Trim("Converts a spreadsheet in cloud storage to the specified format.", " ")
 }

@@ -25,7 +25,7 @@ type ExportTableAsFormatRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewExportTableAsFormatRequest(format string, name string, tableName string, worksheet string, opts ...RequestOption) *ExportTableAsFormatRequest {
+func NewExportTableAsFormatRequest(format string, name string, tableName string, worksheet string, opts ...Option) *ExportTableAsFormatRequest {
     req := &ExportTableAsFormatRequest{
         format: format,
         name: name,
@@ -170,6 +170,6 @@ func (request *ExportTableAsFormatRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *ExportTableAsFormatRequest) Description() {
-    fmt.Println(strings.Trim("Converts a table of spreadsheet in cloud storage to the specified format.", " "))
+func (request *ExportTableAsFormatRequest) Description() string {
+    return strings.Trim("Converts a table of spreadsheet in cloud storage to the specified format.", " ")
 }

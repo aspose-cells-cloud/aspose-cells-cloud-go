@@ -21,7 +21,7 @@ type PostReplaceRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostReplaceRequest(File string, newtext string, text string, opts ...RequestOption) *PostReplaceRequest {
+func NewPostReplaceRequest(File string, newtext string, text string, opts ...Option) *PostReplaceRequest {
     req := &PostReplaceRequest{
         File: File,
         newtext: newtext,
@@ -134,6 +134,6 @@ func (request *PostReplaceRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostReplaceRequest) Description() {
-    fmt.Println(strings.Trim("Replace specified text with new text in Excel files.", " "))
+func (request *PostReplaceRequest) Description() string {
+    return strings.Trim("Replace specified text with new text in Excel files.", " ")
 }

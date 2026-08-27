@@ -23,7 +23,7 @@ type PutWorksheetColorFilterRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetColorFilterRequest(colorFilter *models.ColorFilterRequest, fieldIndex int, name string, _range string, sheetName string, opts ...RequestOption) *PutWorksheetColorFilterRequest {
+func NewPutWorksheetColorFilterRequest(colorFilter *models.ColorFilterRequest, fieldIndex int, name string, _range string, sheetName string, opts ...Option) *PutWorksheetColorFilterRequest {
     req := &PutWorksheetColorFilterRequest{
         colorFilter: colorFilter,
         fieldIndex: fieldIndex,
@@ -139,6 +139,6 @@ func (request *PutWorksheetColorFilterRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *PutWorksheetColorFilterRequest) Description() {
-    fmt.Println(strings.Trim("Add a color filter in the worksheet.", " "))
+func (request *PutWorksheetColorFilterRequest) Description() string {
+    return strings.Trim("Add a color filter in the worksheet.", " ")
 }

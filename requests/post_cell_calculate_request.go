@@ -20,7 +20,7 @@ type PostCellCalculateRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostCellCalculateRequest(cellName string, name string, sheetName string, opts ...RequestOption) *PostCellCalculateRequest {
+func NewPostCellCalculateRequest(cellName string, name string, sheetName string, opts ...Option) *PostCellCalculateRequest {
     req := &PostCellCalculateRequest{
         cellName: cellName,
         name: name,
@@ -121,6 +121,6 @@ func (request *PostCellCalculateRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *PostCellCalculateRequest) Description() {
-    fmt.Println(strings.Trim("Calculate cell formula in the worksheet.", " "))
+func (request *PostCellCalculateRequest) Description() string {
+    return strings.Trim("Calculate cell formula in the worksheet.", " ")
 }

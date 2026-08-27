@@ -24,7 +24,7 @@ type ConvertChartToImageRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertChartToImageRequest(chartIndex int, format string, Spreadsheet string, worksheet string, opts ...RequestOption) *ConvertChartToImageRequest {
+func NewConvertChartToImageRequest(chartIndex int, format string, Spreadsheet string, worksheet string, opts ...Option) *ConvertChartToImageRequest {
     req := &ConvertChartToImageRequest{
         chartIndex: chartIndex,
         format: format,
@@ -151,6 +151,6 @@ func (request *ConvertChartToImageRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *ConvertChartToImageRequest) Description() {
-    fmt.Println(strings.Trim("Converts a chart of spreadsheet on a local drive to image.", " "))
+func (request *ConvertChartToImageRequest) Description() string {
+    return strings.Trim("Converts a chart of spreadsheet on a local drive to image.", " ")
 }

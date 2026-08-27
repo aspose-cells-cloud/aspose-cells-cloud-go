@@ -12,7 +12,7 @@ type StorageExistsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewStorageExistsRequest(storageName string, opts ...RequestOption) *StorageExistsRequest {
+func NewStorageExistsRequest(storageName string, opts ...Option) *StorageExistsRequest {
     req := &StorageExistsRequest{
         storageName: storageName,
     }
@@ -88,6 +88,6 @@ func (request *StorageExistsRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *StorageExistsRequest) Description() {
-    fmt.Println(strings.Trim("StorageExists", " "))
+func (request *StorageExistsRequest) Description() string {
+    return strings.Trim("StorageExists", " ")
 }

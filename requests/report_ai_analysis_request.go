@@ -18,7 +18,7 @@ type ReportAIAnalysisRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewReportAIAnalysisRequest(Spreadsheet string, opts ...RequestOption) *ReportAIAnalysisRequest {
+func NewReportAIAnalysisRequest(Spreadsheet string, opts ...Option) *ReportAIAnalysisRequest {
     req := &ReportAIAnalysisRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -114,6 +114,6 @@ func (request *ReportAIAnalysisRequest) GetMultipartForm() map[string]interface{
     return localVarFormParams
 }
 
-func (request *ReportAIAnalysisRequest) Description() {
-    fmt.Println(strings.Trim("ReportAIAnalysis", " "))
+func (request *ReportAIAnalysisRequest) Description() string {
+    return strings.Trim("ReportAIAnalysis", " ")
 }

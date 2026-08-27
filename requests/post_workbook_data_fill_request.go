@@ -21,7 +21,7 @@ type PostWorkbookDataFillRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorkbookDataFillRequest(dataFill *models.DataFill, name string, opts ...RequestOption) *PostWorkbookDataFillRequest {
+func NewPostWorkbookDataFillRequest(dataFill *models.DataFill, name string, opts ...Option) *PostWorkbookDataFillRequest {
     req := &PostWorkbookDataFillRequest{
         dataFill: dataFill,
         name: name,
@@ -131,6 +131,6 @@ func (request *PostWorkbookDataFillRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *PostWorkbookDataFillRequest) Description() {
-    fmt.Println(strings.Trim("Data filling for spreadsheet files is primarily used to fill empty data in tables and ranges.", " "))
+func (request *PostWorkbookDataFillRequest) Description() string {
+    return strings.Trim("Data filling for spreadsheet files is primarily used to fill empty data in tables and ranges.", " ")
 }

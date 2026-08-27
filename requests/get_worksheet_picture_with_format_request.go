@@ -18,7 +18,7 @@ type GetWorksheetPictureWithFormatRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetPictureWithFormatRequest(format string, name string, pictureNumber int, sheetName string, opts ...RequestOption) *GetWorksheetPictureWithFormatRequest {
+func NewGetWorksheetPictureWithFormatRequest(format string, name string, pictureNumber int, sheetName string, opts ...Option) *GetWorksheetPictureWithFormatRequest {
     req := &GetWorksheetPictureWithFormatRequest{
         format: format,
         name: name,
@@ -118,6 +118,6 @@ func (request *GetWorksheetPictureWithFormatRequest) GetMultipartForm() map[stri
     return localVarFormParams
 }
 
-func (request *GetWorksheetPictureWithFormatRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve a picture by number in the worksheet.", " "))
+func (request *GetWorksheetPictureWithFormatRequest) Description() string {
+    return strings.Trim("Retrieve a picture by number in the worksheet.", " ")
 }

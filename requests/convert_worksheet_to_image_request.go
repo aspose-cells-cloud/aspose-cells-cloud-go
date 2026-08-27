@@ -25,7 +25,7 @@ type ConvertWorksheetToImageRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertWorksheetToImageRequest(format string, Spreadsheet string, worksheet string, opts ...RequestOption) *ConvertWorksheetToImageRequest {
+func NewConvertWorksheetToImageRequest(format string, Spreadsheet string, worksheet string, opts ...Option) *ConvertWorksheetToImageRequest {
     req := &ConvertWorksheetToImageRequest{
         format: format,
         Spreadsheet: Spreadsheet,
@@ -162,6 +162,6 @@ func (request *ConvertWorksheetToImageRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *ConvertWorksheetToImageRequest) Description() {
-    fmt.Println(strings.Trim("Converts a worksheet of spreadsheet on a local drive to the image format.", " "))
+func (request *ConvertWorksheetToImageRequest) Description() string {
+    return strings.Trim("Converts a worksheet of spreadsheet on a local drive to the image format.", " ")
 }

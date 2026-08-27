@@ -17,7 +17,7 @@ type GetWorksheetChartTitleRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetChartTitleRequest(chartIndex int, name string, sheetName string, opts ...RequestOption) *GetWorksheetChartTitleRequest {
+func NewGetWorksheetChartTitleRequest(chartIndex int, name string, sheetName string, opts ...Option) *GetWorksheetChartTitleRequest {
     req := &GetWorksheetChartTitleRequest{
         chartIndex: chartIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *GetWorksheetChartTitleRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *GetWorksheetChartTitleRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve chart title description in the worksheet.", " "))
+func (request *GetWorksheetChartTitleRequest) Description() string {
+    return strings.Trim("Retrieve chart title description in the worksheet.", " ")
 }

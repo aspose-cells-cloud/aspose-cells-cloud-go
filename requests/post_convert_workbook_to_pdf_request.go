@@ -20,7 +20,7 @@ type PostConvertWorkbookToPDFRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostConvertWorkbookToPDFRequest(File string, opts ...RequestOption) *PostConvertWorkbookToPDFRequest {
+func NewPostConvertWorkbookToPDFRequest(File string, opts ...Option) *PostConvertWorkbookToPDFRequest {
     req := &PostConvertWorkbookToPDFRequest{
         File: File,
     }
@@ -128,6 +128,6 @@ func (request *PostConvertWorkbookToPDFRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *PostConvertWorkbookToPDFRequest) Description() {
-    fmt.Println(strings.Trim("Convert Excel file to PDF files.", " "))
+func (request *PostConvertWorkbookToPDFRequest) Description() string {
+    return strings.Trim("Convert Excel file to PDF files.", " ")
 }

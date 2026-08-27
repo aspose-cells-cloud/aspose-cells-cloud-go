@@ -22,7 +22,7 @@ type PutWorksheetIconFilterRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetIconFilterRequest(fieldIndex int, iconId int, iconSetType string, name string, _range string, sheetName string, opts ...RequestOption) *PutWorksheetIconFilterRequest {
+func NewPutWorksheetIconFilterRequest(fieldIndex int, iconId int, iconSetType string, name string, _range string, sheetName string, opts ...Option) *PutWorksheetIconFilterRequest {
     req := &PutWorksheetIconFilterRequest{
         fieldIndex: fieldIndex,
         iconId: iconId,
@@ -141,6 +141,6 @@ func (request *PutWorksheetIconFilterRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *PutWorksheetIconFilterRequest) Description() {
-    fmt.Println(strings.Trim("Add an icon filter in the worksheet.", " "))
+func (request *PutWorksheetIconFilterRequest) Description() string {
+    return strings.Trim("Add an icon filter in the worksheet.", " ")
 }

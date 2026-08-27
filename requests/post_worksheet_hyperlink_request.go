@@ -20,7 +20,7 @@ type PostWorksheetHyperlinkRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetHyperlinkRequest(hyperlink *models.Hyperlink, hyperlinkIndex int, name string, sheetName string, opts ...RequestOption) *PostWorksheetHyperlinkRequest {
+func NewPostWorksheetHyperlinkRequest(hyperlink *models.Hyperlink, hyperlinkIndex int, name string, sheetName string, opts ...Option) *PostWorksheetHyperlinkRequest {
     req := &PostWorksheetHyperlinkRequest{
         hyperlink: hyperlink,
         hyperlinkIndex: hyperlinkIndex,
@@ -119,6 +119,6 @@ func (request *PostWorksheetHyperlinkRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *PostWorksheetHyperlinkRequest) Description() {
-    fmt.Println(strings.Trim("Update hyperlink by index in the worksheet.", " "))
+func (request *PostWorksheetHyperlinkRequest) Description() string {
+    return strings.Trim("Update hyperlink by index in the worksheet.", " ")
 }

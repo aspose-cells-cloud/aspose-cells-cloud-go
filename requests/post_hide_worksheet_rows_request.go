@@ -18,7 +18,7 @@ type PostHideWorksheetRowsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostHideWorksheetRowsRequest(name string, sheetName string, startrow int, totalRows int, opts ...RequestOption) *PostHideWorksheetRowsRequest {
+func NewPostHideWorksheetRowsRequest(name string, sheetName string, startrow int, totalRows int, opts ...Option) *PostHideWorksheetRowsRequest {
     req := &PostHideWorksheetRowsRequest{
         name: name,
         sheetName: sheetName,
@@ -115,6 +115,6 @@ func (request *PostHideWorksheetRowsRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *PostHideWorksheetRowsRequest) Description() {
-    fmt.Println(strings.Trim("Hide rows in worksheet.", " "))
+func (request *PostHideWorksheetRowsRequest) Description() string {
+    return strings.Trim("Hide rows in worksheet.", " ")
 }

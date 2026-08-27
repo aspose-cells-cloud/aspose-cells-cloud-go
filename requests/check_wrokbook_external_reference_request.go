@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type CheckWrokbookExternalReferenceRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewCheckWrokbookExternalReferenceRequest(checkExternalReferenceOptions *models.CheckExternalReferenceOptions, opts ...RequestOption) *CheckWrokbookExternalReferenceRequest {
+func NewCheckWrokbookExternalReferenceRequest(checkExternalReferenceOptions *models.CheckExternalReferenceOptions, opts ...Option) *CheckWrokbookExternalReferenceRequest {
     req := &CheckWrokbookExternalReferenceRequest{
         checkExternalReferenceOptions: checkExternalReferenceOptions,
     }
@@ -89,6 +88,6 @@ func (request *CheckWrokbookExternalReferenceRequest) GetMultipartForm() map[str
     return localVarFormParams
 }
 
-func (request *CheckWrokbookExternalReferenceRequest) Description() {
-    fmt.Println(strings.Trim("Export Excel internal elements or the workbook itself to various format files.", " "))
+func (request *CheckWrokbookExternalReferenceRequest) Description() string {
+    return strings.Trim("Export Excel internal elements or the workbook itself to various format files.", " ")
 }

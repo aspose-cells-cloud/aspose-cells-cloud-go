@@ -17,7 +17,7 @@ type PutWorksheetChartLegendRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetChartLegendRequest(chartIndex int, name string, sheetName string, opts ...RequestOption) *PutWorksheetChartLegendRequest {
+func NewPutWorksheetChartLegendRequest(chartIndex int, name string, sheetName string, opts ...Option) *PutWorksheetChartLegendRequest {
     req := &PutWorksheetChartLegendRequest{
         chartIndex: chartIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *PutWorksheetChartLegendRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *PutWorksheetChartLegendRequest) Description() {
-    fmt.Println(strings.Trim("Show chart legend in the worksheet.", " "))
+func (request *PutWorksheetChartLegendRequest) Description() string {
+    return strings.Trim("Show chart legend in the worksheet.", " ")
 }

@@ -26,7 +26,7 @@ type TrimCharacterInRemoteSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewTrimCharacterInRemoteSpreadsheetRequest(name string, _range string, worksheet string, opts ...RequestOption) *TrimCharacterInRemoteSpreadsheetRequest {
+func NewTrimCharacterInRemoteSpreadsheetRequest(name string, _range string, worksheet string, opts ...Option) *TrimCharacterInRemoteSpreadsheetRequest {
     req := &TrimCharacterInRemoteSpreadsheetRequest{
         name: name,
         _range: _range,
@@ -178,6 +178,6 @@ func (request *TrimCharacterInRemoteSpreadsheetRequest) GetMultipartForm() map[s
     return localVarFormParams
 }
 
-func (request *TrimCharacterInRemoteSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("The TrimSpreadsheetContent API is designed to process and trim content within a spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting", " "))
+func (request *TrimCharacterInRemoteSpreadsheetRequest) Description() string {
+    return strings.Trim("The TrimSpreadsheetContent API is designed to process and trim content within a spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting", " ")
 }

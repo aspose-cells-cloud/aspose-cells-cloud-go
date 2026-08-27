@@ -16,7 +16,7 @@ type PostConvertWorkbookRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostConvertWorkbookRequest(convertWorkbookOptions *models.ConvertWorkbookOptions, opts ...RequestOption) *PostConvertWorkbookRequest {
+func NewPostConvertWorkbookRequest(convertWorkbookOptions *models.ConvertWorkbookOptions, opts ...Option) *PostConvertWorkbookRequest {
     req := &PostConvertWorkbookRequest{
         convertWorkbookOptions: convertWorkbookOptions,
     }
@@ -97,6 +97,6 @@ func (request *PostConvertWorkbookRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *PostConvertWorkbookRequest) Description() {
-    fmt.Println(strings.Trim("PostConvertWorkbook", " "))
+func (request *PostConvertWorkbookRequest) Description() string {
+    return strings.Trim("PostConvertWorkbook", " ")
 }

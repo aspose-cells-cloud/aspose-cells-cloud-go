@@ -17,7 +17,7 @@ type PostWorksheetListObjectRemoveDuplicatesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetListObjectRemoveDuplicatesRequest(listObjectIndex int, name string, sheetName string, opts ...RequestOption) *PostWorksheetListObjectRemoveDuplicatesRequest {
+func NewPostWorksheetListObjectRemoveDuplicatesRequest(listObjectIndex int, name string, sheetName string, opts ...Option) *PostWorksheetListObjectRemoveDuplicatesRequest {
     req := &PostWorksheetListObjectRemoveDuplicatesRequest{
         listObjectIndex: listObjectIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *PostWorksheetListObjectRemoveDuplicatesRequest) GetMultipartForm(
     return localVarFormParams
 }
 
-func (request *PostWorksheetListObjectRemoveDuplicatesRequest) Description() {
-    fmt.Println(strings.Trim("Remove duplicates in list object.", " "))
+func (request *PostWorksheetListObjectRemoveDuplicatesRequest) Description() string {
+    return strings.Trim("Remove duplicates in list object.", " ")
 }

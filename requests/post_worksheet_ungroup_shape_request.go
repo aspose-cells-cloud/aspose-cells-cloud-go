@@ -17,7 +17,7 @@ type PostWorksheetUngroupShapeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetUngroupShapeRequest(name string, shapeindex int, sheetName string, opts ...RequestOption) *PostWorksheetUngroupShapeRequest {
+func NewPostWorksheetUngroupShapeRequest(name string, shapeindex int, sheetName string, opts ...Option) *PostWorksheetUngroupShapeRequest {
     req := &PostWorksheetUngroupShapeRequest{
         name: name,
         shapeindex: shapeindex,
@@ -112,6 +112,6 @@ func (request *PostWorksheetUngroupShapeRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *PostWorksheetUngroupShapeRequest) Description() {
-    fmt.Println(strings.Trim("Ungroup shapes in the worksheet.", " "))
+func (request *PostWorksheetUngroupShapeRequest) Description() string {
+    return strings.Trim("Ungroup shapes in the worksheet.", " ")
 }

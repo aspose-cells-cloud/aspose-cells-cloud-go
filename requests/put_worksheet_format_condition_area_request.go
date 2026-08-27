@@ -18,7 +18,7 @@ type PutWorksheetFormatConditionAreaRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetFormatConditionAreaRequest(cellArea string, index int, name string, sheetName string, opts ...RequestOption) *PutWorksheetFormatConditionAreaRequest {
+func NewPutWorksheetFormatConditionAreaRequest(cellArea string, index int, name string, sheetName string, opts ...Option) *PutWorksheetFormatConditionAreaRequest {
     req := &PutWorksheetFormatConditionAreaRequest{
         cellArea: cellArea,
         index: index,
@@ -118,6 +118,6 @@ func (request *PutWorksheetFormatConditionAreaRequest) GetMultipartForm() map[st
     return localVarFormParams
 }
 
-func (request *PutWorksheetFormatConditionAreaRequest) Description() {
-    fmt.Println(strings.Trim("Add a cell area for the format condition in the worksheet.", " "))
+func (request *PutWorksheetFormatConditionAreaRequest) Description() string {
+    return strings.Trim("Add a cell area for the format condition in the worksheet.", " ")
 }

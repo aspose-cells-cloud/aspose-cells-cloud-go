@@ -20,7 +20,7 @@ type PostColumnStyleRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostColumnStyleRequest(columnIndex int, name string, sheetName string, style *models.Style, opts ...RequestOption) *PostColumnStyleRequest {
+func NewPostColumnStyleRequest(columnIndex int, name string, sheetName string, style *models.Style, opts ...Option) *PostColumnStyleRequest {
     req := &PostColumnStyleRequest{
         columnIndex: columnIndex,
         name: name,
@@ -119,6 +119,6 @@ func (request *PostColumnStyleRequest) GetMultipartForm() map[string]interface{}
     return localVarFormParams
 }
 
-func (request *PostColumnStyleRequest) Description() {
-    fmt.Println(strings.Trim("Set column style in the worksheet.", " "))
+func (request *PostColumnStyleRequest) Description() string {
+    return strings.Trim("Set column style in the worksheet.", " ")
 }

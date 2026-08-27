@@ -14,7 +14,7 @@ type GetFilesListRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetFilesListRequest(opts ...RequestOption) *GetFilesListRequest {
+func NewGetFilesListRequest(opts ...Option) *GetFilesListRequest {
     req := &GetFilesListRequest{
     }
     cfg := &requestConfig{
@@ -94,6 +94,6 @@ func (request *GetFilesListRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *GetFilesListRequest) Description() {
-    fmt.Println(strings.Trim("GetFilesList", " "))
+func (request *GetFilesListRequest) Description() string {
+    return strings.Trim("GetFilesList", " ")
 }

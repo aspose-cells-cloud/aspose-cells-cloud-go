@@ -16,7 +16,7 @@ type DeleteWorksheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetRequest(name string, sheetName string, opts ...RequestOption) *DeleteWorksheetRequest {
+func NewDeleteWorksheetRequest(name string, sheetName string, opts ...Option) *DeleteWorksheetRequest {
     req := &DeleteWorksheetRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *DeleteWorksheetRequest) GetMultipartForm() map[string]interface{}
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetRequest) Description() {
-    fmt.Println(strings.Trim("Delete a worksheet in the workbook.", " "))
+func (request *DeleteWorksheetRequest) Description() string {
+    return strings.Trim("Delete a worksheet in the workbook.", " ")
 }

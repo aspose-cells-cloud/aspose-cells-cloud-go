@@ -23,7 +23,7 @@ type PutWorksheetFilterTop10Request struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetFilterTop10Request(fieldIndex int, isPercent bool, isTop bool, itemCount int, name string, _range string, sheetName string, opts ...RequestOption) *PutWorksheetFilterTop10Request {
+func NewPutWorksheetFilterTop10Request(fieldIndex int, isPercent bool, isTop bool, itemCount int, name string, _range string, sheetName string, opts ...Option) *PutWorksheetFilterTop10Request {
     req := &PutWorksheetFilterTop10Request{
         fieldIndex: fieldIndex,
         isPercent: isPercent,
@@ -141,6 +141,6 @@ func (request *PutWorksheetFilterTop10Request) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *PutWorksheetFilterTop10Request) Description() {
-    fmt.Println(strings.Trim("Filter the top 10 items in the list in the worksheet.", " "))
+func (request *PutWorksheetFilterTop10Request) Description() string {
+    return strings.Trim("Filter the top 10 items in the list in the worksheet.", " ")
 }

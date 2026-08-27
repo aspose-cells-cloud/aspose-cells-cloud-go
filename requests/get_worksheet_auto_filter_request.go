@@ -16,7 +16,7 @@ type GetWorksheetAutoFilterRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetAutoFilterRequest(name string, sheetName string, opts ...RequestOption) *GetWorksheetAutoFilterRequest {
+func NewGetWorksheetAutoFilterRequest(name string, sheetName string, opts ...Option) *GetWorksheetAutoFilterRequest {
     req := &GetWorksheetAutoFilterRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *GetWorksheetAutoFilterRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *GetWorksheetAutoFilterRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve the description of auto filters from a worksheet.", " "))
+func (request *GetWorksheetAutoFilterRequest) Description() string {
+    return strings.Trim("Retrieve the description of auto filters from a worksheet.", " ")
 }

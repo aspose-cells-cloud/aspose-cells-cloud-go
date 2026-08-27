@@ -17,7 +17,7 @@ type GetWorksheetPivotTableRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetPivotTableRequest(name string, pivottableIndex int, sheetName string, opts ...RequestOption) *GetWorksheetPivotTableRequest {
+func NewGetWorksheetPivotTableRequest(name string, pivottableIndex int, sheetName string, opts ...Option) *GetWorksheetPivotTableRequest {
     req := &GetWorksheetPivotTableRequest{
         name: name,
         pivottableIndex: pivottableIndex,
@@ -112,6 +112,6 @@ func (request *GetWorksheetPivotTableRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *GetWorksheetPivotTableRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve PivotTable information by index in the worksheet.", " "))
+func (request *GetWorksheetPivotTableRequest) Description() string {
+    return strings.Trim("Retrieve PivotTable information by index in the worksheet.", " ")
 }

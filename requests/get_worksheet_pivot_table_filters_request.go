@@ -17,7 +17,7 @@ type GetWorksheetPivotTableFiltersRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetPivotTableFiltersRequest(name string, pivotTableIndex int, sheetName string, opts ...RequestOption) *GetWorksheetPivotTableFiltersRequest {
+func NewGetWorksheetPivotTableFiltersRequest(name string, pivotTableIndex int, sheetName string, opts ...Option) *GetWorksheetPivotTableFiltersRequest {
     req := &GetWorksheetPivotTableFiltersRequest{
         name: name,
         pivotTableIndex: pivotTableIndex,
@@ -112,6 +112,6 @@ func (request *GetWorksheetPivotTableFiltersRequest) GetMultipartForm() map[stri
     return localVarFormParams
 }
 
-func (request *GetWorksheetPivotTableFiltersRequest) Description() {
-    fmt.Println(strings.Trim("Gets PivotTable filters in worksheet.", " "))
+func (request *GetWorksheetPivotTableFiltersRequest) Description() string {
+    return strings.Trim("Gets PivotTable filters in worksheet.", " ")
 }

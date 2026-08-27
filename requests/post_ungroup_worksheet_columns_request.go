@@ -18,7 +18,7 @@ type PostUngroupWorksheetColumnsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostUngroupWorksheetColumnsRequest(firstIndex int, lastIndex int, name string, sheetName string, opts ...RequestOption) *PostUngroupWorksheetColumnsRequest {
+func NewPostUngroupWorksheetColumnsRequest(firstIndex int, lastIndex int, name string, sheetName string, opts ...Option) *PostUngroupWorksheetColumnsRequest {
     req := &PostUngroupWorksheetColumnsRequest{
         firstIndex: firstIndex,
         lastIndex: lastIndex,
@@ -115,6 +115,6 @@ func (request *PostUngroupWorksheetColumnsRequest) GetMultipartForm() map[string
     return localVarFormParams
 }
 
-func (request *PostUngroupWorksheetColumnsRequest) Description() {
-    fmt.Println(strings.Trim("Ungroup worksheet columns.", " "))
+func (request *PostUngroupWorksheetColumnsRequest) Description() string {
+    return strings.Trim("Ungroup worksheet columns.", " ")
 }

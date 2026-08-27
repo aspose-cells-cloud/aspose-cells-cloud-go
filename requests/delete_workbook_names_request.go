@@ -15,7 +15,7 @@ type DeleteWorkbookNamesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorkbookNamesRequest(name string, opts ...RequestOption) *DeleteWorkbookNamesRequest {
+func NewDeleteWorkbookNamesRequest(name string, opts ...Option) *DeleteWorkbookNamesRequest {
     req := &DeleteWorkbookNamesRequest{
         name: name,
     }
@@ -103,6 +103,6 @@ func (request *DeleteWorkbookNamesRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *DeleteWorkbookNamesRequest) Description() {
-    fmt.Println(strings.Trim("Delete all named ranges in the workbook.", " "))
+func (request *DeleteWorkbookNamesRequest) Description() string {
+    return strings.Trim("Delete all named ranges in the workbook.", " ")
 }

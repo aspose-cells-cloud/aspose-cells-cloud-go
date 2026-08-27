@@ -21,7 +21,7 @@ type DeletePivotTableFieldRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeletePivotTableFieldRequest(name string, pivotFieldType string, pivotTableFieldRequest *models.PivotTableFieldRequest, pivotTableIndex int, sheetName string, opts ...RequestOption) *DeletePivotTableFieldRequest {
+func NewDeletePivotTableFieldRequest(name string, pivotFieldType string, pivotTableFieldRequest *models.PivotTableFieldRequest, pivotTableIndex int, sheetName string, opts ...Option) *DeletePivotTableFieldRequest {
     req := &DeletePivotTableFieldRequest{
         name: name,
         pivotFieldType: pivotFieldType,
@@ -125,6 +125,6 @@ func (request *DeletePivotTableFieldRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *DeletePivotTableFieldRequest) Description() {
-    fmt.Println(strings.Trim("Delete a pivot field in the PivotTable.", " "))
+func (request *DeletePivotTableFieldRequest) Description() string {
+    return strings.Trim("Delete a pivot field in the PivotTable.", " ")
 }

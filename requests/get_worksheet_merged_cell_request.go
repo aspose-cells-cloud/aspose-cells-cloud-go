@@ -17,7 +17,7 @@ type GetWorksheetMergedCellRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetMergedCellRequest(mergedCellIndex int, name string, sheetName string, opts ...RequestOption) *GetWorksheetMergedCellRequest {
+func NewGetWorksheetMergedCellRequest(mergedCellIndex int, name string, sheetName string, opts ...Option) *GetWorksheetMergedCellRequest {
     req := &GetWorksheetMergedCellRequest{
         mergedCellIndex: mergedCellIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *GetWorksheetMergedCellRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *GetWorksheetMergedCellRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve description of a merged cell by its index in the worksheet.", " "))
+func (request *GetWorksheetMergedCellRequest) Description() string {
+    return strings.Trim("Retrieve description of a merged cell by its index in the worksheet.", " ")
 }

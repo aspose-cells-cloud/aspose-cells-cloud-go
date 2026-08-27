@@ -16,7 +16,7 @@ type GetWorksheetOleObjectsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetOleObjectsRequest(name string, sheetName string, opts ...RequestOption) *GetWorksheetOleObjectsRequest {
+func NewGetWorksheetOleObjectsRequest(name string, sheetName string, opts ...Option) *GetWorksheetOleObjectsRequest {
     req := &GetWorksheetOleObjectsRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *GetWorksheetOleObjectsRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *GetWorksheetOleObjectsRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve descriptions of OLE objects in the worksheet.", " "))
+func (request *GetWorksheetOleObjectsRequest) Description() string {
+    return strings.Trim("Retrieve descriptions of OLE objects in the worksheet.", " ")
 }

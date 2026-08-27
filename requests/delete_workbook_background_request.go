@@ -15,7 +15,7 @@ type DeleteWorkbookBackgroundRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorkbookBackgroundRequest(name string, opts ...RequestOption) *DeleteWorkbookBackgroundRequest {
+func NewDeleteWorkbookBackgroundRequest(name string, opts ...Option) *DeleteWorkbookBackgroundRequest {
     req := &DeleteWorkbookBackgroundRequest{
         name: name,
     }
@@ -103,6 +103,6 @@ func (request *DeleteWorkbookBackgroundRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *DeleteWorkbookBackgroundRequest) Description() {
-    fmt.Println(strings.Trim("Delete background in the workbook.", " "))
+func (request *DeleteWorkbookBackgroundRequest) Description() string {
+    return strings.Trim("Delete background in the workbook.", " ")
 }

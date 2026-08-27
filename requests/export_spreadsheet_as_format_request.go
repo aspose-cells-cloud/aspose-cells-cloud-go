@@ -23,7 +23,7 @@ type ExportSpreadsheetAsFormatRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewExportSpreadsheetAsFormatRequest(format string, name string, opts ...RequestOption) *ExportSpreadsheetAsFormatRequest {
+func NewExportSpreadsheetAsFormatRequest(format string, name string, opts ...Option) *ExportSpreadsheetAsFormatRequest {
     req := &ExportSpreadsheetAsFormatRequest{
         format: format,
         name: name,
@@ -158,6 +158,6 @@ func (request *ExportSpreadsheetAsFormatRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *ExportSpreadsheetAsFormatRequest) Description() {
-    fmt.Println(strings.Trim("Converts a spreadsheet in cloud storage to the specified format.", " "))
+func (request *ExportSpreadsheetAsFormatRequest) Description() string {
+    return strings.Trim("Converts a spreadsheet in cloud storage to the specified format.", " ")
 }

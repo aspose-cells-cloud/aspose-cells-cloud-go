@@ -21,7 +21,7 @@ type PostWorkbookDataCleansingRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorkbookDataCleansingRequest(dataCleansing *models.DataCleansing, name string, opts ...RequestOption) *PostWorkbookDataCleansingRequest {
+func NewPostWorkbookDataCleansingRequest(dataCleansing *models.DataCleansing, name string, opts ...Option) *PostWorkbookDataCleansingRequest {
     req := &PostWorkbookDataCleansingRequest{
         dataCleansing: dataCleansing,
         name: name,
@@ -131,6 +131,6 @@ func (request *PostWorkbookDataCleansingRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *PostWorkbookDataCleansingRequest) Description() {
-    fmt.Println(strings.Trim("Data cleaning of spreadsheet files is a data management process used to identify, correct, and remove errors, incompleteness, duplicates, or inaccuracies in tables and ranges.", " "))
+func (request *PostWorkbookDataCleansingRequest) Description() string {
+    return strings.Trim("Data cleaning of spreadsheet files is a data management process used to identify, correct, and remove errors, incompleteness, duplicates, or inaccuracies in tables and ranges.", " ")
 }

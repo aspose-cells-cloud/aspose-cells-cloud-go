@@ -24,7 +24,7 @@ type SwapRangeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewSwapRangeRequest(range1 string, range2 string, Spreadsheet string, worksheet1 string, worksheet2 string, opts ...RequestOption) *SwapRangeRequest {
+func NewSwapRangeRequest(range1 string, range2 string, Spreadsheet string, worksheet1 string, worksheet2 string, opts ...Option) *SwapRangeRequest {
     req := &SwapRangeRequest{
         range1: range1,
         range2: range2,
@@ -153,6 +153,6 @@ func (request *SwapRangeRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *SwapRangeRequest) Description() {
-    fmt.Println(strings.Trim("The Swap Ranges for Excel API provides a powerful tool to move any two columns, rows, ranges, or individual cells within an Excel file. This API allows users to re-arrange their tables quickly and efficiently, ensuring that the original data formatting is preserved and all existing formulas continue to function correctly. By leveraging this API, users can streamline their data manipulation tasks and maintain the integrity of their spreadsheets.", " "))
+func (request *SwapRangeRequest) Description() string {
+    return strings.Trim("The Swap Ranges for Excel API provides a powerful tool to move any two columns, rows, ranges, or individual cells within an Excel file. This API allows users to re-arrange their tables quickly and efficiently, ensuring that the original data formatting is preserved and all existing formulas continue to function correctly. By leveraging this API, users can streamline their data manipulation tasks and maintain the integrity of their spreadsheets.", " ")
 }

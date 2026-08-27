@@ -27,7 +27,7 @@ type PutWorksheetDateFilterRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetDateFilterRequest(dateTimeGroupingType string, fieldIndex int, name string, _range string, sheetName string, opts ...RequestOption) *PutWorksheetDateFilterRequest {
+func NewPutWorksheetDateFilterRequest(dateTimeGroupingType string, fieldIndex int, name string, _range string, sheetName string, opts ...Option) *PutWorksheetDateFilterRequest {
     req := &PutWorksheetDateFilterRequest{
         dateTimeGroupingType: dateTimeGroupingType,
         fieldIndex: fieldIndex,
@@ -180,6 +180,6 @@ func (request *PutWorksheetDateFilterRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *PutWorksheetDateFilterRequest) Description() {
-    fmt.Println(strings.Trim("Apply a date filter in the worksheet.", " "))
+func (request *PutWorksheetDateFilterRequest) Description() string {
+    return strings.Trim("Apply a date filter in the worksheet.", " ")
 }

@@ -20,7 +20,7 @@ type PostWorksheetCellsRangeColumnWidthRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetCellsRangeColumnWidthRequest(name string, _range *models.Range, sheetName string, value float64, opts ...RequestOption) *PostWorksheetCellsRangeColumnWidthRequest {
+func NewPostWorksheetCellsRangeColumnWidthRequest(name string, _range *models.Range, sheetName string, value float64, opts ...Option) *PostWorksheetCellsRangeColumnWidthRequest {
     req := &PostWorksheetCellsRangeColumnWidthRequest{
         name: name,
         _range: _range,
@@ -119,6 +119,6 @@ func (request *PostWorksheetCellsRangeColumnWidthRequest) GetMultipartForm() map
     return localVarFormParams
 }
 
-func (request *PostWorksheetCellsRangeColumnWidthRequest) Description() {
-    fmt.Println(strings.Trim("Set the column width of the specified range.", " "))
+func (request *PostWorksheetCellsRangeColumnWidthRequest) Description() string {
+    return strings.Trim("Set the column width of the specified range.", " ")
 }

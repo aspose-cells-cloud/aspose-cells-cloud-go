@@ -21,7 +21,7 @@ type ReplaceContentInRemoteRangeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewReplaceContentInRemoteRangeRequest(cellArea string, name string, replaceText string, searchText string, worksheet string, opts ...RequestOption) *ReplaceContentInRemoteRangeRequest {
+func NewReplaceContentInRemoteRangeRequest(cellArea string, name string, replaceText string, searchText string, worksheet string, opts ...Option) *ReplaceContentInRemoteRangeRequest {
     req := &ReplaceContentInRemoteRangeRequest{
         cellArea: cellArea,
         name: name,
@@ -141,6 +141,6 @@ func (request *ReplaceContentInRemoteRangeRequest) GetMultipartForm() map[string
     return localVarFormParams
 }
 
-func (request *ReplaceContentInRemoteRangeRequest) Description() {
-    fmt.Println(strings.Trim("Replace text in the range of remoted spreadsheet.", " "))
+func (request *ReplaceContentInRemoteRangeRequest) Description() string {
+    return strings.Trim("Replace text in the range of remoted spreadsheet.", " ")
 }

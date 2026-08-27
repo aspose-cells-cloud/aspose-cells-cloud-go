@@ -16,7 +16,7 @@ type GetDocumentPropertiesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetDocumentPropertiesRequest(name string, opts ...RequestOption) *GetDocumentPropertiesRequest {
+func NewGetDocumentPropertiesRequest(name string, opts ...Option) *GetDocumentPropertiesRequest {
     req := &GetDocumentPropertiesRequest{
         name: name,
     }
@@ -110,6 +110,6 @@ func (request *GetDocumentPropertiesRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *GetDocumentPropertiesRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve descriptions of Excel file properties.", " "))
+func (request *GetDocumentPropertiesRequest) Description() string {
+    return strings.Trim("Retrieve descriptions of Excel file properties.", " ")
 }

@@ -18,7 +18,7 @@ type GetWorksheetChartRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetChartRequest(chartNumber int, name string, sheetName string, opts ...RequestOption) *GetWorksheetChartRequest {
+func NewGetWorksheetChartRequest(chartNumber int, name string, sheetName string, opts ...Option) *GetWorksheetChartRequest {
     req := &GetWorksheetChartRequest{
         chartNumber: chartNumber,
         name: name,
@@ -119,6 +119,6 @@ func (request *GetWorksheetChartRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *GetWorksheetChartRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve the chart in a specified format.", " "))
+func (request *GetWorksheetChartRequest) Description() string {
+    return strings.Trim("Retrieve the chart in a specified format.", " ")
 }

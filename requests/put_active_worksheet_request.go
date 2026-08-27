@@ -16,7 +16,7 @@ type PutActiveWorksheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutActiveWorksheetRequest(name string, sheetName string, opts ...RequestOption) *PutActiveWorksheetRequest {
+func NewPutActiveWorksheetRequest(name string, sheetName string, opts ...Option) *PutActiveWorksheetRequest {
     req := &PutActiveWorksheetRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *PutActiveWorksheetRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *PutActiveWorksheetRequest) Description() {
-    fmt.Println(strings.Trim("Set active worksheet index in the workbook.", " "))
+func (request *PutActiveWorksheetRequest) Description() string {
+    return strings.Trim("Set active worksheet index in the workbook.", " ")
 }

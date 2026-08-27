@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 )
@@ -10,7 +9,7 @@ type GetPublicKeyRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetPublicKeyRequest(opts ...RequestOption) *GetPublicKeyRequest {
+func NewGetPublicKeyRequest(opts ...Option) *GetPublicKeyRequest {
     req := &GetPublicKeyRequest{
     }
     cfg := &requestConfig{
@@ -80,6 +79,6 @@ func (request *GetPublicKeyRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *GetPublicKeyRequest) Description() {
-    fmt.Println(strings.Trim("Get an asymmetric public key.", " "))
+func (request *GetPublicKeyRequest) Description() string {
+    return strings.Trim("Get an asymmetric public key.", " ")
 }

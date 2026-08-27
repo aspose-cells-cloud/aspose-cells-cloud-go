@@ -28,7 +28,7 @@ type GetWorkbookRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorkbookRequest(name string, opts ...RequestOption) *GetWorkbookRequest {
+func NewGetWorkbookRequest(name string, opts ...Option) *GetWorkbookRequest {
     req := &GetWorkbookRequest{
         name: name,
     }
@@ -194,6 +194,6 @@ func (request *GetWorkbookRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *GetWorkbookRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve workbooks in various formats.", " "))
+func (request *GetWorkbookRequest) Description() string {
+    return strings.Trim("Retrieve workbooks in various formats.", " ")
 }

@@ -31,7 +31,7 @@ type PutConvertWorkbookRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutConvertWorkbookRequest(File string, format string, opts ...RequestOption) *PutConvertWorkbookRequest {
+func NewPutConvertWorkbookRequest(File string, format string, opts ...Option) *PutConvertWorkbookRequest {
     req := &PutConvertWorkbookRequest{
         File: File,
         format: format,
@@ -205,6 +205,6 @@ func (request *PutConvertWorkbookRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *PutConvertWorkbookRequest) Description() {
-    fmt.Println(strings.Trim("Convert the workbook from the requested content into files in different formats.", " "))
+func (request *PutConvertWorkbookRequest) Description() string {
+    return strings.Trim("Convert the workbook from the requested content into files in different formats.", " ")
 }

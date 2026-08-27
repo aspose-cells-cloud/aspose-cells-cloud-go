@@ -20,7 +20,7 @@ type PostWorksheetUnmergeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetUnmergeRequest(name string, sheetName string, startColumn int, startRow int, totalColumns int, totalRows int, opts ...RequestOption) *PostWorksheetUnmergeRequest {
+func NewPostWorksheetUnmergeRequest(name string, sheetName string, startColumn int, startRow int, totalColumns int, totalRows int, opts ...Option) *PostWorksheetUnmergeRequest {
     req := &PostWorksheetUnmergeRequest{
         name: name,
         sheetName: sheetName,
@@ -121,6 +121,6 @@ func (request *PostWorksheetUnmergeRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *PostWorksheetUnmergeRequest) Description() {
-    fmt.Println(strings.Trim("Unmerge cells in the worksheet.", " "))
+func (request *PostWorksheetUnmergeRequest) Description() string {
+    return strings.Trim("Unmerge cells in the worksheet.", " ")
 }

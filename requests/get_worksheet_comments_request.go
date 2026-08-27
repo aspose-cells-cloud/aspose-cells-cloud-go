@@ -16,7 +16,7 @@ type GetWorksheetCommentsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetCommentsRequest(name string, sheetName string, opts ...RequestOption) *GetWorksheetCommentsRequest {
+func NewGetWorksheetCommentsRequest(name string, sheetName string, opts ...Option) *GetWorksheetCommentsRequest {
     req := &GetWorksheetCommentsRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *GetWorksheetCommentsRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *GetWorksheetCommentsRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve the description of comments in the worksheet.", " "))
+func (request *GetWorksheetCommentsRequest) Description() string {
+    return strings.Trim("Retrieve the description of comments in the worksheet.", " ")
 }

@@ -28,7 +28,7 @@ type ExtractTextRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewExtractTextRequest(extractTextType string, outPositionRange string, Spreadsheet string, opts ...RequestOption) *ExtractTextRequest {
+func NewExtractTextRequest(extractTextType string, outPositionRange string, Spreadsheet string, opts ...Option) *ExtractTextRequest {
     req := &ExtractTextRequest{
         extractTextType: extractTextType,
         outPositionRange: outPositionRange,
@@ -183,6 +183,6 @@ func (request *ExtractTextRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *ExtractTextRequest) Description() {
-    fmt.Println(strings.Trim("Indicates extracting substrings, text characters, and numbers from a spreadsheet cell into another cell without having to use complex FIND, MIN, LEFT, or RIGHT formulas.", " "))
+func (request *ExtractTextRequest) Description() string {
+    return strings.Trim("Indicates extracting substrings, text characters, and numbers from a spreadsheet cell into another cell without having to use complex FIND, MIN, LEFT, or RIGHT formulas.", " ")
 }

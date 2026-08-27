@@ -20,7 +20,7 @@ type PostPivotTableFieldMoveToRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostPivotTableFieldMoveToRequest(fieldIndex int, from string, name string, pivotTableIndex int, sheetName string, to string, opts ...RequestOption) *PostPivotTableFieldMoveToRequest {
+func NewPostPivotTableFieldMoveToRequest(fieldIndex int, from string, name string, pivotTableIndex int, sheetName string, to string, opts ...Option) *PostPivotTableFieldMoveToRequest {
     req := &PostPivotTableFieldMoveToRequest{
         fieldIndex: fieldIndex,
         from: from,
@@ -127,6 +127,6 @@ func (request *PostPivotTableFieldMoveToRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *PostPivotTableFieldMoveToRequest) Description() {
-    fmt.Println(strings.Trim("Move a pivot field in the PivotTable.", " "))
+func (request *PostPivotTableFieldMoveToRequest) Description() string {
+    return strings.Trim("Move a pivot field in the PivotTable.", " ")
 }

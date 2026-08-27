@@ -17,7 +17,7 @@ type GetWorksheetColumnRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetColumnRequest(columnIndex int, name string, sheetName string, opts ...RequestOption) *GetWorksheetColumnRequest {
+func NewGetWorksheetColumnRequest(columnIndex int, name string, sheetName string, opts ...Option) *GetWorksheetColumnRequest {
     req := &GetWorksheetColumnRequest{
         columnIndex: columnIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *GetWorksheetColumnRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *GetWorksheetColumnRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve worksheet column data by column index.", " "))
+func (request *GetWorksheetColumnRequest) Description() string {
+    return strings.Trim("Retrieve worksheet column data by column index.", " ")
 }

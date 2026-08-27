@@ -16,7 +16,7 @@ type GetWorkbookNameRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorkbookNameRequest(name string, nameName string, opts ...RequestOption) *GetWorkbookNameRequest {
+func NewGetWorkbookNameRequest(name string, nameName string, opts ...Option) *GetWorkbookNameRequest {
     req := &GetWorkbookNameRequest{
         name: name,
         nameName: nameName,
@@ -109,6 +109,6 @@ func (request *GetWorkbookNameRequest) GetMultipartForm() map[string]interface{}
     return localVarFormParams
 }
 
-func (request *GetWorkbookNameRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve description of a named range in the workbook.", " "))
+func (request *GetWorkbookNameRequest) Description() string {
+    return strings.Trim("Retrieve description of a named range in the workbook.", " ")
 }

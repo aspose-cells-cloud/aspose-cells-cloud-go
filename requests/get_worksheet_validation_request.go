@@ -17,7 +17,7 @@ type GetWorksheetValidationRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetValidationRequest(name string, sheetName string, validationIndex int, opts ...RequestOption) *GetWorksheetValidationRequest {
+func NewGetWorksheetValidationRequest(name string, sheetName string, validationIndex int, opts ...Option) *GetWorksheetValidationRequest {
     req := &GetWorksheetValidationRequest{
         name: name,
         sheetName: sheetName,
@@ -112,6 +112,6 @@ func (request *GetWorksheetValidationRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *GetWorksheetValidationRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve a validation by its index in the worksheet.", " "))
+func (request *GetWorksheetValidationRequest) Description() string {
+    return strings.Trim("Retrieve a validation by its index in the worksheet.", " ")
 }

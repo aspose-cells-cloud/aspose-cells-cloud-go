@@ -19,7 +19,7 @@ type DeleteWorksheetRowsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetRowsRequest(name string, sheetName string, startrow int, opts ...RequestOption) *DeleteWorksheetRowsRequest {
+func NewDeleteWorksheetRowsRequest(name string, sheetName string, startrow int, opts ...Option) *DeleteWorksheetRowsRequest {
     req := &DeleteWorksheetRowsRequest{
         name: name,
         sheetName: sheetName,
@@ -126,6 +126,6 @@ func (request *DeleteWorksheetRowsRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetRowsRequest) Description() {
-    fmt.Println(strings.Trim("Delete several rows in the worksheet.", " "))
+func (request *DeleteWorksheetRowsRequest) Description() string {
+    return strings.Trim("Delete several rows in the worksheet.", " ")
 }

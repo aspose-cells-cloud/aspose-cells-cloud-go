@@ -19,7 +19,7 @@ type GetMergedCellsInWorksheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetMergedCellsInWorksheetRequest(Spreadsheet string, worksheet string, opts ...RequestOption) *GetMergedCellsInWorksheetRequest {
+func NewGetMergedCellsInWorksheetRequest(Spreadsheet string, worksheet string, opts ...Option) *GetMergedCellsInWorksheetRequest {
     req := &GetMergedCellsInWorksheetRequest{
         Spreadsheet: Spreadsheet,
         worksheet: worksheet,
@@ -121,6 +121,6 @@ func (request *GetMergedCellsInWorksheetRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *GetMergedCellsInWorksheetRequest) Description() {
-    fmt.Println(strings.Trim("Get all merged cell area form a local spreadsheet worksheet.", " "))
+func (request *GetMergedCellsInWorksheetRequest) Description() string {
+    return strings.Trim("Get all merged cell area form a local spreadsheet worksheet.", " ")
 }

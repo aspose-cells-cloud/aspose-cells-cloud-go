@@ -18,7 +18,7 @@ type SummarizeSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewSummarizeSpreadsheetRequest(Spreadsheet string, opts ...RequestOption) *SummarizeSpreadsheetRequest {
+func NewSummarizeSpreadsheetRequest(Spreadsheet string, opts ...Option) *SummarizeSpreadsheetRequest {
     req := &SummarizeSpreadsheetRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -114,6 +114,6 @@ func (request *SummarizeSpreadsheetRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *SummarizeSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Summarizes spreadsheet content using AI and returns the summary as a downloadable text file.", " "))
+func (request *SummarizeSpreadsheetRequest) Description() string {
+    return strings.Trim("Summarizes spreadsheet content using AI and returns the summary as a downloadable text file.", " ")
 }

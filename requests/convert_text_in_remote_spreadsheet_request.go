@@ -22,7 +22,7 @@ type ConvertTextInRemoteSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertTextInRemoteSpreadsheetRequest(convertTextType string, name string, _range string, worksheet string, opts ...RequestOption) *ConvertTextInRemoteSpreadsheetRequest {
+func NewConvertTextInRemoteSpreadsheetRequest(convertTextType string, name string, _range string, worksheet string, opts ...Option) *ConvertTextInRemoteSpreadsheetRequest {
     req := &ConvertTextInRemoteSpreadsheetRequest{
         convertTextType: convertTextType,
         name: name,
@@ -149,6 +149,6 @@ func (request *ConvertTextInRemoteSpreadsheetRequest) GetMultipartForm() map[str
     return localVarFormParams
 }
 
-func (request *ConvertTextInRemoteSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Indicates converting the numbers stored as text into the correct number format, replacing unwanted characters and line breaks with the desired characters, and converting accented characters to their equivalent characters without accents.", " "))
+func (request *ConvertTextInRemoteSpreadsheetRequest) Description() string {
+    return strings.Trim("Indicates converting the numbers stored as text into the correct number format, replacing unwanted characters and line breaks with the desired characters, and converting accented characters to their equivalent characters without accents.", " ")
 }

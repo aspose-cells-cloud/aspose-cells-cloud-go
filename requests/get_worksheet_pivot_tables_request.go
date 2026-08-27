@@ -16,7 +16,7 @@ type GetWorksheetPivotTablesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetPivotTablesRequest(name string, sheetName string, opts ...RequestOption) *GetWorksheetPivotTablesRequest {
+func NewGetWorksheetPivotTablesRequest(name string, sheetName string, opts ...Option) *GetWorksheetPivotTablesRequest {
     req := &GetWorksheetPivotTablesRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *GetWorksheetPivotTablesRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *GetWorksheetPivotTablesRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve descriptions of pivottables  in the worksheet.", " "))
+func (request *GetWorksheetPivotTablesRequest) Description() string {
+    return strings.Trim("Retrieve descriptions of pivottables  in the worksheet.", " ")
 }

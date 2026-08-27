@@ -21,7 +21,7 @@ type PutVerticalPageBreakRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutVerticalPageBreakRequest(name string, sheetName string, opts ...RequestOption) *PutVerticalPageBreakRequest {
+func NewPutVerticalPageBreakRequest(name string, sheetName string, opts ...Option) *PutVerticalPageBreakRequest {
     req := &PutVerticalPageBreakRequest{
         name: name,
         sheetName: sheetName,
@@ -144,6 +144,6 @@ func (request *PutVerticalPageBreakRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *PutVerticalPageBreakRequest) Description() {
-    fmt.Println(strings.Trim("Add a vertical page break in the worksheet.", " "))
+func (request *PutVerticalPageBreakRequest) Description() string {
+    return strings.Trim("Add a vertical page break in the worksheet.", " ")
 }

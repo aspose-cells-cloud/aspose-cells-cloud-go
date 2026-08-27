@@ -19,7 +19,7 @@ type PostSetCellRangeValueRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostSetCellRangeValueRequest(cellarea string, name string, sheetName string, _type string, value string, opts ...RequestOption) *PostSetCellRangeValueRequest {
+func NewPostSetCellRangeValueRequest(cellarea string, name string, sheetName string, _type string, value string, opts ...Option) *PostSetCellRangeValueRequest {
     req := &PostSetCellRangeValueRequest{
         cellarea: cellarea,
         name: name,
@@ -127,6 +127,6 @@ func (request *PostSetCellRangeValueRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *PostSetCellRangeValueRequest) Description() {
-    fmt.Println(strings.Trim("Set the value of the range in the worksheet.", " "))
+func (request *PostSetCellRangeValueRequest) Description() string {
+    return strings.Trim("Set the value of the range in the worksheet.", " ")
 }

@@ -23,7 +23,7 @@ type RemoveDuplicatesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewRemoveDuplicatesRequest(Spreadsheet string, opts ...RequestOption) *RemoveDuplicatesRequest {
+func NewRemoveDuplicatesRequest(Spreadsheet string, opts ...Option) *RemoveDuplicatesRequest {
     req := &RemoveDuplicatesRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -149,6 +149,6 @@ func (request *RemoveDuplicatesRequest) GetMultipartForm() map[string]interface{
     return localVarFormParams
 }
 
-func (request *RemoveDuplicatesRequest) Description() {
-    fmt.Println(strings.Trim("Removes duplicate values in the worksheet/range/table.", " "))
+func (request *RemoveDuplicatesRequest) Description() string {
+    return strings.Trim("Removes duplicate values in the worksheet/range/table.", " ")
 }

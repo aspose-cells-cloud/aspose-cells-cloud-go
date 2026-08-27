@@ -25,7 +25,7 @@ type ConvertTableToCsvRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertTableToCsvRequest(Spreadsheet string, tableName string, worksheet string, opts ...RequestOption) *ConvertTableToCsvRequest {
+func NewConvertTableToCsvRequest(Spreadsheet string, tableName string, worksheet string, opts ...Option) *ConvertTableToCsvRequest {
     req := &ConvertTableToCsvRequest{
         Spreadsheet: Spreadsheet,
         tableName: tableName,
@@ -162,6 +162,6 @@ func (request *ConvertTableToCsvRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *ConvertTableToCsvRequest) Description() {
-    fmt.Println(strings.Trim("Converts a table of spreadsheet on a local drive to the csv file.", " "))
+func (request *ConvertTableToCsvRequest) Description() string {
+    return strings.Trim("Converts a table of spreadsheet on a local drive to the csv file.", " ")
 }

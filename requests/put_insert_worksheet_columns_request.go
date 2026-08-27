@@ -19,7 +19,7 @@ type PutInsertWorksheetColumnsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutInsertWorksheetColumnsRequest(columnIndex int, columns int, name string, sheetName string, opts ...RequestOption) *PutInsertWorksheetColumnsRequest {
+func NewPutInsertWorksheetColumnsRequest(columnIndex int, columns int, name string, sheetName string, opts ...Option) *PutInsertWorksheetColumnsRequest {
     req := &PutInsertWorksheetColumnsRequest{
         columnIndex: columnIndex,
         columns: columns,
@@ -122,6 +122,6 @@ func (request *PutInsertWorksheetColumnsRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *PutInsertWorksheetColumnsRequest) Description() {
-    fmt.Println(strings.Trim("Insert worksheet columns in the worksheet.", " "))
+func (request *PutInsertWorksheetColumnsRequest) Description() string {
+    return strings.Trim("Insert worksheet columns in the worksheet.", " ")
 }

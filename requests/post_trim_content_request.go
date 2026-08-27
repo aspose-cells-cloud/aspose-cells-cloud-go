@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostTrimContentRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostTrimContentRequest(trimContentOptions *models.TrimContentOptions, opts ...RequestOption) *PostTrimContentRequest {
+func NewPostTrimContentRequest(trimContentOptions *models.TrimContentOptions, opts ...Option) *PostTrimContentRequest {
     req := &PostTrimContentRequest{
         trimContentOptions: trimContentOptions,
     }
@@ -89,6 +88,6 @@ func (request *PostTrimContentRequest) GetMultipartForm() map[string]interface{}
     return localVarFormParams
 }
 
-func (request *PostTrimContentRequest) Description() {
-    fmt.Println(strings.Trim("The PostTrimContent API is designed to process and trim content within a specified range in a spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting", " "))
+func (request *PostTrimContentRequest) Description() string {
+    return strings.Trim("The PostTrimContent API is designed to process and trim content within a specified range in a spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting", " ")
 }

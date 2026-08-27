@@ -26,7 +26,7 @@ type PutWorksheetShapeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetShapeRequest(name string, sheetName string, opts ...RequestOption) *PutWorksheetShapeRequest {
+func NewPutWorksheetShapeRequest(name string, sheetName string, opts ...Option) *PutWorksheetShapeRequest {
     req := &PutWorksheetShapeRequest{
         name: name,
         sheetName: sheetName,
@@ -164,6 +164,6 @@ func (request *PutWorksheetShapeRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *PutWorksheetShapeRequest) Description() {
-    fmt.Println(strings.Trim("Add a shape in the worksheet.", " "))
+func (request *PutWorksheetShapeRequest) Description() string {
+    return strings.Trim("Add a shape in the worksheet.", " ")
 }

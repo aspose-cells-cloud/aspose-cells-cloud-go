@@ -20,7 +20,7 @@ type UpdateWordCaseInRemoteSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewUpdateWordCaseInRemoteSpreadsheetRequest(name string, _range string, wordCaseType string, worksheet string, opts ...RequestOption) *UpdateWordCaseInRemoteSpreadsheetRequest {
+func NewUpdateWordCaseInRemoteSpreadsheetRequest(name string, _range string, wordCaseType string, worksheet string, opts ...Option) *UpdateWordCaseInRemoteSpreadsheetRequest {
     req := &UpdateWordCaseInRemoteSpreadsheetRequest{
         name: name,
         _range: _range,
@@ -135,6 +135,6 @@ func (request *UpdateWordCaseInRemoteSpreadsheetRequest) GetMultipartForm() map[
     return localVarFormParams
 }
 
-func (request *UpdateWordCaseInRemoteSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Specify changing the text case in a remote spreadsheet to switch between uppercase, lowercase, capitalizing the first letter of each word, or capitalizing the first letter of a sentence, and adjust the text according to specific needs.", " "))
+func (request *UpdateWordCaseInRemoteSpreadsheetRequest) Description() string {
+    return strings.Trim("Specify changing the text case in a remote spreadsheet to switch between uppercase, lowercase, capitalizing the first letter of each word, or capitalizing the first letter of a sentence, and adjust the text according to specific needs.", " ")
 }

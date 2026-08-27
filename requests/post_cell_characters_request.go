@@ -20,7 +20,7 @@ type PostCellCharactersRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostCellCharactersRequest(cellName string, name string, sheetName string, opts ...RequestOption) *PostCellCharactersRequest {
+func NewPostCellCharactersRequest(cellName string, name string, sheetName string, opts ...Option) *PostCellCharactersRequest {
     req := &PostCellCharactersRequest{
         cellName: cellName,
         name: name,
@@ -121,6 +121,6 @@ func (request *PostCellCharactersRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *PostCellCharactersRequest) Description() {
-    fmt.Println(strings.Trim("Set cell characters in the worksheet.", " "))
+func (request *PostCellCharactersRequest) Description() string {
+    return strings.Trim("Set cell characters in the worksheet.", " ")
 }

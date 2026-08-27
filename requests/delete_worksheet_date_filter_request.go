@@ -24,7 +24,7 @@ type DeleteWorksheetDateFilterRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetDateFilterRequest(dateTimeGroupingType string, fieldIndex int, name string, sheetName string, opts ...RequestOption) *DeleteWorksheetDateFilterRequest {
+func NewDeleteWorksheetDateFilterRequest(dateTimeGroupingType string, fieldIndex int, name string, sheetName string, opts ...Option) *DeleteWorksheetDateFilterRequest {
     req := &DeleteWorksheetDateFilterRequest{
         dateTimeGroupingType: dateTimeGroupingType,
         fieldIndex: fieldIndex,
@@ -160,6 +160,6 @@ func (request *DeleteWorksheetDateFilterRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetDateFilterRequest) Description() {
-    fmt.Println(strings.Trim("Remove a date filter in the worksheet.", " "))
+func (request *DeleteWorksheetDateFilterRequest) Description() string {
+    return strings.Trim("Remove a date filter in the worksheet.", " ")
 }

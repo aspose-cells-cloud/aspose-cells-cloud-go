@@ -18,7 +18,7 @@ type PutWorkbookNameRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorkbookNameRequest(name string, newName *models.Name, opts ...RequestOption) *PutWorkbookNameRequest {
+func NewPutWorkbookNameRequest(name string, newName *models.Name, opts ...Option) *PutWorkbookNameRequest {
     req := &PutWorkbookNameRequest{
         name: name,
         newName: newName,
@@ -110,6 +110,6 @@ func (request *PutWorkbookNameRequest) GetMultipartForm() map[string]interface{}
     return localVarFormParams
 }
 
-func (request *PutWorkbookNameRequest) Description() {
-    fmt.Println(strings.Trim("Define a new name in the workbook.", " "))
+func (request *PutWorkbookNameRequest) Description() string {
+    return strings.Trim("Define a new name in the workbook.", " ")
 }

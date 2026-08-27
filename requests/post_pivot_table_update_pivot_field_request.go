@@ -23,7 +23,7 @@ type PostPivotTableUpdatePivotFieldRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostPivotTableUpdatePivotFieldRequest(name string, pivotField *models.PivotField, pivotFieldIndex int, pivotFieldType string, pivotTableIndex int, sheetName string, opts ...RequestOption) *PostPivotTableUpdatePivotFieldRequest {
+func NewPostPivotTableUpdatePivotFieldRequest(name string, pivotField *models.PivotField, pivotFieldIndex int, pivotFieldType string, pivotTableIndex int, sheetName string, opts ...Option) *PostPivotTableUpdatePivotFieldRequest {
     req := &PostPivotTableUpdatePivotFieldRequest{
         name: name,
         pivotField: pivotField,
@@ -135,6 +135,6 @@ func (request *PostPivotTableUpdatePivotFieldRequest) GetMultipartForm() map[str
     return localVarFormParams
 }
 
-func (request *PostPivotTableUpdatePivotFieldRequest) Description() {
-    fmt.Println(strings.Trim("Update pivot field in the PivotTable.", " "))
+func (request *PostPivotTableUpdatePivotFieldRequest) Description() string {
+    return strings.Trim("Update pivot field in the PivotTable.", " ")
 }

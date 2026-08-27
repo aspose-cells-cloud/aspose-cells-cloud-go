@@ -20,7 +20,7 @@ type PutWorksheetConditionalFormattingRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetConditionalFormattingRequest(cellArea string, formatcondition *models.FormatCondition, name string, sheetName string, opts ...RequestOption) *PutWorksheetConditionalFormattingRequest {
+func NewPutWorksheetConditionalFormattingRequest(cellArea string, formatcondition *models.FormatCondition, name string, sheetName string, opts ...Option) *PutWorksheetConditionalFormattingRequest {
     req := &PutWorksheetConditionalFormattingRequest{
         cellArea: cellArea,
         formatcondition: formatcondition,
@@ -122,6 +122,6 @@ func (request *PutWorksheetConditionalFormattingRequest) GetMultipartForm() map[
     return localVarFormParams
 }
 
-func (request *PutWorksheetConditionalFormattingRequest) Description() {
-    fmt.Println(strings.Trim("Add conditional formatting in the worksheet.", " "))
+func (request *PutWorksheetConditionalFormattingRequest) Description() string {
+    return strings.Trim("Add conditional formatting in the worksheet.", " ")
 }

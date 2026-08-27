@@ -19,7 +19,7 @@ type PutWorkbookCreateRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorkbookCreateRequest(name string, opts ...RequestOption) *PutWorkbookCreateRequest {
+func NewPutWorkbookCreateRequest(name string, opts ...Option) *PutWorkbookCreateRequest {
     req := &PutWorkbookCreateRequest{
         name: name,
     }
@@ -131,6 +131,6 @@ func (request *PutWorkbookCreateRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *PutWorkbookCreateRequest) Description() {
-    fmt.Println(strings.Trim("Create a new workbook using different methods.", " "))
+func (request *PutWorkbookCreateRequest) Description() string {
+    return strings.Trim("Create a new workbook using different methods.", " ")
 }

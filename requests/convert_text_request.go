@@ -25,7 +25,7 @@ type ConvertTextRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertTextRequest(convertTextType string, Spreadsheet string, opts ...RequestOption) *ConvertTextRequest {
+func NewConvertTextRequest(convertTextType string, Spreadsheet string, opts ...Option) *ConvertTextRequest {
     req := &ConvertTextRequest{
         convertTextType: convertTextType,
         Spreadsheet: Spreadsheet,
@@ -163,6 +163,6 @@ func (request *ConvertTextRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *ConvertTextRequest) Description() {
-    fmt.Println(strings.Trim("Indicates converting the numbers stored as text into the correct number format, replacing unwanted characters and line breaks with the desired characters, and converting accented characters to their equivalent characters without accents.", " "))
+func (request *ConvertTextRequest) Description() string {
+    return strings.Trim("Indicates converting the numbers stored as text into the correct number format, replacing unwanted characters and line breaks with the desired characters, and converting accented characters to their equivalent characters without accents.", " ")
 }

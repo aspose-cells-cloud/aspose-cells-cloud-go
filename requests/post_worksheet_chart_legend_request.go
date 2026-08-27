@@ -20,7 +20,7 @@ type PostWorksheetChartLegendRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetChartLegendRequest(chartIndex int, legend *models.Legend, name string, sheetName string, opts ...RequestOption) *PostWorksheetChartLegendRequest {
+func NewPostWorksheetChartLegendRequest(chartIndex int, legend *models.Legend, name string, sheetName string, opts ...Option) *PostWorksheetChartLegendRequest {
     req := &PostWorksheetChartLegendRequest{
         chartIndex: chartIndex,
         legend: legend,
@@ -119,6 +119,6 @@ func (request *PostWorksheetChartLegendRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *PostWorksheetChartLegendRequest) Description() {
-    fmt.Println(strings.Trim("Update chart legend in the worksheet.", " "))
+func (request *PostWorksheetChartLegendRequest) Description() string {
+    return strings.Trim("Update chart legend in the worksheet.", " ")
 }

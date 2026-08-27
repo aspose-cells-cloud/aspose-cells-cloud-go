@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostDeleteIncompleteRowsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostDeleteIncompleteRowsRequest(deleteIncompleteRowsRequest *models.DeleteIncompleteRowsRequest, opts ...RequestOption) *PostDeleteIncompleteRowsRequest {
+func NewPostDeleteIncompleteRowsRequest(deleteIncompleteRowsRequest *models.DeleteIncompleteRowsRequest, opts ...Option) *PostDeleteIncompleteRowsRequest {
     req := &PostDeleteIncompleteRowsRequest{
         deleteIncompleteRowsRequest: deleteIncompleteRowsRequest,
     }
@@ -89,6 +88,6 @@ func (request *PostDeleteIncompleteRowsRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *PostDeleteIncompleteRowsRequest) Description() {
-    fmt.Println(strings.Trim("Deleting incomplete rows of spreadsheet files is mainly used to eliminate incomplete rows in tables and ranges.", " "))
+func (request *PostDeleteIncompleteRowsRequest) Description() string {
+    return strings.Trim("Deleting incomplete rows of spreadsheet files is mainly used to eliminate incomplete rows in tables and ranges.", " ")
 }

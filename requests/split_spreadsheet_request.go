@@ -24,7 +24,7 @@ type SplitSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewSplitSpreadsheetRequest(Spreadsheet string, opts ...RequestOption) *SplitSpreadsheetRequest {
+func NewSplitSpreadsheetRequest(Spreadsheet string, opts ...Option) *SplitSpreadsheetRequest {
     req := &SplitSpreadsheetRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -156,6 +156,6 @@ func (request *SplitSpreadsheetRequest) GetMultipartForm() map[string]interface{
     return localVarFormParams
 }
 
-func (request *SplitSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Split a local spreadsheet into the specified format, multi-file.", " "))
+func (request *SplitSpreadsheetRequest) Description() string {
+    return strings.Trim("Split a local spreadsheet into the specified format, multi-file.", " ")
 }

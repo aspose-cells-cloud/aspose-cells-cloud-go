@@ -16,7 +16,7 @@ type GetHeaderRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetHeaderRequest(name string, sheetName string, opts ...RequestOption) *GetHeaderRequest {
+func NewGetHeaderRequest(name string, sheetName string, opts ...Option) *GetHeaderRequest {
     req := &GetHeaderRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *GetHeaderRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *GetHeaderRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve page header description in the worksheet.", " "))
+func (request *GetHeaderRequest) Description() string {
+    return strings.Trim("Retrieve page header description in the worksheet.", " ")
 }

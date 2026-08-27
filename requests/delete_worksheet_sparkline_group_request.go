@@ -17,7 +17,7 @@ type DeleteWorksheetSparklineGroupRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetSparklineGroupRequest(name string, sheetName string, sparklineIndex int, opts ...RequestOption) *DeleteWorksheetSparklineGroupRequest {
+func NewDeleteWorksheetSparklineGroupRequest(name string, sheetName string, sparklineIndex int, opts ...Option) *DeleteWorksheetSparklineGroupRequest {
     req := &DeleteWorksheetSparklineGroupRequest{
         name: name,
         sheetName: sheetName,
@@ -112,6 +112,6 @@ func (request *DeleteWorksheetSparklineGroupRequest) GetMultipartForm() map[stri
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetSparklineGroupRequest) Description() {
-    fmt.Println(strings.Trim("Delete a sparkline group in the worksheet.", " "))
+func (request *DeleteWorksheetSparklineGroupRequest) Description() string {
+    return strings.Trim("Delete a sparkline group in the worksheet.", " ")
 }

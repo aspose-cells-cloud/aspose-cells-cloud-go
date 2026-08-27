@@ -20,7 +20,7 @@ type PostWorksheetListColumnsTotalRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetListColumnsTotalRequest(listObjectIndex int, name string, sheetName string, tableTotalRequests []models.TableTotalRequest, opts ...RequestOption) *PostWorksheetListColumnsTotalRequest {
+func NewPostWorksheetListColumnsTotalRequest(listObjectIndex int, name string, sheetName string, tableTotalRequests []models.TableTotalRequest, opts ...Option) *PostWorksheetListColumnsTotalRequest {
     req := &PostWorksheetListColumnsTotalRequest{
         listObjectIndex: listObjectIndex,
         name: name,
@@ -116,6 +116,6 @@ func (request *PostWorksheetListColumnsTotalRequest) GetMultipartForm() map[stri
     return localVarFormParams
 }
 
-func (request *PostWorksheetListColumnsTotalRequest) Description() {
-    fmt.Println(strings.Trim("Update total of list columns in the table.", " "))
+func (request *PostWorksheetListColumnsTotalRequest) Description() string {
+    return strings.Trim("Update total of list columns in the table.", " ")
 }

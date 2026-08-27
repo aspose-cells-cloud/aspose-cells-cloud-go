@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostDataCleansingRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostDataCleansingRequest(dataCleansingRequest *models.DataCleansingRequest, opts ...RequestOption) *PostDataCleansingRequest {
+func NewPostDataCleansingRequest(dataCleansingRequest *models.DataCleansingRequest, opts ...Option) *PostDataCleansingRequest {
     req := &PostDataCleansingRequest{
         dataCleansingRequest: dataCleansingRequest,
     }
@@ -89,6 +88,6 @@ func (request *PostDataCleansingRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *PostDataCleansingRequest) Description() {
-    fmt.Println(strings.Trim("Data cleansing of spreadsheet files is a data management process used to identify, correct, and remove errors, incompleteness, duplicates, or inaccuracies in tables and ranges.", " "))
+func (request *PostDataCleansingRequest) Description() string {
+    return strings.Trim("Data cleansing of spreadsheet files is a data management process used to identify, correct, and remove errors, incompleteness, duplicates, or inaccuracies in tables and ranges.", " ")
 }

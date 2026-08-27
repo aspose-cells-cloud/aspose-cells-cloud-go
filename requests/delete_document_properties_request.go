@@ -15,7 +15,7 @@ type DeleteDocumentPropertiesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteDocumentPropertiesRequest(name string, opts ...RequestOption) *DeleteDocumentPropertiesRequest {
+func NewDeleteDocumentPropertiesRequest(name string, opts ...Option) *DeleteDocumentPropertiesRequest {
     req := &DeleteDocumentPropertiesRequest{
         name: name,
     }
@@ -103,6 +103,6 @@ func (request *DeleteDocumentPropertiesRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *DeleteDocumentPropertiesRequest) Description() {
-    fmt.Println(strings.Trim("Delete all custom document properties and reset built-in ones.", " "))
+func (request *DeleteDocumentPropertiesRequest) Description() string {
+    return strings.Trim("Delete all custom document properties and reset built-in ones.", " ")
 }

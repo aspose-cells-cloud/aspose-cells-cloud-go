@@ -23,7 +23,7 @@ type AddTextInRemoteSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewAddTextInRemoteSpreadsheetRequest(name string, position string, _range string, text string, worksheet string, opts ...RequestOption) *AddTextInRemoteSpreadsheetRequest {
+func NewAddTextInRemoteSpreadsheetRequest(name string, position string, _range string, text string, worksheet string, opts ...Option) *AddTextInRemoteSpreadsheetRequest {
     req := &AddTextInRemoteSpreadsheetRequest{
         name: name,
         position: position,
@@ -155,6 +155,6 @@ func (request *AddTextInRemoteSpreadsheetRequest) GetMultipartForm() map[string]
     return localVarFormParams
 }
 
-func (request *AddTextInRemoteSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Specify appending text to multiple cells at once, allowing you to add prefixes, suffixes, labels, or any specific characters. You can choose the exact position of the text—in the beginning, at the end, or before or after certain characters in the cell.", " "))
+func (request *AddTextInRemoteSpreadsheetRequest) Description() string {
+    return strings.Trim("Specify appending text to multiple cells at once, allowing you to add prefixes, suffixes, labels, or any specific characters. You can choose the exact position of the text—in the beginning, at the end, or before or after certain characters in the cell.", " ")
 }

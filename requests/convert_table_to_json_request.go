@@ -25,7 +25,7 @@ type ConvertTableToJsonRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertTableToJsonRequest(Spreadsheet string, tableName string, worksheet string, opts ...RequestOption) *ConvertTableToJsonRequest {
+func NewConvertTableToJsonRequest(Spreadsheet string, tableName string, worksheet string, opts ...Option) *ConvertTableToJsonRequest {
     req := &ConvertTableToJsonRequest{
         Spreadsheet: Spreadsheet,
         tableName: tableName,
@@ -162,6 +162,6 @@ func (request *ConvertTableToJsonRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *ConvertTableToJsonRequest) Description() {
-    fmt.Println(strings.Trim("Converts a table of spreadsheet on a local drive to the json file.", " "))
+func (request *ConvertTableToJsonRequest) Description() string {
+    return strings.Trim("Converts a table of spreadsheet on a local drive to the json file.", " ")
 }

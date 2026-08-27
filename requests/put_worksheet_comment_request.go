@@ -20,7 +20,7 @@ type PutWorksheetCommentRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetCommentRequest(cellName string, comment *models.Comment, name string, sheetName string, opts ...RequestOption) *PutWorksheetCommentRequest {
+func NewPutWorksheetCommentRequest(cellName string, comment *models.Comment, name string, sheetName string, opts ...Option) *PutWorksheetCommentRequest {
     req := &PutWorksheetCommentRequest{
         cellName: cellName,
         comment: comment,
@@ -122,6 +122,6 @@ func (request *PutWorksheetCommentRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *PutWorksheetCommentRequest) Description() {
-    fmt.Println(strings.Trim("Add cell comment in the worksheet.", " "))
+func (request *PutWorksheetCommentRequest) Description() string {
+    return strings.Trim("Add cell comment in the worksheet.", " ")
 }

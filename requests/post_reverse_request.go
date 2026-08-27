@@ -21,7 +21,7 @@ type PostReverseRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostReverseRequest(File string, rotateType string, opts ...RequestOption) *PostReverseRequest {
+func NewPostReverseRequest(File string, rotateType string, opts ...Option) *PostReverseRequest {
     req := &PostReverseRequest{
         File: File,
         rotateType: rotateType,
@@ -135,6 +135,6 @@ func (request *PostReverseRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostReverseRequest) Description() {
-    fmt.Println(strings.Trim("Reverse rows or columns in Excel files and create output files in various formats.", " "))
+func (request *PostReverseRequest) Description() string {
+    return strings.Trim("Reverse rows or columns in Excel files and create output files in various formats.", " ")
 }

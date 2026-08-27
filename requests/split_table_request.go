@@ -28,7 +28,7 @@ type SplitTableRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewSplitTableRequest(saveSplitColumn bool, splitColumnName string, splitRowNumber int, Spreadsheet string, tableName string, toMultipleFiles bool, toNewWorkbook bool, worksheet string, opts ...RequestOption) *SplitTableRequest {
+func NewSplitTableRequest(saveSplitColumn bool, splitColumnName string, splitRowNumber int, Spreadsheet string, tableName string, toMultipleFiles bool, toNewWorkbook bool, worksheet string, opts ...Option) *SplitTableRequest {
     req := &SplitTableRequest{
         saveSplitColumn: saveSplitColumn,
         splitColumnName: splitColumnName,
@@ -166,6 +166,6 @@ func (request *SplitTableRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *SplitTableRequest) Description() {
-    fmt.Println(strings.Trim("Split an Excel worksheet tale into multiple sheets by column value.", " "))
+func (request *SplitTableRequest) Description() string {
+    return strings.Trim("Split an Excel worksheet tale into multiple sheets by column value.", " ")
 }

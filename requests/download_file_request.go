@@ -15,7 +15,7 @@ type DownloadFileRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDownloadFileRequest(path string, opts ...RequestOption) *DownloadFileRequest {
+func NewDownloadFileRequest(path string, opts ...Option) *DownloadFileRequest {
     req := &DownloadFileRequest{
         path: path,
     }
@@ -103,6 +103,6 @@ func (request *DownloadFileRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *DownloadFileRequest) Description() {
-    fmt.Println(strings.Trim("DownloadFile", " "))
+func (request *DownloadFileRequest) Description() string {
+    return strings.Trim("DownloadFile", " ")
 }

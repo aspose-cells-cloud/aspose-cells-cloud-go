@@ -26,7 +26,7 @@ type RemoveCharactersRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewRemoveCharactersRequest(Spreadsheet string, opts ...RequestOption) *RemoveCharactersRequest {
+func NewRemoveCharactersRequest(Spreadsheet string, opts ...Option) *RemoveCharactersRequest {
     req := &RemoveCharactersRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -170,6 +170,6 @@ func (request *RemoveCharactersRequest) GetMultipartForm() map[string]interface{
     return localVarFormParams
 }
 
-func (request *RemoveCharactersRequest) Description() {
-    fmt.Println(strings.Trim("Deletes user-defined characters, predefined symbol sets, or any substring from every cell in the chosen range while preserving formulas, formatting and data-validation.", " "))
+func (request *RemoveCharactersRequest) Description() string {
+    return strings.Trim("Deletes user-defined characters, predefined symbol sets, or any substring from every cell in the chosen range while preserving formulas, formatting and data-validation.", " ")
 }

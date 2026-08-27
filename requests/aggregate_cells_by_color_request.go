@@ -22,7 +22,7 @@ type AggregateCellsByColorRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewAggregateCellsByColorRequest(Spreadsheet string, opts ...RequestOption) *AggregateCellsByColorRequest {
+func NewAggregateCellsByColorRequest(Spreadsheet string, opts ...Option) *AggregateCellsByColorRequest {
     req := &AggregateCellsByColorRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -142,6 +142,6 @@ func (request *AggregateCellsByColorRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *AggregateCellsByColorRequest) Description() {
-    fmt.Println(strings.Trim("The Aggregate by Color API provides a convenient way to perform calculations on cells that share the same fill or font color. This API supports a range of aggregate operations, including count, sum, maximum value, minimum value, and average value, enabling you to analyze and summarize data based on color distinctions.", " "))
+func (request *AggregateCellsByColorRequest) Description() string {
+    return strings.Trim("The Aggregate by Color API provides a convenient way to perform calculations on cells that share the same fill or font color. This API supports a range of aggregate operations, including count, sum, maximum value, minimum value, and average value, enabling you to analyze and summarize data based on color distinctions.", " ")
 }

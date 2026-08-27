@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostAnalyzeExcelRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostAnalyzeExcelRequest(analyzeExcelRequest *models.AnalyzeExcelRequest, opts ...RequestOption) *PostAnalyzeExcelRequest {
+func NewPostAnalyzeExcelRequest(analyzeExcelRequest *models.AnalyzeExcelRequest, opts ...Option) *PostAnalyzeExcelRequest {
     req := &PostAnalyzeExcelRequest{
         analyzeExcelRequest: analyzeExcelRequest,
     }
@@ -89,6 +88,6 @@ func (request *PostAnalyzeExcelRequest) GetMultipartForm() map[string]interface{
     return localVarFormParams
 }
 
-func (request *PostAnalyzeExcelRequest) Description() {
-    fmt.Println(strings.Trim("Perform business analysis of data in Excel files.", " "))
+func (request *PostAnalyzeExcelRequest) Description() string {
+    return strings.Trim("Perform business analysis of data in Excel files.", " ")
 }

@@ -17,7 +17,7 @@ type GetStructureInRemoteSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetStructureInRemoteSpreadsheetRequest(name string, opts ...RequestOption) *GetStructureInRemoteSpreadsheetRequest {
+func NewGetStructureInRemoteSpreadsheetRequest(name string, opts ...Option) *GetStructureInRemoteSpreadsheetRequest {
     req := &GetStructureInRemoteSpreadsheetRequest{
         name: name,
     }
@@ -117,6 +117,6 @@ func (request *GetStructureInRemoteSpreadsheetRequest) GetMultipartForm() map[st
     return localVarFormParams
 }
 
-func (request *GetStructureInRemoteSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Structurally convert the core metadata, worksheets, tables, pivot tables, charts, shapes, and other information of an Excel workbook into a JObject type JSON object, for scenarios such as data export, API responses, and log recording.", " "))
+func (request *GetStructureInRemoteSpreadsheetRequest) Description() string {
+    return strings.Trim("Structurally convert the core metadata, worksheets, tables, pivot tables, charts, shapes, and other information of an Excel workbook into a JObject type JSON object, for scenarios such as data export, API responses, and log recording.", " ")
 }

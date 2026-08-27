@@ -21,7 +21,7 @@ type PostWorksheetCellsRangeMoveToRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetCellsRangeMoveToRequest(destColumn int, destRow int, name string, _range *models.Range, sheetName string, opts ...RequestOption) *PostWorksheetCellsRangeMoveToRequest {
+func NewPostWorksheetCellsRangeMoveToRequest(destColumn int, destRow int, name string, _range *models.Range, sheetName string, opts ...Option) *PostWorksheetCellsRangeMoveToRequest {
     req := &PostWorksheetCellsRangeMoveToRequest{
         destColumn: destColumn,
         destRow: destRow,
@@ -122,6 +122,6 @@ func (request *PostWorksheetCellsRangeMoveToRequest) GetMultipartForm() map[stri
     return localVarFormParams
 }
 
-func (request *PostWorksheetCellsRangeMoveToRequest) Description() {
-    fmt.Println(strings.Trim("Move the current range to the destination range.", " "))
+func (request *PostWorksheetCellsRangeMoveToRequest) Description() string {
+    return strings.Trim("Move the current range to the destination range.", " ")
 }

@@ -19,7 +19,7 @@ type PostConvertWorkbookToSQLRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostConvertWorkbookToSQLRequest(File string, opts ...RequestOption) *PostConvertWorkbookToSQLRequest {
+func NewPostConvertWorkbookToSQLRequest(File string, opts ...Option) *PostConvertWorkbookToSQLRequest {
     req := &PostConvertWorkbookToSQLRequest{
         File: File,
     }
@@ -121,6 +121,6 @@ func (request *PostConvertWorkbookToSQLRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *PostConvertWorkbookToSQLRequest) Description() {
-    fmt.Println(strings.Trim("Convert Excel file to SQL Script files.", " "))
+func (request *PostConvertWorkbookToSQLRequest) Description() string {
+    return strings.Trim("Convert Excel file to SQL Script files.", " ")
 }

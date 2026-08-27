@@ -19,7 +19,7 @@ type PostWorksheetCellsRangeOutlineBorderRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetCellsRangeOutlineBorderRequest(name string, rangeOperate *models.RangeSetOutlineBorderRequest, sheetName string, opts ...RequestOption) *PostWorksheetCellsRangeOutlineBorderRequest {
+func NewPostWorksheetCellsRangeOutlineBorderRequest(name string, rangeOperate *models.RangeSetOutlineBorderRequest, sheetName string, opts ...Option) *PostWorksheetCellsRangeOutlineBorderRequest {
     req := &PostWorksheetCellsRangeOutlineBorderRequest{
         name: name,
         rangeOperate: rangeOperate,
@@ -116,6 +116,6 @@ func (request *PostWorksheetCellsRangeOutlineBorderRequest) GetMultipartForm() m
     return localVarFormParams
 }
 
-func (request *PostWorksheetCellsRangeOutlineBorderRequest) Description() {
-    fmt.Println(strings.Trim("Apply an outline border around a range of cells.", " "))
+func (request *PostWorksheetCellsRangeOutlineBorderRequest) Description() string {
+    return strings.Trim("Apply an outline border around a range of cells.", " ")
 }

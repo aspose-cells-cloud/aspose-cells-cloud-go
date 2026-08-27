@@ -19,7 +19,7 @@ type PostConvertWorkbookToCSVRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostConvertWorkbookToCSVRequest(File string, opts ...RequestOption) *PostConvertWorkbookToCSVRequest {
+func NewPostConvertWorkbookToCSVRequest(File string, opts ...Option) *PostConvertWorkbookToCSVRequest {
     req := &PostConvertWorkbookToCSVRequest{
         File: File,
     }
@@ -121,6 +121,6 @@ func (request *PostConvertWorkbookToCSVRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *PostConvertWorkbookToCSVRequest) Description() {
-    fmt.Println(strings.Trim("Convert Excel file to Csv files.", " "))
+func (request *PostConvertWorkbookToCSVRequest) Description() string {
+    return strings.Trim("Convert Excel file to Csv files.", " ")
 }

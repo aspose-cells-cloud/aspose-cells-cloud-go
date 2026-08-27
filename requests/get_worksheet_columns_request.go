@@ -18,7 +18,7 @@ type GetWorksheetColumnsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetColumnsRequest(opts ...RequestOption) *GetWorksheetColumnsRequest {
+func NewGetWorksheetColumnsRequest(opts ...Option) *GetWorksheetColumnsRequest {
     req := &GetWorksheetColumnsRequest{
     }
     cfg := &requestConfig{
@@ -120,6 +120,6 @@ func (request *GetWorksheetColumnsRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *GetWorksheetColumnsRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve descriptions of worksheet columns.", " "))
+func (request *GetWorksheetColumnsRequest) Description() string {
+    return strings.Trim("Retrieve descriptions of worksheet columns.", " ")
 }

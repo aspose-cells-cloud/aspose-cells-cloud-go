@@ -22,7 +22,7 @@ type PostExportRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostExportRequest(File string, opts ...RequestOption) *PostExportRequest {
+func NewPostExportRequest(File string, opts ...Option) *PostExportRequest {
     req := &PostExportRequest{
         File: File,
     }
@@ -142,6 +142,6 @@ func (request *PostExportRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostExportRequest) Description() {
-    fmt.Println(strings.Trim("Export Excel internal elements or the workbook itself to various format files.", " "))
+func (request *PostExportRequest) Description() string {
+    return strings.Trim("Export Excel internal elements or the workbook itself to various format files.", " ")
 }

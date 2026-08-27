@@ -20,7 +20,7 @@ type PostRowStyleRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostRowStyleRequest(name string, rowIndex int, sheetName string, style *models.Style, opts ...RequestOption) *PostRowStyleRequest {
+func NewPostRowStyleRequest(name string, rowIndex int, sheetName string, style *models.Style, opts ...Option) *PostRowStyleRequest {
     req := &PostRowStyleRequest{
         name: name,
         rowIndex: rowIndex,
@@ -119,6 +119,6 @@ func (request *PostRowStyleRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostRowStyleRequest) Description() {
-    fmt.Println(strings.Trim("Apply formats to an entire row in the worksheet.", " "))
+func (request *PostRowStyleRequest) Description() string {
+    return strings.Trim("Apply formats to an entire row in the worksheet.", " ")
 }

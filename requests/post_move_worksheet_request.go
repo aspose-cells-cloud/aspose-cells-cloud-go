@@ -19,7 +19,7 @@ type PostMoveWorksheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostMoveWorksheetRequest(moving *models.WorksheetMovingRequest, name string, sheetName string, opts ...RequestOption) *PostMoveWorksheetRequest {
+func NewPostMoveWorksheetRequest(moving *models.WorksheetMovingRequest, name string, sheetName string, opts ...Option) *PostMoveWorksheetRequest {
     req := &PostMoveWorksheetRequest{
         moving: moving,
         name: name,
@@ -116,6 +116,6 @@ func (request *PostMoveWorksheetRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *PostMoveWorksheetRequest) Description() {
-    fmt.Println(strings.Trim("Move worksheet in the workbook.", " "))
+func (request *PostMoveWorksheetRequest) Description() string {
+    return strings.Trim("Move worksheet in the workbook.", " ")
 }

@@ -23,7 +23,7 @@ type PostWorkbookSplitRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorkbookSplitRequest(name string, opts ...RequestOption) *PostWorkbookSplitRequest {
+func NewPostWorkbookSplitRequest(name string, opts ...Option) *PostWorkbookSplitRequest {
     req := &PostWorkbookSplitRequest{
         name: name,
     }
@@ -159,6 +159,6 @@ func (request *PostWorkbookSplitRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *PostWorkbookSplitRequest) Description() {
-    fmt.Println(strings.Trim("Split the workbook with a specific format.", " "))
+func (request *PostWorkbookSplitRequest) Description() string {
+    return strings.Trim("Split the workbook with a specific format.", " ")
 }

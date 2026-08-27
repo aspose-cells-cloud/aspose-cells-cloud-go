@@ -21,6 +21,7 @@ import (
 	"fmt"
 
 	"asposecellscloud"
+	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/datasource"
 	"asposecellscloud/requests"
 )
@@ -55,15 +56,15 @@ func Search(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClient
 	if src == nil || worksheet == "" || text == "" {
 		return nil, fmt.Errorf("%w: source, worksheet and text are required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
 	data, err := src.ByteData()
 	if err != nil {
 		return nil, err
 	}
 
-	reqOpts := append([]requests.RequestOption{requests.WithCommonParameter("worksheet", worksheet)}, cfg.reqOpts...)
+	reqOpts := append([]requests.Option{requests.WithCommonParameter("worksheet", worksheet)}, cfg.ReqOpts...)
 	req := requests.NewSearchSpreadsheetContentRequest(text, "", reqOpts...)
 	if req == nil {
 		return nil, fmt.Errorf("%w: text is required", asposecellscloud.ErrInvalidParam)
@@ -86,15 +87,15 @@ func Replace(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClien
 	if src == nil || sink == nil {
 		return fmt.Errorf("%w: source and sink are required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
 	data, err := src.ByteData()
 	if err != nil {
 		return err
 	}
 
-	req := requests.NewReplaceSpreadsheetContentRequest(newValue, oldValue, "", cfg.reqOpts...)
+	req := requests.NewReplaceSpreadsheetContentRequest(newValue, oldValue, "", cfg.ReqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: old value and new value are required", asposecellscloud.ErrInvalidParam)
 	}
@@ -115,10 +116,10 @@ func SearchWorksheet(ctx context.Context, client *asposecellscloud.AsposeCellsCl
 	if wf == nil || wf.Name == "" || worksheet == "" || text == "" {
 		return nil, fmt.Errorf("%w: workbook name, worksheet and text are required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
-	reqOpts := append(workbookParams(wf), cfg.reqOpts...)
+	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewSearchContentInRemoteWorksheetRequest(wf.Name, text, worksheet, reqOpts...)
 	if req == nil {
 		return nil, fmt.Errorf("%w: invalid workbook reference", asposecellscloud.ErrInvalidParam)
@@ -139,10 +140,10 @@ func SearchRange(ctx context.Context, client *asposecellscloud.AsposeCellsCloudC
 	if wf == nil || wf.Name == "" || worksheet == "" || cellArea == "" || text == "" {
 		return nil, fmt.Errorf("%w: workbook name, worksheet, cell area and text are required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
-	reqOpts := append(workbookParams(wf), cfg.reqOpts...)
+	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewSearchContentInRemoteRangeRequest(cellArea, wf.Name, text, worksheet, reqOpts...)
 	if req == nil {
 		return nil, fmt.Errorf("%w: invalid workbook reference", asposecellscloud.ErrInvalidParam)
@@ -162,10 +163,10 @@ func ReplaceWorkbook(ctx context.Context, client *asposecellscloud.AsposeCellsCl
 	if wf == nil || wf.Name == "" || oldValue == "" || newValue == "" {
 		return fmt.Errorf("%w: workbook name, old value and new value are required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
-	reqOpts := append(workbookParams(wf), cfg.reqOpts...)
+	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewReplaceContentInRemoteSpreadsheetRequest(wf.Name, newValue, oldValue, reqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: invalid workbook reference", asposecellscloud.ErrInvalidParam)
@@ -182,10 +183,10 @@ func ReplaceWorksheet(ctx context.Context, client *asposecellscloud.AsposeCellsC
 	if wf == nil || wf.Name == "" || worksheet == "" || oldValue == "" || newValue == "" {
 		return fmt.Errorf("%w: workbook name, worksheet, old value and new value are required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
-	reqOpts := append(workbookParams(wf), cfg.reqOpts...)
+	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewReplaceContentInRemoteWorksheetRequest(wf.Name, newValue, oldValue, worksheet, reqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: invalid workbook reference", asposecellscloud.ErrInvalidParam)
@@ -203,10 +204,10 @@ func ReplaceRange(ctx context.Context, client *asposecellscloud.AsposeCellsCloud
 	if wf == nil || wf.Name == "" || worksheet == "" || cellArea == "" || oldValue == "" || newValue == "" {
 		return fmt.Errorf("%w: workbook name, worksheet, cell area, old value and new value are required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
-	reqOpts := append(workbookParams(wf), cfg.reqOpts...)
+	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewReplaceContentInRemoteRangeRequest(cellArea, wf.Name, newValue, oldValue, worksheet, reqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: invalid workbook reference", asposecellscloud.ErrInvalidParam)

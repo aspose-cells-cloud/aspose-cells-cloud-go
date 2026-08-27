@@ -18,7 +18,7 @@ type PutDocumentProtectFromChangesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutDocumentProtectFromChangesRequest(name string, password *models.PasswordRequest, opts ...RequestOption) *PutDocumentProtectFromChangesRequest {
+func NewPutDocumentProtectFromChangesRequest(name string, password *models.PasswordRequest, opts ...Option) *PutDocumentProtectFromChangesRequest {
     req := &PutDocumentProtectFromChangesRequest{
         name: name,
         password: password,
@@ -110,6 +110,6 @@ func (request *PutDocumentProtectFromChangesRequest) GetMultipartForm() map[stri
     return localVarFormParams
 }
 
-func (request *PutDocumentProtectFromChangesRequest) Description() {
-    fmt.Println(strings.Trim("Excel file write protection.", " "))
+func (request *PutDocumentProtectFromChangesRequest) Description() string {
+    return strings.Trim("Excel file write protection.", " ")
 }

@@ -23,7 +23,7 @@ type AddWorksheetToSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewAddWorksheetToSpreadsheetRequest(Spreadsheet string, opts ...RequestOption) *AddWorksheetToSpreadsheetRequest {
+func NewAddWorksheetToSpreadsheetRequest(Spreadsheet string, opts ...Option) *AddWorksheetToSpreadsheetRequest {
     req := &AddWorksheetToSpreadsheetRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -149,6 +149,6 @@ func (request *AddWorksheetToSpreadsheetRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *AddWorksheetToSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("The Web API enables users to add a new worksheet to a workbook, specifying the worksheet's type, position, and name. This function provides flexibility in managing workbook structure by allowing detailed control over worksheet addition.", " "))
+func (request *AddWorksheetToSpreadsheetRequest) Description() string {
+    return strings.Trim("The Web API enables users to add a new worksheet to a workbook, specifying the worksheet's type, position, and name. This function provides flexibility in managing workbook structure by allowing detailed control over worksheet addition.", " ")
 }

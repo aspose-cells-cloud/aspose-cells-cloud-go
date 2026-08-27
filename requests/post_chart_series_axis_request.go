@@ -20,7 +20,7 @@ type PostChartSeriesAxisRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostChartSeriesAxisRequest(axis *models.Axis, chartIndex int, name string, sheetName string, opts ...RequestOption) *PostChartSeriesAxisRequest {
+func NewPostChartSeriesAxisRequest(axis *models.Axis, chartIndex int, name string, sheetName string, opts ...Option) *PostChartSeriesAxisRequest {
     req := &PostChartSeriesAxisRequest{
         axis: axis,
         chartIndex: chartIndex,
@@ -119,6 +119,6 @@ func (request *PostChartSeriesAxisRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *PostChartSeriesAxisRequest) Description() {
-    fmt.Println(strings.Trim("Update chart series axis in the chart.", " "))
+func (request *PostChartSeriesAxisRequest) Description() string {
+    return strings.Trim("Update chart series axis in the chart.", " ")
 }

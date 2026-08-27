@@ -27,7 +27,7 @@ type ImportXMLDataIntoSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewImportXMLDataIntoSpreadsheetRequest(datafile string, Spreadsheet string, startcell string, worksheet string, opts ...RequestOption) *ImportXMLDataIntoSpreadsheetRequest {
+func NewImportXMLDataIntoSpreadsheetRequest(datafile string, Spreadsheet string, startcell string, worksheet string, opts ...Option) *ImportXMLDataIntoSpreadsheetRequest {
     req := &ImportXMLDataIntoSpreadsheetRequest{
         datafile: datafile,
         Spreadsheet: Spreadsheet,
@@ -172,6 +172,6 @@ func (request *ImportXMLDataIntoSpreadsheetRequest) GetMultipartForm() map[strin
     return localVarFormParams
 }
 
-func (request *ImportXMLDataIntoSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Import XML data file into the local spreadsheet.", " "))
+func (request *ImportXMLDataIntoSpreadsheetRequest) Description() string {
+    return strings.Trim("Import XML data file into the local spreadsheet.", " ")
 }

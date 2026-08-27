@@ -18,7 +18,7 @@ type PostWorksheetTextReplaceRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetTextReplaceRequest(name string, newValue string, oldValue string, sheetName string, opts ...RequestOption) *PostWorksheetTextReplaceRequest {
+func NewPostWorksheetTextReplaceRequest(name string, newValue string, oldValue string, sheetName string, opts ...Option) *PostWorksheetTextReplaceRequest {
     req := &PostWorksheetTextReplaceRequest{
         name: name,
         newValue: newValue,
@@ -121,6 +121,6 @@ func (request *PostWorksheetTextReplaceRequest) GetMultipartForm() map[string]in
     return localVarFormParams
 }
 
-func (request *PostWorksheetTextReplaceRequest) Description() {
-    fmt.Println(strings.Trim("Replace old text with new text in the worksheet.", " "))
+func (request *PostWorksheetTextReplaceRequest) Description() string {
+    return strings.Trim("Replace old text with new text in the worksheet.", " ")
 }

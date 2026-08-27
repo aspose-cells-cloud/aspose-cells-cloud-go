@@ -16,7 +16,7 @@ type GetWorksheetConditionalFormattingsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetConditionalFormattingsRequest(name string, sheetName string, opts ...RequestOption) *GetWorksheetConditionalFormattingsRequest {
+func NewGetWorksheetConditionalFormattingsRequest(name string, sheetName string, opts ...Option) *GetWorksheetConditionalFormattingsRequest {
     req := &GetWorksheetConditionalFormattingsRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *GetWorksheetConditionalFormattingsRequest) GetMultipartForm() map
     return localVarFormParams
 }
 
-func (request *GetWorksheetConditionalFormattingsRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve descriptions of conditional formattings in a worksheet.", " "))
+func (request *GetWorksheetConditionalFormattingsRequest) Description() string {
+    return strings.Trim("Retrieve descriptions of conditional formattings in a worksheet.", " ")
 }

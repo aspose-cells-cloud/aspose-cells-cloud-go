@@ -16,7 +16,7 @@ type GetWorksheetPageCountRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetPageCountRequest(name string, sheetName string, opts ...RequestOption) *GetWorksheetPageCountRequest {
+func NewGetWorksheetPageCountRequest(name string, sheetName string, opts ...Option) *GetWorksheetPageCountRequest {
     req := &GetWorksheetPageCountRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *GetWorksheetPageCountRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *GetWorksheetPageCountRequest) Description() {
-    fmt.Println(strings.Trim("Get page count in the worksheet.", " "))
+func (request *GetWorksheetPageCountRequest) Description() string {
+    return strings.Trim("Get page count in the worksheet.", " ")
 }

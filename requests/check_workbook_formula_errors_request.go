@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type CheckWorkbookFormulaErrorsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewCheckWorkbookFormulaErrorsRequest(formulaErrorOptions *models.CheckFormulaErrorOptions, opts ...RequestOption) *CheckWorkbookFormulaErrorsRequest {
+func NewCheckWorkbookFormulaErrorsRequest(formulaErrorOptions *models.CheckFormulaErrorOptions, opts ...Option) *CheckWorkbookFormulaErrorsRequest {
     req := &CheckWorkbookFormulaErrorsRequest{
         formulaErrorOptions: formulaErrorOptions,
     }
@@ -89,6 +88,6 @@ func (request *CheckWorkbookFormulaErrorsRequest) GetMultipartForm() map[string]
     return localVarFormParams
 }
 
-func (request *CheckWorkbookFormulaErrorsRequest) Description() {
-    fmt.Println(strings.Trim("CheckWorkbookFormulaErrors", " "))
+func (request *CheckWorkbookFormulaErrorsRequest) Description() string {
+    return strings.Trim("CheckWorkbookFormulaErrors", " ")
 }

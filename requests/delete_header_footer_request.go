@@ -16,7 +16,7 @@ type DeleteHeaderFooterRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteHeaderFooterRequest(name string, sheetName string, opts ...RequestOption) *DeleteHeaderFooterRequest {
+func NewDeleteHeaderFooterRequest(name string, sheetName string, opts ...Option) *DeleteHeaderFooterRequest {
     req := &DeleteHeaderFooterRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *DeleteHeaderFooterRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *DeleteHeaderFooterRequest) Description() {
-    fmt.Println(strings.Trim("Clear header and footer in the worksheet.", " "))
+func (request *DeleteHeaderFooterRequest) Description() string {
+    return strings.Trim("Clear header and footer in the worksheet.", " ")
 }

@@ -17,7 +17,7 @@ type PostUpdateWorksheetZoomRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostUpdateWorksheetZoomRequest(name string, sheetName string, value int, opts ...RequestOption) *PostUpdateWorksheetZoomRequest {
+func NewPostUpdateWorksheetZoomRequest(name string, sheetName string, value int, opts ...Option) *PostUpdateWorksheetZoomRequest {
     req := &PostUpdateWorksheetZoomRequest{
         name: name,
         sheetName: sheetName,
@@ -112,6 +112,6 @@ func (request *PostUpdateWorksheetZoomRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *PostUpdateWorksheetZoomRequest) Description() {
-    fmt.Println(strings.Trim("Update the scaling percentage in the worksheet. It should be between 10 and 400.", " "))
+func (request *PostUpdateWorksheetZoomRequest) Description() string {
+    return strings.Trim("Update the scaling percentage in the worksheet. It should be between 10 and 400.", " ")
 }

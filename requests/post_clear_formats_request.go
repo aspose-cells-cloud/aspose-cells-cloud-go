@@ -21,7 +21,7 @@ type PostClearFormatsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostClearFormatsRequest(name string, sheetName string, opts ...RequestOption) *PostClearFormatsRequest {
+func NewPostClearFormatsRequest(name string, sheetName string, opts ...Option) *PostClearFormatsRequest {
     req := &PostClearFormatsRequest{
         name: name,
         sheetName: sheetName,
@@ -144,6 +144,6 @@ func (request *PostClearFormatsRequest) GetMultipartForm() map[string]interface{
     return localVarFormParams
 }
 
-func (request *PostClearFormatsRequest) Description() {
-    fmt.Println(strings.Trim("Clear cell formats in the worksheet.", " "))
+func (request *PostClearFormatsRequest) Description() string {
+    return strings.Trim("Clear cell formats in the worksheet.", " ")
 }

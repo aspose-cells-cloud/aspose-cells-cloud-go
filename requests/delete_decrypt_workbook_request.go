@@ -18,7 +18,7 @@ type DeleteDecryptWorkbookRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteDecryptWorkbookRequest(encryption *models.WorkbookEncryptionRequest, name string, opts ...RequestOption) *DeleteDecryptWorkbookRequest {
+func NewDeleteDecryptWorkbookRequest(encryption *models.WorkbookEncryptionRequest, name string, opts ...Option) *DeleteDecryptWorkbookRequest {
     req := &DeleteDecryptWorkbookRequest{
         encryption: encryption,
         name: name,
@@ -110,6 +110,6 @@ func (request *DeleteDecryptWorkbookRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *DeleteDecryptWorkbookRequest) Description() {
-    fmt.Println(strings.Trim("Excel files decryption.", " "))
+func (request *DeleteDecryptWorkbookRequest) Description() string {
+    return strings.Trim("Excel files decryption.", " ")
 }

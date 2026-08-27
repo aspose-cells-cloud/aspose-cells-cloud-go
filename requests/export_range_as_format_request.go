@@ -25,7 +25,7 @@ type ExportRangeAsFormatRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewExportRangeAsFormatRequest(format string, name string, _range string, worksheet string, opts ...RequestOption) *ExportRangeAsFormatRequest {
+func NewExportRangeAsFormatRequest(format string, name string, _range string, worksheet string, opts ...Option) *ExportRangeAsFormatRequest {
     req := &ExportRangeAsFormatRequest{
         format: format,
         name: name,
@@ -170,6 +170,6 @@ func (request *ExportRangeAsFormatRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *ExportRangeAsFormatRequest) Description() {
-    fmt.Println(strings.Trim("Converts the range of spreadsheet in cloud storage to the specified format.", " "))
+func (request *ExportRangeAsFormatRequest) Description() string {
+    return strings.Trim("Converts the range of spreadsheet in cloud storage to the specified format.", " ")
 }

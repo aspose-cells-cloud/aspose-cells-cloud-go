@@ -17,7 +17,7 @@ type DeleteHorizontalPageBreaksRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteHorizontalPageBreaksRequest(name string, sheetName string, opts ...RequestOption) *DeleteHorizontalPageBreaksRequest {
+func NewDeleteHorizontalPageBreaksRequest(name string, sheetName string, opts ...Option) *DeleteHorizontalPageBreaksRequest {
     req := &DeleteHorizontalPageBreaksRequest{
         name: name,
         sheetName: sheetName,
@@ -116,6 +116,6 @@ func (request *DeleteHorizontalPageBreaksRequest) GetMultipartForm() map[string]
     return localVarFormParams
 }
 
-func (request *DeleteHorizontalPageBreaksRequest) Description() {
-    fmt.Println(strings.Trim("Delete horizontal page breaks in the worksheet.", " "))
+func (request *DeleteHorizontalPageBreaksRequest) Description() string {
+    return strings.Trim("Delete horizontal page breaks in the worksheet.", " ")
 }

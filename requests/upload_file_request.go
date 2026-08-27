@@ -18,7 +18,7 @@ type UploadFileRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewUploadFileRequest(path string, UploadFiles string, opts ...RequestOption) *UploadFileRequest {
+func NewUploadFileRequest(path string, UploadFiles string, opts ...Option) *UploadFileRequest {
     req := &UploadFileRequest{
         path: path,
         UploadFiles: UploadFiles,
@@ -114,6 +114,6 @@ func (request *UploadFileRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *UploadFileRequest) Description() {
-    fmt.Println(strings.Trim("UploadFile", " "))
+func (request *UploadFileRequest) Description() string {
+    return strings.Trim("UploadFile", " ")
 }

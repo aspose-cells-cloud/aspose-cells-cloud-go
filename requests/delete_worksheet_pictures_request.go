@@ -16,7 +16,7 @@ type DeleteWorksheetPicturesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetPicturesRequest(name string, sheetName string, opts ...RequestOption) *DeleteWorksheetPicturesRequest {
+func NewDeleteWorksheetPicturesRequest(name string, sheetName string, opts ...Option) *DeleteWorksheetPicturesRequest {
     req := &DeleteWorksheetPicturesRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *DeleteWorksheetPicturesRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetPicturesRequest) Description() {
-    fmt.Println(strings.Trim("Delete all pictures in the worksheet.", " "))
+func (request *DeleteWorksheetPicturesRequest) Description() string {
+    return strings.Trim("Delete all pictures in the worksheet.", " ")
 }

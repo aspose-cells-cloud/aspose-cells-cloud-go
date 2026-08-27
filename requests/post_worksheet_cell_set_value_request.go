@@ -20,7 +20,7 @@ type PostWorksheetCellSetValueRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetCellSetValueRequest(cellName string, name string, sheetName string, opts ...RequestOption) *PostWorksheetCellSetValueRequest {
+func NewPostWorksheetCellSetValueRequest(cellName string, name string, sheetName string, opts ...Option) *PostWorksheetCellSetValueRequest {
     req := &PostWorksheetCellSetValueRequest{
         cellName: cellName,
         name: name,
@@ -136,6 +136,6 @@ func (request *PostWorksheetCellSetValueRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *PostWorksheetCellSetValueRequest) Description() {
-    fmt.Println(strings.Trim("Set cell value using cell name in the worksheet.", " "))
+func (request *PostWorksheetCellSetValueRequest) Description() string {
+    return strings.Trim("Set cell value using cell name in the worksheet.", " ")
 }

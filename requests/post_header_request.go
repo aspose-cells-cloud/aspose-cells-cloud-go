@@ -19,7 +19,7 @@ type PostHeaderRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostHeaderRequest(isFirstPage bool, name string, script string, section int, sheetName string, opts ...RequestOption) *PostHeaderRequest {
+func NewPostHeaderRequest(isFirstPage bool, name string, script string, section int, sheetName string, opts ...Option) *PostHeaderRequest {
     req := &PostHeaderRequest{
         isFirstPage: isFirstPage,
         name: name,
@@ -121,6 +121,6 @@ func (request *PostHeaderRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostHeaderRequest) Description() {
-    fmt.Println(strings.Trim("Update page header in the worksheet.", " "))
+func (request *PostHeaderRequest) Description() string {
+    return strings.Trim("Update page header in the worksheet.", " ")
 }

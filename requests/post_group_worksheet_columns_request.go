@@ -19,7 +19,7 @@ type PostGroupWorksheetColumnsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostGroupWorksheetColumnsRequest(firstIndex int, lastIndex int, name string, sheetName string, opts ...RequestOption) *PostGroupWorksheetColumnsRequest {
+func NewPostGroupWorksheetColumnsRequest(firstIndex int, lastIndex int, name string, sheetName string, opts ...Option) *PostGroupWorksheetColumnsRequest {
     req := &PostGroupWorksheetColumnsRequest{
         firstIndex: firstIndex,
         lastIndex: lastIndex,
@@ -122,6 +122,6 @@ func (request *PostGroupWorksheetColumnsRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *PostGroupWorksheetColumnsRequest) Description() {
-    fmt.Println(strings.Trim("Group worksheet columns in the worksheet.", " "))
+func (request *PostGroupWorksheetColumnsRequest) Description() string {
+    return strings.Trim("Group worksheet columns in the worksheet.", " ")
 }

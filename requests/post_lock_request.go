@@ -16,7 +16,7 @@ type PostLockRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostLockRequest(File string, password string, opts ...RequestOption) *PostLockRequest {
+func NewPostLockRequest(File string, password string, opts ...Option) *PostLockRequest {
     req := &PostLockRequest{
         File: File,
         password: password,
@@ -106,6 +106,6 @@ func (request *PostLockRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostLockRequest) Description() {
-    fmt.Println(strings.Trim("Lock Excel files.", " "))
+func (request *PostLockRequest) Description() string {
+    return strings.Trim("Lock Excel files.", " ")
 }

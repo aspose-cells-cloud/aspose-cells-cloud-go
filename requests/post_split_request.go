@@ -22,7 +22,7 @@ type PostSplitRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostSplitRequest(File string, outFormat string, opts ...RequestOption) *PostSplitRequest {
+func NewPostSplitRequest(File string, outFormat string, opts ...Option) *PostSplitRequest {
     req := &PostSplitRequest{
         File: File,
         outFormat: outFormat,
@@ -142,6 +142,6 @@ func (request *PostSplitRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostSplitRequest) Description() {
-    fmt.Println(strings.Trim("Split Excel spreadsheet files based on worksheets and create output files in various formats.", " "))
+func (request *PostSplitRequest) Description() string {
+    return strings.Trim("Split Excel spreadsheet files based on worksheets and create output files in various formats.", " ")
 }

@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostExtractTextRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostExtractTextRequest(extractTextOptions *models.ExtractTextOptions, opts ...RequestOption) *PostExtractTextRequest {
+func NewPostExtractTextRequest(extractTextOptions *models.ExtractTextOptions, opts ...Option) *PostExtractTextRequest {
     req := &PostExtractTextRequest{
         extractTextOptions: extractTextOptions,
     }
@@ -89,6 +88,6 @@ func (request *PostExtractTextRequest) GetMultipartForm() map[string]interface{}
     return localVarFormParams
 }
 
-func (request *PostExtractTextRequest) Description() {
-    fmt.Println(strings.Trim("Effortlessly extract text and numbers from Excel cells with precise options. This API allows extraction of first/last characters, text between delimiters, and numbers from strings, with output as static values or formulas.", " "))
+func (request *PostExtractTextRequest) Description() string {
+    return strings.Trim("Effortlessly extract text and numbers from Excel cells with precise options. This API allows extraction of first/last characters, text between delimiters, and numbers from strings, with output as static values or formulas.", " ")
 }

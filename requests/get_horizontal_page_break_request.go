@@ -17,7 +17,7 @@ type GetHorizontalPageBreakRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetHorizontalPageBreakRequest(index int, name string, sheetName string, opts ...RequestOption) *GetHorizontalPageBreakRequest {
+func NewGetHorizontalPageBreakRequest(index int, name string, sheetName string, opts ...Option) *GetHorizontalPageBreakRequest {
     req := &GetHorizontalPageBreakRequest{
         index: index,
         name: name,
@@ -112,6 +112,6 @@ func (request *GetHorizontalPageBreakRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *GetHorizontalPageBreakRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve a horizontal page break descripton in the worksheet.", " "))
+func (request *GetHorizontalPageBreakRequest) Description() string {
+    return strings.Trim("Retrieve a horizontal page break descripton in the worksheet.", " ")
 }

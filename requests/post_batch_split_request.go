@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 
@@ -14,7 +13,7 @@ type PostBatchSplitRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostBatchSplitRequest(batchSplitRequest *models.BatchSplitRequest, opts ...RequestOption) *PostBatchSplitRequest {
+func NewPostBatchSplitRequest(batchSplitRequest *models.BatchSplitRequest, opts ...Option) *PostBatchSplitRequest {
     req := &PostBatchSplitRequest{
         batchSplitRequest: batchSplitRequest,
     }
@@ -89,6 +88,6 @@ func (request *PostBatchSplitRequest) GetMultipartForm() map[string]interface{} 
     return localVarFormParams
 }
 
-func (request *PostBatchSplitRequest) Description() {
-    fmt.Println(strings.Trim("Batch splitting files that meet specific matching conditions.", " "))
+func (request *PostBatchSplitRequest) Description() string {
+    return strings.Trim("Batch splitting files that meet specific matching conditions.", " ")
 }

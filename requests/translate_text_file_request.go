@@ -19,7 +19,7 @@ type TranslateTextFileRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewTranslateTextFileRequest(Spreadsheet string, targetLanguage string, opts ...RequestOption) *TranslateTextFileRequest {
+func NewTranslateTextFileRequest(Spreadsheet string, targetLanguage string, opts ...Option) *TranslateTextFileRequest {
     req := &TranslateTextFileRequest{
         Spreadsheet: Spreadsheet,
         targetLanguage: targetLanguage,
@@ -121,6 +121,6 @@ func (request *TranslateTextFileRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *TranslateTextFileRequest) Description() {
-    fmt.Println(strings.Trim("Translates text file content to the specified target language.", " "))
+func (request *TranslateTextFileRequest) Description() string {
+    return strings.Trim("Translates text file content to the specified target language.", " ")
 }

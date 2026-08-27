@@ -20,7 +20,7 @@ type PostSearchRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostSearchRequest(File string, text string, opts ...RequestOption) *PostSearchRequest {
+func NewPostSearchRequest(File string, text string, opts ...Option) *PostSearchRequest {
     req := &PostSearchRequest{
         File: File,
         text: text,
@@ -128,6 +128,6 @@ func (request *PostSearchRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostSearchRequest) Description() {
-    fmt.Println(strings.Trim("Search for specified text within Excel files.", " "))
+func (request *PostSearchRequest) Description() string {
+    return strings.Trim("Search for specified text within Excel files.", " ")
 }

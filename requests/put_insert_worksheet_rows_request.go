@@ -19,7 +19,7 @@ type PutInsertWorksheetRowsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutInsertWorksheetRowsRequest(name string, sheetName string, startrow int, opts ...RequestOption) *PutInsertWorksheetRowsRequest {
+func NewPutInsertWorksheetRowsRequest(name string, sheetName string, startrow int, opts ...Option) *PutInsertWorksheetRowsRequest {
     req := &PutInsertWorksheetRowsRequest{
         name: name,
         sheetName: sheetName,
@@ -126,6 +126,6 @@ func (request *PutInsertWorksheetRowsRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *PutInsertWorksheetRowsRequest) Description() {
-    fmt.Println(strings.Trim("Insert several new rows in the worksheet.", " "))
+func (request *PutInsertWorksheetRowsRequest) Description() string {
+    return strings.Trim("Insert several new rows in the worksheet.", " ")
 }

@@ -18,7 +18,7 @@ type CreateSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewCreateSpreadsheetRequest(opts ...RequestOption) *CreateSpreadsheetRequest {
+func NewCreateSpreadsheetRequest(opts ...Option) *CreateSpreadsheetRequest {
     req := &CreateSpreadsheetRequest{
     }
     cfg := &requestConfig{
@@ -124,6 +124,6 @@ func (request *CreateSpreadsheetRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *CreateSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("The Web API allows users to create a new spreadsheet with a specified name. Optionally, a template can be provided to initialize the spreadsheet with predefined content or formatting.", " "))
+func (request *CreateSpreadsheetRequest) Description() string {
+    return strings.Trim("The Web API allows users to create a new spreadsheet with a specified name. Optionally, a template can be provided to initialize the spreadsheet with predefined content or formatting.", " ")
 }

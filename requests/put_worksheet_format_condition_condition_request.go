@@ -21,7 +21,7 @@ type PutWorksheetFormatConditionConditionRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetFormatConditionConditionRequest(formula1 string, formula2 string, index int, name string, operatorType string, sheetName string, _type string, opts ...RequestOption) *PutWorksheetFormatConditionConditionRequest {
+func NewPutWorksheetFormatConditionConditionRequest(formula1 string, formula2 string, index int, name string, operatorType string, sheetName string, _type string, opts ...Option) *PutWorksheetFormatConditionConditionRequest {
     req := &PutWorksheetFormatConditionConditionRequest{
         formula1: formula1,
         formula2: formula2,
@@ -136,6 +136,6 @@ func (request *PutWorksheetFormatConditionConditionRequest) GetMultipartForm() m
     return localVarFormParams
 }
 
-func (request *PutWorksheetFormatConditionConditionRequest) Description() {
-    fmt.Println(strings.Trim("Add a condition for the format condition in the worksheet.", " "))
+func (request *PutWorksheetFormatConditionConditionRequest) Description() string {
+    return strings.Trim("Add a condition for the format condition in the worksheet.", " ")
 }

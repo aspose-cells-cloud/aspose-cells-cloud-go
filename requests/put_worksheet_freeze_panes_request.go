@@ -20,7 +20,7 @@ type PutWorksheetFreezePanesRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetFreezePanesRequest(column int, freezedColumns int, freezedRows int, name string, row int, sheetName string, opts ...RequestOption) *PutWorksheetFreezePanesRequest {
+func NewPutWorksheetFreezePanesRequest(column int, freezedColumns int, freezedRows int, name string, row int, sheetName string, opts ...Option) *PutWorksheetFreezePanesRequest {
     req := &PutWorksheetFreezePanesRequest{
         column: column,
         freezedColumns: freezedColumns,
@@ -121,6 +121,6 @@ func (request *PutWorksheetFreezePanesRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *PutWorksheetFreezePanesRequest) Description() {
-    fmt.Println(strings.Trim("Set freeze panes in the worksheet.", " "))
+func (request *PutWorksheetFreezePanesRequest) Description() string {
+    return strings.Trim("Set freeze panes in the worksheet.", " ")
 }

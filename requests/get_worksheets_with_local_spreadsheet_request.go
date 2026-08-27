@@ -18,7 +18,7 @@ type GetWorksheetsWithLocalSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetsWithLocalSpreadsheetRequest(Spreadsheet string, opts ...RequestOption) *GetWorksheetsWithLocalSpreadsheetRequest {
+func NewGetWorksheetsWithLocalSpreadsheetRequest(Spreadsheet string, opts ...Option) *GetWorksheetsWithLocalSpreadsheetRequest {
     req := &GetWorksheetsWithLocalSpreadsheetRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -114,6 +114,6 @@ func (request *GetWorksheetsWithLocalSpreadsheetRequest) GetMultipartForm() map[
     return localVarFormParams
 }
 
-func (request *GetWorksheetsWithLocalSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Fetches a complete list of worksheets from the currently active local spreadsheet.", " "))
+func (request *GetWorksheetsWithLocalSpreadsheetRequest) Description() string {
+    return strings.Trim("Fetches a complete list of worksheets from the currently active local spreadsheet.", " ")
 }

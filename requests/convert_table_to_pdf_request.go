@@ -25,7 +25,7 @@ type ConvertTableToPdfRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertTableToPdfRequest(Spreadsheet string, tableName string, worksheet string, opts ...RequestOption) *ConvertTableToPdfRequest {
+func NewConvertTableToPdfRequest(Spreadsheet string, tableName string, worksheet string, opts ...Option) *ConvertTableToPdfRequest {
     req := &ConvertTableToPdfRequest{
         Spreadsheet: Spreadsheet,
         tableName: tableName,
@@ -162,6 +162,6 @@ func (request *ConvertTableToPdfRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *ConvertTableToPdfRequest) Description() {
-    fmt.Println(strings.Trim("Converts a table of spreadsheet on a local drive to the pdf file.", " "))
+func (request *ConvertTableToPdfRequest) Description() string {
+    return strings.Trim("Converts a table of spreadsheet on a local drive to the pdf file.", " ")
 }

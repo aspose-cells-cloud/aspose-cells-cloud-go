@@ -17,7 +17,7 @@ type MoveFileRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewMoveFileRequest(destPath string, srcPath string, opts ...RequestOption) *MoveFileRequest {
+func NewMoveFileRequest(destPath string, srcPath string, opts ...Option) *MoveFileRequest {
     req := &MoveFileRequest{
         destPath: destPath,
         srcPath: srcPath,
@@ -116,6 +116,6 @@ func (request *MoveFileRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *MoveFileRequest) Description() {
-    fmt.Println(strings.Trim("MoveFile", " "))
+func (request *MoveFileRequest) Description() string {
+    return strings.Trim("MoveFile", " ")
 }

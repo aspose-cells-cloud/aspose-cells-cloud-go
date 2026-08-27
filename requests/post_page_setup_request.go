@@ -19,7 +19,7 @@ type PostPageSetupRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostPageSetupRequest(name string, pageSetup *models.PageSetup, sheetName string, opts ...RequestOption) *PostPageSetupRequest {
+func NewPostPageSetupRequest(name string, pageSetup *models.PageSetup, sheetName string, opts ...Option) *PostPageSetupRequest {
     req := &PostPageSetupRequest{
         name: name,
         pageSetup: pageSetup,
@@ -116,6 +116,6 @@ func (request *PostPageSetupRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostPageSetupRequest) Description() {
-    fmt.Println(strings.Trim("Update page setup in the worksheet.", " "))
+func (request *PostPageSetupRequest) Description() string {
+    return strings.Trim("Update page setup in the worksheet.", " ")
 }

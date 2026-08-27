@@ -16,7 +16,7 @@ type DeleteWorksheetCommentsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetCommentsRequest(name string, sheetName string, opts ...RequestOption) *DeleteWorksheetCommentsRequest {
+func NewDeleteWorksheetCommentsRequest(name string, sheetName string, opts ...Option) *DeleteWorksheetCommentsRequest {
     req := &DeleteWorksheetCommentsRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *DeleteWorksheetCommentsRequest) GetMultipartForm() map[string]int
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetCommentsRequest) Description() {
-    fmt.Println(strings.Trim("Delete all comments in the worksheet.", " "))
+func (request *DeleteWorksheetCommentsRequest) Description() string {
+    return strings.Trim("Delete all comments in the worksheet.", " ")
 }

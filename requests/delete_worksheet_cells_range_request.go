@@ -18,7 +18,7 @@ type DeleteWorksheetCellsRangeRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetCellsRangeRequest(name string, _range string, sheetName string, shift string, opts ...RequestOption) *DeleteWorksheetCellsRangeRequest {
+func NewDeleteWorksheetCellsRangeRequest(name string, _range string, sheetName string, shift string, opts ...Option) *DeleteWorksheetCellsRangeRequest {
     req := &DeleteWorksheetCellsRangeRequest{
         name: name,
         _range: _range,
@@ -121,6 +121,6 @@ func (request *DeleteWorksheetCellsRangeRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetCellsRangeRequest) Description() {
-    fmt.Println(strings.Trim("Delete a range of cells and shift existing cells based on the specified shift option.", " "))
+func (request *DeleteWorksheetCellsRangeRequest) Description() string {
+    return strings.Trim("Delete a range of cells and shift existing cells based on the specified shift option.", " ")
 }

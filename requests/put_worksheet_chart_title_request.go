@@ -20,7 +20,7 @@ type PutWorksheetChartTitleRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPutWorksheetChartTitleRequest(chartIndex int, name string, sheetName string, opts ...RequestOption) *PutWorksheetChartTitleRequest {
+func NewPutWorksheetChartTitleRequest(chartIndex int, name string, sheetName string, opts ...Option) *PutWorksheetChartTitleRequest {
     req := &PutWorksheetChartTitleRequest{
         chartIndex: chartIndex,
         name: name,
@@ -118,6 +118,6 @@ func (request *PutWorksheetChartTitleRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *PutWorksheetChartTitleRequest) Description() {
-    fmt.Println(strings.Trim("Set chart title in the worksheet.", " "))
+func (request *PutWorksheetChartTitleRequest) Description() string {
+    return strings.Trim("Set chart title in the worksheet.", " ")
 }

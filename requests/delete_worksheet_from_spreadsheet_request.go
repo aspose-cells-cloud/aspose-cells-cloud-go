@@ -21,7 +21,7 @@ type DeleteWorksheetFromSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetFromSpreadsheetRequest(sheetName string, Spreadsheet string, opts ...RequestOption) *DeleteWorksheetFromSpreadsheetRequest {
+func NewDeleteWorksheetFromSpreadsheetRequest(sheetName string, Spreadsheet string, opts ...Option) *DeleteWorksheetFromSpreadsheetRequest {
     req := &DeleteWorksheetFromSpreadsheetRequest{
         sheetName: sheetName,
         Spreadsheet: Spreadsheet,
@@ -135,6 +135,6 @@ func (request *DeleteWorksheetFromSpreadsheetRequest) GetMultipartForm() map[str
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetFromSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("The Web API endpoint allows users to delete a specified worksheet from a workbook. This function provides a straightforward way to manage workbook structure by removing unnecessary or redundant worksheets.", " "))
+func (request *DeleteWorksheetFromSpreadsheetRequest) Description() string {
+    return strings.Trim("The Web API endpoint allows users to delete a specified worksheet from a workbook. This function provides a straightforward way to manage workbook structure by removing unnecessary or redundant worksheets.", " ")
 }

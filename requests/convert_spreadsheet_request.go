@@ -24,7 +24,7 @@ type ConvertSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertSpreadsheetRequest(format string, Spreadsheet string, opts ...RequestOption) *ConvertSpreadsheetRequest {
+func NewConvertSpreadsheetRequest(format string, Spreadsheet string, opts ...Option) *ConvertSpreadsheetRequest {
     req := &ConvertSpreadsheetRequest{
         format: format,
         Spreadsheet: Spreadsheet,
@@ -156,6 +156,6 @@ func (request *ConvertSpreadsheetRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *ConvertSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Converts a spreadsheet on a local drive to the specified format.", " "))
+func (request *ConvertSpreadsheetRequest) Description() string {
+    return strings.Trim("Converts a spreadsheet on a local drive to the specified format.", " ")
 }

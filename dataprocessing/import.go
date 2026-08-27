@@ -13,6 +13,7 @@ import (
 	"fmt"
 
 	"asposecellscloud"
+	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/datasource"
 	"asposecellscloud/requests"
 )
@@ -20,7 +21,7 @@ import (
 // importReqBuilder builds one of the v4.0 import requests for the given target
 // position. The request then receives the datafile and template spreadsheet
 // bytes via SetDatafileBytes/SetSpreadsheetBytes.
-type importReqBuilder func(startcell, worksheet string, opts ...requests.RequestOption) asposecellscloud.RequestOption
+type importReqBuilder func(startcell, worksheet string, opts ...requests.Option) asposecellscloud.RequestOption
 
 // importLocal uploads datafile into the template spreadsheet at the given
 // position and writes the merged workbook to sink.
@@ -34,8 +35,8 @@ func importLocal(ctx context.Context, client *asposecellscloud.AsposeCellsCloudC
 	if worksheet == "" || startcell == "" {
 		return fmt.Errorf("%w: worksheet and start cell are required", asposecellscloud.ErrInvalidParam)
 	}
-	cfg := &config{}
-	apply(cfg, opts)
+	cfg := &sdkutil.Config{}
+	sdkutil.Apply(cfg, opts)
 
 	data, err := datafile.ByteData()
 	if err != nil {
@@ -46,25 +47,17 @@ func importLocal(ctx context.Context, client *asposecellscloud.AsposeCellsCloudC
 		return err
 	}
 
-	req := builder(startcell, worksheet, cfg.reqOpts...)
+	req := builder(startcell, worksheet, cfg.ReqOpts...)
 	if req == nil {
 		return fmt.Errorf("%w: failed to build import request", asposecellscloud.ErrInvalidParam)
 	}
 
 	// Set the multipart file fields expected by the v4.0 import endpoints.
-	switch r := req.(type) {
-	case *requests.ImportCSVDataIntoSpreadsheetRequest:
-		r.SetDatafileBytes(data, "datafile")
-		r.SetSpreadsheetBytes(tpl, "Spreadsheet")
-	case *requests.ImportJSONDataIntoSpreadsheetRequest:
-		r.SetDatafileBytes(data, "datafile")
-		r.SetSpreadsheetBytes(tpl, "Spreadsheet")
-	case *requests.ImportXMLDataIntoSpreadsheetRequest:
-		r.SetDatafileBytes(data, "datafile")
-		r.SetSpreadsheetBytes(tpl, "Spreadsheet")
-	case *requests.ImportDataIntoSpreadsheetRequest:
-		r.SetDatafileBytes(data, "datafile")
-		r.SetSpreadsheetBytes(tpl, "Spreadsheet")
+	if setter, ok := req.(sdkutil.DatafileSetter); ok {
+		setter.SetDatafileBytes(data, "datafile")
+	}
+	if setter, ok := req.(sdkutil.SpreadsheetSetter); ok {
+		setter.SetSpreadsheetBytes(tpl, "Spreadsheet")
 	}
 
 	resp, err := asposecellscloud.DoChecked(ctx, client, req)
@@ -80,7 +73,7 @@ func ImportXML(ctx context.Context, client *asposecellscloud.AsposeCellsCloudCli
 	datafile, template datasource.DataSource, sink datasource.DataSink,
 	worksheet, startcell string, opts ...Option) error {
 	return importLocal(ctx, client, datafile, template, sink, worksheet, startcell,
-		func(startcell, worksheet string, opts ...requests.RequestOption) asposecellscloud.RequestOption {
+		func(startcell, worksheet string, opts ...requests.Option) asposecellscloud.RequestOption {
 			return requests.NewImportXMLDataIntoSpreadsheetRequest("", "", startcell, worksheet, opts...)
 		}, opts...)
 }
@@ -91,7 +84,7 @@ func ImportJSON(ctx context.Context, client *asposecellscloud.AsposeCellsCloudCl
 	datafile, template datasource.DataSource, sink datasource.DataSink,
 	worksheet, startcell string, opts ...Option) error {
 	return importLocal(ctx, client, datafile, template, sink, worksheet, startcell,
-		func(startcell, worksheet string, opts ...requests.RequestOption) asposecellscloud.RequestOption {
+		func(startcell, worksheet string, opts ...requests.Option) asposecellscloud.RequestOption {
 			return requests.NewImportJSONDataIntoSpreadsheetRequest("", "", startcell, worksheet, opts...)
 		}, opts...)
 }
@@ -102,7 +95,7 @@ func ImportCSV(ctx context.Context, client *asposecellscloud.AsposeCellsCloudCli
 	datafile, template datasource.DataSource, sink datasource.DataSink,
 	worksheet, startcell string, opts ...Option) error {
 	return importLocal(ctx, client, datafile, template, sink, worksheet, startcell,
-		func(startcell, worksheet string, opts ...requests.RequestOption) asposecellscloud.RequestOption {
+		func(startcell, worksheet string, opts ...requests.Option) asposecellscloud.RequestOption {
 			return requests.NewImportCSVDataIntoSpreadsheetRequest("", "", startcell, worksheet, opts...)
 		}, opts...)
 }
@@ -114,7 +107,7 @@ func ImportData(ctx context.Context, client *asposecellscloud.AsposeCellsCloudCl
 	datafile, template datasource.DataSource, sink datasource.DataSink,
 	worksheet, startcell string, opts ...Option) error {
 	return importLocal(ctx, client, datafile, template, sink, worksheet, startcell,
-		func(startcell, worksheet string, opts ...requests.RequestOption) asposecellscloud.RequestOption {
+		func(startcell, worksheet string, opts ...requests.Option) asposecellscloud.RequestOption {
 			return requests.NewImportDataIntoSpreadsheetRequest("", "", startcell, worksheet, opts...)
 		}, opts...)
 }

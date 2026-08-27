@@ -19,7 +19,7 @@ type PostWorksheetCellsRangeStyleRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetCellsRangeStyleRequest(name string, rangeOperate *models.RangeSetStyleRequest, sheetName string, opts ...RequestOption) *PostWorksheetCellsRangeStyleRequest {
+func NewPostWorksheetCellsRangeStyleRequest(name string, rangeOperate *models.RangeSetStyleRequest, sheetName string, opts ...Option) *PostWorksheetCellsRangeStyleRequest {
     req := &PostWorksheetCellsRangeStyleRequest{
         name: name,
         rangeOperate: rangeOperate,
@@ -116,6 +116,6 @@ func (request *PostWorksheetCellsRangeStyleRequest) GetMultipartForm() map[strin
     return localVarFormParams
 }
 
-func (request *PostWorksheetCellsRangeStyleRequest) Description() {
-    fmt.Println(strings.Trim("Set the style for the specified range.", " "))
+func (request *PostWorksheetCellsRangeStyleRequest) Description() string {
+    return strings.Trim("Set the style for the specified range.", " ")
 }

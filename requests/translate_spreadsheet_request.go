@@ -19,7 +19,7 @@ type TranslateSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewTranslateSpreadsheetRequest(Spreadsheet string, targetLanguage string, opts ...RequestOption) *TranslateSpreadsheetRequest {
+func NewTranslateSpreadsheetRequest(Spreadsheet string, targetLanguage string, opts ...Option) *TranslateSpreadsheetRequest {
     req := &TranslateSpreadsheetRequest{
         Spreadsheet: Spreadsheet,
         targetLanguage: targetLanguage,
@@ -121,6 +121,6 @@ func (request *TranslateSpreadsheetRequest) GetMultipartForm() map[string]interf
     return localVarFormParams
 }
 
-func (request *TranslateSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Translates the entire spreadsheet to the specified target language.", " "))
+func (request *TranslateSpreadsheetRequest) Description() string {
+    return strings.Trim("Translates the entire spreadsheet to the specified target language.", " ")
 }

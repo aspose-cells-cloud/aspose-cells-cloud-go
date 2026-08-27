@@ -20,7 +20,7 @@ type PostWorksheetChartRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetChartRequest(chart *models.Chart, chartIndex int, name string, sheetName string, opts ...RequestOption) *PostWorksheetChartRequest {
+func NewPostWorksheetChartRequest(chart *models.Chart, chartIndex int, name string, sheetName string, opts ...Option) *PostWorksheetChartRequest {
     req := &PostWorksheetChartRequest{
         chart: chart,
         chartIndex: chartIndex,
@@ -119,6 +119,6 @@ func (request *PostWorksheetChartRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *PostWorksheetChartRequest) Description() {
-    fmt.Println(strings.Trim("Update chart properties in the worksheet.", " "))
+func (request *PostWorksheetChartRequest) Description() string {
+    return strings.Trim("Update chart properties in the worksheet.", " ")
 }

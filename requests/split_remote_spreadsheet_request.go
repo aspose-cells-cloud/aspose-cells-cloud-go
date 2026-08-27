@@ -23,7 +23,7 @@ type SplitRemoteSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewSplitRemoteSpreadsheetRequest(name string, opts ...RequestOption) *SplitRemoteSpreadsheetRequest {
+func NewSplitRemoteSpreadsheetRequest(name string, opts ...Option) *SplitRemoteSpreadsheetRequest {
     req := &SplitRemoteSpreadsheetRequest{
         name: name,
     }
@@ -159,6 +159,6 @@ func (request *SplitRemoteSpreadsheetRequest) GetMultipartForm() map[string]inte
     return localVarFormParams
 }
 
-func (request *SplitRemoteSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Split a spreadsheet in cloud storage into the specified format, multi-file.", " "))
+func (request *SplitRemoteSpreadsheetRequest) Description() string {
+    return strings.Trim("Split a spreadsheet in cloud storage into the specified format, multi-file.", " ")
 }

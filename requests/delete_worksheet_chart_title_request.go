@@ -17,7 +17,7 @@ type DeleteWorksheetChartTitleRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetChartTitleRequest(chartIndex int, name string, sheetName string, opts ...RequestOption) *DeleteWorksheetChartTitleRequest {
+func NewDeleteWorksheetChartTitleRequest(chartIndex int, name string, sheetName string, opts ...Option) *DeleteWorksheetChartTitleRequest {
     req := &DeleteWorksheetChartTitleRequest{
         chartIndex: chartIndex,
         name: name,
@@ -112,6 +112,6 @@ func (request *DeleteWorksheetChartTitleRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetChartTitleRequest) Description() {
-    fmt.Println(strings.Trim("Hide chart title in the worksheet.", " "))
+func (request *DeleteWorksheetChartTitleRequest) Description() string {
+    return strings.Trim("Hide chart title in the worksheet.", " ")
 }

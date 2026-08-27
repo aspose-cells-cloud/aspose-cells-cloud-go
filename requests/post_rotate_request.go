@@ -21,7 +21,7 @@ type PostRotateRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostRotateRequest(File string, rotateType string, opts ...RequestOption) *PostRotateRequest {
+func NewPostRotateRequest(File string, rotateType string, opts ...Option) *PostRotateRequest {
     req := &PostRotateRequest{
         File: File,
         rotateType: rotateType,
@@ -135,6 +135,6 @@ func (request *PostRotateRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostRotateRequest) Description() {
-    fmt.Println(strings.Trim("Rotate rows, columns, or other objects in Excel files and save them in various formats.", " "))
+func (request *PostRotateRequest) Description() string {
+    return strings.Trim("Rotate rows, columns, or other objects in Excel files and save them in various formats.", " ")
 }

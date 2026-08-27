@@ -19,7 +19,7 @@ type PostCompressRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostCompressRequest(File string, opts ...RequestOption) *PostCompressRequest {
+func NewPostCompressRequest(File string, opts ...Option) *PostCompressRequest {
     req := &PostCompressRequest{
         File: File,
     }
@@ -121,6 +121,6 @@ func (request *PostCompressRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostCompressRequest) Description() {
-    fmt.Println(strings.Trim("Compress files and generate target files in various formats, supported file formats are include Xls, Xlsx, Xlsm, Xlsb, Ods and more.", " "))
+func (request *PostCompressRequest) Description() string {
+    return strings.Trim("Compress files and generate target files in various formats, supported file formats are include Xls, Xlsx, Xlsm, Xlsb, Ods and more.", " ")
 }

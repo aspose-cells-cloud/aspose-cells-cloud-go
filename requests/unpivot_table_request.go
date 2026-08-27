@@ -23,7 +23,7 @@ type UnpivotTableRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewUnpivotTableRequest(index int, Spreadsheet string, worksheet string, opts ...RequestOption) *UnpivotTableRequest {
+func NewUnpivotTableRequest(index int, Spreadsheet string, worksheet string, opts ...Option) *UnpivotTableRequest {
     req := &UnpivotTableRequest{
         index: index,
         Spreadsheet: Spreadsheet,
@@ -145,6 +145,6 @@ func (request *UnpivotTableRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *UnpivotTableRequest) Description() {
-    fmt.Println(strings.Trim("Switch rows and columns in the spreadsheet.", " "))
+func (request *UnpivotTableRequest) Description() string {
+    return strings.Trim("Switch rows and columns in the spreadsheet.", " ")
 }

@@ -22,7 +22,7 @@ type TransposeDataRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewTransposeDataRequest(cellArea string, Spreadsheet string, worksheet string, opts ...RequestOption) *TransposeDataRequest {
+func NewTransposeDataRequest(cellArea string, Spreadsheet string, worksheet string, opts ...Option) *TransposeDataRequest {
     req := &TransposeDataRequest{
         cellArea: cellArea,
         Spreadsheet: Spreadsheet,
@@ -141,6 +141,6 @@ func (request *TransposeDataRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *TransposeDataRequest) Description() {
-    fmt.Println(strings.Trim("Switch rows and columns in the spreadsheet.", " "))
+func (request *TransposeDataRequest) Description() string {
+    return strings.Trim("Switch rows and columns in the spreadsheet.", " ")
 }

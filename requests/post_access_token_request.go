@@ -1,7 +1,6 @@
 package requests
 
 import (
-    "fmt"
     "net/url"
     "strings"
 )
@@ -10,7 +9,7 @@ type PostAccessTokenRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostAccessTokenRequest(opts ...RequestOption) *PostAccessTokenRequest {
+func NewPostAccessTokenRequest(opts ...Option) *PostAccessTokenRequest {
     req := &PostAccessTokenRequest{
     }
     cfg := &requestConfig{
@@ -80,6 +79,6 @@ func (request *PostAccessTokenRequest) GetMultipartForm() map[string]interface{}
     return localVarFormParams
 }
 
-func (request *PostAccessTokenRequest) Description() {
-    fmt.Println(strings.Trim("Get Access Token Result: The Cells Cloud Get Token API acts as a proxy service,", " "))
+func (request *PostAccessTokenRequest) Description() string {
+    return strings.Trim("Get Access Token Result: The Cells Cloud Get Token API acts as a proxy service,", " ")
 }

@@ -20,7 +20,7 @@ type SpreadsheetDigitalsignatureRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewSpreadsheetDigitalsignatureRequest(password string, Spreadsheet string, opts ...RequestOption) *SpreadsheetDigitalsignatureRequest {
+func NewSpreadsheetDigitalsignatureRequest(password string, Spreadsheet string, opts ...Option) *SpreadsheetDigitalsignatureRequest {
     req := &SpreadsheetDigitalsignatureRequest{
         password: password,
         Spreadsheet: Spreadsheet,
@@ -128,6 +128,6 @@ func (request *SpreadsheetDigitalsignatureRequest) GetMultipartForm() map[string
     return localVarFormParams
 }
 
-func (request *SpreadsheetDigitalsignatureRequest) Description() {
-    fmt.Println(strings.Trim("SpreadsheetDigitalsignature", " "))
+func (request *SpreadsheetDigitalsignatureRequest) Description() string {
+    return strings.Trim("SpreadsheetDigitalsignature", " ")
 }

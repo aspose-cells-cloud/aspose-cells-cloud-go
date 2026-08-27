@@ -20,7 +20,7 @@ type RemoveSpreadsheetBlankWorksheetsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewRemoveSpreadsheetBlankWorksheetsRequest(Spreadsheet string, opts ...RequestOption) *RemoveSpreadsheetBlankWorksheetsRequest {
+func NewRemoveSpreadsheetBlankWorksheetsRequest(Spreadsheet string, opts ...Option) *RemoveSpreadsheetBlankWorksheetsRequest {
     req := &RemoveSpreadsheetBlankWorksheetsRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -128,6 +128,6 @@ func (request *RemoveSpreadsheetBlankWorksheetsRequest) GetMultipartForm() map[s
     return localVarFormParams
 }
 
-func (request *RemoveSpreadsheetBlankWorksheetsRequest) Description() {
-    fmt.Println(strings.Trim("Delete all blank rows that do not contain any data or other objects.", " "))
+func (request *RemoveSpreadsheetBlankWorksheetsRequest) Description() string {
+    return strings.Trim("Delete all blank rows that do not contain any data or other objects.", " ")
 }

@@ -52,6 +52,11 @@ type ReaderSource struct {
 	reader io.ReadCloser
 }
 
+// NewReaderSource creates a ReaderSource from an io.ReadCloser.
+func NewReaderSource(r io.ReadCloser) *ReaderSource {
+	return &ReaderSource{reader: r}
+}
+
 func (r ReaderSource) Open() (io.ReadCloser, error) {
 	return r.reader, nil
 }

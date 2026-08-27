@@ -19,7 +19,7 @@ type PostWorksheetCellsRangeToImageRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorksheetCellsRangeToImageRequest(name string, rangeConvertRequest *models.RangeConvertRequest, sheetName string, opts ...RequestOption) *PostWorksheetCellsRangeToImageRequest {
+func NewPostWorksheetCellsRangeToImageRequest(name string, rangeConvertRequest *models.RangeConvertRequest, sheetName string, opts ...Option) *PostWorksheetCellsRangeToImageRequest {
     req := &PostWorksheetCellsRangeToImageRequest{
         name: name,
         rangeConvertRequest: rangeConvertRequest,
@@ -116,6 +116,6 @@ func (request *PostWorksheetCellsRangeToImageRequest) GetMultipartForm() map[str
     return localVarFormParams
 }
 
-func (request *PostWorksheetCellsRangeToImageRequest) Description() {
-    fmt.Println(strings.Trim("PostWorksheetCellsRangeToImage", " "))
+func (request *PostWorksheetCellsRangeToImageRequest) Description() string {
+    return strings.Trim("PostWorksheetCellsRangeToImage", " ")
 }

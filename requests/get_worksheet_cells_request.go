@@ -18,7 +18,7 @@ type GetWorksheetCellsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetWorksheetCellsRequest(name string, sheetName string, opts ...RequestOption) *GetWorksheetCellsRequest {
+func NewGetWorksheetCellsRequest(name string, sheetName string, opts ...Option) *GetWorksheetCellsRequest {
     req := &GetWorksheetCellsRequest{
         name: name,
         sheetName: sheetName,
@@ -123,6 +123,6 @@ func (request *GetWorksheetCellsRequest) GetMultipartForm() map[string]interface
     return localVarFormParams
 }
 
-func (request *GetWorksheetCellsRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve cell descriptions in a specified format.", " "))
+func (request *GetWorksheetCellsRequest) Description() string {
+    return strings.Trim("Retrieve cell descriptions in a specified format.", " ")
 }

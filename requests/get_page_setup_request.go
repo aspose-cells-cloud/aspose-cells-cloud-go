@@ -16,7 +16,7 @@ type GetPageSetupRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetPageSetupRequest(name string, sheetName string, opts ...RequestOption) *GetPageSetupRequest {
+func NewGetPageSetupRequest(name string, sheetName string, opts ...Option) *GetPageSetupRequest {
     req := &GetPageSetupRequest{
         name: name,
         sheetName: sheetName,
@@ -109,6 +109,6 @@ func (request *GetPageSetupRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *GetPageSetupRequest) Description() {
-    fmt.Println(strings.Trim("Retrieve page setup description in the worksheet.", " "))
+func (request *GetPageSetupRequest) Description() string {
+    return strings.Trim("Retrieve page setup description in the worksheet.", " ")
 }

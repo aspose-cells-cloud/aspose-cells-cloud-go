@@ -22,7 +22,7 @@ type MathCalculateRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewMathCalculateRequest(operation string, Spreadsheet string, value string, opts ...RequestOption) *MathCalculateRequest {
+func NewMathCalculateRequest(operation string, Spreadsheet string, value string, opts ...Option) *MathCalculateRequest {
     req := &MathCalculateRequest{
         operation: operation,
         Spreadsheet: Spreadsheet,
@@ -141,6 +141,6 @@ func (request *MathCalculateRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *MathCalculateRequest) Description() {
-    fmt.Println(strings.Trim("MathCalculate", " "))
+func (request *MathCalculateRequest) Description() string {
+    return strings.Trim("MathCalculate", " ")
 }

@@ -28,6 +28,7 @@ package asposecellscloud
 import (
 	"net/http"
 	"strings"
+	"sync"
 	"time"
 )
 
@@ -79,6 +80,9 @@ type Configuration struct {
 	ClientId           string
 	AccessToken        string
 	GetAccessTokenTime time.Time
+	TokenExpiresAt     time.Time
+
+	tokenMu sync.RWMutex // protects AccessToken, GetAccessTokenTime, TokenExpiresAt
 }
 
 func NewConfiguration(clientId string, clientSecret string, basePath string, version string) *Configuration {

@@ -18,7 +18,7 @@ type SearchSpreadsheetAllTextItemsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewSearchSpreadsheetAllTextItemsRequest(Spreadsheet string, opts ...RequestOption) *SearchSpreadsheetAllTextItemsRequest {
+func NewSearchSpreadsheetAllTextItemsRequest(Spreadsheet string, opts ...Option) *SearchSpreadsheetAllTextItemsRequest {
     req := &SearchSpreadsheetAllTextItemsRequest{
         Spreadsheet: Spreadsheet,
     }
@@ -114,6 +114,6 @@ func (request *SearchSpreadsheetAllTextItemsRequest) GetMultipartForm() map[stri
     return localVarFormParams
 }
 
-func (request *SearchSpreadsheetAllTextItemsRequest) Description() {
-    fmt.Println(strings.Trim("Get all text items in the remote spreadsheet.", " "))
+func (request *SearchSpreadsheetAllTextItemsRequest) Description() string {
+    return strings.Trim("Get all text items in the remote spreadsheet.", " ")
 }

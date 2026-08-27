@@ -27,7 +27,7 @@ type ConvertRangeToImageRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertRangeToImageRequest(format string, _range string, Spreadsheet string, worksheet string, opts ...RequestOption) *ConvertRangeToImageRequest {
+func NewConvertRangeToImageRequest(format string, _range string, Spreadsheet string, worksheet string, opts ...Option) *ConvertRangeToImageRequest {
     req := &ConvertRangeToImageRequest{
         format: format,
         _range: _range,
@@ -175,6 +175,6 @@ func (request *ConvertRangeToImageRequest) GetMultipartForm() map[string]interfa
     return localVarFormParams
 }
 
-func (request *ConvertRangeToImageRequest) Description() {
-    fmt.Println(strings.Trim("Converts a range of spreadsheet on a local drive to the image file.", " "))
+func (request *ConvertRangeToImageRequest) Description() string {
+    return strings.Trim("Converts a range of spreadsheet on a local drive to the image file.", " ")
 }

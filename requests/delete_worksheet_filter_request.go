@@ -18,7 +18,7 @@ type DeleteWorksheetFilterRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewDeleteWorksheetFilterRequest(fieldIndex int, name string, sheetName string, opts ...RequestOption) *DeleteWorksheetFilterRequest {
+func NewDeleteWorksheetFilterRequest(fieldIndex int, name string, sheetName string, opts ...Option) *DeleteWorksheetFilterRequest {
     req := &DeleteWorksheetFilterRequest{
         fieldIndex: fieldIndex,
         name: name,
@@ -119,6 +119,6 @@ func (request *DeleteWorksheetFilterRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *DeleteWorksheetFilterRequest) Description() {
-    fmt.Println(strings.Trim("Delete a filter for a column in the worksheet.", " "))
+func (request *DeleteWorksheetFilterRequest) Description() string {
+    return strings.Trim("Delete a filter for a column in the worksheet.", " ")
 }

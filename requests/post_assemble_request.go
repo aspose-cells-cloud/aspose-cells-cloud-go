@@ -21,7 +21,7 @@ type PostAssembleRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostAssembleRequest(datasource string, File string, opts ...RequestOption) *PostAssembleRequest {
+func NewPostAssembleRequest(datasource string, File string, opts ...Option) *PostAssembleRequest {
     req := &PostAssembleRequest{
         datasource: datasource,
         File: File,
@@ -135,6 +135,6 @@ func (request *PostAssembleRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostAssembleRequest) Description() {
-    fmt.Println(strings.Trim("Assemble data files with template files to generate files in various formats.", " "))
+func (request *PostAssembleRequest) Description() string {
+    return strings.Trim("Assemble data files with template files to generate files in various formats.", " ")
 }

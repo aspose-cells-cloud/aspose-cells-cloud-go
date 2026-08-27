@@ -14,7 +14,7 @@ type GetFileVersionsRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewGetFileVersionsRequest(path string, opts ...RequestOption) *GetFileVersionsRequest {
+func NewGetFileVersionsRequest(path string, opts ...Option) *GetFileVersionsRequest {
     req := &GetFileVersionsRequest{
         path: path,
     }
@@ -96,6 +96,6 @@ func (request *GetFileVersionsRequest) GetMultipartForm() map[string]interface{}
     return localVarFormParams
 }
 
-func (request *GetFileVersionsRequest) Description() {
-    fmt.Println(strings.Trim("GetFileVersions", " "))
+func (request *GetFileVersionsRequest) Description() string {
+    return strings.Trim("GetFileVersions", " ")
 }

@@ -20,7 +20,7 @@ type PostConvertWorkbookToHtmlRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostConvertWorkbookToHtmlRequest(File string, opts ...RequestOption) *PostConvertWorkbookToHtmlRequest {
+func NewPostConvertWorkbookToHtmlRequest(File string, opts ...Option) *PostConvertWorkbookToHtmlRequest {
     req := &PostConvertWorkbookToHtmlRequest{
         File: File,
     }
@@ -128,6 +128,6 @@ func (request *PostConvertWorkbookToHtmlRequest) GetMultipartForm() map[string]i
     return localVarFormParams
 }
 
-func (request *PostConvertWorkbookToHtmlRequest) Description() {
-    fmt.Println(strings.Trim("Convert Excel file to HTML files.", " "))
+func (request *PostConvertWorkbookToHtmlRequest) Description() string {
+    return strings.Trim("Convert Excel file to HTML files.", " ")
 }

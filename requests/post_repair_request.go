@@ -17,7 +17,7 @@ type PostRepairRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostRepairRequest(File string, opts ...RequestOption) *PostRepairRequest {
+func NewPostRepairRequest(File string, opts ...Option) *PostRepairRequest {
     req := &PostRepairRequest{
         File: File,
     }
@@ -107,6 +107,6 @@ func (request *PostRepairRequest) GetMultipartForm() map[string]interface{} {
     return localVarFormParams
 }
 
-func (request *PostRepairRequest) Description() {
-    fmt.Println(strings.Trim("Repair abnormal files and generate files in various formats.", " "))
+func (request *PostRepairRequest) Description() string {
+    return strings.Trim("Repair abnormal files and generate files in various formats.", " ")
 }

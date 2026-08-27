@@ -20,7 +20,7 @@ type PostWorkbookExportXMLRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewPostWorkbookExportXMLRequest(name string, opts ...RequestOption) *PostWorkbookExportXMLRequest {
+func NewPostWorkbookExportXMLRequest(name string, opts ...Option) *PostWorkbookExportXMLRequest {
     req := &PostWorkbookExportXMLRequest{
         name: name,
     }
@@ -138,6 +138,6 @@ func (request *PostWorkbookExportXMLRequest) GetMultipartForm() map[string]inter
     return localVarFormParams
 }
 
-func (request *PostWorkbookExportXMLRequest) Description() {
-    fmt.Println(strings.Trim("Export XML data from an Excel file.", " "))
+func (request *PostWorkbookExportXMLRequest) Description() string {
+    return strings.Trim("Export XML data from an Excel file.", " ")
 }

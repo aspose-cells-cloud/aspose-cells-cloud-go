@@ -29,7 +29,7 @@ type ImportCSVDataIntoSpreadsheetRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewImportCSVDataIntoSpreadsheetRequest(datafile string, Spreadsheet string, startcell string, worksheet string, opts ...RequestOption) *ImportCSVDataIntoSpreadsheetRequest {
+func NewImportCSVDataIntoSpreadsheetRequest(datafile string, Spreadsheet string, startcell string, worksheet string, opts ...Option) *ImportCSVDataIntoSpreadsheetRequest {
     req := &ImportCSVDataIntoSpreadsheetRequest{
         datafile: datafile,
         Spreadsheet: Spreadsheet,
@@ -186,6 +186,6 @@ func (request *ImportCSVDataIntoSpreadsheetRequest) GetMultipartForm() map[strin
     return localVarFormParams
 }
 
-func (request *ImportCSVDataIntoSpreadsheetRequest) Description() {
-    fmt.Println(strings.Trim("Import CSV data file into the local spreadsheet.", " "))
+func (request *ImportCSVDataIntoSpreadsheetRequest) Description() string {
+    return strings.Trim("Import CSV data file into the local spreadsheet.", " ")
 }

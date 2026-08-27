@@ -25,7 +25,7 @@ type ConvertRangeToJsonRequest struct {
     extraQueryParameters map[string]string
 }
 
-func NewConvertRangeToJsonRequest(_range string, Spreadsheet string, worksheet string, opts ...RequestOption) *ConvertRangeToJsonRequest {
+func NewConvertRangeToJsonRequest(_range string, Spreadsheet string, worksheet string, opts ...Option) *ConvertRangeToJsonRequest {
     req := &ConvertRangeToJsonRequest{
         _range: _range,
         Spreadsheet: Spreadsheet,
@@ -162,6 +162,6 @@ func (request *ConvertRangeToJsonRequest) GetMultipartForm() map[string]interfac
     return localVarFormParams
 }
 
-func (request *ConvertRangeToJsonRequest) Description() {
-    fmt.Println(strings.Trim("Converts a range of spreadsheet on a local drive to the json file.", " "))
+func (request *ConvertRangeToJsonRequest) Description() string {
+    return strings.Trim("Converts a range of spreadsheet on a local drive to the json file.", " ")
 }
