@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // FindResponse Represents the Find Response.
 type FindResponse struct {
-    CellsCloudResponse
-    // Property Summary: This property is annotated with the XML element name "count" and represents an integer value.
-    Count *int32 `json:"Count,omitempty" xml:"Count"`
-    TextItems *TextItems `json:"TextItems,omitempty" xml:"TextItems"`
+	CellsCloudResponse
+	// Property Summary: This property is annotated with the XML element name "count" and represents an integer value.
+	Count     *int32     `json:"Count,omitempty" xml:"Count"`
+	TextItems *TextItems `json:"TextItems,omitempty" xml:"TextItems"`
 }

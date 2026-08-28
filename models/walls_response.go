@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // WallsResponse Represents the Walls Response.
 type WallsResponse struct {
-    CellsCloudResponse
-    // The class has a public property named `Walls` of type `Walls`.
-    Walls *Walls `json:"Walls,omitempty" xml:"Walls"`
+	CellsCloudResponse
+	// The class has a public property named `Walls` of type `Walls`.
+	Walls *Walls `json:"Walls,omitempty" xml:"Walls"`
 }

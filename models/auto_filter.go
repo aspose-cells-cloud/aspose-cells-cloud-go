@@ -23,18 +23,17 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // AutoFilter Represents autofiltering for the specified worksheet.
 type AutoFilter struct {
-    LinkElement
-    // Gets the collection of the filter columns.
-    FilterColumns []FilterColumn `json:"FilterColumns,omitempty" xml:"FilterColumns"`
-    // Represents the range to which the specified AutoFilter applies.
-    Range string `json:"Range,omitempty" xml:"Range"`
-    // Gets the data sorter.
-    Sorter *DataSorter `json:"Sorter,omitempty" xml:"Sorter"`
-    // Indicates whether the AutoFilter button for this column is visible.
-    ShowFilterButton *bool `json:"ShowFilterButton,omitempty" xml:"ShowFilterButton"`
+	LinkElement
+	// Gets the collection of the filter columns.
+	FilterColumns []FilterColumn `json:"FilterColumns,omitempty" xml:"FilterColumns"`
+	// Represents the range to which the specified AutoFilter applies.
+	Range string `json:"Range,omitempty" xml:"Range"`
+	// Gets the data sorter.
+	Sorter *DataSorter `json:"Sorter,omitempty" xml:"Sorter"`
+	// Indicates whether the AutoFilter button for this column is visible.
+	ShowFilterButton *bool `json:"ShowFilterButton,omitempty" xml:"ShowFilterButton"`
 }

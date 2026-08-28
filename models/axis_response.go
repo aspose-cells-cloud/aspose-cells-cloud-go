@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // AxisResponse Represents the Axis Response.
 type AxisResponse struct {
-    CellsCloudResponse
-    // A property named "Axis" of type "Axis" with both getter and setter methods is present in the class.
-    Axis *Axis `json:"Axis,omitempty" xml:"Axis"`
+	CellsCloudResponse
+	// A property named "Axis" of type "Axis" with both getter and setter methods is present in the class.
+	Axis *Axis `json:"Axis,omitempty" xml:"Axis"`
 }

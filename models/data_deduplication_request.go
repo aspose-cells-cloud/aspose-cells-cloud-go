@@ -23,19 +23,18 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DataDeduplicationRequest
 type DataDeduplicationRequest struct {
-    // Spreadsheet files that require data fulling. 
-    File *FileInfo `json:"File,omitempty" xml:"File"`
-    // This class has a property named "DeduplicationRegion" of type "DeduplicationRegion" with a default value of a new instance of the "DeduplicationRegion" class.
-    DeduplicationRegion *DeduplicationRegion `json:"DeduplicationRegion,omitempty" xml:"DeduplicationRegion"`
-    // finish to data cleansing, outfile`s file format.
-    OutFileFormat string `json:"OutFileFormat,omitempty" xml:"OutFileFormat"`
-    // Whether check restriction of Spreadsheet file when user modify cells related objects.
-    CheckExcelRestriction *bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
-    // The regional settings for workbook.
-    Region string `json:"Region,omitempty" xml:"Region"`
+	// Spreadsheet files that require data fulling.
+	File *FileInfo `json:"File,omitempty" xml:"File"`
+	// This class has a property named "DeduplicationRegion" of type "DeduplicationRegion" with a default value of a new instance of the "DeduplicationRegion" class.
+	DeduplicationRegion *DeduplicationRegion `json:"DeduplicationRegion,omitempty" xml:"DeduplicationRegion"`
+	// finish to data cleansing, outfile`s file format.
+	OutFileFormat string `json:"OutFileFormat,omitempty" xml:"OutFileFormat"`
+	// Whether check restriction of Spreadsheet file when user modify cells related objects.
+	CheckExcelRestriction *bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
+	// The regional settings for workbook.
+	Region string `json:"Region,omitempty" xml:"Region"`
 }

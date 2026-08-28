@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // LegendEntryResponse Represents the LegendEntry Response.
 type LegendEntryResponse struct {
-    CellsCloudResponse
-    // A public property called LegendEntry of type LegendEntry with both getter and setter methods.
-    LegendEntry *LegendEntry `json:"LegendEntry,omitempty" xml:"LegendEntry"`
+	CellsCloudResponse
+	// A public property called LegendEntry of type LegendEntry with both getter and setter methods.
+	LegendEntry *LegendEntry `json:"LegendEntry,omitempty" xml:"LegendEntry"`
 }

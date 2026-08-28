@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ConditionalFormatting I'm here to help! Please provide me with the features that need to be summarized.
 type ConditionalFormatting struct {
-    LinkElement
-    // A public property called "sqref" of type string with a getter and a setter is defined in the class.
-    Sqref string `json:"sqref,omitempty" xml:"sqref"`
-    FormatConditions []FormatCondition `json:"FormatConditions,omitempty" xml:"FormatConditions"`
+	LinkElement
+	// A public property called "sqref" of type string with a getter and a setter is defined in the class.
+	Sqref            string            `json:"sqref,omitempty" xml:"sqref"`
+	FormatConditions []FormatCondition `json:"FormatConditions,omitempty" xml:"FormatConditions"`
 }

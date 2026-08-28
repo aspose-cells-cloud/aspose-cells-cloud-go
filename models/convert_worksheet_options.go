@@ -23,19 +23,18 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ConvertWorksheetOptions
 type ConvertWorksheetOptions struct {
-    // The class has a public property named "Name" with a getter and setter method.
-    Name string `json:"Name,omitempty" xml:"Name"`
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    WorksheetName string `json:"WorksheetName,omitempty" xml:"WorksheetName"`
-    PageSetup *PageSetup `json:"PageSetup,omitempty" xml:"PageSetup"`
-    ImageOrPrintOptions *ImageOrPrintOptions `json:"ImageOrPrintOptions,omitempty" xml:"ImageOrPrintOptions"`
-    ConvertFormat string `json:"ConvertFormat,omitempty" xml:"ConvertFormat"`
-    CheckExcelRestriction *bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
-    Region string `json:"Region,omitempty" xml:"Region"`
+	// The class has a public property named "Name" with a getter and setter method.
+	Name                  string               `json:"Name,omitempty" xml:"Name"`
+	DataSource            *DataSource          `json:"DataSource,omitempty" xml:"DataSource"`
+	FileInfo              *FileInfo            `json:"FileInfo,omitempty" xml:"FileInfo"`
+	WorksheetName         string               `json:"WorksheetName,omitempty" xml:"WorksheetName"`
+	PageSetup             *PageSetup           `json:"PageSetup,omitempty" xml:"PageSetup"`
+	ImageOrPrintOptions   *ImageOrPrintOptions `json:"ImageOrPrintOptions,omitempty" xml:"ImageOrPrintOptions"`
+	ConvertFormat         string               `json:"ConvertFormat,omitempty" xml:"ConvertFormat"`
+	CheckExcelRestriction *bool                `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
+	Region                string               `json:"Region,omitempty" xml:"Region"`
 }

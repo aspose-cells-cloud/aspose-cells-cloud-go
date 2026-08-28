@@ -23,23 +23,22 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DateTimeGroupItem Represents the datetime's group setting.
 type DateTimeGroupItem struct {
-    // Gets and sets the group type.
-    DateTimeGroupingType string `json:"DateTimeGroupingType,omitempty" xml:"DateTimeGroupingType"`
-    // Gets and sets the day of the grouped date time.
-    Day *int32 `json:"Day,omitempty" xml:"Day"`
-    // Gets and sets the hour of the grouped date time.
-    Hour *int32 `json:"Hour,omitempty" xml:"Hour"`
-    // Gets and sets the minute of the grouped date time.
-    Minute *int32 `json:"Minute,omitempty" xml:"Minute"`
-    // Gets and sets the month of the grouped date time.
-    Month *int32 `json:"Month,omitempty" xml:"Month"`
-    // Gets and sets the second of the grouped date time.
-    Second *int32 `json:"Second,omitempty" xml:"Second"`
-    // Gets and sets the year of the grouped date time.
-    Year *int32 `json:"Year,omitempty" xml:"Year"`
+	// Gets and sets the group type.
+	DateTimeGroupingType string `json:"DateTimeGroupingType,omitempty" xml:"DateTimeGroupingType"`
+	// Gets and sets the day of the grouped date time.
+	Day *int32 `json:"Day,omitempty" xml:"Day"`
+	// Gets and sets the hour of the grouped date time.
+	Hour *int32 `json:"Hour,omitempty" xml:"Hour"`
+	// Gets and sets the minute of the grouped date time.
+	Minute *int32 `json:"Minute,omitempty" xml:"Minute"`
+	// Gets and sets the month of the grouped date time.
+	Month *int32 `json:"Month,omitempty" xml:"Month"`
+	// Gets and sets the second of the grouped date time.
+	Second *int32 `json:"Second,omitempty" xml:"Second"`
+	// Gets and sets the year of the grouped date time.
+	Year *int32 `json:"Year,omitempty" xml:"Year"`
 }

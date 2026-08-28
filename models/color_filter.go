@@ -23,16 +23,15 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ColorFilter Color filter.
 type ColorFilter struct {
-    // Whether filter by the cell's fill color.             
-    FilterByFillColor *bool `json:"FilterByFillColor,omitempty" xml:"FilterByFillColor"`
-    // A property "Pattern" of type string with a getter and setter is defined.
-    Pattern string `json:"Pattern,omitempty" xml:"Pattern"`
-    Color *CellsColor `json:"Color,omitempty" xml:"Color"`
-    ForegroundColorColor *CellsColor `json:"ForegroundColorColor,omitempty" xml:"ForegroundColorColor"`
-    BackgroundColor *CellsColor `json:"BackgroundColor,omitempty" xml:"BackgroundColor"`
+	// Whether filter by the cell's fill color.
+	FilterByFillColor *bool `json:"FilterByFillColor,omitempty" xml:"FilterByFillColor"`
+	// A property "Pattern" of type string with a getter and setter is defined.
+	Pattern              string      `json:"Pattern,omitempty" xml:"Pattern"`
+	Color                *CellsColor `json:"Color,omitempty" xml:"Color"`
+	ForegroundColorColor *CellsColor `json:"ForegroundColorColor,omitempty" xml:"ForegroundColorColor"`
+	BackgroundColor      *CellsColor `json:"BackgroundColor,omitempty" xml:"BackgroundColor"`
 }

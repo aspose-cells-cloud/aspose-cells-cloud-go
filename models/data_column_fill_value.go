@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DataColumnFillValue Represents that the data column is populated with the specified value.
 type DataColumnFillValue struct {
-    // Represents specified column index.
-    ColumnIndex *int32 `json:"ColumnIndex,omitempty" xml:"ColumnIndex"`
-    // Represents specified data fill value.
-    DataFillValue *DataFillValue `json:"DataFillValue,omitempty" xml:"DataFillValue"`
+	// Represents specified column index.
+	ColumnIndex *int32 `json:"ColumnIndex,omitempty" xml:"ColumnIndex"`
+	// Represents specified data fill value.
+	DataFillValue *DataFillValue `json:"DataFillValue,omitempty" xml:"DataFillValue"`
 }

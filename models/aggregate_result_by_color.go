@@ -23,16 +23,15 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // AggregateResultByColor
 type AggregateResultByColor struct {
-    AggregateOperation string `json:"AggregateOperation,omitempty" xml:"AggregateOperation"`
-    ColorName string `json:"ColorName,omitempty" xml:"ColorName"`
-    Count *int32 `json:"Count,omitempty" xml:"Count"`
-    Sum *float64 `json:"Sum,omitempty" xml:"Sum"`
-    MaxValue *float64 `json:"MaxValue,omitempty" xml:"MaxValue"`
-    MinValue *float64 `json:"MinValue,omitempty" xml:"MinValue"`
-    AverageValue *float64 `json:"AverageValue,omitempty" xml:"AverageValue"`
+	AggregateOperation string   `json:"AggregateOperation,omitempty" xml:"AggregateOperation"`
+	ColorName          string   `json:"ColorName,omitempty" xml:"ColorName"`
+	Count              *int32   `json:"Count,omitempty" xml:"Count"`
+	Sum                *float64 `json:"Sum,omitempty" xml:"Sum"`
+	MaxValue           *float64 `json:"MaxValue,omitempty" xml:"MaxValue"`
+	MinValue           *float64 `json:"MinValue,omitempty" xml:"MinValue"`
+	AverageValue       *float64 `json:"AverageValue,omitempty" xml:"AverageValue"`
 }

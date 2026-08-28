@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CommentShapeResponse Represents the CommentShape Response.
 type CommentShapeResponse struct {
-    CellsCloudResponse
-    // The class has a public property named Comment of type CommentShape that can be accessed and modified.
-    Comment *CommentShape `json:"Comment,omitempty" xml:"Comment"`
+	CellsCloudResponse
+	// The class has a public property named Comment of type CommentShape that can be accessed and modified.
+	Comment *CommentShape `json:"Comment,omitempty" xml:"Comment"`
 }

@@ -13,8 +13,8 @@ import (
 	"fmt"
 
 	"asposecellscloud"
-	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/datasource"
+	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/requests"
 )
 
@@ -48,9 +48,6 @@ func importLocal(ctx context.Context, client *asposecellscloud.AsposeCellsCloudC
 	}
 
 	req := builder(startcell, worksheet, cfg.ReqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: failed to build import request", asposecellscloud.ErrInvalidParam)
-	}
 
 	// Set the multipart file fields expected by the v4.0 import endpoints.
 	if setter, ok := req.(sdkutil.DatafileSetter); ok {
@@ -64,7 +61,7 @@ func importLocal(ctx context.Context, client *asposecellscloud.AsposeCellsCloudC
 	if err != nil {
 		return err
 	}
-	return writeToSink(sink, resp.Body)
+	return sdkutil.WriteToSink(sink, resp.Body)
 }
 
 // ImportXML imports XML data into a template spreadsheet at the given

@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ColumnsResponse Represents the Columns Response.
 type ColumnsResponse struct {
-    CellsCloudResponse
-    // This property allows access to the columns within the class.
-    Columns *Columns `json:"Columns,omitempty" xml:"Columns"`
+	CellsCloudResponse
+	// This property allows access to the columns within the class.
+	Columns *Columns `json:"Columns,omitempty" xml:"Columns"`
 }

@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // StylesResponse Represents the Styles Response.
 type StylesResponse struct {
-    CellsCloudResponse
-    // collection of styles.
-    Styles *Styles `json:"Styles,omitempty" xml:"Styles"`
+	CellsCloudResponse
+	// collection of styles.
+	Styles *Styles `json:"Styles,omitempty" xml:"Styles"`
 }

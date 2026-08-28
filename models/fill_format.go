@@ -23,21 +23,20 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// FillFormat            Encapsulates the object that represents fill formatting for a shape.            
+// FillFormat            Encapsulates the object that represents fill formatting for a shape.
 type FillFormat struct {
-    // Gets and sets the fill type.  
-    Type string `json:"Type,omitempty" xml:"Type"`
-    // Gets  object.  
-    SolidFill *SolidFill `json:"SolidFill,omitempty" xml:"SolidFill"`
-    // Gets  object.  
-    PatternFill *PatternFill `json:"PatternFill,omitempty" xml:"PatternFill"`
-    // Gets  object.  
-    TextureFill *TextureFill `json:"TextureFill,omitempty" xml:"TextureFill"`
-    // Gets  object.  
-    GradientFill *GradientFill `json:"GradientFill,omitempty" xml:"GradientFill"`
-    // Gets and sets the picture image data.  
-    ImageData string `json:"ImageData,omitempty" xml:"ImageData"`
+	// Gets and sets the fill type.
+	Type string `json:"Type,omitempty" xml:"Type"`
+	// Gets  object.
+	SolidFill *SolidFill `json:"SolidFill,omitempty" xml:"SolidFill"`
+	// Gets  object.
+	PatternFill *PatternFill `json:"PatternFill,omitempty" xml:"PatternFill"`
+	// Gets  object.
+	TextureFill *TextureFill `json:"TextureFill,omitempty" xml:"TextureFill"`
+	// Gets  object.
+	GradientFill *GradientFill `json:"GradientFill,omitempty" xml:"GradientFill"`
+	// Gets and sets the picture image data.
+	ImageData string `json:"ImageData,omitempty" xml:"ImageData"`
 }

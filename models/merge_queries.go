@@ -23,19 +23,18 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // MergeQueries Represents merge quesies.
 type MergeQueries struct {
-    // Indicates the name of the data query , it is matched in the data query set.
-    DataQueryNameA string `json:"DataQueryNameA,omitempty" xml:"DataQueryNameA"`
-    // Represents index field  of DataA.
-    DataAIndexField string `json:"DataAIndexField,omitempty" xml:"DataAIndexField"`
-    // Indicates the name of the data query , it is matched in the data query set.
-    DataQueryNameB string `json:"DataQueryNameB,omitempty" xml:"DataQueryNameB"`
-    // Represents index field  of DataB.
-    DataBIndexField string `json:"DataBIndexField,omitempty" xml:"DataBIndexField"`
-    // Represents ethods of data consolidation.
-    JoinType string `json:"JoinType,omitempty" xml:"JoinType"`
+	// Indicates the name of the data query , it is matched in the data query set.
+	DataQueryNameA string `json:"DataQueryNameA,omitempty" xml:"DataQueryNameA"`
+	// Represents index field  of DataA.
+	DataAIndexField string `json:"DataAIndexField,omitempty" xml:"DataAIndexField"`
+	// Indicates the name of the data query , it is matched in the data query set.
+	DataQueryNameB string `json:"DataQueryNameB,omitempty" xml:"DataQueryNameB"`
+	// Represents index field  of DataB.
+	DataBIndexField string `json:"DataBIndexField,omitempty" xml:"DataBIndexField"`
+	// Represents ethods of data consolidation.
+	JoinType string `json:"JoinType,omitempty" xml:"JoinType"`
 }

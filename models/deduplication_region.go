@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DeduplicationRegion Represents data deduplication region.
 type DeduplicationRegion struct {
-    // Represents data range.
-    Ranges []Range `json:"Ranges,omitempty" xml:"Ranges"`
-    // Represents worksheet name list.
-    WorksheetNameList []string `json:"WorksheetNameList,omitempty" xml:"WorksheetNameList"`
+	// Represents data range.
+	Ranges []Range `json:"Ranges,omitempty" xml:"Ranges"`
+	// Represents worksheet name list.
+	WorksheetNameList []string `json:"WorksheetNameList,omitempty" xml:"WorksheetNameList"`
 }

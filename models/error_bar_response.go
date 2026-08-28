@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ErrorBarResponse Represents the ErrorBar Response.
 type ErrorBarResponse struct {
-    CellsCloudResponse
-    // The class has a public property named ErrorBar of type ErrorBar with a getter and setter.
-    ErrorBar *ErrorBar `json:"ErrorBar,omitempty" xml:"ErrorBar"`
+	CellsCloudResponse
+	// The class has a public property named ErrorBar of type ErrorBar with a getter and setter.
+	ErrorBar *ErrorBar `json:"ErrorBar,omitempty" xml:"ErrorBar"`
 }

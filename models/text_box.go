@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TextBox Encapsulates the object that represents a textbox in a spreadsheet.
 type TextBox struct {
-    Shape
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	Link *Link `json:"link,omitempty" xml:"link"`
 }

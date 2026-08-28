@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SeriesItems Class Summary:              - Features: Active class participation, group projects, quizzes, and final exam.
 type SeriesItems struct {
-    LinkElement
-    // This property allows setting and getting data for the category.
-    CategoryData string `json:"CategoryData,omitempty" xml:"CategoryData"`
-    IsColorVaried *bool `json:"IsColorVaried,omitempty" xml:"IsColorVaried"`
-    SecondCatergoryData string `json:"SecondCatergoryData,omitempty" xml:"SecondCatergoryData"`
-    SeriesList []Series `json:"SeriesList,omitempty" xml:"SeriesList"`
+	LinkElement
+	// This property allows setting and getting data for the category.
+	CategoryData        string   `json:"CategoryData,omitempty" xml:"CategoryData"`
+	IsColorVaried       *bool    `json:"IsColorVaried,omitempty" xml:"IsColorVaried"`
+	SecondCatergoryData string   `json:"SecondCatergoryData,omitempty" xml:"SecondCatergoryData"`
+	SeriesList          []Series `json:"SeriesList,omitempty" xml:"SeriesList"`
 }

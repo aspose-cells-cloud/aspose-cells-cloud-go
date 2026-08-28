@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TextBoxResponse Represents the TextBox Response.
 type TextBoxResponse struct {
-    CellsCloudResponse
-    // A public property named "Shape" of type TextBox is defined with both get and set accessors.
-    Shape *TextBox `json:"Shape,omitempty" xml:"Shape"`
+	CellsCloudResponse
+	// A public property named "Shape" of type TextBox is defined with both get and set accessors.
+	Shape *TextBox `json:"Shape,omitempty" xml:"Shape"`
 }

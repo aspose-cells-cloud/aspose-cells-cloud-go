@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CellsDrawingResponse Represents the CellsDrawing Response.
 type CellsDrawingResponse struct {
-    CellsCloudResponse
-    // This class has a public property named Shape of type CellsDrawing.
-    Shape *CellsDrawing `json:"Shape,omitempty" xml:"Shape"`
+	CellsCloudResponse
+	// This class has a public property named Shape of type CellsDrawing.
+	Shape *CellsDrawing `json:"Shape,omitempty" xml:"Shape"`
 }

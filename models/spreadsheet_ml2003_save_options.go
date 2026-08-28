@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SpreadsheetML2003SaveOptions
 type SpreadsheetML2003SaveOptions struct {
-    SaveOptions
-    ExportColumnIndexOfCell *bool `json:"ExportColumnIndexOfCell,omitempty" xml:"ExportColumnIndexOfCell"`
-    IsIndentedFormatting *bool `json:"IsIndentedFormatting,omitempty" xml:"IsIndentedFormatting"`
-    LimitAsXls *bool `json:"LimitAsXls,omitempty" xml:"LimitAsXls"`
+	SaveOptions
+	ExportColumnIndexOfCell *bool `json:"ExportColumnIndexOfCell,omitempty" xml:"ExportColumnIndexOfCell"`
+	IsIndentedFormatting    *bool `json:"IsIndentedFormatting,omitempty" xml:"IsIndentedFormatting"`
+	LimitAsXls              *bool `json:"LimitAsXls,omitempty" xml:"LimitAsXls"`
 }

@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // MatchConditionRequest Indicates the match condition that needs to be processed for the file name.
 type MatchConditionRequest struct {
-    // Regex Pattern.
-    RegexPattern string `json:"RegexPattern,omitempty" xml:"RegexPattern"`
-    // Name list.
-    FullMatchConditions []string `json:"FullMatchConditions,omitempty" xml:"FullMatchConditions"`
+	// Regex Pattern.
+	RegexPattern string `json:"RegexPattern,omitempty" xml:"RegexPattern"`
+	// Name list.
+	FullMatchConditions []string `json:"FullMatchConditions,omitempty" xml:"FullMatchConditions"`
 }

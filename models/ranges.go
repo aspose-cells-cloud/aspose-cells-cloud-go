@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// Ranges            Encapsulates a collection of  objects.            
+// Ranges            Encapsulates a collection of  objects.
 type Ranges struct {
-    // Property Summary: Contains a list of ranges specified by the XmlElement "Range".
-    RangeList []Range `json:"RangeList,omitempty" xml:"RangeList"`
+	// Property Summary: Contains a list of ranges specified by the XmlElement "Range".
+	RangeList []Range `json:"RangeList,omitempty" xml:"RangeList"`
 }

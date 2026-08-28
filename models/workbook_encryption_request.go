@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // WorkbookEncryptionRequest Used by workbook encryption/decryption requests.
 type WorkbookEncryptionRequest struct {
-    // Workbook encription type.
-    EncryptionType string `json:"EncryptionType,omitempty" xml:"EncryptionType"`
-    // Encription key length.
-    KeyLength *int32 `json:"KeyLength,omitempty" xml:"KeyLength"`
-    // Encription password.
-    Password string `json:"Password,omitempty" xml:"Password"`
+	// Workbook encription type.
+	EncryptionType string `json:"EncryptionType,omitempty" xml:"EncryptionType"`
+	// Encription key length.
+	KeyLength *int32 `json:"KeyLength,omitempty" xml:"KeyLength"`
+	// Encription password.
+	Password string `json:"Password,omitempty" xml:"Password"`
 }

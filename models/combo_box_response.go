@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ComboBoxResponse Represents the ComboBox Response.
 type ComboBoxResponse struct {
-    CellsCloudResponse
-    // A public property of type ComboBox named Shape with get and set accessors.
-    Shape *ComboBox `json:"Shape,omitempty" xml:"Shape"`
+	CellsCloudResponse
+	// A public property of type ComboBox named Shape with get and set accessors.
+	Shape *ComboBox `json:"Shape,omitempty" xml:"Shape"`
 }

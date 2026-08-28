@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SpecifyWordsCountOptions
 type SpecifyWordsCountOptions struct {
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    SearchWord string `json:"SearchWord,omitempty" xml:"SearchWord"`
+	DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	FileInfo   *FileInfo   `json:"FileInfo,omitempty" xml:"FileInfo"`
+	SearchWord string      `json:"SearchWord,omitempty" xml:"SearchWord"`
 }

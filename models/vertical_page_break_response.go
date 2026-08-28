@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // VerticalPageBreakResponse Represents the VerticalPageBreak Response.
 type VerticalPageBreakResponse struct {
-    CellsCloudResponse
-    // The class has a property that represents a vertical page break.
-    VerticalPageBreak *VerticalPageBreak `json:"VerticalPageBreak,omitempty" xml:"VerticalPageBreak"`
+	CellsCloudResponse
+	// The class has a property that represents a vertical page break.
+	VerticalPageBreak *VerticalPageBreak `json:"VerticalPageBreak,omitempty" xml:"VerticalPageBreak"`
 }

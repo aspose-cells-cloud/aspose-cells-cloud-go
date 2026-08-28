@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // UnpivotColumn Unpivot column.
 type UnpivotColumn struct {
-    // Indicates unpivot column names.
-    UnpivotColumnNames []string `json:"UnpivotColumnNames,omitempty" xml:"UnpivotColumnNames"`
-    // Indicates the column is used to store the name of unpivot columns.
-    ColumnMapName string `json:"ColumnMapName,omitempty" xml:"ColumnMapName"`
-    // Indicates the column is used to store the value of unpivot columns.
-    ValueMapName string `json:"ValueMapName,omitempty" xml:"ValueMapName"`
+	// Indicates unpivot column names.
+	UnpivotColumnNames []string `json:"UnpivotColumnNames,omitempty" xml:"UnpivotColumnNames"`
+	// Indicates the column is used to store the name of unpivot columns.
+	ColumnMapName string `json:"ColumnMapName,omitempty" xml:"ColumnMapName"`
+	// Indicates the column is used to store the value of unpivot columns.
+	ValueMapName string `json:"ValueMapName,omitempty" xml:"ValueMapName"`
 }

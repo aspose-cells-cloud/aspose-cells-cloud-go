@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Trendlines Represents a collection of all the  objects for the specified data series.
 type Trendlines struct {
-    LinkElement
-    // This property allows for a list of Trendline objects to be stored under the XmlElement "TrendLine".
-    TrendlineList []Trendline `json:"TrendlineList,omitempty" xml:"TrendlineList"`
+	LinkElement
+	// This property allows for a list of Trendline objects to be stored under the XmlElement "TrendLine".
+	TrendlineList []Trendline `json:"TrendlineList,omitempty" xml:"TrendlineList"`
 }

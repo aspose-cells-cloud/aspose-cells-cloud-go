@@ -23,34 +23,33 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ImageOrPrintOptions
 type ImageOrPrintOptions struct {
-    TextCrossType string `json:"TextCrossType,omitempty" xml:"TextCrossType"`
-    GridlineType string `json:"GridlineType,omitempty" xml:"GridlineType"`
-    OutputBlankPageWhenNothingToPrint *bool `json:"OutputBlankPageWhenNothingToPrint,omitempty" xml:"OutputBlankPageWhenNothingToPrint"`
-    CheckWorkbookDefaultFont *bool `json:"CheckWorkbookDefaultFont,omitempty" xml:"CheckWorkbookDefaultFont"`
-    DefaultFont string `json:"DefaultFont,omitempty" xml:"DefaultFont"`
-    IsOptimized *bool `json:"IsOptimized,omitempty" xml:"IsOptimized"`
-    PageCount *int32 `json:"PageCount,omitempty" xml:"PageCount"`
-    PageIndex *int32 `json:"PageIndex,omitempty" xml:"PageIndex"`
-    IsFontSubstitutionCharGranularity *bool `json:"IsFontSubstitutionCharGranularity,omitempty" xml:"IsFontSubstitutionCharGranularity"`
-    Transparent *bool `json:"Transparent,omitempty" xml:"Transparent"`
-    OnlyArea *bool `json:"OnlyArea,omitempty" xml:"OnlyArea"`
-    SVGFitToViewPort *bool `json:"SVGFitToViewPort,omitempty" xml:"SVGFitToViewPort"`
-    EmbededImageNameInSvg string `json:"EmbededImageNameInSvg,omitempty" xml:"EmbededImageNameInSvg"`
-    AllColumnsInOnePagePerSheet *bool `json:"AllColumnsInOnePagePerSheet,omitempty" xml:"AllColumnsInOnePagePerSheet"`
-    PrintWithStatusDialog *bool `json:"PrintWithStatusDialog,omitempty" xml:"PrintWithStatusDialog"`
-    HorizontalResolution *int32 `json:"HorizontalResolution,omitempty" xml:"HorizontalResolution"`
-    VerticalResolution *int32 `json:"VerticalResolution,omitempty" xml:"VerticalResolution"`
-    DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
-    TiffColorDepth string `json:"TiffColorDepth,omitempty" xml:"TiffColorDepth"`
-    TiffCompression string `json:"TiffCompression,omitempty" xml:"TiffCompression"`
-    PrintingPage string `json:"PrintingPage,omitempty" xml:"PrintingPage"`
-    Quality *int32 `json:"Quality,omitempty" xml:"Quality"`
-    ImageType string `json:"ImageType,omitempty" xml:"ImageType"`
-    OnePagePerSheet *bool `json:"OnePagePerSheet,omitempty" xml:"OnePagePerSheet"`
-    TiffBinarizationMethod string `json:"TiffBinarizationMethod,omitempty" xml:"TiffBinarizationMethod"`
+	TextCrossType                     string `json:"TextCrossType,omitempty" xml:"TextCrossType"`
+	GridlineType                      string `json:"GridlineType,omitempty" xml:"GridlineType"`
+	OutputBlankPageWhenNothingToPrint *bool  `json:"OutputBlankPageWhenNothingToPrint,omitempty" xml:"OutputBlankPageWhenNothingToPrint"`
+	CheckWorkbookDefaultFont          *bool  `json:"CheckWorkbookDefaultFont,omitempty" xml:"CheckWorkbookDefaultFont"`
+	DefaultFont                       string `json:"DefaultFont,omitempty" xml:"DefaultFont"`
+	IsOptimized                       *bool  `json:"IsOptimized,omitempty" xml:"IsOptimized"`
+	PageCount                         *int32 `json:"PageCount,omitempty" xml:"PageCount"`
+	PageIndex                         *int32 `json:"PageIndex,omitempty" xml:"PageIndex"`
+	IsFontSubstitutionCharGranularity *bool  `json:"IsFontSubstitutionCharGranularity,omitempty" xml:"IsFontSubstitutionCharGranularity"`
+	Transparent                       *bool  `json:"Transparent,omitempty" xml:"Transparent"`
+	OnlyArea                          *bool  `json:"OnlyArea,omitempty" xml:"OnlyArea"`
+	SVGFitToViewPort                  *bool  `json:"SVGFitToViewPort,omitempty" xml:"SVGFitToViewPort"`
+	EmbededImageNameInSvg             string `json:"EmbededImageNameInSvg,omitempty" xml:"EmbededImageNameInSvg"`
+	AllColumnsInOnePagePerSheet       *bool  `json:"AllColumnsInOnePagePerSheet,omitempty" xml:"AllColumnsInOnePagePerSheet"`
+	PrintWithStatusDialog             *bool  `json:"PrintWithStatusDialog,omitempty" xml:"PrintWithStatusDialog"`
+	HorizontalResolution              *int32 `json:"HorizontalResolution,omitempty" xml:"HorizontalResolution"`
+	VerticalResolution                *int32 `json:"VerticalResolution,omitempty" xml:"VerticalResolution"`
+	DefaultEditLanguage               string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
+	TiffColorDepth                    string `json:"TiffColorDepth,omitempty" xml:"TiffColorDepth"`
+	TiffCompression                   string `json:"TiffCompression,omitempty" xml:"TiffCompression"`
+	PrintingPage                      string `json:"PrintingPage,omitempty" xml:"PrintingPage"`
+	Quality                           *int32 `json:"Quality,omitempty" xml:"Quality"`
+	ImageType                         string `json:"ImageType,omitempty" xml:"ImageType"`
+	OnePagePerSheet                   *bool  `json:"OnePagePerSheet,omitempty" xml:"OnePagePerSheet"`
+	TiffBinarizationMethod            string `json:"TiffBinarizationMethod,omitempty" xml:"TiffBinarizationMethod"`
 }

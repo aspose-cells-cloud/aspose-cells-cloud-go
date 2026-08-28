@@ -23,26 +23,25 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Walls Encapsulates the object that represents the walls of a 3-D chart.
 type Walls struct {
-    Floor
-    // Gets the x coordinate of the left-bottom corner of Wall center in units of 1/4000 of chart's width after calls Chart.Calculate() method.
-    CenterX *int32 `json:"CenterX,omitempty" xml:"CenterX"`
-    // Gets the y coordinate of the left-bottom corner of Wall center in units of 1/4000 of chart's height after calls Chart.Calculate() method.
-    CenterY *int32 `json:"CenterY,omitempty" xml:"CenterY"`
-    // Gets the depth front to back in units of 1/4000 of chart's width after calls Chart.Calculate() method.
-    Depth *int32 `json:"Depth,omitempty" xml:"Depth"`
-    // Gets the height of top to bottom in units of 1/4000 of chart's height after calls Chart.Calculate() method.
-    Height *int32 `json:"Height,omitempty" xml:"Height"`
-    // Gets the width of left to right in units of 1/4000 of chart's width after calls Chart.Calculate() method.
-    Width *int32 `json:"Width,omitempty" xml:"Width"`
-    BackgroundColor *Color `json:"BackgroundColor,omitempty" xml:"BackgroundColor"`
-    FillFormat *FillFormat `json:"FillFormat,omitempty" xml:"FillFormat"`
-    ForegroundColor *Color `json:"ForegroundColor,omitempty" xml:"ForegroundColor"`
-    Format string `json:"Format,omitempty" xml:"Format"`
-    InvertIfNegative *bool `json:"InvertIfNegative,omitempty" xml:"InvertIfNegative"`
-    Transparency *float64 `json:"Transparency,omitempty" xml:"Transparency"`
+	Floor
+	// Gets the x coordinate of the left-bottom corner of Wall center in units of 1/4000 of chart's width after calls Chart.Calculate() method.
+	CenterX *int32 `json:"CenterX,omitempty" xml:"CenterX"`
+	// Gets the y coordinate of the left-bottom corner of Wall center in units of 1/4000 of chart's height after calls Chart.Calculate() method.
+	CenterY *int32 `json:"CenterY,omitempty" xml:"CenterY"`
+	// Gets the depth front to back in units of 1/4000 of chart's width after calls Chart.Calculate() method.
+	Depth *int32 `json:"Depth,omitempty" xml:"Depth"`
+	// Gets the height of top to bottom in units of 1/4000 of chart's height after calls Chart.Calculate() method.
+	Height *int32 `json:"Height,omitempty" xml:"Height"`
+	// Gets the width of left to right in units of 1/4000 of chart's width after calls Chart.Calculate() method.
+	Width            *int32      `json:"Width,omitempty" xml:"Width"`
+	BackgroundColor  *Color      `json:"BackgroundColor,omitempty" xml:"BackgroundColor"`
+	FillFormat       *FillFormat `json:"FillFormat,omitempty" xml:"FillFormat"`
+	ForegroundColor  *Color      `json:"ForegroundColor,omitempty" xml:"ForegroundColor"`
+	Format           string      `json:"Format,omitempty" xml:"Format"`
+	InvertIfNegative *bool       `json:"InvertIfNegative,omitempty" xml:"InvertIfNegative"`
+	Transparency     *float64    `json:"Transparency,omitempty" xml:"Transparency"`
 }

@@ -23,28 +23,27 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TrimContentOptions
 type TrimContentOptions struct {
-    // Represents data source.  There are three types of data, they are CloudFileSystem, RequestFiles, HttpUri.
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    // Represents file information. Include of filename, filesize, and file content(base64String).
-    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    // Trim Content
-    TrimContent string `json:"TrimContent,omitempty" xml:"TrimContent"`
-    // If the trim leading value is true, the trim content before and after cell values will be deleted.
-    TrimLeading *bool `json:"TrimLeading,omitempty" xml:"TrimLeading"`
-    // If the trim trailing value is true, the trim content before and after cell values will be deleted.
-    TrimTrailing *bool `json:"TrimTrailing,omitempty" xml:"TrimTrailing"`
-    // When the trim space between word to 1 parameter is true, it enables the removal of extra spaces between words within a cell, ensuring that only a single space is maintained between words.
-    TrimSpaceBetweenWordTo1 *bool `json:"TrimSpaceBetweenWordTo1,omitempty" xml:"TrimSpaceBetweenWordTo1"`
-    TrimNonBreakingSpaces *bool `json:"TrimNonBreakingSpaces,omitempty" xml:"TrimNonBreakingSpaces"`
-    // When this parameter is enabled (set to True), it deletes extra line breaks within the selected range, ensuring that only necessary line breaks are retained.
-    RemoveExtraLineBreaks *bool `json:"RemoveExtraLineBreaks,omitempty" xml:"RemoveExtraLineBreaks"`
-    // When this parameter is enabled (set to True), it removes all line breaks within the selected range, resulting in a continuous block of text without any line breaks.
-    RemoveAllLineBreaks *bool `json:"RemoveAllLineBreaks,omitempty" xml:"RemoveAllLineBreaks"`
-    // Specifies the range of cells within the worksheet where the spreadsheet operations will be performed. This parameter allows users to define the exact area to be processed, ensuring that operations are applied only to the designated cells.
-    ScopeOptions *ScopeOptions `json:"ScopeOptions,omitempty" xml:"ScopeOptions"`
+	// Represents data source.  There are three types of data, they are CloudFileSystem, RequestFiles, HttpUri.
+	DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	// Represents file information. Include of filename, filesize, and file content(base64String).
+	FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
+	// Trim Content
+	TrimContent string `json:"TrimContent,omitempty" xml:"TrimContent"`
+	// If the trim leading value is true, the trim content before and after cell values will be deleted.
+	TrimLeading *bool `json:"TrimLeading,omitempty" xml:"TrimLeading"`
+	// If the trim trailing value is true, the trim content before and after cell values will be deleted.
+	TrimTrailing *bool `json:"TrimTrailing,omitempty" xml:"TrimTrailing"`
+	// When the trim space between word to 1 parameter is true, it enables the removal of extra spaces between words within a cell, ensuring that only a single space is maintained between words.
+	TrimSpaceBetweenWordTo1 *bool `json:"TrimSpaceBetweenWordTo1,omitempty" xml:"TrimSpaceBetweenWordTo1"`
+	TrimNonBreakingSpaces   *bool `json:"TrimNonBreakingSpaces,omitempty" xml:"TrimNonBreakingSpaces"`
+	// When this parameter is enabled (set to True), it deletes extra line breaks within the selected range, ensuring that only necessary line breaks are retained.
+	RemoveExtraLineBreaks *bool `json:"RemoveExtraLineBreaks,omitempty" xml:"RemoveExtraLineBreaks"`
+	// When this parameter is enabled (set to True), it removes all line breaks within the selected range, resulting in a continuous block of text without any line breaks.
+	RemoveAllLineBreaks *bool `json:"RemoveAllLineBreaks,omitempty" xml:"RemoveAllLineBreaks"`
+	// Specifies the range of cells within the worksheet where the spreadsheet operations will be performed. This parameter allows users to define the exact area to be processed, ensuring that operations are applied only to the designated cells.
+	ScopeOptions *ScopeOptions `json:"ScopeOptions,omitempty" xml:"ScopeOptions"`
 }

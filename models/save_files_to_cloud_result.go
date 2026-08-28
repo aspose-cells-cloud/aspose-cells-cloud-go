@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SaveFilesToCloudResult Represents save file to cloud result.
 type SaveFilesToCloudResult struct {
-    TaskRunResult
-    // This class has a property named SavedFiles of type List Link.
-    SavedFiles []Link `json:"SavedFiles,omitempty" xml:"SavedFiles"`
+	TaskRunResult
+	// This class has a property named SavedFiles of type List Link.
+	SavedFiles []Link `json:"SavedFiles,omitempty" xml:"SavedFiles"`
 }

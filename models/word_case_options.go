@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// WordCaseOptions I'm here to assist you. Please provide the features you would like me to summarize for the class.             
+// WordCaseOptions I'm here to assist you. Please provide the features you would like me to summarize for the class.
 type WordCaseOptions struct {
-    // Represents data source.  There are three types of data, they are CloudFileSystem, RequestFiles, HttpUri.
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    // Represents file information. Include of filename, filesize, and file content(base64String).
-    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    WordCaseType string `json:"WordCaseType,omitempty" xml:"WordCaseType"`
-    ScopeOptions *ScopeOptions `json:"ScopeOptions,omitempty" xml:"ScopeOptions"`
+	// Represents data source.  There are three types of data, they are CloudFileSystem, RequestFiles, HttpUri.
+	DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	// Represents file information. Include of filename, filesize, and file content(base64String).
+	FileInfo     *FileInfo     `json:"FileInfo,omitempty" xml:"FileInfo"`
+	WordCaseType string        `json:"WordCaseType,omitempty" xml:"WordCaseType"`
+	ScopeOptions *ScopeOptions `json:"ScopeOptions,omitempty" xml:"ScopeOptions"`
 }

@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // NamesResponse Represents the Names Response.
 type NamesResponse struct {
-    CellsCloudResponse
-    // Property: This property represents an XML element named "names" and holds a Names object.
-    Names *Names `json:"Names,omitempty" xml:"Names"`
+	CellsCloudResponse
+	// Property: This property represents an XML element named "names" and holds a Names object.
+	Names *Names `json:"Names,omitempty" xml:"Names"`
 }

@@ -23,23 +23,22 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ExtractTextOptions I'm happy to help! Could you please provide me with the features you would like me to summarize for you?
 type ExtractTextOptions struct {
-    // This class has a public property for storing and retrieving a name value.
-    Name string `json:"Name,omitempty" xml:"Name"`
-    // Represents data source.  There are three types of data, they are CloudFileSystem, RequestFiles, HttpUri.
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    // Represents file information. Include of filename, filesize, and file content(base64String).
-    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
-    Range string `json:"Range,omitempty" xml:"Range"`
-    ExtractTextType string `json:"ExtractTextType,omitempty" xml:"ExtractTextType"`
-    BeforeText string `json:"BeforeText,omitempty" xml:"BeforeText"`
-    AfterText string `json:"AfterText,omitempty" xml:"AfterText"`
-    BeforePosition *int32 `json:"BeforePosition,omitempty" xml:"BeforePosition"`
-    AfterPosition *int32 `json:"AfterPosition,omitempty" xml:"AfterPosition"`
-    OutPositionRange string `json:"OutPositionRange,omitempty" xml:"OutPositionRange"`
+	// This class has a public property for storing and retrieving a name value.
+	Name string `json:"Name,omitempty" xml:"Name"`
+	// Represents data source.  There are three types of data, they are CloudFileSystem, RequestFiles, HttpUri.
+	DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	// Represents file information. Include of filename, filesize, and file content(base64String).
+	FileInfo         *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
+	Worksheet        string    `json:"Worksheet,omitempty" xml:"Worksheet"`
+	Range            string    `json:"Range,omitempty" xml:"Range"`
+	ExtractTextType  string    `json:"ExtractTextType,omitempty" xml:"ExtractTextType"`
+	BeforeText       string    `json:"BeforeText,omitempty" xml:"BeforeText"`
+	AfterText        string    `json:"AfterText,omitempty" xml:"AfterText"`
+	BeforePosition   *int32    `json:"BeforePosition,omitempty" xml:"BeforePosition"`
+	AfterPosition    *int32    `json:"AfterPosition,omitempty" xml:"AfterPosition"`
+	OutPositionRange string    `json:"OutPositionRange,omitempty" xml:"OutPositionRange"`
 }

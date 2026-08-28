@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Color
 type Color struct {
-    A []byte `json:"A,omitempty" xml:"A"`
-    R []byte `json:"R,omitempty" xml:"R"`
-    G []byte `json:"G,omitempty" xml:"G"`
-    B []byte `json:"B,omitempty" xml:"B"`
+	A []byte `json:"A,omitempty" xml:"A"`
+	R []byte `json:"R,omitempty" xml:"R"`
+	G []byte `json:"G,omitempty" xml:"G"`
+	B []byte `json:"B,omitempty" xml:"B"`
 }

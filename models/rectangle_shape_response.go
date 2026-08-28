@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RectangleShapeResponse Represents the RectangleShape Response.
 type RectangleShapeResponse struct {
-    CellsCloudResponse
-    // A public property named "Shape" that is of type RectangleShape and can be both accessed and modified.
-    Shape *RectangleShape `json:"Shape,omitempty" xml:"Shape"`
+	CellsCloudResponse
+	// A public property named "Shape" that is of type RectangleShape and can be both accessed and modified.
+	Shape *RectangleShape `json:"Shape,omitempty" xml:"Shape"`
 }

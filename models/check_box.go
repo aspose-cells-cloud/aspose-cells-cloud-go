@@ -23,17 +23,16 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CheckBox Represents a check box object in a worksheet.
 type CheckBox struct {
-    Shape
-    // Gets or set checkbox' value.
-    CheckedValue string `json:"CheckedValue,omitempty" xml:"CheckedValue"`
-    // Indicates whether the combobox has 3-D shading.
-    Shadow *bool `json:"Shadow,omitempty" xml:"Shadow"`
-    // Indicates if the checkbox is checked or not.
-    Value *bool `json:"Value,omitempty" xml:"Value"`
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	// Gets or set checkbox' value.
+	CheckedValue string `json:"CheckedValue,omitempty" xml:"CheckedValue"`
+	// Indicates whether the combobox has 3-D shading.
+	Shadow *bool `json:"Shadow,omitempty" xml:"Shadow"`
+	// Indicates if the checkbox is checked or not.
+	Value *bool `json:"Value,omitempty" xml:"Value"`
+	Link  *Link `json:"link,omitempty" xml:"link"`
 }

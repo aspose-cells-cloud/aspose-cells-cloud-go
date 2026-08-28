@@ -23,29 +23,28 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// Font            Encapsulates the font object used in a spreadsheet.            
+// Font            Encapsulates the font object used in a spreadsheet.
 type Font struct {
-    // Gets or sets the  of the font.  
-    Color *Color `json:"Color,omitempty" xml:"Color"`
-    // Gets and sets the double size of the font.  
-    DoubleSize *float64 `json:"DoubleSize,omitempty" xml:"DoubleSize"`
-    // Gets or sets a value indicating whether the font is bold.  
-    IsBold *bool `json:"IsBold,omitempty" xml:"IsBold"`
-    // Gets or sets a value indicating whether the font is italic.  
-    IsItalic *bool `json:"IsItalic,omitempty" xml:"IsItalic"`
-    // Gets or sets a value indicating whether the font is single strikeout.  
-    IsStrikeout *bool `json:"IsStrikeout,omitempty" xml:"IsStrikeout"`
-    // Gets or sets a value indicating whether the font is subscript.  
-    IsSubscript *bool `json:"IsSubscript,omitempty" xml:"IsSubscript"`
-    // Gets or sets a value indicating whether the font is super script.  
-    IsSuperscript *bool `json:"IsSuperscript,omitempty" xml:"IsSuperscript"`
-    // Gets  or sets the name of the .  
-    Name string `json:"Name,omitempty" xml:"Name"`
-    // Gets or sets the size of the font.  
-    Size *int32 `json:"Size,omitempty" xml:"Size"`
-    // Gets or sets the font underline type.  
-    Underline string `json:"Underline,omitempty" xml:"Underline"`
+	// Gets or sets the  of the font.
+	Color *Color `json:"Color,omitempty" xml:"Color"`
+	// Gets and sets the double size of the font.
+	DoubleSize *float64 `json:"DoubleSize,omitempty" xml:"DoubleSize"`
+	// Gets or sets a value indicating whether the font is bold.
+	IsBold *bool `json:"IsBold,omitempty" xml:"IsBold"`
+	// Gets or sets a value indicating whether the font is italic.
+	IsItalic *bool `json:"IsItalic,omitempty" xml:"IsItalic"`
+	// Gets or sets a value indicating whether the font is single strikeout.
+	IsStrikeout *bool `json:"IsStrikeout,omitempty" xml:"IsStrikeout"`
+	// Gets or sets a value indicating whether the font is subscript.
+	IsSubscript *bool `json:"IsSubscript,omitempty" xml:"IsSubscript"`
+	// Gets or sets a value indicating whether the font is super script.
+	IsSuperscript *bool `json:"IsSuperscript,omitempty" xml:"IsSuperscript"`
+	// Gets  or sets the name of the .
+	Name string `json:"Name,omitempty" xml:"Name"`
+	// Gets or sets the size of the font.
+	Size *int32 `json:"Size,omitempty" xml:"Size"`
+	// Gets or sets the font underline type.
+	Underline string `json:"Underline,omitempty" xml:"Underline"`
 }

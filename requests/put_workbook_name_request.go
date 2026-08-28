@@ -1,115 +1,116 @@
 package requests
 
 import (
-    "fmt"
-    "net/url"
-    "strings"
+	"fmt"
+	"net/url"
+	"strings"
 
-    "asposecellscloud/models"
+	"asposecellscloud/models"
 )
 
 type PutWorkbookNameRequest struct {
-    name string
-    newName *models.Name
+	name    string
+	newName *models.Name
 
-    folder string
-    storageName string
+	folder      string
+	storageName string
 
-    extraQueryParameters map[string]string
+	extraQueryParameters map[string]string
 }
 
 func NewPutWorkbookNameRequest(name string, newName *models.Name, opts ...Option) *PutWorkbookNameRequest {
-    req := &PutWorkbookNameRequest{
-        name: name,
-        newName: newName,
-    }
-    if req.name == "" {
-        return nil
-    }
-    if req.newName == nil {
-        return nil
-    }
+	req := &PutWorkbookNameRequest{
+		name:    name,
+		newName: newName,
+	}
+	cfg := &requestConfig{
+		Params: make(map[string]interface{}),
+	}
+	for _, opt := range opts {
+		opt.apply(cfg)
+	}
 
-    cfg := &requestConfig{
-        Params: make(map[string]interface{}),
-    }
-    for _, opt := range opts {
-        opt.apply(cfg)
-    }
+	if val, ok := cfg.Params["folder"].(string); ok {
+		req.folder = val
+	}
+	if val, ok := cfg.Params["storageName"].(string); ok {
+		req.storageName = val
+	}
+	if len(cfg.extraQueryParams) > 0 {
+		if req.extraQueryParameters == nil {
+			req.extraQueryParameters = make(map[string]string)
+		}
+		for k, v := range cfg.extraQueryParams {
+			req.extraQueryParameters[k] = v
+		}
+	}
 
-    if val, ok := cfg.Params["folder"].(string); ok {
-        req.folder = val
-    }
-    if val, ok := cfg.Params["storageName"].(string); ok {
-        req.storageName = val
-    }
-    if len(cfg.extraQueryParams) > 0 {
-        if req.extraQueryParameters == nil {
-            req.extraQueryParameters = make(map[string]string)
-        }
-        for k, v := range cfg.extraQueryParams {
-            req.extraQueryParameters[k] = v
-        }
-    }
+	return req
+}
 
-    return req
+func (request *PutWorkbookNameRequest) Validate() error {
+	if request.name == "" {
+		return fmt.Errorf("required request parameter %q is missing", "name")
+	}
+
+	if request.newName == nil {
+		return fmt.Errorf("required request parameter %q is missing", "newName")
+	}
+
+	return nil
 }
 
 func (request *PutWorkbookNameRequest) AddQueryParameter(key, value string) {
-    if request.extraQueryParameters == nil {
-        request.extraQueryParameters = make(map[string]string)
-    }
-    request.extraQueryParameters[key] = value
+	if request.extraQueryParameters == nil {
+		request.extraQueryParameters = make(map[string]string)
+	}
+	request.extraQueryParameters[key] = value
 }
 
 func (request *PutWorkbookNameRequest) AddQueryParameters(params map[string]string) {
-    if request.extraQueryParameters == nil {
-        request.extraQueryParameters = make(map[string]string)
-    }
-    for k, v := range params {
-        request.extraQueryParameters[k] = v
-    }
+	if request.extraQueryParameters == nil {
+		request.extraQueryParameters = make(map[string]string)
+	}
+	for k, v := range params {
+		request.extraQueryParameters[k] = v
+	}
 }
 
 func (request *PutWorkbookNameRequest) GetMethod() string {
-    return "PUT"
+	return "PUT"
 }
 
 func (request *PutWorkbookNameRequest) GetHeaderParameters() map[string]string {
-    localVarHeaderParams := make(map[string]string)
-    localVarHeaderParams["Content-Type"] = "application/json"
-    return localVarHeaderParams
+	localVarHeaderParams := make(map[string]string)
+	localVarHeaderParams["Content-Type"] = "application/json"
+	return localVarHeaderParams
 }
 
 func (request *PutWorkbookNameRequest) GetPath() string {
-    localVarPath := "/cells/{name}/names"
-    localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", request.name), -1)
-    return localVarPath
+	localVarPath := "/cells/{name}/names"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(fmt.Sprintf("%v", request.name)), -1)
+	return localVarPath
 }
 
 func (request *PutWorkbookNameRequest) GetQueryParameters() url.Values {
-    localVarQueryParams := url.Values{}
-    if request.folder != "" {
-        localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
-    }
-    if request.storageName != "" {
-        localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
-    }
-    for k, v := range request.extraQueryParameters {
-        localVarQueryParams.Add(k, v)
-    }
-    return localVarQueryParams
+	localVarQueryParams := url.Values{}
+	if request.folder != "" {
+		localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
+	}
+	if request.storageName != "" {
+		localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+	}
+	for k, v := range request.extraQueryParameters {
+		localVarQueryParams.Add(k, v)
+	}
+	return localVarQueryParams
 }
 
 func (request *PutWorkbookNameRequest) GetJSONBody() interface{} {
-    return &request.newName
+	return &request.newName
 }
 
 func (request *PutWorkbookNameRequest) GetMultipartForm() map[string]interface{} {
-    localVarFormParams := make(map[string]interface{})
-    return localVarFormParams
-}
-
-func (request *PutWorkbookNameRequest) Description() string {
-    return strings.Trim("Define a new name in the workbook.", " ")
+	localVarFormParams := make(map[string]interface{})
+	return localVarFormParams
 }

@@ -23,10 +23,9 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // HorizontalPageBreaks Encapsulates a collection of  objects.
 type HorizontalPageBreaks struct {
-    LinkElement
+	LinkElement
 }

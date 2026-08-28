@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Styles Represents data style collection.
 type Styles struct {
-    LinkElement
-    // This property contains a list of elements with the tag "style".
-    StyleList []Style `json:"StyleList,omitempty" xml:"StyleList"`
+	LinkElement
+	// This property contains a list of elements with the tag "style".
+	StyleList []Style `json:"StyleList,omitempty" xml:"StyleList"`
 }

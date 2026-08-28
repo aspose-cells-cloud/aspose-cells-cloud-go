@@ -1,127 +1,130 @@
 package requests
 
 import (
-    "fmt"
-    "net/url"
-    "strings"
+	"fmt"
+	"net/url"
+	"strings"
 
-    "asposecellscloud/models"
+	"asposecellscloud/models"
 )
 
 type PostUpdateWorksheetCellStyleRequest struct {
-    cellName string
-    name string
-    sheetName string
-    style *models.Style
+	cellName  string
+	name      string
+	sheetName string
+	style     *models.Style
 
-    folder string
-    storageName string
+	folder      string
+	storageName string
 
-    extraQueryParameters map[string]string
+	extraQueryParameters map[string]string
 }
 
 func NewPostUpdateWorksheetCellStyleRequest(cellName string, name string, sheetName string, style *models.Style, opts ...Option) *PostUpdateWorksheetCellStyleRequest {
-    req := &PostUpdateWorksheetCellStyleRequest{
-        cellName: cellName,
-        name: name,
-        sheetName: sheetName,
-        style: style,
-    }
-    if req.cellName == "" {
-        return nil
-    }
-    if req.name == "" {
-        return nil
-    }
-    if req.sheetName == "" {
-        return nil
-    }
-    if req.style == nil {
-        return nil
-    }
+	req := &PostUpdateWorksheetCellStyleRequest{
+		cellName:  cellName,
+		name:      name,
+		sheetName: sheetName,
+		style:     style,
+	}
+	cfg := &requestConfig{
+		Params: make(map[string]interface{}),
+	}
+	for _, opt := range opts {
+		opt.apply(cfg)
+	}
 
-    cfg := &requestConfig{
-        Params: make(map[string]interface{}),
-    }
-    for _, opt := range opts {
-        opt.apply(cfg)
-    }
+	if val, ok := cfg.Params["folder"].(string); ok {
+		req.folder = val
+	}
+	if val, ok := cfg.Params["storageName"].(string); ok {
+		req.storageName = val
+	}
+	if len(cfg.extraQueryParams) > 0 {
+		if req.extraQueryParameters == nil {
+			req.extraQueryParameters = make(map[string]string)
+		}
+		for k, v := range cfg.extraQueryParams {
+			req.extraQueryParameters[k] = v
+		}
+	}
 
-    if val, ok := cfg.Params["folder"].(string); ok {
-        req.folder = val
-    }
-    if val, ok := cfg.Params["storageName"].(string); ok {
-        req.storageName = val
-    }
-    if len(cfg.extraQueryParams) > 0 {
-        if req.extraQueryParameters == nil {
-            req.extraQueryParameters = make(map[string]string)
-        }
-        for k, v := range cfg.extraQueryParams {
-            req.extraQueryParameters[k] = v
-        }
-    }
+	return req
+}
 
-    return req
+func (request *PostUpdateWorksheetCellStyleRequest) Validate() error {
+	if request.cellName == "" {
+		return fmt.Errorf("required request parameter %q is missing", "cellName")
+	}
+
+	if request.name == "" {
+		return fmt.Errorf("required request parameter %q is missing", "name")
+	}
+
+	if request.sheetName == "" {
+		return fmt.Errorf("required request parameter %q is missing", "sheetName")
+	}
+
+	if request.style == nil {
+		return fmt.Errorf("required request parameter %q is missing", "style")
+	}
+
+	return nil
 }
 
 func (request *PostUpdateWorksheetCellStyleRequest) AddQueryParameter(key, value string) {
-    if request.extraQueryParameters == nil {
-        request.extraQueryParameters = make(map[string]string)
-    }
-    request.extraQueryParameters[key] = value
+	if request.extraQueryParameters == nil {
+		request.extraQueryParameters = make(map[string]string)
+	}
+	request.extraQueryParameters[key] = value
 }
 
 func (request *PostUpdateWorksheetCellStyleRequest) AddQueryParameters(params map[string]string) {
-    if request.extraQueryParameters == nil {
-        request.extraQueryParameters = make(map[string]string)
-    }
-    for k, v := range params {
-        request.extraQueryParameters[k] = v
-    }
+	if request.extraQueryParameters == nil {
+		request.extraQueryParameters = make(map[string]string)
+	}
+	for k, v := range params {
+		request.extraQueryParameters[k] = v
+	}
 }
 
 func (request *PostUpdateWorksheetCellStyleRequest) GetMethod() string {
-    return "POST"
+	return "POST"
 }
 
 func (request *PostUpdateWorksheetCellStyleRequest) GetHeaderParameters() map[string]string {
-    localVarHeaderParams := make(map[string]string)
-    localVarHeaderParams["Content-Type"] = "application/json"
-    return localVarHeaderParams
+	localVarHeaderParams := make(map[string]string)
+	localVarHeaderParams["Content-Type"] = "application/json"
+	return localVarHeaderParams
 }
 
 func (request *PostUpdateWorksheetCellStyleRequest) GetPath() string {
-    localVarPath := "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/style"
-    localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", request.name), -1)
-    localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", request.sheetName), -1)
-    localVarPath = strings.Replace(localVarPath, "{"+"cellName"+"}", fmt.Sprintf("%v", request.cellName), -1)
-    return localVarPath
+	localVarPath := "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/style"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(fmt.Sprintf("%v", request.name)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", url.PathEscape(fmt.Sprintf("%v", request.sheetName)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cellName"+"}", url.PathEscape(fmt.Sprintf("%v", request.cellName)), -1)
+	return localVarPath
 }
 
 func (request *PostUpdateWorksheetCellStyleRequest) GetQueryParameters() url.Values {
-    localVarQueryParams := url.Values{}
-    if request.folder != "" {
-        localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
-    }
-    if request.storageName != "" {
-        localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
-    }
-    for k, v := range request.extraQueryParameters {
-        localVarQueryParams.Add(k, v)
-    }
-    return localVarQueryParams
+	localVarQueryParams := url.Values{}
+	if request.folder != "" {
+		localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
+	}
+	if request.storageName != "" {
+		localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+	}
+	for k, v := range request.extraQueryParameters {
+		localVarQueryParams.Add(k, v)
+	}
+	return localVarQueryParams
 }
 
 func (request *PostUpdateWorksheetCellStyleRequest) GetJSONBody() interface{} {
-    return &request.style
+	return &request.style
 }
 
 func (request *PostUpdateWorksheetCellStyleRequest) GetMultipartForm() map[string]interface{} {
-    localVarFormParams := make(map[string]interface{})
-    return localVarFormParams
-}
-
-func (request *PostUpdateWorksheetCellStyleRequest) Description() string {
-    return strings.Trim("Set cell style using cell name in the worksheet.", " ")
+	localVarFormParams := make(map[string]interface{})
+	return localVarFormParams
 }

@@ -23,17 +23,16 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ConvertWorkbookOptions
 type ConvertWorkbookOptions struct {
-    // The class has a public property named "Name" with a getter and setter method.
-    Name string `json:"Name,omitempty" xml:"Name"`
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    PageSetup *PageSetup `json:"PageSetup,omitempty" xml:"PageSetup"`
-    SaveOptions *SaveOptions `json:"SaveOptions,omitempty" xml:"SaveOptions"`
-    ConvertFormat string `json:"ConvertFormat,omitempty" xml:"ConvertFormat"`
-    CheckExcelRestriction *bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
+	// The class has a public property named "Name" with a getter and setter method.
+	Name                  string       `json:"Name,omitempty" xml:"Name"`
+	DataSource            *DataSource  `json:"DataSource,omitempty" xml:"DataSource"`
+	FileInfo              *FileInfo    `json:"FileInfo,omitempty" xml:"FileInfo"`
+	PageSetup             *PageSetup   `json:"PageSetup,omitempty" xml:"PageSetup"`
+	SaveOptions           *SaveOptions `json:"SaveOptions,omitempty" xml:"SaveOptions"`
+	ConvertFormat         string       `json:"ConvertFormat,omitempty" xml:"ConvertFormat"`
+	CheckExcelRestriction *bool        `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
 }

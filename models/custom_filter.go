@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// CustomFilter            Represents the custom filter.            
+// CustomFilter            Represents the custom filter.
 type CustomFilter struct {
-    // Gets and sets the criteria.  
-    Criteria map[string]interface{} `json:"Criteria,omitempty" xml:"Criteria"`
-    // Gets and sets the filter operator type.  
-    FilterOperatorType string `json:"FilterOperatorType,omitempty" xml:"FilterOperatorType"`
+	// Gets and sets the criteria.
+	Criteria map[string]interface{} `json:"Criteria,omitempty" xml:"Criteria"`
+	// Gets and sets the filter operator type.
+	FilterOperatorType string `json:"FilterOperatorType,omitempty" xml:"FilterOperatorType"`
 }

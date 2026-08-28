@@ -23,9 +23,8 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// ChartGlobalizationSettings Represents the globalization settings for chart.  
+// ChartGlobalizationSettings Represents the globalization settings for chart.
 type ChartGlobalizationSettings struct {
 }

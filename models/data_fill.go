@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DataFill Represents data filling.
 type DataFill struct {
-    // Represents range of data filling.
-    Ranges []Range `json:"Ranges,omitempty" xml:"Ranges"`
-    // Represents that the data column is populated with the default value.
-    DataFillDefaultValue *DataFillValue `json:"DataFillDefaultValue,omitempty" xml:"DataFillDefaultValue"`
-    // Represents that the data column is populated with the specified value.
-    DataColumnFillValueList []DataColumnFillValue `json:"DataColumnFillValueList,omitempty" xml:"DataColumnFillValueList"`
+	// Represents range of data filling.
+	Ranges []Range `json:"Ranges,omitempty" xml:"Ranges"`
+	// Represents that the data column is populated with the default value.
+	DataFillDefaultValue *DataFillValue `json:"DataFillDefaultValue,omitempty" xml:"DataFillDefaultValue"`
+	// Represents that the data column is populated with the specified value.
+	DataColumnFillValueList []DataColumnFillValue `json:"DataColumnFillValueList,omitempty" xml:"DataColumnFillValueList"`
 }

@@ -23,23 +23,22 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // OperateObjectPosition Represents operate object position.
 type OperateObjectPosition struct {
-    // Represents data source of operate object.
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    // Represents data source of operate object.
-    Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
-    // Represents worksheet name of operate object.
-    SheetName string `json:"SheetName,omitempty" xml:"SheetName"`
-    // Represents chart index of operate object.
-    ChartIndex *int32 `json:"ChartIndex,omitempty" xml:"ChartIndex"`
-    // Represents shape index of operate object.
-    ShapeIndex *int32 `json:"ShapeIndex,omitempty" xml:"ShapeIndex"`
-    // Represents cell name of operate object.
-    CellName string `json:"CellName,omitempty" xml:"CellName"`
-    // Represents list object index of operate object.
-    ListObjectIndex *int32 `json:"ListObjectIndex,omitempty" xml:"ListObjectIndex"`
+	// Represents data source of operate object.
+	DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	// Represents data source of operate object.
+	Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
+	// Represents worksheet name of operate object.
+	SheetName string `json:"SheetName,omitempty" xml:"SheetName"`
+	// Represents chart index of operate object.
+	ChartIndex *int32 `json:"ChartIndex,omitempty" xml:"ChartIndex"`
+	// Represents shape index of operate object.
+	ShapeIndex *int32 `json:"ShapeIndex,omitempty" xml:"ShapeIndex"`
+	// Represents cell name of operate object.
+	CellName string `json:"CellName,omitempty" xml:"CellName"`
+	// Represents list object index of operate object.
+	ListObjectIndex *int32 `json:"ListObjectIndex,omitempty" xml:"ListObjectIndex"`
 }

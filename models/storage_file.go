@@ -23,21 +23,20 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 import "time"
 
 // StorageFile File or folder information
 type StorageFile struct {
-    // File or folder name.
-    Name string `json:"Name,omitempty" xml:"Name"`
-    // True if it is a folder.
-    IsFolder *bool `json:"IsFolder,omitempty" xml:"IsFolder"`
-    // File or folder last modified DateTime.
-    ModifiedDate time.Time `json:"ModifiedDate,omitempty" xml:"ModifiedDate"`
-    // File or folder size.
-    Size *int64 `json:"Size,omitempty" xml:"Size"`
-    // File or folder path.
-    Path string `json:"Path,omitempty" xml:"Path"`
+	// File or folder name.
+	Name string `json:"Name,omitempty" xml:"Name"`
+	// True if it is a folder.
+	IsFolder *bool `json:"IsFolder,omitempty" xml:"IsFolder"`
+	// File or folder last modified DateTime.
+	ModifiedDate time.Time `json:"ModifiedDate,omitempty" xml:"ModifiedDate"`
+	// File or folder size.
+	Size *int64 `json:"Size,omitempty" xml:"Size"`
+	// File or folder path.
+	Path string `json:"Path,omitempty" xml:"Path"`
 }

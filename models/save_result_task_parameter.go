@@ -23,14 +23,13 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SaveResultTaskParameter Represents save result task parameter.
 type SaveResultTaskParameter struct {
-    TaskParameter
-    // Represents result data source.
-    ResultSource string `json:"ResultSource,omitempty" xml:"ResultSource"`
-    // Represents result destination data.
-    ResultDestination *ResultDestination `json:"ResultDestination,omitempty" xml:"ResultDestination"`
+	TaskParameter
+	// Represents result data source.
+	ResultSource string `json:"ResultSource,omitempty" xml:"ResultSource"`
+	// Represents result destination data.
+	ResultDestination *ResultDestination `json:"ResultDestination,omitempty" xml:"ResultDestination"`
 }

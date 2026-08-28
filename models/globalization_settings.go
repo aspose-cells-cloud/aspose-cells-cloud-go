@@ -23,19 +23,18 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// GlobalizationSettings Represents the globalization settings.  
+// GlobalizationSettings Represents the globalization settings.
 type GlobalizationSettings struct {
-    // Gets or sets the globalization settings for Chart.  
-    ChartSettings *ChartGlobalizationSettings `json:"ChartSettings,omitempty" xml:"ChartSettings"`
-    // Gets or sets the globalization settings for pivot table.  
-    PivotSettings *PivotGlobalizationSettings `json:"PivotSettings,omitempty" xml:"PivotSettings"`
-    // Gets the separator for list, parameters of function, ...etc.  
-    ListSeparator string `json:"ListSeparator,omitempty" xml:"ListSeparator"`
-    // Gets the separator for rows in array data in formula.  
-    RowSeparatorOfFormulaArray string `json:"RowSeparatorOfFormulaArray,omitempty" xml:"RowSeparatorOfFormulaArray"`
-    // Gets the separator for the items in array's row data in formula.  
-    ColumnSeparatorOfFormulaArray string `json:"ColumnSeparatorOfFormulaArray,omitempty" xml:"ColumnSeparatorOfFormulaArray"`
+	// Gets or sets the globalization settings for Chart.
+	ChartSettings *ChartGlobalizationSettings `json:"ChartSettings,omitempty" xml:"ChartSettings"`
+	// Gets or sets the globalization settings for pivot table.
+	PivotSettings *PivotGlobalizationSettings `json:"PivotSettings,omitempty" xml:"PivotSettings"`
+	// Gets the separator for list, parameters of function, ...etc.
+	ListSeparator string `json:"ListSeparator,omitempty" xml:"ListSeparator"`
+	// Gets the separator for rows in array data in formula.
+	RowSeparatorOfFormulaArray string `json:"RowSeparatorOfFormulaArray,omitempty" xml:"RowSeparatorOfFormulaArray"`
+	// Gets the separator for the items in array's row data in formula.
+	ColumnSeparatorOfFormulaArray string `json:"ColumnSeparatorOfFormulaArray,omitempty" xml:"ColumnSeparatorOfFormulaArray"`
 }

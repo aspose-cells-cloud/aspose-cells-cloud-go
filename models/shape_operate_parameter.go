@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ShapeOperateParameter Represents shape operate parameter.
 type ShapeOperateParameter struct {
-    OperateParameter
-    // Represents shape object.
-    Shape *Shape `json:"Shape,omitempty" xml:"Shape"`
+	OperateParameter
+	// Represents shape object.
+	Shape *Shape `json:"Shape,omitempty" xml:"Shape"`
 }

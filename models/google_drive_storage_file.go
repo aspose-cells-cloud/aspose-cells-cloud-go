@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // GoogleDriveStorageFile
 type GoogleDriveStorageFile struct {
-    StorageFile
-    MimeType string `json:"MimeType,omitempty" xml:"MimeType"`
+	StorageFile
+	MimeType string `json:"MimeType,omitempty" xml:"MimeType"`
 }

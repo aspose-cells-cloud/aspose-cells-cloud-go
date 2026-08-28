@@ -23,19 +23,18 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // AnalyzedResult Represents results of analyzed data.
 type AnalyzedResult struct {
-    // Represents the file name of data file.
-    Filename string `json:"Filename,omitempty" xml:"Filename"`
-    // Represents summary about results of analyzed data.
-    Description string `json:"Description,omitempty" xml:"Description"`
-    // Represents Excel data statistics.
-    BasicStatistics *ExcelDataStatistics `json:"BasicStatistics,omitempty" xml:"BasicStatistics"`
-    // Represents analyzed table description.
-    Results []AnalyzedTableDescription `json:"Results,omitempty" xml:"Results"`
-    // base64String Excel file
-    SuggestedFile string `json:"SuggestedFile,omitempty" xml:"SuggestedFile"`
+	// Represents the file name of data file.
+	Filename string `json:"Filename,omitempty" xml:"Filename"`
+	// Represents summary about results of analyzed data.
+	Description string `json:"Description,omitempty" xml:"Description"`
+	// Represents Excel data statistics.
+	BasicStatistics *ExcelDataStatistics `json:"BasicStatistics,omitempty" xml:"BasicStatistics"`
+	// Represents analyzed table description.
+	Results []AnalyzedTableDescription `json:"Results,omitempty" xml:"Results"`
+	// base64String Excel file
+	SuggestedFile string `json:"SuggestedFile,omitempty" xml:"SuggestedFile"`
 }

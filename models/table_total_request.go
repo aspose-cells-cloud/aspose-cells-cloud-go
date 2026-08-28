@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TableTotalRequest Indicates table total request
 type TableTotalRequest struct {
-    // Indicates list column index.
-    ListColumnIndex *int32 `json:"ListColumnIndex,omitempty" xml:"ListColumnIndex"`
-    // Indicates totals calculation.
-    TotalsCalculation string `json:"TotalsCalculation,omitempty" xml:"TotalsCalculation"`
-    // Indicates custom formula.
-    CustomFormula string `json:"CustomFormula,omitempty" xml:"CustomFormula"`
+	// Indicates list column index.
+	ListColumnIndex *int32 `json:"ListColumnIndex,omitempty" xml:"ListColumnIndex"`
+	// Indicates totals calculation.
+	TotalsCalculation string `json:"TotalsCalculation,omitempty" xml:"TotalsCalculation"`
+	// Indicates custom formula.
+	CustomFormula string `json:"CustomFormula,omitempty" xml:"CustomFormula"`
 }

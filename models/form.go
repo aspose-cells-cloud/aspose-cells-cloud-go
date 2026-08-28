@@ -23,30 +23,29 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Form I'm happy to help! Please provide the features you would like me to summarize into one sentence for the class.
 type Form struct {
-    Shape
-    // A property named "FormType" of type string which can be both accessed and modified.
-    FormType string `json:"FormType,omitempty" xml:"FormType"`
-    CheckedValue string `json:"CheckedValue,omitempty" xml:"CheckedValue"`
-    Shadow *bool `json:"Shadow,omitempty" xml:"Shadow"`
-    InputRange string `json:"InputRange,omitempty" xml:"InputRange"`
-    SelectedIndex *int32 `json:"SelectedIndex,omitempty" xml:"SelectedIndex"`
-    SelectedValue string `json:"SelectedValue,omitempty" xml:"SelectedValue"`
-    SelectedCell *LinkElement `json:"SelectedCell,omitempty" xml:"SelectedCell"`
-    DropDownLines *int32 `json:"DropDownLines,omitempty" xml:"DropDownLines"`
-    ItemCount *int32 `json:"ItemCount,omitempty" xml:"ItemCount"`
-    SelectedCells []LinkElement `json:"SelectedCells,omitempty" xml:"SelectedCells"`
-    SelectionType string `json:"SelectionType,omitempty" xml:"SelectionType"`
-    IsChecked *bool `json:"IsChecked,omitempty" xml:"IsChecked"`
-    CurrentValue *int32 `json:"CurrentValue,omitempty" xml:"CurrentValue"`
-    Min *int32 `json:"Min,omitempty" xml:"Min"`
-    Max *int32 `json:"Max,omitempty" xml:"Max"`
-    IncrementalChange *int32 `json:"IncrementalChange,omitempty" xml:"IncrementalChange"`
-    PageChange *int32 `json:"PageChange,omitempty" xml:"PageChange"`
-    IsHorizontal *bool `json:"IsHorizontal,omitempty" xml:"IsHorizontal"`
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	// A property named "FormType" of type string which can be both accessed and modified.
+	FormType          string        `json:"FormType,omitempty" xml:"FormType"`
+	CheckedValue      string        `json:"CheckedValue,omitempty" xml:"CheckedValue"`
+	Shadow            *bool         `json:"Shadow,omitempty" xml:"Shadow"`
+	InputRange        string        `json:"InputRange,omitempty" xml:"InputRange"`
+	SelectedIndex     *int32        `json:"SelectedIndex,omitempty" xml:"SelectedIndex"`
+	SelectedValue     string        `json:"SelectedValue,omitempty" xml:"SelectedValue"`
+	SelectedCell      *LinkElement  `json:"SelectedCell,omitempty" xml:"SelectedCell"`
+	DropDownLines     *int32        `json:"DropDownLines,omitempty" xml:"DropDownLines"`
+	ItemCount         *int32        `json:"ItemCount,omitempty" xml:"ItemCount"`
+	SelectedCells     []LinkElement `json:"SelectedCells,omitempty" xml:"SelectedCells"`
+	SelectionType     string        `json:"SelectionType,omitempty" xml:"SelectionType"`
+	IsChecked         *bool         `json:"IsChecked,omitempty" xml:"IsChecked"`
+	CurrentValue      *int32        `json:"CurrentValue,omitempty" xml:"CurrentValue"`
+	Min               *int32        `json:"Min,omitempty" xml:"Min"`
+	Max               *int32        `json:"Max,omitempty" xml:"Max"`
+	IncrementalChange *int32        `json:"IncrementalChange,omitempty" xml:"IncrementalChange"`
+	PageChange        *int32        `json:"PageChange,omitempty" xml:"PageChange"`
+	IsHorizontal      *bool         `json:"IsHorizontal,omitempty" xml:"IsHorizontal"`
+	Link              *Link         `json:"link,omitempty" xml:"link"`
 }

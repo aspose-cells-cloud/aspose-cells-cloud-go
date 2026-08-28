@@ -23,10 +23,9 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SaveResult
 type SaveResult struct {
-    Documents []CellsCloudFileInfo `json:"Documents,omitempty" xml:"Documents"`
+	Documents []CellsCloudFileInfo `json:"Documents,omitempty" xml:"Documents"`
 }

@@ -23,10 +23,9 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DifSaveOptions
 type DifSaveOptions struct {
-    SaveOptions
+	SaveOptions
 }

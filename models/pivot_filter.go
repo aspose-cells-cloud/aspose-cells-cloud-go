@@ -23,29 +23,28 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PivotFilter Represents a PivotFilter in PivotFilter Collection.
 type PivotFilter struct {
-    // Gets the autofilter of the pivot filter.
-    AutoFilter *AutoFilter `json:"AutoFilter,omitempty" xml:"AutoFilter"`
-    // Gets the Evaluation Order of the pivot filter.
-    EvaluationOrder *int32 `json:"EvaluationOrder,omitempty" xml:"EvaluationOrder"`
-    // Gets the field index of the pivot filter.
-    FieldIndex *int32 `json:"FieldIndex,omitempty" xml:"FieldIndex"`
-    // Gets the autofilter type of the pivot filter.
-    FilterType string `json:"FilterType,omitempty" xml:"FilterType"`
-    // Gets the measure field index of the pivot filter.             
-    ValueFieldIndex *int32 `json:"ValueFieldIndex,omitempty" xml:"ValueFieldIndex"`
-    // Gets the member property field index of the pivot filter.             
-    MemberPropertyFieldIndex *int32 `json:"MemberPropertyFieldIndex,omitempty" xml:"MemberPropertyFieldIndex"`
-    // Gets the name of the pivot filter.
-    Name string `json:"Name,omitempty" xml:"Name"`
-    // Gets the string value1 of the label pivot filter.             
-    Value1 string `json:"Value1,omitempty" xml:"Value1"`
-    // Gets the string value2 of the label pivot filter.             
-    Value2 string `json:"Value2,omitempty" xml:"Value2"`
-    // A property that allows for setting and getting a Top10Filter object for filtering data.
-    Top10Filter *Top10Filter `json:"Top10Filter,omitempty" xml:"Top10Filter"`
+	// Gets the autofilter of the pivot filter.
+	AutoFilter *AutoFilter `json:"AutoFilter,omitempty" xml:"AutoFilter"`
+	// Gets the Evaluation Order of the pivot filter.
+	EvaluationOrder *int32 `json:"EvaluationOrder,omitempty" xml:"EvaluationOrder"`
+	// Gets the field index of the pivot filter.
+	FieldIndex *int32 `json:"FieldIndex,omitempty" xml:"FieldIndex"`
+	// Gets the autofilter type of the pivot filter.
+	FilterType string `json:"FilterType,omitempty" xml:"FilterType"`
+	// Gets the measure field index of the pivot filter.
+	ValueFieldIndex *int32 `json:"ValueFieldIndex,omitempty" xml:"ValueFieldIndex"`
+	// Gets the member property field index of the pivot filter.
+	MemberPropertyFieldIndex *int32 `json:"MemberPropertyFieldIndex,omitempty" xml:"MemberPropertyFieldIndex"`
+	// Gets the name of the pivot filter.
+	Name string `json:"Name,omitempty" xml:"Name"`
+	// Gets the string value1 of the label pivot filter.
+	Value1 string `json:"Value1,omitempty" xml:"Value1"`
+	// Gets the string value2 of the label pivot filter.
+	Value2 string `json:"Value2,omitempty" xml:"Value2"`
+	// A property that allows for setting and getting a Top10Filter object for filtering data.
+	Top10Filter *Top10Filter `json:"Top10Filter,omitempty" xml:"Top10Filter"`
 }

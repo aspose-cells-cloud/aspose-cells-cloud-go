@@ -23,14 +23,13 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Rows Collects the  objects that represent the individual rows in a worksheet.
 type Rows struct {
-    LinkElement
-    // This property allows access to set and retrieve the maximum row value in the class.
-    MaxRow *int32 `json:"MaxRow,omitempty" xml:"MaxRow"`
-    RowsCount *int32 `json:"RowsCount,omitempty" xml:"RowsCount"`
-    RowsList []LinkElement `json:"RowsList,omitempty" xml:"RowsList"`
+	LinkElement
+	// This property allows access to set and retrieve the maximum row value in the class.
+	MaxRow    *int32        `json:"MaxRow,omitempty" xml:"MaxRow"`
+	RowsCount *int32        `json:"RowsCount,omitempty" xml:"RowsCount"`
+	RowsList  []LinkElement `json:"RowsList,omitempty" xml:"RowsList"`
 }

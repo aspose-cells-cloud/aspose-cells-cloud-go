@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Hyperlinks Encapsulates a collection of  objects.
 type Hyperlinks struct {
-    LinkElement
-    // Property Summary: An integer property named Count with an XML element name "count."
-    Count *int32 `json:"Count,omitempty" xml:"Count"`
-    HyperlinkList []LinkElement `json:"HyperlinkList,omitempty" xml:"HyperlinkList"`
+	LinkElement
+	// Property Summary: An integer property named Count with an XML element name "count."
+	Count         *int32        `json:"Count,omitempty" xml:"Count"`
+	HyperlinkList []LinkElement `json:"HyperlinkList,omitempty" xml:"HyperlinkList"`
 }

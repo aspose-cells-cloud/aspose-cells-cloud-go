@@ -23,18 +23,17 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PdfSecurityOptions
 type PdfSecurityOptions struct {
-    AnnotationsPermission *bool `json:"AnnotationsPermission,omitempty" xml:"AnnotationsPermission"`
-    AssembleDocumentPermission *bool `json:"AssembleDocumentPermission,omitempty" xml:"AssembleDocumentPermission"`
-    ExtractContentPermission *bool `json:"ExtractContentPermission,omitempty" xml:"ExtractContentPermission"`
-    FillFormsPermission *bool `json:"FillFormsPermission,omitempty" xml:"FillFormsPermission"`
-    FullQualityPrintPermission *bool `json:"FullQualityPrintPermission,omitempty" xml:"FullQualityPrintPermission"`
-    ModifyDocumentPermission *bool `json:"ModifyDocumentPermission,omitempty" xml:"ModifyDocumentPermission"`
-    OwnerPassword string `json:"OwnerPassword,omitempty" xml:"OwnerPassword"`
-    PrintPermission *bool `json:"PrintPermission,omitempty" xml:"PrintPermission"`
-    UserPassword string `json:"UserPassword,omitempty" xml:"UserPassword"`
+	AnnotationsPermission      *bool  `json:"AnnotationsPermission,omitempty" xml:"AnnotationsPermission"`
+	AssembleDocumentPermission *bool  `json:"AssembleDocumentPermission,omitempty" xml:"AssembleDocumentPermission"`
+	ExtractContentPermission   *bool  `json:"ExtractContentPermission,omitempty" xml:"ExtractContentPermission"`
+	FillFormsPermission        *bool  `json:"FillFormsPermission,omitempty" xml:"FillFormsPermission"`
+	FullQualityPrintPermission *bool  `json:"FullQualityPrintPermission,omitempty" xml:"FullQualityPrintPermission"`
+	ModifyDocumentPermission   *bool  `json:"ModifyDocumentPermission,omitempty" xml:"ModifyDocumentPermission"`
+	OwnerPassword              string `json:"OwnerPassword,omitempty" xml:"OwnerPassword"`
+	PrintPermission            *bool  `json:"PrintPermission,omitempty" xml:"PrintPermission"`
+	UserPassword               string `json:"UserPassword,omitempty" xml:"UserPassword"`
 }

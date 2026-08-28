@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // FilesResult Class features: Weekly lectures, group projects, midterm and final exams, and participation in class discussions.
 type FilesResult struct {
-    // A property named **Files** of type **IList FileInfo ** containing a collection of file information objects.
-    Files []FileInfo `json:"Files,omitempty" xml:"Files"`
+	// A property named **Files** of type **IList FileInfo ** containing a collection of file information objects.
+	Files []FileInfo `json:"Files,omitempty" xml:"Files"`
 }

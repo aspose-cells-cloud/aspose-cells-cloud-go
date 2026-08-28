@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Worksheets Encapsulates a collection of  objects.
 type Worksheets struct {
-    LinkElement
-    // A property named "WorksheetList" that contains a list of elements with the XML element name "worksheet".
-    WorksheetList []LinkElement `json:"WorksheetList,omitempty" xml:"WorksheetList"`
+	LinkElement
+	// A property named "WorksheetList" that contains a list of elements with the XML element name "worksheet".
+	WorksheetList []LinkElement `json:"WorksheetList,omitempty" xml:"WorksheetList"`
 }

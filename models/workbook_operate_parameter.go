@@ -23,10 +23,9 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // WorkbookOperateParameter Represents workbook operate parameter.
 type WorkbookOperateParameter struct {
-    OperateParameter
+	OperateParameter
 }

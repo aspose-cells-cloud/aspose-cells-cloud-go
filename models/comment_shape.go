@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CommentShape Represents the shape of the comment.
 type CommentShape struct {
-    Shape
-    // Gets the comment object.
-    Comment *LinkElement `json:"Comment,omitempty" xml:"Comment"`
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	// Gets the comment object.
+	Comment *LinkElement `json:"Comment,omitempty" xml:"Comment"`
+	Link    *Link        `json:"link,omitempty" xml:"link"`
 }

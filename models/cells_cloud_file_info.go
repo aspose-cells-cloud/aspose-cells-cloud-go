@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CellsCloudFileInfo
 type CellsCloudFileInfo struct {
-    Name string `json:"Name,omitempty" xml:"Name"`
-    Size *int64 `json:"Size,omitempty" xml:"Size"`
-    Folder string `json:"Folder,omitempty" xml:"Folder"`
-    Storage string `json:"Storage,omitempty" xml:"Storage"`
+	Name    string `json:"Name,omitempty" xml:"Name"`
+	Size    *int64 `json:"Size,omitempty" xml:"Size"`
+	Folder  string `json:"Folder,omitempty" xml:"Folder"`
+	Storage string `json:"Storage,omitempty" xml:"Storage"`
 }

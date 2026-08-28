@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TaskRunResultResponse Represents the TaskRunResult Response.
 type TaskRunResultResponse struct {
-    CellsCloudResponse
-    // This class has a property named "TaskRunResult" of type "TaskRunResult" that can be both accessed and modified.
-    TaskRunResult *TaskRunResult `json:"TaskRunResult,omitempty" xml:"TaskRunResult"`
+	CellsCloudResponse
+	// This class has a property named "TaskRunResult" of type "TaskRunResult" that can be both accessed and modified.
+	TaskRunResult *TaskRunResult `json:"TaskRunResult,omitempty" xml:"TaskRunResult"`
 }

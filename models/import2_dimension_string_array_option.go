@@ -23,14 +23,13 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Import2DimensionStringArrayOption I'm eager to assist you! Please provide me with the features you would like me to summarize into one sentence for your class summary.
 type Import2DimensionStringArrayOption struct {
-    ImportOption
-    // This class has a property called FirstRow of type integer with a public getter and setter.
-    FirstRow *int32 `json:"FirstRow,omitempty" xml:"FirstRow"`
-    FirstColumn *int32 `json:"FirstColumn,omitempty" xml:"FirstColumn"`
-    Data []interface{} `json:"Data,omitempty" xml:"Data"`
+	ImportOption
+	// This class has a property called FirstRow of type integer with a public getter and setter.
+	FirstRow    *int32        `json:"FirstRow,omitempty" xml:"FirstRow"`
+	FirstColumn *int32        `json:"FirstColumn,omitempty" xml:"FirstColumn"`
+	Data        []interface{} `json:"Data,omitempty" xml:"Data"`
 }

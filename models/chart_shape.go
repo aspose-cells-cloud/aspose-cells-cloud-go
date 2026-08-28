@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ChartShape Chart shape object
 type ChartShape struct {
-    Shape
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	Link *Link `json:"link,omitempty" xml:"link"`
 }

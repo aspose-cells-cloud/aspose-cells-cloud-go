@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // OdsSaveOptions
 type OdsSaveOptions struct {
-    SaveOptions
-    GeneratorType string `json:"GeneratorType,omitempty" xml:"GeneratorType"`
-    OdfStrictVersion string `json:"OdfStrictVersion,omitempty" xml:"OdfStrictVersion"`
-    IgnorePivotTables *bool `json:"IgnorePivotTables,omitempty" xml:"IgnorePivotTables"`
+	SaveOptions
+	GeneratorType     string `json:"GeneratorType,omitempty" xml:"GeneratorType"`
+	OdfStrictVersion  string `json:"OdfStrictVersion,omitempty" xml:"OdfStrictVersion"`
+	IgnorePivotTables *bool  `json:"IgnorePivotTables,omitempty" xml:"IgnorePivotTables"`
 }

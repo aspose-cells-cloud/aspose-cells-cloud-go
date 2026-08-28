@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // OperateParameter Represents operate parameter.
 type OperateParameter struct {
-    // Represents task operate type.
-    OperateType string `json:"OperateType,omitempty" xml:"OperateType"`
+	// Represents task operate type.
+	OperateType string `json:"OperateType,omitempty" xml:"OperateType"`
 }

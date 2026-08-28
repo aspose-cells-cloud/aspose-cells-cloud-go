@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CellsDocumentPropertyResponse Represents the CellsDocumentProperty Response.
 type CellsDocumentPropertyResponse struct {
-    CellsCloudResponse
-    // A property named DocumentProperty of type CellsDocumentProperty is defined with get and set accessors.
-    DocumentProperty *CellsDocumentProperty `json:"DocumentProperty,omitempty" xml:"DocumentProperty"`
+	CellsCloudResponse
+	// A property named DocumentProperty of type CellsDocumentProperty is defined with get and set accessors.
+	DocumentProperty *CellsDocumentProperty `json:"DocumentProperty,omitempty" xml:"DocumentProperty"`
 }

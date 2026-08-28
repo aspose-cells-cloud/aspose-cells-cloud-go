@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ScopeItem Define the specific range in your Excel worksheet where you want the spreadsheet operations to be performed. This ensures that only the cells within the selected range are processed, and any operations are confined to this area.
 type ScopeItem struct {
-    // The specific worksheet of spreadsheet.
-    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
-    // The specific ranges of worksheet.
-    Ranges []interface{} `json:"Ranges,omitempty" xml:"Ranges"`
+	// The specific worksheet of spreadsheet.
+	Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
+	// The specific ranges of worksheet.
+	Ranges []interface{} `json:"Ranges,omitempty" xml:"Ranges"`
 }

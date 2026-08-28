@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // OvalResponse Represents the Oval Response.
 type OvalResponse struct {
-    CellsCloudResponse
-    // The class has a public property called "Shape" of type "Oval" with both get and set accessors.
-    Shape *Oval `json:"Shape,omitempty" xml:"Shape"`
+	CellsCloudResponse
+	// The class has a public property called "Shape" of type "Oval" with both get and set accessors.
+	Shape *Oval `json:"Shape,omitempty" xml:"Shape"`
 }

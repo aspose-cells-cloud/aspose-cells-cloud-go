@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TrendlineResponse Represents the Trendline Response.
 type TrendlineResponse struct {
-    CellsCloudResponse
-    // The class has a public property called "Trendline" of type "Trendline" that can be accessed and modified.
-    Trendline *Trendline `json:"Trendline,omitempty" xml:"Trendline"`
+	CellsCloudResponse
+	// The class has a public property called "Trendline" of type "Trendline" that can be accessed and modified.
+	Trendline *Trendline `json:"Trendline,omitempty" xml:"Trendline"`
 }

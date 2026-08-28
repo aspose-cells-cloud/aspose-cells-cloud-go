@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TaskData Represents task data.
 type TaskData struct {
-    // Represents task description list.
-    Tasks []TaskDescription `json:"Tasks,omitempty" xml:"Tasks"`
+	// Represents task description list.
+	Tasks []TaskDescription `json:"Tasks,omitempty" xml:"Tasks"`
 }

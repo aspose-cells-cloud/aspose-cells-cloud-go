@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // MergedCellsResponse Represents the MergedCells Response.
 type MergedCellsResponse struct {
-    CellsCloudResponse
-    // Property Summary: Contains information about merged cells within a spreadsheet.
-    MergedCells *MergedCells `json:"MergedCells,omitempty" xml:"MergedCells"`
+	CellsCloudResponse
+	// Property Summary: Contains information about merged cells within a spreadsheet.
+	MergedCells *MergedCells `json:"MergedCells,omitempty" xml:"MergedCells"`
 }

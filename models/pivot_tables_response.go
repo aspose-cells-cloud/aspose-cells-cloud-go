@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PivotTablesResponse Represents the PivotTables Response.
 type PivotTablesResponse struct {
-    CellsCloudResponse
-    // This class has a property named PivotTables of type PivotTables that can be both accessed and modified.
-    PivotTables *PivotTables `json:"PivotTables,omitempty" xml:"PivotTables"`
+	CellsCloudResponse
+	// This class has a property named PivotTables of type PivotTables that can be both accessed and modified.
+	PivotTables *PivotTables `json:"PivotTables,omitempty" xml:"PivotTables"`
 }

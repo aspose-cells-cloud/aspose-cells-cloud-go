@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Names Represents a collection of all the  objects in the spreadsheet.
 type Names struct {
-    LinkElement
-    // This class property is tagged as an XML element named "count" and stores an integer value.
-    Count *int32 `json:"Count,omitempty" xml:"Count"`
-    NameList []LinkElement `json:"NameList,omitempty" xml:"NameList"`
+	LinkElement
+	// This class property is tagged as an XML element named "count" and stores an integer value.
+	Count    *int32        `json:"Count,omitempty" xml:"Count"`
+	NameList []LinkElement `json:"NameList,omitempty" xml:"NameList"`
 }

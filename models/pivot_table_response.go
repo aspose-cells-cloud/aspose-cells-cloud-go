@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PivotTableResponse Represents the PivotTable Response.
 type PivotTableResponse struct {
-    CellsCloudResponse
-    // PivotTable property of type PivotTable that can be both read and written.
-    PivotTable *PivotTable `json:"PivotTable,omitempty" xml:"PivotTable"`
+	CellsCloudResponse
+	// PivotTable property of type PivotTable that can be both read and written.
+	PivotTable *PivotTable `json:"PivotTable,omitempty" xml:"PivotTable"`
 }

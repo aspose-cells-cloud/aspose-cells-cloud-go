@@ -23,19 +23,18 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// ListColumn            Represents a column in a Table.            
+// ListColumn            Represents a column in a Table.
 type ListColumn struct {
-    // Gets and sets the name of the column.  
-    Name string `json:"Name,omitempty" xml:"Name"`
-    // Gets the range of this list column.  
-    Range *Range `json:"Range,omitempty" xml:"Range"`
-    // Gets and sets the type of calculation in the Totals row of the list column.  
-    TotalsCalculation string `json:"TotalsCalculation,omitempty" xml:"TotalsCalculation"`
-    // Gets and sets the formula of the list column.  
-    Formula string `json:"Formula,omitempty" xml:"Formula"`
-    // Gets and sets the display labels of total row.  
-    TotalsRowLabel string `json:"TotalsRowLabel,omitempty" xml:"TotalsRowLabel"`
+	// Gets and sets the name of the column.
+	Name string `json:"Name,omitempty" xml:"Name"`
+	// Gets the range of this list column.
+	Range *Range `json:"Range,omitempty" xml:"Range"`
+	// Gets and sets the type of calculation in the Totals row of the list column.
+	TotalsCalculation string `json:"TotalsCalculation,omitempty" xml:"TotalsCalculation"`
+	// Gets and sets the formula of the list column.
+	Formula string `json:"Formula,omitempty" xml:"Formula"`
+	// Gets and sets the display labels of total row.
+	TotalsRowLabel string `json:"TotalsRowLabel,omitempty" xml:"TotalsRowLabel"`
 }

@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // AutoFilterResponse Represents the AutoFilter Response.
 type AutoFilterResponse struct {
-    CellsCloudResponse
-    // A property named "AutoFilter" with a type of "AutoFilter" that can be read from and written to.
-    AutoFilter *AutoFilter `json:"AutoFilter,omitempty" xml:"AutoFilter"`
+	CellsCloudResponse
+	// A property named "AutoFilter" with a type of "AutoFilter" that can be read from and written to.
+	AutoFilter *AutoFilter `json:"AutoFilter,omitempty" xml:"AutoFilter"`
 }

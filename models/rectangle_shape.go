@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RectangleShape Represents the rectangle shape.
 type RectangleShape struct {
-    Shape
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	Link *Link `json:"link,omitempty" xml:"link"`
 }

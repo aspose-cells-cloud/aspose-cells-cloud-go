@@ -23,9 +23,8 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// PivotGlobalizationSettings Represents the globalization settings for pivot tables.  
+// PivotGlobalizationSettings Represents the globalization settings for pivot tables.
 type PivotGlobalizationSettings struct {
 }

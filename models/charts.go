@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Charts Encapsulates a collection of  objects.
 type Charts struct {
-    LinkElement
-    // A property named ChartList of type List LinkElement  that is publicly accessible with both read and write capabilities.
-    ChartList []LinkElement `json:"ChartList,omitempty" xml:"ChartList"`
+	LinkElement
+	// A property named ChartList of type List LinkElement  that is publicly accessible with both read and write capabilities.
+	ChartList []LinkElement `json:"ChartList,omitempty" xml:"ChartList"`
 }

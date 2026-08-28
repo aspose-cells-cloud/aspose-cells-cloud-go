@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DbfSaveOptions
 type DbfSaveOptions struct {
-    SaveOptions
-    ExportAsString *bool `json:"ExportAsString,omitempty" xml:"ExportAsString"`
+	SaveOptions
+	ExportAsString *bool `json:"ExportAsString,omitempty" xml:"ExportAsString"`
 }

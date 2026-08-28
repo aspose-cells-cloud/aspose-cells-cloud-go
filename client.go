@@ -40,17 +40,34 @@ func NewAsposeCellsCloudClient(clientId string, clientSecret string, baseURL str
 		opt(client)
 	}
 
-	// Set default timeout
-	client.httpClient.Timeout = client.timeout
+	// Set the default timeout. A caller-provided HTTP client (WithHTTPClient)
+	// that already sets its own timeout keeps it.
+	if client.httpClient.Timeout == 0 {
+		client.httpClient.Timeout = client.timeout
+	}
 
 	return client
 }
 
-// WithTimeout Set request timeout
+// WithHTTPClient overrides the default *http.Client used for all requests.
+// Supply your own client to inject a custom Transport (mTLS, tracing, test
+// mocks, ...). The configured request timeout is applied only when the given
+// client does not set one itself.
+func WithHTTPClient(hc *http.Client) AsposeCellsCloudClientOption {
+	return func(c *AsposeCellsCloudClient) {
+		if hc != nil {
+			c.httpClient = hc
+		}
+	}
+}
+
+// WithTimeout Set request timeout. The timeout is applied in the constructor
+// only when the HTTP client does not already define its own (an injected
+// client's non-zero Timeout takes precedence), which makes the effective
+// timeout independent of option order.
 func WithTimeout(timeout time.Duration) AsposeCellsCloudClientOption {
 	return func(c *AsposeCellsCloudClient) {
 		c.timeout = timeout
-		c.httpClient.Timeout = timeout
 	}
 }
 
@@ -86,8 +103,9 @@ func (client *AsposeCellsCloudClient) addAuth(request *http.Request) error {
 		return nil
 	}
 
-	// Token is missing or about to expire — fetch a new one.
-	if err := client.RequestOauthToken(); err != nil {
+	// Token is missing or about to expire — fetch a new one. The outgoing
+	// request's context is reused so token refresh honors caller cancellation.
+	if err := client.RequestOauthToken(request.Context()); err != nil {
 		return fmt.Errorf("oauth token request failed: %w", err)
 	}
 
@@ -101,17 +119,29 @@ func (client *AsposeCellsCloudClient) addAuth(request *http.Request) error {
 
 // RequestOauthToken fetches a new OAuth2 access token from the Cells Cloud
 // token endpoint and caches it together with its expiration time.
-func (client *AsposeCellsCloudClient) RequestOauthToken() error {
+//
+// The token request runs through the client's injected *http.Client, so a
+// custom Transport (mTLS, proxy, tracing, test mocks), its Timeout, and the
+// caller's context all apply to token refresh exactly as they do to the data
+// plane requests.
+func (client *AsposeCellsCloudClient) RequestOauthToken(ctx context.Context) error {
 	// The OAuth token endpoint lives under the active API version prefix (v4.0
 	// by default, see NewConfiguration). The v1.1 API uses the legacy oauth2
 	// endpoint instead.
 	getAccessTokenURI := client.cfg.BasePath + "/" + client.cfg.Version + "/cells/connect/token"
 
-	resp, err := http.PostForm(getAccessTokenURI, url.Values{
+	form := url.Values{
 		"grant_type":    {"client_credentials"},
 		"client_id":     {client.cfg.ClientId},
-		"client_secret": {client.cfg.ClientSecret}})
+		"client_secret": {client.cfg.ClientSecret},
+	}
+	req, err := http.NewRequestWithContext(ctx, http.MethodPost, getAccessTokenURI, strings.NewReader(form.Encode()))
+	if err != nil {
+		return err
+	}
+	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 
+	resp, err := client.httpClient.Do(req)
 	if err != nil {
 		return err
 	}
@@ -159,27 +189,59 @@ func (client *AsposeCellsCloudClient) Do(ctx context.Context, requests ...Reques
 	return responses, nil
 }
 
-// executeWithRetry Execution logic with retries
+// executeWithRetry Execution logic with retries.
+//
+// Missing required parameters are rejected here, before the retry loop, so
+// deterministic validation errors fail fast instead of being retried. Only
+// genuine execution failures (network, HTTP) trigger the backoff retries.
 func (client *AsposeCellsCloudClient) executeWithRetry(ctx context.Context, req RequestOption) (*RichResponse, error) {
-	var lastErr error
+	if req == nil {
+		return nil, fmt.Errorf("%w: request is nil", ErrInvalidParam)
+	}
+	if err := req.Validate(); err != nil {
+		return nil, err
+	}
 
+	var lastErr error
 	for attempt := 0; attempt <= client.retries; attempt++ {
 		resp, err := client.executeOnce(ctx, req)
 		if err == nil {
 			return resp, nil
 		}
 		lastErr = err
-		// Simple exponential backoff (can be enhanced as needed)
 		if attempt < client.retries {
-			time.Sleep(time.Duration(1<<attempt) * time.Second)
+			// Simple exponential backoff (1s, 2s, 4s, ...), interrupted early when
+			// the caller's context is done.
+			if err := sleepWithContext(ctx, time.Duration(1<<attempt)*time.Second); err != nil {
+				return nil, err
+			}
 		}
 	}
 
 	return nil, lastErr
 }
 
-// executeOnce Single execution logic
+// sleepWithContext sleeps for d, or returns ctx.Err() when the context is done
+// first, so a canceled request is not held up by the backoff timer.
+func sleepWithContext(ctx context.Context, d time.Duration) error {
+	timer := time.NewTimer(d)
+	defer timer.Stop()
+	select {
+	case <-timer.C:
+		return nil
+	case <-ctx.Done():
+		return ctx.Err()
+	}
+}
+
+// executeOnce Single execution logic. Missing required parameters were already
+// rejected by executeWithRetry before the retry loop, so no validation is
+// repeated here.
 func (client *AsposeCellsCloudClient) executeOnce(ctx context.Context, req RequestOption) (*RichResponse, error) {
+	if req == nil {
+		return nil, fmt.Errorf("%w: request is nil", ErrInvalidParam)
+	}
+
 	// 1. Build URL
 	// Generated request paths are versionless (e.g. "/cells/convert/spreadsheet"),
 	// while the live API is versioned under the active version prefix ("v4.0" by
@@ -247,6 +309,7 @@ func (client *AsposeCellsCloudClient) executeOnce(ctx context.Context, req Reque
 
 	// 4. Set request headers
 	httpReq.Header.Set("Content-Type", contentType)
+	httpReq.Header.Set("User-Agent", client.cfg.UserAgent)
 	for k, v := range client.cfg.DefaultHeader {
 		httpReq.Header.Set(k, v)
 	}

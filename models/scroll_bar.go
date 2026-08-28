@@ -23,25 +23,24 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ScrollBar Represents a scroll bar object.
 type ScrollBar struct {
-    Shape
-    // Gets or sets the current value.
-    CurrentValue *int32 `json:"CurrentValue,omitempty" xml:"CurrentValue"`
-    // Gets or sets the amount that the scroll bar or spinner is incremented a line scroll.
-    IncrementalChange *int32 `json:"IncrementalChange,omitempty" xml:"IncrementalChange"`
-    // Indicates whether this is a horizontal scroll bar.
-    IsHorizontal *bool `json:"IsHorizontal,omitempty" xml:"IsHorizontal"`
-    // Gets or sets the maximum value of a scroll bar or spinner range.
-    Max *int32 `json:"Max,omitempty" xml:"Max"`
-    // Gets or sets the minimum value of a scroll bar or spinner range.
-    Min *int32 `json:"Min,omitempty" xml:"Min"`
-    // Gets or sets page change
-    PageChange *int32 `json:"PageChange,omitempty" xml:"PageChange"`
-    // Indicates whether the shape has 3-D shading.
-    Shadow *bool `json:"Shadow,omitempty" xml:"Shadow"`
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	// Gets or sets the current value.
+	CurrentValue *int32 `json:"CurrentValue,omitempty" xml:"CurrentValue"`
+	// Gets or sets the amount that the scroll bar or spinner is incremented a line scroll.
+	IncrementalChange *int32 `json:"IncrementalChange,omitempty" xml:"IncrementalChange"`
+	// Indicates whether this is a horizontal scroll bar.
+	IsHorizontal *bool `json:"IsHorizontal,omitempty" xml:"IsHorizontal"`
+	// Gets or sets the maximum value of a scroll bar or spinner range.
+	Max *int32 `json:"Max,omitempty" xml:"Max"`
+	// Gets or sets the minimum value of a scroll bar or spinner range.
+	Min *int32 `json:"Min,omitempty" xml:"Min"`
+	// Gets or sets page change
+	PageChange *int32 `json:"PageChange,omitempty" xml:"PageChange"`
+	// Indicates whether the shape has 3-D shading.
+	Shadow *bool `json:"Shadow,omitempty" xml:"Shadow"`
+	Link   *Link `json:"link,omitempty" xml:"link"`
 }

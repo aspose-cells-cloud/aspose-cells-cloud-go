@@ -23,16 +23,15 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // XmlSaveOptions
 type XmlSaveOptions struct {
-    SaveOptions
-    SheetIndexes []interface{} `json:"SheetIndexes,omitempty" xml:"SheetIndexes"`
-    ExportArea *CellArea `json:"ExportArea,omitempty" xml:"ExportArea"`
-    HasHeaderRow *bool `json:"HasHeaderRow,omitempty" xml:"HasHeaderRow"`
-    XmlMapName string `json:"XmlMapName,omitempty" xml:"XmlMapName"`
-    SheetNameAsElementName *bool `json:"SheetNameAsElementName,omitempty" xml:"SheetNameAsElementName"`
-    DataAsAttribute *bool `json:"DataAsAttribute,omitempty" xml:"DataAsAttribute"`
+	SaveOptions
+	SheetIndexes           []interface{} `json:"SheetIndexes,omitempty" xml:"SheetIndexes"`
+	ExportArea             *CellArea     `json:"ExportArea,omitempty" xml:"ExportArea"`
+	HasHeaderRow           *bool         `json:"HasHeaderRow,omitempty" xml:"HasHeaderRow"`
+	XmlMapName             string        `json:"XmlMapName,omitempty" xml:"XmlMapName"`
+	SheetNameAsElementName *bool         `json:"SheetNameAsElementName,omitempty" xml:"SheetNameAsElementName"`
+	DataAsAttribute        *bool         `json:"DataAsAttribute,omitempty" xml:"DataAsAttribute"`
 }

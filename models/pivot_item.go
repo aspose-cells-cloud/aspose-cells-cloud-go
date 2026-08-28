@@ -23,17 +23,16 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// PivotItem            Represents a item in a PivotField report.            
+// PivotItem            Represents a item in a PivotField report.
 type PivotItem struct {
-    // Gets the index of the pivot item in cache field.
-    Index *int32 `json:"Index,omitempty" xml:"Index"`
-    // Represents whether the specified item visible.
-    IsHidden *bool `json:"IsHidden,omitempty" xml:"IsHidden"`
-    // Gets the name
-    Name string `json:"Name,omitempty" xml:"Name"`
-    // Gets the value of the specified item.
-    Value string `json:"Value,omitempty" xml:"Value"`
+	// Gets the index of the pivot item in cache field.
+	Index *int32 `json:"Index,omitempty" xml:"Index"`
+	// Represents whether the specified item visible.
+	IsHidden *bool `json:"IsHidden,omitempty" xml:"IsHidden"`
+	// Gets the name
+	Name string `json:"Name,omitempty" xml:"Name"`
+	// Gets the value of the specified item.
+	Value string `json:"Value,omitempty" xml:"Value"`
 }

@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CellArea
 type CellArea struct {
-    EndColumn *int32 `json:"EndColumn,omitempty" xml:"EndColumn"`
-    EndRow *int32 `json:"EndRow,omitempty" xml:"EndRow"`
-    StartColumn *int32 `json:"StartColumn,omitempty" xml:"StartColumn"`
-    StartRow *int32 `json:"StartRow,omitempty" xml:"StartRow"`
+	EndColumn   *int32 `json:"EndColumn,omitempty" xml:"EndColumn"`
+	EndRow      *int32 `json:"EndRow,omitempty" xml:"EndRow"`
+	StartColumn *int32 `json:"StartColumn,omitempty" xml:"StartColumn"`
+	StartRow    *int32 `json:"StartRow,omitempty" xml:"StartRow"`
 }

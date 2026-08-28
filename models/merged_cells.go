@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // MergedCells Sure, could you please provide me with the features you would like me to summarize?
 type MergedCells struct {
-    LinkElement
-    // An integer property labeled as "count" and marked as an XML element in the class.
-    Count *int32 `json:"Count,omitempty" xml:"Count"`
-    MergedCellList []LinkElement `json:"MergedCellList,omitempty" xml:"MergedCellList"`
+	LinkElement
+	// An integer property labeled as "count" and marked as an XML element in the class.
+	Count          *int32        `json:"Count,omitempty" xml:"Count"`
+	MergedCellList []LinkElement `json:"MergedCellList,omitempty" xml:"MergedCellList"`
 }

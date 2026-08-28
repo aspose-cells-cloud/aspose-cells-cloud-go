@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ChartPointResponse Represents the ChartPoint Response.
 type ChartPointResponse struct {
-    CellsCloudResponse
-    // A public property "ChartPoint" that can store and retrieve instances of the "ChartPoint" data type.
-    ChartPoint *ChartPoint `json:"ChartPoint,omitempty" xml:"ChartPoint"`
+	CellsCloudResponse
+	// A public property "ChartPoint" that can store and retrieve instances of the "ChartPoint" data type.
+	ChartPoint *ChartPoint `json:"ChartPoint,omitempty" xml:"ChartPoint"`
 }

@@ -1,130 +1,131 @@
 package requests
 
 import (
-    "fmt"
-    "net/url"
-    "strings"
+	"fmt"
+	"net/url"
+	"strings"
 )
 
 type PostCopyWorksheetRowsRequest struct {
-    destinationRowIndex int
-    name string
-    rowNumber int
-    sheetName string
-    sourceRowIndex int
+	destinationRowIndex int
+	name                string
+	rowNumber           int
+	sheetName           string
+	sourceRowIndex      int
 
-    folder string
-    storageName string
-    worksheet string
+	folder      string
+	storageName string
+	worksheet   string
 
-    extraQueryParameters map[string]string
+	extraQueryParameters map[string]string
 }
 
 func NewPostCopyWorksheetRowsRequest(destinationRowIndex int, name string, rowNumber int, sheetName string, sourceRowIndex int, opts ...Option) *PostCopyWorksheetRowsRequest {
-    req := &PostCopyWorksheetRowsRequest{
-        destinationRowIndex: destinationRowIndex,
-        name: name,
-        rowNumber: rowNumber,
-        sheetName: sheetName,
-        sourceRowIndex: sourceRowIndex,
-    }
-    if req.name == "" {
-        return nil
-    }
-    if req.sheetName == "" {
-        return nil
-    }
+	req := &PostCopyWorksheetRowsRequest{
+		destinationRowIndex: destinationRowIndex,
+		name:                name,
+		rowNumber:           rowNumber,
+		sheetName:           sheetName,
+		sourceRowIndex:      sourceRowIndex,
+	}
+	cfg := &requestConfig{
+		Params: make(map[string]interface{}),
+	}
+	for _, opt := range opts {
+		opt.apply(cfg)
+	}
 
-    cfg := &requestConfig{
-        Params: make(map[string]interface{}),
-    }
-    for _, opt := range opts {
-        opt.apply(cfg)
-    }
+	if val, ok := cfg.Params["folder"].(string); ok {
+		req.folder = val
+	}
+	if val, ok := cfg.Params["storageName"].(string); ok {
+		req.storageName = val
+	}
+	if val, ok := cfg.Params["worksheet"].(string); ok {
+		req.worksheet = val
+	}
+	if len(cfg.extraQueryParams) > 0 {
+		if req.extraQueryParameters == nil {
+			req.extraQueryParameters = make(map[string]string)
+		}
+		for k, v := range cfg.extraQueryParams {
+			req.extraQueryParameters[k] = v
+		}
+	}
 
-    if val, ok := cfg.Params["folder"].(string); ok {
-        req.folder = val
-    }
-    if val, ok := cfg.Params["storageName"].(string); ok {
-        req.storageName = val
-    }
-    if val, ok := cfg.Params["worksheet"].(string); ok {
-        req.worksheet = val
-    }
-    if len(cfg.extraQueryParams) > 0 {
-        if req.extraQueryParameters == nil {
-            req.extraQueryParameters = make(map[string]string)
-        }
-        for k, v := range cfg.extraQueryParams {
-            req.extraQueryParameters[k] = v
-        }
-    }
+	return req
+}
 
-    return req
+func (request *PostCopyWorksheetRowsRequest) Validate() error {
+	if request.name == "" {
+		return fmt.Errorf("required request parameter %q is missing", "name")
+	}
+
+	if request.sheetName == "" {
+		return fmt.Errorf("required request parameter %q is missing", "sheetName")
+	}
+
+	return nil
 }
 
 func (request *PostCopyWorksheetRowsRequest) AddQueryParameter(key, value string) {
-    if request.extraQueryParameters == nil {
-        request.extraQueryParameters = make(map[string]string)
-    }
-    request.extraQueryParameters[key] = value
+	if request.extraQueryParameters == nil {
+		request.extraQueryParameters = make(map[string]string)
+	}
+	request.extraQueryParameters[key] = value
 }
 
 func (request *PostCopyWorksheetRowsRequest) AddQueryParameters(params map[string]string) {
-    if request.extraQueryParameters == nil {
-        request.extraQueryParameters = make(map[string]string)
-    }
-    for k, v := range params {
-        request.extraQueryParameters[k] = v
-    }
+	if request.extraQueryParameters == nil {
+		request.extraQueryParameters = make(map[string]string)
+	}
+	for k, v := range params {
+		request.extraQueryParameters[k] = v
+	}
 }
 
 func (request *PostCopyWorksheetRowsRequest) GetMethod() string {
-    return "POST"
+	return "POST"
 }
 
 func (request *PostCopyWorksheetRowsRequest) GetHeaderParameters() map[string]string {
-    localVarHeaderParams := make(map[string]string)
-    localVarHeaderParams["Content-Type"] = "application/json"
-    return localVarHeaderParams
+	localVarHeaderParams := make(map[string]string)
+	localVarHeaderParams["Content-Type"] = "application/json"
+	return localVarHeaderParams
 }
 
 func (request *PostCopyWorksheetRowsRequest) GetPath() string {
-    localVarPath := "/cells/{name}/worksheets/{sheetName}/cells/rows/copy"
-    localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", request.name), -1)
-    localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", request.sheetName), -1)
-    return localVarPath
+	localVarPath := "/cells/{name}/worksheets/{sheetName}/cells/rows/copy"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(fmt.Sprintf("%v", request.name)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", url.PathEscape(fmt.Sprintf("%v", request.sheetName)), -1)
+	return localVarPath
 }
 
 func (request *PostCopyWorksheetRowsRequest) GetQueryParameters() url.Values {
-    localVarQueryParams := url.Values{}
-    localVarQueryParams.Add("sourceRowIndex", fmt.Sprintf("%v", request.sourceRowIndex))
-    localVarQueryParams.Add("destinationRowIndex", fmt.Sprintf("%v", request.destinationRowIndex))
-    localVarQueryParams.Add("rowNumber", fmt.Sprintf("%v", request.rowNumber))
-    if request.worksheet != "" {
-        localVarQueryParams.Add("worksheet", fmt.Sprintf("%v", request.worksheet))
-    }
-    if request.folder != "" {
-        localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
-    }
-    if request.storageName != "" {
-        localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
-    }
-    for k, v := range request.extraQueryParameters {
-        localVarQueryParams.Add(k, v)
-    }
-    return localVarQueryParams
+	localVarQueryParams := url.Values{}
+	localVarQueryParams.Add("sourceRowIndex", fmt.Sprintf("%v", request.sourceRowIndex))
+	localVarQueryParams.Add("destinationRowIndex", fmt.Sprintf("%v", request.destinationRowIndex))
+	localVarQueryParams.Add("rowNumber", fmt.Sprintf("%v", request.rowNumber))
+	if request.worksheet != "" {
+		localVarQueryParams.Add("worksheet", fmt.Sprintf("%v", request.worksheet))
+	}
+	if request.folder != "" {
+		localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
+	}
+	if request.storageName != "" {
+		localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+	}
+	for k, v := range request.extraQueryParameters {
+		localVarQueryParams.Add(k, v)
+	}
+	return localVarQueryParams
 }
 
 func (request *PostCopyWorksheetRowsRequest) GetJSONBody() interface{} {
-    return nil
+	return nil
 }
 
 func (request *PostCopyWorksheetRowsRequest) GetMultipartForm() map[string]interface{} {
-    localVarFormParams := make(map[string]interface{})
-    return localVarFormParams
-}
-
-func (request *PostCopyWorksheetRowsRequest) Description() string {
-    return strings.Trim("Copy data and formats from specific entire rows in the worksheet.", " ")
+	localVarFormParams := make(map[string]interface{})
+	return localVarFormParams
 }

@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ResultDestination Represents result destination.
 type ResultDestination struct {
-    // Represents destination data type.
-    DestinationType string `json:"DestinationType,omitempty" xml:"DestinationType"`
-    // Represents input file.
-    InputFile string `json:"InputFile,omitempty" xml:"InputFile"`
-    // Represents output file.
-    OutputFile string `json:"OutputFile,omitempty" xml:"OutputFile"`
+	// Represents destination data type.
+	DestinationType string `json:"DestinationType,omitempty" xml:"DestinationType"`
+	// Represents input file.
+	InputFile string `json:"InputFile,omitempty" xml:"InputFile"`
+	// Represents output file.
+	OutputFile string `json:"OutputFile,omitempty" xml:"OutputFile"`
 }

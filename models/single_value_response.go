@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SingleValueResponse Represents the SingleValue Response.
 type SingleValueResponse struct {
-    CellsCloudResponse
-    // A property named "Value" of type "SingleValue" that can be accessed and modified is declared in the class.
-    Value *SingleValue `json:"Value,omitempty" xml:"Value"`
+	CellsCloudResponse
+	// A property named "Value" of type "SingleValue" that can be accessed and modified is declared in the class.
+	Value *SingleValue `json:"Value,omitempty" xml:"Value"`
 }

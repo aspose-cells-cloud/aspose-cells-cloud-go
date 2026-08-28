@@ -23,14 +23,13 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DataOutputLocation
 type DataOutputLocation struct {
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
-    BeginRowIndex *int32 `json:"BeginRowIndex,omitempty" xml:"BeginRowIndex"`
-    BeginColumnIndex *int32 `json:"BeginColumnIndex,omitempty" xml:"BeginColumnIndex"`
+	DataSource       *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	FileInfo         *FileInfo   `json:"FileInfo,omitempty" xml:"FileInfo"`
+	Worksheet        string      `json:"Worksheet,omitempty" xml:"Worksheet"`
+	BeginRowIndex    *int32      `json:"BeginRowIndex,omitempty" xml:"BeginRowIndex"`
+	BeginColumnIndex *int32      `json:"BeginColumnIndex,omitempty" xml:"BeginColumnIndex"`
 }

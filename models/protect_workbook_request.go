@@ -23,23 +23,22 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ProtectWorkbookRequest Indicates protect workbook request
 type ProtectWorkbookRequest struct {
-    // Indicates aways open read-only.
-    AwaysOpenReadOnly *bool `json:"AwaysOpenReadOnly,omitempty" xml:"AwaysOpenReadOnly"`
-    // Indicates encrypt with password.
-    EncryptWithPassword string `json:"EncryptWithPassword,omitempty" xml:"EncryptWithPassword"`
-    // Represents the various types of protection options available for a worksheet.             
-    ProtectCurrentSheet *Protection `json:"ProtectCurrentSheet,omitempty" xml:"ProtectCurrentSheet"`
-    // Represents the various types of protection options available for all worksheets.             
-    ProtectAllSheets *Protection `json:"ProtectAllSheets,omitempty" xml:"ProtectAllSheets"`
-    // Indicates protect workbook structure. All, Contents, Objects, Scenarios, Structure, Windows, and None.
-    ProtectWorkbookStructure string `json:"ProtectWorkbookStructure,omitempty" xml:"ProtectWorkbookStructure"`
-    // Indicates signature in file.
-    DigitalSignature *DigitalSignature `json:"DigitalSignature,omitempty" xml:"DigitalSignature"`
-    // Indicates mark as final.
-    MarkAsFinal *bool `json:"MarkAsFinal,omitempty" xml:"MarkAsFinal"`
+	// Indicates aways open read-only.
+	AwaysOpenReadOnly *bool `json:"AwaysOpenReadOnly,omitempty" xml:"AwaysOpenReadOnly"`
+	// Indicates encrypt with password.
+	EncryptWithPassword string `json:"EncryptWithPassword,omitempty" xml:"EncryptWithPassword"`
+	// Represents the various types of protection options available for a worksheet.
+	ProtectCurrentSheet *Protection `json:"ProtectCurrentSheet,omitempty" xml:"ProtectCurrentSheet"`
+	// Represents the various types of protection options available for all worksheets.
+	ProtectAllSheets *Protection `json:"ProtectAllSheets,omitempty" xml:"ProtectAllSheets"`
+	// Indicates protect workbook structure. All, Contents, Objects, Scenarios, Structure, Windows, and None.
+	ProtectWorkbookStructure string `json:"ProtectWorkbookStructure,omitempty" xml:"ProtectWorkbookStructure"`
+	// Indicates signature in file.
+	DigitalSignature *DigitalSignature `json:"DigitalSignature,omitempty" xml:"DigitalSignature"`
+	// Indicates mark as final.
+	MarkAsFinal *bool `json:"MarkAsFinal,omitempty" xml:"MarkAsFinal"`
 }

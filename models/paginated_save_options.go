@@ -23,28 +23,27 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PaginatedSaveOptions
 type PaginatedSaveOptions struct {
-    SaveOptions
-    DefaultFont string `json:"DefaultFont,omitempty" xml:"DefaultFont"`
-    CheckWorkbookDefaultFont *bool `json:"CheckWorkbookDefaultFont,omitempty" xml:"CheckWorkbookDefaultFont"`
-    CheckFontCompatibility *bool `json:"CheckFontCompatibility,omitempty" xml:"CheckFontCompatibility"`
-    IsFontSubstitutionCharGranularity *bool `json:"IsFontSubstitutionCharGranularity,omitempty" xml:"IsFontSubstitutionCharGranularity"`
-    OnePagePerSheet *bool `json:"OnePagePerSheet,omitempty" xml:"OnePagePerSheet"`
-    AllColumnsInOnePagePerSheet *bool `json:"AllColumnsInOnePagePerSheet,omitempty" xml:"AllColumnsInOnePagePerSheet"`
-    IgnoreError *bool `json:"IgnoreError,omitempty" xml:"IgnoreError"`
-    OutputBlankPageWhenNothingToPrint *bool `json:"OutputBlankPageWhenNothingToPrint,omitempty" xml:"OutputBlankPageWhenNothingToPrint"`
-    PageIndex *int32 `json:"PageIndex,omitempty" xml:"PageIndex"`
-    PageCount *int32 `json:"PageCount,omitempty" xml:"PageCount"`
-    PrintingPageType string `json:"PrintingPageType,omitempty" xml:"PrintingPageType"`
-    GridlineType string `json:"GridlineType,omitempty" xml:"GridlineType"`
-    TextCrossType string `json:"TextCrossType,omitempty" xml:"TextCrossType"`
-    DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
-    EmfRenderSetting string `json:"EmfRenderSetting,omitempty" xml:"EmfRenderSetting"`
-    MergeAreas *bool `json:"MergeAreas,omitempty" xml:"MergeAreas"`
-    SortExternalNames *bool `json:"SortExternalNames,omitempty" xml:"SortExternalNames"`
-    UpdateSmartArt *bool `json:"UpdateSmartArt,omitempty" xml:"UpdateSmartArt"`
+	SaveOptions
+	DefaultFont                       string `json:"DefaultFont,omitempty" xml:"DefaultFont"`
+	CheckWorkbookDefaultFont          *bool  `json:"CheckWorkbookDefaultFont,omitempty" xml:"CheckWorkbookDefaultFont"`
+	CheckFontCompatibility            *bool  `json:"CheckFontCompatibility,omitempty" xml:"CheckFontCompatibility"`
+	IsFontSubstitutionCharGranularity *bool  `json:"IsFontSubstitutionCharGranularity,omitempty" xml:"IsFontSubstitutionCharGranularity"`
+	OnePagePerSheet                   *bool  `json:"OnePagePerSheet,omitempty" xml:"OnePagePerSheet"`
+	AllColumnsInOnePagePerSheet       *bool  `json:"AllColumnsInOnePagePerSheet,omitempty" xml:"AllColumnsInOnePagePerSheet"`
+	IgnoreError                       *bool  `json:"IgnoreError,omitempty" xml:"IgnoreError"`
+	OutputBlankPageWhenNothingToPrint *bool  `json:"OutputBlankPageWhenNothingToPrint,omitempty" xml:"OutputBlankPageWhenNothingToPrint"`
+	PageIndex                         *int32 `json:"PageIndex,omitempty" xml:"PageIndex"`
+	PageCount                         *int32 `json:"PageCount,omitempty" xml:"PageCount"`
+	PrintingPageType                  string `json:"PrintingPageType,omitempty" xml:"PrintingPageType"`
+	GridlineType                      string `json:"GridlineType,omitempty" xml:"GridlineType"`
+	TextCrossType                     string `json:"TextCrossType,omitempty" xml:"TextCrossType"`
+	DefaultEditLanguage               string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
+	EmfRenderSetting                  string `json:"EmfRenderSetting,omitempty" xml:"EmfRenderSetting"`
+	MergeAreas                        *bool  `json:"MergeAreas,omitempty" xml:"MergeAreas"`
+	SortExternalNames                 *bool  `json:"SortExternalNames,omitempty" xml:"SortExternalNames"`
+	UpdateSmartArt                    *bool  `json:"UpdateSmartArt,omitempty" xml:"UpdateSmartArt"`
 }

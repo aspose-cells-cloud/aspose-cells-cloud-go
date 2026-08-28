@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // MergeTableOptions
 type MergeTableOptions struct {
-    MainTable *CombinationSourceData `json:"MainTable,omitempty" xml:"MainTable"`
-    SecondaryTable *CombinationSourceData `json:"SecondaryTable,omitempty" xml:"SecondaryTable"`
-    DataMergeType string `json:"DataMergeType,omitempty" xml:"DataMergeType"`
-    OverwriteMainTable *bool `json:"OverwriteMainTable,omitempty" xml:"OverwriteMainTable"`
-    SyncDataToTargetWorkbook *bool `json:"SyncDataToTargetWorkbook,omitempty" xml:"SyncDataToTargetWorkbook"`
-    MergedDataToPosition *DataOutputLocation `json:"MergedDataToPosition,omitempty" xml:"MergedDataToPosition"`
+	MainTable                *CombinationSourceData `json:"MainTable,omitempty" xml:"MainTable"`
+	SecondaryTable           *CombinationSourceData `json:"SecondaryTable,omitempty" xml:"SecondaryTable"`
+	DataMergeType            string                 `json:"DataMergeType,omitempty" xml:"DataMergeType"`
+	OverwriteMainTable       *bool                  `json:"OverwriteMainTable,omitempty" xml:"OverwriteMainTable"`
+	SyncDataToTargetWorkbook *bool                  `json:"SyncDataToTargetWorkbook,omitempty" xml:"SyncDataToTargetWorkbook"`
+	MergedDataToPosition     *DataOutputLocation    `json:"MergedDataToPosition,omitempty" xml:"MergedDataToPosition"`
 }

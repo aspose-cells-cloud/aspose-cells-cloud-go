@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// DynamicFilter            Represents the dynamic filter.            
+// DynamicFilter            Represents the dynamic filter.
 type DynamicFilter struct {
-    // Gets and sets the dynamic filter type.  
-    DynamicFilterType string `json:"DynamicFilterType,omitempty" xml:"DynamicFilterType"`
-    // Gets and sets the dynamic filter max value.  
-    MaxValue map[string]interface{} `json:"MaxValue,omitempty" xml:"MaxValue"`
-    // Gets and sets the dynamic filter value.  
-    Value map[string]interface{} `json:"Value,omitempty" xml:"Value"`
+	// Gets and sets the dynamic filter type.
+	DynamicFilterType string `json:"DynamicFilterType,omitempty" xml:"DynamicFilterType"`
+	// Gets and sets the dynamic filter max value.
+	MaxValue map[string]interface{} `json:"MaxValue,omitempty" xml:"MaxValue"`
+	// Gets and sets the dynamic filter value.
+	Value map[string]interface{} `json:"Value,omitempty" xml:"Value"`
 }

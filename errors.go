@@ -7,7 +7,6 @@ import (
 
 var (
 	ErrRequestFailed = errors.New("request failed")
-	ErrTimeout       = errors.New("request timeout")
 	ErrInvalidParam  = errors.New("invalid parameter")
 )
 

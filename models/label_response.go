@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // LabelResponse Represents the Label Response.
 type LabelResponse struct {
-    CellsCloudResponse
-    // The property "Shape" is of type Label and has both a getter and a setter.
-    Shape *Label `json:"Shape,omitempty" xml:"Shape"`
+	CellsCloudResponse
+	// The property "Shape" is of type Label and has both a getter and a setter.
+	Shape *Label `json:"Shape,omitempty" xml:"Shape"`
 }

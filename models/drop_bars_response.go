@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DropBarsResponse Represents the DropBars Response.
 type DropBarsResponse struct {
-    CellsCloudResponse
-    // The class has a property named `DropBars` of type `DropBars` with both getter and setter methods.
-    DropBars *DropBars `json:"DropBars,omitempty" xml:"DropBars"`
+	CellsCloudResponse
+	// The class has a property named `DropBars` of type `DropBars` with both getter and setter methods.
+	DropBars *DropBars `json:"DropBars,omitempty" xml:"DropBars"`
 }

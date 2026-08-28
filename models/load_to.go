@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // LoadTo A description of the location to which the data is mounted.
 type LoadTo struct {
-    // The worksheet name.
-    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
-    // The begin row index of worksheet.
-    BeginRowIndex *int32 `json:"beginRowIndex,omitempty" xml:"beginRowIndex"`
-    // The begin column index of worksheet.
-    BeginColumnIndex *int32 `json:"beginColumnIndex,omitempty" xml:"beginColumnIndex"`
+	// The worksheet name.
+	Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
+	// The begin row index of worksheet.
+	BeginRowIndex *int32 `json:"beginRowIndex,omitempty" xml:"beginRowIndex"`
+	// The begin column index of worksheet.
+	BeginColumnIndex *int32 `json:"beginColumnIndex,omitempty" xml:"beginColumnIndex"`
 }

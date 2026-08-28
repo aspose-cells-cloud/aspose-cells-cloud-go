@@ -23,17 +23,16 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// WriteProtection Specifies write protection settings for a workbook.  
+// WriteProtection Specifies write protection settings for a workbook.
 type WriteProtection struct {
-    // Gets and sets the author.  
-    Author string `json:"Author,omitempty" xml:"Author"`
-    // Indicates if the Read Only Recommended option is selected.  
-    RecommendReadOnly *bool `json:"RecommendReadOnly,omitempty" xml:"RecommendReadOnly"`
-    // Indicates whether this workbook is write protected.  
-    IsWriteProtected *bool `json:"IsWriteProtected,omitempty" xml:"IsWriteProtected"`
-    // Sets the protected password to modify the file.  
-    Password string `json:"Password,omitempty" xml:"Password"`
+	// Gets and sets the author.
+	Author string `json:"Author,omitempty" xml:"Author"`
+	// Indicates if the Read Only Recommended option is selected.
+	RecommendReadOnly *bool `json:"RecommendReadOnly,omitempty" xml:"RecommendReadOnly"`
+	// Indicates whether this workbook is write protected.
+	IsWriteProtected *bool `json:"IsWriteProtected,omitempty" xml:"IsWriteProtected"`
+	// Sets the protected password to modify the file.
+	Password string `json:"Password,omitempty" xml:"Password"`
 }

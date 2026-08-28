@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // LineResponse Represents the Line Response.
 type LineResponse struct {
-    CellsCloudResponse
-    // A public property named "Line" of type Line with both getter and setter methods.
-    Line *Line `json:"Line,omitempty" xml:"Line"`
+	CellsCloudResponse
+	// A public property named "Line" of type Line with both getter and setter methods.
+	Line *Line `json:"Line,omitempty" xml:"Line"`
 }

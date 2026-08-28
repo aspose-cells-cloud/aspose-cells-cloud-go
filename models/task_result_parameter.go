@@ -23,10 +23,9 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TaskResultParameter Represents task result parameter.
 type TaskResultParameter struct {
-    TaskParameter
+	TaskParameter
 }

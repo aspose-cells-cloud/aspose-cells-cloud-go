@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ListObjectOperateParameter Represents list object operate parameter.
 type ListObjectOperateParameter struct {
-    OperateParameter
-    // Represents list object of operate object.
-    ListObject *ListObject `json:"ListObject,omitempty" xml:"ListObject"`
+	OperateParameter
+	// Represents list object of operate object.
+	ListObject *ListObject `json:"ListObject,omitempty" xml:"ListObject"`
 }

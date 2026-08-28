@@ -23,25 +23,24 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// CellsColor            Represents all types of color.            
+// CellsColor            Represents all types of color.
 type CellsColor struct {
-    // Gets and sets the RGB color.  
-    Color *Color `json:"Color,omitempty" xml:"Color"`
-    // Gets and sets the color index in the color palette. Only applies of indexed color.  
-    ColorIndex *int32 `json:"ColorIndex,omitempty" xml:"ColorIndex"`
-    // Gets and set the color which should apply to cell or shape.  
-    IsShapeColor *bool `json:"IsShapeColor,omitempty" xml:"IsShapeColor"`
-    // Set the tint of the shape color
-    Tint *float64 `json:"tint,omitempty" xml:"tint"`
-    // Gets and sets the color from a 32-bit ARGB value.  
-    Argb *int32 `json:"Argb,omitempty" xml:"Argb"`
-    // Gets the theme color. Only applies for theme color type.  
-    ThemeColor *ThemeColor `json:"ThemeColor,omitempty" xml:"ThemeColor"`
-    // The color type.  
-    Type string `json:"Type,omitempty" xml:"Type"`
-    // Gets and sets transparency as a value from 0.0 (opaque) through 1.0 (clear).  
-    Transparency *float64 `json:"Transparency,omitempty" xml:"Transparency"`
+	// Gets and sets the RGB color.
+	Color *Color `json:"Color,omitempty" xml:"Color"`
+	// Gets and sets the color index in the color palette. Only applies of indexed color.
+	ColorIndex *int32 `json:"ColorIndex,omitempty" xml:"ColorIndex"`
+	// Gets and set the color which should apply to cell or shape.
+	IsShapeColor *bool `json:"IsShapeColor,omitempty" xml:"IsShapeColor"`
+	// Set the tint of the shape color
+	Tint *float64 `json:"tint,omitempty" xml:"tint"`
+	// Gets and sets the color from a 32-bit ARGB value.
+	Argb *int32 `json:"Argb,omitempty" xml:"Argb"`
+	// Gets the theme color. Only applies for theme color type.
+	ThemeColor *ThemeColor `json:"ThemeColor,omitempty" xml:"ThemeColor"`
+	// The color type.
+	Type string `json:"Type,omitempty" xml:"Type"`
+	// Gets and sets transparency as a value from 0.0 (opaque) through 1.0 (clear).
+	Transparency *float64 `json:"Transparency,omitempty" xml:"Transparency"`
 }

@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // OleObjects Represents embedded OLE objects.
 type OleObjects struct {
-    LinkElement
-    // Property Summary: Contains a list of elements identified as "oleobject" within XML data.
-    OleObjectList []LinkElement `json:"OleObjectList,omitempty" xml:"OleObjectList"`
+	LinkElement
+	// Property Summary: Contains a list of elements identified as "oleobject" within XML data.
+	OleObjectList []LinkElement `json:"OleObjectList,omitempty" xml:"OleObjectList"`
 }

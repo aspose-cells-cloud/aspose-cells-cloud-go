@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CheckBoxResponse Represents the CheckBox Response.
 type CheckBoxResponse struct {
-    CellsCloudResponse
-    // A public property named Shape of type CheckBox is defined with both get and set accessors.
-    Shape *CheckBox `json:"Shape,omitempty" xml:"Shape"`
+	CellsCloudResponse
+	// A public property named Shape of type CheckBox is defined with both get and set accessors.
+	Shape *CheckBox `json:"Shape,omitempty" xml:"Shape"`
 }

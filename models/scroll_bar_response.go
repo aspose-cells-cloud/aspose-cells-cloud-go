@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ScrollBarResponse Represents the ScrollBar Response.
 type ScrollBarResponse struct {
-    CellsCloudResponse
-    // The class has a public property named `Shape` of type `ScrollBar` that can be both read and written.
-    Shape *ScrollBar `json:"Shape,omitempty" xml:"Shape"`
+	CellsCloudResponse
+	// The class has a public property named `Shape` of type `ScrollBar` that can be both read and written.
+	Shape *ScrollBar `json:"Shape,omitempty" xml:"Shape"`
 }

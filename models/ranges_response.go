@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RangesResponse Represents the Ranges Response.
 type RangesResponse struct {
-    CellsCloudResponse
-    // This class has a property named "Ranges" of type "Ranges" that can be accessed and modified.
-    Ranges *Ranges `json:"Ranges,omitempty" xml:"Ranges"`
+	CellsCloudResponse
+	// This class has a property named "Ranges" of type "Ranges" that can be accessed and modified.
+	Ranges *Ranges `json:"Ranges,omitempty" xml:"Ranges"`
 }

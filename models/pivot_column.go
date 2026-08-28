@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PivotColumn Represents pivot column for data table.
 type PivotColumn struct {
-    // Represents pivot column name.
-    PivotColumnName string `json:"PivotColumnName,omitempty" xml:"PivotColumnName"`
-    // Represents column name that sets the column's value to the value of the pivot column.
-    ValueColumnNames []string `json:"ValueColumnNames,omitempty" xml:"ValueColumnNames"`
+	// Represents pivot column name.
+	PivotColumnName string `json:"PivotColumnName,omitempty" xml:"PivotColumnName"`
+	// Represents column name that sets the column's value to the value of the pivot column.
+	ValueColumnNames []string `json:"ValueColumnNames,omitempty" xml:"ValueColumnNames"`
 }

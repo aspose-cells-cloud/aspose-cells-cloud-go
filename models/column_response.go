@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ColumnResponse Represents the Column Response.
 type ColumnResponse struct {
-    CellsCloudResponse
-    // This class has a public property called "Column" of type "Column" with both getter and setter methods.
-    Column *Column `json:"Column,omitempty" xml:"Column"`
+	CellsCloudResponse
+	// This class has a public property called "Column" of type "Column" with both getter and setter methods.
+	Column *Column `json:"Column,omitempty" xml:"Column"`
 }

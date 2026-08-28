@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // HorizontalPageBreaksResponse Represents the HorizontalPageBreaks Response.
 type HorizontalPageBreaksResponse struct {
-    CellsCloudResponse
-    // The property "HorizontalPageBreaks" allows getting and setting horizontal page breaks for the class.
-    HorizontalPageBreaks *HorizontalPageBreaks `json:"HorizontalPageBreaks,omitempty" xml:"HorizontalPageBreaks"`
+	CellsCloudResponse
+	// The property "HorizontalPageBreaks" allows getting and setting horizontal page breaks for the class.
+	HorizontalPageBreaks *HorizontalPageBreaks `json:"HorizontalPageBreaks,omitempty" xml:"HorizontalPageBreaks"`
 }

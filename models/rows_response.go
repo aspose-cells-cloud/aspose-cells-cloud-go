@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RowsResponse Represents the Rows Response.
 type RowsResponse struct {
-    CellsCloudResponse
-    // A property named "Rows" of type "Rows" which has both getter and setter methods.
-    Rows *Rows `json:"Rows,omitempty" xml:"Rows"`
+	CellsCloudResponse
+	// A property named "Rows" of type "Rows" which has both getter and setter methods.
+	Rows *Rows `json:"Rows,omitempty" xml:"Rows"`
 }

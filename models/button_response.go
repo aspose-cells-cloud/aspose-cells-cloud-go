@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ButtonResponse Represents the Button Response.
 type ButtonResponse struct {
-    CellsCloudResponse
-    // The class has a property named "Shape" of type Button that can be both read and written.
-    Shape *Button `json:"Shape,omitempty" xml:"Shape"`
+	CellsCloudResponse
+	// The class has a property named "Shape" of type Button that can be both read and written.
+	Shape *Button `json:"Shape,omitempty" xml:"Shape"`
 }

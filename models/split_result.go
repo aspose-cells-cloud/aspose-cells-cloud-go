@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SplitResult Represents the result of the file split.
 type SplitResult struct {
-    // Represents cells cloud file information.
-    Documents []CellsCloudFileInfo `json:"Documents,omitempty" xml:"Documents"`
+	// Represents cells cloud file information.
+	Documents []CellsCloudFileInfo `json:"Documents,omitempty" xml:"Documents"`
 }

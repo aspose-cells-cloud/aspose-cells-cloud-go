@@ -23,14 +23,13 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Link I'm glad to help! Please provide me with the features you would like me to summarize.
 type Link struct {
-    // Has a property named Href with the attribute ElementName set to "href".
-    Href string `json:"Href,omitempty" xml:"Href"`
-    Rel string `json:"Rel,omitempty" xml:"Rel"`
-    Title string `json:"Title,omitempty" xml:"Title"`
-    Type string `json:"Type,omitempty" xml:"Type"`
+	// Has a property named Href with the attribute ElementName set to "href".
+	Href  string `json:"Href,omitempty" xml:"Href"`
+	Rel   string `json:"Rel,omitempty" xml:"Rel"`
+	Title string `json:"Title,omitempty" xml:"Title"`
+	Type  string `json:"Type,omitempty" xml:"Type"`
 }

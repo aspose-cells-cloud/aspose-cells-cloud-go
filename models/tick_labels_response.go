@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TickLabelsResponse Represents the TickLabels Response.
 type TickLabelsResponse struct {
-    CellsCloudResponse
-    // Property that represents tick labels for a class.
-    TickLabels *TickLabels `json:"TickLabels,omitempty" xml:"TickLabels"`
+	CellsCloudResponse
+	// Property that represents tick labels for a class.
+	TickLabels *TickLabels `json:"TickLabels,omitempty" xml:"TickLabels"`
 }

@@ -23,19 +23,18 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DeleteIncompleteRowsRequest I'm here to help! Could you please provide the features you would like me to summarize?
 type DeleteIncompleteRowsRequest struct {
-    // Spreadsheet files that require data fulling. 
-    File *FileInfo `json:"File,omitempty" xml:"File"`
-    // finish to data cleansing, outfile`s file format.
-    OutFileFormat string `json:"OutFileFormat,omitempty" xml:"OutFileFormat"`
-    // Whether check restriction of Spreadsheet file when user modify cells related objects.
-    CheckExcelRestriction *bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
-    // The regional settings for workbook.
-    Region string `json:"Region,omitempty" xml:"Region"`
-    // A property named "Ranges" of type IList of Range, with a default value of an empty List of Range.
-    Ranges []Range `json:"Ranges,omitempty" xml:"Ranges"`
+	// Spreadsheet files that require data fulling.
+	File *FileInfo `json:"File,omitempty" xml:"File"`
+	// finish to data cleansing, outfile`s file format.
+	OutFileFormat string `json:"OutFileFormat,omitempty" xml:"OutFileFormat"`
+	// Whether check restriction of Spreadsheet file when user modify cells related objects.
+	CheckExcelRestriction *bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
+	// The regional settings for workbook.
+	Region string `json:"Region,omitempty" xml:"Region"`
+	// A property named "Ranges" of type IList of Range, with a default value of an empty List of Range.
+	Ranges []Range `json:"Ranges,omitempty" xml:"Ranges"`
 }

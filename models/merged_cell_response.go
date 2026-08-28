@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // MergedCellResponse Represents the MergedCell Response.
 type MergedCellResponse struct {
-    CellsCloudResponse
-    // A property named "MergedCell" of type "MergedCell" which allows getting and setting its value.
-    MergedCell *MergedCell `json:"MergedCell,omitempty" xml:"MergedCell"`
+	CellsCloudResponse
+	// A property named "MergedCell" of type "MergedCell" which allows getting and setting its value.
+	MergedCell *MergedCell `json:"MergedCell,omitempty" xml:"MergedCell"`
 }

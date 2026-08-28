@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SaveResponse
 type SaveResponse struct {
-    CellsCloudResponse
-    SaveResult *SaveResult `json:"SaveResult,omitempty" xml:"SaveResult"`
+	CellsCloudResponse
+	SaveResult *SaveResult `json:"SaveResult,omitempty" xml:"SaveResult"`
 }

@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // FilesUploadResult File upload result
 type FilesUploadResult struct {
-    // List of uploaded file names
-    Uploaded []string `json:"Uploaded,omitempty" xml:"Uploaded"`
-    // List of errors.
-    Errors []Error `json:"Errors,omitempty" xml:"Errors"`
+	// List of uploaded file names
+	Uploaded []string `json:"Uploaded,omitempty" xml:"Uploaded"`
+	// List of errors.
+	Errors []Error `json:"Errors,omitempty" xml:"Errors"`
 }

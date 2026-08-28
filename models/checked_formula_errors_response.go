@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CheckedFormulaErrorsResponse
 type CheckedFormulaErrorsResponse struct {
-    CellsCloudResponse
-    IsFormulasErrors *bool `json:"IsFormulasErrors,omitempty" xml:"IsFormulasErrors"`
-    FormulasErrors []string `json:"FormulasErrors,omitempty" xml:"FormulasErrors"`
+	CellsCloudResponse
+	IsFormulasErrors *bool    `json:"IsFormulasErrors,omitempty" xml:"IsFormulasErrors"`
+	FormulasErrors   []string `json:"FormulasErrors,omitempty" xml:"FormulasErrors"`
 }

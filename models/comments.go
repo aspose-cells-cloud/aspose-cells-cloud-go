@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Comments Encapsulates a collection of  objects.
 type Comments struct {
-    LinkElement
-    // Property Summary: The CommentList property is annotated to be serialized as XML elements under the tag "comment" and holds a collection of LinkElement objects.
-    CommentList []LinkElement `json:"CommentList,omitempty" xml:"CommentList"`
+	LinkElement
+	// Property Summary: The CommentList property is annotated to be serialized as XML elements under the tag "comment" and holds a collection of LinkElement objects.
+	CommentList []LinkElement `json:"CommentList,omitempty" xml:"CommentList"`
 }

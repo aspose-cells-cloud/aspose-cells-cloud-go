@@ -23,7 +23,6 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // OperateObjectType Represents operate object type.

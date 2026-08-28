@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TimePeriodFormatCondition Represents time period format condition.
 type TimePeriodFormatCondition struct {
-    // The applicable time period in a "date occurring…" conditional formatting                 rule. Valid only for type = timePeriod.  The default value is TimePeriodType.Today
-    TimePeriod string `json:"TimePeriod,omitempty" xml:"TimePeriod"`
+	// The applicable time period in a "date occurring…" conditional formatting                 rule. Valid only for type = timePeriod.  The default value is TimePeriodType.Today
+	TimePeriod string `json:"TimePeriod,omitempty" xml:"TimePeriod"`
 }

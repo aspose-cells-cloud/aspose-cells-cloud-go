@@ -23,19 +23,18 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DataFillValue Represents that the data is populated with the specified value.
 type DataFillValue struct {
-    // Represents default bool value. 
-    DefaultBoolean *bool `json:"DefaultBoolean,omitempty" xml:"DefaultBoolean"`
-    // Represents default string value.              
-    DefaultString string `json:"DefaultString,omitempty" xml:"DefaultString"`
-    // Represents default number value.              
-    DefaultNumber *int32 `json:"DefaultNumber,omitempty" xml:"DefaultNumber"`
-    // Represents default double value.              
-    DefaultDouble *float64 `json:"DefaultDouble,omitempty" xml:"DefaultDouble"`
-    // Represents default date value.              
-    DefaultDate string `json:"DefaultDate,omitempty" xml:"DefaultDate"`
+	// Represents default bool value.
+	DefaultBoolean *bool `json:"DefaultBoolean,omitempty" xml:"DefaultBoolean"`
+	// Represents default string value.
+	DefaultString string `json:"DefaultString,omitempty" xml:"DefaultString"`
+	// Represents default number value.
+	DefaultNumber *int32 `json:"DefaultNumber,omitempty" xml:"DefaultNumber"`
+	// Represents default double value.
+	DefaultDouble *float64 `json:"DefaultDouble,omitempty" xml:"DefaultDouble"`
+	// Represents default date value.
+	DefaultDate string `json:"DefaultDate,omitempty" xml:"DefaultDate"`
 }

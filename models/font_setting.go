@@ -23,19 +23,18 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// FontSetting            Represents a range of characters within the cell text.            
+// FontSetting            Represents a range of characters within the cell text.
 type FontSetting struct {
-    // Returns the font of this object.  
-    Font *Font `json:"Font,omitempty" xml:"Font"`
-    // Gets the length of the characters.  
-    Length *int32 `json:"Length,omitempty" xml:"Length"`
-    // Gets the start index of the characters.  
-    StartIndex *int32 `json:"StartIndex,omitempty" xml:"StartIndex"`
-    // Returns the text options.  
-    TextOptions *TextOptions `json:"TextOptions,omitempty" xml:"TextOptions"`
-    // Gets the type of text node.  
-    Type string `json:"Type,omitempty" xml:"Type"`
+	// Returns the font of this object.
+	Font *Font `json:"Font,omitempty" xml:"Font"`
+	// Gets the length of the characters.
+	Length *int32 `json:"Length,omitempty" xml:"Length"`
+	// Gets the start index of the characters.
+	StartIndex *int32 `json:"StartIndex,omitempty" xml:"StartIndex"`
+	// Returns the text options.
+	TextOptions *TextOptions `json:"TextOptions,omitempty" xml:"TextOptions"`
+	// Gets the type of text node.
+	Type string `json:"Type,omitempty" xml:"Type"`
 }

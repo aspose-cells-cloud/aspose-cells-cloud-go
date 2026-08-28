@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Pictures Encapsulates a collection of  objects.
 type Pictures struct {
-    LinkElement
-    // Property Summary: Contains a list of elements with the XML element name "picture."
-    PictureList []LinkElement `json:"PictureList,omitempty" xml:"PictureList"`
+	LinkElement
+	// Property Summary: Contains a list of elements with the XML element name "picture."
+	PictureList []LinkElement `json:"PictureList,omitempty" xml:"PictureList"`
 }

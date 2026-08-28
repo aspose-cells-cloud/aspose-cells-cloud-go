@@ -23,29 +23,28 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PdfSaveOptions
 type PdfSaveOptions struct {
-    SaveOptions
-    DisplayDocTitle *bool `json:"DisplayDocTitle,omitempty" xml:"DisplayDocTitle"`
-    ExportDocumentStructure *bool `json:"ExportDocumentStructure,omitempty" xml:"ExportDocumentStructure"`
-    EmfRenderSetting string `json:"EmfRenderSetting,omitempty" xml:"EmfRenderSetting"`
-    CustomPropertiesExport string `json:"CustomPropertiesExport,omitempty" xml:"CustomPropertiesExport"`
-    OptimizationType string `json:"OptimizationType,omitempty" xml:"OptimizationType"`
-    Producer string `json:"Producer,omitempty" xml:"Producer"`
-    PdfCompression string `json:"PdfCompression,omitempty" xml:"PdfCompression"`
-    FontEncoding string `json:"FontEncoding,omitempty" xml:"FontEncoding"`
-    Watermark *RenderingWatermark `json:"Watermark,omitempty" xml:"Watermark"`
-    CalculateFormula *bool `json:"CalculateFormula,omitempty" xml:"CalculateFormula"`
-    CheckFontCompatibility *bool `json:"CheckFontCompatibility,omitempty" xml:"CheckFontCompatibility"`
-    Compliance string `json:"Compliance,omitempty" xml:"Compliance"`
-    DefaultFont string `json:"DefaultFont,omitempty" xml:"DefaultFont"`
-    OnePagePerSheet *bool `json:"OnePagePerSheet,omitempty" xml:"OnePagePerSheet"`
-    PrintingPageType string `json:"PrintingPageType,omitempty" xml:"PrintingPageType"`
-    SecurityOptions *PdfSecurityOptions `json:"SecurityOptions,omitempty" xml:"SecurityOptions"`
-    DesiredPPI *int32 `json:"desiredPPI,omitempty" xml:"desiredPPI"`
-    JpegQuality *int32 `json:"jpegQuality,omitempty" xml:"jpegQuality"`
-    ImageType string `json:"ImageType,omitempty" xml:"ImageType"`
+	SaveOptions
+	DisplayDocTitle         *bool               `json:"DisplayDocTitle,omitempty" xml:"DisplayDocTitle"`
+	ExportDocumentStructure *bool               `json:"ExportDocumentStructure,omitempty" xml:"ExportDocumentStructure"`
+	EmfRenderSetting        string              `json:"EmfRenderSetting,omitempty" xml:"EmfRenderSetting"`
+	CustomPropertiesExport  string              `json:"CustomPropertiesExport,omitempty" xml:"CustomPropertiesExport"`
+	OptimizationType        string              `json:"OptimizationType,omitempty" xml:"OptimizationType"`
+	Producer                string              `json:"Producer,omitempty" xml:"Producer"`
+	PdfCompression          string              `json:"PdfCompression,omitempty" xml:"PdfCompression"`
+	FontEncoding            string              `json:"FontEncoding,omitempty" xml:"FontEncoding"`
+	Watermark               *RenderingWatermark `json:"Watermark,omitempty" xml:"Watermark"`
+	CalculateFormula        *bool               `json:"CalculateFormula,omitempty" xml:"CalculateFormula"`
+	CheckFontCompatibility  *bool               `json:"CheckFontCompatibility,omitempty" xml:"CheckFontCompatibility"`
+	Compliance              string              `json:"Compliance,omitempty" xml:"Compliance"`
+	DefaultFont             string              `json:"DefaultFont,omitempty" xml:"DefaultFont"`
+	OnePagePerSheet         *bool               `json:"OnePagePerSheet,omitempty" xml:"OnePagePerSheet"`
+	PrintingPageType        string              `json:"PrintingPageType,omitempty" xml:"PrintingPageType"`
+	SecurityOptions         *PdfSecurityOptions `json:"SecurityOptions,omitempty" xml:"SecurityOptions"`
+	DesiredPPI              *int32              `json:"desiredPPI,omitempty" xml:"desiredPPI"`
+	JpegQuality             *int32              `json:"jpegQuality,omitempty" xml:"jpegQuality"`
+	ImageType               string              `json:"ImageType,omitempty" xml:"ImageType"`
 }

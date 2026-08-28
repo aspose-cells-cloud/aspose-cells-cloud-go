@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // FillFormatResponse Represents the FillFormat Response.
 type FillFormatResponse struct {
-    CellsCloudResponse
-    // Property Summary: Allows access to the FillFormat property to get or set fill formatting properties for an object.
-    FillFormat *FillFormat `json:"FillFormat,omitempty" xml:"FillFormat"`
+	CellsCloudResponse
+	// Property Summary: Allows access to the FillFormat property to get or set fill formatting properties for an object.
+	FillFormat *FillFormat `json:"FillFormat,omitempty" xml:"FillFormat"`
 }

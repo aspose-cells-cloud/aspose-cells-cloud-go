@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // FileVersions File versions FileVersion.
 type FileVersions struct {
-    // File versions FileVersion.
-    Value []FileVersion `json:"Value,omitempty" xml:"Value"`
+	// File versions FileVersion.
+	Value []FileVersion `json:"Value,omitempty" xml:"Value"`
 }

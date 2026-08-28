@@ -23,14 +23,13 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CheckFormulaErrorOptions
 type CheckFormulaErrorOptions struct {
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    SheetName string `json:"SheetName,omitempty" xml:"SheetName"`
-    ChartIndex *int32 `json:"ChartIndex,omitempty" xml:"ChartIndex"`
-    Names []string `json:"Names,omitempty" xml:"Names"`
+	DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	FileInfo   *FileInfo   `json:"FileInfo,omitempty" xml:"FileInfo"`
+	SheetName  string      `json:"SheetName,omitempty" xml:"SheetName"`
+	ChartIndex *int32      `json:"ChartIndex,omitempty" xml:"ChartIndex"`
+	Names      []string    `json:"Names,omitempty" xml:"Names"`
 }

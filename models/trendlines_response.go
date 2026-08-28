@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TrendlinesResponse Represents the Trendlines Response.
 type TrendlinesResponse struct {
-    CellsCloudResponse
-    // This property allows access to the Trendlines feature and set new values for it.
-    Trendlines *Trendlines `json:"Trendlines,omitempty" xml:"Trendlines"`
+	CellsCloudResponse
+	// This property allows access to the Trendlines feature and set new values for it.
+	Trendlines *Trendlines `json:"Trendlines,omitempty" xml:"Trendlines"`
 }

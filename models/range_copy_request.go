@@ -23,18 +23,17 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RangeCopyRequest Indicates range copy request
 type RangeCopyRequest struct {
-    // copydata, copystyle, copyto, copyvalue.
-    Operate string `json:"Operate,omitempty" xml:"Operate"`
-    // Source range. 
-    Source *Range `json:"Source,omitempty" xml:"Source"`
-    // Target range.
-    Target *Range `json:"Target,omitempty" xml:"Target"`
-    TargetWorkbook string `json:"TargetWorkbook,omitempty" xml:"TargetWorkbook"`
-    // Represents the paste special options.             
-    PasteOptions *PasteOptions `json:"PasteOptions,omitempty" xml:"PasteOptions"`
+	// copydata, copystyle, copyto, copyvalue.
+	Operate string `json:"Operate,omitempty" xml:"Operate"`
+	// Source range.
+	Source *Range `json:"Source,omitempty" xml:"Source"`
+	// Target range.
+	Target         *Range `json:"Target,omitempty" xml:"Target"`
+	TargetWorkbook string `json:"TargetWorkbook,omitempty" xml:"TargetWorkbook"`
+	// Represents the paste special options.
+	PasteOptions *PasteOptions `json:"PasteOptions,omitempty" xml:"PasteOptions"`
 }

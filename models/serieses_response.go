@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SeriesesResponse Represents the Serieses Response.
 type SeriesesResponse struct {
-    CellsCloudResponse
-    // A property named "Serieses" of type "SeriesItems" is defined in the class with both getter and setter access.
-    Serieses *SeriesItems `json:"Serieses,omitempty" xml:"Serieses"`
+	CellsCloudResponse
+	// A property named "Serieses" of type "SeriesItems" is defined in the class with both getter and setter access.
+	Serieses *SeriesItems `json:"Serieses,omitempty" xml:"Serieses"`
 }

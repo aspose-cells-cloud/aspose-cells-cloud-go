@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// AbstractCalculationMonitor Monitor for user to track the progress of formula calculation.  
+// AbstractCalculationMonitor Monitor for user to track the progress of formula calculation.
 type AbstractCalculationMonitor struct {
-    // Gets the old value of the calculated cell. Should be used only in  and .  
-    OriginalValue map[string]interface{} `json:"OriginalValue,omitempty" xml:"OriginalValue"`
-    // Whether the cell's value has been changed after the calculation.  Should be used only in .         
-    ValueChanged *bool `json:"ValueChanged,omitempty" xml:"ValueChanged"`
-    // Gets the newly calculated value of the cell. Should be used only in .         
-    CalculatedValue map[string]interface{} `json:"CalculatedValue,omitempty" xml:"CalculatedValue"`
+	// Gets the old value of the calculated cell. Should be used only in  and .
+	OriginalValue map[string]interface{} `json:"OriginalValue,omitempty" xml:"OriginalValue"`
+	// Whether the cell's value has been changed after the calculation.  Should be used only in .
+	ValueChanged *bool `json:"ValueChanged,omitempty" xml:"ValueChanged"`
+	// Gets the newly calculated value of the cell. Should be used only in .
+	CalculatedValue map[string]interface{} `json:"CalculatedValue,omitempty" xml:"CalculatedValue"`
 }

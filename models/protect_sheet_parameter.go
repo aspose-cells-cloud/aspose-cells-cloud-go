@@ -23,26 +23,25 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ProtectSheetParameter Class Summary: The features discussed include natural language processing, image recognition, data visualization, clustering, regression, classification, and recommendation systems.
 type ProtectSheetParameter struct {
-    // Property Summary: Defines a public string property for the ProtectionType.
-    ProtectionType string `json:"ProtectionType,omitempty" xml:"ProtectionType"`
-    Password string `json:"Password,omitempty" xml:"Password"`
-    AllowEditArea []string `json:"AllowEditArea,omitempty" xml:"AllowEditArea"`
-    AllowDeletingColumn string `json:"AllowDeletingColumn,omitempty" xml:"AllowDeletingColumn"`
-    AllowDeletingRow string `json:"AllowDeletingRow,omitempty" xml:"AllowDeletingRow"`
-    AllowFiltering string `json:"AllowFiltering,omitempty" xml:"AllowFiltering"`
-    AllowFormattingCell string `json:"AllowFormattingCell,omitempty" xml:"AllowFormattingCell"`
-    AllowFormattingColumn string `json:"AllowFormattingColumn,omitempty" xml:"AllowFormattingColumn"`
-    AllowFormattingRow string `json:"AllowFormattingRow,omitempty" xml:"AllowFormattingRow"`
-    AllowInsertingColumn string `json:"AllowInsertingColumn,omitempty" xml:"AllowInsertingColumn"`
-    AllowInsertingHyperlink string `json:"AllowInsertingHyperlink,omitempty" xml:"AllowInsertingHyperlink"`
-    AllowInsertingRow string `json:"AllowInsertingRow,omitempty" xml:"AllowInsertingRow"`
-    AllowSelectingLockedCell string `json:"AllowSelectingLockedCell,omitempty" xml:"AllowSelectingLockedCell"`
-    AllowSelectingUnlockedCell string `json:"AllowSelectingUnlockedCell,omitempty" xml:"AllowSelectingUnlockedCell"`
-    AllowSorting string `json:"AllowSorting,omitempty" xml:"AllowSorting"`
-    AllowUsingPivotTable string `json:"AllowUsingPivotTable,omitempty" xml:"AllowUsingPivotTable"`
+	// Property Summary: Defines a public string property for the ProtectionType.
+	ProtectionType             string   `json:"ProtectionType,omitempty" xml:"ProtectionType"`
+	Password                   string   `json:"Password,omitempty" xml:"Password"`
+	AllowEditArea              []string `json:"AllowEditArea,omitempty" xml:"AllowEditArea"`
+	AllowDeletingColumn        string   `json:"AllowDeletingColumn,omitempty" xml:"AllowDeletingColumn"`
+	AllowDeletingRow           string   `json:"AllowDeletingRow,omitempty" xml:"AllowDeletingRow"`
+	AllowFiltering             string   `json:"AllowFiltering,omitempty" xml:"AllowFiltering"`
+	AllowFormattingCell        string   `json:"AllowFormattingCell,omitempty" xml:"AllowFormattingCell"`
+	AllowFormattingColumn      string   `json:"AllowFormattingColumn,omitempty" xml:"AllowFormattingColumn"`
+	AllowFormattingRow         string   `json:"AllowFormattingRow,omitempty" xml:"AllowFormattingRow"`
+	AllowInsertingColumn       string   `json:"AllowInsertingColumn,omitempty" xml:"AllowInsertingColumn"`
+	AllowInsertingHyperlink    string   `json:"AllowInsertingHyperlink,omitempty" xml:"AllowInsertingHyperlink"`
+	AllowInsertingRow          string   `json:"AllowInsertingRow,omitempty" xml:"AllowInsertingRow"`
+	AllowSelectingLockedCell   string   `json:"AllowSelectingLockedCell,omitempty" xml:"AllowSelectingLockedCell"`
+	AllowSelectingUnlockedCell string   `json:"AllowSelectingUnlockedCell,omitempty" xml:"AllowSelectingUnlockedCell"`
+	AllowSorting               string   `json:"AllowSorting,omitempty" xml:"AllowSorting"`
+	AllowUsingPivotTable       string   `json:"AllowUsingPivotTable,omitempty" xml:"AllowUsingPivotTable"`
 }

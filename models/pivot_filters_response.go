@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PivotFiltersResponse Represents the PivotFilters Response.
 type PivotFiltersResponse struct {
-    CellsCloudResponse
-    // Property summary: Contains a list of PivotFilter objects.
-    PivotFilters []PivotFilter `json:"PivotFilters,omitempty" xml:"PivotFilters"`
+	CellsCloudResponse
+	// Property summary: Contains a list of PivotFilter objects.
+	PivotFilters []PivotFilter `json:"PivotFilters,omitempty" xml:"PivotFilters"`
 }

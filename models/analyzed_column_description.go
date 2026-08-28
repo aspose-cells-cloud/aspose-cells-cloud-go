@@ -23,24 +23,23 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // AnalyzedColumnDescription Represents description of analyzed column.
 type AnalyzedColumnDescription struct {
-    // Column index.
-    Index *int32 `json:"Index,omitempty" xml:"Index"`
-    // The true position index value of the column.
-    ColumnIndex *int32 `json:"ColumnIndex,omitempty" xml:"ColumnIndex"`
-    // This class has a public property "Title" of type string with a default value of an empty string.
-    Title string `json:"Title,omitempty" xml:"Title"`
-    // When the repetition rate is high, can it be viewed as a group display?
-    RepetitionRate *float64 `json:"RepetitionRate,omitempty" xml:"RepetitionRate"`
-    // The column type is identified, and the attributes of the column are determined after data analysis.
-    ColumnDataDataType string `json:"ColumnDataDataType,omitempty" xml:"ColumnDataDataType"`
-    NumberCategoryType string `json:"NumberCategoryType,omitempty" xml:"NumberCategoryType"`
-    TextCategoryType string `json:"TextCategoryType,omitempty" xml:"TextCategoryType"`
-    StyleNumber *int32 `json:"StyleNumber,omitempty" xml:"StyleNumber"`
-    // Column data exception description.
-    ColumnDataExceptionDescription string `json:"columnDataExceptionDescription,omitempty" xml:"columnDataExceptionDescription"`
+	// Column index.
+	Index *int32 `json:"Index,omitempty" xml:"Index"`
+	// The true position index value of the column.
+	ColumnIndex *int32 `json:"ColumnIndex,omitempty" xml:"ColumnIndex"`
+	// This class has a public property "Title" of type string with a default value of an empty string.
+	Title string `json:"Title,omitempty" xml:"Title"`
+	// When the repetition rate is high, can it be viewed as a group display?
+	RepetitionRate *float64 `json:"RepetitionRate,omitempty" xml:"RepetitionRate"`
+	// The column type is identified, and the attributes of the column are determined after data analysis.
+	ColumnDataDataType string `json:"ColumnDataDataType,omitempty" xml:"ColumnDataDataType"`
+	NumberCategoryType string `json:"NumberCategoryType,omitempty" xml:"NumberCategoryType"`
+	TextCategoryType   string `json:"TextCategoryType,omitempty" xml:"TextCategoryType"`
+	StyleNumber        *int32 `json:"StyleNumber,omitempty" xml:"StyleNumber"`
+	// Column data exception description.
+	ColumnDataExceptionDescription string `json:"columnDataExceptionDescription,omitempty" xml:"columnDataExceptionDescription"`
 }

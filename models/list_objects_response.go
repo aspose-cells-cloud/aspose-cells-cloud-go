@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ListObjectsResponse Represents the ListObjects Response.
 type ListObjectsResponse struct {
-    CellsCloudResponse
-    // A property named "ListObjects" of type "Tables.ListObjects" that can be both accessed and modified.
-    ListObjects *ListObjects `json:"ListObjects,omitempty" xml:"ListObjects"`
+	CellsCloudResponse
+	// A property named "ListObjects" of type "Tables.ListObjects" that can be both accessed and modified.
+	ListObjects *ListObjects `json:"ListObjects,omitempty" xml:"ListObjects"`
 }

@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // XlsbSaveOptions
 type XlsbSaveOptions struct {
-    SaveOptions
-    ExportAllColumnIndexes *bool `json:"ExportAllColumnIndexes,omitempty" xml:"ExportAllColumnIndexes"`
-    CompressionType string `json:"CompressionType,omitempty" xml:"CompressionType"`
+	SaveOptions
+	ExportAllColumnIndexes *bool  `json:"ExportAllColumnIndexes,omitempty" xml:"ExportAllColumnIndexes"`
+	CompressionType        string `json:"CompressionType,omitempty" xml:"CompressionType"`
 }

@@ -23,14 +23,13 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TxtSaveOptions
 type TxtSaveOptions struct {
-    SaveOptions
-    QuoteType string `json:"QuoteType,omitempty" xml:"QuoteType"`
-    Separator string `json:"Separator,omitempty" xml:"Separator"`
-    SeparatorString string `json:"SeparatorString,omitempty" xml:"SeparatorString"`
-    AlwaysQuoted *bool `json:"AlwaysQuoted,omitempty" xml:"AlwaysQuoted"`
+	SaveOptions
+	QuoteType       string `json:"QuoteType,omitempty" xml:"QuoteType"`
+	Separator       string `json:"Separator,omitempty" xml:"Separator"`
+	SeparatorString string `json:"SeparatorString,omitempty" xml:"SeparatorString"`
+	AlwaysQuoted    *bool  `json:"AlwaysQuoted,omitempty" xml:"AlwaysQuoted"`
 }

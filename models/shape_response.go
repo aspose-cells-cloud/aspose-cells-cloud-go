@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ShapeResponse Represents the Shape Response.
 type ShapeResponse struct {
-    CellsCloudResponse
-    // A public property Shape of type ArcShape that can be accessed and modified.
-    Shape *Shape `json:"Shape,omitempty" xml:"Shape"`
+	CellsCloudResponse
+	// A public property Shape of type ArcShape that can be accessed and modified.
+	Shape *Shape `json:"Shape,omitempty" xml:"Shape"`
 }

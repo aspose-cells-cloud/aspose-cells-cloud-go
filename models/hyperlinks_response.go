@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // HyperlinksResponse Represents the Hyperlinks Response.
 type HyperlinksResponse struct {
-    CellsCloudResponse
-    // This class has a property named "Hyperlinks" of type Hyperlinks which can be accessed and modified.
-    Hyperlinks *Hyperlinks `json:"Hyperlinks,omitempty" xml:"Hyperlinks"`
+	CellsCloudResponse
+	// This class has a property named "Hyperlinks" of type Hyperlinks which can be accessed and modified.
+	Hyperlinks *Hyperlinks `json:"Hyperlinks,omitempty" xml:"Hyperlinks"`
 }

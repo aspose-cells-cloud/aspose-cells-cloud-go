@@ -23,22 +23,21 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// FilterColumn            Represents a filter for a single column. The Filter object is a member of the Filters collection            
+// FilterColumn            Represents a filter for a single column. The Filter object is a member of the Filters collection
 type FilterColumn struct {
-    // Gets and sets the column offset in the range.  
-    FieldIndex *int32 `json:"FieldIndex,omitempty" xml:"FieldIndex"`
-    // Gets and sets the type fo filtering data.  
-    FilterType string `json:"FilterType,omitempty" xml:"FilterType"`
-    // This class contains a property named "MultipleFilters" of type "MultipleFilters" that can be both read and written.
-    MultipleFilters *MultipleFilters `json:"MultipleFilters,omitempty" xml:"MultipleFilters"`
-    ColorFilter *ColorFilter `json:"ColorFilter,omitempty" xml:"ColorFilter"`
-    CustomFilters []CustomFilter `json:"CustomFilters,omitempty" xml:"CustomFilters"`
-    DynamicFilter *DynamicFilter `json:"DynamicFilter,omitempty" xml:"DynamicFilter"`
-    IconFilter *IconFilter `json:"IconFilter,omitempty" xml:"IconFilter"`
-    Top10Filter *Top10Filter `json:"Top10Filter,omitempty" xml:"Top10Filter"`
-    // Indicates whether the AutoFilter button for this column is visible.  
-    Visibledropdown string `json:"Visibledropdown,omitempty" xml:"Visibledropdown"`
+	// Gets and sets the column offset in the range.
+	FieldIndex *int32 `json:"FieldIndex,omitempty" xml:"FieldIndex"`
+	// Gets and sets the type fo filtering data.
+	FilterType string `json:"FilterType,omitempty" xml:"FilterType"`
+	// This class contains a property named "MultipleFilters" of type "MultipleFilters" that can be both read and written.
+	MultipleFilters *MultipleFilters `json:"MultipleFilters,omitempty" xml:"MultipleFilters"`
+	ColorFilter     *ColorFilter     `json:"ColorFilter,omitempty" xml:"ColorFilter"`
+	CustomFilters   []CustomFilter   `json:"CustomFilters,omitempty" xml:"CustomFilters"`
+	DynamicFilter   *DynamicFilter   `json:"DynamicFilter,omitempty" xml:"DynamicFilter"`
+	IconFilter      *IconFilter      `json:"IconFilter,omitempty" xml:"IconFilter"`
+	Top10Filter     *Top10Filter     `json:"Top10Filter,omitempty" xml:"Top10Filter"`
+	// Indicates whether the AutoFilter button for this column is visible.
+	Visibledropdown string `json:"Visibledropdown,omitempty" xml:"Visibledropdown"`
 }

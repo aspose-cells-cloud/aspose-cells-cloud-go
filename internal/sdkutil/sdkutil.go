@@ -5,7 +5,6 @@ package sdkutil
 
 import (
 	"context"
-	"fmt"
 
 	"asposecellscloud"
 	"asposecellscloud/datasource"
@@ -13,22 +12,10 @@ import (
 )
 
 // DoChecked executes a single request and verifies its HTTP status code,
-// returning the first response on success.
+// returning the first response on success. It delegates to the canonical
+// implementation on the root package so the logic lives in exactly one place.
 func DoChecked(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClient, req asposecellscloud.RequestOption) (*asposecellscloud.RichResponse, error) {
-	if req == nil {
-		return nil, fmt.Errorf("%w: required parameters missing", asposecellscloud.ErrInvalidParam)
-	}
-	resps, err := client.Do(ctx, req)
-	if err != nil {
-		return nil, err
-	}
-	if len(resps) == 0 {
-		return nil, fmt.Errorf("%w: empty response", asposecellscloud.ErrRequestFailed)
-	}
-	if err := asposecellscloud.CheckResponseStatus(resps[0]); err != nil {
-		return nil, err
-	}
-	return resps[0], nil
+	return asposecellscloud.DoChecked(ctx, client, req)
 }
 
 // WriteToSink writes data to a DataSink.

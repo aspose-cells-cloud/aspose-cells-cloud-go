@@ -23,18 +23,17 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // LegendEntry Represents a legend entry in a chart legend.
 type LegendEntry struct {
-    LinkElement
-    // True if the text in the object changes font size when the object size changes.                          The default value is True.
-    AutoScaleFont *bool `json:"AutoScaleFont,omitempty" xml:"AutoScaleFont"`
-    // Gets and sets the display mode of the background
-    BackgroundMode string `json:"BackgroundMode,omitempty" xml:"BackgroundMode"`
-    // Gets a  object of the specified ChartFrame object.
-    Font *Font `json:"Font,omitempty" xml:"Font"`
-    // Gets and sets whether the legend entry is deleted.
-    IsDeleted *bool `json:"IsDeleted,omitempty" xml:"IsDeleted"`
+	LinkElement
+	// True if the text in the object changes font size when the object size changes.                          The default value is True.
+	AutoScaleFont *bool `json:"AutoScaleFont,omitempty" xml:"AutoScaleFont"`
+	// Gets and sets the display mode of the background
+	BackgroundMode string `json:"BackgroundMode,omitempty" xml:"BackgroundMode"`
+	// Gets a  object of the specified ChartFrame object.
+	Font *Font `json:"Font,omitempty" xml:"Font"`
+	// Gets and sets whether the legend entry is deleted.
+	IsDeleted *bool `json:"IsDeleted,omitempty" xml:"IsDeleted"`
 }

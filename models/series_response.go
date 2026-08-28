@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SeriesResponse Represents the Series Response.
 type SeriesResponse struct {
-    CellsCloudResponse
-    // A public property named "Series" of type Series with both getter and setter methods.
-    Series *Series `json:"Series,omitempty" xml:"Series"`
+	CellsCloudResponse
+	// A public property named "Series" of type Series with both getter and setter methods.
+	Series *Series `json:"Series,omitempty" xml:"Series"`
 }

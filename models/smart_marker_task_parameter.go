@@ -23,22 +23,21 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SmartMarkerTaskParameter Represents smart marker task parameter.
 type SmartMarkerTaskParameter struct {
-    TaskParameter
-    // Represents data source of task object.
-    SourceWorkbook *FileSource `json:"SourceWorkbook,omitempty" xml:"SourceWorkbook"`
-    // Represents data source of task object.
-    DestinationWorkbook *FileSource `json:"DestinationWorkbook,omitempty" xml:"DestinationWorkbook"`
-    // Represents xml file.
-    XmlFile *FileSource `json:"xmlFile,omitempty" xml:"xmlFile"`
-    // Represents destination data source.
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    // Represents destination data source.
-    TargetDataSource *DataSource `json:"TargetDataSource,omitempty" xml:"TargetDataSource"`
-    // Represents xml file.
-    XMLFileDataSource *DataSource `json:"XMLFileDataSource,omitempty" xml:"XMLFileDataSource"`
+	TaskParameter
+	// Represents data source of task object.
+	SourceWorkbook *FileSource `json:"SourceWorkbook,omitempty" xml:"SourceWorkbook"`
+	// Represents data source of task object.
+	DestinationWorkbook *FileSource `json:"DestinationWorkbook,omitempty" xml:"DestinationWorkbook"`
+	// Represents xml file.
+	XmlFile *FileSource `json:"xmlFile,omitempty" xml:"xmlFile"`
+	// Represents destination data source.
+	DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	// Represents destination data source.
+	TargetDataSource *DataSource `json:"TargetDataSource,omitempty" xml:"TargetDataSource"`
+	// Represents xml file.
+	XMLFileDataSource *DataSource `json:"XMLFileDataSource,omitempty" xml:"XMLFileDataSource"`
 }

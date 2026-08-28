@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // WorkbookReplaceResponse Represents the WorkbookReplace Response.
 type WorkbookReplaceResponse struct {
-    CellsCloudResponse
-    // Property summary: An integer property named "Matches" with an XmlElement attribute.
-    Matches *int32 `json:"Matches,omitempty" xml:"Matches"`
-    Workbook *LinkElement `json:"Workbook,omitempty" xml:"Workbook"`
+	CellsCloudResponse
+	// Property summary: An integer property named "Matches" with an XmlElement attribute.
+	Matches  *int32       `json:"Matches,omitempty" xml:"Matches"`
+	Workbook *LinkElement `json:"Workbook,omitempty" xml:"Workbook"`
 }

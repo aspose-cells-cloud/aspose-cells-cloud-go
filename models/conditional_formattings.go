@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ConditionalFormattings Encapsulates a collection of  objects.
 type ConditionalFormattings struct {
-    LinkElement
-    // The property "Count" is decorated with [XmlElement("count")] attribute for XML serialization.
-    Count *int32 `json:"Count,omitempty" xml:"Count"`
-    ConditionalFormattingList []ConditionalFormatting `json:"ConditionalFormattingList,omitempty" xml:"ConditionalFormattingList"`
+	LinkElement
+	// The property "Count" is decorated with [XmlElement("count")] attribute for XML serialization.
+	Count                     *int32                  `json:"Count,omitempty" xml:"Count"`
+	ConditionalFormattingList []ConditionalFormatting `json:"ConditionalFormattingList,omitempty" xml:"ConditionalFormattingList"`
 }

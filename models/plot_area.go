@@ -23,18 +23,17 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PlotArea Encapsulates the object that represents the plot area in a chart.
 type PlotArea struct {
-    ChartFrame
-    // Gets or sets the height of plot area in units of 1/4000 of the chart area.
-    InnerHeight *int32 `json:"InnerHeight,omitempty" xml:"InnerHeight"`
-    // Gets or sets the width  of plot area in units of 1/4000 of the chart area.
-    InnerWidth *int32 `json:"InnerWidth,omitempty" xml:"InnerWidth"`
-    // Gets or gets the x coordinate of the upper top corner of plot area in units of 1/4000 of the chart area.
-    InnerX *int32 `json:"InnerX,omitempty" xml:"InnerX"`
-    // Gets or gets the x coordinate of the upper top corner of plot area in units of 1/4000 of the chart area.
-    InnerY *int32 `json:"InnerY,omitempty" xml:"InnerY"`
+	ChartFrame
+	// Gets or sets the height of plot area in units of 1/4000 of the chart area.
+	InnerHeight *int32 `json:"InnerHeight,omitempty" xml:"InnerHeight"`
+	// Gets or sets the width  of plot area in units of 1/4000 of the chart area.
+	InnerWidth *int32 `json:"InnerWidth,omitempty" xml:"InnerWidth"`
+	// Gets or gets the x coordinate of the upper top corner of plot area in units of 1/4000 of the chart area.
+	InnerX *int32 `json:"InnerX,omitempty" xml:"InnerX"`
+	// Gets or gets the x coordinate of the upper top corner of plot area in units of 1/4000 of the chart area.
+	InnerY *int32 `json:"InnerY,omitempty" xml:"InnerY"`
 }

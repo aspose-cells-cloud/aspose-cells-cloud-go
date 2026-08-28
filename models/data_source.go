@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DataSource Represents data source.
 type DataSource struct {
-    // Represents data source type.
-    DataSourceType string `json:"DataSourceType,omitempty" xml:"DataSourceType"`
-    // Represents data path.
-    DataPath string `json:"DataPath,omitempty" xml:"DataPath"`
+	// Represents data source type.
+	DataSourceType string `json:"DataSourceType,omitempty" xml:"DataSourceType"`
+	// Represents data path.
+	DataPath string `json:"DataPath,omitempty" xml:"DataPath"`
 }

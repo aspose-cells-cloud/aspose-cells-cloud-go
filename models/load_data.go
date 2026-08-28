@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // LoadData Loading data information.
 type LoadData struct {
-    // Indicates begin position for loading data. 
-    LoadTo *LoadTo `json:"LoadTo,omitempty" xml:"LoadTo"`
-    // Indicates data query for data loading. 
-    DataQuery *DataQuery `json:"DataQuery,omitempty" xml:"DataQuery"`
+	// Indicates begin position for loading data.
+	LoadTo *LoadTo `json:"LoadTo,omitempty" xml:"LoadTo"`
+	// Indicates data query for data loading.
+	DataQuery *DataQuery `json:"DataQuery,omitempty" xml:"DataQuery"`
 }

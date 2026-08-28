@@ -17,8 +17,8 @@ import (
 	"fmt"
 
 	"asposecellscloud"
-	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/datasource"
+	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/requests"
 )
 
@@ -39,12 +39,9 @@ func ReportAnalysis(ctx context.Context, client *asposecellscloud.AsposeCellsClo
 	}
 
 	req := requests.NewReportAIAnalysisRequest("", cfg.ReqOpts...)
-	if req == nil {
-		return nil, fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
-	}
 	req.SetSpreadsheetBytes(data, "Spreadsheet")
 
-	return runOne(ctx, client, req)
+	return sdkutil.DoChecked(ctx, client, req)
 }
 
 // Summarize generates an AI summary of a spreadsheet and writes the result
@@ -64,16 +61,13 @@ func Summarize(ctx context.Context, client *asposecellscloud.AsposeCellsCloudCli
 	}
 
 	req := requests.NewSummarizeSpreadsheetRequest("", cfg.ReqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
-	}
 	req.SetSpreadsheetBytes(data, "Spreadsheet")
 
-	resp, err := runOne(ctx, client, req)
+	resp, err := sdkutil.DoChecked(ctx, client, req)
 	if err != nil {
 		return err
 	}
-	return writeToSink(sink, resp.Body)
+	return sdkutil.WriteToSink(sink, resp.Body)
 }
 
 // AggregateByColor aggregates cells by color in a spreadsheet and returns the
@@ -94,12 +88,9 @@ func AggregateByColor(ctx context.Context, client *asposecellscloud.AsposeCellsC
 	}
 
 	req := requests.NewAggregateCellsByColorRequest("", cfg.ReqOpts...)
-	if req == nil {
-		return nil, fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
-	}
 	req.SetSpreadsheetBytes(data, "Spreadsheet")
 
-	return runOne(ctx, client, req)
+	return sdkutil.DoChecked(ctx, client, req)
 }
 
 // MathCalculate runs a math calculation over value (e.g. a cell range) in a
@@ -121,10 +112,7 @@ func MathCalculate(ctx context.Context, client *asposecellscloud.AsposeCellsClou
 	}
 
 	req := requests.NewMathCalculateRequest(operation, "", value, cfg.ReqOpts...)
-	if req == nil {
-		return nil, fmt.Errorf("%w: operation and value are required", asposecellscloud.ErrInvalidParam)
-	}
 	req.SetSpreadsheetBytes(data, "Spreadsheet")
 
-	return runOne(ctx, client, req)
+	return sdkutil.DoChecked(ctx, client, req)
 }

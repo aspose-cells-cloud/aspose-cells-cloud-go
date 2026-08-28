@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SparklineGroupsResponse Represents the SparklineGroups Response.
 type SparklineGroupsResponse struct {
-    CellsCloudResponse
-    // This class has a property named "SparklineGroups" of type "SparklineGroups" for managing sparkline groups.
-    SparklineGroups *SparklineGroups `json:"SparklineGroups,omitempty" xml:"SparklineGroups"`
+	CellsCloudResponse
+	// This class has a property named "SparklineGroups" of type "SparklineGroups" for managing sparkline groups.
+	SparklineGroups *SparklineGroups `json:"SparklineGroups,omitempty" xml:"SparklineGroups"`
 }

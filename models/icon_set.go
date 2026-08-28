@@ -23,21 +23,20 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // IconSet Describe the IconSet conditional formatting rule. This conditional formatting     rule applies icons to cells according to their values.
 type IconSet struct {
-    // Get the from the collection  
-    CfIcons []ConditionalFormattingIcon `json:"CfIcons,omitempty" xml:"CfIcons"`
-    // Get the CFValueObjects instance.  
-    Cfvos []ConditionalFormattingValue `json:"Cfvos,omitempty" xml:"Cfvos"`
-    // Indicates whether the icon set is custom.             Default value is false.  
-    IsCustom *bool `json:"IsCustom,omitempty" xml:"IsCustom"`
-    // Get or set the flag indicating whether to reverses the default order of the icons in this icon set.             Default value is false.  
-    Reverse *bool `json:"Reverse,omitempty" xml:"Reverse"`
-    // Get or set the flag indicating whether to show the values of the cells on which this icon set is applied.             Default value is true.  
-    ShowValue *bool `json:"ShowValue,omitempty" xml:"ShowValue"`
-    // Get or Set the icon set type to display.  Setting the type will auto check    if the current Cfvos's count is accord with the new type. If not accord,    old Cfvos will be cleaned and default Cfvos will be added.             
-    IconSetType string `json:"IconSetType,omitempty" xml:"IconSetType"`
+	// Get the from the collection
+	CfIcons []ConditionalFormattingIcon `json:"CfIcons,omitempty" xml:"CfIcons"`
+	// Get the CFValueObjects instance.
+	Cfvos []ConditionalFormattingValue `json:"Cfvos,omitempty" xml:"Cfvos"`
+	// Indicates whether the icon set is custom.             Default value is false.
+	IsCustom *bool `json:"IsCustom,omitempty" xml:"IsCustom"`
+	// Get or set the flag indicating whether to reverses the default order of the icons in this icon set.             Default value is false.
+	Reverse *bool `json:"Reverse,omitempty" xml:"Reverse"`
+	// Get or set the flag indicating whether to show the values of the cells on which this icon set is applied.             Default value is true.
+	ShowValue *bool `json:"ShowValue,omitempty" xml:"ShowValue"`
+	// Get or Set the icon set type to display.  Setting the type will auto check    if the current Cfvos's count is accord with the new type. If not accord,    old Cfvos will be cleaned and default Cfvos will be added.
+	IconSetType string `json:"IconSetType,omitempty" xml:"IconSetType"`
 }

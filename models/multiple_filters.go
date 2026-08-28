@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// MultipleFilters            Represents the multiple filter collection.            
+// MultipleFilters            Represents the multiple filter collection.
 type MultipleFilters struct {
-    // A nullable boolean property that determines if a blank space should be matched.
-    MatchBlank *bool `json:"MatchBlank,omitempty" xml:"MatchBlank"`
-    MultipleFilterList []MultipleFilter `json:"MultipleFilterList,omitempty" xml:"MultipleFilterList"`
+	// A nullable boolean property that determines if a blank space should be matched.
+	MatchBlank         *bool            `json:"MatchBlank,omitempty" xml:"MatchBlank"`
+	MultipleFilterList []MultipleFilter `json:"MultipleFilterList,omitempty" xml:"MultipleFilterList"`
 }

@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // WorkbooksResponse Represents the Workbooks Response.
 type WorkbooksResponse struct {
-    CellsCloudResponse
-    // Property Summary: Contains a list of "Workbook" elements under the "Workbooks" array in XML format.
-    Workbooks []LinkElement `json:"Workbooks,omitempty" xml:"Workbooks"`
+	CellsCloudResponse
+	// Property Summary: Contains a list of "Workbook" elements under the "Workbooks" array in XML format.
+	Workbooks []LinkElement `json:"Workbooks,omitempty" xml:"Workbooks"`
 }

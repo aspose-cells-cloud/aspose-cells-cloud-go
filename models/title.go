@@ -23,20 +23,19 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Title Encapsulates the object that represents the title of chart or axis.
 type Title struct {
-    ChartFrame
-    // Represents whether the title is visible.
-    IsVisible *bool `json:"IsVisible,omitempty" xml:"IsVisible"`
-    // A property named LinkedSource with both set and get accessors is defined.
-    LinkedSource string `json:"LinkedSource,omitempty" xml:"LinkedSource"`
-    RotationAngle *int32 `json:"RotationAngle,omitempty" xml:"RotationAngle"`
-    // Gets or sets the text of display unit label.
-    Text string `json:"Text,omitempty" xml:"Text"`
-    TextDirection string `json:"TextDirection,omitempty" xml:"TextDirection"`
-    TextHorizontalAlignment string `json:"TextHorizontalAlignment,omitempty" xml:"TextHorizontalAlignment"`
-    TextVerticalAlignment string `json:"TextVerticalAlignment,omitempty" xml:"TextVerticalAlignment"`
+	ChartFrame
+	// Represents whether the title is visible.
+	IsVisible *bool `json:"IsVisible,omitempty" xml:"IsVisible"`
+	// A property named LinkedSource with both set and get accessors is defined.
+	LinkedSource  string `json:"LinkedSource,omitempty" xml:"LinkedSource"`
+	RotationAngle *int32 `json:"RotationAngle,omitempty" xml:"RotationAngle"`
+	// Gets or sets the text of display unit label.
+	Text                    string `json:"Text,omitempty" xml:"Text"`
+	TextDirection           string `json:"TextDirection,omitempty" xml:"TextDirection"`
+	TextHorizontalAlignment string `json:"TextHorizontalAlignment,omitempty" xml:"TextHorizontalAlignment"`
+	TextVerticalAlignment   string `json:"TextVerticalAlignment,omitempty" xml:"TextVerticalAlignment"`
 }

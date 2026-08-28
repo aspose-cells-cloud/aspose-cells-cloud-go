@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SaveOptionsData
 type SaveOptionsData struct {
-    SaveOptions *SaveOptions `json:"SaveOptions,omitempty" xml:"SaveOptions"`
-    Filename string `json:"Filename,omitempty" xml:"Filename"`
-    StorageName string `json:"StorageName,omitempty" xml:"StorageName"`
+	SaveOptions *SaveOptions `json:"SaveOptions,omitempty" xml:"SaveOptions"`
+	Filename    string       `json:"Filename,omitempty" xml:"Filename"`
+	StorageName string       `json:"StorageName,omitempty" xml:"StorageName"`
 }

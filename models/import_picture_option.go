@@ -23,18 +23,17 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ImportPictureOption Class summary: The features of the topic were explored, discussing its components, patterns, and significance.
 type ImportPictureOption struct {
-    ImportOption
-    // A property "UpperLeftRow" of type integer with a public getter and setter is defined.
-    UpperLeftRow *int32 `json:"UpperLeftRow,omitempty" xml:"UpperLeftRow"`
-    UpperLeftColumn *int32 `json:"UpperLeftColumn,omitempty" xml:"UpperLeftColumn"`
-    LowerRightRow *int32 `json:"LowerRightRow,omitempty" xml:"LowerRightRow"`
-    LowerRightColumn *int32 `json:"LowerRightColumn,omitempty" xml:"LowerRightColumn"`
-    Filename string `json:"Filename,omitempty" xml:"Filename"`
-    // base64
-    Data string `json:"Data,omitempty" xml:"Data"`
+	ImportOption
+	// A property "UpperLeftRow" of type integer with a public getter and setter is defined.
+	UpperLeftRow     *int32 `json:"UpperLeftRow,omitempty" xml:"UpperLeftRow"`
+	UpperLeftColumn  *int32 `json:"UpperLeftColumn,omitempty" xml:"UpperLeftColumn"`
+	LowerRightRow    *int32 `json:"LowerRightRow,omitempty" xml:"LowerRightRow"`
+	LowerRightColumn *int32 `json:"LowerRightColumn,omitempty" xml:"LowerRightColumn"`
+	Filename         string `json:"Filename,omitempty" xml:"Filename"`
+	// base64
+	Data string `json:"Data,omitempty" xml:"Data"`
 }

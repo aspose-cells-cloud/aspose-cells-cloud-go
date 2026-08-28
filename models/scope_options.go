@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ScopeOptions Specifies the range of cells within the worksheet where the spreadsheet operations will be performed. This parameter allows users to define the exact area to be processed, ensuring that operations are applied only to the designated cells.
 type ScopeOptions struct {
-    // ScopeOptionsType is a type that represents options or settings that are specific to a particular scope.
-    Scope string `json:"Scope,omitempty" xml:"Scope"`
-    // Specifies the designated work area within the worksheet where operations are to be performed. 
-    ScopeItems []interface{} `json:"ScopeItems,omitempty" xml:"ScopeItems"`
+	// ScopeOptionsType is a type that represents options or settings that are specific to a particular scope.
+	Scope string `json:"Scope,omitempty" xml:"Scope"`
+	// Specifies the designated work area within the worksheet where operations are to be performed.
+	ScopeItems []interface{} `json:"ScopeItems,omitempty" xml:"ScopeItems"`
 }

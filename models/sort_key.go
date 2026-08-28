@@ -23,21 +23,20 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SortKey Represents sort key.
 type SortKey struct {
-    // Represents the key of sorting.
-    Key *int32 `json:"Key,omitempty" xml:"Key"`
-    // Represents the order of sorting.
-    SortOrder string `json:"SortOrder,omitempty" xml:"SortOrder"`
-    // This class includes a property named CustomList that is an array of strings with both getter and setter methods.
-    CustomList []interface{} `json:"CustomList,omitempty" xml:"CustomList"`
-    // Indicates the order of sorting.
-    Order string `json:"Order,omitempty" xml:"Order"`
-    // Gets the sorted column index(absolute position, column A is 0, B is 1, ...).
-    Index *int32 `json:"Index,omitempty" xml:"Index"`
-    // Represents the type of sorting.
-    Type string `json:"Type,omitempty" xml:"Type"`
+	// Represents the key of sorting.
+	Key *int32 `json:"Key,omitempty" xml:"Key"`
+	// Represents the order of sorting.
+	SortOrder string `json:"SortOrder,omitempty" xml:"SortOrder"`
+	// This class includes a property named CustomList that is an array of strings with both getter and setter methods.
+	CustomList []interface{} `json:"CustomList,omitempty" xml:"CustomList"`
+	// Indicates the order of sorting.
+	Order string `json:"Order,omitempty" xml:"Order"`
+	// Gets the sorted column index(absolute position, column A is 0, B is 1, ...).
+	Index *int32 `json:"Index,omitempty" xml:"Index"`
+	// Represents the type of sorting.
+	Type string `json:"Type,omitempty" xml:"Type"`
 }

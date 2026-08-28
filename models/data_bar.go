@@ -23,33 +23,32 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DataBar Describe the DataBar conditional formatting rule. This conditional formatting    rule displays a gradated data bar in the range of cells.
 type DataBar struct {
-    // Gets the color of the axis for cells with conditional formatting as data bars.  
-    AxisColor *Color `json:"AxisColor,omitempty" xml:"AxisColor"`
-    // Gets or sets the position of the axis of the data bars specified by a conditional formatting rule.  
-    AxisPosition string `json:"AxisPosition,omitempty" xml:"AxisPosition"`
-    // Gets an object that specifies the border of a data bar.  
-    BarBorder *DataBarBorder `json:"BarBorder,omitempty" xml:"BarBorder"`
-    // Gets or sets how a data bar is filled with color.  
-    BarFillType string `json:"BarFillType,omitempty" xml:"BarFillType"`
-    // Get or set this DataBar's Color.  
-    Color *Color `json:"Color,omitempty" xml:"Color"`
-    // Gets or sets the direction the databar is displayed.  
-    Direction string `json:"Direction,omitempty" xml:"Direction"`
-    // Get or set this DataBar's max value object.             Cannot set null or CFValueObject with type FormatConditionValueType.Min to it.  
-    MaxCfvo *ConditionalFormattingValue `json:"MaxCfvo,omitempty" xml:"MaxCfvo"`
-    // Represents the max length of data bar .  
-    MaxLength *int32 `json:"MaxLength,omitempty" xml:"MaxLength"`
-    // Get or set this DataBar's min value object.             Cannot set null or CFValueObject with type FormatConditionValueType.Max to it.  
-    MinCfvo *ConditionalFormattingValue `json:"MinCfvo,omitempty" xml:"MinCfvo"`
-    // Represents the min length of data bar .  
-    MinLength *int32 `json:"MinLength,omitempty" xml:"MinLength"`
-    // Gets the NegativeBarFormat object associated with a data bar conditional formatting rule.  
-    NegativeBarFormat *NegativeBarFormat `json:"NegativeBarFormat,omitempty" xml:"NegativeBarFormat"`
-    // Get or set the flag indicating whether to show the values of the cells on which this data bar is applied.             Default value is true.  
-    ShowValue *bool `json:"ShowValue,omitempty" xml:"ShowValue"`
+	// Gets the color of the axis for cells with conditional formatting as data bars.
+	AxisColor *Color `json:"AxisColor,omitempty" xml:"AxisColor"`
+	// Gets or sets the position of the axis of the data bars specified by a conditional formatting rule.
+	AxisPosition string `json:"AxisPosition,omitempty" xml:"AxisPosition"`
+	// Gets an object that specifies the border of a data bar.
+	BarBorder *DataBarBorder `json:"BarBorder,omitempty" xml:"BarBorder"`
+	// Gets or sets how a data bar is filled with color.
+	BarFillType string `json:"BarFillType,omitempty" xml:"BarFillType"`
+	// Get or set this DataBar's Color.
+	Color *Color `json:"Color,omitempty" xml:"Color"`
+	// Gets or sets the direction the databar is displayed.
+	Direction string `json:"Direction,omitempty" xml:"Direction"`
+	// Get or set this DataBar's max value object.             Cannot set null or CFValueObject with type FormatConditionValueType.Min to it.
+	MaxCfvo *ConditionalFormattingValue `json:"MaxCfvo,omitempty" xml:"MaxCfvo"`
+	// Represents the max length of data bar .
+	MaxLength *int32 `json:"MaxLength,omitempty" xml:"MaxLength"`
+	// Get or set this DataBar's min value object.             Cannot set null or CFValueObject with type FormatConditionValueType.Max to it.
+	MinCfvo *ConditionalFormattingValue `json:"MinCfvo,omitempty" xml:"MinCfvo"`
+	// Represents the min length of data bar .
+	MinLength *int32 `json:"MinLength,omitempty" xml:"MinLength"`
+	// Gets the NegativeBarFormat object associated with a data bar conditional formatting rule.
+	NegativeBarFormat *NegativeBarFormat `json:"NegativeBarFormat,omitempty" xml:"NegativeBarFormat"`
+	// Get or set the flag indicating whether to show the values of the cells on which this data bar is applied.             Default value is true.
+	ShowValue *bool `json:"ShowValue,omitempty" xml:"ShowValue"`
 }

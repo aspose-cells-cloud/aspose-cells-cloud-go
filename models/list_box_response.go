@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ListBoxResponse Represents the ListBox Response.
 type ListBoxResponse struct {
-    CellsCloudResponse
-    // A property "Shape" of type ListBox with read and write access is available for the class.
-    Shape *ListBox `json:"Shape,omitempty" xml:"Shape"`
+	CellsCloudResponse
+	// A property "Shape" of type ListBox with read and write access is available for the class.
+	Shape *ListBox `json:"Shape,omitempty" xml:"Shape"`
 }

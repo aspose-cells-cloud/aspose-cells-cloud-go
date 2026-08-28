@@ -23,19 +23,18 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// Top10Filter            Represents the top 10 filter.            
+// Top10Filter            Represents the top 10 filter.
 type Top10Filter struct {
-    // An integer property named FieldIndex that can be accessed and modified.             
-    FieldIndex *int32 `json:"FieldIndex,omitempty" xml:"FieldIndex"`
-    //  
-    Criteria string `json:"Criteria,omitempty" xml:"Criteria"`
-    // Indicates whether the items is percent.  
-    IsPercent *bool `json:"IsPercent,omitempty" xml:"IsPercent"`
-    // Indicates whether it's top filter.  
-    IsTop *bool `json:"IsTop,omitempty" xml:"IsTop"`
-    // Gets and sets the items of the filter.  
-    Items *int32 `json:"Items,omitempty" xml:"Items"`
+	// An integer property named FieldIndex that can be accessed and modified.
+	FieldIndex *int32 `json:"FieldIndex,omitempty" xml:"FieldIndex"`
+	//
+	Criteria string `json:"Criteria,omitempty" xml:"Criteria"`
+	// Indicates whether the items is percent.
+	IsPercent *bool `json:"IsPercent,omitempty" xml:"IsPercent"`
+	// Indicates whether it's top filter.
+	IsTop *bool `json:"IsTop,omitempty" xml:"IsTop"`
+	// Gets and sets the items of the filter.
+	Items *int32 `json:"Items,omitempty" xml:"Items"`
 }

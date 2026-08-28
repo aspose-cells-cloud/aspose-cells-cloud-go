@@ -23,22 +23,21 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SplitTextOptions Appliance features: 1. Automatic defrost system 2. Energy-efficient LED lighting 3. Adjustable glass shelves 4. Ice and water dispenser with filtration system
 type SplitTextOptions struct {
-    // The property "Name" is a publicly accessible and overridable property of type string in the class.
-    Name string `json:"Name,omitempty" xml:"Name"`
-    // Represents data source.  There are three types of data, they are CloudFileSystem, RequestFiles, HttpUri.
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    // Represents file information. Include of filename, filesize, and file content(base64String).
-    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
-    Range string `json:"Range,omitempty" xml:"Range"`
-    SplitDelimitersType string `json:"SplitDelimitersType,omitempty" xml:"SplitDelimitersType"`
-    CustomDelimiter string `json:"CustomDelimiter,omitempty" xml:"CustomDelimiter"`
-    KeepDelimitersInResultingCells *bool `json:"KeepDelimitersInResultingCells,omitempty" xml:"KeepDelimitersInResultingCells"`
-    KeepDelimitersPosition string `json:"KeepDelimitersPosition,omitempty" xml:"KeepDelimitersPosition"`
-    HowToSplit string `json:"HowToSplit,omitempty" xml:"HowToSplit"`
+	// The property "Name" is a publicly accessible and overridable property of type string in the class.
+	Name string `json:"Name,omitempty" xml:"Name"`
+	// Represents data source.  There are three types of data, they are CloudFileSystem, RequestFiles, HttpUri.
+	DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	// Represents file information. Include of filename, filesize, and file content(base64String).
+	FileInfo                       *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
+	Worksheet                      string    `json:"Worksheet,omitempty" xml:"Worksheet"`
+	Range                          string    `json:"Range,omitempty" xml:"Range"`
+	SplitDelimitersType            string    `json:"SplitDelimitersType,omitempty" xml:"SplitDelimitersType"`
+	CustomDelimiter                string    `json:"CustomDelimiter,omitempty" xml:"CustomDelimiter"`
+	KeepDelimitersInResultingCells *bool     `json:"KeepDelimitersInResultingCells,omitempty" xml:"KeepDelimitersInResultingCells"`
+	KeepDelimitersPosition         string    `json:"KeepDelimitersPosition,omitempty" xml:"KeepDelimitersPosition"`
+	HowToSplit                     string    `json:"HowToSplit,omitempty" xml:"HowToSplit"`
 }

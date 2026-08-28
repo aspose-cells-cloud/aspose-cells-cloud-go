@@ -23,25 +23,24 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // AutoFitterOptions Represents all auto fitter options.
 type AutoFitterOptions struct {
-    // Gets and set the type of auto fitting row height of merged cells.
-    AutoFitMergedCellsType string `json:"AutoFitMergedCellsType,omitempty" xml:"AutoFitMergedCellsType"`
-    // Ignores the hidden rows/columns.
-    IgnoreHidden *bool `json:"IgnoreHidden,omitempty" xml:"IgnoreHidden"`
-    // Indicates whether only fit the rows which height are not customed.
-    OnlyAuto *bool `json:"OnlyAuto,omitempty" xml:"OnlyAuto"`
-    // Gets or sets default edit language.
-    DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
-    // Gets and sets the max row height(in unit of Point) when autofitting rows.
-    MaxRowHeight *float64 `json:"MaxRowHeight,omitempty" xml:"MaxRowHeight"`
-    // Gets and sets the type of auto fitting wrapped text.
-    AutoFitWrappedTextType string `json:"AutoFitWrappedTextType,omitempty" xml:"AutoFitWrappedTextType"`
-    // Gets and sets the formatted strategy.
-    FormatStrategy string `json:"FormatStrategy,omitempty" xml:"FormatStrategy"`
-    // Indicates whether fit for rendering purpose.
-    ForRendering *bool `json:"ForRendering,omitempty" xml:"ForRendering"`
+	// Gets and set the type of auto fitting row height of merged cells.
+	AutoFitMergedCellsType string `json:"AutoFitMergedCellsType,omitempty" xml:"AutoFitMergedCellsType"`
+	// Ignores the hidden rows/columns.
+	IgnoreHidden *bool `json:"IgnoreHidden,omitempty" xml:"IgnoreHidden"`
+	// Indicates whether only fit the rows which height are not customed.
+	OnlyAuto *bool `json:"OnlyAuto,omitempty" xml:"OnlyAuto"`
+	// Gets or sets default edit language.
+	DefaultEditLanguage string `json:"DefaultEditLanguage,omitempty" xml:"DefaultEditLanguage"`
+	// Gets and sets the max row height(in unit of Point) when autofitting rows.
+	MaxRowHeight *float64 `json:"MaxRowHeight,omitempty" xml:"MaxRowHeight"`
+	// Gets and sets the type of auto fitting wrapped text.
+	AutoFitWrappedTextType string `json:"AutoFitWrappedTextType,omitempty" xml:"AutoFitWrappedTextType"`
+	// Gets and sets the formatted strategy.
+	FormatStrategy string `json:"FormatStrategy,omitempty" xml:"FormatStrategy"`
+	// Indicates whether fit for rendering purpose.
+	ForRendering *bool `json:"ForRendering,omitempty" xml:"ForRendering"`
 }

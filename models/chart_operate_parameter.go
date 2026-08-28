@@ -23,32 +23,31 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ChartOperateParameter Represents chart operate parameter.
 type ChartOperateParameter struct {
-    OperateParameter
-    // Represents chart index.
-    ChartIndex *int32 `json:"ChartIndex,omitempty" xml:"ChartIndex"`
-    // Represents chart type.
-    ChartType string `json:"ChartType,omitempty" xml:"ChartType"`
-    // Represents upper left row index of chart.
-    UpperLeftRow *int32 `json:"UpperLeftRow,omitempty" xml:"UpperLeftRow"`
-    // Represents upper left column index of chart.
-    UpperLeftColumn *int32 `json:"UpperLeftColumn,omitempty" xml:"UpperLeftColumn"`
-    // Represents lower right row index of chart.
-    LowerRightRow *int32 `json:"LowerRightRow,omitempty" xml:"LowerRightRow"`
-    // Represents lower right column index of chart.
-    LowerRightColumn *int32 `json:"LowerRightColumn,omitempty" xml:"LowerRightColumn"`
-    // Represents chart area.
-    Area string `json:"Area,omitempty" xml:"Area"`
-    // Represents whether to plot the series from a range of cell values by row or by column.
-    IsVertical *bool `json:"IsVertical,omitempty" xml:"IsVertical"`
-    // Represents chart category data.
-    CategoryData string `json:"CategoryData,omitempty" xml:"CategoryData"`
-    // Represents whether auto get serial name.
-    IsAutoGetSerialName *bool `json:"IsAutoGetSerialName,omitempty" xml:"IsAutoGetSerialName"`
-    // Represents chart title.
-    Title string `json:"Title,omitempty" xml:"Title"`
+	OperateParameter
+	// Represents chart index.
+	ChartIndex *int32 `json:"ChartIndex,omitempty" xml:"ChartIndex"`
+	// Represents chart type.
+	ChartType string `json:"ChartType,omitempty" xml:"ChartType"`
+	// Represents upper left row index of chart.
+	UpperLeftRow *int32 `json:"UpperLeftRow,omitempty" xml:"UpperLeftRow"`
+	// Represents upper left column index of chart.
+	UpperLeftColumn *int32 `json:"UpperLeftColumn,omitempty" xml:"UpperLeftColumn"`
+	// Represents lower right row index of chart.
+	LowerRightRow *int32 `json:"LowerRightRow,omitempty" xml:"LowerRightRow"`
+	// Represents lower right column index of chart.
+	LowerRightColumn *int32 `json:"LowerRightColumn,omitempty" xml:"LowerRightColumn"`
+	// Represents chart area.
+	Area string `json:"Area,omitempty" xml:"Area"`
+	// Represents whether to plot the series from a range of cell values by row or by column.
+	IsVertical *bool `json:"IsVertical,omitempty" xml:"IsVertical"`
+	// Represents chart category data.
+	CategoryData string `json:"CategoryData,omitempty" xml:"CategoryData"`
+	// Represents whether auto get serial name.
+	IsAutoGetSerialName *bool `json:"IsAutoGetSerialName,omitempty" xml:"IsAutoGetSerialName"`
+	// Represents chart title.
+	Title string `json:"Title,omitempty" xml:"Title"`
 }

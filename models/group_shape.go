@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // GroupShape Represents the group shape which contains the individual shapes.
 type GroupShape struct {
-    Shape
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	Link *Link `json:"link,omitempty" xml:"link"`
 }

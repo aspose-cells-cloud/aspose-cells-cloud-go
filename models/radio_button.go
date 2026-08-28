@@ -23,17 +23,16 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RadioButton Represents a radio button.
 type RadioButton struct {
-    Shape
-    // Gets the GroupBox that contains this RadioButton.
-    GroupBox *GroupBox `json:"GroupBox,omitempty" xml:"GroupBox"`
-    // Indicates if the radiobutton is checked or not.
-    IsChecked *bool `json:"IsChecked,omitempty" xml:"IsChecked"`
-    // Indicates whether the combobox has 3-D shading.
-    Shadow *bool `json:"Shadow,omitempty" xml:"Shadow"`
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	// Gets the GroupBox that contains this RadioButton.
+	GroupBox *GroupBox `json:"GroupBox,omitempty" xml:"GroupBox"`
+	// Indicates if the radiobutton is checked or not.
+	IsChecked *bool `json:"IsChecked,omitempty" xml:"IsChecked"`
+	// Indicates whether the combobox has 3-D shading.
+	Shadow *bool `json:"Shadow,omitempty" xml:"Shadow"`
+	Link   *Link `json:"link,omitempty" xml:"link"`
 }

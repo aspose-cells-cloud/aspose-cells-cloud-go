@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PageSetupOperateParameter Represents page setup operate parameter.
 type PageSetupOperateParameter struct {
-    OperateParameter
-    // Represents worksheet page setup.
-    PageSetup *PageSetup `json:"PageSetup,omitempty" xml:"PageSetup"`
+	OperateParameter
+	// Represents worksheet page setup.
+	PageSetup *PageSetup `json:"PageSetup,omitempty" xml:"PageSetup"`
 }

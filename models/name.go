@@ -23,24 +23,23 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Name Represents a defined name for a range of cells.
 type Name struct {
-    LinkElement
-    // Gets and sets the comment of the name.                         Only applies for Excel 2007.
-    Comment string `json:"Comment,omitempty" xml:"Comment"`
-    // Property Summary: WorksheetIndex is an optional integer property marked with the XmlElement attribute "worksheetindex".
-    WorksheetIndex *int32 `json:"WorksheetIndex,omitempty" xml:"WorksheetIndex"`
-    // Indicates whether this name is referred by other formulas.
-    IsReferred *bool `json:"IsReferred,omitempty" xml:"IsReferred"`
-    // Indicates whether the name is visible.
-    IsVisible *bool `json:"IsVisible,omitempty" xml:"IsVisible"`
-    // Gets or sets a R1C1 reference of the .
-    R1C1RefersTo string `json:"R1C1RefersTo,omitempty" xml:"R1C1RefersTo"`
-    // Returns or sets the formula that the name is defined to refer to, beginning with an equal sign.
-    RefersTo string `json:"RefersTo,omitempty" xml:"RefersTo"`
-    // Gets the name text of the object.
-    Text string `json:"Text,omitempty" xml:"Text"`
+	LinkElement
+	// Gets and sets the comment of the name.                         Only applies for Excel 2007.
+	Comment string `json:"Comment,omitempty" xml:"Comment"`
+	// Property Summary: WorksheetIndex is an optional integer property marked with the XmlElement attribute "worksheetindex".
+	WorksheetIndex *int32 `json:"WorksheetIndex,omitempty" xml:"WorksheetIndex"`
+	// Indicates whether this name is referred by other formulas.
+	IsReferred *bool `json:"IsReferred,omitempty" xml:"IsReferred"`
+	// Indicates whether the name is visible.
+	IsVisible *bool `json:"IsVisible,omitempty" xml:"IsVisible"`
+	// Gets or sets a R1C1 reference of the .
+	R1C1RefersTo string `json:"R1C1RefersTo,omitempty" xml:"R1C1RefersTo"`
+	// Returns or sets the formula that the name is defined to refer to, beginning with an equal sign.
+	RefersTo string `json:"RefersTo,omitempty" xml:"RefersTo"`
+	// Gets the name text of the object.
+	Text string `json:"Text,omitempty" xml:"Text"`
 }

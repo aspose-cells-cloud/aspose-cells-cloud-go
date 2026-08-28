@@ -23,20 +23,19 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // XpsSaveOptions
 type XpsSaveOptions struct {
-    PaginatedSaveOptions
-    SaveFormat string `json:"SaveFormat,omitempty" xml:"SaveFormat"`
-    CachedFileFolder string `json:"CachedFileFolder,omitempty" xml:"CachedFileFolder"`
-    ClearData *bool `json:"ClearData,omitempty" xml:"ClearData"`
-    CreateDirectory *bool `json:"CreateDirectory,omitempty" xml:"CreateDirectory"`
-    EnableHTTPCompression *bool `json:"EnableHTTPCompression,omitempty" xml:"EnableHTTPCompression"`
-    RefreshChartCache *bool `json:"RefreshChartCache,omitempty" xml:"RefreshChartCache"`
-    SortNames *bool `json:"SortNames,omitempty" xml:"SortNames"`
-    ValidateMergedAreas *bool `json:"ValidateMergedAreas,omitempty" xml:"ValidateMergedAreas"`
-    CheckExcelRestriction *bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
-    EncryptDocumentProperties *bool `json:"EncryptDocumentProperties,omitempty" xml:"EncryptDocumentProperties"`
+	PaginatedSaveOptions
+	SaveFormat                string `json:"SaveFormat,omitempty" xml:"SaveFormat"`
+	CachedFileFolder          string `json:"CachedFileFolder,omitempty" xml:"CachedFileFolder"`
+	ClearData                 *bool  `json:"ClearData,omitempty" xml:"ClearData"`
+	CreateDirectory           *bool  `json:"CreateDirectory,omitempty" xml:"CreateDirectory"`
+	EnableHTTPCompression     *bool  `json:"EnableHTTPCompression,omitempty" xml:"EnableHTTPCompression"`
+	RefreshChartCache         *bool  `json:"RefreshChartCache,omitempty" xml:"RefreshChartCache"`
+	SortNames                 *bool  `json:"SortNames,omitempty" xml:"SortNames"`
+	ValidateMergedAreas       *bool  `json:"ValidateMergedAreas,omitempty" xml:"ValidateMergedAreas"`
+	CheckExcelRestriction     *bool  `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
+	EncryptDocumentProperties *bool  `json:"EncryptDocumentProperties,omitempty" xml:"EncryptDocumentProperties"`
 }

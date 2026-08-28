@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // AutoShapes Sure! Just provide me with the features you would like me to summarize into one sentence.
 type AutoShapes struct {
-    LinkElement
-    // Property Summary: Contains a list of LinkElement objects identified by the XML element "autoshape".
-    AutoShapeList []LinkElement `json:"AutoShapeList,omitempty" xml:"AutoShapeList"`
+	LinkElement
+	// Property Summary: Contains a list of LinkElement objects identified by the XML element "autoshape".
+	AutoShapeList []LinkElement `json:"AutoShapeList,omitempty" xml:"AutoShapeList"`
 }

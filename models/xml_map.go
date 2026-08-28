@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// XmlMap Represents Xml map information.  
+// XmlMap Represents Xml map information.
 type XmlMap struct {
-    // Returns or sets the name of the object.  
-    Name string `json:"Name,omitempty" xml:"Name"`
-    // Gets root element name.  
-    RootElementName string `json:"RootElementName,omitempty" xml:"RootElementName"`
-    // Gets an  of this map.  
-    DataBinding *XmlDataBinding `json:"DataBinding,omitempty" xml:"DataBinding"`
+	// Returns or sets the name of the object.
+	Name string `json:"Name,omitempty" xml:"Name"`
+	// Gets root element name.
+	RootElementName string `json:"RootElementName,omitempty" xml:"RootElementName"`
+	// Gets an  of this map.
+	DataBinding *XmlDataBinding `json:"DataBinding,omitempty" xml:"DataBinding"`
 }

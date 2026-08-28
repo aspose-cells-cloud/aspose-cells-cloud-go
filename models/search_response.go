@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SearchResponse
 type SearchResponse struct {
-    CellsCloudResponse
-    TextItems []TextItem `json:"TextItems,omitempty" xml:"TextItems"`
+	CellsCloudResponse
+	TextItems []TextItem `json:"TextItems,omitempty" xml:"TextItems"`
 }

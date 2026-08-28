@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ChartResponse Represents the Chart Response.
 type ChartResponse struct {
-    CellsCloudResponse
-    // A property named "Chart" of type Chart is defined with a getter and setter in the class.
-    Chart *Chart `json:"Chart,omitempty" xml:"Chart"`
+	CellsCloudResponse
+	// A property named "Chart" of type Chart is defined with a getter and setter in the class.
+	Chart *Chart `json:"Chart,omitempty" xml:"Chart"`
 }

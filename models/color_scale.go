@@ -23,21 +23,20 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// ColorScale Describe the ColorScale conditional formatting rule. This conditional formatting    rule creates a gradated color scale on the cells.             
+// ColorScale Describe the ColorScale conditional formatting rule. This conditional formatting    rule creates a gradated color scale on the cells.
 type ColorScale struct {
-    // Get or set this ColorScale's max value object.             Cannot set null or CFValueObject with type FormatConditionValueType.Min to it.  
-    MaxCfvo *ConditionalFormattingValue `json:"MaxCfvo,omitempty" xml:"MaxCfvo"`
-    // Get or set the gradient color for the maximum value in the range.  
-    MaxColor *Color `json:"MaxColor,omitempty" xml:"MaxColor"`
-    // Get or set this ColorScale's mid value object.             Cannot set CFValueObject with type FormatConditionValueType.Max or FormatConditionValueType.Min to it.  
-    MidCfvo *ConditionalFormattingValue `json:"MidCfvo,omitempty" xml:"MidCfvo"`
-    // Get or set the gradient color for the middle value in the range.  
-    MidColor *Color `json:"MidColor,omitempty" xml:"MidColor"`
-    // Get or set this ColorScale's min value object.             Cannot set null or CFValueObject with type FormatConditionValueType.Max to it.  
-    MinCfvo *ConditionalFormattingValue `json:"MinCfvo,omitempty" xml:"MinCfvo"`
-    // Get or set the gradient color for the minimum value in the range.  
-    MinColor *Color `json:"MinColor,omitempty" xml:"MinColor"`
+	// Get or set this ColorScale's max value object.             Cannot set null or CFValueObject with type FormatConditionValueType.Min to it.
+	MaxCfvo *ConditionalFormattingValue `json:"MaxCfvo,omitempty" xml:"MaxCfvo"`
+	// Get or set the gradient color for the maximum value in the range.
+	MaxColor *Color `json:"MaxColor,omitempty" xml:"MaxColor"`
+	// Get or set this ColorScale's mid value object.             Cannot set CFValueObject with type FormatConditionValueType.Max or FormatConditionValueType.Min to it.
+	MidCfvo *ConditionalFormattingValue `json:"MidCfvo,omitempty" xml:"MidCfvo"`
+	// Get or set the gradient color for the middle value in the range.
+	MidColor *Color `json:"MidColor,omitempty" xml:"MidColor"`
+	// Get or set this ColorScale's min value object.             Cannot set null or CFValueObject with type FormatConditionValueType.Max to it.
+	MinCfvo *ConditionalFormattingValue `json:"MinCfvo,omitempty" xml:"MinCfvo"`
+	// Get or set the gradient color for the minimum value in the range.
+	MinColor *Color `json:"MinColor,omitempty" xml:"MinColor"`
 }

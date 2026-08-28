@@ -10,4 +10,7 @@ type RequestOption interface {
 	GetQueryParameters() url.Values
 	GetJSONBody() interface{}
 	GetMultipartForm() map[string]interface{}
+	// Validate returns a non-nil error when a required parameter is missing.
+	// Constructors never return nil; validation happens at execution time here.
+	Validate() error
 }

@@ -23,26 +23,25 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SplitWorkbookTaskParameter Represents split workbook task parameter.
 type SplitWorkbookTaskParameter struct {
-    TaskParameter
-    // Represents data source of task object.
-    Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
-    // Represents data source of task object.
-    DestinationFilePosition *FileSource `json:"DestinationFilePosition,omitempty" xml:"DestinationFilePosition"`
-    // Represents destination data source.
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    // Represents destination data source.
-    TargetDataSource *DataSource `json:"TargetDataSource,omitempty" xml:"TargetDataSource"`
-    // Represents destination data file format.
-    DestinationFileFormat string `json:"DestinationFileFormat,omitempty" xml:"DestinationFileFormat"`
-    // SheetName /NewGuid
-    SplitNameRule string `json:"SplitNameRule,omitempty" xml:"SplitNameRule"`
-    // When destination file format is image , vertical resolution can not be null.
-    VerticalResolution *int32 `json:"VerticalResolution,omitempty" xml:"VerticalResolution"`
-    // When destination file format is image , horizontal resolution can not be null.
-    HorizontalResolution *int32 `json:"HorizontalResolution,omitempty" xml:"HorizontalResolution"`
+	TaskParameter
+	// Represents data source of task object.
+	Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
+	// Represents data source of task object.
+	DestinationFilePosition *FileSource `json:"DestinationFilePosition,omitempty" xml:"DestinationFilePosition"`
+	// Represents destination data source.
+	DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	// Represents destination data source.
+	TargetDataSource *DataSource `json:"TargetDataSource,omitempty" xml:"TargetDataSource"`
+	// Represents destination data file format.
+	DestinationFileFormat string `json:"DestinationFileFormat,omitempty" xml:"DestinationFileFormat"`
+	// SheetName /NewGuid
+	SplitNameRule string `json:"SplitNameRule,omitempty" xml:"SplitNameRule"`
+	// When destination file format is image , vertical resolution can not be null.
+	VerticalResolution *int32 `json:"VerticalResolution,omitempty" xml:"VerticalResolution"`
+	// When destination file format is image , horizontal resolution can not be null.
+	HorizontalResolution *int32 `json:"HorizontalResolution,omitempty" xml:"HorizontalResolution"`
 }

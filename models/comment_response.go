@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CommentResponse Represents the Comment Response.
 type CommentResponse struct {
-    CellsCloudResponse
-    // The class has a public property "Comment" of type "Comment" that can be accessed and modified.
-    Comment *Comment `json:"Comment,omitempty" xml:"Comment"`
+	CellsCloudResponse
+	// The class has a public property "Comment" of type "Comment" that can be accessed and modified.
+	Comment *Comment `json:"Comment,omitempty" xml:"Comment"`
 }

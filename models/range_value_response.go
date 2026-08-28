@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RangeValueResponse Represents the RangeValue Response.
 type RangeValueResponse struct {
-    CellsCloudResponse
-    // Property Summary: Contains a list of elements labeled as "Cell".
-    CellsList []Cell `json:"CellsList,omitempty" xml:"CellsList"`
+	CellsCloudResponse
+	// Property Summary: Contains a list of elements labeled as "Cell".
+	CellsList []Cell `json:"CellsList,omitempty" xml:"CellsList"`
 }

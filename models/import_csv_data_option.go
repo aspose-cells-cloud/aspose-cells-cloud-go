@@ -23,17 +23,16 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ImportCSVDataOption I'm happy to help! Could you please provide me with the features you would like me to summarize into a class summary?
 type ImportCSVDataOption struct {
-    ImportOption
-    // A property named SeparatorString of type string that can be accessed and modified publicly.
-    SeparatorString string `json:"SeparatorString,omitempty" xml:"SeparatorString"`
-    ConvertNumericData *bool `json:"ConvertNumericData,omitempty" xml:"ConvertNumericData"`
-    FirstRow *int32 `json:"FirstRow,omitempty" xml:"FirstRow"`
-    FirstColumn *int32 `json:"FirstColumn,omitempty" xml:"FirstColumn"`
-    SourceFile string `json:"SourceFile,omitempty" xml:"SourceFile"`
-    CustomParsers []CustomParserConfig `json:"CustomParsers,omitempty" xml:"CustomParsers"`
+	ImportOption
+	// A property named SeparatorString of type string that can be accessed and modified publicly.
+	SeparatorString    string               `json:"SeparatorString,omitempty" xml:"SeparatorString"`
+	ConvertNumericData *bool                `json:"ConvertNumericData,omitempty" xml:"ConvertNumericData"`
+	FirstRow           *int32               `json:"FirstRow,omitempty" xml:"FirstRow"`
+	FirstColumn        *int32               `json:"FirstColumn,omitempty" xml:"FirstColumn"`
+	SourceFile         string               `json:"SourceFile,omitempty" xml:"SourceFile"`
+	CustomParsers      []CustomParserConfig `json:"CustomParsers,omitempty" xml:"CustomParsers"`
 }

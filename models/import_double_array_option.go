@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ImportDoubleArrayOption Class summary: The features include grammar and spell check, word count, readability analysis, and style suggestions for improving writing.
 type ImportDoubleArrayOption struct {
-    ImportOption
-    // This class has a public property named FirstRow of type integer with both get and set accessors.
-    FirstRow *int32 `json:"FirstRow,omitempty" xml:"FirstRow"`
-    FirstColumn *int32 `json:"FirstColumn,omitempty" xml:"FirstColumn"`
-    IsVertical *bool `json:"IsVertical,omitempty" xml:"IsVertical"`
-    Data []interface{} `json:"Data,omitempty" xml:"Data"`
+	ImportOption
+	// This class has a public property named FirstRow of type integer with both get and set accessors.
+	FirstRow    *int32        `json:"FirstRow,omitempty" xml:"FirstRow"`
+	FirstColumn *int32        `json:"FirstColumn,omitempty" xml:"FirstColumn"`
+	IsVertical  *bool         `json:"IsVertical,omitempty" xml:"IsVertical"`
+	Data        []interface{} `json:"Data,omitempty" xml:"Data"`
 }

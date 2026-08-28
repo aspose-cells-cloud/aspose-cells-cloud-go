@@ -23,21 +23,20 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // BatchLockRequest Indicates batch lock file request
 type BatchLockRequest struct {
-    // The directory stores files that need to format conversion.             
-    SourceFolder string `json:"SourceFolder,omitempty" xml:"SourceFolder"`
-    // Aspose Cloud storage name
-    SourceStorage string `json:"SourceStorage,omitempty" xml:"SourceStorage"`
-    // Indicates the match condition that needs to be processed for the file name.
-    MatchCondition *MatchConditionRequest `json:"MatchCondition,omitempty" xml:"MatchCondition"`
-    // Lock file with password
-    Password string `json:"Password,omitempty" xml:"Password"`
-    // The directory that stores files whose format conversion was successful.             
-    OutFolder string `json:"OutFolder,omitempty" xml:"OutFolder"`
-    // Aspose Cloud storage name
-    OutStorage string `json:"OutStorage,omitempty" xml:"OutStorage"`
+	// The directory stores files that need to format conversion.
+	SourceFolder string `json:"SourceFolder,omitempty" xml:"SourceFolder"`
+	// Aspose Cloud storage name
+	SourceStorage string `json:"SourceStorage,omitempty" xml:"SourceStorage"`
+	// Indicates the match condition that needs to be processed for the file name.
+	MatchCondition *MatchConditionRequest `json:"MatchCondition,omitempty" xml:"MatchCondition"`
+	// Lock file with password
+	Password string `json:"Password,omitempty" xml:"Password"`
+	// The directory that stores files whose format conversion was successful.
+	OutFolder string `json:"OutFolder,omitempty" xml:"OutFolder"`
+	// Aspose Cloud storage name
+	OutStorage string `json:"OutStorage,omitempty" xml:"OutStorage"`
 }

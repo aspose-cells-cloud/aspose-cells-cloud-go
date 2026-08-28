@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SplitResultResponse Represents the SplitResult Response.
 type SplitResultResponse struct {
-    CellsCloudResponse
-    // Gets or sets the splitting result.
-    Result *SplitResult `json:"Result,omitempty" xml:"Result"`
+	CellsCloudResponse
+	// Gets or sets the splitting result.
+	Result *SplitResult `json:"Result,omitempty" xml:"Result"`
 }

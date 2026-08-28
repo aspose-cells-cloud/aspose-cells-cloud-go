@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // AggregateResultByColorResponse
 type AggregateResultByColorResponse struct {
-    CellsCloudResponse
-    AggregateResults []AggregateResultByColor `json:"AggregateResults,omitempty" xml:"AggregateResults"`
+	CellsCloudResponse
+	AggregateResults []AggregateResultByColor `json:"AggregateResults,omitempty" xml:"AggregateResults"`
 }

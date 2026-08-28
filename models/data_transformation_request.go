@@ -23,21 +23,20 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DataTransformationRequest Data Transformation Request
 type DataTransformationRequest struct {
-    // Indicates the source of the mount data.
-    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    // Indicates the source of the mount data.
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    // Indicates load data.
-    LoadData *LoadData `json:"LoadData,omitempty" xml:"LoadData"`
-    // Indicates applied step list. 
-    AppliedSteps []AppliedStep `json:"AppliedSteps,omitempty" xml:"AppliedSteps"`
-    // This class has a property named "Region" of type string with both a getter and a setter.
-    Region string `json:"Region,omitempty" xml:"Region"`
-    // Indicates output format 
-    OutFormat string `json:"OutFormat,omitempty" xml:"OutFormat"`
+	// Indicates the source of the mount data.
+	FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
+	// Indicates the source of the mount data.
+	DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	// Indicates load data.
+	LoadData *LoadData `json:"LoadData,omitempty" xml:"LoadData"`
+	// Indicates applied step list.
+	AppliedSteps []AppliedStep `json:"AppliedSteps,omitempty" xml:"AppliedSteps"`
+	// This class has a property named "Region" of type string with both a getter and a setter.
+	Region string `json:"Region,omitempty" xml:"Region"`
+	// Indicates output format
+	OutFormat string `json:"OutFormat,omitempty" xml:"OutFormat"`
 }

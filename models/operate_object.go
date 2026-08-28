@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // OperateObject Represents operate object.
 type OperateObject struct {
-    // Represents operate object type.
-    OperateObjectType string `json:"OperateObjectType,omitempty" xml:"OperateObjectType"`
-    // Represents position of operate object.
-    Position *OperateObjectPosition `json:"Position,omitempty" xml:"Position"`
+	// Represents operate object type.
+	OperateObjectType string `json:"OperateObjectType,omitempty" xml:"OperateObjectType"`
+	// Represents position of operate object.
+	Position *OperateObjectPosition `json:"Position,omitempty" xml:"Position"`
 }

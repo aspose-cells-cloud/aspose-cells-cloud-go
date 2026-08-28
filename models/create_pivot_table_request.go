@@ -23,23 +23,22 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CreatePivotTableRequest Indicates create pivot table request
 type CreatePivotTableRequest struct {
-    // Pivot table name
-    Name string `json:"Name,omitempty" xml:"Name"`
-    // The data for the new PivotTable cache.
-    SourceData string `json:"SourceData,omitempty" xml:"SourceData"`
-    // The cell in the upper-left corner of the PivotTable report's destination range.
-    DestCellName string `json:"DestCellName,omitempty" xml:"DestCellName"`
-    // Indicates whether using same data source when another existing pivot table has used this data source.If the property is true, it will save memory.
-    UseSameSource *bool `json:"UseSameSource,omitempty" xml:"UseSameSource"`
-    // Represents row fields in a PivotTable report.
-    PivotFieldRows []interface{} `json:"PivotFieldRows,omitempty" xml:"PivotFieldRows"`
-    // Represents column fields in a PivotTable report.
-    PivotFieldColumns []interface{} `json:"PivotFieldColumns,omitempty" xml:"PivotFieldColumns"`
-    // Represents data fields in a PivotTable report.
-    PivotFieldData []interface{} `json:"PivotFieldData,omitempty" xml:"PivotFieldData"`
+	// Pivot table name
+	Name string `json:"Name,omitempty" xml:"Name"`
+	// The data for the new PivotTable cache.
+	SourceData string `json:"SourceData,omitempty" xml:"SourceData"`
+	// The cell in the upper-left corner of the PivotTable report's destination range.
+	DestCellName string `json:"DestCellName,omitempty" xml:"DestCellName"`
+	// Indicates whether using same data source when another existing pivot table has used this data source.If the property is true, it will save memory.
+	UseSameSource *bool `json:"UseSameSource,omitempty" xml:"UseSameSource"`
+	// Represents row fields in a PivotTable report.
+	PivotFieldRows []interface{} `json:"PivotFieldRows,omitempty" xml:"PivotFieldRows"`
+	// Represents column fields in a PivotTable report.
+	PivotFieldColumns []interface{} `json:"PivotFieldColumns,omitempty" xml:"PivotFieldColumns"`
+	// Represents data fields in a PivotTable report.
+	PivotFieldData []interface{} `json:"PivotFieldData,omitempty" xml:"PivotFieldData"`
 }

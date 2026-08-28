@@ -23,19 +23,18 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RemoveCharactersOptions Class summary: The class features discussing effective communication strategies, developing problem-solving skills, and increasing self-awareness for personal growth.
 type RemoveCharactersOptions struct {
-    // Name property with a getter and setter override that returns a string.
-    Name string `json:"Name,omitempty" xml:"Name"`
-    // Represents data source.  There are three types of data, they are CloudFileSystem, RequestFiles, HttpUri.
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    // Represents file information. Include of filename, filesize, and file content(base64String).
-    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    // Specifies the range of cells within the worksheet where the spreadsheet operations will be performed. This parameter allows users to define the exact area to be processed, ensuring that operations are applied only to the designated cells.
-    ScopeOptions *ScopeOptions `json:"ScopeOptions,omitempty" xml:"ScopeOptions"`
-    RemoveCharactersByCharacter *RemoveCharactersByCharacter `json:"RemoveCharactersByCharacter,omitempty" xml:"RemoveCharactersByCharacter"`
-    RemoveCharactersByPosition *RemoveCharactersByPosition `json:"RemoveCharactersByPosition,omitempty" xml:"RemoveCharactersByPosition"`
+	// Name property with a getter and setter override that returns a string.
+	Name string `json:"Name,omitempty" xml:"Name"`
+	// Represents data source.  There are three types of data, they are CloudFileSystem, RequestFiles, HttpUri.
+	DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	// Represents file information. Include of filename, filesize, and file content(base64String).
+	FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
+	// Specifies the range of cells within the worksheet where the spreadsheet operations will be performed. This parameter allows users to define the exact area to be processed, ensuring that operations are applied only to the designated cells.
+	ScopeOptions                *ScopeOptions                `json:"ScopeOptions,omitempty" xml:"ScopeOptions"`
+	RemoveCharactersByCharacter *RemoveCharactersByCharacter `json:"RemoveCharactersByCharacter,omitempty" xml:"RemoveCharactersByCharacter"`
+	RemoveCharactersByPosition  *RemoveCharactersByPosition  `json:"RemoveCharactersByPosition,omitempty" xml:"RemoveCharactersByPosition"`
 }

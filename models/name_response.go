@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // NameResponse Represents the Name Response.
 type NameResponse struct {
-    CellsCloudResponse
-    // A public property that allows getting and setting a value of type "Name".
-    Name *Name `json:"Name,omitempty" xml:"Name"`
+	CellsCloudResponse
+	// A public property that allows getting and setting a value of type "Name".
+	Name *Name `json:"Name,omitempty" xml:"Name"`
 }

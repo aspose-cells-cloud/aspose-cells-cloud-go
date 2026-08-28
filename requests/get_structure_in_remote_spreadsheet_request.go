@@ -1,122 +1,122 @@
 package requests
 
 import (
-    "fmt"
-    "net/url"
-    "strings"
+	"fmt"
+	"net/url"
+	"strings"
 )
 
 type GetStructureInRemoteSpreadsheetRequest struct {
-    name string
+	name string
 
-    folder string
-    password string
-    region string
-    storageName string
+	folder      string
+	password    string
+	region      string
+	storageName string
 
-    extraQueryParameters map[string]string
+	extraQueryParameters map[string]string
 }
 
 func NewGetStructureInRemoteSpreadsheetRequest(name string, opts ...Option) *GetStructureInRemoteSpreadsheetRequest {
-    req := &GetStructureInRemoteSpreadsheetRequest{
-        name: name,
-    }
-    if req.name == "" {
-        return nil
-    }
+	req := &GetStructureInRemoteSpreadsheetRequest{
+		name: name,
+	}
+	cfg := &requestConfig{
+		Params: make(map[string]interface{}),
+	}
+	for _, opt := range opts {
+		opt.apply(cfg)
+	}
 
-    cfg := &requestConfig{
-        Params: make(map[string]interface{}),
-    }
-    for _, opt := range opts {
-        opt.apply(cfg)
-    }
+	if val, ok := cfg.Params["folder"].(string); ok {
+		req.folder = val
+	}
+	if val, ok := cfg.Params["password"].(string); ok {
+		req.password = val
+	}
+	if val, ok := cfg.Params["region"].(string); ok {
+		req.region = val
+	}
+	if val, ok := cfg.Params["storageName"].(string); ok {
+		req.storageName = val
+	}
+	if len(cfg.extraQueryParams) > 0 {
+		if req.extraQueryParameters == nil {
+			req.extraQueryParameters = make(map[string]string)
+		}
+		for k, v := range cfg.extraQueryParams {
+			req.extraQueryParameters[k] = v
+		}
+	}
 
-    if val, ok := cfg.Params["folder"].(string); ok {
-        req.folder = val
-    }
-    if val, ok := cfg.Params["password"].(string); ok {
-        req.password = val
-    }
-    if val, ok := cfg.Params["region"].(string); ok {
-        req.region = val
-    }
-    if val, ok := cfg.Params["storageName"].(string); ok {
-        req.storageName = val
-    }
-    if len(cfg.extraQueryParams) > 0 {
-        if req.extraQueryParameters == nil {
-            req.extraQueryParameters = make(map[string]string)
-        }
-        for k, v := range cfg.extraQueryParams {
-            req.extraQueryParameters[k] = v
-        }
-    }
+	return req
+}
 
-    return req
+func (request *GetStructureInRemoteSpreadsheetRequest) Validate() error {
+	if request.name == "" {
+		return fmt.Errorf("required request parameter %q is missing", "name")
+	}
+
+	return nil
 }
 
 func (request *GetStructureInRemoteSpreadsheetRequest) AddQueryParameter(key, value string) {
-    if request.extraQueryParameters == nil {
-        request.extraQueryParameters = make(map[string]string)
-    }
-    request.extraQueryParameters[key] = value
+	if request.extraQueryParameters == nil {
+		request.extraQueryParameters = make(map[string]string)
+	}
+	request.extraQueryParameters[key] = value
 }
 
 func (request *GetStructureInRemoteSpreadsheetRequest) AddQueryParameters(params map[string]string) {
-    if request.extraQueryParameters == nil {
-        request.extraQueryParameters = make(map[string]string)
-    }
-    for k, v := range params {
-        request.extraQueryParameters[k] = v
-    }
+	if request.extraQueryParameters == nil {
+		request.extraQueryParameters = make(map[string]string)
+	}
+	for k, v := range params {
+		request.extraQueryParameters[k] = v
+	}
 }
 
 func (request *GetStructureInRemoteSpreadsheetRequest) GetMethod() string {
-    return "GET"
+	return "GET"
 }
 
 func (request *GetStructureInRemoteSpreadsheetRequest) GetHeaderParameters() map[string]string {
-    localVarHeaderParams := make(map[string]string)
-    localVarHeaderParams["Content-Type"] = "application/json"
-    return localVarHeaderParams
+	localVarHeaderParams := make(map[string]string)
+	localVarHeaderParams["Content-Type"] = "application/json"
+	return localVarHeaderParams
 }
 
 func (request *GetStructureInRemoteSpreadsheetRequest) GetPath() string {
-    localVarPath := "/cells/{name}/structure"
-    localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", request.name), -1)
-    return localVarPath
+	localVarPath := "/cells/{name}/structure"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(fmt.Sprintf("%v", request.name)), -1)
+	return localVarPath
 }
 
 func (request *GetStructureInRemoteSpreadsheetRequest) GetQueryParameters() url.Values {
-    localVarQueryParams := url.Values{}
-    if request.folder != "" {
-        localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
-    }
-    if request.storageName != "" {
-        localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
-    }
-    if request.region != "" {
-        localVarQueryParams.Add("region", fmt.Sprintf("%v", request.region))
-    }
-    if request.password != "" {
-        localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
-    }
-    for k, v := range request.extraQueryParameters {
-        localVarQueryParams.Add(k, v)
-    }
-    return localVarQueryParams
+	localVarQueryParams := url.Values{}
+	if request.folder != "" {
+		localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
+	}
+	if request.storageName != "" {
+		localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+	}
+	if request.region != "" {
+		localVarQueryParams.Add("region", fmt.Sprintf("%v", request.region))
+	}
+	if request.password != "" {
+		localVarQueryParams.Add("password", fmt.Sprintf("%v", request.password))
+	}
+	for k, v := range request.extraQueryParameters {
+		localVarQueryParams.Add(k, v)
+	}
+	return localVarQueryParams
 }
 
 func (request *GetStructureInRemoteSpreadsheetRequest) GetJSONBody() interface{} {
-    return nil
+	return nil
 }
 
 func (request *GetStructureInRemoteSpreadsheetRequest) GetMultipartForm() map[string]interface{} {
-    localVarFormParams := make(map[string]interface{})
-    return localVarFormParams
-}
-
-func (request *GetStructureInRemoteSpreadsheetRequest) Description() string {
-    return strings.Trim("Structurally convert the core metadata, worksheets, tables, pivot tables, charts, shapes, and other information of an Excel workbook into a JObject type JSON object, for scenarios such as data export, API responses, and log recording.", " ")
+	localVarFormParams := make(map[string]interface{})
+	return localVarFormParams
 }

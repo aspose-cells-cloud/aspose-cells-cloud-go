@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CellsCloudResponse
 type CellsCloudResponse struct {
-    Code *int32 `json:"Code,omitempty" xml:"Code"`
-    Status string `json:"Status,omitempty" xml:"Status"`
+	Code   *int32 `json:"Code,omitempty" xml:"Code"`
+	Status string `json:"Status,omitempty" xml:"Status"`
 }

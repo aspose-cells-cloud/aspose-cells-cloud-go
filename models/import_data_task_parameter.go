@@ -23,20 +23,19 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ImportDataTaskParameter Represents import data task parameter.
 type ImportDataTaskParameter struct {
-    TaskParameter
-    // Represents data source of task object.
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    // Represents data source of task object.
-    Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
-    // Represents import option.
-    ImportOption *ImportOption `json:"ImportOption,omitempty" xml:"ImportOption"`
-    // Represents destination data source.
-    TargetDataSource *DataSource `json:"TargetDataSource,omitempty" xml:"TargetDataSource"`
-    // Represents destination data source.
-    DestinationWorkbook *FileSource `json:"DestinationWorkbook,omitempty" xml:"DestinationWorkbook"`
+	TaskParameter
+	// Represents data source of task object.
+	DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	// Represents data source of task object.
+	Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
+	// Represents import option.
+	ImportOption *ImportOption `json:"ImportOption,omitempty" xml:"ImportOption"`
+	// Represents destination data source.
+	TargetDataSource *DataSource `json:"TargetDataSource,omitempty" xml:"TargetDataSource"`
+	// Represents destination data source.
+	DestinationWorkbook *FileSource `json:"DestinationWorkbook,omitempty" xml:"DestinationWorkbook"`
 }

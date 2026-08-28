@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PageSetupResponse Represents the PageSetup Response.
 type PageSetupResponse struct {
-    CellsCloudResponse
-    // Property Summary: The class has a public property named PageSetup of type PageSetup that can be accessed and modified.
-    PageSetup *PageSetup `json:"PageSetup,omitempty" xml:"PageSetup"`
+	CellsCloudResponse
+	// Property Summary: The class has a public property named PageSetup of type PageSetup that can be accessed and modified.
+	PageSetup *PageSetup `json:"PageSetup,omitempty" xml:"PageSetup"`
 }

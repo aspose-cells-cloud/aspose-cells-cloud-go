@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // LegendEntriesResponse Represents the LegendEntries Response.
 type LegendEntriesResponse struct {
-    CellsCloudResponse
-    // Property Summary: The class includes a property for managing legend entries.
-    LegendEntries *LegendEntries `json:"LegendEntries,omitempty" xml:"LegendEntries"`
+	CellsCloudResponse
+	// Property Summary: The class includes a property for managing legend entries.
+	LegendEntries *LegendEntries `json:"LegendEntries,omitempty" xml:"LegendEntries"`
 }

@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DataLabelsResponse Represents the DataLabels Response.
 type DataLabelsResponse struct {
-    CellsCloudResponse
-    // This class has a property named DataLabels of type DataLabels that can be accessed and modified.
-    DataLabels *DataLabels `json:"DataLabels,omitempty" xml:"DataLabels"`
+	CellsCloudResponse
+	// This class has a property named DataLabels of type DataLabels that can be accessed and modified.
+	DataLabels *DataLabels `json:"DataLabels,omitempty" xml:"DataLabels"`
 }

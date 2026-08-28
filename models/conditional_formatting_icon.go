@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// ConditionalFormattingIcon            Represents  the custom  icon of conditional formatting rule.            
+// ConditionalFormattingIcon            Represents  the custom  icon of conditional formatting rule.
 type ConditionalFormattingIcon struct {
-    // Gets the icon set data.  
-    ImageData string `json:"ImageData,omitempty" xml:"ImageData"`
-    // Gets and sets the icon's index in the icon set.  
-    Index *int32 `json:"Index,omitempty" xml:"Index"`
-    // Gets and sets the icon set type.  
-    Type string `json:"Type,omitempty" xml:"Type"`
+	// Gets the icon set data.
+	ImageData string `json:"ImageData,omitempty" xml:"ImageData"`
+	// Gets and sets the icon's index in the icon set.
+	Index *int32 `json:"Index,omitempty" xml:"Index"`
+	// Gets and sets the icon set type.
+	Type string `json:"Type,omitempty" xml:"Type"`
 }

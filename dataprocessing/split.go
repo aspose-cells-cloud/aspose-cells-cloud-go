@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	"asposecellscloud"
-	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/datasource"
+	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/requests"
 )
 
@@ -31,16 +31,13 @@ func SplitSpreadsheet(ctx context.Context, client *asposecellscloud.AsposeCellsC
 	}
 
 	req := requests.NewSplitSpreadsheetRequest("", cfg.ReqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: failed to build split request", asposecellscloud.ErrInvalidParam)
-	}
 	req.SetSpreadsheetBytes(data, "Spreadsheet")
 
 	resp, err := asposecellscloud.DoChecked(ctx, client, req)
 	if err != nil {
 		return err
 	}
-	return writeToSink(sink, resp.Body)
+	return sdkutil.WriteToSink(sink, resp.Body)
 }
 
 // SplitRemoteSpreadsheet splits a cloud spreadsheet by worksheets in the target
@@ -59,11 +56,8 @@ func SplitRemoteSpreadsheet(ctx context.Context, client *asposecellscloud.Aspose
 	sdkutil.Apply(cfg, opts)
 	cfg.ReqOpts = append(cfg.ReqOpts, requests.WithCommonParameter("outPath", outPath))
 
-	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
+	reqOpts := append(sdkutil.WorkbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewSplitRemoteSpreadsheetRequest(wf.Name, reqOpts...)
-	if req == nil {
-		return nil, fmt.Errorf("%w: failed to build split request", asposecellscloud.ErrInvalidParam)
-	}
 
 	return asposecellscloud.DoChecked(ctx, client, req)
 }

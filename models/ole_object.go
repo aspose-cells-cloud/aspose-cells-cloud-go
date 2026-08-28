@@ -23,25 +23,24 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // OleObject Represents an OleObject in a worksheet.
 type OleObject struct {
-    Shape
-    // True if the specified object is displayed as an icon                          and the image will not be auto changed.
-    DisplayAsIcon *bool `json:"DisplayAsIcon,omitempty" xml:"DisplayAsIcon"`
-    // Gets and sets the file type of the embedded ole object data
-    FileFormatType string `json:"FileFormatType,omitempty" xml:"FileFormatType"`
-    // Gets or sets the path and name of the source file for the linked image.
-    ImageSourceFullName string `json:"ImageSourceFullName,omitempty" xml:"ImageSourceFullName"`
-    // True indicates that the size of the ole object will be auto changed as the size of snapshot of the embedded content                         when the ole object is activated.
-    IsAutoSize *bool `json:"IsAutoSize,omitempty" xml:"IsAutoSize"`
-    // Returns true if the OleObject links to the file.
-    IsLink *bool `json:"IsLink,omitempty" xml:"IsLink"`
-    // Gets or sets the ProgID of the OLE object.
-    ProgID string `json:"ProgID,omitempty" xml:"ProgID"`
-    // Returns the source full name of the source file for the linked OLE object.
-    SourceFullName string `json:"SourceFullName,omitempty" xml:"SourceFullName"`
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	// True if the specified object is displayed as an icon                          and the image will not be auto changed.
+	DisplayAsIcon *bool `json:"DisplayAsIcon,omitempty" xml:"DisplayAsIcon"`
+	// Gets and sets the file type of the embedded ole object data
+	FileFormatType string `json:"FileFormatType,omitempty" xml:"FileFormatType"`
+	// Gets or sets the path and name of the source file for the linked image.
+	ImageSourceFullName string `json:"ImageSourceFullName,omitempty" xml:"ImageSourceFullName"`
+	// True indicates that the size of the ole object will be auto changed as the size of snapshot of the embedded content                         when the ole object is activated.
+	IsAutoSize *bool `json:"IsAutoSize,omitempty" xml:"IsAutoSize"`
+	// Returns true if the OleObject links to the file.
+	IsLink *bool `json:"IsLink,omitempty" xml:"IsLink"`
+	// Gets or sets the ProgID of the OLE object.
+	ProgID string `json:"ProgID,omitempty" xml:"ProgID"`
+	// Returns the source full name of the source file for the linked OLE object.
+	SourceFullName string `json:"SourceFullName,omitempty" xml:"SourceFullName"`
+	Link           *Link  `json:"link,omitempty" xml:"link"`
 }

@@ -23,16 +23,15 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CombinationSourceData
 type CombinationSourceData struct {
-    Tag string `json:"Tag,omitempty" xml:"Tag"`
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
-    TableName string `json:"TableName,omitempty" xml:"TableName"`
-    CellArea string `json:"CellArea,omitempty" xml:"CellArea"`
-    HasHeader *bool `json:"HasHeader,omitempty" xml:"HasHeader"`
+	Tag        string      `json:"Tag,omitempty" xml:"Tag"`
+	DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	FileInfo   *FileInfo   `json:"FileInfo,omitempty" xml:"FileInfo"`
+	Worksheet  string      `json:"Worksheet,omitempty" xml:"Worksheet"`
+	TableName  string      `json:"TableName,omitempty" xml:"TableName"`
+	CellArea   string      `json:"CellArea,omitempty" xml:"CellArea"`
+	HasHeader  *bool       `json:"HasHeader,omitempty" xml:"HasHeader"`
 }

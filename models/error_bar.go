@@ -23,24 +23,23 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ErrorBar Represents error bar of data series.
 type ErrorBar struct {
-    Line
-    // A property named "Link" of type "Link" that can be accessed and modified.
-    Link *Link `json:"Link,omitempty" xml:"Link"`
-    // Represents amount of error bar.                          The amount must be greater than or equal to zero.
-    Amount *float64 `json:"Amount,omitempty" xml:"Amount"`
-    // Represents error bar display type.
-    DisplayType string `json:"DisplayType,omitempty" xml:"DisplayType"`
-    // Represents negative error amount when error bar type is Custom.
-    MinusValue string `json:"MinusValue,omitempty" xml:"MinusValue"`
-    // Represents positive error amount when error bar type is Custom.
-    PlusValue string `json:"PlusValue,omitempty" xml:"PlusValue"`
-    // Indicates if formatting error bars with a T-top.
-    ShowMarkerTTop *bool `json:"ShowMarkerTTop,omitempty" xml:"ShowMarkerTTop"`
-    // Represents error bar amount type.
-    Type string `json:"Type,omitempty" xml:"Type"`
+	Line
+	// A property named "Link" of type "Link" that can be accessed and modified.
+	Link *Link `json:"Link,omitempty" xml:"Link"`
+	// Represents amount of error bar.                          The amount must be greater than or equal to zero.
+	Amount *float64 `json:"Amount,omitempty" xml:"Amount"`
+	// Represents error bar display type.
+	DisplayType string `json:"DisplayType,omitempty" xml:"DisplayType"`
+	// Represents negative error amount when error bar type is Custom.
+	MinusValue string `json:"MinusValue,omitempty" xml:"MinusValue"`
+	// Represents positive error amount when error bar type is Custom.
+	PlusValue string `json:"PlusValue,omitempty" xml:"PlusValue"`
+	// Indicates if formatting error bars with a T-top.
+	ShowMarkerTTop *bool `json:"ShowMarkerTTop,omitempty" xml:"ShowMarkerTTop"`
+	// Represents error bar amount type.
+	Type string `json:"Type,omitempty" xml:"Type"`
 }

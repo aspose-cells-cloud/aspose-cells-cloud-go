@@ -23,14 +23,13 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CheckExternalReferenceOptions
 type CheckExternalReferenceOptions struct {
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
-    Ranged_Table string `json:"Ranged_Table,omitempty" xml:"Ranged_Table"`
-    ChartIndex *int32 `json:"ChartIndex,omitempty" xml:"ChartIndex"`
+	DataSource   *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	FileInfo     *FileInfo   `json:"FileInfo,omitempty" xml:"FileInfo"`
+	Worksheet    string      `json:"Worksheet,omitempty" xml:"Worksheet"`
+	Ranged_Table string      `json:"Ranged_Table,omitempty" xml:"Ranged_Table"`
+	ChartIndex   *int32      `json:"ChartIndex,omitempty" xml:"ChartIndex"`
 }

@@ -23,21 +23,20 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// Area            Encapsulates the object that represents an area format.            
+// Area            Encapsulates the object that represents an area format.
 type Area struct {
-    // Gets or sets the background  of the .  
-    BackgroundColor *Color `json:"BackgroundColor,omitempty" xml:"BackgroundColor"`
-    // Represents a  object that contains fill formatting properties for the specified chart or shape.  
-    FillFormat *FillFormat `json:"FillFormat,omitempty" xml:"FillFormat"`
-    // Gets or sets the foreground .  
-    ForegroundColor *Color `json:"ForegroundColor,omitempty" xml:"ForegroundColor"`
-    // This class has a property named "Format" of type string with both getter and setter methods.
-    Format string `json:"Format,omitempty" xml:"Format"`
-    // If the property is true and the value of chart point is a negative number,             the foreground color and background color will be exchanged.  
-    InvertIfNegative *bool `json:"InvertIfNegative,omitempty" xml:"InvertIfNegative"`
-    // Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear).  
-    Transparency *float64 `json:"Transparency,omitempty" xml:"Transparency"`
+	// Gets or sets the background  of the .
+	BackgroundColor *Color `json:"BackgroundColor,omitempty" xml:"BackgroundColor"`
+	// Represents a  object that contains fill formatting properties for the specified chart or shape.
+	FillFormat *FillFormat `json:"FillFormat,omitempty" xml:"FillFormat"`
+	// Gets or sets the foreground .
+	ForegroundColor *Color `json:"ForegroundColor,omitempty" xml:"ForegroundColor"`
+	// This class has a property named "Format" of type string with both getter and setter methods.
+	Format string `json:"Format,omitempty" xml:"Format"`
+	// If the property is true and the value of chart point is a negative number,             the foreground color and background color will be exchanged.
+	InvertIfNegative *bool `json:"InvertIfNegative,omitempty" xml:"InvertIfNegative"`
+	// Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear).
+	Transparency *float64 `json:"Transparency,omitempty" xml:"Transparency"`
 }

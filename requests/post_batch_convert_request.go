@@ -1,93 +1,93 @@
 package requests
 
 import (
-    "net/url"
-    "strings"
+	"fmt"
+	"net/url"
 
-    "asposecellscloud/models"
+	"asposecellscloud/models"
 )
 
 type PostBatchConvertRequest struct {
-    batchConvertRequest *models.BatchConvertRequest
+	batchConvertRequest *models.BatchConvertRequest
 
-    extraQueryParameters map[string]string
+	extraQueryParameters map[string]string
 }
 
 func NewPostBatchConvertRequest(batchConvertRequest *models.BatchConvertRequest, opts ...Option) *PostBatchConvertRequest {
-    req := &PostBatchConvertRequest{
-        batchConvertRequest: batchConvertRequest,
-    }
-    if req.batchConvertRequest == nil {
-        return nil
-    }
+	req := &PostBatchConvertRequest{
+		batchConvertRequest: batchConvertRequest,
+	}
+	cfg := &requestConfig{
+		Params: make(map[string]interface{}),
+	}
+	for _, opt := range opts {
+		opt.apply(cfg)
+	}
 
-    cfg := &requestConfig{
-        Params: make(map[string]interface{}),
-    }
-    for _, opt := range opts {
-        opt.apply(cfg)
-    }
+	if len(cfg.extraQueryParams) > 0 {
+		if req.extraQueryParameters == nil {
+			req.extraQueryParameters = make(map[string]string)
+		}
+		for k, v := range cfg.extraQueryParams {
+			req.extraQueryParameters[k] = v
+		}
+	}
 
-    if len(cfg.extraQueryParams) > 0 {
-        if req.extraQueryParameters == nil {
-            req.extraQueryParameters = make(map[string]string)
-        }
-        for k, v := range cfg.extraQueryParams {
-            req.extraQueryParameters[k] = v
-        }
-    }
+	return req
+}
 
-    return req
+func (request *PostBatchConvertRequest) Validate() error {
+	if request.batchConvertRequest == nil {
+		return fmt.Errorf("required request parameter %q is missing", "batchConvertRequest")
+	}
+
+	return nil
 }
 
 func (request *PostBatchConvertRequest) AddQueryParameter(key, value string) {
-    if request.extraQueryParameters == nil {
-        request.extraQueryParameters = make(map[string]string)
-    }
-    request.extraQueryParameters[key] = value
+	if request.extraQueryParameters == nil {
+		request.extraQueryParameters = make(map[string]string)
+	}
+	request.extraQueryParameters[key] = value
 }
 
 func (request *PostBatchConvertRequest) AddQueryParameters(params map[string]string) {
-    if request.extraQueryParameters == nil {
-        request.extraQueryParameters = make(map[string]string)
-    }
-    for k, v := range params {
-        request.extraQueryParameters[k] = v
-    }
+	if request.extraQueryParameters == nil {
+		request.extraQueryParameters = make(map[string]string)
+	}
+	for k, v := range params {
+		request.extraQueryParameters[k] = v
+	}
 }
 
 func (request *PostBatchConvertRequest) GetMethod() string {
-    return "POST"
+	return "POST"
 }
 
 func (request *PostBatchConvertRequest) GetHeaderParameters() map[string]string {
-    localVarHeaderParams := make(map[string]string)
-    localVarHeaderParams["Content-Type"] = "application/json"
-    return localVarHeaderParams
+	localVarHeaderParams := make(map[string]string)
+	localVarHeaderParams["Content-Type"] = "application/json"
+	return localVarHeaderParams
 }
 
 func (request *PostBatchConvertRequest) GetPath() string {
-    localVarPath := "/cells/batch/convert"
-    return localVarPath
+	localVarPath := "/cells/batch/convert"
+	return localVarPath
 }
 
 func (request *PostBatchConvertRequest) GetQueryParameters() url.Values {
-    localVarQueryParams := url.Values{}
-    for k, v := range request.extraQueryParameters {
-        localVarQueryParams.Add(k, v)
-    }
-    return localVarQueryParams
+	localVarQueryParams := url.Values{}
+	for k, v := range request.extraQueryParameters {
+		localVarQueryParams.Add(k, v)
+	}
+	return localVarQueryParams
 }
 
 func (request *PostBatchConvertRequest) GetJSONBody() interface{} {
-    return &request.batchConvertRequest
+	return &request.batchConvertRequest
 }
 
 func (request *PostBatchConvertRequest) GetMultipartForm() map[string]interface{} {
-    localVarFormParams := make(map[string]interface{})
-    return localVarFormParams
-}
-
-func (request *PostBatchConvertRequest) Description() string {
-    return strings.Trim("Batch converting files that meet specific matching conditions.", " ")
+	localVarFormParams := make(map[string]interface{})
+	return localVarFormParams
 }

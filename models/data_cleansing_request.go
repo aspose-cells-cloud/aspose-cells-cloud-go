@@ -23,19 +23,18 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DataCleansingRequest A data cleansing request for an Spreadsheet file.
 type DataCleansingRequest struct {
-    // Spreadsheet files that require data cleaning. 
-    File *FileInfo `json:"File,omitempty" xml:"File"`
-    // Whether check restriction of Spreadsheet file when user modify cells related objects.
-    CheckExcelRestriction *bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
-    // The regional settings for workbook.
-    Region string `json:"Region,omitempty" xml:"Region"`
-    // finish to data cleansing, outfile`s file format.
-    OutFileFormat string `json:"OutFileFormat,omitempty" xml:"OutFileFormat"`
-    // Data cleansing content
-    DataCleansing *DataCleansing `json:"DataCleansing,omitempty" xml:"DataCleansing"`
+	// Spreadsheet files that require data cleaning.
+	File *FileInfo `json:"File,omitempty" xml:"File"`
+	// Whether check restriction of Spreadsheet file when user modify cells related objects.
+	CheckExcelRestriction *bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
+	// The regional settings for workbook.
+	Region string `json:"Region,omitempty" xml:"Region"`
+	// finish to data cleansing, outfile`s file format.
+	OutFileFormat string `json:"OutFileFormat,omitempty" xml:"OutFileFormat"`
+	// Data cleansing content
+	DataCleansing *DataCleansing `json:"DataCleansing,omitempty" xml:"DataCleansing"`
 }

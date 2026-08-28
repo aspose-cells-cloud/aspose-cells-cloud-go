@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RangeSortRequest Indicates range sort request
 type RangeSortRequest struct {
-    // Summary description for DataSorter.
-    DataSorter *DataSorter `json:"DataSorter,omitempty" xml:"DataSorter"`
-    // Encapsulates the object that represents a range of cells within a spreadsheet.
-    CellArea *Range `json:"CellArea,omitempty" xml:"CellArea"`
+	// Summary description for DataSorter.
+	DataSorter *DataSorter `json:"DataSorter,omitempty" xml:"DataSorter"`
+	// Encapsulates the object that represents a range of cells within a spreadsheet.
+	CellArea *Range `json:"CellArea,omitempty" xml:"CellArea"`
 }

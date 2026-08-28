@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SaveFilesToCloudResultResponse Represents the SaveFilesToCloudResult Response.
 type SaveFilesToCloudResultResponse struct {
-    CellsCloudResponse
-    // Property: SaveFilesToCloudResult that allows getting and setting an object of type SaveFilesToCloudResult.
-    SaveFilesToCloudResult *SaveFilesToCloudResult `json:"SaveFilesToCloudResult,omitempty" xml:"SaveFilesToCloudResult"`
+	CellsCloudResponse
+	// Property: SaveFilesToCloudResult that allows getting and setting an object of type SaveFilesToCloudResult.
+	SaveFilesToCloudResult *SaveFilesToCloudResult `json:"SaveFilesToCloudResult,omitempty" xml:"SaveFilesToCloudResult"`
 }

@@ -23,21 +23,20 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// TilePicOption            Represents tile picture as texture.            
+// TilePicOption            Represents tile picture as texture.
 type TilePicOption struct {
-    // Gets or sets the X offset for tiling picture.  
-    OffsetX *float64 `json:"OffsetX,omitempty" xml:"OffsetX"`
-    // Gets or sets the Y offset for tiling picture.  
-    OffsetY *float64 `json:"OffsetY,omitempty" xml:"OffsetY"`
-    // Gets or sets the X scale for tiling picture.  
-    ScaleX *float64 `json:"ScaleX,omitempty" xml:"ScaleX"`
-    // Gets or sets the Y scale for tiling picture.  
-    ScaleY *float64 `json:"ScaleY,omitempty" xml:"ScaleY"`
-    // Gets or sets the alignment for tiling.  
-    AlignmentType string `json:"AlignmentType,omitempty" xml:"AlignmentType"`
-    // Gets or sets the mirror type for tiling.  
-    MirrorType string `json:"MirrorType,omitempty" xml:"MirrorType"`
+	// Gets or sets the X offset for tiling picture.
+	OffsetX *float64 `json:"OffsetX,omitempty" xml:"OffsetX"`
+	// Gets or sets the Y offset for tiling picture.
+	OffsetY *float64 `json:"OffsetY,omitempty" xml:"OffsetY"`
+	// Gets or sets the X scale for tiling picture.
+	ScaleX *float64 `json:"ScaleX,omitempty" xml:"ScaleX"`
+	// Gets or sets the Y scale for tiling picture.
+	ScaleY *float64 `json:"ScaleY,omitempty" xml:"ScaleY"`
+	// Gets or sets the alignment for tiling.
+	AlignmentType string `json:"AlignmentType,omitempty" xml:"AlignmentType"`
+	// Gets or sets the mirror type for tiling.
+	MirrorType string `json:"MirrorType,omitempty" xml:"MirrorType"`
 }

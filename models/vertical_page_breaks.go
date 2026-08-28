@@ -23,10 +23,9 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // VerticalPageBreaks Encapsulates a collection of  objects.
 type VerticalPageBreaks struct {
-    LinkElement
+	LinkElement
 }

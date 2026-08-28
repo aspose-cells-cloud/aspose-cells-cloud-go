@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // AutoShapesResponse Represents the AutoShapes Response.
 type AutoShapesResponse struct {
-    CellsCloudResponse
-    // The class has a property named "AutoShapes" decorated with the XmlElement attribute "shapes".
-    AutoShapes *AutoShapes `json:"AutoShapes,omitempty" xml:"AutoShapes"`
+	CellsCloudResponse
+	// The class has a property named "AutoShapes" decorated with the XmlElement attribute "shapes".
+	AutoShapes *AutoShapes `json:"AutoShapes,omitempty" xml:"AutoShapes"`
 }

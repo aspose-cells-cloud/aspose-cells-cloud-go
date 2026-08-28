@@ -23,10 +23,9 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ChartArea Encapsulates the object that represents the chart area in the worksheet.
 type ChartArea struct {
-    ChartFrame
+	ChartFrame
 }

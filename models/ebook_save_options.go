@@ -23,23 +23,22 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // EbookSaveOptions
 type EbookSaveOptions struct {
-    HtmlSaveOptions
-    SaveFormat string `json:"SaveFormat,omitempty" xml:"SaveFormat"`
-    CachedFileFolder string `json:"CachedFileFolder,omitempty" xml:"CachedFileFolder"`
-    ClearData *bool `json:"ClearData,omitempty" xml:"ClearData"`
-    CreateDirectory *bool `json:"CreateDirectory,omitempty" xml:"CreateDirectory"`
-    EnableHTTPCompression *bool `json:"EnableHTTPCompression,omitempty" xml:"EnableHTTPCompression"`
-    RefreshChartCache *bool `json:"RefreshChartCache,omitempty" xml:"RefreshChartCache"`
-    SortNames *bool `json:"SortNames,omitempty" xml:"SortNames"`
-    ValidateMergedAreas *bool `json:"ValidateMergedAreas,omitempty" xml:"ValidateMergedAreas"`
-    MergeAreas *bool `json:"MergeAreas,omitempty" xml:"MergeAreas"`
-    SortExternalNames *bool `json:"SortExternalNames,omitempty" xml:"SortExternalNames"`
-    CheckExcelRestriction *bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
-    UpdateSmartArt *bool `json:"UpdateSmartArt,omitempty" xml:"UpdateSmartArt"`
-    EncryptDocumentProperties *bool `json:"EncryptDocumentProperties,omitempty" xml:"EncryptDocumentProperties"`
+	HtmlSaveOptions
+	SaveFormat                string `json:"SaveFormat,omitempty" xml:"SaveFormat"`
+	CachedFileFolder          string `json:"CachedFileFolder,omitempty" xml:"CachedFileFolder"`
+	ClearData                 *bool  `json:"ClearData,omitempty" xml:"ClearData"`
+	CreateDirectory           *bool  `json:"CreateDirectory,omitempty" xml:"CreateDirectory"`
+	EnableHTTPCompression     *bool  `json:"EnableHTTPCompression,omitempty" xml:"EnableHTTPCompression"`
+	RefreshChartCache         *bool  `json:"RefreshChartCache,omitempty" xml:"RefreshChartCache"`
+	SortNames                 *bool  `json:"SortNames,omitempty" xml:"SortNames"`
+	ValidateMergedAreas       *bool  `json:"ValidateMergedAreas,omitempty" xml:"ValidateMergedAreas"`
+	MergeAreas                *bool  `json:"MergeAreas,omitempty" xml:"MergeAreas"`
+	SortExternalNames         *bool  `json:"SortExternalNames,omitempty" xml:"SortExternalNames"`
+	CheckExcelRestriction     *bool  `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
+	UpdateSmartArt            *bool  `json:"UpdateSmartArt,omitempty" xml:"UpdateSmartArt"`
+	EncryptDocumentProperties *bool  `json:"EncryptDocumentProperties,omitempty" xml:"EncryptDocumentProperties"`
 }

@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // AutoShapeResponse Represents the AutoShape Response.
 type AutoShapeResponse struct {
-    CellsCloudResponse
-    // A public property named "AutoShape" of type "AutoShape" with both getter and setter methods.
-    AutoShape *AutoShape `json:"AutoShape,omitempty" xml:"AutoShape"`
+	CellsCloudResponse
+	// A public property named "AutoShape" of type "AutoShape" with both getter and setter methods.
+	AutoShape *AutoShape `json:"AutoShape,omitempty" xml:"AutoShape"`
 }

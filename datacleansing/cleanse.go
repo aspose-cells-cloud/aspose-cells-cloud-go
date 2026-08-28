@@ -11,8 +11,8 @@ import (
 	"fmt"
 
 	"asposecellscloud"
-	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/datasource"
+	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/requests"
 )
 
@@ -83,9 +83,6 @@ func clean(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClient,
 	}
 
 	req := builder(cfg.ReqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: failed to build cleansing request", asposecellscloud.ErrInvalidParam)
-	}
 
 	// Attach the spreadsheet to the multipart "Spreadsheet" field.
 	if setter, ok := req.(sdkutil.SpreadsheetSetter); ok {
@@ -96,5 +93,5 @@ func clean(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClient,
 	if err != nil {
 		return err
 	}
-	return writeToSink(sink, resp.Body)
+	return sdkutil.WriteToSink(sink, resp.Body)
 }

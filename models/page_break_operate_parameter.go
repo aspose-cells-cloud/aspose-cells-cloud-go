@@ -23,22 +23,21 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PageBreakOperateParameter Represents page break operate parameter.
 type PageBreakOperateParameter struct {
-    OperateParameter
-    // Represents page break type.
-    PageBreakType string `json:"PageBreakType,omitempty" xml:"PageBreakType"`
-    // Represents page break index.
-    Index *int32 `json:"Index,omitempty" xml:"Index"`
-    // Represents row index of page break.
-    Row *int32 `json:"Row,omitempty" xml:"Row"`
-    // Represents column index of page break.
-    Column *int32 `json:"Column,omitempty" xml:"Column"`
-    // Represents start row index of page break.
-    StartIndex *int32 `json:"StartIndex,omitempty" xml:"StartIndex"`
-    // Represents end row index of page break.
-    EndIndex *int32 `json:"EndIndex,omitempty" xml:"EndIndex"`
+	OperateParameter
+	// Represents page break type.
+	PageBreakType string `json:"PageBreakType,omitempty" xml:"PageBreakType"`
+	// Represents page break index.
+	Index *int32 `json:"Index,omitempty" xml:"Index"`
+	// Represents row index of page break.
+	Row *int32 `json:"Row,omitempty" xml:"Row"`
+	// Represents column index of page break.
+	Column *int32 `json:"Column,omitempty" xml:"Column"`
+	// Represents start row index of page break.
+	StartIndex *int32 `json:"StartIndex,omitempty" xml:"StartIndex"`
+	// Represents end row index of page break.
+	EndIndex *int32 `json:"EndIndex,omitempty" xml:"EndIndex"`
 }

@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CellsResponse Represents the Cells Response.
 type CellsResponse struct {
-    CellsCloudResponse
-    // Property Summary: The class has a property called "Cells" which is annotated with the [XmlElement("cells")] attribute.
-    Cells *Cells `json:"Cells,omitempty" xml:"Cells"`
+	CellsCloudResponse
+	// Property Summary: The class has a property called "Cells" which is annotated with the [XmlElement("cells")] attribute.
+	Cells *Cells `json:"Cells,omitempty" xml:"Cells"`
 }

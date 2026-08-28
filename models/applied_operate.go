@@ -23,7 +23,6 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // AppliedOperate A data operation that is used to obtain a query of data.

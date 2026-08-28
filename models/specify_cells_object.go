@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SpecifyCellsObject
 type SpecifyCellsObject struct {
-    WorksheetName string `json:"WorksheetName,omitempty" xml:"WorksheetName"`
-    PageIndex *int32 `json:"PageIndex,omitempty" xml:"PageIndex"`
-    Region string `json:"Region,omitempty" xml:"Region"`
+	WorksheetName string `json:"WorksheetName,omitempty" xml:"WorksheetName"`
+	PageIndex     *int32 `json:"PageIndex,omitempty" xml:"PageIndex"`
+	Region        string `json:"Region,omitempty" xml:"Region"`
 }

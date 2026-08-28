@@ -23,7 +23,6 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ResultDestinationType Represents result destination type.

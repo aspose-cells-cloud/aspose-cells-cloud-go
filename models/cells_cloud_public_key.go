@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CellsCloudPublicKey
 type CellsCloudPublicKey struct {
-    Exponent string `json:"Exponent,omitempty" xml:"Exponent"`
-    Modulus string `json:"Modulus,omitempty" xml:"Modulus"`
+	Exponent string `json:"Exponent,omitempty" xml:"Exponent"`
+	Modulus  string `json:"Modulus,omitempty" xml:"Modulus"`
 }

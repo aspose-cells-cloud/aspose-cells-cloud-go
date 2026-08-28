@@ -23,17 +23,16 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// Marker            Represents the marker in a line chart, scatter chart, or radar chart.            
+// Marker            Represents the marker in a line chart, scatter chart, or radar chart.
 type Marker struct {
-    // Gets the border.  
-    Border *Line `json:"Border,omitempty" xml:"Border"`
-    // Gets the area.  
-    Area *Area `json:"Area,omitempty" xml:"Area"`
-    // Represents the marker size in unit of points. Applies to line chart, scatter chart, or radar chart.  
-    MarkerSize *int32 `json:"MarkerSize,omitempty" xml:"MarkerSize"`
-    // Represents the marker style. Applies to line chart, scatter chart, or radar chart.  
-    MarkerStyle string `json:"MarkerStyle,omitempty" xml:"MarkerStyle"`
+	// Gets the border.
+	Border *Line `json:"Border,omitempty" xml:"Border"`
+	// Gets the area.
+	Area *Area `json:"Area,omitempty" xml:"Area"`
+	// Represents the marker size in unit of points. Applies to line chart, scatter chart, or radar chart.
+	MarkerSize *int32 `json:"MarkerSize,omitempty" xml:"MarkerSize"`
+	// Represents the marker style. Applies to line chart, scatter chart, or radar chart.
+	MarkerStyle string `json:"MarkerStyle,omitempty" xml:"MarkerStyle"`
 }

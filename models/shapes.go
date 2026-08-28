@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Shapes Represents all the shape in a worksheet/chart.
 type Shapes struct {
-    LinkElement
-    // A public property named "ShapeList" of type List LinkElement for storing a collection of link elements.
-    ShapeList []LinkElement `json:"ShapeList,omitempty" xml:"ShapeList"`
+	LinkElement
+	// A public property named "ShapeList" of type List LinkElement for storing a collection of link elements.
+	ShapeList []LinkElement `json:"ShapeList,omitempty" xml:"ShapeList"`
 }

@@ -1,117 +1,118 @@
 package requests
 
 import (
-    "fmt"
-    "net/url"
-    "strings"
+	"fmt"
+	"net/url"
+	"strings"
 )
 
 type DeleteWorksheetPictureRequest struct {
-    name string
-    pictureIndex int
-    sheetName string
+	name         string
+	pictureIndex int
+	sheetName    string
 
-    folder string
-    storageName string
+	folder      string
+	storageName string
 
-    extraQueryParameters map[string]string
+	extraQueryParameters map[string]string
 }
 
 func NewDeleteWorksheetPictureRequest(name string, pictureIndex int, sheetName string, opts ...Option) *DeleteWorksheetPictureRequest {
-    req := &DeleteWorksheetPictureRequest{
-        name: name,
-        pictureIndex: pictureIndex,
-        sheetName: sheetName,
-    }
-    if req.name == "" {
-        return nil
-    }
-    if req.sheetName == "" {
-        return nil
-    }
+	req := &DeleteWorksheetPictureRequest{
+		name:         name,
+		pictureIndex: pictureIndex,
+		sheetName:    sheetName,
+	}
+	cfg := &requestConfig{
+		Params: make(map[string]interface{}),
+	}
+	for _, opt := range opts {
+		opt.apply(cfg)
+	}
 
-    cfg := &requestConfig{
-        Params: make(map[string]interface{}),
-    }
-    for _, opt := range opts {
-        opt.apply(cfg)
-    }
+	if val, ok := cfg.Params["folder"].(string); ok {
+		req.folder = val
+	}
+	if val, ok := cfg.Params["storageName"].(string); ok {
+		req.storageName = val
+	}
+	if len(cfg.extraQueryParams) > 0 {
+		if req.extraQueryParameters == nil {
+			req.extraQueryParameters = make(map[string]string)
+		}
+		for k, v := range cfg.extraQueryParams {
+			req.extraQueryParameters[k] = v
+		}
+	}
 
-    if val, ok := cfg.Params["folder"].(string); ok {
-        req.folder = val
-    }
-    if val, ok := cfg.Params["storageName"].(string); ok {
-        req.storageName = val
-    }
-    if len(cfg.extraQueryParams) > 0 {
-        if req.extraQueryParameters == nil {
-            req.extraQueryParameters = make(map[string]string)
-        }
-        for k, v := range cfg.extraQueryParams {
-            req.extraQueryParameters[k] = v
-        }
-    }
+	return req
+}
 
-    return req
+func (request *DeleteWorksheetPictureRequest) Validate() error {
+	if request.name == "" {
+		return fmt.Errorf("required request parameter %q is missing", "name")
+	}
+
+	if request.sheetName == "" {
+		return fmt.Errorf("required request parameter %q is missing", "sheetName")
+	}
+
+	return nil
 }
 
 func (request *DeleteWorksheetPictureRequest) AddQueryParameter(key, value string) {
-    if request.extraQueryParameters == nil {
-        request.extraQueryParameters = make(map[string]string)
-    }
-    request.extraQueryParameters[key] = value
+	if request.extraQueryParameters == nil {
+		request.extraQueryParameters = make(map[string]string)
+	}
+	request.extraQueryParameters[key] = value
 }
 
 func (request *DeleteWorksheetPictureRequest) AddQueryParameters(params map[string]string) {
-    if request.extraQueryParameters == nil {
-        request.extraQueryParameters = make(map[string]string)
-    }
-    for k, v := range params {
-        request.extraQueryParameters[k] = v
-    }
+	if request.extraQueryParameters == nil {
+		request.extraQueryParameters = make(map[string]string)
+	}
+	for k, v := range params {
+		request.extraQueryParameters[k] = v
+	}
 }
 
 func (request *DeleteWorksheetPictureRequest) GetMethod() string {
-    return "DELETE"
+	return "DELETE"
 }
 
 func (request *DeleteWorksheetPictureRequest) GetHeaderParameters() map[string]string {
-    localVarHeaderParams := make(map[string]string)
-    localVarHeaderParams["Content-Type"] = "application/json"
-    return localVarHeaderParams
+	localVarHeaderParams := make(map[string]string)
+	localVarHeaderParams["Content-Type"] = "application/json"
+	return localVarHeaderParams
 }
 
 func (request *DeleteWorksheetPictureRequest) GetPath() string {
-    localVarPath := "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
-    localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", request.name), -1)
-    localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", request.sheetName), -1)
-    localVarPath = strings.Replace(localVarPath, "{"+"pictureIndex"+"}", fmt.Sprintf("%v", request.pictureIndex), -1)
-    return localVarPath
+	localVarPath := "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(fmt.Sprintf("%v", request.name)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", url.PathEscape(fmt.Sprintf("%v", request.sheetName)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"pictureIndex"+"}", url.PathEscape(fmt.Sprintf("%v", request.pictureIndex)), -1)
+	return localVarPath
 }
 
 func (request *DeleteWorksheetPictureRequest) GetQueryParameters() url.Values {
-    localVarQueryParams := url.Values{}
-    if request.folder != "" {
-        localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
-    }
-    if request.storageName != "" {
-        localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
-    }
-    for k, v := range request.extraQueryParameters {
-        localVarQueryParams.Add(k, v)
-    }
-    return localVarQueryParams
+	localVarQueryParams := url.Values{}
+	if request.folder != "" {
+		localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
+	}
+	if request.storageName != "" {
+		localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+	}
+	for k, v := range request.extraQueryParameters {
+		localVarQueryParams.Add(k, v)
+	}
+	return localVarQueryParams
 }
 
 func (request *DeleteWorksheetPictureRequest) GetJSONBody() interface{} {
-    return nil
+	return nil
 }
 
 func (request *DeleteWorksheetPictureRequest) GetMultipartForm() map[string]interface{} {
-    localVarFormParams := make(map[string]interface{})
-    return localVarFormParams
-}
-
-func (request *DeleteWorksheetPictureRequest) Description() string {
-    return strings.Trim("Delete a picture object by index in the worksheet.", " ")
+	localVarFormParams := make(map[string]interface{})
+	return localVarFormParams
 }

@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CommentsResponse Represents the Comments Response.
 type CommentsResponse struct {
-    CellsCloudResponse
-    // Property Summary: "The Comments property represents an XML element named 'comments' within the class."
-    Comments *Comments `json:"Comments,omitempty" xml:"Comments"`
+	CellsCloudResponse
+	// Property Summary: "The Comments property represents an XML element named 'comments' within the class."
+	Comments *Comments `json:"Comments,omitempty" xml:"Comments"`
 }

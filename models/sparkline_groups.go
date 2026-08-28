@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// SparklineGroups Encapsulates a collection of Aspose.Cells.Charts.SparklineGroup objects.             
+// SparklineGroups Encapsulates a collection of Aspose.Cells.Charts.SparklineGroup objects.
 type SparklineGroups struct {
-    // Encapsulates a collection of Aspose.Cells.Charts.SparklineGroup objects.             
-    SparklineGroupList []SparklineGroup `json:"SparklineGroupList,omitempty" xml:"SparklineGroupList"`
+	// Encapsulates a collection of Aspose.Cells.Charts.SparklineGroup objects.
+	SparklineGroupList []SparklineGroup `json:"SparklineGroupList,omitempty" xml:"SparklineGroupList"`
 }

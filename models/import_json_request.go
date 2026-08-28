@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ImportJsonRequest Indicates import xml data request
 type ImportJsonRequest struct {
-    // Json file source
-    JsonFileSource *DataSource `json:"JsonFileSource,omitempty" xml:"JsonFileSource"`
-    // Import position description.
-    ImportPosition *ImportPosition `json:"ImportPosition,omitempty" xml:"ImportPosition"`
-    // Base64String default is null
-    JsonContent string `json:"JsonContent,omitempty" xml:"JsonContent"`
+	// Json file source
+	JsonFileSource *DataSource `json:"JsonFileSource,omitempty" xml:"JsonFileSource"`
+	// Import position description.
+	ImportPosition *ImportPosition `json:"ImportPosition,omitempty" xml:"ImportPosition"`
+	// Base64String default is null
+	JsonContent string `json:"JsonContent,omitempty" xml:"JsonContent"`
 }

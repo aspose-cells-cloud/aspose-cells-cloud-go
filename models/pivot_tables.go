@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PivotTables Represents the collection of all the PivotTable objects on the specified worksheet.
 type PivotTables struct {
-    LinkElement
-    // Xml property "PivotTableList" of the class contains a list of "LinkElement" objects with the element name "PivotTable".
-    PivotTableList []LinkElement `json:"PivotTableList,omitempty" xml:"PivotTableList"`
+	LinkElement
+	// Xml property "PivotTableList" of the class contains a list of "LinkElement" objects with the element name "PivotTable".
+	PivotTableList []LinkElement `json:"PivotTableList,omitempty" xml:"PivotTableList"`
 }

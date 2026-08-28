@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PictureResponse Represents the Picture Response.
 type PictureResponse struct {
-    CellsCloudResponse
-    // Property Summary: This class has a public property named "Picture" of type "Picture" that has both getter and setter methods.
-    Picture *Picture `json:"Picture,omitempty" xml:"Picture"`
+	CellsCloudResponse
+	// Property Summary: This class has a public property named "Picture" of type "Picture" that has both getter and setter methods.
+	Picture *Picture `json:"Picture,omitempty" xml:"Picture"`
 }

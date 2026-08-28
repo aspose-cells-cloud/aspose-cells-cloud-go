@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // StorageExist Storage exists
 type StorageExist struct {
-    // Shows that the storage exists.             
-    Exists *bool `json:"Exists,omitempty" xml:"Exists"`
+	// Shows that the storage exists.
+	Exists *bool `json:"Exists,omitempty" xml:"Exists"`
 }

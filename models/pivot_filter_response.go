@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PivotFilterResponse Represents the PivotFilter Response.
 type PivotFilterResponse struct {
-    CellsCloudResponse
-    // Property Summary: Contains a pivot filter for data manipulation.
-    PivotFilter *PivotFilter `json:"PivotFilter,omitempty" xml:"PivotFilter"`
+	CellsCloudResponse
+	// Property Summary: Contains a pivot filter for data manipulation.
+	PivotFilter *PivotFilter `json:"PivotFilter,omitempty" xml:"PivotFilter"`
 }

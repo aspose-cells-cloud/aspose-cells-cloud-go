@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // FileInfo Represents file information.
 type FileInfo struct {
-    // Represents filename. 
-    Filename string `json:"Filename,omitempty" xml:"Filename"`
-    // Represents file size.
-    FileSize *int64 `json:"FileSize,omitempty" xml:"FileSize"`
-    // Represents file content,  byte to base64 string.
-    FileContent string `json:"FileContent,omitempty" xml:"FileContent"`
+	// Represents filename.
+	Filename string `json:"Filename,omitempty" xml:"Filename"`
+	// Represents file size.
+	FileSize *int64 `json:"FileSize,omitempty" xml:"FileSize"`
+	// Represents file content,  byte to base64 string.
+	FileContent string `json:"FileContent,omitempty" xml:"FileContent"`
 }

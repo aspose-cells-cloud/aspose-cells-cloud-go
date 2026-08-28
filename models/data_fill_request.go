@@ -23,19 +23,18 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DataFillRequest I'm happy to help! Please provide the features you would like me to summarize.
 type DataFillRequest struct {
-    // Spreadsheet files that require data fulling. 
-    File *FileInfo `json:"File,omitempty" xml:"File"`
-    // finish to data cleansing, outfile`s file format.
-    OutFileFormat string `json:"OutFileFormat,omitempty" xml:"OutFileFormat"`
-    // Whether check restriction of Spreadsheet file when user modify cells related objects.
-    CheckExcelRestriction *bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
-    // The regional settings for workbook.
-    Region string `json:"Region,omitempty" xml:"Region"`
-    // Fill data default value.
-    DataFill *DataFill `json:"DataFill,omitempty" xml:"DataFill"`
+	// Spreadsheet files that require data fulling.
+	File *FileInfo `json:"File,omitempty" xml:"File"`
+	// finish to data cleansing, outfile`s file format.
+	OutFileFormat string `json:"OutFileFormat,omitempty" xml:"OutFileFormat"`
+	// Whether check restriction of Spreadsheet file when user modify cells related objects.
+	CheckExcelRestriction *bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
+	// The regional settings for workbook.
+	Region string `json:"Region,omitempty" xml:"Region"`
+	// Fill data default value.
+	DataFill *DataFill `json:"DataFill,omitempty" xml:"DataFill"`
 }

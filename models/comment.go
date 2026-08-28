@@ -23,32 +23,31 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Comment Encapsulates the object that represents a cell comment.
 type Comment struct {
-    LinkElement
-    // Property: CellName attribute with XmlElement tag in the class.
-    CellName string `json:"CellName,omitempty" xml:"CellName"`
-    // Gets and sets Name of the original comment author
-    Author string `json:"Author,omitempty" xml:"Author"`
-    // Gets and sets the html string which contains data and some formats in this comment.
-    HtmlNote string `json:"HtmlNote,omitempty" xml:"HtmlNote"`
-    // Represents the content of comment.
-    Note string `json:"Note,omitempty" xml:"Note"`
-    // Indicates if size of comment is adjusted automatically according to its content.
-    AutoSize *bool `json:"AutoSize,omitempty" xml:"AutoSize"`
-    // Represents if the comment is visible or not.
-    IsVisible *bool `json:"IsVisible,omitempty" xml:"IsVisible"`
-    // Represents the width of the comment, in unit of pixels.
-    Width *int32 `json:"Width,omitempty" xml:"Width"`
-    // Represents the Height of the comment, in unit of pixels.
-    Height *int32 `json:"Height,omitempty" xml:"Height"`
-    // Gets and sets the text horizontal alignment type of the comment.
-    TextHorizontalAlignment string `json:"TextHorizontalAlignment,omitempty" xml:"TextHorizontalAlignment"`
-    // Gets and sets the text orientation type of the comment.
-    TextOrientationType string `json:"TextOrientationType,omitempty" xml:"TextOrientationType"`
-    // Gets and sets the text vertical alignment type of the comment.
-    TextVerticalAlignment string `json:"TextVerticalAlignment,omitempty" xml:"TextVerticalAlignment"`
+	LinkElement
+	// Property: CellName attribute with XmlElement tag in the class.
+	CellName string `json:"CellName,omitempty" xml:"CellName"`
+	// Gets and sets Name of the original comment author
+	Author string `json:"Author,omitempty" xml:"Author"`
+	// Gets and sets the html string which contains data and some formats in this comment.
+	HtmlNote string `json:"HtmlNote,omitempty" xml:"HtmlNote"`
+	// Represents the content of comment.
+	Note string `json:"Note,omitempty" xml:"Note"`
+	// Indicates if size of comment is adjusted automatically according to its content.
+	AutoSize *bool `json:"AutoSize,omitempty" xml:"AutoSize"`
+	// Represents if the comment is visible or not.
+	IsVisible *bool `json:"IsVisible,omitempty" xml:"IsVisible"`
+	// Represents the width of the comment, in unit of pixels.
+	Width *int32 `json:"Width,omitempty" xml:"Width"`
+	// Represents the Height of the comment, in unit of pixels.
+	Height *int32 `json:"Height,omitempty" xml:"Height"`
+	// Gets and sets the text horizontal alignment type of the comment.
+	TextHorizontalAlignment string `json:"TextHorizontalAlignment,omitempty" xml:"TextHorizontalAlignment"`
+	// Gets and sets the text orientation type of the comment.
+	TextOrientationType string `json:"TextOrientationType,omitempty" xml:"TextOrientationType"`
+	// Gets and sets the text vertical alignment type of the comment.
+	TextVerticalAlignment string `json:"TextVerticalAlignment,omitempty" xml:"TextVerticalAlignment"`
 }

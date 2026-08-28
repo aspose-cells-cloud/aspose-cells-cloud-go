@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DataItem Represents data item.
 type DataItem struct {
-    // Represents data item type.             
-    DataItemType string `json:"DataItemType,omitempty" xml:"DataItemType"`
-    // Represents data item value.             
-    Value string `json:"Value,omitempty" xml:"Value"`
+	// Represents data item type.
+	DataItemType string `json:"DataItemType,omitempty" xml:"DataItemType"`
+	// Represents data item value.
+	Value string `json:"Value,omitempty" xml:"Value"`
 }

@@ -23,22 +23,21 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TextOptions Represents the text options.
 type TextOptions struct {
-    Font
-    // Represents fill format.
-    Fill *FillFormat `json:"Fill,omitempty" xml:"Fill"`
-    // Represents kerning.
-    Kerning *float64 `json:"Kerning,omitempty" xml:"Kerning"`
-    // Represents outline format.
-    Outline *LineFormat `json:"Outline,omitempty" xml:"Outline"`
-    // Represents shadow effect.
-    Shadow *ShadowEffect `json:"Shadow,omitempty" xml:"Shadow"`
-    // Represents spacing.
-    Spacing *float64 `json:"Spacing,omitempty" xml:"Spacing"`
-    // Represents under line color.
-    UnderlineColor *CellsColor `json:"UnderlineColor,omitempty" xml:"UnderlineColor"`
+	Font
+	// Represents fill format.
+	Fill *FillFormat `json:"Fill,omitempty" xml:"Fill"`
+	// Represents kerning.
+	Kerning *float64 `json:"Kerning,omitempty" xml:"Kerning"`
+	// Represents outline format.
+	Outline *LineFormat `json:"Outline,omitempty" xml:"Outline"`
+	// Represents shadow effect.
+	Shadow *ShadowEffect `json:"Shadow,omitempty" xml:"Shadow"`
+	// Represents spacing.
+	Spacing *float64 `json:"Spacing,omitempty" xml:"Spacing"`
+	// Represents under line color.
+	UnderlineColor *CellsColor `json:"UnderlineColor,omitempty" xml:"UnderlineColor"`
 }

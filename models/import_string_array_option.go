@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ImportStringArrayOption I'm happy to help! Could you please provide me with the features you would like me to summarize for the class?
 type ImportStringArrayOption struct {
-    ImportOption
-    // A property named "FirstRow" of type integer with both a getter and a setter is defined in the class.
-    FirstRow *int32 `json:"FirstRow,omitempty" xml:"FirstRow"`
-    FirstColumn *int32 `json:"FirstColumn,omitempty" xml:"FirstColumn"`
-    IsVertical *bool `json:"IsVertical,omitempty" xml:"IsVertical"`
-    Data []interface{} `json:"Data,omitempty" xml:"Data"`
+	ImportOption
+	// A property named "FirstRow" of type integer with both a getter and a setter is defined in the class.
+	FirstRow    *int32        `json:"FirstRow,omitempty" xml:"FirstRow"`
+	FirstColumn *int32        `json:"FirstColumn,omitempty" xml:"FirstColumn"`
+	IsVertical  *bool         `json:"IsVertical,omitempty" xml:"IsVertical"`
+	Data        []interface{} `json:"Data,omitempty" xml:"Data"`
 }

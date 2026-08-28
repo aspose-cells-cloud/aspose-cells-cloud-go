@@ -23,17 +23,16 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// NegativeBarFormat Represents the color settings of the data bars for negative values that are    defined by a data bar conditional formating rule.             
+// NegativeBarFormat Represents the color settings of the data bars for negative values that are    defined by a data bar conditional formating rule.
 type NegativeBarFormat struct {
-    // Gets or sets a FormatColor object that you can use to specify the border color for negative data bars.  
-    BorderColor *Color `json:"BorderColor,omitempty" xml:"BorderColor"`
-    // Gets whether to use the same border color as positive data bars.  
-    BorderColorType string `json:"BorderColorType,omitempty" xml:"BorderColorType"`
-    // Gets or sets a FormatColor object that you can use to specify the fill color for negative data bars.  
-    Color *Color `json:"Color,omitempty" xml:"Color"`
-    // Gets or sets whether to use the same fill color as positive data bars.  
-    ColorType string `json:"ColorType,omitempty" xml:"ColorType"`
+	// Gets or sets a FormatColor object that you can use to specify the border color for negative data bars.
+	BorderColor *Color `json:"BorderColor,omitempty" xml:"BorderColor"`
+	// Gets whether to use the same border color as positive data bars.
+	BorderColorType string `json:"BorderColorType,omitempty" xml:"BorderColorType"`
+	// Gets or sets a FormatColor object that you can use to specify the fill color for negative data bars.
+	Color *Color `json:"Color,omitempty" xml:"Color"`
+	// Gets or sets whether to use the same fill color as positive data bars.
+	ColorType string `json:"ColorType,omitempty" xml:"ColorType"`
 }

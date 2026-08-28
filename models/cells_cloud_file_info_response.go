@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CellsCloudFileInfoResponse
 type CellsCloudFileInfoResponse struct {
-    CellsCloudResponse
-    FileInfo *CellsCloudFileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
+	CellsCloudResponse
+	FileInfo *CellsCloudFileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
 }

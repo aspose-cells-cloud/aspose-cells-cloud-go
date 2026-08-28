@@ -4,7 +4,7 @@
 // The v4.0 API exposes worksheet editing as local-multipart operations: the
 // spreadsheet is uploaded, the server applies the edit and returns the updated
 // workbook as file bytes, which are written to the sink. The cloud WorkbookRef
-// style editing from v3.0 has no v4.0 equivalent (see v4_todo.go).
+// style editing from v3.0 has no v4.0 equivalent.
 package editor
 
 import (
@@ -13,8 +13,8 @@ import (
 	"fmt"
 
 	"asposecellscloud"
-	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/datasource"
+	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/requests"
 )
 
@@ -53,16 +53,13 @@ func AddWorksheet(ctx context.Context, client *asposecellscloud.AsposeCellsCloud
 
 	reqOpts := append([]requests.Option{requests.WithCommonParameter("sheetName", sheetName)}, cfg.ReqOpts...)
 	req := requests.NewAddWorksheetToSpreadsheetRequest("", reqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
-	}
 	req.SetSpreadsheetBytes(data, "Spreadsheet")
 
-	resp, err := runOne(ctx, client, req)
+	resp, err := sdkutil.DoChecked(ctx, client, req)
 	if err != nil {
 		return err
 	}
-	return writeToSink(sink, resp.Body)
+	return sdkutil.WriteToSink(sink, resp.Body)
 }
 
 // DeleteWorksheet deletes a worksheet from a spreadsheet and writes the updated
@@ -85,16 +82,13 @@ func DeleteWorksheet(ctx context.Context, client *asposecellscloud.AsposeCellsCl
 	}
 
 	req := requests.NewDeleteWorksheetFromSpreadsheetRequest(sheetName, "", cfg.ReqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
-	}
 	req.SetSpreadsheetBytes(data, "Spreadsheet")
 
-	resp, err := runOne(ctx, client, req)
+	resp, err := sdkutil.DoChecked(ctx, client, req)
 	if err != nil {
 		return err
 	}
-	return writeToSink(sink, resp.Body)
+	return sdkutil.WriteToSink(sink, resp.Body)
 }
 
 // RenameWorksheet renames a worksheet in a spreadsheet and writes the updated
@@ -117,16 +111,13 @@ func RenameWorksheet(ctx context.Context, client *asposecellscloud.AsposeCellsCl
 	}
 
 	req := requests.NewRenameWorksheetInSpreadsheetRequest(oldName, "", newName, cfg.ReqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
-	}
 	req.SetSpreadsheetBytes(data, "Spreadsheet")
 
-	resp, err := runOne(ctx, client, req)
+	resp, err := sdkutil.DoChecked(ctx, client, req)
 	if err != nil {
 		return err
 	}
-	return writeToSink(sink, resp.Body)
+	return sdkutil.WriteToSink(sink, resp.Body)
 }
 
 // MoveWorksheet moves a worksheet to the given zero-based position in a
@@ -149,16 +140,13 @@ func MoveWorksheet(ctx context.Context, client *asposecellscloud.AsposeCellsClou
 	}
 
 	req := requests.NewMoveWorksheetInSpreadsheetRequest(position, "", worksheet, cfg.ReqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
-	}
 	req.SetSpreadsheetBytes(data, "Spreadsheet")
 
-	resp, err := runOne(ctx, client, req)
+	resp, err := sdkutil.DoChecked(ctx, client, req)
 	if err != nil {
 		return err
 	}
-	return writeToSink(sink, resp.Body)
+	return sdkutil.WriteToSink(sink, resp.Body)
 }
 
 // ListWorksheets returns the worksheets of a spreadsheet.
@@ -177,12 +165,9 @@ func ListWorksheets(ctx context.Context, client *asposecellscloud.AsposeCellsClo
 	}
 
 	req := requests.NewGetWorksheetsWithLocalSpreadsheetRequest("", cfg.ReqOpts...)
-	if req == nil {
-		return nil, fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
-	}
 	req.SetSpreadsheetBytes(data, "Spreadsheet")
 
-	resp, err := runOne(ctx, client, req)
+	resp, err := sdkutil.DoChecked(ctx, client, req)
 	if err != nil {
 		return nil, err
 	}
@@ -209,13 +194,10 @@ func CreateSpreadsheet(ctx context.Context, client *asposecellscloud.AsposeCells
 	sdkutil.Apply(cfg, opts)
 
 	req := requests.NewCreateSpreadsheetRequest(cfg.ReqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: failed to build request", asposecellscloud.ErrInvalidParam)
-	}
 
-	resp, err := runOne(ctx, client, req)
+	resp, err := sdkutil.DoChecked(ctx, client, req)
 	if err != nil {
 		return err
 	}
-	return writeToSink(sink, resp.Body)
+	return sdkutil.WriteToSink(sink, resp.Body)
 }

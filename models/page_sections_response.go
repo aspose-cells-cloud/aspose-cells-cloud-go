@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PageSectionsResponse Represents the PageSections Response.
 type PageSectionsResponse struct {
-    CellsCloudResponse
-    // A property named PageSections of type List PageSection  to store a collection of PageSection objects.
-    PageSections []PageSection `json:"PageSections,omitempty" xml:"PageSections"`
+	CellsCloudResponse
+	// A property named PageSections of type List PageSection  to store a collection of PageSection objects.
+	PageSections []PageSection `json:"PageSections,omitempty" xml:"PageSections"`
 }

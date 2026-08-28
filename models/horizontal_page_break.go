@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// HorizontalPageBreak            Encapsulates the object that represents a horizontal page break.            
+// HorizontalPageBreak            Encapsulates the object that represents a horizontal page break.
 type HorizontalPageBreak struct {
-    // Gets the zero based row index.  
-    Row *int32 `json:"Row,omitempty" xml:"Row"`
-    // Gets the end column index of this horizontal page break.  
-    EndColumn *int32 `json:"EndColumn,omitempty" xml:"EndColumn"`
-    // Gets the start column index of this horizontal page break.  
-    StartColumn *int32 `json:"StartColumn,omitempty" xml:"StartColumn"`
+	// Gets the zero based row index.
+	Row *int32 `json:"Row,omitempty" xml:"Row"`
+	// Gets the end column index of this horizontal page break.
+	EndColumn *int32 `json:"EndColumn,omitempty" xml:"EndColumn"`
+	// Gets the start column index of this horizontal page break.
+	StartColumn *int32 `json:"StartColumn,omitempty" xml:"StartColumn"`
 }

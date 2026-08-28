@@ -23,31 +23,30 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// FormulaSettings Settings of formulas and calculation.  
+// FormulaSettings Settings of formulas and calculation.
 type FormulaSettings struct {
-    // Indicates whether the application is required to perform a full calculation when the workbook is opened.  
-    CalculateOnOpen *bool `json:"CalculateOnOpen,omitempty" xml:"CalculateOnOpen"`
-    // Indicates whether recalculate the workbook before saving the document, when in manual calculation mode.  
-    CalculateOnSave *bool `json:"CalculateOnSave,omitempty" xml:"CalculateOnSave"`
-    // Indicates whether calculates all formulas every time when a calculation is triggered.  
-    ForceFullCalculation *bool `json:"ForceFullCalculation,omitempty" xml:"ForceFullCalculation"`
-    // Gets or sets the mode for workbook calculation in ms excel.  
-    CalculationMode string `json:"CalculationMode,omitempty" xml:"CalculationMode"`
-    // Specifies the version of the calculation engine used to calculate values in the workbook.  
-    CalculationId string `json:"CalculationId,omitempty" xml:"CalculationId"`
-    // Indicates whether enable iterative calculation to resolve circular references.  
-    EnableIterativeCalculation *bool `json:"EnableIterativeCalculation,omitempty" xml:"EnableIterativeCalculation"`
-    // The maximum iterations to resolve a circular reference.  
-    MaxIteration *int32 `json:"MaxIteration,omitempty" xml:"MaxIteration"`
-    // The maximum change to resolve a circular reference.  
-    MaxChange *float64 `json:"MaxChange,omitempty" xml:"MaxChange"`
-    // Whether the precision of calculated result be set as they are displayed while calculating formulas  
-    PrecisionAsDisplayed *bool `json:"PrecisionAsDisplayed,omitempty" xml:"PrecisionAsDisplayed"`
-    // Whether enable calculation chain for formulas. Default is false.  
-    EnableCalculationChain *bool `json:"EnableCalculationChain,omitempty" xml:"EnableCalculationChain"`
-    // Indicates whether preserve those spaces and line breaks that are padded between formula tokens             while getting and setting formulas.             Default value is false.  
-    PreservePaddingSpaces *bool `json:"PreservePaddingSpaces,omitempty" xml:"PreservePaddingSpaces"`
+	// Indicates whether the application is required to perform a full calculation when the workbook is opened.
+	CalculateOnOpen *bool `json:"CalculateOnOpen,omitempty" xml:"CalculateOnOpen"`
+	// Indicates whether recalculate the workbook before saving the document, when in manual calculation mode.
+	CalculateOnSave *bool `json:"CalculateOnSave,omitempty" xml:"CalculateOnSave"`
+	// Indicates whether calculates all formulas every time when a calculation is triggered.
+	ForceFullCalculation *bool `json:"ForceFullCalculation,omitempty" xml:"ForceFullCalculation"`
+	// Gets or sets the mode for workbook calculation in ms excel.
+	CalculationMode string `json:"CalculationMode,omitempty" xml:"CalculationMode"`
+	// Specifies the version of the calculation engine used to calculate values in the workbook.
+	CalculationId string `json:"CalculationId,omitempty" xml:"CalculationId"`
+	// Indicates whether enable iterative calculation to resolve circular references.
+	EnableIterativeCalculation *bool `json:"EnableIterativeCalculation,omitempty" xml:"EnableIterativeCalculation"`
+	// The maximum iterations to resolve a circular reference.
+	MaxIteration *int32 `json:"MaxIteration,omitempty" xml:"MaxIteration"`
+	// The maximum change to resolve a circular reference.
+	MaxChange *float64 `json:"MaxChange,omitempty" xml:"MaxChange"`
+	// Whether the precision of calculated result be set as they are displayed while calculating formulas
+	PrecisionAsDisplayed *bool `json:"PrecisionAsDisplayed,omitempty" xml:"PrecisionAsDisplayed"`
+	// Whether enable calculation chain for formulas. Default is false.
+	EnableCalculationChain *bool `json:"EnableCalculationChain,omitempty" xml:"EnableCalculationChain"`
+	// Indicates whether preserve those spaces and line breaks that are padded between formula tokens             while getting and setting formulas.             Default value is false.
+	PreservePaddingSpaces *bool `json:"PreservePaddingSpaces,omitempty" xml:"PreservePaddingSpaces"`
 }

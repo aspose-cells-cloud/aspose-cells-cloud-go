@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // StyleResponse Represents the Style Response.
 type StyleResponse struct {
-    CellsCloudResponse
-    // A property named "Style" of type "Style" is defined with both getter and setter methods.
-    Style *Style `json:"Style,omitempty" xml:"Style"`
+	CellsCloudResponse
+	// A property named "Style" of type "Style" is defined with both getter and setter methods.
+	Style *Style `json:"Style,omitempty" xml:"Style"`
 }

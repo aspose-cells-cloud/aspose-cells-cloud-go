@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ExcelDataStatistics Represents Excel data statistics.
 type ExcelDataStatistics struct {
-    // Represents worksheet data statistics list.
-    WorksheetDataStatistics []WorksheetDataStatistics `json:"WorksheetDataStatistics,omitempty" xml:"WorksheetDataStatistics"`
+	// Represents worksheet data statistics list.
+	WorksheetDataStatistics []WorksheetDataStatistics `json:"WorksheetDataStatistics,omitempty" xml:"WorksheetDataStatistics"`
 }

@@ -23,21 +23,20 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Spinner Represents the Forms control: Spinner.
 type Spinner struct {
-    Shape
-    // Gets or sets the current value.
-    CurrentValue *int32 `json:"CurrentValue,omitempty" xml:"CurrentValue"`
-    // Gets or sets the amount that the scroll bar or spinner is incremented a line scroll.
-    IncrementalChange *int32 `json:"IncrementalChange,omitempty" xml:"IncrementalChange"`
-    // Gets or sets the maximum value of a scroll bar or spinner range.
-    Max *int32 `json:"Max,omitempty" xml:"Max"`
-    // Gets or sets the minimum value of a scroll bar or spinner range.
-    Min *int32 `json:"Min,omitempty" xml:"Min"`
-    // Indicates whether the shape has 3-D shading.
-    Shadow *bool `json:"Shadow,omitempty" xml:"Shadow"`
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	// Gets or sets the current value.
+	CurrentValue *int32 `json:"CurrentValue,omitempty" xml:"CurrentValue"`
+	// Gets or sets the amount that the scroll bar or spinner is incremented a line scroll.
+	IncrementalChange *int32 `json:"IncrementalChange,omitempty" xml:"IncrementalChange"`
+	// Gets or sets the maximum value of a scroll bar or spinner range.
+	Max *int32 `json:"Max,omitempty" xml:"Max"`
+	// Gets or sets the minimum value of a scroll bar or spinner range.
+	Min *int32 `json:"Min,omitempty" xml:"Min"`
+	// Indicates whether the shape has 3-D shading.
+	Shadow *bool `json:"Shadow,omitempty" xml:"Shadow"`
+	Link   *Link `json:"link,omitempty" xml:"link"`
 }

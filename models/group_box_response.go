@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // GroupBoxResponse Represents the GroupBox Response.
 type GroupBoxResponse struct {
-    CellsCloudResponse
-    // The class has a property named "Shape" of type GroupBox that can be accessed and modified.
-    Shape *GroupBox `json:"Shape,omitempty" xml:"Shape"`
+	CellsCloudResponse
+	// The class has a property named "Shape" of type GroupBox that can be accessed and modified.
+	Shape *GroupBox `json:"Shape,omitempty" xml:"Shape"`
 }

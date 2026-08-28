@@ -23,16 +23,15 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RangeConvertRequest Indicates range copy request
 type RangeConvertRequest struct {
-    // Source range. 
-    Source *Range `json:"Source,omitempty" xml:"Source"`
-    // Target range.
-    ImageType string `json:"ImageType,omitempty" xml:"ImageType"`
-    // Represents the paste special options.             
-    ImageOrPrintOptions *ImageOrPrintOptions `json:"ImageOrPrintOptions,omitempty" xml:"ImageOrPrintOptions"`
-    PageSetup *PageSetup `json:"PageSetup,omitempty" xml:"PageSetup"`
+	// Source range.
+	Source *Range `json:"Source,omitempty" xml:"Source"`
+	// Target range.
+	ImageType string `json:"ImageType,omitempty" xml:"ImageType"`
+	// Represents the paste special options.
+	ImageOrPrintOptions *ImageOrPrintOptions `json:"ImageOrPrintOptions,omitempty" xml:"ImageOrPrintOptions"`
+	PageSetup           *PageSetup           `json:"PageSetup,omitempty" xml:"PageSetup"`
 }

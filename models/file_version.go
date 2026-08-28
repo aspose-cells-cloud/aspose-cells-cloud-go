@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // FileVersion
 type FileVersion struct {
-    StorageFile
-    VersionId string `json:"VersionId,omitempty" xml:"VersionId"`
-    IsLatest *bool `json:"IsLatest,omitempty" xml:"IsLatest"`
+	StorageFile
+	VersionId string `json:"VersionId,omitempty" xml:"VersionId"`
+	IsLatest  *bool  `json:"IsLatest,omitempty" xml:"IsLatest"`
 }

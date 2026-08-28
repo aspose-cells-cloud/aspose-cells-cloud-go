@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // OleObjectsResponse Represents the OleObjects Response.
 type OleObjectsResponse struct {
-    CellsCloudResponse
-    // Property `OleObjects` of type `OleObjects` that can be accessed and modified publicly within the class.
-    OleObjects *OleObjects `json:"OleObjects,omitempty" xml:"OleObjects"`
+	CellsCloudResponse
+	// Property `OleObjects` of type `OleObjects` that can be accessed and modified publicly within the class.
+	OleObjects *OleObjects `json:"OleObjects,omitempty" xml:"OleObjects"`
 }

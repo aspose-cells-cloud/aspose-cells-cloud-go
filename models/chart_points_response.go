@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ChartPointsResponse Represents the ChartPoints Response.
 type ChartPointsResponse struct {
-    CellsCloudResponse
-    // This class has a property named `ChartPoints` of type `ChartPoints` that can be accessed and modified.
-    ChartPoints *ChartPoints `json:"ChartPoints,omitempty" xml:"ChartPoints"`
+	CellsCloudResponse
+	// This class has a property named `ChartPoints` of type `ChartPoints` that can be accessed and modified.
+	ChartPoints *ChartPoints `json:"ChartPoints,omitempty" xml:"ChartPoints"`
 }

@@ -23,14 +23,13 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Import2DimensionIntArrayOption I'm here to help! Please provide the features you'd like me to summarize.
 type Import2DimensionIntArrayOption struct {
-    ImportOption
-    // This property allows getting and setting the value of the first row in a class.
-    FirstRow *int32 `json:"FirstRow,omitempty" xml:"FirstRow"`
-    FirstColumn *int32 `json:"FirstColumn,omitempty" xml:"FirstColumn"`
-    Data []interface{} `json:"Data,omitempty" xml:"Data"`
+	ImportOption
+	// This property allows getting and setting the value of the first row in a class.
+	FirstRow    *int32        `json:"FirstRow,omitempty" xml:"FirstRow"`
+	FirstColumn *int32        `json:"FirstColumn,omitempty" xml:"FirstColumn"`
+	Data        []interface{} `json:"Data,omitempty" xml:"Data"`
 }

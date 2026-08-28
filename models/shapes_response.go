@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ShapesResponse Represents the Shapes Response.
 type ShapesResponse struct {
-    CellsCloudResponse
-    // The class has a property called "Shapes" with XML serialization attribute "XmlElement" for specifying the element name in the XML representation.
-    Shapes *Shapes `json:"Shapes,omitempty" xml:"Shapes"`
+	CellsCloudResponse
+	// The class has a property called "Shapes" with XML serialization attribute "XmlElement" for specifying the element name in the XML representation.
+	Shapes *Shapes `json:"Shapes,omitempty" xml:"Shapes"`
 }

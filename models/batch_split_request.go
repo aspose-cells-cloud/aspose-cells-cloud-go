@@ -23,29 +23,28 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // BatchSplitRequest Class summary: Identifying key features of a statistical dataset and methods for data analysis.
 type BatchSplitRequest struct {
-    // The directory stores files that need to format conversion.             
-    SourceFolder string `json:"SourceFolder,omitempty" xml:"SourceFolder"`
-    // Aspose Cloud storage name
-    SourceStorage string `json:"SourceStorage,omitempty" xml:"SourceStorage"`
-    // Indicates the match condition that needs to be processed for the file name.
-    MatchCondition *MatchConditionRequest `json:"MatchCondition,omitempty" xml:"MatchCondition"`
-    // Output file format
-    Format string `json:"Format,omitempty" xml:"Format"`
-    // From worksheet index of workbook.
-    FromIndex *int32 `json:"FromIndex,omitempty" xml:"FromIndex"`
-    // To worksheet index of workbook.
-    ToIndex *int32 `json:"ToIndex,omitempty" xml:"ToIndex"`
-    // The directory that stores files whose format conversion was successful.
-    OutFolder string `json:"OutFolder,omitempty" xml:"OutFolder"`
-    // Aspose Cloud storage name.
-    OutStorage string `json:"OutStorage,omitempty" xml:"OutStorage"`
-    // The regional settings for workbook.
-    Region string `json:"Region,omitempty" xml:"Region"`
-    // Indicates save options.
-    SaveOptions *SaveOptions `json:"SaveOptions,omitempty" xml:"SaveOptions"`
+	// The directory stores files that need to format conversion.
+	SourceFolder string `json:"SourceFolder,omitempty" xml:"SourceFolder"`
+	// Aspose Cloud storage name
+	SourceStorage string `json:"SourceStorage,omitempty" xml:"SourceStorage"`
+	// Indicates the match condition that needs to be processed for the file name.
+	MatchCondition *MatchConditionRequest `json:"MatchCondition,omitempty" xml:"MatchCondition"`
+	// Output file format
+	Format string `json:"Format,omitempty" xml:"Format"`
+	// From worksheet index of workbook.
+	FromIndex *int32 `json:"FromIndex,omitempty" xml:"FromIndex"`
+	// To worksheet index of workbook.
+	ToIndex *int32 `json:"ToIndex,omitempty" xml:"ToIndex"`
+	// The directory that stores files whose format conversion was successful.
+	OutFolder string `json:"OutFolder,omitempty" xml:"OutFolder"`
+	// Aspose Cloud storage name.
+	OutStorage string `json:"OutStorage,omitempty" xml:"OutStorage"`
+	// The regional settings for workbook.
+	Region string `json:"Region,omitempty" xml:"Region"`
+	// Indicates save options.
+	SaveOptions *SaveOptions `json:"SaveOptions,omitempty" xml:"SaveOptions"`
 }

@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // HyperlinkResponse Represents the Hyperlink Response.
 type HyperlinkResponse struct {
-    CellsCloudResponse
-    // A public property named "Hyperlink" of type Hyperlink with both getter and setter methods.
-    Hyperlink *Hyperlink `json:"Hyperlink,omitempty" xml:"Hyperlink"`
+	CellsCloudResponse
+	// A public property named "Hyperlink" of type Hyperlink with both getter and setter methods.
+	Hyperlink *Hyperlink `json:"Hyperlink,omitempty" xml:"Hyperlink"`
 }

@@ -3,30 +3,15 @@ package asposecellscloud
 import (
 	"context"
 	"fmt"
+	"sync/atomic"
 	"time"
 
 	"asposecellscloud/requests"
 )
 
-// DoChecked executes a single request and verifies its HTTP status code,
-// returning the first response on success. It is the shared building block
-// used by the high-level feature packages.
-func DoChecked(ctx context.Context, client *AsposeCellsCloudClient, req RequestOption) (*RichResponse, error) {
-	if req == nil {
-		return nil, fmt.Errorf("%w: required parameters missing", ErrInvalidParam)
-	}
-	resps, err := client.Do(ctx, req)
-	if err != nil {
-		return nil, err
-	}
-	if len(resps) == 0 {
-		return nil, fmt.Errorf("%w: empty response", ErrRequestFailed)
-	}
-	if err := CheckResponseStatus(resps[0]); err != nil {
-		return nil, err
-	}
-	return resps[0], nil
-}
+// tempFileSeq is a monotonic counter that guarantees uniqueness of temp file
+// names within a process, even when two calls land on the same clock tick.
+var tempFileSeq uint64
 
 // NewTempFileName returns a unique cloud-storage file name with the given
 // extension (defaults to "xlsx"). The high-level search and import helpers use
@@ -36,15 +21,17 @@ func NewTempFileName(ext string) string {
 	if ext == "" {
 		ext = "xlsx"
 	}
-	return fmt.Sprintf("_cells_sdk_%d.%s", time.Now().UnixNano(), ext)
+	// The nanosecond timestamp plus a per-process counter guarantees a distinct
+	// name on every call; the timestamp keeps names unique across processes.
+	return fmt.Sprintf("_cells_sdk_%d_%d.%s", time.Now().UnixNano(), atomic.AddUint64(&tempFileSeq, 1), ext)
 }
 
 // UploadBytes uploads in-memory data to a cloud-storage file.
 func UploadBytes(ctx context.Context, client *AsposeCellsCloudClient, cloudPath string, data []byte) error {
-	req := requests.NewUploadFileRequest(cloudPath, "", requests.WithCommonParameter("storageName", ""))
-	if req == nil {
+	if cloudPath == "" {
 		return fmt.Errorf("%w: cloud path is required", ErrInvalidParam)
 	}
+	req := requests.NewUploadFileRequest(cloudPath, "", requests.WithCommonParameter("storageName", ""))
 	req.SetUploadFilesBytes(data, "UploadFiles")
 	_, err := DoChecked(ctx, client, req)
 	return err
@@ -52,10 +39,10 @@ func UploadBytes(ctx context.Context, client *AsposeCellsCloudClient, cloudPath 
 
 // DeleteCloudFile removes a file from cloud storage.
 func DeleteCloudFile(ctx context.Context, client *AsposeCellsCloudClient, cloudPath string) error {
-	req := requests.NewDeleteFileRequest(cloudPath, requests.WithCommonParameter("storageName", ""))
-	if req == nil {
-		return nil
+	if cloudPath == "" {
+		return fmt.Errorf("%w: cloud path is required", ErrInvalidParam)
 	}
+	req := requests.NewDeleteFileRequest(cloudPath, requests.WithCommonParameter("storageName", ""))
 	_, err := DoChecked(ctx, client, req)
 	return err
 }

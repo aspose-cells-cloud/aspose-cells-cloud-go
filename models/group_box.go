@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // GroupBox Encapsulates the object that represents a groupbox in a spreadsheet.
 type GroupBox struct {
-    Shape
-    // Indicates whether the groupbox has shadow.
-    Shadow *bool `json:"Shadow,omitempty" xml:"Shadow"`
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	// Indicates whether the groupbox has shadow.
+	Shadow *bool `json:"Shadow,omitempty" xml:"Shadow"`
+	Link   *Link `json:"link,omitempty" xml:"link"`
 }

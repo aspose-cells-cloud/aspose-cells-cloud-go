@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ColorFilterRequest Indicates color filter request
 type ColorFilterRequest struct {
-    // Gets or sets the fill pattern type
-    Pattern string `json:"Pattern,omitempty" xml:"Pattern"`
-    // Foreground color
-    ForegroundColor *CellsColor `json:"ForegroundColor,omitempty" xml:"ForegroundColor"`
-    // Background color
-    BackgroundColor *CellsColor `json:"BackgroundColor,omitempty" xml:"BackgroundColor"`
+	// Gets or sets the fill pattern type
+	Pattern string `json:"Pattern,omitempty" xml:"Pattern"`
+	// Foreground color
+	ForegroundColor *CellsColor `json:"ForegroundColor,omitempty" xml:"ForegroundColor"`
+	// Background color
+	BackgroundColor *CellsColor `json:"BackgroundColor,omitempty" xml:"BackgroundColor"`
 }

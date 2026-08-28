@@ -23,32 +23,31 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TickLabels Represents the tick-mark labels associated with tick marks on a chart axis.
 type TickLabels struct {
-    LinkElement
-    // True if the text in the object changes font size when the object size changes. The default value is True.
-    AutoScaleFont *bool `json:"AutoScaleFont,omitempty" xml:"AutoScaleFont"`
-    // Gets and sets the display mode of the background
-    BackgroundMode string `json:"BackgroundMode,omitempty" xml:"BackgroundMode"`
-    // Returns a  object that represents the font of the specified TickLabels object.
-    Font *Font `json:"Font,omitempty" xml:"Font"`
-    // Represents the format number for the TickLabels object.
-    Number *int32 `json:"Number,omitempty" xml:"Number"`
-    // Represents the format string for the TickLabels object.
-    NumberFormat string `json:"NumberFormat,omitempty" xml:"NumberFormat"`
-    // True if the number format is linked to the cells                          (so that the number format changes in the labels when it changes in the cells).
-    NumberFormatLinked *bool `json:"NumberFormatLinked,omitempty" xml:"NumberFormatLinked"`
-    // Gets and sets the distance of labels from the axis.
-    Offset *int32 `json:"Offset,omitempty" xml:"Offset"`
-    // Represents text rotation angle in clockwise.
-    RotationAngle *int32 `json:"RotationAngle,omitempty" xml:"RotationAngle"`
-    // Represents text reading order.
-    TextDirection string `json:"TextDirection,omitempty" xml:"TextDirection"`
-    // Represents text reading order.
-    ReadingOrder string `json:"ReadingOrder,omitempty" xml:"ReadingOrder"`
-    // Gets and sets the direction of text.
-    DirectionType string `json:"DirectionType,omitempty" xml:"DirectionType"`
+	LinkElement
+	// True if the text in the object changes font size when the object size changes. The default value is True.
+	AutoScaleFont *bool `json:"AutoScaleFont,omitempty" xml:"AutoScaleFont"`
+	// Gets and sets the display mode of the background
+	BackgroundMode string `json:"BackgroundMode,omitempty" xml:"BackgroundMode"`
+	// Returns a  object that represents the font of the specified TickLabels object.
+	Font *Font `json:"Font,omitempty" xml:"Font"`
+	// Represents the format number for the TickLabels object.
+	Number *int32 `json:"Number,omitempty" xml:"Number"`
+	// Represents the format string for the TickLabels object.
+	NumberFormat string `json:"NumberFormat,omitempty" xml:"NumberFormat"`
+	// True if the number format is linked to the cells                          (so that the number format changes in the labels when it changes in the cells).
+	NumberFormatLinked *bool `json:"NumberFormatLinked,omitempty" xml:"NumberFormatLinked"`
+	// Gets and sets the distance of labels from the axis.
+	Offset *int32 `json:"Offset,omitempty" xml:"Offset"`
+	// Represents text rotation angle in clockwise.
+	RotationAngle *int32 `json:"RotationAngle,omitempty" xml:"RotationAngle"`
+	// Represents text reading order.
+	TextDirection string `json:"TextDirection,omitempty" xml:"TextDirection"`
+	// Represents text reading order.
+	ReadingOrder string `json:"ReadingOrder,omitempty" xml:"ReadingOrder"`
+	// Gets and sets the direction of text.
+	DirectionType string `json:"DirectionType,omitempty" xml:"DirectionType"`
 }

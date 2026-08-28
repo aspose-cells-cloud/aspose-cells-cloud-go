@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // MergedCell I'm happy to help! Could you please provide me with the features you would like me to summarize for the class?
 type MergedCell struct {
-    LinkElement
-    // An integer property named "EndColumn" with the XML element name "endcolumn".
-    EndColumn *int32 `json:"EndColumn,omitempty" xml:"EndColumn"`
-    EndRow *int32 `json:"EndRow,omitempty" xml:"EndRow"`
-    StartColumn *int32 `json:"StartColumn,omitempty" xml:"StartColumn"`
-    StartRow *int32 `json:"StartRow,omitempty" xml:"StartRow"`
+	LinkElement
+	// An integer property named "EndColumn" with the XML element name "endcolumn".
+	EndColumn   *int32 `json:"EndColumn,omitempty" xml:"EndColumn"`
+	EndRow      *int32 `json:"EndRow,omitempty" xml:"EndRow"`
+	StartColumn *int32 `json:"StartColumn,omitempty" xml:"StartColumn"`
+	StartRow    *int32 `json:"StartRow,omitempty" xml:"StartRow"`
 }

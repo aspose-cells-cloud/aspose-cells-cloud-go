@@ -23,23 +23,22 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ComboBox Represents the control form ComboBox.
 type ComboBox struct {
-    Shape
-    // Gets or sets the number of list lines displayed in the drop-down portion of a combo box.
-    DropDownLines *int32 `json:"DropDownLines,omitempty" xml:"DropDownLines"`
-    // Property Summary: Contains a public string property named "InputRange" with both get and set accessors.
-    InputRange string `json:"InputRange,omitempty" xml:"InputRange"`
-    // Gets the selected cell in the input range of the combo box.
-    SelectedCell *LinkElement `json:"SelectedCell,omitempty" xml:"SelectedCell"`
-    // Gets or sets the index number of the currently selected item in a list box or combo box.                         Zero-based.
-    SelectedIndex *int32 `json:"SelectedIndex,omitempty" xml:"SelectedIndex"`
-    // Gets the selected value of the combox box.
-    SelectedValue string `json:"SelectedValue,omitempty" xml:"SelectedValue"`
-    // Indicates whether the combobox has 3-D shading.
-    Shadow *bool `json:"Shadow,omitempty" xml:"Shadow"`
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	// Gets or sets the number of list lines displayed in the drop-down portion of a combo box.
+	DropDownLines *int32 `json:"DropDownLines,omitempty" xml:"DropDownLines"`
+	// Property Summary: Contains a public string property named "InputRange" with both get and set accessors.
+	InputRange string `json:"InputRange,omitempty" xml:"InputRange"`
+	// Gets the selected cell in the input range of the combo box.
+	SelectedCell *LinkElement `json:"SelectedCell,omitempty" xml:"SelectedCell"`
+	// Gets or sets the index number of the currently selected item in a list box or combo box.                         Zero-based.
+	SelectedIndex *int32 `json:"SelectedIndex,omitempty" xml:"SelectedIndex"`
+	// Gets the selected value of the combox box.
+	SelectedValue string `json:"SelectedValue,omitempty" xml:"SelectedValue"`
+	// Indicates whether the combobox has 3-D shading.
+	Shadow *bool `json:"Shadow,omitempty" xml:"Shadow"`
+	Link   *Link `json:"link,omitempty" xml:"link"`
 }

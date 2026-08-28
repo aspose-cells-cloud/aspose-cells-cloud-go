@@ -23,19 +23,18 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DataQuery Data query.
 type DataQuery struct {
-    // Define a name for data query. Unique identification.
-    Name string `json:"Name,omitempty" xml:"Name"`
-    // The specific data object type. When the value is File, DataItem is invalid.
-    DataSourceDataType string `json:"DataSourceDataType,omitempty" xml:"DataSourceDataType"`
-    // Indicates the source of the mount data.
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    // When data souce is request files, FileInfo store the contents of the file.
-    FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
-    // The specific data object type and name.
-    DataItem *DataItem `json:"DataItem,omitempty" xml:"DataItem"`
+	// Define a name for data query. Unique identification.
+	Name string `json:"Name,omitempty" xml:"Name"`
+	// The specific data object type. When the value is File, DataItem is invalid.
+	DataSourceDataType string `json:"DataSourceDataType,omitempty" xml:"DataSourceDataType"`
+	// Indicates the source of the mount data.
+	DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	// When data souce is request files, FileInfo store the contents of the file.
+	FileInfo *FileInfo `json:"FileInfo,omitempty" xml:"FileInfo"`
+	// The specific data object type and name.
+	DataItem *DataItem `json:"DataItem,omitempty" xml:"DataItem"`
 }

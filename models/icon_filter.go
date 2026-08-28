@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// IconFilter            Represents icon filter.            
+// IconFilter            Represents icon filter.
 type IconFilter struct {
-    // Gets and sets Zero-based index of an icon in an icon set.  
-    IconId *int32 `json:"IconId,omitempty" xml:"IconId"`
-    // Gets and sets which icon set is used in the filter criteria.  
-    IconSetType string `json:"IconSetType,omitempty" xml:"IconSetType"`
+	// Gets and sets Zero-based index of an icon in an icon set.
+	IconId *int32 `json:"IconId,omitempty" xml:"IconId"`
+	// Gets and sets which icon set is used in the filter criteria.
+	IconSetType string `json:"IconSetType,omitempty" xml:"IconSetType"`
 }

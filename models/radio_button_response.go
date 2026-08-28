@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RadioButtonResponse Represents the RadioButton Response.
 type RadioButtonResponse struct {
-    CellsCloudResponse
-    // This class has a public property named "Shape" of type RadioButton with both getter and setter.
-    Shape *RadioButton `json:"Shape,omitempty" xml:"Shape"`
+	CellsCloudResponse
+	// This class has a public property named "Shape" of type RadioButton with both getter and setter.
+	Shape *RadioButton `json:"Shape,omitempty" xml:"Shape"`
 }

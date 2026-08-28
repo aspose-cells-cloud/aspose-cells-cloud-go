@@ -23,24 +23,23 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SqlScriptSaveOptions
 type SqlScriptSaveOptions struct {
-    SaveOptions
-    CheckIfTableExists *bool `json:"CheckIfTableExists,omitempty" xml:"CheckIfTableExists"`
-    ColumnTypeMap string `json:"ColumnTypeMap,omitempty" xml:"ColumnTypeMap"`
-    CheckAllDataForColumnType *bool `json:"CheckAllDataForColumnType,omitempty" xml:"CheckAllDataForColumnType"`
-    AddBlankLineBetweenRows *bool `json:"AddBlankLineBetweenRows,omitempty" xml:"AddBlankLineBetweenRows"`
-    Separator string `json:"Separator,omitempty" xml:"Separator"`
-    OperatorType string `json:"OperatorType,omitempty" xml:"OperatorType"`
-    PrimaryKey *int32 `json:"PrimaryKey,omitempty" xml:"PrimaryKey"`
-    CreateTable *bool `json:"CreateTable,omitempty" xml:"CreateTable"`
-    IdName string `json:"IdName,omitempty" xml:"IdName"`
-    StartId *int32 `json:"StartId,omitempty" xml:"StartId"`
-    TableName string `json:"TableName,omitempty" xml:"TableName"`
-    ExportAsString *bool `json:"ExportAsString,omitempty" xml:"ExportAsString"`
-    ExportArea *CellArea `json:"ExportArea,omitempty" xml:"ExportArea"`
-    HasHeaderRow *bool `json:"HasHeaderRow,omitempty" xml:"HasHeaderRow"`
+	SaveOptions
+	CheckIfTableExists        *bool     `json:"CheckIfTableExists,omitempty" xml:"CheckIfTableExists"`
+	ColumnTypeMap             string    `json:"ColumnTypeMap,omitempty" xml:"ColumnTypeMap"`
+	CheckAllDataForColumnType *bool     `json:"CheckAllDataForColumnType,omitempty" xml:"CheckAllDataForColumnType"`
+	AddBlankLineBetweenRows   *bool     `json:"AddBlankLineBetweenRows,omitempty" xml:"AddBlankLineBetweenRows"`
+	Separator                 string    `json:"Separator,omitempty" xml:"Separator"`
+	OperatorType              string    `json:"OperatorType,omitempty" xml:"OperatorType"`
+	PrimaryKey                *int32    `json:"PrimaryKey,omitempty" xml:"PrimaryKey"`
+	CreateTable               *bool     `json:"CreateTable,omitempty" xml:"CreateTable"`
+	IdName                    string    `json:"IdName,omitempty" xml:"IdName"`
+	StartId                   *int32    `json:"StartId,omitempty" xml:"StartId"`
+	TableName                 string    `json:"TableName,omitempty" xml:"TableName"`
+	ExportAsString            *bool     `json:"ExportAsString,omitempty" xml:"ExportAsString"`
+	ExportArea                *CellArea `json:"ExportArea,omitempty" xml:"ExportArea"`
+	HasHeaderRow              *bool     `json:"HasHeaderRow,omitempty" xml:"HasHeaderRow"`
 }

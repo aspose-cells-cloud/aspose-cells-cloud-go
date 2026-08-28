@@ -23,17 +23,16 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// GradientFill            Represents the gradient fill.            
+// GradientFill            Represents the gradient fill.
 type GradientFill struct {
-    // Gets the gradient fill type.  
-    FillType string `json:"FillType,omitempty" xml:"FillType"`
-    // Gets the gradient direction type.  
-    DirectionType string `json:"DirectionType,omitempty" xml:"DirectionType"`
-    // The angle of linear fill.  
-    Angle *float64 `json:"Angle,omitempty" xml:"Angle"`
-    // Represents the gradient stop collection.  
-    GradientStops []GradientFillStop `json:"GradientStops,omitempty" xml:"GradientStops"`
+	// Gets the gradient fill type.
+	FillType string `json:"FillType,omitempty" xml:"FillType"`
+	// Gets the gradient direction type.
+	DirectionType string `json:"DirectionType,omitempty" xml:"DirectionType"`
+	// The angle of linear fill.
+	Angle *float64 `json:"Angle,omitempty" xml:"Angle"`
+	// Represents the gradient stop collection.
+	GradientStops []GradientFillStop `json:"GradientStops,omitempty" xml:"GradientStops"`
 }

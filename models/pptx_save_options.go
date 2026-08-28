@@ -23,23 +23,22 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PptxSaveOptions
 type PptxSaveOptions struct {
-    PaginatedSaveOptions
-    IgnoreHiddenRows *bool `json:"IgnoreHiddenRows,omitempty" xml:"IgnoreHiddenRows"`
-    AdjustFontSizeForRowType string `json:"AdjustFontSizeForRowType,omitempty" xml:"AdjustFontSizeForRowType"`
-    ExportViewType string `json:"ExportViewType,omitempty" xml:"ExportViewType"`
-    SaveFormat string `json:"SaveFormat,omitempty" xml:"SaveFormat"`
-    CachedFileFolder string `json:"CachedFileFolder,omitempty" xml:"CachedFileFolder"`
-    ClearData *bool `json:"ClearData,omitempty" xml:"ClearData"`
-    CreateDirectory *bool `json:"CreateDirectory,omitempty" xml:"CreateDirectory"`
-    EnableHTTPCompression *bool `json:"EnableHTTPCompression,omitempty" xml:"EnableHTTPCompression"`
-    RefreshChartCache *bool `json:"RefreshChartCache,omitempty" xml:"RefreshChartCache"`
-    SortNames *bool `json:"SortNames,omitempty" xml:"SortNames"`
-    ValidateMergedAreas *bool `json:"ValidateMergedAreas,omitempty" xml:"ValidateMergedAreas"`
-    CheckExcelRestriction *bool `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
-    EncryptDocumentProperties *bool `json:"EncryptDocumentProperties,omitempty" xml:"EncryptDocumentProperties"`
+	PaginatedSaveOptions
+	IgnoreHiddenRows          *bool  `json:"IgnoreHiddenRows,omitempty" xml:"IgnoreHiddenRows"`
+	AdjustFontSizeForRowType  string `json:"AdjustFontSizeForRowType,omitempty" xml:"AdjustFontSizeForRowType"`
+	ExportViewType            string `json:"ExportViewType,omitempty" xml:"ExportViewType"`
+	SaveFormat                string `json:"SaveFormat,omitempty" xml:"SaveFormat"`
+	CachedFileFolder          string `json:"CachedFileFolder,omitempty" xml:"CachedFileFolder"`
+	ClearData                 *bool  `json:"ClearData,omitempty" xml:"ClearData"`
+	CreateDirectory           *bool  `json:"CreateDirectory,omitempty" xml:"CreateDirectory"`
+	EnableHTTPCompression     *bool  `json:"EnableHTTPCompression,omitempty" xml:"EnableHTTPCompression"`
+	RefreshChartCache         *bool  `json:"RefreshChartCache,omitempty" xml:"RefreshChartCache"`
+	SortNames                 *bool  `json:"SortNames,omitempty" xml:"SortNames"`
+	ValidateMergedAreas       *bool  `json:"ValidateMergedAreas,omitempty" xml:"ValidateMergedAreas"`
+	CheckExcelRestriction     *bool  `json:"CheckExcelRestriction,omitempty" xml:"CheckExcelRestriction"`
+	EncryptDocumentProperties *bool  `json:"EncryptDocumentProperties,omitempty" xml:"EncryptDocumentProperties"`
 }

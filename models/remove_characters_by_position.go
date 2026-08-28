@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RemoveCharactersByPosition
 type RemoveCharactersByPosition struct {
-    TheFirstNCharacters *int32 `json:"TheFirstNCharacters,omitempty" xml:"TheFirstNCharacters"`
-    TheLastNCharacters *int32 `json:"TheLastNCharacters,omitempty" xml:"TheLastNCharacters"`
-    AllCharactersBeforeText string `json:"AllCharactersBeforeText,omitempty" xml:"AllCharactersBeforeText"`
-    AllCharactersAfterText string `json:"AllCharactersAfterText,omitempty" xml:"AllCharactersAfterText"`
+	TheFirstNCharacters     *int32 `json:"TheFirstNCharacters,omitempty" xml:"TheFirstNCharacters"`
+	TheLastNCharacters      *int32 `json:"TheLastNCharacters,omitempty" xml:"TheLastNCharacters"`
+	AllCharactersBeforeText string `json:"AllCharactersBeforeText,omitempty" xml:"AllCharactersBeforeText"`
+	AllCharactersAfterText  string `json:"AllCharactersAfterText,omitempty" xml:"AllCharactersAfterText"`
 }

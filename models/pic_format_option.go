@@ -23,21 +23,20 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// PicFormatOption            Represents picture format option            
+// PicFormatOption            Represents picture format option
 type PicFormatOption struct {
-    // Gets or sets the picture fill type.  
-    Type string `json:"Type,omitempty" xml:"Type"`
-    // Gets or sets how many the picture stack and scale with.  
-    Scale *float64 `json:"Scale,omitempty" xml:"Scale"`
-    // Gets or sets the left offset for stretching picture.  
-    Left *float64 `json:"Left,omitempty" xml:"Left"`
-    // Gets or sets the right offset for stretching picture.  
-    Right *float64 `json:"Right,omitempty" xml:"Right"`
-    // Gets or sets the top offset for stretching picture.  
-    Top *float64 `json:"Top,omitempty" xml:"Top"`
-    // Gets or sets the bottom offset for stretching picture.  
-    Bottom *float64 `json:"Bottom,omitempty" xml:"Bottom"`
+	// Gets or sets the picture fill type.
+	Type string `json:"Type,omitempty" xml:"Type"`
+	// Gets or sets how many the picture stack and scale with.
+	Scale *float64 `json:"Scale,omitempty" xml:"Scale"`
+	// Gets or sets the left offset for stretching picture.
+	Left *float64 `json:"Left,omitempty" xml:"Left"`
+	// Gets or sets the right offset for stretching picture.
+	Right *float64 `json:"Right,omitempty" xml:"Right"`
+	// Gets or sets the top offset for stretching picture.
+	Top *float64 `json:"Top,omitempty" xml:"Top"`
+	// Gets or sets the bottom offset for stretching picture.
+	Bottom *float64 `json:"Bottom,omitempty" xml:"Bottom"`
 }

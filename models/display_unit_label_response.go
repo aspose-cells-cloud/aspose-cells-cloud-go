@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DisplayUnitLabelResponse Represents the DisplayUnitLabel Response.
 type DisplayUnitLabelResponse struct {
-    CellsCloudResponse
-    // This property allows access to the display unit label for the class.
-    DisplayUnitLabel *DisplayUnitLabel `json:"DisplayUnitLabel,omitempty" xml:"DisplayUnitLabel"`
+	CellsCloudResponse
+	// This property allows access to the display unit label for the class.
+	DisplayUnitLabel *DisplayUnitLabel `json:"DisplayUnitLabel,omitempty" xml:"DisplayUnitLabel"`
 }

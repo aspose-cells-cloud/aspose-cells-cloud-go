@@ -23,25 +23,24 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// Workbook            Represents a root object to create an Excel spreadsheet.            
+// Workbook            Represents a root object to create an Excel spreadsheet.
 type Workbook struct {
-    // Gets and sets the current file name.  
-    FileName string `json:"FileName,omitempty" xml:"FileName"`
-    // A property of type List Link  named Links is specified to be serialized as an XmlElement with the tag "link".
-    Links []Link `json:"Links,omitempty" xml:"Links"`
-    // Gets the  collection in the spreadsheet.  
-    Worksheets *LinkElement `json:"Worksheets,omitempty" xml:"Worksheets"`
-    // Gets or sets the default  object of the workbook.  
-    DefaultStyle *LinkElement `json:"DefaultStyle,omitempty" xml:"DefaultStyle"`
-    DocumentProperties *LinkElement `json:"DocumentProperties,omitempty" xml:"DocumentProperties"`
-    Names *LinkElement `json:"Names,omitempty" xml:"Names"`
-    // Represents the workbook settings.  
-    Settings *LinkElement `json:"Settings,omitempty" xml:"Settings"`
-    IsWriteProtected string `json:"IsWriteProtected,omitempty" xml:"IsWriteProtected"`
-    IsProtected string `json:"IsProtected,omitempty" xml:"IsProtected"`
-    IsEncryption string `json:"IsEncryption,omitempty" xml:"IsEncryption"`
-    Password string `json:"Password,omitempty" xml:"Password"`
+	// Gets and sets the current file name.
+	FileName string `json:"FileName,omitempty" xml:"FileName"`
+	// A property of type List Link  named Links is specified to be serialized as an XmlElement with the tag "link".
+	Links []Link `json:"Links,omitempty" xml:"Links"`
+	// Gets the  collection in the spreadsheet.
+	Worksheets *LinkElement `json:"Worksheets,omitempty" xml:"Worksheets"`
+	// Gets or sets the default  object of the workbook.
+	DefaultStyle       *LinkElement `json:"DefaultStyle,omitempty" xml:"DefaultStyle"`
+	DocumentProperties *LinkElement `json:"DocumentProperties,omitempty" xml:"DocumentProperties"`
+	Names              *LinkElement `json:"Names,omitempty" xml:"Names"`
+	// Represents the workbook settings.
+	Settings         *LinkElement `json:"Settings,omitempty" xml:"Settings"`
+	IsWriteProtected string       `json:"IsWriteProtected,omitempty" xml:"IsWriteProtected"`
+	IsProtected      string       `json:"IsProtected,omitempty" xml:"IsProtected"`
+	IsEncryption     string       `json:"IsEncryption,omitempty" xml:"IsEncryption"`
+	Password         string       `json:"Password,omitempty" xml:"Password"`
 }

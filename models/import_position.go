@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ImportPosition I can help with that. Just provide me with the features you'd like me to summarize.
 type ImportPosition struct {
-    // "Property SheetName of type string with a public get and set accessor."
-    SheetName string `json:"SheetName,omitempty" xml:"SheetName"`
-    RowIndex *int32 `json:"RowIndex,omitempty" xml:"RowIndex"`
-    ColumnIndex *int32 `json:"ColumnIndex,omitempty" xml:"ColumnIndex"`
+	// "Property SheetName of type string with a public get and set accessor."
+	SheetName   string `json:"SheetName,omitempty" xml:"SheetName"`
+	RowIndex    *int32 `json:"RowIndex,omitempty" xml:"RowIndex"`
+	ColumnIndex *int32 `json:"ColumnIndex,omitempty" xml:"ColumnIndex"`
 }

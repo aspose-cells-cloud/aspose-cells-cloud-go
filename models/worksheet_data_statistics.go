@@ -23,29 +23,28 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // WorksheetDataStatistics Represents worksheet data statistics.
 type WorksheetDataStatistics struct {
-    // Represents worksheet name.
-    Name string `json:"Name,omitempty" xml:"Name"`
-    // Represents chart number.
-    ChartsCount *int32 `json:"ChartsCount,omitempty" xml:"ChartsCount"`
-    // Represents list object number.
-    TablesCount *int32 `json:"TablesCount,omitempty" xml:"TablesCount"`
-    // Represents pivot table number.
-    PivotTablesCount *int32 `json:"PivotTablesCount,omitempty" xml:"PivotTablesCount"`
-    // Represents shape number.
-    ShapesCount *int32 `json:"ShapesCount,omitempty" xml:"ShapesCount"`
-    // Represents shape number.
-    HyperlinksCount *int32 `json:"HyperlinksCount,omitempty" xml:"HyperlinksCount"`
-    // Represents hyperlink number.
-    QueryTablesCount *int32 `json:"QueryTablesCount,omitempty" xml:"QueryTablesCount"`
-    // Represents query table number.
-    CellsCount *int32 `json:"CellsCount,omitempty" xml:"CellsCount"`
-    // Represents cell number.
-    CellsCountInTable *int32 `json:"CellsCountInTable,omitempty" xml:"CellsCountInTable"`
-    // Represents formula number.
-    CellsCountIsFormula *int32 `json:"CellsCountIsFormula,omitempty" xml:"CellsCountIsFormula"`
+	// Represents worksheet name.
+	Name string `json:"Name,omitempty" xml:"Name"`
+	// Represents chart number.
+	ChartsCount *int32 `json:"ChartsCount,omitempty" xml:"ChartsCount"`
+	// Represents list object number.
+	TablesCount *int32 `json:"TablesCount,omitempty" xml:"TablesCount"`
+	// Represents pivot table number.
+	PivotTablesCount *int32 `json:"PivotTablesCount,omitempty" xml:"PivotTablesCount"`
+	// Represents shape number.
+	ShapesCount *int32 `json:"ShapesCount,omitempty" xml:"ShapesCount"`
+	// Represents shape number.
+	HyperlinksCount *int32 `json:"HyperlinksCount,omitempty" xml:"HyperlinksCount"`
+	// Represents hyperlink number.
+	QueryTablesCount *int32 `json:"QueryTablesCount,omitempty" xml:"QueryTablesCount"`
+	// Represents query table number.
+	CellsCount *int32 `json:"CellsCount,omitempty" xml:"CellsCount"`
+	// Represents cell number.
+	CellsCountInTable *int32 `json:"CellsCountInTable,omitempty" xml:"CellsCountInTable"`
+	// Represents formula number.
+	CellsCountIsFormula *int32 `json:"CellsCountIsFormula,omitempty" xml:"CellsCountIsFormula"`
 }

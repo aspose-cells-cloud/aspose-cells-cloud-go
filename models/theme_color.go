@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// ThemeColor            Represents a theme color.            
+// ThemeColor            Represents a theme color.
 type ThemeColor struct {
-    // Gets and sets the theme type.  
-    ColorType string `json:"ColorType,omitempty" xml:"ColorType"`
-    // Gets and sets the tint value.  
-    Tint *float64 `json:"Tint,omitempty" xml:"Tint"`
+	// Gets and sets the theme type.
+	ColorType string `json:"ColorType,omitempty" xml:"ColorType"`
+	// Gets and sets the tint value.
+	Tint *float64 `json:"Tint,omitempty" xml:"Tint"`
 }

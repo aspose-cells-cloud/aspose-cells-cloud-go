@@ -23,25 +23,24 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ListBox Represents a list box object.
 type ListBox struct {
-    Shape
-    // This property stores the input range for the class.
-    InputRange string `json:"InputRange,omitempty" xml:"InputRange"`
-    // Gets the number of items in the list box.
-    ItemCount *int32 `json:"ItemCount,omitempty" xml:"ItemCount"`
-    // Specifies the amount by which the control's value is changed                          when the user clicks on the scrollbar's page up or page down region.
-    PageChange *int32 `json:"PageChange,omitempty" xml:"PageChange"`
-    // Gets the selected cells.                         Returns null if the input range is not set or no item is selected
-    SelectedCells []LinkElement `json:"SelectedCells,omitempty" xml:"SelectedCells"`
-    // Gets or sets the index number of the currently selected item in a list box or combo box.                         Zero-based.
-    SelectedIndex *int32 `json:"SelectedIndex,omitempty" xml:"SelectedIndex"`
-    // Gets or sets the selection mode of the specified list box.
-    SelectionType string `json:"SelectionType,omitempty" xml:"SelectionType"`
-    // Indicates whether the combobox has 3-D shading.
-    Shadow *bool `json:"Shadow,omitempty" xml:"Shadow"`
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	// This property stores the input range for the class.
+	InputRange string `json:"InputRange,omitempty" xml:"InputRange"`
+	// Gets the number of items in the list box.
+	ItemCount *int32 `json:"ItemCount,omitempty" xml:"ItemCount"`
+	// Specifies the amount by which the control's value is changed                          when the user clicks on the scrollbar's page up or page down region.
+	PageChange *int32 `json:"PageChange,omitempty" xml:"PageChange"`
+	// Gets the selected cells.                         Returns null if the input range is not set or no item is selected
+	SelectedCells []LinkElement `json:"SelectedCells,omitempty" xml:"SelectedCells"`
+	// Gets or sets the index number of the currently selected item in a list box or combo box.                         Zero-based.
+	SelectedIndex *int32 `json:"SelectedIndex,omitempty" xml:"SelectedIndex"`
+	// Gets or sets the selection mode of the specified list box.
+	SelectionType string `json:"SelectionType,omitempty" xml:"SelectionType"`
+	// Indicates whether the combobox has 3-D shading.
+	Shadow *bool `json:"Shadow,omitempty" xml:"Shadow"`
+	Link   *Link `json:"link,omitempty" xml:"link"`
 }

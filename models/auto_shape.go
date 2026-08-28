@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // AutoShape Represents an AutoShape.
 type AutoShape struct {
-    Shape
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	Link *Link `json:"link,omitempty" xml:"link"`
 }

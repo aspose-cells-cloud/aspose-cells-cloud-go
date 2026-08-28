@@ -23,14 +23,13 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Legend Encapsulates the object that represents the chart legend.
 type Legend struct {
-    ChartFrame
-    // Gets or sets the legend position type.
-    Position string `json:"Position,omitempty" xml:"Position"`
-    // Gets a collection of all the LegendEntry objects in the specified chart legend.                         Setting the legend entries of the surface chart is not supported.                         So it will return null if the chart type is surface chart type.
-    LegendEntries *LinkElement `json:"LegendEntries,omitempty" xml:"LegendEntries"`
+	ChartFrame
+	// Gets or sets the legend position type.
+	Position string `json:"Position,omitempty" xml:"Position"`
+	// Gets a collection of all the LegendEntry objects in the specified chart legend.                         Setting the legend entries of the surface chart is not supported.                         So it will return null if the chart type is surface chart type.
+	LegendEntries *LinkElement `json:"LegendEntries,omitempty" xml:"LegendEntries"`
 }

@@ -23,21 +23,20 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DataSorter Summary description for DataSorter.
 type DataSorter struct {
-    // Gets and sets whether case sensitive when comparing string.  
-    CaseSensitive *bool `json:"CaseSensitive,omitempty" xml:"CaseSensitive"`
-    // Represents whether the range has headers.  
-    HasHeaders *bool `json:"HasHeaders,omitempty" xml:"HasHeaders"`
-    // Gets the key list of data sorter.             
-    KeyList []SortKey `json:"KeyList,omitempty" xml:"KeyList"`
-    // True means that sorting orientation is from left to right.             False means that sorting orientation is from top to bottom.             The default value is false.  
-    SortLeftToRight *bool `json:"SortLeftToRight,omitempty" xml:"SortLeftToRight"`
-    // Indicates whether sorting anything that looks like a number.  
-    SortAsNumber *bool `json:"SortAsNumber,omitempty" xml:"SortAsNumber"`
-    // Gets the key list of data sorter.  
-    Keys []DataSorterKey `json:"Keys,omitempty" xml:"Keys"`
+	// Gets and sets whether case sensitive when comparing string.
+	CaseSensitive *bool `json:"CaseSensitive,omitempty" xml:"CaseSensitive"`
+	// Represents whether the range has headers.
+	HasHeaders *bool `json:"HasHeaders,omitempty" xml:"HasHeaders"`
+	// Gets the key list of data sorter.
+	KeyList []SortKey `json:"KeyList,omitempty" xml:"KeyList"`
+	// True means that sorting orientation is from left to right.             False means that sorting orientation is from top to bottom.             The default value is false.
+	SortLeftToRight *bool `json:"SortLeftToRight,omitempty" xml:"SortLeftToRight"`
+	// Indicates whether sorting anything that looks like a number.
+	SortAsNumber *bool `json:"SortAsNumber,omitempty" xml:"SortAsNumber"`
+	// Gets the key list of data sorter.
+	Keys []DataSorterKey `json:"Keys,omitempty" xml:"Keys"`
 }

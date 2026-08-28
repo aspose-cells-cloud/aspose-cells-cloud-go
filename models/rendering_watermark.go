@@ -23,20 +23,19 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RenderingWatermark
 type RenderingWatermark struct {
-    Rotation *float64 `json:"Rotation,omitempty" xml:"Rotation"`
-    ScaleToPagePercent *int32 `json:"ScaleToPagePercent,omitempty" xml:"ScaleToPagePercent"`
-    Opacity *float64 `json:"Opacity,omitempty" xml:"Opacity"`
-    IsBackground *bool `json:"IsBackground,omitempty" xml:"IsBackground"`
-    Text string `json:"Text,omitempty" xml:"Text"`
-    Font *RenderingFont `json:"Font,omitempty" xml:"Font"`
-    Image []interface{} `json:"Image,omitempty" xml:"Image"`
-    HAlignment string `json:"HAlignment,omitempty" xml:"HAlignment"`
-    VAlignment string `json:"VAlignment,omitempty" xml:"VAlignment"`
-    OffsetX *float64 `json:"OffsetX,omitempty" xml:"OffsetX"`
-    OffsetY *float64 `json:"OffsetY,omitempty" xml:"OffsetY"`
+	Rotation           *float64       `json:"Rotation,omitempty" xml:"Rotation"`
+	ScaleToPagePercent *int32         `json:"ScaleToPagePercent,omitempty" xml:"ScaleToPagePercent"`
+	Opacity            *float64       `json:"Opacity,omitempty" xml:"Opacity"`
+	IsBackground       *bool          `json:"IsBackground,omitempty" xml:"IsBackground"`
+	Text               string         `json:"Text,omitempty" xml:"Text"`
+	Font               *RenderingFont `json:"Font,omitempty" xml:"Font"`
+	Image              []interface{}  `json:"Image,omitempty" xml:"Image"`
+	HAlignment         string         `json:"HAlignment,omitempty" xml:"HAlignment"`
+	VAlignment         string         `json:"VAlignment,omitempty" xml:"VAlignment"`
+	OffsetX            *float64       `json:"OffsetX,omitempty" xml:"OffsetX"`
+	OffsetY            *float64       `json:"OffsetY,omitempty" xml:"OffsetY"`
 }

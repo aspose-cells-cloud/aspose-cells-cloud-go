@@ -25,5 +25,5 @@ func CheckResponseStatus(resp *RichResponse) error {
 	if cc.Status != "" {
 		msg = fmt.Sprintf("HTTP %d: %s", resp.StatusCode, cc.Status)
 	}
-	return &SDKError{Code: resp.StatusCode, Message: "request failed", Err: fmt.Errorf("%s", msg)}
+	return &SDKError{Code: resp.StatusCode, Message: "request failed", Err: fmt.Errorf("%w: %s", ErrRequestFailed, msg)}
 }

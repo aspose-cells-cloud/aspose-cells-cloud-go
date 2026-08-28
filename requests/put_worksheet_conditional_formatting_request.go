@@ -1,127 +1,130 @@
 package requests
 
 import (
-    "fmt"
-    "net/url"
-    "strings"
+	"fmt"
+	"net/url"
+	"strings"
 
-    "asposecellscloud/models"
+	"asposecellscloud/models"
 )
 
 type PutWorksheetConditionalFormattingRequest struct {
-    cellArea string
-    formatcondition *models.FormatCondition
-    name string
-    sheetName string
+	cellArea        string
+	formatcondition *models.FormatCondition
+	name            string
+	sheetName       string
 
-    folder string
-    storageName string
+	folder      string
+	storageName string
 
-    extraQueryParameters map[string]string
+	extraQueryParameters map[string]string
 }
 
 func NewPutWorksheetConditionalFormattingRequest(cellArea string, formatcondition *models.FormatCondition, name string, sheetName string, opts ...Option) *PutWorksheetConditionalFormattingRequest {
-    req := &PutWorksheetConditionalFormattingRequest{
-        cellArea: cellArea,
-        formatcondition: formatcondition,
-        name: name,
-        sheetName: sheetName,
-    }
-    if req.cellArea == "" {
-        return nil
-    }
-    if req.formatcondition == nil {
-        return nil
-    }
-    if req.name == "" {
-        return nil
-    }
-    if req.sheetName == "" {
-        return nil
-    }
+	req := &PutWorksheetConditionalFormattingRequest{
+		cellArea:        cellArea,
+		formatcondition: formatcondition,
+		name:            name,
+		sheetName:       sheetName,
+	}
+	cfg := &requestConfig{
+		Params: make(map[string]interface{}),
+	}
+	for _, opt := range opts {
+		opt.apply(cfg)
+	}
 
-    cfg := &requestConfig{
-        Params: make(map[string]interface{}),
-    }
-    for _, opt := range opts {
-        opt.apply(cfg)
-    }
+	if val, ok := cfg.Params["folder"].(string); ok {
+		req.folder = val
+	}
+	if val, ok := cfg.Params["storageName"].(string); ok {
+		req.storageName = val
+	}
+	if len(cfg.extraQueryParams) > 0 {
+		if req.extraQueryParameters == nil {
+			req.extraQueryParameters = make(map[string]string)
+		}
+		for k, v := range cfg.extraQueryParams {
+			req.extraQueryParameters[k] = v
+		}
+	}
 
-    if val, ok := cfg.Params["folder"].(string); ok {
-        req.folder = val
-    }
-    if val, ok := cfg.Params["storageName"].(string); ok {
-        req.storageName = val
-    }
-    if len(cfg.extraQueryParams) > 0 {
-        if req.extraQueryParameters == nil {
-            req.extraQueryParameters = make(map[string]string)
-        }
-        for k, v := range cfg.extraQueryParams {
-            req.extraQueryParameters[k] = v
-        }
-    }
+	return req
+}
 
-    return req
+func (request *PutWorksheetConditionalFormattingRequest) Validate() error {
+	if request.cellArea == "" {
+		return fmt.Errorf("required request parameter %q is missing", "cellArea")
+	}
+
+	if request.formatcondition == nil {
+		return fmt.Errorf("required request parameter %q is missing", "formatcondition")
+	}
+
+	if request.name == "" {
+		return fmt.Errorf("required request parameter %q is missing", "name")
+	}
+
+	if request.sheetName == "" {
+		return fmt.Errorf("required request parameter %q is missing", "sheetName")
+	}
+
+	return nil
 }
 
 func (request *PutWorksheetConditionalFormattingRequest) AddQueryParameter(key, value string) {
-    if request.extraQueryParameters == nil {
-        request.extraQueryParameters = make(map[string]string)
-    }
-    request.extraQueryParameters[key] = value
+	if request.extraQueryParameters == nil {
+		request.extraQueryParameters = make(map[string]string)
+	}
+	request.extraQueryParameters[key] = value
 }
 
 func (request *PutWorksheetConditionalFormattingRequest) AddQueryParameters(params map[string]string) {
-    if request.extraQueryParameters == nil {
-        request.extraQueryParameters = make(map[string]string)
-    }
-    for k, v := range params {
-        request.extraQueryParameters[k] = v
-    }
+	if request.extraQueryParameters == nil {
+		request.extraQueryParameters = make(map[string]string)
+	}
+	for k, v := range params {
+		request.extraQueryParameters[k] = v
+	}
 }
 
 func (request *PutWorksheetConditionalFormattingRequest) GetMethod() string {
-    return "PUT"
+	return "PUT"
 }
 
 func (request *PutWorksheetConditionalFormattingRequest) GetHeaderParameters() map[string]string {
-    localVarHeaderParams := make(map[string]string)
-    localVarHeaderParams["Content-Type"] = "application/json"
-    return localVarHeaderParams
+	localVarHeaderParams := make(map[string]string)
+	localVarHeaderParams["Content-Type"] = "application/json"
+	return localVarHeaderParams
 }
 
 func (request *PutWorksheetConditionalFormattingRequest) GetPath() string {
-    localVarPath := "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
-    localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", request.name), -1)
-    localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", request.sheetName), -1)
-    return localVarPath
+	localVarPath := "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(fmt.Sprintf("%v", request.name)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", url.PathEscape(fmt.Sprintf("%v", request.sheetName)), -1)
+	return localVarPath
 }
 
 func (request *PutWorksheetConditionalFormattingRequest) GetQueryParameters() url.Values {
-    localVarQueryParams := url.Values{}
-    localVarQueryParams.Add("cellArea", fmt.Sprintf("%v", request.cellArea))
-    if request.folder != "" {
-        localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
-    }
-    if request.storageName != "" {
-        localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
-    }
-    for k, v := range request.extraQueryParameters {
-        localVarQueryParams.Add(k, v)
-    }
-    return localVarQueryParams
+	localVarQueryParams := url.Values{}
+	localVarQueryParams.Add("cellArea", fmt.Sprintf("%v", request.cellArea))
+	if request.folder != "" {
+		localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
+	}
+	if request.storageName != "" {
+		localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+	}
+	for k, v := range request.extraQueryParameters {
+		localVarQueryParams.Add(k, v)
+	}
+	return localVarQueryParams
 }
 
 func (request *PutWorksheetConditionalFormattingRequest) GetJSONBody() interface{} {
-    return &request.formatcondition
+	return &request.formatcondition
 }
 
 func (request *PutWorksheetConditionalFormattingRequest) GetMultipartForm() map[string]interface{} {
-    localVarFormParams := make(map[string]interface{})
-    return localVarFormParams
-}
-
-func (request *PutWorksheetConditionalFormattingRequest) Description() string {
-    return strings.Trim("Add conditional formatting in the worksheet.", " ")
+	localVarFormParams := make(map[string]interface{})
+	return localVarFormParams
 }

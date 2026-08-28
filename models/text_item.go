@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TextItem
 type TextItem struct {
-    Filename string `json:"Filename,omitempty" xml:"Filename"`
-    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
-    Position string `json:"Position,omitempty" xml:"Position"`
-    Content string `json:"Content,omitempty" xml:"Content"`
+	Filename  string `json:"Filename,omitempty" xml:"Filename"`
+	Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
+	Position  string `json:"Position,omitempty" xml:"Position"`
+	Content   string `json:"Content,omitempty" xml:"Content"`
 }

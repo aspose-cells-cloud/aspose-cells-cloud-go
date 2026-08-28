@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RowResponse Represents the Row Response.
 type RowResponse struct {
-    CellsCloudResponse
-    // This class has a public property named "Row" of type "Row" with both get and set accessors.
-    Row *Row `json:"Row,omitempty" xml:"Row"`
+	CellsCloudResponse
+	// This class has a public property named "Row" of type "Row" with both get and set accessors.
+	Row *Row `json:"Row,omitempty" xml:"Row"`
 }

@@ -23,32 +23,31 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // LineFormat Represents all setting of the line.
 type LineFormat struct {
-    FillFormat
-    // Gets and sets the begin arrow length type of the line.
-    BeginArrowheadLength string `json:"BeginArrowheadLength,omitempty" xml:"BeginArrowheadLength"`
-    // Gets and sets the begin arrow type of the line.
-    BeginArrowheadStyle string `json:"BeginArrowheadStyle,omitempty" xml:"BeginArrowheadStyle"`
-    // Gets and sets the begin arrow width type of the line.
-    BeginArrowheadWidth string `json:"BeginArrowheadWidth,omitempty" xml:"BeginArrowheadWidth"`
-    // Specifies the ending caps.
-    CapType string `json:"CapType,omitempty" xml:"CapType"`
-    // Specifies the line compound type.
-    CompoundType string `json:"CompoundType,omitempty" xml:"CompoundType"`
-    // Specifies the line dash type.
-    DashStyle string `json:"DashStyle,omitempty" xml:"DashStyle"`
-    // Gets and sets the end arrow length type of the line.
-    EndArrowheadLength string `json:"EndArrowheadLength,omitempty" xml:"EndArrowheadLength"`
-    // Gets and sets the end arrow type of the line.
-    EndArrowheadStyle string `json:"EndArrowheadStyle,omitempty" xml:"EndArrowheadStyle"`
-    // Gets and sets the end arrow width type of the line.
-    EndArrowheadWidth string `json:"EndArrowheadWidth,omitempty" xml:"EndArrowheadWidth"`
-    // Specifies the line join type.
-    JoinType string `json:"JoinType,omitempty" xml:"JoinType"`
-    // Gets or sets the weight of the line in unit of points.
-    Weight *float64 `json:"Weight,omitempty" xml:"Weight"`
+	FillFormat
+	// Gets and sets the begin arrow length type of the line.
+	BeginArrowheadLength string `json:"BeginArrowheadLength,omitempty" xml:"BeginArrowheadLength"`
+	// Gets and sets the begin arrow type of the line.
+	BeginArrowheadStyle string `json:"BeginArrowheadStyle,omitempty" xml:"BeginArrowheadStyle"`
+	// Gets and sets the begin arrow width type of the line.
+	BeginArrowheadWidth string `json:"BeginArrowheadWidth,omitempty" xml:"BeginArrowheadWidth"`
+	// Specifies the ending caps.
+	CapType string `json:"CapType,omitempty" xml:"CapType"`
+	// Specifies the line compound type.
+	CompoundType string `json:"CompoundType,omitempty" xml:"CompoundType"`
+	// Specifies the line dash type.
+	DashStyle string `json:"DashStyle,omitempty" xml:"DashStyle"`
+	// Gets and sets the end arrow length type of the line.
+	EndArrowheadLength string `json:"EndArrowheadLength,omitempty" xml:"EndArrowheadLength"`
+	// Gets and sets the end arrow type of the line.
+	EndArrowheadStyle string `json:"EndArrowheadStyle,omitempty" xml:"EndArrowheadStyle"`
+	// Gets and sets the end arrow width type of the line.
+	EndArrowheadWidth string `json:"EndArrowheadWidth,omitempty" xml:"EndArrowheadWidth"`
+	// Specifies the line join type.
+	JoinType string `json:"JoinType,omitempty" xml:"JoinType"`
+	// Gets or sets the weight of the line in unit of points.
+	Weight *float64 `json:"Weight,omitempty" xml:"Weight"`
 }

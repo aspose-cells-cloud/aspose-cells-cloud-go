@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // FilesList Files list
 type FilesList struct {
-    // Files and folders contained by folder StorageFile.
-    Value []StorageFile `json:"Value,omitempty" xml:"Value"`
+	// Files and folders contained by folder StorageFile.
+	Value []StorageFile `json:"Value,omitempty" xml:"Value"`
 }

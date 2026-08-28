@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // WorksheetMovingRequest Used by workbook moving requests.
 type WorksheetMovingRequest struct {
-    // Destination worksheet name.  
-    DestinationWorksheet string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
-    // Position to move. Can be BEFORE or AFTER.
-    Position string `json:"Position,omitempty" xml:"Position"`
+	// Destination worksheet name.
+	DestinationWorksheet string `json:"DestinationWorksheet,omitempty" xml:"DestinationWorksheet"`
+	// Position to move. Can be BEFORE or AFTER.
+	Position string `json:"Position,omitempty" xml:"Position"`
 }

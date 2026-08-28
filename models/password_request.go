@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PasswordRequest Used for password data transfer.
 type PasswordRequest struct {
-    // Password.
-    Password string `json:"Password,omitempty" xml:"Password"`
+	// Password.
+	Password string `json:"Password,omitempty" xml:"Password"`
 }

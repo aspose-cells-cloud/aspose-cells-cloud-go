@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // BrokenLink
 type BrokenLink struct {
-    Filename string `json:"Filename,omitempty" xml:"Filename"`
-    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
-    Position string `json:"Position,omitempty" xml:"Position"`
-    LinkAddress string `json:"LinkAddress,omitempty" xml:"LinkAddress"`
+	Filename    string `json:"Filename,omitempty" xml:"Filename"`
+	Worksheet   string `json:"Worksheet,omitempty" xml:"Worksheet"`
+	Position    string `json:"Position,omitempty" xml:"Position"`
+	LinkAddress string `json:"LinkAddress,omitempty" xml:"LinkAddress"`
 }

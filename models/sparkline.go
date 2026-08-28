@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// Sparkline A sparkline represents a tiny chart or graphic in a worksheet cell that provides a visual representation of data.             
+// Sparkline A sparkline represents a tiny chart or graphic in a worksheet cell that provides a visual representation of data.
 type Sparkline struct {
-    // Gets the column index of the sparkline.  
-    Column *int32 `json:"Column,omitempty" xml:"Column"`
-    // Represents the data range of the sparkline.  
-    DataRange string `json:"DataRange,omitempty" xml:"DataRange"`
-    // Gets the row index of the sparkline.  
-    Row *int32 `json:"Row,omitempty" xml:"Row"`
+	// Gets the column index of the sparkline.
+	Column *int32 `json:"Column,omitempty" xml:"Column"`
+	// Represents the data range of the sparkline.
+	DataRange string `json:"DataRange,omitempty" xml:"DataRange"`
+	// Gets the row index of the sparkline.
+	Row *int32 `json:"Row,omitempty" xml:"Row"`
 }

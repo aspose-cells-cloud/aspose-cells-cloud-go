@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ChartsResponse Represents the Charts Response.
 type ChartsResponse struct {
-    CellsCloudResponse
-    // Property Summary: Includes an XML element named "charts" that contains a property of type Charts.Charts.
-    Charts *Charts `json:"Charts,omitempty" xml:"Charts"`
+	CellsCloudResponse
+	// Property Summary: Includes an XML element named "charts" that contains a property of type Charts.Charts.
+	Charts *Charts `json:"Charts,omitempty" xml:"Charts"`
 }

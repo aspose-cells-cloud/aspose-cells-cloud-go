@@ -23,19 +23,18 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PageSection Class summary: Includes interactive discussions, group projects, guest speakers, and practical applications of course material.
 type PageSection struct {
-    // 0,1,2  left , middle ,right
-    Section *int32 `json:"Section,omitempty" xml:"Section"`
-    // page context script             
-    Context string `json:"Context,omitempty" xml:"Context"`
-    // A property named "Picture" with both getter and setter methods of type string is defined.
-    Picture string `json:"Picture,omitempty" xml:"Picture"`
-    // fisrt page context script
-    FisrtPageContext string `json:"FisrtPageContext,omitempty" xml:"FisrtPageContext"`
-    // Even page context script
-    EvenPageContext string `json:"EvenPageContext,omitempty" xml:"EvenPageContext"`
+	// 0,1,2  left , middle ,right
+	Section *int32 `json:"Section,omitempty" xml:"Section"`
+	// page context script
+	Context string `json:"Context,omitempty" xml:"Context"`
+	// A property named "Picture" with both getter and setter methods of type string is defined.
+	Picture string `json:"Picture,omitempty" xml:"Picture"`
+	// fisrt page context script
+	FisrtPageContext string `json:"FisrtPageContext,omitempty" xml:"FisrtPageContext"`
+	// Even page context script
+	EvenPageContext string `json:"EvenPageContext,omitempty" xml:"EvenPageContext"`
 }

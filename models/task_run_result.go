@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TaskRunResult Represents task run result.
 type TaskRunResult struct {
-    // Represents task run result description.
-    Description string `json:"Description,omitempty" xml:"Description"`
-    // Represents out data file list.
-    OutFileList []DataSource `json:"OutFileList,omitempty" xml:"OutFileList"`
+	// Represents task run result description.
+	Description string `json:"Description,omitempty" xml:"Description"`
+	// Represents out data file list.
+	OutFileList []DataSource `json:"OutFileList,omitempty" xml:"OutFileList"`
 }

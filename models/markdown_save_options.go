@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // MarkdownSaveOptions
 type MarkdownSaveOptions struct {
-    SaveOptions
-    Encoding string `json:"Encoding,omitempty" xml:"Encoding"`
-    FormatStrategy string `json:"FormatStrategy,omitempty" xml:"FormatStrategy"`
-    LineSeparator string `json:"LineSeparator,omitempty" xml:"LineSeparator"`
+	SaveOptions
+	Encoding       string `json:"Encoding,omitempty" xml:"Encoding"`
+	FormatStrategy string `json:"FormatStrategy,omitempty" xml:"FormatStrategy"`
+	LineSeparator  string `json:"LineSeparator,omitempty" xml:"LineSeparator"`
 }

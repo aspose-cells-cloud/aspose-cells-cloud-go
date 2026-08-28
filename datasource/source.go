@@ -8,10 +8,12 @@ import (
 	"os"
 )
 
-// DataSource 定义数据源接口
+// DataSource 定义数据源接口。
+//
+// 资源所有权规则：如果数据源自己打开的资源（如 FilePathSource 打开的文件），
+// ByteData 在读取后负责关闭；如果资源由调用方提供（如 ReaderSource 的流），
+// 调用方保留所有权，ByteData 不会关闭它。
 type DataSource interface {
-	Open() (io.ReadCloser, error)
-	// ByteData 读取所有数据到内存。注意：此方法不关闭底层流。
 	ByteData() ([]byte, error)
 }
 
@@ -32,7 +34,8 @@ func (p FilePathSource) ByteData() ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer reader.Close() // ✅ 安全关闭
+	// 本数据源自己打开的文件，读取后负责关闭。
+	defer reader.Close()
 	return io.ReadAll(reader)
 }
 
@@ -62,7 +65,7 @@ func (r ReaderSource) Open() (io.ReadCloser, error) {
 }
 
 func (r ReaderSource) ByteData() ([]byte, error) {
-	// ✅ 只读取，不关闭流，返回 error
+	// 流由调用方提供，所有权在调用方，这里只读取、不关闭。
 	return io.ReadAll(r.reader)
 }
 

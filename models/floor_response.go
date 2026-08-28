@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // FloorResponse Represents the Floor Response.
 type FloorResponse struct {
-    CellsCloudResponse
-    // This class has a public property "Floor" of type "Floor" with both a getter and a setter.
-    Floor *Floor `json:"Floor,omitempty" xml:"Floor"`
+	CellsCloudResponse
+	// This class has a public property "Floor" of type "Floor" with both a getter and a setter.
+	Floor *Floor `json:"Floor,omitempty" xml:"Floor"`
 }

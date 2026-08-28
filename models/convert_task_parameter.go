@@ -23,20 +23,19 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ConvertTaskParameter Represents convert task parameter.
 type ConvertTaskParameter struct {
-    TaskParameter
-    // Represents data source of task object.
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    // Represents data source of task object.
-    Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
-    // Represents destination file.
-    DestinationFile string `json:"DestinationFile,omitempty" xml:"DestinationFile"`
-    // Represents Excel data region.
-    Region string `json:"Region,omitempty" xml:"Region"`
-    // Represents save options.
-    SaveOptions *SaveOptions `json:"SaveOptions,omitempty" xml:"SaveOptions"`
+	TaskParameter
+	// Represents data source of task object.
+	DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	// Represents data source of task object.
+	Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
+	// Represents destination file.
+	DestinationFile string `json:"DestinationFile,omitempty" xml:"DestinationFile"`
+	// Represents Excel data region.
+	Region string `json:"Region,omitempty" xml:"Region"`
+	// Represents save options.
+	SaveOptions *SaveOptions `json:"SaveOptions,omitempty" xml:"SaveOptions"`
 }

@@ -23,8 +23,7 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// SelectPositionOptionsType Represents where text should be inserted or selected in the spreadsheet.             
+// SelectPositionOptionsType Represents where text should be inserted or selected in the spreadsheet.
 type SelectPositionOptionsType string

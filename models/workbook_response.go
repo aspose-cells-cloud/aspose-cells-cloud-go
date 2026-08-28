@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // WorkbookResponse Represents the Workbook Response.
 type WorkbookResponse struct {
-    CellsCloudResponse
-    // Workbook property of the class allows access to and modification of a Workbook object.
-    Workbook *Workbook `json:"Workbook,omitempty" xml:"Workbook"`
+	CellsCloudResponse
+	// Workbook property of the class allows access to and modification of a Workbook object.
+	Workbook *Workbook `json:"Workbook,omitempty" xml:"Workbook"`
 }

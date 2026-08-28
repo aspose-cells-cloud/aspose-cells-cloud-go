@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// XmlDataBinding Represents Xml Data Binding information.  
+// XmlDataBinding Represents Xml Data Binding information.
 type XmlDataBinding struct {
-    // Gets source url of this data binding.  
-    Url string `json:"Url,omitempty" xml:"Url"`
+	// Gets source url of this data binding.
+	Url string `json:"Url,omitempty" xml:"Url"`
 }

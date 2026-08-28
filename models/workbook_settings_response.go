@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // WorkbookSettingsResponse Represents the WorkbookSettings Response.
 type WorkbookSettingsResponse struct {
-    CellsCloudResponse
-    // The class has a public property called "settings" of type WorkbookSettings that can be accessed and modified.
-    Settings *WorkbookSettings `json:"settings,omitempty" xml:"settings"`
+	CellsCloudResponse
+	// The class has a public property called "settings" of type WorkbookSettings that can be accessed and modified.
+	Settings *WorkbookSettings `json:"settings,omitempty" xml:"settings"`
 }

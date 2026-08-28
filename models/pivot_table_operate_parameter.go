@@ -23,26 +23,25 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PivotTableOperateParameter Represents pivot table operate parameter.
 type PivotTableOperateParameter struct {
-    OperateParameter
-    // Represents source data of pivot table.
-    SourceData string `json:"SourceData,omitempty" xml:"SourceData"`
-    // Represents start cell name of the pivot table.
-    DestCellName string `json:"DestCellName,omitempty" xml:"DestCellName"`
-    // Represents table name of pivot table.
-    TableName string `json:"TableName,omitempty" xml:"TableName"`
-    // Represents whether the same source is used.
-    UseSameSource *bool `json:"UseSameSource,omitempty" xml:"UseSameSource"`
-    // Represents pivot table index.
-    PivotTableIndex *int32 `json:"PivotTableIndex,omitempty" xml:"PivotTableIndex"`
-    // Represents pivot row fields.
-    PivotFieldRows []interface{} `json:"PivotFieldRows,omitempty" xml:"PivotFieldRows"`
-    // Represents pivot column fields.
-    PivotFieldColumns []interface{} `json:"PivotFieldColumns,omitempty" xml:"PivotFieldColumns"`
-    // Represents pivot data field.
-    PivotFieldData []interface{} `json:"PivotFieldData,omitempty" xml:"PivotFieldData"`
+	OperateParameter
+	// Represents source data of pivot table.
+	SourceData string `json:"SourceData,omitempty" xml:"SourceData"`
+	// Represents start cell name of the pivot table.
+	DestCellName string `json:"DestCellName,omitempty" xml:"DestCellName"`
+	// Represents table name of pivot table.
+	TableName string `json:"TableName,omitempty" xml:"TableName"`
+	// Represents whether the same source is used.
+	UseSameSource *bool `json:"UseSameSource,omitempty" xml:"UseSameSource"`
+	// Represents pivot table index.
+	PivotTableIndex *int32 `json:"PivotTableIndex,omitempty" xml:"PivotTableIndex"`
+	// Represents pivot row fields.
+	PivotFieldRows []interface{} `json:"PivotFieldRows,omitempty" xml:"PivotFieldRows"`
+	// Represents pivot column fields.
+	PivotFieldColumns []interface{} `json:"PivotFieldColumns,omitempty" xml:"PivotFieldColumns"`
+	// Represents pivot data field.
+	PivotFieldData []interface{} `json:"PivotFieldData,omitempty" xml:"PivotFieldData"`
 }

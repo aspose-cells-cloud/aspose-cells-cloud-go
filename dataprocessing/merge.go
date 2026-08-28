@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	"asposecellscloud"
-	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/datasource"
+	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/requests"
 )
 
@@ -31,16 +31,13 @@ func MergeSpreadsheet(ctx context.Context, client *asposecellscloud.AsposeCellsC
 	}
 
 	req := requests.NewMergeSpreadsheetsRequest("", cfg.ReqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: failed to build merge request", asposecellscloud.ErrInvalidParam)
-	}
 	req.SetSpreadsheetBytes(data, "Spreadsheet")
 
 	resp, err := asposecellscloud.DoChecked(ctx, client, req)
 	if err != nil {
 		return err
 	}
-	return writeToSink(sink, resp.Body)
+	return sdkutil.WriteToSink(sink, resp.Body)
 }
 
 // MergeRemoteSpreadsheet merges a cloud spreadsheet (mergedSpreadsheet) into
@@ -58,15 +55,12 @@ func MergeRemoteSpreadsheet(ctx context.Context, client *asposecellscloud.Aspose
 	cfg := &sdkutil.Config{}
 	sdkutil.Apply(cfg, opts)
 
-	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
+	reqOpts := append(sdkutil.WorkbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewMergeRemoteSpreadsheetRequest(mergedSpreadsheet, wf.Name, reqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: failed to build merge request", asposecellscloud.ErrInvalidParam)
-	}
 
 	resp, err := asposecellscloud.DoChecked(ctx, client, req)
 	if err != nil {
 		return err
 	}
-	return writeToSink(sink, resp.Body)
+	return sdkutil.WriteToSink(sink, resp.Body)
 }

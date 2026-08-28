@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SpinnerResponse Represents the Spinner Response.
 type SpinnerResponse struct {
-    CellsCloudResponse
-    // A property named Shape of type Spinner, with both get and set accessors.
-    Shape *Spinner `json:"Shape,omitempty" xml:"Shape"`
+	CellsCloudResponse
+	// A property named Shape of type Spinner, with both get and set accessors.
+	Shape *Spinner `json:"Shape,omitempty" xml:"Shape"`
 }

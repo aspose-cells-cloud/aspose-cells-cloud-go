@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CustomParserConfig I'm happy to help! Please provide me with the features you would like me to summarize for the class.
 type CustomParserConfig struct {
-    // Point Column
-    ColumnIndex *int32 `json:"ColumnIndex,omitempty" xml:"ColumnIndex"`
-    // data parser method.              ToDateTime             ToString
-    ParseMethod string `json:"ParseMethod,omitempty" xml:"ParseMethod"`
-    // A property that allows storing and retrieving custom styling information for an object.
-    CustomStyle string `json:"CustomStyle,omitempty" xml:"CustomStyle"`
+	// Point Column
+	ColumnIndex *int32 `json:"ColumnIndex,omitempty" xml:"ColumnIndex"`
+	// data parser method.              ToDateTime             ToString
+	ParseMethod string `json:"ParseMethod,omitempty" xml:"ParseMethod"`
+	// A property that allows storing and retrieving custom styling information for an object.
+	CustomStyle string `json:"CustomStyle,omitempty" xml:"CustomStyle"`
 }

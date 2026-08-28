@@ -23,26 +23,25 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ChartDataTable Represents a chart data table.
 type ChartDataTable struct {
-    LinkElement
-    // True if the text in the object changes font size when the object size changes.                          The default value is True.
-    AutoScaleFont *bool `json:"AutoScaleFont,omitempty" xml:"AutoScaleFont"`
-    // Gets and sets the display mode of the background
-    BackgroundMode string `json:"BackgroundMode,omitempty" xml:"BackgroundMode"`
-    // Returns a Border object that represents the border of the object
-    Border *Line `json:"Border,omitempty" xml:"Border"`
-    // Gets a  object which represents the font setting of the specified chart data table.
-    Font *Font `json:"Font,omitempty" xml:"Font"`
-    // True if the chart data table has horizontal cell borders
-    HasBorderHorizontal *bool `json:"HasBorderHorizontal,omitempty" xml:"HasBorderHorizontal"`
-    // True if the chart data table has outline borders
-    HasBorderOutline *bool `json:"HasBorderOutline,omitempty" xml:"HasBorderOutline"`
-    // True if the chart data table has vertical cell borders
-    HasBorderVertical *bool `json:"HasBorderVertical,omitempty" xml:"HasBorderVertical"`
-    // True if the data label legend key is visible.
-    ShowLegendKey *bool `json:"ShowLegendKey,omitempty" xml:"ShowLegendKey"`
+	LinkElement
+	// True if the text in the object changes font size when the object size changes.                          The default value is True.
+	AutoScaleFont *bool `json:"AutoScaleFont,omitempty" xml:"AutoScaleFont"`
+	// Gets and sets the display mode of the background
+	BackgroundMode string `json:"BackgroundMode,omitempty" xml:"BackgroundMode"`
+	// Returns a Border object that represents the border of the object
+	Border *Line `json:"Border,omitempty" xml:"Border"`
+	// Gets a  object which represents the font setting of the specified chart data table.
+	Font *Font `json:"Font,omitempty" xml:"Font"`
+	// True if the chart data table has horizontal cell borders
+	HasBorderHorizontal *bool `json:"HasBorderHorizontal,omitempty" xml:"HasBorderHorizontal"`
+	// True if the chart data table has outline borders
+	HasBorderOutline *bool `json:"HasBorderOutline,omitempty" xml:"HasBorderOutline"`
+	// True if the chart data table has vertical cell borders
+	HasBorderVertical *bool `json:"HasBorderVertical,omitempty" xml:"HasBorderVertical"`
+	// True if the data label legend key is visible.
+	ShowLegendKey *bool `json:"ShowLegendKey,omitempty" xml:"ShowLegendKey"`
 }

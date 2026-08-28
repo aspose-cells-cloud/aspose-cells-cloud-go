@@ -23,23 +23,22 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// PatternFill            Encapsulates the object that represents pattern fill format            
+// PatternFill            Encapsulates the object that represents pattern fill format
 type PatternFill struct {
-    // Gets or sets the fill pattern type  
-    Pattern string `json:"Pattern,omitempty" xml:"Pattern"`
-    // Gets and sets the foreground  object.  
-    BackgroundCellsColor *CellsColor `json:"BackgroundCellsColor,omitempty" xml:"BackgroundCellsColor"`
-    // Gets and sets the foreground  object.  
-    ForegroundCellsColor *CellsColor `json:"ForegroundCellsColor,omitempty" xml:"ForegroundCellsColor"`
-    // Gets or sets the foreground .  
-    ForegroundColor *Color `json:"ForegroundColor,omitempty" xml:"ForegroundColor"`
-    // Gets or sets the background  of the .  
-    BackgroundColor *Color `json:"BackgroundColor,omitempty" xml:"BackgroundColor"`
-    // Gets or sets the transparency of background color.  
-    BackTransparency *float64 `json:"BackTransparency,omitempty" xml:"BackTransparency"`
-    // Gets or sets the transparency of foreground color.  
-    ForeTransparency *float64 `json:"ForeTransparency,omitempty" xml:"ForeTransparency"`
+	// Gets or sets the fill pattern type
+	Pattern string `json:"Pattern,omitempty" xml:"Pattern"`
+	// Gets and sets the foreground  object.
+	BackgroundCellsColor *CellsColor `json:"BackgroundCellsColor,omitempty" xml:"BackgroundCellsColor"`
+	// Gets and sets the foreground  object.
+	ForegroundCellsColor *CellsColor `json:"ForegroundCellsColor,omitempty" xml:"ForegroundCellsColor"`
+	// Gets or sets the foreground .
+	ForegroundColor *Color `json:"ForegroundColor,omitempty" xml:"ForegroundColor"`
+	// Gets or sets the background  of the .
+	BackgroundColor *Color `json:"BackgroundColor,omitempty" xml:"BackgroundColor"`
+	// Gets or sets the transparency of background color.
+	BackTransparency *float64 `json:"BackTransparency,omitempty" xml:"BackTransparency"`
+	// Gets or sets the transparency of foreground color.
+	ForeTransparency *float64 `json:"ForeTransparency,omitempty" xml:"ForeTransparency"`
 }

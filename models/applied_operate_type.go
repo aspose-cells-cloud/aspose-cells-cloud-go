@@ -23,8 +23,7 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// AppliedOperateType Operation type. 
+// AppliedOperateType Operation type.
 type AppliedOperateType string

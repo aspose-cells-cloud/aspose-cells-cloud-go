@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CalculateFormulaResponse Represents the CalculateFormula Response.
 type CalculateFormulaResponse struct {
-    CellsCloudResponse
-    // A public property "Result" that can be accessed and modified with a string data type.
-    Result string `json:"Result,omitempty" xml:"Result"`
+	CellsCloudResponse
+	// A public property "Result" that can be accessed and modified with a string data type.
+	Result string `json:"Result,omitempty" xml:"Result"`
 }

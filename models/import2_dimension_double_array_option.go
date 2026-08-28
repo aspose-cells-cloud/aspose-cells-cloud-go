@@ -23,14 +23,13 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Import2DimensionDoubleArrayOption I can help summarize features, please provide the details you'd like me to summarize.
 type Import2DimensionDoubleArrayOption struct {
-    ImportOption
-    // The class has a property named "FirstRow" of type integer with get and set accessors.
-    FirstRow *int32 `json:"FirstRow,omitempty" xml:"FirstRow"`
-    FirstColumn *int32 `json:"FirstColumn,omitempty" xml:"FirstColumn"`
-    Data []interface{} `json:"Data,omitempty" xml:"Data"`
+	ImportOption
+	// The class has a property named "FirstRow" of type integer with get and set accessors.
+	FirstRow    *int32        `json:"FirstRow,omitempty" xml:"FirstRow"`
+	FirstColumn *int32        `json:"FirstColumn,omitempty" xml:"FirstColumn"`
+	Data        []interface{} `json:"Data,omitempty" xml:"Data"`
 }

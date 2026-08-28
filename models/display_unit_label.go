@@ -23,17 +23,16 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DisplayUnitLabel Represents the display unit label.
 type DisplayUnitLabel struct {
-    ChartFrame
-    // A public property named "LinkedSource" with a string data type can be set and accessed.
-    LinkedSource string `json:"LinkedSource,omitempty" xml:"LinkedSource"`
-    RotationAngle *int32 `json:"RotationAngle,omitempty" xml:"RotationAngle"`
-    // Gets or sets the text of display unit label.
-    Text string `json:"Text,omitempty" xml:"Text"`
-    TextHorizontalAlignment string `json:"TextHorizontalAlignment,omitempty" xml:"TextHorizontalAlignment"`
-    TextVerticalAlignment string `json:"TextVerticalAlignment,omitempty" xml:"TextVerticalAlignment"`
+	ChartFrame
+	// A public property named "LinkedSource" with a string data type can be set and accessed.
+	LinkedSource  string `json:"LinkedSource,omitempty" xml:"LinkedSource"`
+	RotationAngle *int32 `json:"RotationAngle,omitempty" xml:"RotationAngle"`
+	// Gets or sets the text of display unit label.
+	Text                    string `json:"Text,omitempty" xml:"Text"`
+	TextHorizontalAlignment string `json:"TextHorizontalAlignment,omitempty" xml:"TextHorizontalAlignment"`
+	TextVerticalAlignment   string `json:"TextVerticalAlignment,omitempty" xml:"TextVerticalAlignment"`
 }

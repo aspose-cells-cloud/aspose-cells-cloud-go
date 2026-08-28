@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TextItemResponse Represents the TextItem Response.
 type TextItemResponse struct {
-    CellsCloudResponse
-    // The class has a property that allows getting and setting a TextItem object.
-    TextItem *TextItem `json:"TextItem,omitempty" xml:"TextItem"`
+	CellsCloudResponse
+	// The class has a property that allows getting and setting a TextItem object.
+	TextItem *TextItem `json:"TextItem,omitempty" xml:"TextItem"`
 }

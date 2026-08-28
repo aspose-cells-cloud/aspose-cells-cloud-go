@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// SolidFill            Encapsulates the object that represents solid fill format            
+// SolidFill            Encapsulates the object that represents solid fill format
 type SolidFill struct {
-    // Gets or sets the .  
-    Color *Color `json:"Color,omitempty" xml:"Color"`
-    // Gets and sets the  object.  
-    CellsColor *CellsColor `json:"CellsColor,omitempty" xml:"CellsColor"`
-    // Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear).  
-    Transparency *float64 `json:"Transparency,omitempty" xml:"Transparency"`
+	// Gets or sets the .
+	Color *Color `json:"Color,omitempty" xml:"Color"`
+	// Gets and sets the  object.
+	CellsColor *CellsColor `json:"CellsColor,omitempty" xml:"CellsColor"`
+	// Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear).
+	Transparency *float64 `json:"Transparency,omitempty" xml:"Transparency"`
 }

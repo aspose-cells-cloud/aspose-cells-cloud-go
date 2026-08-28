@@ -23,21 +23,20 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DiscoverChart Represents a chart, which is a chart created based on data analysis of a table.
 type DiscoverChart struct {
-    // Represents chart name.
-    Name string `json:"Name,omitempty" xml:"Name"`
-    // Represents worksheet name which is where the chart is located.
-    SheetName string `json:"SheetName,omitempty" xml:"SheetName"`
-    // Represents chart title.
-    Title string `json:"Title,omitempty" xml:"Title"`
-    // Represents chart type.
-    Type string `json:"Type,omitempty" xml:"Type"`
-    // Represents chart data range.
-    DataRange string `json:"DataRange,omitempty" xml:"DataRange"`
-    // Represents chart thumbnail. Base64String
-    Thumbnail string `json:"Thumbnail,omitempty" xml:"Thumbnail"`
+	// Represents chart name.
+	Name string `json:"Name,omitempty" xml:"Name"`
+	// Represents worksheet name which is where the chart is located.
+	SheetName string `json:"SheetName,omitempty" xml:"SheetName"`
+	// Represents chart title.
+	Title string `json:"Title,omitempty" xml:"Title"`
+	// Represents chart type.
+	Type string `json:"Type,omitempty" xml:"Type"`
+	// Represents chart data range.
+	DataRange string `json:"DataRange,omitempty" xml:"DataRange"`
+	// Represents chart thumbnail. Base64String
+	Thumbnail string `json:"Thumbnail,omitempty" xml:"Thumbnail"`
 }

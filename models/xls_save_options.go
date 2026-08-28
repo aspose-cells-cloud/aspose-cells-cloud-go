@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // XlsSaveOptions
 type XlsSaveOptions struct {
-    SaveOptions
-    MatchColor *bool `json:"MatchColor,omitempty" xml:"MatchColor"`
-    WpsCompatibility *bool `json:"WpsCompatibility,omitempty" xml:"WpsCompatibility"`
+	SaveOptions
+	MatchColor       *bool `json:"MatchColor,omitempty" xml:"MatchColor"`
+	WpsCompatibility *bool `json:"WpsCompatibility,omitempty" xml:"WpsCompatibility"`
 }

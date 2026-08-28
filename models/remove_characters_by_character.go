@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// RemoveCharactersByCharacter Class summary: The features include fast and reliable performance, high-quality camera with portrait mode, long-lasting battery life, and a durable water-resistant design.             
+// RemoveCharactersByCharacter Class summary: The features include fast and reliable performance, high-quality camera with portrait mode, long-lasting battery life, and a durable water-resistant design.
 type RemoveCharactersByCharacter struct {
-    // Property: "RemoveTextMethod" is serialized using a string representation of the enum value.
-    RemoveTextMethod string `json:"RemoveTextMethod,omitempty" xml:"RemoveTextMethod"`
-    RemoveCharacters []string `json:"RemoveCharacters,omitempty" xml:"RemoveCharacters"`
-    RemoveCharacterSetsType string `json:"RemoveCharacterSetsType,omitempty" xml:"RemoveCharacterSetsType"`
+	// Property: "RemoveTextMethod" is serialized using a string representation of the enum value.
+	RemoveTextMethod        string   `json:"RemoveTextMethod,omitempty" xml:"RemoveTextMethod"`
+	RemoveCharacters        []string `json:"RemoveCharacters,omitempty" xml:"RemoveCharacters"`
+	RemoveCharacterSetsType string   `json:"RemoveCharacterSetsType,omitempty" xml:"RemoveCharacterSetsType"`
 }

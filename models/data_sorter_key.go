@@ -23,21 +23,20 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// DataSorterKey Represents the key of the data sorter.  
+// DataSorterKey Represents the key of the data sorter.
 type DataSorterKey struct {
-    // Indicates the order of sorting.  
-    Order string `json:"Order,omitempty" xml:"Order"`
-    // Gets the sorted column index(absolute position, column A is 0, B is 1, ...).  
-    Index *int32 `json:"Index,omitempty" xml:"Index"`
-    // Represents the type of sorting.  
-    Type string `json:"Type,omitempty" xml:"Type"`
-    // Represents the icon set type.  
-    IconSetType string `json:"IconSetType,omitempty" xml:"IconSetType"`
-    // Represents the id of the icon set type.  
-    IconId *int32 `json:"IconId,omitempty" xml:"IconId"`
-    // Gets the sorted color.  
-    Color *Color `json:"Color,omitempty" xml:"Color"`
+	// Indicates the order of sorting.
+	Order string `json:"Order,omitempty" xml:"Order"`
+	// Gets the sorted column index(absolute position, column A is 0, B is 1, ...).
+	Index *int32 `json:"Index,omitempty" xml:"Index"`
+	// Represents the type of sorting.
+	Type string `json:"Type,omitempty" xml:"Type"`
+	// Represents the icon set type.
+	IconSetType string `json:"IconSetType,omitempty" xml:"IconSetType"`
+	// Represents the id of the icon set type.
+	IconId *int32 `json:"IconId,omitempty" xml:"IconId"`
+	// Gets the sorted color.
+	Color *Color `json:"Color,omitempty" xml:"Color"`
 }

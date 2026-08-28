@@ -23,20 +23,19 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Hyperlink Encapsulates the object that represents a hyperlink.
 type Hyperlink struct {
-    LinkElement
-    // Represents the address of a hyperlink.
-    Address string `json:"Address,omitempty" xml:"Address"`
-    // Gets the range of hyperlink.
-    Area *CellArea `json:"Area,omitempty" xml:"Area"`
-    // Returns or sets the ScreenTip text for the specified hyperlink.
-    ScreenTip string `json:"ScreenTip,omitempty" xml:"ScreenTip"`
-    // Represents the text to be displayed for the specified hyperlink. The default value is the address of the hyperlink.
-    TextToDisplay string `json:"TextToDisplay,omitempty" xml:"TextToDisplay"`
-    // Gets the link type.
-    LinkType string `json:"LinkType,omitempty" xml:"LinkType"`
+	LinkElement
+	// Represents the address of a hyperlink.
+	Address string `json:"Address,omitempty" xml:"Address"`
+	// Gets the range of hyperlink.
+	Area *CellArea `json:"Area,omitempty" xml:"Area"`
+	// Returns or sets the ScreenTip text for the specified hyperlink.
+	ScreenTip string `json:"ScreenTip,omitempty" xml:"ScreenTip"`
+	// Represents the text to be displayed for the specified hyperlink. The default value is the address of the hyperlink.
+	TextToDisplay string `json:"TextToDisplay,omitempty" xml:"TextToDisplay"`
+	// Gets the link type.
+	LinkType string `json:"LinkType,omitempty" xml:"LinkType"`
 }

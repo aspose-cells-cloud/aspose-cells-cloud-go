@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // WorkbookSettingsOperateParameter Represents workbook setting operate parameter.
 type WorkbookSettingsOperateParameter struct {
-    OperateParameter
-    // Represents workbook setting.
-    WorkbookSettings *WorkbookSettings `json:"WorkbookSettings,omitempty" xml:"WorkbookSettings"`
+	OperateParameter
+	// Represents workbook setting.
+	WorkbookSettings *WorkbookSettings `json:"WorkbookSettings,omitempty" xml:"WorkbookSettings"`
 }

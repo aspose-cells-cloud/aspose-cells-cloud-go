@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ListObjects Represents a collection of  objects in the worksheet.
 type ListObjects struct {
-    LinkElement
-    // A property named ListObjectList that is a list of LinkElement objects.
-    ListObjectList []LinkElement `json:"ListObjectList,omitempty" xml:"ListObjectList"`
+	LinkElement
+	// A property named ListObjectList that is a list of LinkElement objects.
+	ListObjectList []LinkElement `json:"ListObjectList,omitempty" xml:"ListObjectList"`
 }

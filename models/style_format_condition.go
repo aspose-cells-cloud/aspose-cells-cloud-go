@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // StyleFormatCondition Represents style format condition.
 type StyleFormatCondition struct {
-    FormatCondition
-    Link *Link `json:"link,omitempty" xml:"link"`
+	FormatCondition
+	Link *Link `json:"link,omitempty" xml:"link"`
 }

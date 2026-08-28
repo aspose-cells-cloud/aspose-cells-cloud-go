@@ -23,18 +23,17 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Range
 type Range struct {
-    ColumnCount *int32 `json:"ColumnCount,omitempty" xml:"ColumnCount"`
-    ColumnWidth *float64 `json:"ColumnWidth,omitempty" xml:"ColumnWidth"`
-    FirstColumn *int32 `json:"FirstColumn,omitempty" xml:"FirstColumn"`
-    FirstRow *int32 `json:"FirstRow,omitempty" xml:"FirstRow"`
-    Name string `json:"Name,omitempty" xml:"Name"`
-    RefersTo string `json:"RefersTo,omitempty" xml:"RefersTo"`
-    RowCount *int32 `json:"RowCount,omitempty" xml:"RowCount"`
-    RowHeight *float64 `json:"RowHeight,omitempty" xml:"RowHeight"`
-    Worksheet string `json:"Worksheet,omitempty" xml:"Worksheet"`
+	ColumnCount *int32   `json:"ColumnCount,omitempty" xml:"ColumnCount"`
+	ColumnWidth *float64 `json:"ColumnWidth,omitempty" xml:"ColumnWidth"`
+	FirstColumn *int32   `json:"FirstColumn,omitempty" xml:"FirstColumn"`
+	FirstRow    *int32   `json:"FirstRow,omitempty" xml:"FirstRow"`
+	Name        string   `json:"Name,omitempty" xml:"Name"`
+	RefersTo    string   `json:"RefersTo,omitempty" xml:"RefersTo"`
+	RowCount    *int32   `json:"RowCount,omitempty" xml:"RowCount"`
+	RowHeight   *float64 `json:"RowHeight,omitempty" xml:"RowHeight"`
+	Worksheet   string   `json:"Worksheet,omitempty" xml:"Worksheet"`
 }

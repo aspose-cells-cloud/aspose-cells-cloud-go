@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Forms "Summary: The class covers a range of features including advanced machine learning techniques, statistical analysis tools, and computer vision algorithms."
 type Forms struct {
-    LinkElement
-    // Property: FormList is a list of LinkElements that are serialized as "form" XML elements.
-    FormList []LinkElement `json:"FormList,omitempty" xml:"FormList"`
+	LinkElement
+	// Property: FormList is a list of LinkElements that are serialized as "form" XML elements.
+	FormList []LinkElement `json:"FormList,omitempty" xml:"FormList"`
 }

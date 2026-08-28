@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PivotTableFieldRequest Indicates pivot table field request
 type PivotTableFieldRequest struct {
-    // Intdex array.
-    Data []interface{} `json:"Data,omitempty" xml:"Data"`
+	// Intdex array.
+	Data []interface{} `json:"Data,omitempty" xml:"Data"`
 }

@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ChartPoints Represents a collection that contains all the points in one series.
 type ChartPoints struct {
-    LinkElement
-    // This class has a property named ChartPointList of type List ChartPoint  with an XmlElement attribute "ChartPoint".
-    ChartPointList []ChartPoint `json:"ChartPointList,omitempty" xml:"ChartPointList"`
+	LinkElement
+	// This class has a property named ChartPointList of type List ChartPoint  with an XmlElement attribute "ChartPoint".
+	ChartPointList []ChartPoint `json:"ChartPointList,omitempty" xml:"ChartPointList"`
 }

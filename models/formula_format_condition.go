@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // FormulaFormatCondition Class summary: This class covers various features related to data visualization and graphical representation of data sets.
 type FormulaFormatCondition struct {
-    // Gets and sets the value or expression associated with conditional formatting.
-    Formula1 string `json:"Formula1,omitempty" xml:"Formula1"`
-    // Gets and sets the value or expression associated with conditional formatting.
-    Formula2 string `json:"Formula2,omitempty" xml:"Formula2"`
-    // Gets and sets the conditional format operator type.
-    Operator string `json:"Operator,omitempty" xml:"Operator"`
+	// Gets and sets the value or expression associated with conditional formatting.
+	Formula1 string `json:"Formula1,omitempty" xml:"Formula1"`
+	// Gets and sets the value or expression associated with conditional formatting.
+	Formula2 string `json:"Formula2,omitempty" xml:"Formula2"`
+	// Gets and sets the conditional format operator type.
+	Operator string `json:"Operator,omitempty" xml:"Operator"`
 }

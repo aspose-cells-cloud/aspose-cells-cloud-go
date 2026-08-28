@@ -23,20 +23,19 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Column Represents a single column in a worksheet.
 type Column struct {
-    LinkElement
-    // Gets the group level of the column.
-    GroupLevel *int32 `json:"GroupLevel,omitempty" xml:"GroupLevel"`
-    // Gets the index of this column.
-    Index *int32 `json:"Index,omitempty" xml:"Index"`
-    // Indicates whether the column is hidden.
-    IsHidden *bool `json:"IsHidden,omitempty" xml:"IsHidden"`
-    // Gets and sets the column width in unit of characters.
-    Width *float64 `json:"Width,omitempty" xml:"Width"`
-    // Gets the style of this column.
-    Style *LinkElement `json:"Style,omitempty" xml:"Style"`
+	LinkElement
+	// Gets the group level of the column.
+	GroupLevel *int32 `json:"GroupLevel,omitempty" xml:"GroupLevel"`
+	// Gets the index of this column.
+	Index *int32 `json:"Index,omitempty" xml:"Index"`
+	// Indicates whether the column is hidden.
+	IsHidden *bool `json:"IsHidden,omitempty" xml:"IsHidden"`
+	// Gets and sets the column width in unit of characters.
+	Width *float64 `json:"Width,omitempty" xml:"Width"`
+	// Gets the style of this column.
+	Style *LinkElement `json:"Style,omitempty" xml:"Style"`
 }

@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ConvertParameter Indicates convert parameter
 type ConvertParameter struct {
-    // A property "Name" of type string with a getter and setter is declared in the class.
-    Name string `json:"Name,omitempty" xml:"Name"`
-    Value string `json:"Value,omitempty" xml:"Value"`
+	// A property "Name" of type string with a getter and setter is declared in the class.
+	Name  string `json:"Name,omitempty" xml:"Name"`
+	Value string `json:"Value,omitempty" xml:"Value"`
 }

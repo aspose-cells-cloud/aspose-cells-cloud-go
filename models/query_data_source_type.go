@@ -23,7 +23,6 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // QueryDataSourceType Represents query data source type

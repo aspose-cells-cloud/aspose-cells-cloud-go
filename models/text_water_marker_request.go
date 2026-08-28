@@ -23,20 +23,19 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TextWaterMarkerRequest Indicates text water marker request.
 type TextWaterMarkerRequest struct {
-    // A property named Text of type string that can be accessed and modified.
-    Text string `json:"Text,omitempty" xml:"Text"`
-    // Indicates font name.
-    FontName string `json:"FontName,omitempty" xml:"FontName"`
-    // Indicates font size.
-    FontSize *int32 `json:"FontSize,omitempty" xml:"FontSize"`
-    // Indicates image height.
-    Height *int32 `json:"Height,omitempty" xml:"Height"`
-    // Indicates image width.
-    Width *int32 `json:"Width,omitempty" xml:"Width"`
-    ImageAdaptOption string `json:"ImageAdaptOption,omitempty" xml:"ImageAdaptOption"`
+	// A property named Text of type string that can be accessed and modified.
+	Text string `json:"Text,omitempty" xml:"Text"`
+	// Indicates font name.
+	FontName string `json:"FontName,omitempty" xml:"FontName"`
+	// Indicates font size.
+	FontSize *int32 `json:"FontSize,omitempty" xml:"FontSize"`
+	// Indicates image height.
+	Height *int32 `json:"Height,omitempty" xml:"Height"`
+	// Indicates image width.
+	Width            *int32 `json:"Width,omitempty" xml:"Width"`
+	ImageAdaptOption string `json:"ImageAdaptOption,omitempty" xml:"ImageAdaptOption"`
 }

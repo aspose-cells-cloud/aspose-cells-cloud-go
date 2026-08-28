@@ -23,23 +23,22 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Picture Encapsulates the object that represents a single picture in a spreadsheet.
 type Picture struct {
-    Shape
-    // Represents the  of the border line of a picture.
-    BorderLineColor *Color `json:"BorderLineColor,omitempty" xml:"BorderLineColor"`
-    // Gets or sets the weight of the border line of a picture in units of pt.
-    BorderWeight *float64 `json:"BorderWeight,omitempty" xml:"BorderWeight"`
-    // Gets the original height of the picture.
-    OriginalHeight *int32 `json:"OriginalHeight,omitempty" xml:"OriginalHeight"`
-    // Gets the original width of the picture.
-    OriginalWidth *int32 `json:"OriginalWidth,omitempty" xml:"OriginalWidth"`
-    // This class has a property called "ImageFormat" that allows getting and setting a string value.
-    ImageFormat string `json:"ImageFormat,omitempty" xml:"ImageFormat"`
-    // Gets or sets the path and name of the source file for the linked image.
-    SourceFullName string `json:"SourceFullName,omitempty" xml:"SourceFullName"`
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	// Represents the  of the border line of a picture.
+	BorderLineColor *Color `json:"BorderLineColor,omitempty" xml:"BorderLineColor"`
+	// Gets or sets the weight of the border line of a picture in units of pt.
+	BorderWeight *float64 `json:"BorderWeight,omitempty" xml:"BorderWeight"`
+	// Gets the original height of the picture.
+	OriginalHeight *int32 `json:"OriginalHeight,omitempty" xml:"OriginalHeight"`
+	// Gets the original width of the picture.
+	OriginalWidth *int32 `json:"OriginalWidth,omitempty" xml:"OriginalWidth"`
+	// This class has a property called "ImageFormat" that allows getting and setting a string value.
+	ImageFormat string `json:"ImageFormat,omitempty" xml:"ImageFormat"`
+	// Gets or sets the path and name of the source file for the linked image.
+	SourceFullName string `json:"SourceFullName,omitempty" xml:"SourceFullName"`
+	Link           *Link  `json:"link,omitempty" xml:"link"`
 }

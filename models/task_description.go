@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TaskDescription Represents task description.
 type TaskDescription struct {
-    // Represents task type.
-    TaskType string `json:"TaskType,omitempty" xml:"TaskType"`
-    // Represents task parameter.
-    TaskParameter *TaskParameter `json:"TaskParameter,omitempty" xml:"TaskParameter"`
+	// Represents task type.
+	TaskType string `json:"TaskType,omitempty" xml:"TaskType"`
+	// Represents task parameter.
+	TaskParameter *TaskParameter `json:"TaskParameter,omitempty" xml:"TaskParameter"`
 }

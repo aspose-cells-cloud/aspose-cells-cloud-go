@@ -23,23 +23,22 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ArcShape Represents the arc shape.
 type ArcShape struct {
-    Shape
-    // Gets and sets the begin arrow head length of the line.
-    BeginArrowheadLength string `json:"BeginArrowheadLength,omitempty" xml:"BeginArrowheadLength"`
-    // Gets and sets the begin arrow head style of the line.
-    BeginArrowheadStyle string `json:"BeginArrowheadStyle,omitempty" xml:"BeginArrowheadStyle"`
-    // Gets and sets the begin arrow head width of the line.
-    BeginArrowheadWidth string `json:"BeginArrowheadWidth,omitempty" xml:"BeginArrowheadWidth"`
-    // Gets and sets the end arrow head length of the line.
-    EndArrowheadLength string `json:"EndArrowheadLength,omitempty" xml:"EndArrowheadLength"`
-    // Gets and sets the end arrow head style of the line.
-    EndArrowheadStyle string `json:"EndArrowheadStyle,omitempty" xml:"EndArrowheadStyle"`
-    // Gets and sets the end arrow head width of the line.
-    EndArrowheadWidth string `json:"EndArrowheadWidth,omitempty" xml:"EndArrowheadWidth"`
-    Link *Link `json:"link,omitempty" xml:"link"`
+	Shape
+	// Gets and sets the begin arrow head length of the line.
+	BeginArrowheadLength string `json:"BeginArrowheadLength,omitempty" xml:"BeginArrowheadLength"`
+	// Gets and sets the begin arrow head style of the line.
+	BeginArrowheadStyle string `json:"BeginArrowheadStyle,omitempty" xml:"BeginArrowheadStyle"`
+	// Gets and sets the begin arrow head width of the line.
+	BeginArrowheadWidth string `json:"BeginArrowheadWidth,omitempty" xml:"BeginArrowheadWidth"`
+	// Gets and sets the end arrow head length of the line.
+	EndArrowheadLength string `json:"EndArrowheadLength,omitempty" xml:"EndArrowheadLength"`
+	// Gets and sets the end arrow head style of the line.
+	EndArrowheadStyle string `json:"EndArrowheadStyle,omitempty" xml:"EndArrowheadStyle"`
+	// Gets and sets the end arrow head width of the line.
+	EndArrowheadWidth string `json:"EndArrowheadWidth,omitempty" xml:"EndArrowheadWidth"`
+	Link              *Link  `json:"link,omitempty" xml:"link"`
 }

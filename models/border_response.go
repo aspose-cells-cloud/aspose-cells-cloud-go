@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // BorderResponse Represents the Border Response.
 type BorderResponse struct {
-    CellsCloudResponse
-    // This class has a public property named Border of type Border that can be both read from and written to.
-    Border *Border `json:"Border,omitempty" xml:"Border"`
+	CellsCloudResponse
+	// This class has a public property named Border of type Border that can be both read from and written to.
+	Border *Border `json:"Border,omitempty" xml:"Border"`
 }

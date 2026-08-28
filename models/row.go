@@ -23,24 +23,23 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Row Represents a single row in a worksheet.
 type Row struct {
-    LinkElement
-    // Gets the group level of the row.
-    GroupLevel *int32 `json:"GroupLevel,omitempty" xml:"GroupLevel"`
-    // Gets and sets the row height in unit of Points.
-    Height *float64 `json:"Height,omitempty" xml:"Height"`
-    // Gets the index of this row.
-    Index *int32 `json:"Index,omitempty" xml:"Index"`
-    // Indicates whether the row contains any data
-    IsBlank *bool `json:"IsBlank,omitempty" xml:"IsBlank"`
-    // Indicates that row height and default font height matches.
-    IsHeightMatched *bool `json:"IsHeightMatched,omitempty" xml:"IsHeightMatched"`
-    // Indicates whether the row is hidden.
-    IsHidden *bool `json:"IsHidden,omitempty" xml:"IsHidden"`
-    // Represents the style of this row.
-    Style *LinkElement `json:"Style,omitempty" xml:"Style"`
+	LinkElement
+	// Gets the group level of the row.
+	GroupLevel *int32 `json:"GroupLevel,omitempty" xml:"GroupLevel"`
+	// Gets and sets the row height in unit of Points.
+	Height *float64 `json:"Height,omitempty" xml:"Height"`
+	// Gets the index of this row.
+	Index *int32 `json:"Index,omitempty" xml:"Index"`
+	// Indicates whether the row contains any data
+	IsBlank *bool `json:"IsBlank,omitempty" xml:"IsBlank"`
+	// Indicates that row height and default font height matches.
+	IsHeightMatched *bool `json:"IsHeightMatched,omitempty" xml:"IsHeightMatched"`
+	// Indicates whether the row is hidden.
+	IsHidden *bool `json:"IsHidden,omitempty" xml:"IsHidden"`
+	// Represents the style of this row.
+	Style *LinkElement `json:"Style,omitempty" xml:"Style"`
 }

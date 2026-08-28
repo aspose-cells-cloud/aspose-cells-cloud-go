@@ -26,59 +26,20 @@
 package asposecellscloud
 
 import (
-	"net/http"
 	"strings"
 	"sync"
 	"time"
 )
 
-// contextKeys are used to identify the type of value in the context.
-// Since these are string, it is possible to get a short description of the
-// context key for logging and debugging using key.String().
-
-type contextKey string
-
-func (c contextKey) String() string {
-	return "auth " + string(c)
-}
-
-var (
-	// ContextOAuth2 takes a oauth2.TokenSource as authentication for the request.
-	ContextOAuth2 = contextKey("token")
-
-	// ContextBasicAuth takes BasicAuth as authentication for the request.
-	ContextBasicAuth = contextKey("basic")
-
-	// ContextAccessToken takes a string oauth2 access token as authentication for the request.
-	ContextAccessToken = contextKey("accesstoken")
-
-	// ContextAPIKey takes an APIKey as authentication for the request
-	ContextAPIKey = contextKey("apikey")
-)
-
-// BasicAuth provides basic http authentication to a request passed via context using ContextBasicAuth
-type BasicAuth struct {
-	UserName string `json:"userName,omitempty"`
-	Password string `json:"password,omitempty"`
-}
-
-// APIKey provides API key based authentication to a request passed via context using ContextAPIKey
-type APIKey struct {
-	Key    string
-	Prefix string
-}
-
 type Configuration struct {
-	BasePath           string            `json:"basePath,omitempty"`
-	Version            string            `json:"version,omitempty"`
-	Host               string            `json:"host,omitempty"`
-	Scheme             string            `json:"scheme,omitempty"`
-	DefaultHeader      map[string]string `json:"defaultHeader,omitempty"`
-	UserAgent          string            `json:"userAgent,omitempty"`
-	HTTPClient         *http.Client
-	ClientSecret       string
-	ClientId           string
-	AccessToken        string
+	BasePath      string            `json:"basePath,omitempty"`
+	Version       string            `json:"version,omitempty"`
+	DefaultHeader map[string]string `json:"defaultHeader,omitempty"`
+	UserAgent     string            `json:"userAgent,omitempty"`
+	ClientSecret  string            `json:"-"`
+	ClientId      string
+	AccessToken   string `json:"-"`
+
 	GetAccessTokenTime time.Time
 	TokenExpiresAt     time.Time
 
@@ -87,8 +48,10 @@ type Configuration struct {
 
 func NewConfiguration(clientId string, clientSecret string, basePath string, version string) *Configuration {
 	cfg := &Configuration{
-		BasePath:      "https://api.aspose.cloud/v3.0",
-		Version:       "v3.0",
+		// The SDK targets the v4.0 API; the legacy v3.0/v1.1 endpoints are opt-in
+		// via the basePath suffix or the explicit version argument.
+		BasePath:      "https://api.aspose.cloud/v4.0",
+		Version:       "v4.0",
 		DefaultHeader: make(map[string]string),
 		UserAgent:     "Aspose Cells Cloud SDK for Go",
 		ClientSecret:  clientSecret,

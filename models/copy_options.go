@@ -23,22 +23,21 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CopyOptions Represents the copy options.
 type CopyOptions struct {
-    // Indicates whether copying column width in unit of characters.  
-    ColumnCharacterWidth *bool `json:"ColumnCharacterWidth,omitempty" xml:"ColumnCharacterWidth"`
-    // If the formula is not valid for the dest destination, only copy values.  
-    CopyInvalidFormulasAsValues *bool `json:"CopyInvalidFormulasAsValues,omitempty" xml:"CopyInvalidFormulasAsValues"`
-    // Indicates whether copying the names.  
-    CopyNames *bool `json:"CopyNames,omitempty" xml:"CopyNames"`
-    // Indicates whether extend ranges when copying the range to adjacent range.  
-    ExtendToAdjacentRange *bool `json:"ExtendToAdjacentRange,omitempty" xml:"ExtendToAdjacentRange"`
-    // When copying the range in the same file and the chart refers to the source sheet,             False means the copied chart's data source will not be changed.             True means the copied chart's data source refers to the destination sheet.  
-    ReferToDestinationSheet *bool `json:"ReferToDestinationSheet,omitempty" xml:"ReferToDestinationSheet"`
-    // In ms excel, when copying formulas which refer to other worksheets while copying a worksheet to another one,             the copied formulas should refer to source workbook.             However, for some situations user may need the copied formulas refer to worksheets with the same name             in the same workbook, such as when those worksheets have been copied before this copy operation,             then this property should be kept as true.  
-    ReferToSheetWithSameName *bool `json:"ReferToSheetWithSameName,omitempty" xml:"ReferToSheetWithSameName"`
-    CopyTheme *bool `json:"CopyTheme,omitempty" xml:"CopyTheme"`
+	// Indicates whether copying column width in unit of characters.
+	ColumnCharacterWidth *bool `json:"ColumnCharacterWidth,omitempty" xml:"ColumnCharacterWidth"`
+	// If the formula is not valid for the dest destination, only copy values.
+	CopyInvalidFormulasAsValues *bool `json:"CopyInvalidFormulasAsValues,omitempty" xml:"CopyInvalidFormulasAsValues"`
+	// Indicates whether copying the names.
+	CopyNames *bool `json:"CopyNames,omitempty" xml:"CopyNames"`
+	// Indicates whether extend ranges when copying the range to adjacent range.
+	ExtendToAdjacentRange *bool `json:"ExtendToAdjacentRange,omitempty" xml:"ExtendToAdjacentRange"`
+	// When copying the range in the same file and the chart refers to the source sheet,             False means the copied chart's data source will not be changed.             True means the copied chart's data source refers to the destination sheet.
+	ReferToDestinationSheet *bool `json:"ReferToDestinationSheet,omitempty" xml:"ReferToDestinationSheet"`
+	// In ms excel, when copying formulas which refer to other worksheets while copying a worksheet to another one,             the copied formulas should refer to source workbook.             However, for some situations user may need the copied formulas refer to worksheets with the same name             in the same workbook, such as when those worksheets have been copied before this copy operation,             then this property should be kept as true.
+	ReferToSheetWithSameName *bool `json:"ReferToSheetWithSameName,omitempty" xml:"ReferToSheetWithSameName"`
+	CopyTheme                *bool `json:"CopyTheme,omitempty" xml:"CopyTheme"`
 }

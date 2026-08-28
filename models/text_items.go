@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TextItems Represents text item collection.
 type TextItems struct {
-    LinkElement
-    // Represents text item collection
-    TextItemList []TextItem `json:"TextItemList,omitempty" xml:"TextItemList"`
+	LinkElement
+	// Represents text item collection
+	TextItemList []TextItem `json:"TextItemList,omitempty" xml:"TextItemList"`
 }

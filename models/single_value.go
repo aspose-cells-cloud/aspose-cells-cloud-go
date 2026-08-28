@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // SingleValue Represents single value.
 type SingleValue struct {
-    // Represents value.
-    Value string `json:"Value,omitempty" xml:"Value"`
-    // Represents value type.
-    ValueType string `json:"ValueType,omitempty" xml:"ValueType"`
+	// Represents value.
+	Value string `json:"Value,omitempty" xml:"Value"`
+	// Represents value type.
+	ValueType string `json:"ValueType,omitempty" xml:"ValueType"`
 }

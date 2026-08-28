@@ -23,14 +23,13 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RenderingFont
 type RenderingFont struct {
-    Name string `json:"Name,omitempty" xml:"Name"`
-    Size *float64 `json:"Size,omitempty" xml:"Size"`
-    Bold *bool `json:"Bold,omitempty" xml:"Bold"`
-    Italic *bool `json:"Italic,omitempty" xml:"Italic"`
-    Color *Color `json:"Color,omitempty" xml:"Color"`
+	Name   string   `json:"Name,omitempty" xml:"Name"`
+	Size   *float64 `json:"Size,omitempty" xml:"Size"`
+	Bold   *bool    `json:"Bold,omitempty" xml:"Bold"`
+	Italic *bool    `json:"Italic,omitempty" xml:"Italic"`
+	Color  *Color   `json:"Color,omitempty" xml:"Color"`
 }

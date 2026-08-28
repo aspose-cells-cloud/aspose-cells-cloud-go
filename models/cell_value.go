@@ -23,16 +23,15 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CellValue Represents the cell value and corresponding type.
 type CellValue struct {
-    // A public integer property called "rowIndex" with both getter and setter.
-    RowIndex *int32 `json:"rowIndex,omitempty" xml:"rowIndex"`
-    ColumnIndex *int32 `json:"columnIndex,omitempty" xml:"columnIndex"`
-    Type string `json:"type,omitempty" xml:"type"`
-    Value string `json:"value,omitempty" xml:"value"`
-    Formula string `json:"formula,omitempty" xml:"formula"`
-    Style *Style `json:"style,omitempty" xml:"style"`
+	// A public integer property called "rowIndex" with both getter and setter.
+	RowIndex    *int32 `json:"rowIndex,omitempty" xml:"rowIndex"`
+	ColumnIndex *int32 `json:"columnIndex,omitempty" xml:"columnIndex"`
+	Type        string `json:"type,omitempty" xml:"type"`
+	Value       string `json:"value,omitempty" xml:"value"`
+	Formula     string `json:"formula,omitempty" xml:"formula"`
+	Style       *Style `json:"style,omitempty" xml:"style"`
 }

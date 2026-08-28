@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PicturesResponse Represents the Pictures Response.
 type PicturesResponse struct {
-    CellsCloudResponse
-    // This class has a property called "Pictures" with the feature of being serialized as "pictures" in XML elements.
-    Pictures *Pictures `json:"Pictures,omitempty" xml:"Pictures"`
+	CellsCloudResponse
+	// This class has a property called "Pictures" with the feature of being serialized as "pictures" in XML elements.
+	Pictures *Pictures `json:"Pictures,omitempty" xml:"Pictures"`
 }

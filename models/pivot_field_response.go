@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PivotFieldResponse Represents the PivotField Response.
 type PivotFieldResponse struct {
-    CellsCloudResponse
-    // This class has a property named "PivotField" of type PivotField which can be accessed and modified.
-    PivotField *PivotField `json:"PivotField,omitempty" xml:"PivotField"`
+	CellsCloudResponse
+	// This class has a property named "PivotField" of type PivotField which can be accessed and modified.
+	PivotField *PivotField `json:"PivotField,omitempty" xml:"PivotField"`
 }

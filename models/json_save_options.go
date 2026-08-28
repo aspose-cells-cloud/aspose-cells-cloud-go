@@ -23,14 +23,13 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // JsonSaveOptions
 type JsonSaveOptions struct {
-    SaveOptions
-    ExportArea *CellArea `json:"ExportArea,omitempty" xml:"ExportArea"`
-    HasHeaderRow *bool `json:"HasHeaderRow,omitempty" xml:"HasHeaderRow"`
-    ExportAsString *bool `json:"ExportAsString,omitempty" xml:"ExportAsString"`
-    Indent string `json:"Indent,omitempty" xml:"Indent"`
+	SaveOptions
+	ExportArea     *CellArea `json:"ExportArea,omitempty" xml:"ExportArea"`
+	HasHeaderRow   *bool     `json:"HasHeaderRow,omitempty" xml:"HasHeaderRow"`
+	ExportAsString *bool     `json:"ExportAsString,omitempty" xml:"ExportAsString"`
+	Indent         string    `json:"Indent,omitempty" xml:"Indent"`
 }

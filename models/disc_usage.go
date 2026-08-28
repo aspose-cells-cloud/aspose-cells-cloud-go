@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DiscUsage Class for disc space information.
 type DiscUsage struct {
-    // Application used disc space.
-    UsedSize *int64 `json:"UsedSize,omitempty" xml:"UsedSize"`
-    // Total disc space.
-    TotalSize *int64 `json:"TotalSize,omitempty" xml:"TotalSize"`
+	// Application used disc space.
+	UsedSize *int64 `json:"UsedSize,omitempty" xml:"UsedSize"`
+	// Total disc space.
+	TotalSize *int64 `json:"TotalSize,omitempty" xml:"TotalSize"`
 }

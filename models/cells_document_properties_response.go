@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CellsDocumentPropertiesResponse Represents the CellsDocumentProperties Response.
 type CellsDocumentPropertiesResponse struct {
-    CellsCloudResponse
-    // The class has a property that represents the document properties of cells.
-    DocumentProperties *CellsDocumentProperties `json:"DocumentProperties,omitempty" xml:"DocumentProperties"`
+	CellsCloudResponse
+	// The class has a property that represents the document properties of cells.
+	DocumentProperties *CellsDocumentProperties `json:"DocumentProperties,omitempty" xml:"DocumentProperties"`
 }

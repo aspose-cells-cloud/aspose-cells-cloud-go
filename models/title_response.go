@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TitleResponse Represents the Title Response.
 type TitleResponse struct {
-    CellsCloudResponse
-    // This class has a property called "Title" of type "Title" with both a getter and a setter.
-    Title *Title `json:"Title,omitempty" xml:"Title"`
+	CellsCloudResponse
+	// This class has a property called "Title" of type "Title" with both a getter and a setter.
+	Title *Title `json:"Title,omitempty" xml:"Title"`
 }

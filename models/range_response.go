@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RangeResponse Represents the Range Response.
 type RangeResponse struct {
-    CellsCloudResponse
-    // This class has a property named "Range" of type Range with both getter and setter methods.
-    Range *Range `json:"Range,omitempty" xml:"Range"`
+	CellsCloudResponse
+	// This class has a property named "Range" of type Range with both getter and setter methods.
+	Range *Range `json:"Range,omitempty" xml:"Range"`
 }

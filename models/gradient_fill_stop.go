@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // GradientFillStop Class summary: Understanding the various features and tools available in Adobe Illustrator to create dynamic and professional vector graphics, including shapes, text, brushes, gradients, and layers.
 type GradientFillStop struct {
-    // Color property of type DTO.Color that has a getter and a setter.
-    Color *Color `json:"Color,omitempty" xml:"Color"`
-    Position *float64 `json:"Position,omitempty" xml:"Position"`
-    Transparency *float64 `json:"Transparency,omitempty" xml:"Transparency"`
+	// Color property of type DTO.Color that has a getter and a setter.
+	Color        *Color   `json:"Color,omitempty" xml:"Color"`
+	Position     *float64 `json:"Position,omitempty" xml:"Position"`
+	Transparency *float64 `json:"Transparency,omitempty" xml:"Transparency"`
 }

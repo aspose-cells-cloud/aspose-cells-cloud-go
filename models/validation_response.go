@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ValidationResponse Represents the Validation Response.
 type ValidationResponse struct {
-    CellsCloudResponse
-    // The class has a public property for Validation.
-    Validation *Validation `json:"Validation,omitempty" xml:"Validation"`
+	CellsCloudResponse
+	// The class has a public property for Validation.
+	Validation *Validation `json:"Validation,omitempty" xml:"Validation"`
 }

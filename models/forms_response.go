@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // FormsResponse Represents the Forms Response.
 type FormsResponse struct {
-    CellsCloudResponse
-    // This class has a property named Forms of type Forms that has both a getter and setter.
-    Forms *Forms `json:"Forms,omitempty" xml:"Forms"`
+	CellsCloudResponse
+	// This class has a property named Forms of type Forms that has both a getter and setter.
+	Forms *Forms `json:"Forms,omitempty" xml:"Forms"`
 }

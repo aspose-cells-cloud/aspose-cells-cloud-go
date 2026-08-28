@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // BrokenLinksResponse
 type BrokenLinksResponse struct {
-    CellsCloudResponse
-    BrokenLinks []BrokenLink `json:"BrokenLinks,omitempty" xml:"BrokenLinks"`
+	CellsCloudResponse
+	BrokenLinks []BrokenLink `json:"BrokenLinks,omitempty" xml:"BrokenLinks"`
 }

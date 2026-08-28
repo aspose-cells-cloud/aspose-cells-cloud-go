@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DataCleansing Represents data cleansing.
 type DataCleansing struct {
-    // A property named "Ranges" of type IList Range with a default value of an empty List of Range objects.
-    Ranges []Range `json:"Ranges,omitempty" xml:"Ranges"`
-    // Represents whether the data needs to be populated.
-    NeedFillData *bool `json:"NeedFillData,omitempty" xml:"NeedFillData"`
-    // Represents data fill.
-    DataFill *DataFill `json:"DataFill,omitempty" xml:"DataFill"`
+	// A property named "Ranges" of type IList Range with a default value of an empty List of Range objects.
+	Ranges []Range `json:"Ranges,omitempty" xml:"Ranges"`
+	// Represents whether the data needs to be populated.
+	NeedFillData *bool `json:"NeedFillData,omitempty" xml:"NeedFillData"`
+	// Represents data fill.
+	DataFill *DataFill `json:"DataFill,omitempty" xml:"DataFill"`
 }

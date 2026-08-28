@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CheckedExternalReferenceResponse
 type CheckedExternalReferenceResponse struct {
-    CellsCloudResponse
-    ReferenceOtherWorkbook *bool `json:"ReferenceOtherWorkbook,omitempty" xml:"ReferenceOtherWorkbook"`
-    ReferenceOtherWorksheet *bool `json:"ReferenceOtherWorksheet,omitempty" xml:"ReferenceOtherWorksheet"`
-    Formulas []string `json:"Formulas,omitempty" xml:"Formulas"`
+	CellsCloudResponse
+	ReferenceOtherWorkbook  *bool    `json:"ReferenceOtherWorkbook,omitempty" xml:"ReferenceOtherWorkbook"`
+	ReferenceOtherWorksheet *bool    `json:"ReferenceOtherWorksheet,omitempty" xml:"ReferenceOtherWorksheet"`
+	Formulas                []string `json:"Formulas,omitempty" xml:"Formulas"`
 }

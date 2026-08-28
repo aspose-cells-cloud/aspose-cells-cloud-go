@@ -23,30 +23,29 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ConvertWorksheetTaskParameter Represents convert worksheet task parameter.
 type ConvertWorksheetTaskParameter struct {
-    TaskParameter
-    // Represents data source of task object.
-    DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
-    // Represents data source of task object.
-    Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
-    // Represents worksheet.
-    Sheet string `json:"Sheet,omitempty" xml:"Sheet"`
-    // Represents destination data source.
-    TargetDataSource *DataSource `json:"TargetDataSource,omitempty" xml:"TargetDataSource"`
-    // Represents destination data source.
-    Target *FileSource `json:"Target,omitempty" xml:"Target"`
-    // Represents destination data format.
-    Format string `json:"Format,omitempty" xml:"Format"`
-    // Represents converted data area.
-    Area string `json:"Area,omitempty" xml:"Area"`
-    // Represents converted page index.
-    PageIndex *int32 `json:"PageIndex,omitempty" xml:"PageIndex"`
-    // Represents vertical resolution.
-    VerticalResolution *int32 `json:"VerticalResolution,omitempty" xml:"VerticalResolution"`
-    // Represents horizontal resolution.
-    HorizontalResolution *int32 `json:"HorizontalResolution,omitempty" xml:"HorizontalResolution"`
+	TaskParameter
+	// Represents data source of task object.
+	DataSource *DataSource `json:"DataSource,omitempty" xml:"DataSource"`
+	// Represents data source of task object.
+	Workbook *FileSource `json:"Workbook,omitempty" xml:"Workbook"`
+	// Represents worksheet.
+	Sheet string `json:"Sheet,omitempty" xml:"Sheet"`
+	// Represents destination data source.
+	TargetDataSource *DataSource `json:"TargetDataSource,omitempty" xml:"TargetDataSource"`
+	// Represents destination data source.
+	Target *FileSource `json:"Target,omitempty" xml:"Target"`
+	// Represents destination data format.
+	Format string `json:"Format,omitempty" xml:"Format"`
+	// Represents converted data area.
+	Area string `json:"Area,omitempty" xml:"Area"`
+	// Represents converted page index.
+	PageIndex *int32 `json:"PageIndex,omitempty" xml:"PageIndex"`
+	// Represents vertical resolution.
+	VerticalResolution *int32 `json:"VerticalResolution,omitempty" xml:"VerticalResolution"`
+	// Represents horizontal resolution.
+	HorizontalResolution *int32 `json:"HorizontalResolution,omitempty" xml:"HorizontalResolution"`
 }

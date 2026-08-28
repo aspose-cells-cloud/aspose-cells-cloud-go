@@ -23,23 +23,22 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// CalculationOptions            Represents options for calculation.            
+// CalculationOptions            Represents options for calculation.
 type CalculationOptions struct {
-    // Specifies the stack size for calculating cells recursively.  
-    CalcStackSize *int32 `json:"CalcStackSize,omitempty" xml:"CalcStackSize"`
-    // Indicates whether errors encountered while calculating formulas should be ignored.             The error may be unsupported function, external links, etc.             The default value is true.  
-    IgnoreError *bool `json:"IgnoreError,omitempty" xml:"IgnoreError"`
-    // Specifies the strategy for processing precision of calculation.  
-    PrecisionStrategy string `json:"PrecisionStrategy,omitempty" xml:"PrecisionStrategy"`
-    // Indicates whether calculate the dependent cells recursively when calculating one cell and it depends on other cells.             The default value is true.  
-    Recursive *bool `json:"Recursive,omitempty" xml:"Recursive"`
-    // The custom formula calculation engine to extend the default calculation engine of Aspose.Cells.  
-    CustomEngine *AbstractCalculationEngine `json:"CustomEngine,omitempty" xml:"CustomEngine"`
-    // The monitor for user to track the progress of formula calculation.  
-    CalculationMonitor *AbstractCalculationMonitor `json:"CalculationMonitor,omitempty" xml:"CalculationMonitor"`
-    // Specifies the data sources for external links used in formulas.  
-    LinkedDataSources []interface{} `json:"LinkedDataSources,omitempty" xml:"LinkedDataSources"`
+	// Specifies the stack size for calculating cells recursively.
+	CalcStackSize *int32 `json:"CalcStackSize,omitempty" xml:"CalcStackSize"`
+	// Indicates whether errors encountered while calculating formulas should be ignored.             The error may be unsupported function, external links, etc.             The default value is true.
+	IgnoreError *bool `json:"IgnoreError,omitempty" xml:"IgnoreError"`
+	// Specifies the strategy for processing precision of calculation.
+	PrecisionStrategy string `json:"PrecisionStrategy,omitempty" xml:"PrecisionStrategy"`
+	// Indicates whether calculate the dependent cells recursively when calculating one cell and it depends on other cells.             The default value is true.
+	Recursive *bool `json:"Recursive,omitempty" xml:"Recursive"`
+	// The custom formula calculation engine to extend the default calculation engine of Aspose.Cells.
+	CustomEngine *AbstractCalculationEngine `json:"CustomEngine,omitempty" xml:"CustomEngine"`
+	// The monitor for user to track the progress of formula calculation.
+	CalculationMonitor *AbstractCalculationMonitor `json:"CalculationMonitor,omitempty" xml:"CalculationMonitor"`
+	// Specifies the data sources for external links used in formulas.
+	LinkedDataSources []interface{} `json:"LinkedDataSources,omitempty" xml:"LinkedDataSources"`
 }

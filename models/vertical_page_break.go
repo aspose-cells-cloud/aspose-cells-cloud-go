@@ -23,15 +23,14 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// VerticalPageBreak            Encapsulates the object that represents a vertical page break.            
+// VerticalPageBreak            Encapsulates the object that represents a vertical page break.
 type VerticalPageBreak struct {
-    // Gets the column index of the vertical page break.  
-    Column *int32 `json:"Column,omitempty" xml:"Column"`
-    // Gets the end row index of the vertical page break.  
-    EndRow *int32 `json:"EndRow,omitempty" xml:"EndRow"`
-    // Gets the start row index of the vertical page break.  
-    StartRow *int32 `json:"StartRow,omitempty" xml:"StartRow"`
+	// Gets the column index of the vertical page break.
+	Column *int32 `json:"Column,omitempty" xml:"Column"`
+	// Gets the end row index of the vertical page break.
+	EndRow *int32 `json:"EndRow,omitempty" xml:"EndRow"`
+	// Gets the start row index of the vertical page break.
+	StartRow *int32 `json:"StartRow,omitempty" xml:"StartRow"`
 }

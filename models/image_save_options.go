@@ -23,22 +23,21 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // ImageSaveOptions
 type ImageSaveOptions struct {
-    SaveOptions
-    ChartImageType string `json:"ChartImageType,omitempty" xml:"ChartImageType"`
-    EmbededImageNameInSvg string `json:"EmbededImageNameInSvg,omitempty" xml:"EmbededImageNameInSvg"`
-    HorizontalResolution *int32 `json:"HorizontalResolution,omitempty" xml:"HorizontalResolution"`
-    ImageFormat string `json:"ImageFormat,omitempty" xml:"ImageFormat"`
-    IsCellAutoFit *bool `json:"IsCellAutoFit,omitempty" xml:"IsCellAutoFit"`
-    OnePagePerSheet *bool `json:"OnePagePerSheet,omitempty" xml:"OnePagePerSheet"`
-    OnlyArea *bool `json:"OnlyArea,omitempty" xml:"OnlyArea"`
-    PrintingPage string `json:"PrintingPage,omitempty" xml:"PrintingPage"`
-    PrintWithStatusDialog *bool `json:"PrintWithStatusDialog,omitempty" xml:"PrintWithStatusDialog"`
-    Quality *int32 `json:"Quality,omitempty" xml:"Quality"`
-    TiffCompression string `json:"TiffCompression,omitempty" xml:"TiffCompression"`
-    VerticalResolution *int32 `json:"VerticalResolution,omitempty" xml:"VerticalResolution"`
+	SaveOptions
+	ChartImageType        string `json:"ChartImageType,omitempty" xml:"ChartImageType"`
+	EmbededImageNameInSvg string `json:"EmbededImageNameInSvg,omitempty" xml:"EmbededImageNameInSvg"`
+	HorizontalResolution  *int32 `json:"HorizontalResolution,omitempty" xml:"HorizontalResolution"`
+	ImageFormat           string `json:"ImageFormat,omitempty" xml:"ImageFormat"`
+	IsCellAutoFit         *bool  `json:"IsCellAutoFit,omitempty" xml:"IsCellAutoFit"`
+	OnePagePerSheet       *bool  `json:"OnePagePerSheet,omitempty" xml:"OnePagePerSheet"`
+	OnlyArea              *bool  `json:"OnlyArea,omitempty" xml:"OnlyArea"`
+	PrintingPage          string `json:"PrintingPage,omitempty" xml:"PrintingPage"`
+	PrintWithStatusDialog *bool  `json:"PrintWithStatusDialog,omitempty" xml:"PrintWithStatusDialog"`
+	Quality               *int32 `json:"Quality,omitempty" xml:"Quality"`
+	TiffCompression       string `json:"TiffCompression,omitempty" xml:"TiffCompression"`
+	VerticalResolution    *int32 `json:"VerticalResolution,omitempty" xml:"VerticalResolution"`
 }

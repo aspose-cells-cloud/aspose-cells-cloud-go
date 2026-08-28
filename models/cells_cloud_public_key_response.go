@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CellsCloudPublicKeyResponse
 type CellsCloudPublicKeyResponse struct {
-    CellsCloudResponse
-    CellsCloudPublicKey *CellsCloudPublicKey `json:"CellsCloudPublicKey,omitempty" xml:"CellsCloudPublicKey"`
+	CellsCloudResponse
+	CellsCloudPublicKey *CellsCloudPublicKey `json:"CellsCloudPublicKey,omitempty" xml:"CellsCloudPublicKey"`
 }

@@ -1,117 +1,118 @@
 package requests
 
 import (
-    "fmt"
-    "net/url"
-    "strings"
+	"fmt"
+	"net/url"
+	"strings"
 )
 
 type DeleteWorksheetChartLegendRequest struct {
-    chartIndex int
-    name string
-    sheetName string
+	chartIndex int
+	name       string
+	sheetName  string
 
-    folder string
-    storageName string
+	folder      string
+	storageName string
 
-    extraQueryParameters map[string]string
+	extraQueryParameters map[string]string
 }
 
 func NewDeleteWorksheetChartLegendRequest(chartIndex int, name string, sheetName string, opts ...Option) *DeleteWorksheetChartLegendRequest {
-    req := &DeleteWorksheetChartLegendRequest{
-        chartIndex: chartIndex,
-        name: name,
-        sheetName: sheetName,
-    }
-    if req.name == "" {
-        return nil
-    }
-    if req.sheetName == "" {
-        return nil
-    }
+	req := &DeleteWorksheetChartLegendRequest{
+		chartIndex: chartIndex,
+		name:       name,
+		sheetName:  sheetName,
+	}
+	cfg := &requestConfig{
+		Params: make(map[string]interface{}),
+	}
+	for _, opt := range opts {
+		opt.apply(cfg)
+	}
 
-    cfg := &requestConfig{
-        Params: make(map[string]interface{}),
-    }
-    for _, opt := range opts {
-        opt.apply(cfg)
-    }
+	if val, ok := cfg.Params["folder"].(string); ok {
+		req.folder = val
+	}
+	if val, ok := cfg.Params["storageName"].(string); ok {
+		req.storageName = val
+	}
+	if len(cfg.extraQueryParams) > 0 {
+		if req.extraQueryParameters == nil {
+			req.extraQueryParameters = make(map[string]string)
+		}
+		for k, v := range cfg.extraQueryParams {
+			req.extraQueryParameters[k] = v
+		}
+	}
 
-    if val, ok := cfg.Params["folder"].(string); ok {
-        req.folder = val
-    }
-    if val, ok := cfg.Params["storageName"].(string); ok {
-        req.storageName = val
-    }
-    if len(cfg.extraQueryParams) > 0 {
-        if req.extraQueryParameters == nil {
-            req.extraQueryParameters = make(map[string]string)
-        }
-        for k, v := range cfg.extraQueryParams {
-            req.extraQueryParameters[k] = v
-        }
-    }
+	return req
+}
 
-    return req
+func (request *DeleteWorksheetChartLegendRequest) Validate() error {
+	if request.name == "" {
+		return fmt.Errorf("required request parameter %q is missing", "name")
+	}
+
+	if request.sheetName == "" {
+		return fmt.Errorf("required request parameter %q is missing", "sheetName")
+	}
+
+	return nil
 }
 
 func (request *DeleteWorksheetChartLegendRequest) AddQueryParameter(key, value string) {
-    if request.extraQueryParameters == nil {
-        request.extraQueryParameters = make(map[string]string)
-    }
-    request.extraQueryParameters[key] = value
+	if request.extraQueryParameters == nil {
+		request.extraQueryParameters = make(map[string]string)
+	}
+	request.extraQueryParameters[key] = value
 }
 
 func (request *DeleteWorksheetChartLegendRequest) AddQueryParameters(params map[string]string) {
-    if request.extraQueryParameters == nil {
-        request.extraQueryParameters = make(map[string]string)
-    }
-    for k, v := range params {
-        request.extraQueryParameters[k] = v
-    }
+	if request.extraQueryParameters == nil {
+		request.extraQueryParameters = make(map[string]string)
+	}
+	for k, v := range params {
+		request.extraQueryParameters[k] = v
+	}
 }
 
 func (request *DeleteWorksheetChartLegendRequest) GetMethod() string {
-    return "DELETE"
+	return "DELETE"
 }
 
 func (request *DeleteWorksheetChartLegendRequest) GetHeaderParameters() map[string]string {
-    localVarHeaderParams := make(map[string]string)
-    localVarHeaderParams["Content-Type"] = "application/json"
-    return localVarHeaderParams
+	localVarHeaderParams := make(map[string]string)
+	localVarHeaderParams["Content-Type"] = "application/json"
+	return localVarHeaderParams
 }
 
 func (request *DeleteWorksheetChartLegendRequest) GetPath() string {
-    localVarPath := "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
-    localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", fmt.Sprintf("%v", request.name), -1)
-    localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", fmt.Sprintf("%v", request.sheetName), -1)
-    localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", fmt.Sprintf("%v", request.chartIndex), -1)
-    return localVarPath
+	localVarPath := "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(fmt.Sprintf("%v", request.name)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sheetName"+"}", url.PathEscape(fmt.Sprintf("%v", request.sheetName)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"chartIndex"+"}", url.PathEscape(fmt.Sprintf("%v", request.chartIndex)), -1)
+	return localVarPath
 }
 
 func (request *DeleteWorksheetChartLegendRequest) GetQueryParameters() url.Values {
-    localVarQueryParams := url.Values{}
-    if request.folder != "" {
-        localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
-    }
-    if request.storageName != "" {
-        localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
-    }
-    for k, v := range request.extraQueryParameters {
-        localVarQueryParams.Add(k, v)
-    }
-    return localVarQueryParams
+	localVarQueryParams := url.Values{}
+	if request.folder != "" {
+		localVarQueryParams.Add("folder", fmt.Sprintf("%v", request.folder))
+	}
+	if request.storageName != "" {
+		localVarQueryParams.Add("storageName", fmt.Sprintf("%v", request.storageName))
+	}
+	for k, v := range request.extraQueryParameters {
+		localVarQueryParams.Add(k, v)
+	}
+	return localVarQueryParams
 }
 
 func (request *DeleteWorksheetChartLegendRequest) GetJSONBody() interface{} {
-    return nil
+	return nil
 }
 
 func (request *DeleteWorksheetChartLegendRequest) GetMultipartForm() map[string]interface{} {
-    localVarFormParams := make(map[string]interface{})
-    return localVarFormParams
-}
-
-func (request *DeleteWorksheetChartLegendRequest) Description() string {
-    return strings.Trim("Hides chart legend in the worksheet.", " ")
+	localVarFormParams := make(map[string]interface{})
+	return localVarFormParams
 }

@@ -23,17 +23,16 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RangeSetOutlineBorderRequest Indicates range set outline border request.
 type RangeSetOutlineBorderRequest struct {
-    // Encapsulates the object that represents a range of cells within a spreadsheet.
-    Range *Range `json:"Range,omitempty" xml:"Range"`
-    // LeftBorder, RightBorder, TopBorder, BottomBorder, DiagonalDown, DiagonalUp, Vertical and Horizontal.
-    BorderEdge string `json:"borderEdge,omitempty" xml:"borderEdge"`
-    // None, Thin, Medium, Dashed, Dotted, Thick, Double, Hair, MediumDashed, DashDot, MediumDashDot, DashDotDot, MediumDashDotDot and SlantedDashDot.
-    BorderStyle string `json:"borderStyle,omitempty" xml:"borderStyle"`
-    // Border color.
-    BorderColor *Color `json:"borderColor,omitempty" xml:"borderColor"`
+	// Encapsulates the object that represents a range of cells within a spreadsheet.
+	Range *Range `json:"Range,omitempty" xml:"Range"`
+	// LeftBorder, RightBorder, TopBorder, BottomBorder, DiagonalDown, DiagonalUp, Vertical and Horizontal.
+	BorderEdge string `json:"borderEdge,omitempty" xml:"borderEdge"`
+	// None, Thin, Medium, Dashed, Dotted, Thick, Double, Hair, MediumDashed, DashDot, MediumDashDot, DashDotDot, MediumDashDotDot and SlantedDashDot.
+	BorderStyle string `json:"borderStyle,omitempty" xml:"borderStyle"`
+	// Border color.
+	BorderColor *Color `json:"borderColor,omitempty" xml:"borderColor"`
 }

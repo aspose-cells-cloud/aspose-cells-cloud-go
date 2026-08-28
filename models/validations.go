@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Validations Represents data validation collection.
 type Validations struct {
-    LinkElement
-    // Property summary: The property "Count" with an XML element name "count" returns the number of items in the "ValidationList".
-    Count *int32 `json:"Count,omitempty" xml:"Count"`
-    ValidationList []LinkElement `json:"ValidationList,omitempty" xml:"ValidationList"`
+	LinkElement
+	// Property summary: The property "Count" with an XML element name "count" returns the number of items in the "ValidationList".
+	Count          *int32        `json:"Count,omitempty" xml:"Count"`
+	ValidationList []LinkElement `json:"ValidationList,omitempty" xml:"ValidationList"`
 }

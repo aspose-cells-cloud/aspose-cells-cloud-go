@@ -23,18 +23,17 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // WorksheetOperateParameter Represents worksheet operate parameter.
 type WorksheetOperateParameter struct {
-    OperateParameter
-    // Represents worksheet name.
-    Name string `json:"Name,omitempty" xml:"Name"`
-    // Represents worksheet type.
-    SheetType string `json:"SheetType,omitempty" xml:"SheetType"`
-    // rename worksheet name
-    NewName string `json:"NewName,omitempty" xml:"NewName"`
-    // Represents move position.
-    MovingRequest *WorksheetMovingRequest `json:"MovingRequest,omitempty" xml:"MovingRequest"`
+	OperateParameter
+	// Represents worksheet name.
+	Name string `json:"Name,omitempty" xml:"Name"`
+	// Represents worksheet type.
+	SheetType string `json:"SheetType,omitempty" xml:"SheetType"`
+	// rename worksheet name
+	NewName string `json:"NewName,omitempty" xml:"NewName"`
+	// Represents move position.
+	MovingRequest *WorksheetMovingRequest `json:"MovingRequest,omitempty" xml:"MovingRequest"`
 }

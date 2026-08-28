@@ -23,18 +23,17 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CellsObjectOperateTaskParameter Represents cells object operate task parameter.
 type CellsObjectOperateTaskParameter struct {
-    TaskParameter
-    // Represents object operate.
-    OperateObject *OperateObject `json:"OperateObject,omitempty" xml:"OperateObject"`
-    // Represents operate parameter.
-    OperateParameter *OperateParameter `json:"OperateParameter,omitempty" xml:"OperateParameter"`
-    // Represents destination data source.
-    DestinationDataSource *DataSource `json:"DestinationDataSource,omitempty" xml:"DestinationDataSource"`
-    // Represents destination data source.
-    DestinationWorkbook *FileSource `json:"DestinationWorkbook,omitempty" xml:"DestinationWorkbook"`
+	TaskParameter
+	// Represents object operate.
+	OperateObject *OperateObject `json:"OperateObject,omitempty" xml:"OperateObject"`
+	// Represents operate parameter.
+	OperateParameter *OperateParameter `json:"OperateParameter,omitempty" xml:"OperateParameter"`
+	// Represents destination data source.
+	DestinationDataSource *DataSource `json:"DestinationDataSource,omitempty" xml:"DestinationDataSource"`
+	// Represents destination data source.
+	DestinationWorkbook *FileSource `json:"DestinationWorkbook,omitempty" xml:"DestinationWorkbook"`
 }

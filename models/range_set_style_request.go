@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // RangeSetStyleRequest Indicates range set style request.
 type RangeSetStyleRequest struct {
-    // Encapsulates the object that represents a range of cells within a spreadsheet.
-    Range *Range `json:"Range,omitempty" xml:"Range"`
-    // Represents display style of excel document,such as font,color,alignment,border,etc.             
-    Style *Style `json:"Style,omitempty" xml:"Style"`
+	// Encapsulates the object that represents a range of cells within a spreadsheet.
+	Range *Range `json:"Range,omitempty" xml:"Range"`
+	// Represents display style of excel document,such as font,color,alignment,border,etc.
+	Style *Style `json:"Style,omitempty" xml:"Style"`
 }

@@ -23,23 +23,22 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DiscoverPivotTable Represents a pivot table, which is a pivot table created based on data analysis of a table.
 type DiscoverPivotTable struct {
-    // Represents pivot table name.
-    Name string `json:"Name,omitempty" xml:"Name"`
-    // Represents pivot table title.
-    Title string `json:"Title,omitempty" xml:"Title"`
-    // Represents pivot table data range.
-    DataRange string `json:"DataRange,omitempty" xml:"DataRange"`
-    // Represents row fields in a PivotTable report.
-    PivotFieldRows []interface{} `json:"PivotFieldRows,omitempty" xml:"PivotFieldRows"`
-    // Represents column fields in a PivotTable report.
-    PivotFieldColumns []interface{} `json:"PivotFieldColumns,omitempty" xml:"PivotFieldColumns"`
-    // Represents data fields in a PivotTable report.
-    PivotFieldData []interface{} `json:"PivotFieldData,omitempty" xml:"PivotFieldData"`
-    // Represents pivot table thumbnail. Base64String
-    Thumbnail string `json:"Thumbnail,omitempty" xml:"Thumbnail"`
+	// Represents pivot table name.
+	Name string `json:"Name,omitempty" xml:"Name"`
+	// Represents pivot table title.
+	Title string `json:"Title,omitempty" xml:"Title"`
+	// Represents pivot table data range.
+	DataRange string `json:"DataRange,omitempty" xml:"DataRange"`
+	// Represents row fields in a PivotTable report.
+	PivotFieldRows []interface{} `json:"PivotFieldRows,omitempty" xml:"PivotFieldRows"`
+	// Represents column fields in a PivotTable report.
+	PivotFieldColumns []interface{} `json:"PivotFieldColumns,omitempty" xml:"PivotFieldColumns"`
+	// Represents data fields in a PivotTable report.
+	PivotFieldData []interface{} `json:"PivotFieldData,omitempty" xml:"PivotFieldData"`
+	// Represents pivot table thumbnail. Base64String
+	Thumbnail string `json:"Thumbnail,omitempty" xml:"Thumbnail"`
 }

@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // AnalyzeExcelRequest Can you please provide the features that you would like me to summarize for the class?
 type AnalyzeExcelRequest struct {
-    // The class has a property called "Files" that is a list of FileInfo objects with a default value of an empty list.
-    Files []FileInfo `json:"Files,omitempty" xml:"Files"`
-    NeedThumbnail *bool `json:"NeedThumbnail,omitempty" xml:"NeedThumbnail"`
-    BuildSuggestoinSheet *bool `json:"BuildSuggestoinSheet,omitempty" xml:"BuildSuggestoinSheet"`
+	// The class has a property called "Files" that is a list of FileInfo objects with a default value of an empty list.
+	Files                []FileInfo `json:"Files,omitempty" xml:"Files"`
+	NeedThumbnail        *bool      `json:"NeedThumbnail,omitempty" xml:"NeedThumbnail"`
+	BuildSuggestoinSheet *bool      `json:"BuildSuggestoinSheet,omitempty" xml:"BuildSuggestoinSheet"`
 }

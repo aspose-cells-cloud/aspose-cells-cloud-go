@@ -23,21 +23,20 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// TextureFill            Encapsulates the object that represents texture fill format            
+// TextureFill            Encapsulates the object that represents texture fill format
 type TextureFill struct {
-    // Gets and sets the texture type  
-    Type string `json:"Type,omitempty" xml:"Type"`
-    // Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear).  
-    Transparency *float64 `json:"Transparency,omitempty" xml:"Transparency"`
-    // Gets and sets the picture format scale.  
-    Scale *float64 `json:"Scale,omitempty" xml:"Scale"`
-    // Gets or sets tile picture option.  
-    TilePicOption *TilePicOption `json:"TilePicOption,omitempty" xml:"TilePicOption"`
-    // Gets or sets picture format option.  
-    PicFormatOption *PicFormatOption `json:"PicFormatOption,omitempty" xml:"PicFormatOption"`
-    // The class has a public property named "Image" of type LinkElement that can be accessed and set.
-    Image *LinkElement `json:"Image,omitempty" xml:"Image"`
+	// Gets and sets the texture type
+	Type string `json:"Type,omitempty" xml:"Type"`
+	// Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear).
+	Transparency *float64 `json:"Transparency,omitempty" xml:"Transparency"`
+	// Gets and sets the picture format scale.
+	Scale *float64 `json:"Scale,omitempty" xml:"Scale"`
+	// Gets or sets tile picture option.
+	TilePicOption *TilePicOption `json:"TilePicOption,omitempty" xml:"TilePicOption"`
+	// Gets or sets picture format option.
+	PicFormatOption *PicFormatOption `json:"PicFormatOption,omitempty" xml:"PicFormatOption"`
+	// The class has a public property named "Image" of type LinkElement that can be accessed and set.
+	Image *LinkElement `json:"Image,omitempty" xml:"Image"`
 }

@@ -34,16 +34,13 @@ func Convert(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClien
 	}
 
 	req := requests.NewConvertSpreadsheetRequest(format, "", cfg.ReqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: format is required", asposecellscloud.ErrInvalidParam)
-	}
 	req.SetSpreadsheetBytes(data, "Spreadsheet")
 
-	resp, err := runOne(ctx, client, req)
+	resp, err := sdkutil.DoChecked(ctx, client, req)
 	if err != nil {
 		return err
 	}
-	return writeToSink(sink, resp.Body)
+	return sdkutil.WriteToSink(sink, resp.Body)
 }
 
 // ConvertToPDF converts a spreadsheet to PDF.
@@ -96,7 +93,7 @@ func ConvertToSQL(ctx context.Context, client *asposecellscloud.AsposeCellsCloud
 
 // The v3.0-only component converts (ConvertWorksheet* / ConvertRangeToPDF /
 // ConvertChartToPDF / ConvertTableToPDF) were removed during the v4.0 migration
-// because the v4.0 API exposes no equivalent interface. See v4_todo.go.
+// because the v4.0 API exposes no equivalent interface.
 
 // Workbook exports a workbook from cloud storage to the target format and
 // writes the downloaded bytes to sink. wf locates the cloud file; format is
@@ -110,17 +107,14 @@ func Workbook(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClie
 	cfg := &sdkutil.Config{}
 	sdkutil.Apply(cfg, opts)
 
-	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
+	reqOpts := append(sdkutil.WorkbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewExportSpreadsheetAsFormatRequest(format, wf.Name, reqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: format is required", asposecellscloud.ErrInvalidParam)
-	}
 
-	resp, err := runOne(ctx, client, req)
+	resp, err := sdkutil.DoChecked(ctx, client, req)
 	if err != nil {
 		return err
 	}
-	return writeToSink(sink, resp.Body)
+	return sdkutil.WriteToSink(sink, resp.Body)
 }
 
 // Worksheet exports a single worksheet of a cloud workbook to the target
@@ -134,20 +128,16 @@ func Worksheet(ctx context.Context, client *asposecellscloud.AsposeCellsCloudCli
 	cfg := &sdkutil.Config{}
 	sdkutil.Apply(cfg, opts)
 
-	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
+	reqOpts := append(sdkutil.WorkbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewExportWorksheetAsFormatRequest(format, wf.Name, worksheet, reqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: format is required", asposecellscloud.ErrInvalidParam)
-	}
 
-	resp, err := runOne(ctx, client, req)
+	resp, err := sdkutil.DoChecked(ctx, client, req)
 	if err != nil {
 		return err
 	}
-	return writeToSink(sink, resp.Body)
+	return sdkutil.WriteToSink(sink, resp.Body)
 }
 
 // The v3.0-only export operations WorksheetXML and RangeValues were removed
 // during the v4.0 migration because the v4.0 API exposes no equivalent
 // interface (exportxml and ranges/{...}/value both return 404 under v4.0).
-// See v4_todo.go.

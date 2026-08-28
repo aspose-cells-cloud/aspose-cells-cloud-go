@@ -23,14 +23,13 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // DropBars Represents the up/down bars in a chart.
 type DropBars struct {
-    LinkElement
-    // Gets the .
-    Area *Area `json:"Area,omitempty" xml:"Area"`
-    // Gets the border .
-    Border *Line `json:"Border,omitempty" xml:"Border"`
+	LinkElement
+	// Gets the .
+	Area *Area `json:"Area,omitempty" xml:"Area"`
+	// Gets the border .
+	Border *Line `json:"Border,omitempty" xml:"Border"`
 }

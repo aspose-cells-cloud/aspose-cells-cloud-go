@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // PclSaveOptions
 type PclSaveOptions struct {
-    SaveOptions
-    FontFullName string `json:"fontFullName,omitempty" xml:"fontFullName"`
-    FontPclName string `json:"fontPclName,omitempty" xml:"fontPclName"`
+	SaveOptions
+	FontFullName string `json:"fontFullName,omitempty" xml:"fontFullName"`
+	FontPclName  string `json:"fontPclName,omitempty" xml:"fontPclName"`
 }

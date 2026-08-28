@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // OleObjectResponse Represents the OleObject Response.
 type OleObjectResponse struct {
-    CellsCloudResponse
-    // This class has a property named OleObject of type OleObject with both read and write capabilities.
-    OleObject *OleObject `json:"OleObject,omitempty" xml:"OleObject"`
+	CellsCloudResponse
+	// This class has a property named OleObject of type OleObject with both read and write capabilities.
+	OleObject *OleObject `json:"OleObject,omitempty" xml:"OleObject"`
 }

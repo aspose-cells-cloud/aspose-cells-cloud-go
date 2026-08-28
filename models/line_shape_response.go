@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // LineShapeResponse Represents the LineShape Response.
 type LineShapeResponse struct {
-    CellsCloudResponse
-    // The class has a public property called Shape of type LineShape that can be both accessed and modified.
-    Shape *LineShape `json:"Shape,omitempty" xml:"Shape"`
+	CellsCloudResponse
+	// The class has a public property called Shape of type LineShape that can be both accessed and modified.
+	Shape *LineShape `json:"Shape,omitempty" xml:"Shape"`
 }

@@ -23,43 +23,42 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// Protection Represents the various types of protection options available for a worksheet.             
+// Protection Represents the various types of protection options available for a worksheet.
 type Protection struct {
-    // Represents if the deletion of columns is allowed on a protected worksheet.  
-    AllowDeletingColumn *bool `json:"AllowDeletingColumn,omitempty" xml:"AllowDeletingColumn"`
-    // Represents if the deletion of rows is allowed on a protected worksheet.  
-    AllowDeletingRow *bool `json:"AllowDeletingRow,omitempty" xml:"AllowDeletingRow"`
-    // Represents if the user is allowed to make use of an AutoFilter that was created before the sheet was protected.  
-    AllowFiltering *bool `json:"AllowFiltering,omitempty" xml:"AllowFiltering"`
-    // Represents if the formatting of cells is allowed on a protected worksheet.  
-    AllowFormattingCell *bool `json:"AllowFormattingCell,omitempty" xml:"AllowFormattingCell"`
-    // Represents if the formatting of columns is allowed on a protected worksheet  
-    AllowFormattingColumn *bool `json:"AllowFormattingColumn,omitempty" xml:"AllowFormattingColumn"`
-    // Represents if the formatting of rows is allowed on a protected worksheet  
-    AllowFormattingRow *bool `json:"AllowFormattingRow,omitempty" xml:"AllowFormattingRow"`
-    // Represents if the insertion of columns is allowed on a protected worksheet  
-    AllowInsertingColumn *bool `json:"AllowInsertingColumn,omitempty" xml:"AllowInsertingColumn"`
-    // Represents if the insertion of hyperlinks is allowed on a protected worksheet  
-    AllowInsertingHyperlink *bool `json:"AllowInsertingHyperlink,omitempty" xml:"AllowInsertingHyperlink"`
-    // Represents if the insertion of rows is allowed on a protected worksheet  
-    AllowInsertingRow *bool `json:"AllowInsertingRow,omitempty" xml:"AllowInsertingRow"`
-    // Represents if the sorting option is allowed on a protected worksheet.  
-    AllowSorting *bool `json:"AllowSorting,omitempty" xml:"AllowSorting"`
-    // Represents if the user is allowed to manipulate pivot tables on a protected worksheet.  
-    AllowUsingPivotTable *bool `json:"AllowUsingPivotTable,omitempty" xml:"AllowUsingPivotTable"`
-    // Represents if the user is allowed to edit contents of locked cells on a protected worksheet.  
-    AllowEditingContent *bool `json:"AllowEditingContent,omitempty" xml:"AllowEditingContent"`
-    // Represents if the user is allowed to manipulate drawing objects on a protected worksheet.  
-    AllowEditingObject *bool `json:"AllowEditingObject,omitempty" xml:"AllowEditingObject"`
-    // Represents if the user is allowed to edit scenarios on a protected worksheet.  
-    AllowEditingScenario *bool `json:"AllowEditingScenario,omitempty" xml:"AllowEditingScenario"`
-    // Represents the password to protect the worksheet.  
-    Password string `json:"Password,omitempty" xml:"Password"`
-    // Represents if the user is allowed to select locked cells on a protected worksheet.  
-    AllowSelectingLockedCell *bool `json:"AllowSelectingLockedCell,omitempty" xml:"AllowSelectingLockedCell"`
-    // Represents if the user is allowed to select unlocked cells on a protected worksheet.  
-    AllowSelectingUnlockedCell *bool `json:"AllowSelectingUnlockedCell,omitempty" xml:"AllowSelectingUnlockedCell"`
+	// Represents if the deletion of columns is allowed on a protected worksheet.
+	AllowDeletingColumn *bool `json:"AllowDeletingColumn,omitempty" xml:"AllowDeletingColumn"`
+	// Represents if the deletion of rows is allowed on a protected worksheet.
+	AllowDeletingRow *bool `json:"AllowDeletingRow,omitempty" xml:"AllowDeletingRow"`
+	// Represents if the user is allowed to make use of an AutoFilter that was created before the sheet was protected.
+	AllowFiltering *bool `json:"AllowFiltering,omitempty" xml:"AllowFiltering"`
+	// Represents if the formatting of cells is allowed on a protected worksheet.
+	AllowFormattingCell *bool `json:"AllowFormattingCell,omitempty" xml:"AllowFormattingCell"`
+	// Represents if the formatting of columns is allowed on a protected worksheet
+	AllowFormattingColumn *bool `json:"AllowFormattingColumn,omitempty" xml:"AllowFormattingColumn"`
+	// Represents if the formatting of rows is allowed on a protected worksheet
+	AllowFormattingRow *bool `json:"AllowFormattingRow,omitempty" xml:"AllowFormattingRow"`
+	// Represents if the insertion of columns is allowed on a protected worksheet
+	AllowInsertingColumn *bool `json:"AllowInsertingColumn,omitempty" xml:"AllowInsertingColumn"`
+	// Represents if the insertion of hyperlinks is allowed on a protected worksheet
+	AllowInsertingHyperlink *bool `json:"AllowInsertingHyperlink,omitempty" xml:"AllowInsertingHyperlink"`
+	// Represents if the insertion of rows is allowed on a protected worksheet
+	AllowInsertingRow *bool `json:"AllowInsertingRow,omitempty" xml:"AllowInsertingRow"`
+	// Represents if the sorting option is allowed on a protected worksheet.
+	AllowSorting *bool `json:"AllowSorting,omitempty" xml:"AllowSorting"`
+	// Represents if the user is allowed to manipulate pivot tables on a protected worksheet.
+	AllowUsingPivotTable *bool `json:"AllowUsingPivotTable,omitempty" xml:"AllowUsingPivotTable"`
+	// Represents if the user is allowed to edit contents of locked cells on a protected worksheet.
+	AllowEditingContent *bool `json:"AllowEditingContent,omitempty" xml:"AllowEditingContent"`
+	// Represents if the user is allowed to manipulate drawing objects on a protected worksheet.
+	AllowEditingObject *bool `json:"AllowEditingObject,omitempty" xml:"AllowEditingObject"`
+	// Represents if the user is allowed to edit scenarios on a protected worksheet.
+	AllowEditingScenario *bool `json:"AllowEditingScenario,omitempty" xml:"AllowEditingScenario"`
+	// Represents the password to protect the worksheet.
+	Password string `json:"Password,omitempty" xml:"Password"`
+	// Represents if the user is allowed to select locked cells on a protected worksheet.
+	AllowSelectingLockedCell *bool `json:"AllowSelectingLockedCell,omitempty" xml:"AllowSelectingLockedCell"`
+	// Represents if the user is allowed to select unlocked cells on a protected worksheet.
+	AllowSelectingUnlockedCell *bool `json:"AllowSelectingUnlockedCell,omitempty" xml:"AllowSelectingUnlockedCell"`
 }

@@ -23,17 +23,16 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// PasteOptions Represents the paste special options.             
+// PasteOptions Represents the paste special options.
 type PasteOptions struct {
-    // True means only copying visible cells.  
-    OnlyVisibleCells *bool `json:"OnlyVisibleCells,omitempty" xml:"OnlyVisibleCells"`
-    // The paste special type.  
-    PasteType string `json:"PasteType,omitempty" xml:"PasteType"`
-    // Indicates whether skips blank cells.  
-    SkipBlanks *bool `json:"SkipBlanks,omitempty" xml:"SkipBlanks"`
-    // True to transpose rows and columns when the range is pasted. The default value is False.  
-    Transpose *bool `json:"Transpose,omitempty" xml:"Transpose"`
+	// True means only copying visible cells.
+	OnlyVisibleCells *bool `json:"OnlyVisibleCells,omitempty" xml:"OnlyVisibleCells"`
+	// The paste special type.
+	PasteType string `json:"PasteType,omitempty" xml:"PasteType"`
+	// Indicates whether skips blank cells.
+	SkipBlanks *bool `json:"SkipBlanks,omitempty" xml:"SkipBlanks"`
+	// True to transpose rows and columns when the range is pasted. The default value is False.
+	Transpose *bool `json:"Transpose,omitempty" xml:"Transpose"`
 }

@@ -23,23 +23,22 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
-// ShadowEffect            This class specifies the shadow effect of the chart element or shape.            
+// ShadowEffect            This class specifies the shadow effect of the chart element or shape.
 type ShadowEffect struct {
-    // Gets and sets the lighting angle. Range from 0 to 359.9 degrees.  
-    Angle *float64 `json:"Angle,omitempty" xml:"Angle"`
-    // Gets and sets the blur of the shadow. Range from 0 to 100 points.  
-    Blur *float64 `json:"Blur,omitempty" xml:"Blur"`
-    // Gets and sets the color of the shadow.  
-    Color *CellsColor `json:"Color,omitempty" xml:"Color"`
-    // Gets and sets the distance of the shadow. Range from 0 to 200 points.  
-    Distance *float64 `json:"Distance,omitempty" xml:"Distance"`
-    // Gets and sets the preset shadow type of the shadow.  
-    PresetType string `json:"PresetType,omitempty" xml:"PresetType"`
-    // Gets and sets the size of the shadow. Range from 0 to 2.0.              Meaningless in inner shadow.  
-    Size *float64 `json:"Size,omitempty" xml:"Size"`
-    // Gets and sets the degree of transparency of the shadow. Range from 0.0 (opaque) to 1.0 (clear).  
-    Transparency *float64 `json:"Transparency,omitempty" xml:"Transparency"`
+	// Gets and sets the lighting angle. Range from 0 to 359.9 degrees.
+	Angle *float64 `json:"Angle,omitempty" xml:"Angle"`
+	// Gets and sets the blur of the shadow. Range from 0 to 100 points.
+	Blur *float64 `json:"Blur,omitempty" xml:"Blur"`
+	// Gets and sets the color of the shadow.
+	Color *CellsColor `json:"Color,omitempty" xml:"Color"`
+	// Gets and sets the distance of the shadow. Range from 0 to 200 points.
+	Distance *float64 `json:"Distance,omitempty" xml:"Distance"`
+	// Gets and sets the preset shadow type of the shadow.
+	PresetType string `json:"PresetType,omitempty" xml:"PresetType"`
+	// Gets and sets the size of the shadow. Range from 0 to 2.0.              Meaningless in inner shadow.
+	Size *float64 `json:"Size,omitempty" xml:"Size"`
+	// Gets and sets the degree of transparency of the shadow. Range from 0.0 (opaque) to 1.0 (clear).
+	Transparency *float64 `json:"Transparency,omitempty" xml:"Transparency"`
 }

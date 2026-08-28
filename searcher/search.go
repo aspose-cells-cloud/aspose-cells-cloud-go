@@ -21,8 +21,8 @@ import (
 	"fmt"
 
 	"asposecellscloud"
-	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/datasource"
+	"asposecellscloud/internal/sdkutil"
 	"asposecellscloud/requests"
 )
 
@@ -66,9 +66,6 @@ func Search(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClient
 
 	reqOpts := append([]requests.Option{requests.WithCommonParameter("worksheet", worksheet)}, cfg.ReqOpts...)
 	req := requests.NewSearchSpreadsheetContentRequest(text, "", reqOpts...)
-	if req == nil {
-		return nil, fmt.Errorf("%w: text is required", asposecellscloud.ErrInvalidParam)
-	}
 	req.SetSpreadsheetBytes(data, "Spreadsheet")
 
 	resp, err := asposecellscloud.DoChecked(ctx, client, req)
@@ -96,16 +93,13 @@ func Replace(ctx context.Context, client *asposecellscloud.AsposeCellsCloudClien
 	}
 
 	req := requests.NewReplaceSpreadsheetContentRequest(newValue, oldValue, "", cfg.ReqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: old value and new value are required", asposecellscloud.ErrInvalidParam)
-	}
 	req.SetSpreadsheetBytes(data, "Spreadsheet")
 
 	resp, err := asposecellscloud.DoChecked(ctx, client, req)
 	if err != nil {
 		return err
 	}
-	return writeToSink(sink, resp.Body)
+	return sdkutil.WriteToSink(sink, resp.Body)
 }
 
 // SearchWorksheet searches text in a worksheet of a cloud workbook and returns
@@ -119,11 +113,8 @@ func SearchWorksheet(ctx context.Context, client *asposecellscloud.AsposeCellsCl
 	cfg := &sdkutil.Config{}
 	sdkutil.Apply(cfg, opts)
 
-	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
+	reqOpts := append(sdkutil.WorkbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewSearchContentInRemoteWorksheetRequest(wf.Name, text, worksheet, reqOpts...)
-	if req == nil {
-		return nil, fmt.Errorf("%w: invalid workbook reference", asposecellscloud.ErrInvalidParam)
-	}
 
 	resp, err := asposecellscloud.DoChecked(ctx, client, req)
 	if err != nil {
@@ -143,11 +134,8 @@ func SearchRange(ctx context.Context, client *asposecellscloud.AsposeCellsCloudC
 	cfg := &sdkutil.Config{}
 	sdkutil.Apply(cfg, opts)
 
-	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
+	reqOpts := append(sdkutil.WorkbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewSearchContentInRemoteRangeRequest(cellArea, wf.Name, text, worksheet, reqOpts...)
-	if req == nil {
-		return nil, fmt.Errorf("%w: invalid workbook reference", asposecellscloud.ErrInvalidParam)
-	}
 
 	resp, err := asposecellscloud.DoChecked(ctx, client, req)
 	if err != nil {
@@ -166,11 +154,8 @@ func ReplaceWorkbook(ctx context.Context, client *asposecellscloud.AsposeCellsCl
 	cfg := &sdkutil.Config{}
 	sdkutil.Apply(cfg, opts)
 
-	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
+	reqOpts := append(sdkutil.WorkbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewReplaceContentInRemoteSpreadsheetRequest(wf.Name, newValue, oldValue, reqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: invalid workbook reference", asposecellscloud.ErrInvalidParam)
-	}
 
 	_, err := asposecellscloud.DoChecked(ctx, client, req)
 	return err
@@ -186,11 +171,8 @@ func ReplaceWorksheet(ctx context.Context, client *asposecellscloud.AsposeCellsC
 	cfg := &sdkutil.Config{}
 	sdkutil.Apply(cfg, opts)
 
-	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
+	reqOpts := append(sdkutil.WorkbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewReplaceContentInRemoteWorksheetRequest(wf.Name, newValue, oldValue, worksheet, reqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: invalid workbook reference", asposecellscloud.ErrInvalidParam)
-	}
 
 	_, err := asposecellscloud.DoChecked(ctx, client, req)
 	return err
@@ -207,11 +189,8 @@ func ReplaceRange(ctx context.Context, client *asposecellscloud.AsposeCellsCloud
 	cfg := &sdkutil.Config{}
 	sdkutil.Apply(cfg, opts)
 
-	reqOpts := append(workbookParams(wf), cfg.ReqOpts...)
+	reqOpts := append(sdkutil.WorkbookParams(wf), cfg.ReqOpts...)
 	req := requests.NewReplaceContentInRemoteRangeRequest(cellArea, wf.Name, newValue, oldValue, worksheet, reqOpts...)
-	if req == nil {
-		return fmt.Errorf("%w: invalid workbook reference", asposecellscloud.ErrInvalidParam)
-	}
 
 	_, err := asposecellscloud.DoChecked(ctx, client, req)
 	return err

@@ -23,11 +23,10 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // CellsDocumentProperties Excel properties
 type CellsDocumentProperties struct {
-    // Document property list.
-    DocumentPropertyList []CellsDocumentProperty `json:"DocumentPropertyList,omitempty" xml:"DocumentPropertyList"`
+	// Document property list.
+	DocumentPropertyList []CellsDocumentProperty `json:"DocumentPropertyList,omitempty" xml:"DocumentPropertyList"`
 }

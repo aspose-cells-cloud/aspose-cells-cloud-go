@@ -23,16 +23,15 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // Columns Columns
 type Columns struct {
-    LinkElement
-    // The max column index.
-    MaxColumn *int32 `json:"MaxColumn,omitempty" xml:"MaxColumn"`
-    // Column count.
-    ColumnsCount *int32 `json:"ColumnsCount,omitempty" xml:"ColumnsCount"`
-    // Columns list.
-    ColumnsList []LinkElement `json:"ColumnsList,omitempty" xml:"ColumnsList"`
+	LinkElement
+	// The max column index.
+	MaxColumn *int32 `json:"MaxColumn,omitempty" xml:"MaxColumn"`
+	// Column count.
+	ColumnsCount *int32 `json:"ColumnsCount,omitempty" xml:"ColumnsCount"`
+	// Columns list.
+	ColumnsList []LinkElement `json:"ColumnsList,omitempty" xml:"ColumnsList"`
 }

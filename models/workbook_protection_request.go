@@ -23,13 +23,12 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // WorkbookProtectionRequest Used by workbook protection requests.
 type WorkbookProtectionRequest struct {
-    // Protection type. Can be ALL, CONTENTS, NONE, OBJECTS, SCENARIOS, STRUCTURE, WINDOWS
-    ProtectionType string `json:"ProtectionType,omitempty" xml:"ProtectionType"`
-    // Encription password.
-    Password string `json:"Password,omitempty" xml:"Password"`
+	// Protection type. Can be ALL, CONTENTS, NONE, OBJECTS, SCENARIOS, STRUCTURE, WINDOWS
+	ProtectionType string `json:"ProtectionType,omitempty" xml:"ProtectionType"`
+	// Encription password.
+	Password string `json:"Password,omitempty" xml:"Password"`
 }

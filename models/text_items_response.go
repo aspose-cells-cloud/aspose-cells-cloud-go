@@ -23,12 +23,11 @@
 * </summary>
 -------------------------------------------------------------------------------------------------------------------- **/
 
-
 package models
 
 // TextItemsResponse Represents the TextItems Response.
 type TextItemsResponse struct {
-    CellsCloudResponse
-    // This property allows access to a collection of TextItems.
-    TextItems *TextItems `json:"TextItems,omitempty" xml:"TextItems"`
+	CellsCloudResponse
+	// This property allows access to a collection of TextItems.
+	TextItems *TextItems `json:"TextItems,omitempty" xml:"TextItems"`
 }
